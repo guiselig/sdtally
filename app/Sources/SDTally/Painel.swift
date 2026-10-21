@@ -3,7 +3,6 @@
 // o app ativo e a cada 30 min em segundo plano; completo (minutos, com ou sem senha) só sob demanda. Nunca dois do mesmo tipo ao mesmo tempo. O app não calcula
 // números: só guarda o que o sdtally devolveu.
 import AppKit
-import CryptoKit
 import DiskArbitration
 import SDTallyXPC
 import ServiceManagement
@@ -142,7 +141,6 @@ final class Painel {
     var helper: SMAppService.Status = .notRegistered
     var helperErro: String?
     private let servicoHelper = SMAppService.daemon(plistName: HelperXPC.plist)
-    private var reregistrando = false
     private var ramos: [String: Ramo] = [:]
     private var lendo = false
     private var tarefaMedicao: Task<Void, Never>?
@@ -862,17 +860,9 @@ final class Painel {
         helper = servicoHelper.status
         // Helper aprovado ou removido com "automático com root" escolhido: troca o caminho.
         if autoComRoot, antes != helper, antes == .enabled || helper == .enabled { reiniciarAuto() }
-        // Executável do helper mudou (outro build): a Apple pede registrar de novo, senão o
-        // launchd pode não subir a versão nova.
-        // Nunca no meio de uma medição (o launchd derrubaria o helper que está medindo) nem fora do .app.
-        guard helper == .enabled, !reregistrando, !medindo, !Dev.ativo, let h = Self.hashHelper(),
-              h != UserDefaults.standard.string(forKey: "hashHelper") else { return }
-        reregistrando = true  // .task e didBecomeActive chamam quase juntos ao abrir
-        Task {
-            defer { reregistrando = false }
-            try? await servicoHelper.unregister()
-            instalarHelper()
-        }
+        // Build nova não registra de novo: unregister + register tirava o item dos Itens de
+        // Início a cada atualização. O launchd confere só time + identifier (LWCR) e sobe o
+        // executável novo na próxima conexão, porque o helper sai quando fica sem conexões.
     }
 
     /// Registra o LaunchDaemon. A primeira vez o macOS pede aprovação (com senha de admin) na
@@ -888,7 +878,6 @@ final class Painel {
             if ![.requiresApproval, .enabled].contains(servicoHelper.status) { helperErro = error.localizedDescription }
         }
         helper = servicoHelper.status
-        if helper == .enabled || helper == .requiresApproval { UserDefaults.standard.set(Self.hashHelper(), forKey: "hashHelper") }
         if helper == .requiresApproval { SMAppService.openSystemSettingsLoginItems() }
     }
 
@@ -896,18 +885,11 @@ final class Painel {
         guard !medindo, !Dev.ativo else { return }
         Task {
             do { try await servicoHelper.unregister() } catch { helperErro = error.localizedDescription }
-            UserDefaults.standard.removeObject(forKey: "hashHelper")
             helper = servicoHelper.status
         }
     }
 
     func abrirItensDeInicio() { SMAppService.openSystemSettingsLoginItems() }
-
-    private static func hashHelper() -> String? {
-        let url = Bundle.main.bundleURL.appending(path: "Contents/MacOS/SDTallyHelper")
-        guard let d = try? Data(contentsOf: url) else { return nil }
-        return SHA256.hash(data: d).map { String(format: "%02x", $0) }.joined()
-    }
 
     func esquecerErro() { if case .senhaCancelada = medicao { medicao = .parada } }
 

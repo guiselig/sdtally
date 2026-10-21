@@ -51,6 +51,7 @@ final class Estado: @unchecked Sendable {
         }
     }
     func terminar() { trava.withLock { processo = nil; dono = nil; cancelado = false } }
+    var ocioso: Bool { trava.withLock { dono == nil } }
     /// SIGINT: o sdtally devolve o parcial marcado "interrupted" e sai com 130.
     func parar(de conexao: ObjectIdentifier) {
         trava.withLock {
@@ -155,6 +156,7 @@ func executar(uid: uid_t, conexao: ObjectIdentifier) throws -> Data {
 final class Autos: @unchecked Sendable {
     private let trava = NSLock()
     private var atual: (dono: ObjectIdentifier, p: Process, stdin: FileHandle)?
+    var ocioso: Bool { trava.withLock { atual == nil } }
 
     func iniciar(uid: uid_t, conexao: ObjectIdentifier) throws -> FileHandle {
         let env = try ambiente(uid: uid)
@@ -226,6 +228,19 @@ final class Servico: NSObject, HelperProtocolo {
 }
 
 final class Delegado: NSObject, NSXPCListenerDelegate {
+    /// Conexões vivas. Sem nenhuma e sem processo rodando, o helper sai: o launchd sobe de novo
+    /// na próxima conexão, já com o executável do app atualizado (sem registrar de novo).
+    private let abertas = Mutex(0)
+
+    private func sairSeOcioso() {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 10) { [self] in
+            guard abertas.withLock({ $0 }) == 0 else { return }
+            guard Cfg.estado.ocioso, Cfg.autos.ocioso else { return sairSeOcioso() }
+            Cfg.log.info("sem conexões; saindo")
+            exit(0)
+        }
+    }
+
     func listener(_ listener: NSXPCListener, shouldAcceptNewConnection c: NSXPCConnection) -> Bool {
         guard ehAdmin(c.effectiveUserIdentifier) else {
             Cfg.log.error("recusado: uid \(c.effectiveUserIdentifier) não é admin")
@@ -235,7 +250,11 @@ final class Delegado: NSObject, NSXPCListenerDelegate {
         c.exportedInterface = NSXPCInterface(with: HelperProtocolo.self)
         c.exportedObject = Servico(uid: c.effectiveUserIdentifier, id: id)
         // App fechou no meio: não deixa medição nem automático órfão.
-        c.invalidationHandler = { Cfg.estado.parar(de: id); Cfg.autos.parar(de: id) }
+        abertas.withLock { $0 += 1 }
+        c.invalidationHandler = { [self] in
+            Cfg.estado.parar(de: id); Cfg.autos.parar(de: id)
+            if abertas.withLock({ $0 -= 1; return $0 }) == 0 { sairSeOcioso() }
+        }
         c.resume()
         return true
     }
