@@ -20,6 +20,9 @@ pacote=$("$repo/app/montar.sh" | tail -1)
 zip=$(dirname "$pacote")/SDTally-$versao.zip
 ditto -c -k --keepParent "$pacote" "$zip"
 
-gh release create "v$versao" "$zip" -R guiselig/sdtally --target "$head" --title "SDTally $versao" \
+# 0.x sai marcado como Pre-release (beta) no GitHub.
+beta=
+case $versao in 0.*) beta=--prerelease ;; esac
+gh release create "v$versao" "$zip" -R guiselig/sdtally --target "$head" --title "SDTally $versao" $beta \
     --generate-notes --notes "Baixe o SDTally-$versao.zip, descompacte e arraste o SDTally.app para Aplicativos.
 O app não é notarizado pela Apple: na primeira vez, abra Ajustes do Sistema > Privacidade e Segurança e clique em \"Abrir Mesmo Assim\"."
