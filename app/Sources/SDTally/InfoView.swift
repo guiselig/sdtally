@@ -1,4 +1,4 @@
-// Informações (spec-fase5 §2.4 e §5): versão, commit, caminhos, Mac e "Para agentes de IA"
+// Informações (spec-fase5 §2.4 e §5): versão, caminhos, Mac e "Para agentes de IA"
 // (textos da spec-fase6 §5.8).
 // Dono: A2. API estável:
 //   InfoView()           lê Painel do ambiente
@@ -11,7 +11,6 @@ struct InfoView: View {
 
     var body: some View {
         let info = Bundle.main.infoDictionary ?? [:]
-        let tool = painel.rapido?.tool ?? painel.completo?.tool ?? "—"
         let bin = Executor.binario
         VStack(spacing: 0) {
         // Fora do Form: só o conteúdo, sem o cartão (fundo e contorno) de uma seção.
@@ -28,10 +27,7 @@ struct InfoView: View {
                     LabeledContent("Versão", value: String(localized: "Fora do .app (desenvolvimento)"))
                 } else {
                     LabeledContent("Versão", value: info["CFBundleShortVersionString"] as? String ?? "—")
-                    LabeledContent("Commit", value: info["SDTallyCommit"] as? String ?? "—")
                 }
-                LabeledContent("sdtally", value: tool)
-                LabeledContent("Formato do JSON", value: "schema 1")
             }
             Section {
                 LabeledContent("Repositório") {
@@ -87,13 +83,18 @@ struct InfoView: View {
         .contextMenu { if let p { MenuArquivo(caminho: p) } }
     }
 
+    /// Título numa linha, comando e Copiar na de baixo, em todos (o LabeledContent punha os curtos
+    /// numa linha só).
     private func comando(_ nome: String, _ c: String) -> some View {
-        LabeledContent(nome) {
-          HStack {
-            Text(c).font(.system(.callout, design: .monospaced)).textSelection(.enabled)
-                .lineLimit(1).truncationMode(.middle).help(c)
-            BotaoCopiar(texto: c)
-          }
+        VStack(alignment: .leading, spacing: 4) {
+            Text(nome)
+            HStack {
+                Text(c).font(.system(.callout, design: .monospaced)).textSelection(.enabled)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1).truncationMode(.middle).help(c)
+                Spacer(minLength: 8)
+                BotaoCopiar(texto: c)
+            }
         }
     }
 
