@@ -288,8 +288,8 @@ private struct BarraLateral: View {
             // do que o Informações do Configurações.
             lista([.info, .permissoes]).padding(.top, -15)
         }
-        // 14 pt a mais que o conteúdo: o primeiro ícone longe do semáforo.
-        .padding(.top, JanelaView.topoSemaforo - JanelaView.alturaTitulo + 14)
+        // 24 pt a mais que o conteúdo: o primeiro ícone longe do semáforo.
+        .padding(.top, JanelaView.topoSemaforo - JanelaView.alturaTitulo + 24)
         .padding(.bottom, 12)
         .frame(width: JanelaView.larguraBarra)
         .frame(maxHeight: .infinity)
