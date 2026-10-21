@@ -108,7 +108,10 @@ struct RotuloBarra: View {
             default: Text((painel.livre ?? painel.rapido?.capacity?.free).map(gb) ?? "—").monospacedDigit()
             }
         }
-        .onAppear { painel.abrirJanela = abrirJanela }
+        .onAppear {
+            painel.abrirJanela = abrirJanela
+            if painel.abrirAoAparecer { painel.abrirAoAparecer = false; painel.mostrar(painel.secao ?? .sistema) }
+        }
     }
 }
 

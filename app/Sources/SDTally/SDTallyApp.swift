@@ -140,7 +140,13 @@ private struct Menus: Commands {
 /// fechar a janela não fecha o app. Fora de um .app (binário cru com SDTALLY_BIN), vira app
 /// normal para ter Dock e janela na frente, e nunca toca nas notificações.
 final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate {
-    func applicationWillFinishLaunching(_ notification: Notification) { Foto.aoIniciar() }
+    /// Aberto pelo início de sessão: lido no evento de abertura, que só existe até aqui.
+    private var aoLogin = false
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        Foto.aoIniciar()
+        let e = NSAppleEventManager.shared().currentAppleEvent
+        aoLogin = e?.paramDescriptor(forKeyword: keyAEPropData)?.enumCodeValue == keyAELaunchedAsLogInItem
+    }
     func applicationDidFinishLaunching(_ notification: Notification) {
         if Dev.ativo {
             NSApp.setActivationPolicy(.regular)
@@ -149,6 +155,7 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
             UNUserNotificationCenter.current().delegate = self
         }
         Painel.unico.iniciar()
+        abrirSeFoiAMao()
         NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didWakeNotification, object: nil, queue: .main) { _ in
             Task { @MainActor in await Painel.unico.atualizar() }
         }
@@ -167,6 +174,17 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
     func applicationWillTerminate(_ notification: Notification) {
         Painel.unico.fecharAjustes()
         Painel.unico.pararEscuta()
+    }
+    /// Com o ícone na barra, a janela não abre sozinha (.suppressed), para o início de sessão
+    /// mostrar só o ícone. Aberto à mão (Finder, Dock, Spotlight), a janela abre.
+    private func abrirSeFoiAMao() {
+        guard !Dev.ativo, !aoLogin, UserDefaults.standard.bool(forKey: "barraDeMenus") else { return }
+        let p = Painel.unico
+        if p.abrirJanela != nil { p.mostrar(p.secao ?? .sistema) } else { p.abrirAoAparecer = true }
+    }
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag { Painel.unico.mostrar(Painel.unico.secao ?? .sistema) }
+        return true
     }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
         !UserDefaults.standard.bool(forKey: "barraDeMenus")

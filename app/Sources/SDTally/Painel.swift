@@ -157,6 +157,8 @@ final class Painel {
     private var inicioDaUltimaLeitura: Date?
     /// Abre a janela principal de fora do SwiftUI (clique na notificação); vem do rótulo da barra.
     @ObservationIgnored var abrirJanela: OpenWindowAction?
+    /// Aberto à mão antes do ícone da barra existir: o ícone abre a janela ao aparecer.
+    @ObservationIgnored var abrirAoAparecer = false
     /// Só no .app; o binário cru nunca grava histórico.
     private let pastaGravacao = Historico.pastaGravacao(bundleID: Bundle.main.bundleIdentifier)
     /// Pontos só são anotados depois de lidos do disco: antes, reescrever o arquivo os perderia.

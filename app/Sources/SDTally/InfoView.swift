@@ -1,4 +1,4 @@
-// Informações (spec-fase5 §2.4 e §5): versão, caminhos, Mac e "Para agentes de IA"
+// Informações (spec-fase5 §2.4 e §5): versão, caminhos, Mac e "Comandos" (para agentes de IA)
 // (textos da spec-fase6 §5.8).
 // Dono: A2. API estável:
 //   InfoView()           lê Painel do ambiente
@@ -55,11 +55,11 @@ struct InfoView: View {
                 let s = "\"\(bin ?? "sdtally")\""
                 comando(String(localized: "Leitura rápida"), "\(s) --quick --json --redact names")
                 comando(String(localized: "Última medição"), "\(s) --last --json --redact names")
-                comando("MCP (Claude Code)", "claude mcp add sdtally -- \(s) --mcp")
+                comando("MCP", "claude mcp add sdtally -- \(s) --mcp")
                 comando(String(localized: "Catálogo fontes"), "\(s) --catalog --json")
                 comando(String(localized: "Verificar"), "\(s) --verify")
             } header: {
-                Text("Para agentes de IA")
+                Text("Comandos")
                     .help("Pelo MCP, seu nome de usuário e os nomes de pastas pessoais são trocados antes de sair do sdtally (`--redact off` desliga). O SDTally não manda nada pela rede, mas o cliente de IA manda. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita no app.")
             }
         }
