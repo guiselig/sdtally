@@ -228,6 +228,7 @@ struct IconeSecao: View {
 }
 
 let urlRepositorio = URL(string: "https://github.com/guiselig/sdtally")!
+let urlVersoes = URL(string: "https://github.com/guiselig/sdtally/releases")!
 
 /// Barra lateral: só ícones (o nome de cada um vai no `.help`), sempre. De cima para baixo: as
 /// cinco seções, o Medir e o rodapé (Github, Informações e Configurações). As seções são `List`

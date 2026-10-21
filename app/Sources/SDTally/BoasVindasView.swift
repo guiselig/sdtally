@@ -42,7 +42,10 @@ struct BoasVindasView: View {
             Spacer(minLength: 0)
             rodape
         }
-        .frame(width: 560, height: pagina == 3 ? 640 : 460)
+        // Altura mínima, não fixa: em tailandês a página 3 passa de 640 e cortava o rodapé.
+        .frame(width: 560)
+        .frame(minHeight: pagina == 3 ? 640 : 460)
+        .fixedSize(horizontal: false, vertical: true)
         .animation(.smooth(duration: 0.25), value: pagina)
     }
 

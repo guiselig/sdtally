@@ -39,7 +39,7 @@ struct InfoView: View {
                         Link("github.com/guiselig/sdtally", destination: urlRepositorio)
                     }
                 }
-                LabeledContent("Licença", value: "MIT · © 2026 Guilherme Selig")
+                LabeledContent("Licença", value: "GPL-3.0-or-later · © 2026 Guilherme Selig")
                 LabeledContent("Assinatura", value: HelperXPC.timeProprio().map { String(localized: "Apple Development · time \($0)") } ?? "ad hoc")
                     .help(HelperXPC.timeProprio() == nil ? String(localized: "O Root sem Senha não funciona com assinatura ad hoc.") : "")
             }

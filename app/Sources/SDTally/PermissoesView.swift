@@ -61,6 +61,12 @@ struct PermissoesView: View {
             Section("Avançado") {
                 PickerAutoRoot()
             }
+            // Sem rede no app: a página de versões abre no navegador.
+            Section("Versões") {
+                LabeledContent("O SDTally não usa a rede: as versões novas ficam no GitHub.") {
+                    Button("Ver versões novas") { NSWorkspace.shared.open(urlVersoes) }
+                }
+            }
         }
         .formStyle(.grouped)
         // Sem o fundo próprio do Form (mais escuro): a cor da janela, igual ao cabeçalho.
@@ -91,12 +97,18 @@ struct LinhaPermissao<Botao: View>: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(nome).font(.headline)
                 ForEach(estados, id: \.self) { Text($0).font(.callout) }
-                if explicar { Text(serve).font(.callout).foregroundStyle(.secondary) }
+                // Nas boas-vindas o botão vai embaixo do texto: ao lado, cortava em de, el, hu e uk.
+                if explicar {
+                    Text(serve).font(.callout).foregroundStyle(.secondary)
+                    botao.fixedSize().padding(.top, 4)
+                }
             }
             .fixedSize(horizontal: false, vertical: true)
             .help(semEla.map { String(localized: "\(serve) Sem ela: \($0)") } ?? serve)
-            Spacer(minLength: 12)
-            botao
+            if !explicar {
+                Spacer(minLength: 12)
+                botao.fixedSize()
+            }
         }
         .padding(.vertical, 4)
         .accessibilityElement(children: .contain)
