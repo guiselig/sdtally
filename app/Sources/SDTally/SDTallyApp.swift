@@ -148,9 +148,11 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
     private var aoLogin = false
     func applicationWillFinishLaunching(_ notification: Notification) {
         Foto.aoIniciar()
-        Self.ajustarDock(janela: false)
         let e = NSAppleEventManager.shared().currentAppleEvent
         aoLogin = e?.paramDescriptor(forKeyword: keyAEPropData)?.enumCodeValue == keyAELaunchedAsLogInItem
+        // Só o início de sessão começa sem Dock. Aberto à mão a janela vem logo: ir a .accessory e
+        // voltar a .regular fazia o ícone aparecer, sumir e aparecer de novo na Dock.
+        if aoLogin { Self.ajustarDock(janela: false) }
     }
     func applicationDidFinishLaunching(_ notification: Notification) {
         if Dev.ativo {
