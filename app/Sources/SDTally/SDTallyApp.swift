@@ -54,6 +54,10 @@ private struct Menus: Commands {
         CommandGroup(replacing: .appInfo) {
             Button("Sobre o SDTally") { ir(.info) }
         }
+        // Janela única: abre a "principal" ou só a traz para a frente.
+        CommandGroup(replacing: .newItem) {
+            Button("Nova janela") { ir(painel.secao ?? .sistema) }.keyboardShortcut("n")
+        }
         CommandGroup(replacing: .appSettings) {
             Button("Ajustes…") { ir(.permissoes) }.keyboardShortcut(",")
             Button("Boas-vindas e dicas") { boasVindas() }
@@ -144,6 +148,7 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
     private var aoLogin = false
     func applicationWillFinishLaunching(_ notification: Notification) {
         Foto.aoIniciar()
+        Self.ajustarDock(janela: false)
         let e = NSAppleEventManager.shared().currentAppleEvent
         aoLogin = e?.paramDescriptor(forKeyword: keyAEPropData)?.enumCodeValue == keyAELaunchedAsLogInItem
     }
@@ -156,6 +161,13 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         }
         Painel.unico.iniciar()
         abrirSeFoiAMao()
+        // Ícone da barra desligado sem janela aberta: o app ficaria sem Dock e sem ícone. Abre a janela.
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { _ in
+            Task { @MainActor in
+                guard !Dev.ativo, !UserDefaults.standard.bool(forKey: "barraDeMenus"), NSApp.activationPolicy() == .accessory else { return }
+                Painel.unico.mostrar(Painel.unico.secao ?? .sistema)
+            }
+        }
         NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.didWakeNotification, object: nil, queue: .main) { _ in
             Task { @MainActor in await Painel.unico.atualizar() }
         }
@@ -181,6 +193,14 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         guard !Dev.ativo, !aoLogin, UserDefaults.standard.bool(forKey: "barraDeMenus") else { return }
         let p = Painel.unico
         if p.abrirJanela != nil { p.mostrar(p.secao ?? .sistema) } else { p.abrirAoAparecer = true }
+    }
+    /// Com o ícone na barra e sem a janela: sem Dock nem menus (.accessory). Com a janela, ou sem o
+    /// ícone: app normal (.regular), e a janela vem para a frente.
+    static func ajustarDock(janela: Bool) {
+        guard !Dev.ativo else { return }
+        let p: NSApplication.ActivationPolicy = janela || !UserDefaults.standard.bool(forKey: "barraDeMenus") ? .regular : .accessory
+        if NSApp.activationPolicy() != p { NSApp.setActivationPolicy(p) }
+        if janela { NSApp.activate() }
     }
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if !flag { Painel.unico.mostrar(Painel.unico.secao ?? .sistema) }
@@ -436,8 +456,10 @@ struct JanelaView: View {
         .modifier(AvisoInstalarRoot())
         .sheet(isPresented: $painel.mostrarBoasVindas) { BoasVindasView().environment(painel) }
         .onAppear {
+            Delegado.ajustarDock(janela: true)
             if !viuBoasVindas && Foto.env["SDTALLY_FOTO"] == nil { painel.mostrarBoasVindas = true }
         }
+        .onDisappear { Delegado.ajustarDock(janela: false) }
         .onChange(of: painel.secao) { _, s in if let s { ultimaSecao = s.rawValue } }
         .frame(width: Self.tamanho.width).frame(minHeight: Self.tamanho.height - Self.alturaTitulo, maxHeight: .infinity)
         .task {
