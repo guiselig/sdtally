@@ -772,11 +772,12 @@ final class Painel {
         }
     }
 
-    /// A medição com senha de qualquer botão: liga o Manual na hora (o cronômetro fica lá); se a
-    /// senha for cancelada, volta ao modo de antes.
+    /// A medição com senha de qualquer botão: vai para Dados do Sistema e liga o Manual na hora
+    /// (o cronômetro fica lá); se a senha for cancelada, volta ao modo de antes.
     func medirComSenha() {
         guard !medindo else { return }
         voltarAoAuto = !manual
+        secao = .sistema
         withAnimation(.smooth(duration: 0.3)) { manual = true }
         medir(admin: true)
     }
