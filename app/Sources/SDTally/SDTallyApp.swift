@@ -202,6 +202,14 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         if NSApp.activationPolicy() != p { NSApp.setActivationPolicy(p) }
         if janela { NSApp.activate() }
     }
+    /// Aberta à mão, a janela às vezes vinha minimizada na Dock (estado restaurado, ou pedida com o
+    /// app ainda .accessory): tira da Dock e põe na frente.
+    static func trazerJanela() {
+        for w in NSApp.windows where w.isMiniaturized { w.deminiaturize(nil) }
+        NSApp.windows.first { $0.identifier?.rawValue.hasPrefix("principal") == true }?.makeKeyAndOrderFront(nil)
+        NSApp.activate()
+    }
+
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if !flag { Painel.unico.mostrar(Painel.unico.secao ?? .sistema) }
         return true
@@ -407,7 +415,10 @@ private struct NaTelaPrincipal: NSViewRepresentable {
         override func viewDidMoveToWindow() {
             guard let w = window, let v = telaPrincipal()?.visibleFrame else { return }
             // Depois do placement do SwiftUI, que viria por cima.
-            DispatchQueue.main.async { w.setFrame(NSRect(x: v.minX, y: v.minY, width: w.frame.width, height: v.height), display: true) }
+            DispatchQueue.main.async {
+                w.setFrame(NSRect(x: v.minX, y: v.minY, width: w.frame.width, height: v.height), display: true)
+                Delegado.trazerJanela()
+            }
         }
     }
 }

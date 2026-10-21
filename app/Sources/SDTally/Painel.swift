@@ -850,7 +850,7 @@ final class Painel {
     func mostrar(_ s: Secao) {
         secao = s
         abrirJanela?(id: "principal")
-        NSApp.activate()
+        Delegado.trazerJanela()
     }
 
     // MARK: Helper root
