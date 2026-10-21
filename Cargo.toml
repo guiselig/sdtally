@@ -3,7 +3,7 @@ name = "sdtally"
 version = "0.1.0-dev"
 edition = "2024"
 description = "Explica o \"Dados do Sistema\" do macOS com medição, sem estimativa (Apple Silicon, macOS 15+)"
-license = "MIT"
+license = "GPL-3.0-or-later"
 repository = "https://github.com/guiselig/sdtally"
 
 [dependencies]

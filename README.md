@@ -156,4 +156,4 @@ sudo "$CARGO_TARGET_DIR/release/sdc-coleta" --saida relatorio.json      # só le
 
 ## Licença
 
-MIT. Ver [LICENSE](LICENSE).
+GPL-3.0-or-later. Copyright (C) 2026 Guilherme Selig. Ver [LICENSE](LICENSE): pode usar, estudar, modificar e redistribuir; quem distribuir uma versão modificada tem que abrir o código dela sob a mesma licença.
