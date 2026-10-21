@@ -57,7 +57,7 @@ Derivados diretamente da auditoria. Cada um corresponde a um erro real observado
 - App SwiftUI (`app/`): Início, Dados do Sistema, Pastas maiores e Histórico das medições salvas; só lê, recomenda e nunca apaga.
 - Medidor root opcional (`SDTallyHelper`, LaunchDaemon aprovado uma vez): mede como root sem pedir senha a cada vez.
 - Acesso por IA: `--quick`, `--last`, `--history`, `--stdin` e servidor MCP (`--mcp`), com redação de nomes.
-- CI só manual (`workflow_dispatch`): o repositório é privado e o minuto de macOS não é gratuito; os testes rodam localmente.
+- CI a cada push no `main` e em pull request, em macOS 15, 26 e 27 (runners padrão, gratuitos em repositório público).
 
 Plano original (revisado em 2026-09-26): CLI em **Rust**, só leitura primeiro (escaneia, fecha a conta
 do volume, explica cada fatia); recomendações do que fazer depois, sem apagar nada; app gráfico só se o

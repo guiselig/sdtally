@@ -2,9 +2,11 @@
 # O passo com sudo roda os fsctl privados do APFS nas versões que a máquina do dono não tem.
 name: ci
 
-# Só manual: repo privado, e o minuto de macOS é pago (10x). O dono não quer custo pessoal (13/10/2026).
-# Os testes rodam na máquina antes de cada merge. Quando o repo for público, voltar push e pull_request.
+# Repo público: os runners macOS padrão do GitHub são gratuitos. Só eles (nada de runner maior, que é pago).
 on:
+  push:
+    branches: [main]
+  pull_request:
   workflow_dispatch:
 
 jobs:
