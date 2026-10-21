@@ -60,7 +60,7 @@ private func completo(_ muda: (inout [String: Any]) -> Void) throws -> Completo 
     try FileManager.default.createSymbolicLink(at: dir.appending(path: "2025-01-01-0000.json"), withDestinationURL: alvo)
     let agora = try #require(data("2026-10-02 12:00:00"))
     try Historico.gravarPontos([
-        Ponto(t: "2026-06-01 10:00:00", total: nil, usado: nil, livre: nil, purgeable: nil, systemData: nil, telaEm: nil),
+        Ponto(t: "2025-06-01 10:00:00", total: nil, usado: nil, livre: nil, purgeable: nil, systemData: nil, telaEm: nil),
         Ponto(t: "2026-10-01 10:00:00", total: nil, usado: nil, livre: nil, purgeable: nil, systemData: nil, telaEm: nil),
     ], em: tmp)
     try Historico.podar(url: tmp, agora: agora)
@@ -181,4 +181,17 @@ private func completo(_ muda: (inout [String: Any]) -> Void) throws -> Completo 
     #expect(novo.systemData == nil && novo.telaEm == nil)
     #expect(Historico.leituraAnterior([antigo], telaEm: "2026-10-02 10:00:00.1-0300") == antigo)
     #expect(Historico.leituraAnterior([antigo], telaEm: p.telaEm) == nil)
+}
+
+/// Pastas do Histórico: primeira e última amostra de cada uma; precisa de duas; ordem pelo tamanho da mudança.
+@MainActor @Test func variacoesDePastas() {
+    let gb: Int64 = 1_000_000_000
+    let a = [
+        PontoPastas(t: "2026-10-20 10:00:00", pastas: ["/a": 1 * gb, "/b": 5 * gb, "/so-uma": 9 * gb]),
+        PontoPastas(t: "2026-10-20 11:00:00", pastas: ["/b": 2 * gb]),
+        PontoPastas(t: "2026-10-20 12:00:00", pastas: ["/a": 4 * gb, "/b": 2 * gb + 1]),
+    ]
+    #expect(variacoesPastas(a) == [VariacaoPasta(id: "/a", antes: 1 * gb, depois: 4 * gb), VariacaoPasta(id: "/b", antes: 5 * gb, depois: 2 * gb + 1)])
+    #expect(variacoesPastas(Array(a.prefix(1))).isEmpty)
+    #expect(PeriodoHistorico.semana.inicio(data("2026-10-21 12:00:00")!) == data("2026-10-14 12:00:00"))
 }

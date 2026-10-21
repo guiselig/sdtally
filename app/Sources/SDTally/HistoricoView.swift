@@ -1,42 +1,54 @@
-// Histórico (spec-fase5 §4.1): gráfico, "O que mudou desde a última vez" e a lista das medições.
+// Histórico (spec-fase5 §4.1): período e data, gráfico, pastas, "O que mudou desde a última vez" e
+// as medições manuais.
 //   HistoricoView()      lê Painel do ambiente
 //   GraficoHistorico     LineMark + AreaMark, PointMark de Dados do Sistema, chartXSelection
 import Charts
 import SwiftUI
 
-/// Automático: o gráfico dos pontos de hora em hora (sem senha). Manual: "O que mudou" e a lista
-/// das Medições completas salvas.
+/// Uma página só, nos dois modos: o período (Hora a Ano, terminando na data escolhida), o espaço
+/// usado, as pastas que mais mudaram e as medições manuais do período.
 struct HistoricoView: View {
     @Environment(Painel.self) private var painel
+    @State private var periodo = PeriodoHistorico.semana
+    @State private var dia = Date.now
     private static let desligado = Historico.pastaLeitura(env: Foto.env, bundleID: Bundle.main.bundleIdentifier) == nil
 
     var body: some View {
-        if painel.manual ? painel.medicoes.isEmpty : painel.pontos.isEmpty {
+        if painel.pontos.isEmpty && painel.pontosPastas.isEmpty && painel.medicoes.isEmpty {
             ContentUnavailableView {
                 Label("Histórico", systemImage: "chart.xyaxis.line")
             } description: {
                 Text(Self.desligado ? String(localized: "Histórico desligado fora do .app (desenvolvimento).")
-                     : painel.manual ? String(localized: "Nenhuma medição completa salva.") : String(localized: "Nenhum ponto salvo ainda: o primeiro entra na próxima hora."))
-            } actions: {
-                if painel.manual && !Self.desligado {
-                    Button("Medir com senha") { painel.medirComSenha() }.disabled(painel.medindo)
-                }
+                     : String(localized: "Nenhum ponto salvo ainda: o primeiro entra na próxima hora."))
             }
         } else {
+            // Hoje: até agora. Outro dia: até o fim dele.
+            let fim = Calendar.current.isDateInToday(dia) ? Date.now
+                : Calendar.current.date(byAdding: .second, value: -1, to: Calendar.current.startOfDay(for: dia).addingTimeInterval(86_400)) ?? dia
+            let inicio = periodo.inicio(fim)
+            let noPeriodo = { (t: String) in data(t).map { $0 >= inicio && $0 <= fim } ?? false }
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
-                    if !painel.manual {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text("Espaço usado").font(.title3.weight(.semibold))
-                                .help("Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Os pontos são Dados do Sistema, só onde a tela do Ajustes foi lida.")
-                            GraficoHistorico(pontos: painel.pontos).frame(height: 240)
+                    // Numa linha quando cabe; senão a data desce (línguas de rótulos longos).
+                    ViewThatFits(in: .horizontal) {
+                        HStack { seletorPeriodo; Spacer(minLength: 12); seletorData }
+                        VStack(alignment: .leading, spacing: 10) { seletorPeriodo; seletorData }
+                    }
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Espaço usado").font(.title3.weight(.semibold))
+                            .help("Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Os pontos são Dados do Sistema, só onde a tela do Ajustes foi lida.")
+                        let pontos = painel.pontos.filter { noPeriodo($0.t) }
+                        if pontos.isEmpty {
+                            Text("Nenhum ponto neste período.").foregroundStyle(.secondary)
+                        } else {
+                            GraficoHistorico(pontos: pontos, inicio: inicio, fim: fim, periodo: periodo).frame(height: 240)
                         }
+                    }
+                    .cartao()
+                    PastasNoPeriodo(amostras: painel.pontosPastas.filter { noPeriodo($0.t) }, inicio: inicio, fim: fim, periodo: periodo)
                         .cartao()
-                    }
-                    if painel.manual {
-                        OQueMudou(medicoes: painel.medicoes).cartao()
-                        ListaMedicoes(medicoes: painel.medicoes).cartao()
-                    }
+                    OQueMudou(medicoes: painel.medicoes).cartao()
+                    ListaMedicoes(medicoes: painel.medicoes.filter { noPeriodo($0.completo.generatedAt) }).cartao()
                 }
                 .padding(24)
                 .frame(maxWidth: 760)
@@ -46,12 +58,161 @@ struct HistoricoView: View {
     }
 }
 
+extension HistoricoView {
+    private var seletorPeriodo: some View {
+        Picker("Período", selection: $periodo) {
+            ForEach(PeriodoHistorico.allCases) { Text($0.nome).tag($0) }
+        }
+        .pickerStyle(.segmented).labelsHidden().fixedSize()
+    }
+
+    private var seletorData: some View {
+        DatePicker("Até", selection: $dia, in: ...Date.now, displayedComponents: .date).fixedSize()
+    }
+}
+
+/// Janela do Histórico, sempre terminando no `fim` escolhido. Mês é o mês de calendário para trás.
+enum PeriodoHistorico: CaseIterable, Identifiable {
+    case hora, dia, semana, mes, trintaDias, ano
+    var id: Self { self }
+
+    var nome: String {
+        switch self {
+        case .hora: String(localized: "Hora (período)", defaultValue: "Hora")  // "Hora" já é o eixo ("Time")
+        case .dia: String(localized: "Dia")
+        case .semana: String(localized: "Semana")
+        case .mes: String(localized: "Mês")
+        case .trintaDias: String(localized: "30 dias")
+        case .ano: String(localized: "Ano")
+        }
+    }
+
+    func inicio(_ fim: Date) -> Date {
+        let c = Calendar.current
+        return switch self {
+        case .hora: fim.addingTimeInterval(-3600)
+        case .dia: fim.addingTimeInterval(-86_400)
+        case .semana: fim.addingTimeInterval(-7 * 86_400)
+        case .mes: c.date(byAdding: .month, value: -1, to: fim) ?? fim.addingTimeInterval(-30 * 86_400)
+        case .trintaDias: fim.addingTimeInterval(-30 * 86_400)
+        case .ano: c.date(byAdding: .year, value: -1, to: fim) ?? fim.addingTimeInterval(-365 * 86_400)
+        }
+    }
+
+    /// Marcas do eixo X: de quanto em quanto e com que formato.
+    var passo: (Calendar.Component, Int) {
+        switch self {
+        case .hora: (.minute, 15)
+        case .dia: (.hour, 4)
+        case .semana: (.day, 1)
+        case .mes, .trintaDias: (.day, 7)
+        case .ano: (.month, 1)
+        }
+    }
+
+    var formato: Date.FormatStyle {
+        switch self {
+        case .hora, .dia: .dateTime.hour().minute().locale(localApp)
+        case .semana, .mes, .trintaDias: .dateTime.day(.twoDigits).month(.twoDigits).locale(localApp)
+        case .ano: .dateTime.month(.abbreviated).locale(localApp)
+        }
+    }
+}
+
+// MARK: - Pastas
+
+/// Pastas que mais mudaram no período, pela primeira e a última amostra em que cada uma aparece
+/// (ausente numa hora não é zero: só não estava entre as maiores). Clicar mostra a linha dela.
+private struct PastasNoPeriodo: View {
+    let amostras: [PontoPastas]
+    let inicio, fim: Date
+    let periodo: PeriodoHistorico
+    @State private var escolhida: String?
+
+    var body: some View {
+        let lista = variacoesPastas(amostras)
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Pastas").font(.title3.weight(.semibold))
+                .help("Uma amostra por hora das maiores pastas do Automático, guardada por 90 dias. Uma pasta só entra na conta quando aparece em duas amostras do período.")
+            if lista.isEmpty {
+                Text("Sem duas amostras de pastas neste período.").foregroundStyle(.secondary)
+            } else {
+                ForEach(lista) { v in
+                    Button { escolhida = escolhida == v.id ? nil : v.id } label: { linha(v) }
+                        .buttonStyle(.plain)
+                }
+                if let p = escolhida {
+                    let pontos = amostras.compactMap { a in a.pastas[p].flatMap { b in data(a.t).map { ($0, Double(b) / 1e9) } } }
+                    Text((p as NSString).abbreviatingWithTildeInPath).font(.caption).foregroundStyle(.secondary)
+                        .lineLimit(1).truncationMode(.middle).padding(.top, 6)
+                    Chart(pontos, id: \.0) { d, g in
+                        LineMark(x: .value("Hora", d), y: .value("GB", g)).foregroundStyle(Color.teal)
+                        PointMark(x: .value("Hora", d), y: .value("GB", g)).foregroundStyle(Color.teal).symbolSize(20)
+                    }
+                    .chartXScale(domain: inicio...fim)
+                    .chartYAxis { AxisMarks { v in AxisGridLine(); AxisValueLabel { if let g = v.as(Double.self) { Text(gb(Int64(g * 1e9))) } } } }
+                    .chartXAxis { AxisMarks(values: .stride(by: periodo.passo.0, count: periodo.passo.1)) { _ in AxisGridLine(); AxisValueLabel(format: periodo.formato) } }
+                    .frame(height: 160)
+                    .environment(\.locale, localApp)
+                } else {
+                    Text("Clique numa pasta para ver a linha dela.").font(.caption).foregroundStyle(.secondary)
+                }
+            }
+        }
+    }
+
+    private func linha(_ v: VariacaoPasta) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 10) {
+            Image(systemName: v.delta >= 0 ? "arrow.up.right" : "arrow.down.right")
+                .foregroundStyle(.secondary).frame(width: 18).accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 2) {
+                Text((v.id as NSString).abbreviatingWithTildeInPath).lineLimit(1).truncationMode(.middle)
+                Text(verbatim: "\(gb(v.antes)) → \(gb(v.depois))").font(.caption).foregroundStyle(.secondary)
+            }
+            Spacer(minLength: 12)
+            Text((v.delta >= 0 ? "+" : "−") + gb(abs(v.delta))).monospacedDigit().fontWeight(.semibold)
+        }
+        .padding(.vertical, 2)
+        .background(escolhida == v.id ? AnyShapeStyle(.quaternary) : AnyShapeStyle(.clear), in: .rect(cornerRadius: 6))
+        .contentShape(.rect)
+        .accessibilityElement(children: .combine)
+    }
+}
+
+/// Uma pasta entre a primeira e a última amostra em que aparece no período.
+struct VariacaoPasta: Identifiable, Equatable {
+    let id: String
+    let antes, depois: Int64
+    var delta: Int64 { depois - antes }
+}
+
+/// As 10 maiores variações (para mais ou para menos), de 10 MB ou mais, só de pastas que aparecem
+/// em duas amostras ou mais.
+func variacoesPastas(_ amostras: [PontoPastas]) -> [VariacaoPasta] {
+    var primeiro: [String: Int64] = [:], ultimo: [String: Int64] = [:], vezes: [String: Int] = [:]
+    for a in amostras {
+        for (p, b) in a.pastas {
+            if primeiro[p] == nil { primeiro[p] = b }
+            ultimo[p] = b
+            vezes[p, default: 0] += 1
+        }
+    }
+    return primeiro.compactMap { p, a in
+        guard (vezes[p] ?? 0) >= 2, let d = ultimo[p], abs(d - a) >= 10_000_000 else { return nil }
+        return VariacaoPasta(id: p, antes: a, depois: d)
+    }
+    .sorted { abs($0.delta) > abs($1.delta) }
+    .prefix(10).map { $0 }
+}
+
 // MARK: - Gráfico
 
 /// Linha e área de (usado − purgeable); Dados do Sistema só como ponto, onde houve tela (sem
 /// interpolar). Passar o mouse mostra os valores da hora mais próxima.
 struct GraficoHistorico: View {
     let pontos: [Ponto]
+    let inicio, fim: Date
+    let periodo: PeriodoHistorico
     @State private var selecao: Date?
 
     private struct Item {
@@ -107,10 +268,11 @@ struct GraficoHistorico: View {
                 AxisValueLabel { if let g = v.as(Double.self) { Text("\(Int(g)) GB") } }
             }
         }
+        .chartXScale(domain: inicio...fim)
         .chartXAxis {
-            AxisMarks(values: .stride(by: .day)) { _ in
+            AxisMarks(values: .stride(by: periodo.passo.0, count: periodo.passo.1)) { _ in
                 AxisGridLine()
-                AxisValueLabel(format: .dateTime.day(.twoDigits).month(.twoDigits))
+                AxisValueLabel(format: periodo.formato)
             }
         }
         .chartXSelection(value: $selecao)
@@ -185,9 +347,9 @@ private struct ListaMedicoes: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Medições salvas").font(.title3.weight(.semibold))
+            Text("Medições manuais").font(.title3.weight(.semibold))
             if medicoes.isEmpty {
-                Text("Nenhuma medição salva").foregroundStyle(.secondary)
+                Text("Nenhuma medição neste período.").foregroundStyle(.secondary)
             } else {
                 Grid(alignment: .leading, horizontalSpacing: 16, verticalSpacing: 8) {
                     GridRow {

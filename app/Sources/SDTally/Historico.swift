@@ -161,9 +161,9 @@ nonisolated enum Historico {
         return pontos.filter { data($0.t).map { $0 >= corte } ?? false }
     }
 
-    /// Pontos de até 90 dias.
+    /// Pontos de até 400 dias (o filtro Ano do Histórico; uma linha por hora, ~1 MB por ano).
     static func recentes(_ pontos: [Ponto], agora: Date = .now) -> [Ponto] {
-        let corte = agora.addingTimeInterval(-90 * 86_400)
+        let corte = agora.addingTimeInterval(-400 * 86_400)
         return pontos.filter { data($0.t).map { $0 >= corte } ?? false }
     }
 
