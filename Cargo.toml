@@ -1,0 +1,16 @@
+[package]
+name = "sdtally"
+version = "0.1.0-dev"
+edition = "2024"
+description = "Explica o \"Dados do Sistema\" do macOS com medição, sem estimativa (Apple Silicon, macOS 15+)"
+license = "MIT"
+repository = "https://github.com/guiselig/sdtally"
+
+[dependencies]
+libc = "0.2.189"
+serde_json = "1"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true

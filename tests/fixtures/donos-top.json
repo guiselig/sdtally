@@ -1,0 +1,26 @@
+{
+  "home": "/Users/exemplo",
+  "top": [
+    {"path": "~/Library/Containers/com.exemplo.App/Data", "term": "tree", "bytes": 900, "folded": false},
+    {"path": "~/Library/Containers/com.terceiro.Removido/Data", "term": "tree", "bytes": 800, "folded": false},
+    {"path": "~/Library/Containers/com.apple.mediaanalysisd/Data", "term": "tree", "bytes": 700, "folded": false},
+    {"path": "~/Library/Containers/sem-xattr/Data", "term": "tree", "bytes": 600, "folded": false},
+    {"path": "~/Library/Application Support/com.exemplo.App/Cache", "term": "tree", "bytes": 500, "folded": false},
+    {"path": "~/Library/Application Support/exemplo/Dados", "term": "tree", "bytes": 400, "folded": false},
+    {"path": "~/Library/Application Support/Repetido", "term": "tree", "bytes": 300, "folded": false},
+    {"path": "~/Library/Application Support/Binario", "term": "tree", "bytes": 290, "folded": false},
+    {"path": "~/Library/Application Support/Fabrica/Produto", "term": "tree", "bytes": 285, "folded": false},
+    {"path": "~/Library/Caches/Homebrew/downloads", "term": "tree", "bytes": 280, "folded": false},
+    {"path": "~/Library/Caches/com.apple.bird", "term": "tree", "bytes": 270, "folded": false},
+    {"path": "/Applications/Exemplo.app/Contents/Frameworks", "term": "tree", "bytes": 260, "folded": false},
+    {"path": "/Applications/Pasta Solta/Aninhado.app/Contents", "term": "tree", "bytes": 250, "folded": false},
+    {"path": "/Applications/Sem Plist.app/Contents", "term": "tree", "bytes": 240, "folded": false},
+    {"path": "/Applications", "term": "tree", "bytes": 230, "folded": true},
+    {"path": "~/Library/Application Support", "term": "tree", "bytes": 220, "folded": true},
+    {"path": "~/Library/Mobile Documents/iCloud~com~exemplo~App", "term": "tree", "bytes": 210, "folded": false},
+    {"path": "~/Library/Mobile Documents/57T9237FN3~com~exemplo~App", "term": "tree", "bytes": 200, "folded": false},
+    {"path": "~/Library/Mobile Documents/com~apple~CloudDocs", "term": "tree", "bytes": 190, "folded": false},
+    {"path": "~/dev", "term": "tree", "bytes": 180, "folded": false},
+    {"term": "snapshots", "bytes": 170, "count": 3, "folded": false}
+  ]
+}

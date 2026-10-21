@@ -1,0 +1,182 @@
+{
+ "schema_version": 1,
+ "kind": "quick",
+ "tool": "sdtally 0.1.0-dev",
+ "generated_at": "2026-10-02 09:29:46",
+ "macos_version": "27.0",
+ "home": "/Users/exemplo",
+ "root": false,
+ "full_disk_access": true,
+ "interrupted": false,
+ "settings_screen": {
+  "macos": {
+   "bytes": 38733246464,
+   "state": "measured",
+   "reason": null,
+   "source": "diskutil_capacity_in_use"
+  },
+  "screen": {
+   "state": "measured",
+   "reason": null,
+   "logged_at": "2026-10-02 09:29:42.302128-0300",
+   "used": 400000000000,
+   "available": 94000000000,
+   "capacity": 494384795648,
+   "system_data": 221266053536,
+   "categories_total": 140000700000,
+   "categories": [
+    {
+     "id": "com.apple.STMExtension.Applications",
+     "bytes": 80000000000
+    },
+    {
+     "id": "com.apple.STMExtension.Documents",
+     "bytes": 60000000000
+    },
+    {
+     "id": "com.apple.STMExtension.Trash",
+     "bytes": 700000
+    }
+   ],
+   "service": {
+    "logged_at": "2026-10-02 09:29:37.956458-0300",
+    "total": 494384795648,
+    "available": 95000000000,
+    "purgeable": 47000000000,
+    "other_volumes": 600000000,
+    "used": 390000000000,
+    "system": 23000000000,
+    "other": 226999300000
+   },
+   "source": "settings_ui_log"
+  }
+ },
+ "data_volume": {
+  "used": {
+   "bytes": 410000000000,
+   "state": "measured",
+   "reason": null,
+   "source": "attr_vol_spaceused"
+  }
+ },
+ "capacity": {
+  "total": 494384795648,
+  "free": 47000000000,
+  "source": "statfs"
+ },
+ "purgeable": {
+  "bytes": 47000000000,
+  "state": "measured",
+  "reason": null,
+  "source": "cachedelete",
+  "top_services": [
+   {
+    "name": "com.apple.TMCacheDelete",
+    "bytes": 41000000000
+   },
+   {
+    "name": "com.apple.fspurgeable_data",
+    "bytes": 4000000000
+   },
+   {
+    "name": "com.apple.metadata.mds.cachedelete",
+    "bytes": 2000000000
+   }
+  ]
+ },
+ "stage_errors": [],
+ "containers": [
+  {
+   "internal": true,
+   "isc": false,
+   "holds_data": true,
+   "ceiling": 494384795648,
+   "free": 47000000000,
+   "volumes": [
+    {
+     "roles": [
+      "System"
+     ],
+     "capacity_in_use": 20000000000,
+     "in_settings_macos": true
+    },
+    {
+     "roles": [
+      "Data"
+     ],
+     "capacity_in_use": 410000000000,
+     "in_settings_macos": false
+    },
+    {
+     "roles": [
+      "Preboot"
+     ],
+     "capacity_in_use": 7100000000,
+     "in_settings_macos": true
+    },
+    {
+     "roles": [
+      "Recovery"
+     ],
+     "capacity_in_use": 1250000000,
+     "in_settings_macos": true
+    },
+    {
+     "roles": [
+      "VM"
+     ],
+     "capacity_in_use": 6442450944,
+     "in_settings_macos": true
+    },
+    {
+     "roles": [
+      "Update"
+     ],
+     "capacity_in_use": 3940795520,
+     "in_settings_macos": true
+    }
+   ]
+  },
+  {
+   "internal": true,
+   "isc": true,
+   "holds_data": false,
+   "ceiling": 524288000,
+   "free": 507510784,
+   "volumes": [
+    {
+     "roles": [
+      "xART"
+     ],
+     "capacity_in_use": 6291456,
+     "in_settings_macos": false
+    },
+    {
+     "roles": [
+      "Hardware"
+     ],
+     "capacity_in_use": 10485760,
+     "in_settings_macos": false
+    }
+   ]
+  },
+  {
+   "internal": false,
+   "isc": false,
+   "holds_data": false,
+   "ceiling": 1000000000000,
+   "free": 600000000000,
+   "volumes": [
+    {
+     "roles": [],
+     "capacity_in_use": 400000000000,
+     "in_settings_macos": false
+    }
+   ]
+  }
+ ],
+ "swap": {
+  "total": 8589934592,
+  "used": 7000000000
+ }
+}

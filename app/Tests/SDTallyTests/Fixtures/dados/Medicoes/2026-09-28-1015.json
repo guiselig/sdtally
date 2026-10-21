@@ -1,0 +1,412 @@
+{
+ "schema_version": 1,
+ "home": "/Users/exemplo",
+ "tool": "sdtally 0.0.9-dev",
+ "generated_at": "2026-09-28 10:15",
+ "macos_version": "27.0",
+ "complete": false,
+ "incomplete_reasons": [
+  "no_root"
+ ],
+ "root": false,
+ "full_disk_access": true,
+ "denied_folders": 251,
+ "settings_screen": {
+  "macos": {
+   "bytes": 38733246464,
+   "state": "measured",
+   "reason": null,
+   "source": "diskutil_capacity_in_use"
+  },
+  "apple_intelligence": {
+   "bytes": 26590000000,
+   "state": "measured",
+   "reason": null,
+   "source": "diskutil_capacity_in_use",
+   "physical": {
+    "bytes": 17500000000,
+    "state": "measured",
+    "reason": null,
+    "source": "fsctl_dir_stats"
+   }
+  },
+  "system_data": {
+   "bytes": 168000000000,
+   "state": "measured",
+   "reason": null,
+   "source": "storage_management_log",
+   "logged_at": "2026-10-02 09:30"
+  },
+  "screen": {
+   "state": "measured",
+   "reason": null,
+   "logged_at": "2026-10-02 09:29:42.302128-0300",
+   "used": 400000000000,
+   "available": 94000000000,
+   "capacity": 494384795648,
+   "system_data": 221266053536,
+   "categories_total": 140000700000,
+   "categories": [
+    {
+     "id": "com.apple.STMExtension.Applications",
+     "bytes": 80000000000
+    },
+    {
+     "id": "com.apple.STMExtension.Documents",
+     "bytes": 60000000000
+    },
+    {
+     "id": "com.apple.STMExtension.Trash",
+     "bytes": 700000
+    }
+   ],
+   "service": {
+    "logged_at": "2026-10-02 09:29:37.956458-0300",
+    "total": 494384795648,
+    "available": 95000000000,
+    "purgeable": 47000000000,
+    "other_volumes": 600000000,
+    "used": 390000000000,
+    "system": 23000000000,
+    "other": 226999300000
+   },
+   "source": "settings_ui_log"
+  }
+ },
+ "data_volume": {
+  "used": {
+   "bytes": 410000000000,
+   "state": "measured",
+   "reason": null,
+   "source": "attr_vol_spaceused"
+  },
+  "terms": [
+   {
+    "bytes": 288000000000,
+    "state": "measured",
+    "reason": null,
+    "source": "getattrlistbulk",
+    "key": "tree"
+   },
+   {
+    "bytes": null,
+    "state": "not_measured",
+    "reason": "no root",
+    "source": "listxattr",
+    "key": "large_xattrs"
+   },
+   {
+    "bytes": 60000000000,
+    "state": "measured",
+    "reason": null,
+    "source": "fsctl_snapshot_private_size",
+    "key": "snapshots"
+   },
+   {
+    "bytes": 1000000000,
+    "state": "measured",
+    "reason": null,
+    "source": "lsof_proc_pidfdinfo",
+    "key": "deleted_open"
+   },
+   {
+    "bytes": 20000000000,
+    "state": "partial",
+    "reason": null,
+    "source": "fsctl_dir_stats",
+    "key": "protected_folders"
+   }
+  ],
+  "unexplained": {
+   "bytes": 41000000000,
+   "percent_of_used": 10.0,
+   "state": "partial",
+   "source": "difference"
+  }
+ },
+ "top": [
+  {
+   "path": "~/Library",
+   "folded": true,
+   "term": "tree",
+   "bytes": 80000000000,
+   "private_bytes": 1000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "/Applications",
+   "folded": false,
+   "term": "tree",
+   "bytes": 60000000000,
+   "private_bytes": 59000000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": null,
+   "folded": false,
+   "term": "snapshots",
+   "bytes": 60000000000,
+   "private_bytes": null,
+   "lower_bound": false,
+   "count": 8,
+   "top_process": null,
+   "source": "fsctl_snapshot_private_size"
+  },
+  {
+   "path": "~/Music",
+   "folded": false,
+   "term": "tree",
+   "bytes": 38000000000,
+   "private_bytes": 13000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/Documents",
+   "folded": false,
+   "term": "tree",
+   "bytes": 20000000000,
+   "private_bytes": 19000000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "/System/Library/AssetsV2",
+   "folded": false,
+   "term": "protected_folders",
+   "bytes": 20000000000,
+   "private_bytes": null,
+   "lower_bound": true,
+   "count": null,
+   "top_process": null,
+   "source": "fsctl_dir_stats"
+  },
+  {
+   "path": "~/Library/Developer/CoreSimulator/Devices",
+   "folded": false,
+   "term": "tree",
+   "bytes": 14000000000,
+   "private_bytes": 13000000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/Library/Mobile Documents/com~apple~CloudDocs",
+   "folded": false,
+   "term": "tree",
+   "bytes": 12000000000,
+   "private_bytes": 12000000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/Library/Application Support/Claude/vm_bundles",
+   "folded": false,
+   "term": "tree",
+   "bytes": 10000000000,
+   "private_bytes": 10000000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/Library/Developer/Xcode/DerivedData",
+   "folded": false,
+   "term": "tree",
+   "bytes": 9000000000,
+   "private_bytes": 8500000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/Library/Containers/com.exemplo.Mensageiro",
+   "folded": false,
+   "term": "tree",
+   "bytes": 8600000000,
+   "private_bytes": 8199999999,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "/private/var/db",
+   "folded": false,
+   "term": "tree",
+   "bytes": 7000000000,
+   "private_bytes": 7000000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/Library/Caches",
+   "folded": true,
+   "term": "tree",
+   "bytes": 6000000000,
+   "private_bytes": 5000000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "/Library",
+   "folded": false,
+   "term": "tree",
+   "bytes": 5000000000,
+   "private_bytes": 4800000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "/private/var/vm",
+   "folded": false,
+   "term": "tree",
+   "bytes": 4300000000,
+   "private_bytes": 4300000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/Library/Caches/Homebrew",
+   "folded": false,
+   "term": "tree",
+   "bytes": 3200000000,
+   "private_bytes": 3200000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "/private/var/folders",
+   "folded": false,
+   "term": "tree",
+   "bytes": 3000000000,
+   "private_bytes": 2900000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/Library/Caches/CloudKit",
+   "folded": false,
+   "term": "tree",
+   "bytes": 2500000000,
+   "private_bytes": 2500000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/.Trash",
+   "folded": false,
+   "term": "tree",
+   "bytes": 2200000000,
+   "private_bytes": 2200000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/Library/Preferences/com.exemplo.Editor",
+   "folded": false,
+   "term": "tree",
+   "bytes": 1800000000,
+   "private_bytes": 1800000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": "~/Library/Logs",
+   "folded": true,
+   "term": "tree",
+   "bytes": 1400000000,
+   "private_bytes": 1400000000,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "getattrlistbulk"
+  },
+  {
+   "path": null,
+   "folded": false,
+   "term": "deleted_open",
+   "bytes": 1000000000,
+   "private_bytes": null,
+   "lower_bound": false,
+   "count": null,
+   "top_process": {
+    "name": "Exemplo",
+    "bytes": 900000000
+   },
+   "source": "lsof_proc_pidfdinfo"
+  }
+ ],
+ "informational": {
+  "purgeable": {
+   "bytes": 47000000000,
+   "state": "measured",
+   "reason": null,
+   "source": "cachedelete",
+   "top_services": [
+    {
+     "name": "com.apple.TMCacheDelete",
+     "bytes": 41000000000
+    },
+    {
+     "name": "com.apple.fspurgeable_data",
+     "bytes": 4000000000
+    },
+    {
+     "name": "com.apple.metadata.mds.cachedelete",
+     "bytes": 2000000000
+    }
+   ]
+  },
+  "repeated_full_clones": {
+   "files": 10,
+   "bytes": 1000000
+  },
+  "repeated_hardlinks": {
+   "files": 2,
+   "bytes": 2000
+  },
+  "graft_roots_skipped": 0,
+  "scan_state": "partial",
+  "dataless": {
+   "files": 5,
+   "apparent_bytes": 5000000,
+   "folders_not_opened": 1
+  }
+ },
+ "stage_errors": []
+}

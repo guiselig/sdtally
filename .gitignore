@@ -1,0 +1,19 @@
+.DS_Store
+*.swp
+.build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+# saidas de auditoria contem caminhos e nomes de arquivo pessoais
+*.audit
+audit-output*.txt
+
+# Rust (compilar com CARGO_TARGET_DIR fora do iCloud)
+target/
+
+# memória local do Claude
+.claude/
+coleta/dist/
+
+# Python
+__pycache__/

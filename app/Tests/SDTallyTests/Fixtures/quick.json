@@ -1,0 +1,492 @@
+{
+  "boot_time": "2026-09-28 08:15",
+  "capacity": {
+    "free": 47000000000,
+    "source": "statfs",
+    "total": 494384795648
+  },
+  "cards": {
+    "svc_fspurgeable": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Files macOS or an app marked as removable.",
+        "pt": "Arquivos que o macOS ou um app marcou como removíveis."
+      }
+    },
+    "svc_spotlight_cache": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Spotlight caches.",
+        "pt": "Caches do Spotlight."
+      }
+    },
+    "svc_time_machine": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "The local restore point.",
+        "pt": "O ponto de restauração local."
+      },
+      "owner": {
+        "en": "macOS (Time Machine)",
+        "pt": "macOS (Time Machine)"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Local Time Machine snapshots, as seen by the service that deletes them when space runs low. They are the same bytes as the Snapshots line.",
+        "pt": "Snapshots locais do Time Machine, vistos pelo serviço que os apaga quando falta espaço. São os mesmos bytes da linha Snapshots."
+      }
+    },
+    "vol_preboot": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "do_not_touch",
+      "loses": {
+        "en": "The Mac's ability to start up.",
+        "pt": "A inicialização do Mac."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Do not touch.",
+        "pt": "Não mexer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Files to start up the Mac and the system cryptexes.",
+        "pt": "Arquivos para ligar o Mac e os cryptexes do sistema."
+      }
+    },
+    "vol_recovery": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "do_not_touch",
+      "loses": {
+        "en": "The Mac's recovery.",
+        "pt": "A recuperação do Mac."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Do not touch.",
+        "pt": "Não mexer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "The recovery system.",
+        "pt": "O sistema de recuperação."
+      }
+    },
+    "vol_system": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "do_not_touch",
+      "loses": {
+        "en": "macOS itself stops working.",
+        "pt": "O funcionamento do macOS."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Do not touch.",
+        "pt": "Não mexer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "macOS itself, sealed and read-only.",
+        "pt": "O macOS em si, selado e só leitura."
+      }
+    },
+    "vol_update": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "when the update finishes",
+        "pt": "ao terminar a atualização"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Working area for macOS updates.",
+        "pt": "Área de trabalho das atualizações do macOS."
+      }
+    },
+    "vol_vm": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "restart",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing; on restart, open work that was not saved.",
+        "pt": "Nada; ao reiniciar, o trabalho aberto que não foi salvo."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "swap goes away on restart",
+        "pt": "o swap sai ao reiniciar"
+      },
+      "step": {
+        "en": "Quitting heavy apps or restarting gives the swap back.",
+        "pt": "Fechar apps pesados ou reiniciar devolve o swap."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Swap files (memory that ended up on disk) and the kernel image.",
+        "pt": "Arquivos de swap (memória que foi parar no disco) e a imagem do kernel."
+      }
+    }
+  },
+  "containers": [
+    {
+      "ceiling": 494384795648,
+      "free": 47000000000,
+      "holds_data": true,
+      "internal": true,
+      "isc": false,
+      "volumes": [
+        {
+          "capacity_in_use": 20000000000,
+          "card": "vol_system",
+          "in_settings_macos": true,
+          "roles": [
+            "System"
+          ]
+        },
+        {
+          "capacity_in_use": 410000000000,
+          "card": null,
+          "in_settings_macos": false,
+          "roles": [
+            "Data"
+          ]
+        },
+        {
+          "capacity_in_use": 7100000000,
+          "card": "vol_preboot",
+          "in_settings_macos": true,
+          "roles": [
+            "Preboot"
+          ]
+        },
+        {
+          "capacity_in_use": 1250000000,
+          "card": "vol_recovery",
+          "in_settings_macos": true,
+          "roles": [
+            "Recovery"
+          ]
+        },
+        {
+          "capacity_in_use": 6442450944,
+          "card": "vol_vm",
+          "in_settings_macos": true,
+          "roles": [
+            "VM"
+          ]
+        },
+        {
+          "capacity_in_use": 3940795520,
+          "card": "vol_update",
+          "in_settings_macos": true,
+          "roles": [
+            "Update"
+          ]
+        }
+      ]
+    },
+    {
+      "ceiling": 524288000,
+      "free": 507510784,
+      "holds_data": false,
+      "internal": true,
+      "isc": true,
+      "volumes": [
+        {
+          "capacity_in_use": 6291456,
+          "card": null,
+          "in_settings_macos": false,
+          "roles": [
+            "xART"
+          ]
+        },
+        {
+          "capacity_in_use": 10485760,
+          "card": null,
+          "in_settings_macos": false,
+          "roles": [
+            "Hardware"
+          ]
+        }
+      ]
+    },
+    {
+      "ceiling": 1000000000000,
+      "free": 600000000000,
+      "holds_data": false,
+      "internal": false,
+      "isc": false,
+      "volumes": [
+        {
+          "capacity_in_use": 400000000000,
+          "card": null,
+          "in_settings_macos": false,
+          "roles": []
+        }
+      ]
+    }
+  ],
+  "data_volume": {
+    "used": {
+      "bytes": 410000000000,
+      "reason": null,
+      "source": "attr_vol_spaceused",
+      "state": "measured"
+    }
+  },
+  "full_disk_access": true,
+  "generated_at": "2026-10-02 09:29:46",
+  "home": "/Users/exemplo",
+  "interrupted": false,
+  "kind": "quick",
+  "macos_version": "27.0",
+  "purgeable": {
+    "bytes": 47000000000,
+    "reason": null,
+    "source": "cachedelete",
+    "state": "measured",
+    "top_services": [
+      {
+        "bytes": 41000000000,
+        "card": "svc_time_machine",
+        "name": "com.apple.TMCacheDelete"
+      },
+      {
+        "bytes": 4000000000,
+        "card": "svc_fspurgeable",
+        "name": "com.apple.fspurgeable_data"
+      },
+      {
+        "bytes": 2000000000,
+        "card": "svc_spotlight_cache",
+        "name": "com.apple.metadata.mds.cachedelete"
+      }
+    ]
+  },
+  "root": false,
+  "schema_version": 1,
+  "settings_screen": {
+    "macos": {
+      "bytes": 38733246464,
+      "reason": null,
+      "source": "diskutil_capacity_in_use",
+      "state": "measured"
+    },
+    "screen": {
+      "available": 94000000000,
+      "capacity": 494384795648,
+      "categories": [
+        {
+          "bytes": 80000000000,
+          "id": "com.apple.STMExtension.Applications"
+        },
+        {
+          "bytes": 60000000000,
+          "id": "com.apple.STMExtension.Documents"
+        },
+        {
+          "bytes": 700000,
+          "id": "com.apple.STMExtension.Trash"
+        }
+      ],
+      "categories_total": 140000700000,
+      "logged_at": "2026-10-02 09:29:42.302128-0300",
+      "reason": null,
+      "service": {
+        "available": 95000000000,
+        "logged_at": "2026-10-02 09:29:37.956458-0300",
+        "other": 226999300000,
+        "other_volumes": 600000000,
+        "purgeable": 47000000000,
+        "system": 23000000000,
+        "total": 494384795648,
+        "used": 390000000000
+      },
+      "source": "settings_ui_log",
+      "state": "measured",
+      "system_data": 221266053536,
+      "used": 400000000000
+    }
+  },
+  "stage_errors": [],
+  "swap": {
+    "total": 4294967296,
+    "used": 3000000000
+  },
+  "tool": "sdtally 0.1.0-dev"
+}

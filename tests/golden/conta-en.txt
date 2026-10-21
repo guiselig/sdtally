@@ -1,0 +1,71 @@
+sdtally 0.1.0-teste · 2026-09-29 14:00 · macOS 27.0
+GB = 10^9 bytes, as in System Settings
+INCOMPLETE (no sudo)
+  - deleted-but-open files: only your own processes
+  - 30 folders without read permission: counted via dir-stats when APFS keeps
+    the number
+  For the complete breakdown: sudo sdtally
+
+System Settings screen (reproduced)                             GB   source
+  macOS (Σ CapacityInUse − Data)                             39.82   diskutil
+    Separate volumes, added into macOS and not into System Data: System 12.00 ·
+    Preboot 10.00 · Recovery 5.40 · Update 0.08 · VM 12.34
+  Apple Intelligence (inside System Data)               unmeasured
+      no asset in the 'AssetGC determine' log of the last 24 h
+  System Data                                            no record   log show
+    Open System Settings > General > Storage, wait for it to load and run again
+    (the log keeps the value for less than ~21 h).
+
+Data volume                                                 150.00   getattrlist
+  What takes the most space (5 of 5 paths)
+    ~/Music                                                  38.28   scan
+    ~/Library/Mobile Documents/com~apple~CloudDocs           36.12   scan
+    Local snapshots (8)                                      32.18   fsctl
+    /System/Library/AssetsV2…_UAF_FM_GenerativeModels        17.40   dir-stats
+    /private/tmp                                              4.13   scan
+    APFS metadata                                             1.65   IOKit APFS
+    Deleted files still open                                 ≥0.21
+        lsof +L1 (holding the most: chronod, 0.19)
+    /Library/(others)                                         0.15   scan
+  Partial or not measured (whatever is missing stays blocked by macOS)
+    large xattrs: not measured (--sem-xattr)
+    deleted but open: partial (3 of 20 files without a readable allocated size)
+    protected folders (dir-stats): partial (2 of 30 folders without dir-stats)
+  Blocked by macOS                                           19.88
+      difference (13.25% of used; includes what was not measured)
+
+Informational (do not add up: already counted above or a different measure)
+  macOS frees this on its own (purgeable)                    36.71   CacheDelete
+    com.apple.TMCacheDelete                                  31.75
+    com.apple.fspurgeable_data                                4.39
+    a                                                        <0.01
+  Repeated full clones (81,998 files)                        26.21   scan
+  Repeated hardlinks (28,934 files)                          12.02   scan
+  Graft roots skipped: 7 (blocks already counted)                    scan
+  Cloud only (dataless): 2,802 files, 140 folders            55.62
+      apparent size; 0 on disk
+  APFS metadata (live trees of the volume)                    1.65   IOKit APFS
+    Nodes of the omap, fsroot and extentref trees × 4096 B. Already counted
+    above (the scan only adds up files). Snapshot trees are not included.
+  Trash: items older than 30 days (3 of 12)                   1.23   getattrlist
+    Out of 4.56 GB in ~/.Trash. Age is the date the item entered the Trash, not
+    its modification date. Only this account's Trash on this volume; other
+    volumes are not scanned.
+
+Why space may not come back (measured only)
+  Cloud-only files (2,802 files)                             55.62   scan
+    Cloud-only files (iCloud Drive and other providers) do not use disk space:
+    deleting them here gives nothing back. The number is the apparent size, not
+    the space used.
+  Purgeable                                                  36.71   CacheDelete
+    Available in Settings is free plus purgeable. Purgeable only becomes free
+    when macOS releases it; tools that show free space (df, Terminal) do not
+    count it as free.
+  Local snapshots (8)                                        32.18   fsctl
+    A local snapshot still holds the blocks of files you deleted: the space only
+    comes back when the snapshot is gone. macOS removes Time Machine ones on its
+    own when space runs low.
+  APFS clones (81,998 files)                                 26.21   scan
+    An APFS clone shares blocks with the original file: deleting only one of
+    them gives back little or nothing. The space comes back when the last one is
+    gone.

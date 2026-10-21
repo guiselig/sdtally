@@ -1,0 +1,43 @@
+{
+ "schema_version": 1,
+ "kind": "branch",
+ "tool": "sdtally 0.1.0-dev",
+ "home": "/Users/exemplo",
+ "root": "/Users/exemplo/Library",
+ "display": "~/Library",
+ "depth": 1,
+ "complete": true,
+ "interrupted": false,
+ "children": [
+  {
+   "name": "Caches",
+   "path": "/Users/exemplo/Library/Caches",
+   "loose_files": false,
+   "bytes": 30000000000,
+   "private_bytes": 100000000,
+   "protected": false,
+   "source": "getattrlistbulk"
+  },
+  {
+   "name": "",
+   "path": "/Users/exemplo/Library",
+   "loose_files": true,
+   "bytes": 4096,
+   "private_bytes": 4096,
+   "protected": false,
+   "source": "getattrlistbulk"
+  }
+ ],
+ "total": {
+  "bytes": 30000004096,
+  "lower_bound": false,
+  "private_bytes": 100004096,
+  "files": 38000,
+  "folders": 900,
+  "dataless_files": 0,
+  "dataless_apparent_bytes": 0
+ },
+ "protected_without_size": 0,
+ "read_errors": 0,
+ "other_volume_entries": 0
+}

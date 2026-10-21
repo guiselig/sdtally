@@ -1,0 +1,2434 @@
+{
+  "cards": {
+    "apple_intelligence_models": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Apple Intelligence features until they download again.",
+        "pt": "Os recursos do Apple Intelligence até baixarem de novo."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Apple Intelligence models; macOS manages them. Do not delete the folder.",
+        "pt": "Ficam dentro de Dados do Sistema e o macOS gerencia o tamanho. Não apague a pasta."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Apple Intelligence models, downloaded by macOS.",
+        "pt": "Modelos do Apple Intelligence, baixados pelo macOS."
+      }
+    },
+    "asset_code_model": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Managed by macOS. Do not delete inside AssetsV2.",
+        "pt": "Gerenciado pelo macOS. Não apague dentro de AssetsV2."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Apple model for code (by the folder name).",
+        "pt": "Modelo da Apple para código (pelo nome da pasta)."
+      }
+    },
+    "asset_dictionaries": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Choose dictionaries in the Dictionary app settings.",
+        "pt": "Escolha os dicionários nos ajustes do app Dicionário."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Dictionaries.",
+        "pt": "Dicionários."
+      }
+    },
+    "asset_language": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Managed by macOS.",
+        "pt": "Gerenciado pelo macOS."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Language data.",
+        "pt": "Dados de idioma."
+      }
+    },
+    "asset_os_update": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "The update download, which downloads again.",
+        "pt": "O download da atualização, que baixa de novo."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/spec-fase6.md §6.2"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "after the update is installed",
+        "pt": "depois de instalar a atualização"
+      },
+      "step": {
+        "en": "A macOS update was downloaded. Install it or wait in System Settings > General > Software Update; macOS removes it after installing.",
+        "pt": "Atualização do macOS baixada. Instale ou aguarde em Ajustes > Geral > Atualização de Software; o macOS a remove depois de instalar."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "A macOS update already downloaded.",
+        "pt": "Atualização do macOS já baixada."
+      }
+    },
+    "asset_photos": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Managed by macOS.",
+        "pt": "Gerenciado pelo macOS."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Photos analysis and effects.",
+        "pt": "Análise e efeitos do Fotos."
+      }
+    },
+    "asset_sim_runtime": {
+      "actions": [
+        {
+          "command": "xcrun simctl runtime list",
+          "kind": "command",
+          "target": null
+        },
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "cost",
+      "loses": {
+        "en": "Time and bandwidth to download it again.",
+        "pt": "Tempo e banda para baixar de novo."
+      },
+      "owner": {
+        "en": "Xcode",
+        "pt": "Xcode"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/spec-fase6.md §6.2"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Simulator runtimes downloaded by macOS. See them with xcrun simctl runtime list; remove them in Xcode > Settings > Components.",
+        "pt": "Runtimes de simulador baixados pelo macOS. Veja com xcrun simctl runtime list; remova em Xcode > Settings > Components."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Simulator runtimes downloaded by macOS.",
+        "pt": "Runtimes de simulador baixados pelo macOS."
+      }
+    },
+    "asset_siri_speech": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Managed by macOS. See System Settings > Siri.",
+        "pt": "Gerenciado pelo macOS. Veja em Ajustes > Siri."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Siri and dictation.",
+        "pt": "Siri e ditado."
+      }
+    },
+    "asset_translation": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "See System Settings > General > Language & Region.",
+        "pt": "Veja em Ajustes > Geral > Idioma e Região."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Translation languages.",
+        "pt": "Idiomas de tradução."
+      }
+    },
+    "asset_voices": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "cost",
+      "loses": {
+        "en": "The removed voices, until they download again.",
+        "pt": "As vozes removidas, até baixarem de novo."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/spec-fase6.md §6.2"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "System voices. Remove voices in System Settings > Accessibility > Spoken Content; do not delete inside AssetsV2.",
+        "pt": "Vozes do sistema. Remova vozes em Ajustes > Acessibilidade > Conteúdo Falado; não apague dentro de AssetsV2."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "System voices, downloaded by macOS.",
+        "pt": "Vozes do sistema, baixadas pelo macOS."
+      }
+    },
+    "asset_xcode": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "cost",
+      "loses": {
+        "en": "Time and bandwidth to download it again.",
+        "pt": "Tempo e banda para baixar de novo."
+      },
+      "owner": {
+        "en": "Xcode",
+        "pt": "Xcode"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/spec-fase6.md §6.2"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Xcode documentation and Metal tools. See Xcode > Settings > Components; do not delete inside AssetsV2.",
+        "pt": "Documentação e ferramentas Metal do Xcode. Veja em Xcode > Settings > Components; não apague dentro de AssetsV2."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Xcode documentation and Metal tools, downloaded by macOS.",
+        "pt": "Documentação e ferramentas Metal do Xcode, baixadas pelo macOS."
+      }
+    },
+    "browser_cache": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "cost",
+      "loses": {
+        "en": "Some sites open more slowly until images load again; in Safari it may also sign you out of websites.",
+        "pt": "Alguns sites abrem mais devagar até as imagens carregarem de novo; no Safari, também pode sair das contas dos sites."
+      },
+      "owner": {
+        "en": "The browser.",
+        "pt": "O navegador."
+      },
+      "refs": [
+        {
+          "kind": "report",
+          "ref": "https://support.google.com/accounts/answer/32050"
+        },
+        {
+          "kind": "apple",
+          "ref": "https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac"
+        },
+        {
+          "kind": "report",
+          "ref": "https://support.mozilla.org/en-US/kb/how-clear-firefox-cache"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Delete only the cache in the browser itself: in Chrome, More > Delete browsing data; in Firefox, the Privacy and security settings. In Safari, Settings > Privacy > Manage Website Data also removes website data.",
+        "pt": "Apague só o cache pelo próprio navegador: no Chrome, em Mais > Excluir dados de navegação; no Firefox, em Privacidade e segurança. No Safari, Ajustes > Privacidade > Gerenciar Dados de Sites também apaga os dados dos sites."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Browser cache (Chrome, Safari or Firefox): parts of pages, such as images, kept so they open faster.",
+        "pt": "Cache do navegador (Chrome, Safari ou Firefox): partes de páginas, como imagens, guardadas para abrir mais rápido."
+      }
+    },
+    "chronod_datavault": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "log_out",
+          "target": null
+        },
+        {
+          "command": null,
+          "kind": "restart",
+          "target": null
+        }
+      ],
+      "level": "safe",
+      "loses": {
+        "en": "Open work that was not saved.",
+        "pt": "O trabalho aberto que não foi salvo."
+      },
+      "owner": {
+        "en": "macOS (chronod, for widgets)",
+        "pt": "macOS (chronod, dos widgets)"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §3"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "on logging out or restarting",
+        "pt": "ao encerrar a sessão ou reiniciar"
+      },
+      "step": {
+        "en": "Logging out or restarting gives the space back; save open work first. The size is the lsof logical size and stays out of the sum.",
+        "pt": "Encerrar a sessão ou reiniciar devolve o espaço; salve o trabalho aberto antes. O tamanho é o lógico do lsof e fica fora da soma."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Deleted copies of the LaunchServices database that chronod (widgets) still keeps open.",
+        "pt": "Cópias apagadas do banco do LaunchServices que o chronod (widgets) ainda mantém abertas."
+      }
+    },
+    "cinebench_assets": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "finder",
+          "target": null
+        }
+      ],
+      "level": "cost",
+      "loses": {
+        "en": "Time and bandwidth to download it again.",
+        "pt": "Tempo e banda para baixar de novo."
+      },
+      "owner": {
+        "en": "Cinebench",
+        "pt": "Cinebench"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Custo"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Benchmark assets; they download again when it runs.",
+        "pt": "Cenas do benchmark, que baixam de novo quando ele roda: mova para o Lixo pelo Finder. O espaço volta quando o Lixo é esvaziado."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Cinebench benchmark scenes.",
+        "pt": "Cenas do benchmark Cinebench."
+      }
+    },
+    "claude_vm_bundles": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "check_first",
+      "loses": {
+        "en": "The virtual machine; it gets corrupted if touched while the app is open.",
+        "pt": "A máquina virtual; ela se corrompe se mexer com o app aberto."
+      },
+      "owner": {
+        "en": "The Claude app.",
+        "pt": "O app Claude."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Condicional"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Quit the Claude app first; this is its virtual machine.",
+        "pt": "Feche o app Claude antes: é a máquina virtual dele, e mexer com ela em uso a corrompe."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "The Claude app's virtual machine.",
+        "pt": "Máquina virtual do app Claude."
+      }
+    },
+    "cloud_storage": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "do_not_touch",
+      "loses": {
+        "en": "Real files.",
+        "pt": "Arquivos reais."
+      },
+      "owner": {
+        "en": "The provider's app.",
+        "pt": "O app do provedor."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Proibido"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Real data; free space through the provider's app.",
+        "pt": "São dados reais; libere espaço pelo app do provedor."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Google Drive, Dropbox and similar files.",
+        "pt": "Arquivos do Google Drive, Dropbox e afins."
+      }
+    },
+    "cloudkit_cache": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "check_first",
+      "loses": {
+        "en": "Data that has not synced yet, if deleted while syncing.",
+        "pt": "Dados que ainda não sincronizaram, se apagar no meio da sincronização."
+      },
+      "owner": {
+        "en": "macOS (iCloud)",
+        "pt": "macOS (iCloud)"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Condicional"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Do not delete while iCloud is syncing; usually leave it.",
+        "pt": "Não apague com o iCloud sincronizando; em geral, deixe como está."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "iCloud (CloudKit) cache used by apps.",
+        "pt": "Cache do iCloud (CloudKit) usado pelos apps."
+      }
+    },
+    "container_vm": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "check_first",
+      "loses": {
+        "en": "The containers, images, volumes or machines you delete.",
+        "pt": "Os contêineres, imagens, volumes ou máquinas que você apagar."
+      },
+      "owner": {
+        "en": "The program that created the machine (Docker Desktop, Colima, Lima or OrbStack).",
+        "pt": "O programa que criou a máquina (Docker Desktop, Colima, Lima ou OrbStack)."
+      },
+      "refs": [
+        {
+          "kind": "report",
+          "ref": "https://docs.docker.com/desktop/troubleshoot-and-support/faqs/macfaqs/"
+        },
+        {
+          "kind": "report",
+          "ref": "https://github.com/abiosoft/colima/blob/main/docs/FAQ.md"
+        },
+        {
+          "kind": "report",
+          "ref": "https://lima-vm.io/docs/dev/internals/"
+        },
+        {
+          "kind": "report",
+          "ref": "https://docs.orbstack.dev/faq"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Shrink it through the program itself by deleting what you do not use inside it: containers, images, volumes or machines. Deleting the folder from outside deletes the whole machine and everything in it. In Colima, the space returns to the Mac when the machine restarts.",
+        "pt": "Reduza pelo próprio programa, apagando lá dentro o que não usa: contêineres, imagens, volumes ou máquinas. Apagar a pasta por fora apaga a máquina inteira, com tudo dentro. No Colima, o espaço volta ao Mac quando a máquina reinicia."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Disk of the Linux virtual machine of Docker Desktop, Colima, Lima or OrbStack, where the containers and images live.",
+        "pt": "Disco da máquina virtual Linux do Docker Desktop, Colima, Lima ou OrbStack, onde ficam os contêineres e as imagens."
+      }
+    },
+    "deleted_open": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        },
+        {
+          "command": null,
+          "kind": "restart",
+          "target": null
+        }
+      ],
+      "level": "safe",
+      "loses": {
+        "en": "The app's unsaved work, if it quits without saving.",
+        "pt": "O trabalho não salvo do app, se ele fechar sem salvar."
+      },
+      "owner": {
+        "en": "The app holding the files.",
+        "pt": "O app que segura os arquivos."
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §3"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "when the app lets go of the files or on restart",
+        "pt": "quando o app solta os arquivos ou ao reiniciar"
+      },
+      "step": {
+        "en": "Restarting the Mac frees this space.",
+        "pt": "Reiniciar o Mac libera esse espaço."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Deleted files an app still keeps open; the space only returns when it lets go of them.",
+        "pt": "Arquivos já apagados que um app ainda mantém abertos; o espaço só volta quando ele os solta."
+      }
+    },
+    "failed_smb_mount": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "finder",
+          "target": null
+        }
+      ],
+      "level": "anomaly",
+      "loses": {
+        "en": "Whatever is written there; check first.",
+        "pt": "O que estiver gravado ali; confira antes."
+      },
+      "owner": {
+        "en": "Whoever wrote there; open it in Finder to see.",
+        "pt": "Quem gravou ali; abra no Finder para ver."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/spec-fase6.md §6.2"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "There is data written to the Data volume itself, in a regular folder inside /Volumes, where there should only be mount points. It is not the disk or the share: open it in Finder and check what it is.",
+        "pt": "Há dados gravados no próprio volume Data, numa pasta comum dentro de /Volumes, onde deveria haver só pontos de montagem. Não é o disco nem o compartilhamento: abra no Finder e confira o que é."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Data in a regular folder inside /Volumes, on the Data volume itself. There should only be mount points there; mounted disks and shares are not in this count.",
+        "pt": "Dados numa pasta comum dentro de /Volumes, no próprio volume Data. Ali deveria haver só pontos de montagem; os discos e compartilhamentos montados não entram nesta conta."
+      }
+    },
+    "go_build_cache": {
+      "actions": [
+        {
+          "command": "go clean -cache",
+          "kind": "command",
+          "target": null
+        }
+      ],
+      "level": "safe",
+      "loses": {
+        "en": "Time: the next build recompiles.",
+        "pt": "Tempo: o próximo build recompila."
+      },
+      "owner": {
+        "en": "Go",
+        "pt": "Go"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Seguro"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Run go clean -cache; the next build recompiles.",
+        "pt": "Rode go clean -cache; o próximo build recompila."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Go build cache.",
+        "pt": "Cache de compilação do Go."
+      }
+    },
+    "grant_full_disk_access": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "measurement",
+      "loses": {
+        "en": "Nothing is lost; the measurement gets more complete.",
+        "pt": "Nada se perde; a medição fica mais completa."
+      },
+      "owner": {
+        "en": "You, in System Settings > Privacy & Security.",
+        "pt": "Você, em Ajustes > Privacidade e Segurança."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/03-restricoes-de-plataforma.md"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Grant Full Disk Access to sdtally (or the app) and measure again.",
+        "pt": "Sem o Acesso Total ao Disco, Mail, Mensagens, Safari e outras pastas protegidas ficam bloqueadas pelo macOS. Ative em Permissões (⌘,) e meça de novo."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "macOS permission that lets sdtally read protected folders such as Mail, Messages and Safari.",
+        "pt": "Permissão do macOS que deixa o sdtally ler pastas protegidas, como Mail, Mensagens e Safari."
+      }
+    },
+    "homebrew_cache": {
+      "actions": [
+        {
+          "command": "brew cleanup --dry-run",
+          "kind": "command",
+          "target": null
+        }
+      ],
+      "level": "safe",
+      "loses": {
+        "en": "The downloads, which Homebrew fetches again if needed; without --dry-run, also old formula versions.",
+        "pt": "Os downloads, que o Homebrew baixa de novo se precisar; sem --dry-run, também as versões antigas das fórmulas."
+      },
+      "owner": {
+        "en": "Homebrew",
+        "pt": "Homebrew"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Seguro"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Run brew cleanup --dry-run to see what it would remove. Without --dry-run it also removes old versions of installed formulae.",
+        "pt": "Rode brew cleanup --dry-run para ver o que sairia. Sem o --dry-run, ele também remove versões antigas das fórmulas instaladas."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Downloads kept by Homebrew.",
+        "pt": "Downloads guardados pelo Homebrew."
+      }
+    },
+    "icloud_drive": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "settings",
+          "target": "storage"
+        }
+      ],
+      "level": "do_not_touch",
+      "loses": {
+        "en": "The files, on every device.",
+        "pt": "Os arquivos, em todos os aparelhos."
+      },
+      "owner": {
+        "en": "You and iCloud.",
+        "pt": "Você e o iCloud."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Proibido"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "with Optimize Mac Storage on, macOS removes local copies that are already in iCloud",
+        "pt": "com Otimizar Armazenamento do Mac ligado, o macOS tira as cópias locais que já estão no iCloud"
+      },
+      "step": {
+        "en": "Do not delete: this is iCloud Drive and it would disappear from every device. Use Optimize Mac Storage.",
+        "pt": "Não apague: é o iCloud Drive, e os arquivos sumiriam de todos os aparelhos. Para liberar espaço, use “Otimizar Armazenamento do Mac”."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Your iCloud Drive files.",
+        "pt": "Seus arquivos do iCloud Drive."
+      }
+    },
+    "logs": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "finder",
+          "target": null
+        }
+      ],
+      "level": "safe",
+      "loses": {
+        "en": "The apps' error history.",
+        "pt": "O histórico de erros dos apps."
+      },
+      "owner": {
+        "en": "The apps that write them.",
+        "pt": "Os apps que os gravam."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Seguro"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Move to the Trash in Finder; apps recreate them. Space returns when the Trash is emptied.",
+        "pt": "Mova para o Lixo pelo Finder; os apps criam de novo. O espaço volta quando o Lixo é esvaziado."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "App logs.",
+        "pt": "Logs dos apps."
+      }
+    },
+    "measure_as_admin": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "measurement",
+      "loses": {
+        "en": "Nothing is lost; the measurement gets more complete.",
+        "pt": "Nada se perde; a medição fica mais completa."
+      },
+      "owner": {
+        "en": "You.",
+        "pt": "Você."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/03-restricoes-de-plataforma.md"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Measure as administrator; what did not open stays blocked by macOS.",
+        "pt": "As pastas do sistema só abrem com a senha de administrador ou o Root sem Senha; sem elas, o que não abriu fica bloqueado pelo macOS."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Measuring with the administrator password or Passwordless Root, which opens the system folders.",
+        "pt": "Medição com a senha de administrador ou o Root sem Senha, que abre as pastas do sistema."
+      }
+    },
+    "npm_cache": {
+      "actions": [
+        {
+          "command": "npm cache clean --force",
+          "kind": "command",
+          "target": null
+        }
+      ],
+      "level": "safe",
+      "loses": {
+        "en": "Nothing; npm downloads the packages again.",
+        "pt": "Nada; o npm baixa os pacotes de novo."
+      },
+      "owner": {
+        "en": "npm",
+        "pt": "npm"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Seguro"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Run npm cache clean --force; npm downloads packages again when needed.",
+        "pt": "Rode npm cache clean --force; o npm baixa os pacotes de novo quando precisar."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "npm package cache.",
+        "pt": "Cache de pacotes do npm."
+      }
+    },
+    "ollama_models": {
+      "actions": [
+        {
+          "command": "ollama list",
+          "kind": "command",
+          "target": null
+        },
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "cost",
+      "loses": {
+        "en": "Time and bandwidth to download it again.",
+        "pt": "Tempo e banda para baixar de novo."
+      },
+      "owner": {
+        "en": "Ollama",
+        "pt": "Ollama"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Custo"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "See them with ollama list and remove them through Ollama itself.",
+        "pt": "Veja os modelos com ollama list e remova pelo próprio Ollama os que não usa."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "AI models downloaded by Ollama.",
+        "pt": "Modelos de IA baixados pelo Ollama."
+      }
+    },
+    "other_snapshots": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "check_first",
+      "loses": {
+        "en": "The restore point that app kept.",
+        "pt": "O ponto de restauração que esse app guardou."
+      },
+      "owner": {
+        "en": "The app that created it.",
+        "pt": "O app que o criou."
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §3"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Snapshot from another app (backup or cloning); manage it in the app that created it.",
+        "pt": "Snapshot criado por outro app, como um de backup ou de clonagem. Gerencie pelo app que o criou."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Snapshot created by another app, such as a backup or cloning app.",
+        "pt": "Snapshot criado por outro app, como um de backup ou de clonagem."
+      }
+    },
+    "other_users": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "check_first",
+      "loses": {
+        "en": "Files of other accounts.",
+        "pt": "Arquivos de outras contas."
+      },
+      "owner": {
+        "en": "Whoever uses the account, or an administrator of this Mac.",
+        "pt": "Quem usa a conta, ou um administrador deste Mac."
+      },
+      "refs": [
+        {
+          "kind": "apple",
+          "ref": "https://support.apple.com/guide/mac-help/folders-that-come-with-your-mac-mchlp1143/mac"
+        },
+        {
+          "kind": "apple",
+          "ref": "https://support.apple.com/guide/mac-help/delete-a-user-or-group-mchlp1557/mac"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Another account's folder, the Shared folder or a deleted account. Whoever uses it, or an administrator in System Settings > Users & Groups, decides what stays.",
+        "pt": "Pasta de outra conta, a Compartilhada ou uma conta apagada. Quem usa a pasta, ou um administrador em Ajustes > Usuários e Grupos, decide o que fica."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Another account's folder on this Mac, the Shared folder, or a deleted account kept as a disk image.",
+        "pt": "Pasta de outra conta deste Mac, a pasta Compartilhada ou uma conta apagada guardada em imagem de disco."
+      }
+    },
+    "pip_cache": {
+      "actions": [
+        {
+          "command": "pip cache purge",
+          "kind": "command",
+          "target": null
+        }
+      ],
+      "level": "safe",
+      "loses": {
+        "en": "Nothing; pip downloads the packages again.",
+        "pt": "Nada; o pip baixa os pacotes de novo."
+      },
+      "owner": {
+        "en": "pip",
+        "pt": "pip"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Seguro"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Run pip cache purge; pip downloads packages again when needed.",
+        "pt": "Rode pip cache purge; o pip baixa os pacotes de novo quando precisar."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "pip package cache.",
+        "pt": "Cache de pacotes do pip."
+      }
+    },
+    "playwright_browsers": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "finder",
+          "target": null
+        }
+      ],
+      "level": "cost",
+      "loses": {
+        "en": "Time and bandwidth to download it again.",
+        "pt": "Tempo e banda para baixar de novo."
+      },
+      "owner": {
+        "en": "Playwright",
+        "pt": "Playwright"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Custo"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Only if you do not use Playwright: move to the Trash in Finder.",
+        "pt": "Só se você não usa o Playwright: mova para o Lixo pelo Finder. O espaço volta quando o Lixo é esvaziado."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Browsers downloaded by Playwright for testing.",
+        "pt": "Navegadores baixados pelo Playwright para testes."
+      }
+    },
+    "preferences_anomaly": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "finder",
+          "target": null
+        }
+      ],
+      "level": "anomaly",
+      "loses": {
+        "en": "The owning app's preferences.",
+        "pt": "As preferências do app dono."
+      },
+      "owner": {
+        "en": "An app; find out which.",
+        "pt": "Um app; procure qual."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Anomalias"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Anomaly: Preferences should hold kilobytes; look for the owning app.",
+        "pt": "Anomalia: a pasta Preferences deveria ter poucos KB. Procure o app dono antes de mexer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "A large file or folder inside Preferences, which should hold a few KB.",
+        "pt": "Arquivo ou pasta grande dentro de Preferences, que deveria ter poucos KB."
+      }
+    },
+    "purgeable_auto": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do: macOS frees purgeable space when it needs it.",
+        "pt": "Nada a fazer: o macOS libera esse espaço quando precisar."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Space macOS can free on its own: caches and files marked as removable.",
+        "pt": "Espaço que o macOS pode liberar sozinho: caches e arquivos marcados como removíveis."
+      }
+    },
+    "restart_worth": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "restart",
+          "target": null
+        }
+      ],
+      "level": "safe",
+      "loses": {
+        "en": "Open work that was not saved.",
+        "pt": "O trabalho aberto que não foi salvo."
+      },
+      "owner": {
+        "en": "You.",
+        "pt": "Você."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/spec-fase6.md §4.2"
+        },
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §3"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Restarting gives back swap (it leaves the macOS line in Settings) and deleted files apps still hold (it leaves System Data). Save open work first. Swap comes back with use.",
+        "pt": "Reiniciar devolve o swap (sai da linha macOS do Ajustes) e os arquivos apagados que apps ainda seguram (sai de Dados do Sistema). Salve o trabalho aberto antes. O swap volta com o uso."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Restarting the Mac when swap and deleted files apps still hold add up to a lot.",
+        "pt": "Reiniciar o Mac quando o swap e os arquivos apagados que apps ainda seguram somam bastante."
+      }
+    },
+    "simulator_runtimes": {
+      "actions": [
+        {
+          "command": "xcrun simctl runtime list",
+          "kind": "command",
+          "target": null
+        },
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "cost",
+      "loses": {
+        "en": "Time and bandwidth to download it again.",
+        "pt": "Tempo e banda para baixar de novo."
+      },
+      "owner": {
+        "en": "Xcode",
+        "pt": "Xcode"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Custo"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "See them with xcrun simctl runtime list; remove them in Xcode > Settings > Components.",
+        "pt": "Veja quais existem com xcrun simctl runtime list e remova os que não usa em Xcode > Settings > Components."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Simulator runtimes (iOS, watchOS and others) installed by Xcode.",
+        "pt": "Sistemas dos simuladores (iOS, watchOS e outros) instalados pelo Xcode."
+      }
+    },
+    "simulators": {
+      "actions": [
+        {
+          "command": "xcrun simctl delete unavailable",
+          "kind": "command",
+          "target": null
+        },
+        {
+          "command": null,
+          "kind": "owner_app",
+          "target": null
+        }
+      ],
+      "level": "cost",
+      "loses": {
+        "en": "The apps and data inside the removed simulators.",
+        "pt": "Os apps e dados dentro dos simuladores removidos."
+      },
+      "owner": {
+        "en": "Xcode",
+        "pt": "Xcode"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Custo"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Run xcrun simctl delete unavailable; manage the rest in Xcode > Devices and Simulators.",
+        "pt": "Rode xcrun simctl delete unavailable para tirar os que não servem mais; o resto, em Xcode > Devices and Simulators."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Xcode simulator devices and their data.",
+        "pt": "Aparelhos de simulador do Xcode e os dados deles."
+      }
+    },
+    "spotlight_index_large": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "settings",
+          "target": "spotlight"
+        }
+      ],
+      "level": "check_first",
+      "loses": {
+        "en": "Spotlight search until the index is rebuilt.",
+        "pt": "A busca do Spotlight até o índice ser refeito."
+      },
+      "owner": {
+        "en": "macOS (Spotlight)",
+        "pt": "macOS (Spotlight)"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/spec-fase6.md §6.2"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "The Spotlight index is large. Do not delete it by hand; see System Settings > Spotlight.",
+        "pt": "O índice do Spotlight está grande. Não apague à mão; veja em Ajustes > Spotlight."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "The Spotlight index, which lets you search files and their contents.",
+        "pt": "O índice do Spotlight, que permite buscar arquivos e o conteúdo deles."
+      }
+    },
+    "svc_app_container_caches": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Caches inside app containers.",
+        "pt": "Caches dentro dos contêineres dos apps."
+      }
+    },
+    "svc_asset_cache": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "macOS Content Caching.",
+        "pt": "Cache de Conteúdo do macOS."
+      }
+    },
+    "svc_fspurgeable": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Files macOS or an app marked as removable.",
+        "pt": "Arquivos que o macOS ou um app marcou como removíveis."
+      }
+    },
+    "svc_mobileasset": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Resources downloaded by macOS that it can download again itself.",
+        "pt": "Recursos baixados pelo macOS que ele mesmo pode baixar de novo."
+      }
+    },
+    "svc_photos": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Photos copies and thumbnails that come back from iCloud when needed.",
+        "pt": "Cópias e miniaturas do Fotos que voltam do iCloud quando preciso."
+      }
+    },
+    "svc_spotlight_cache": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Spotlight caches.",
+        "pt": "Caches do Spotlight."
+      }
+    },
+    "svc_thumbnails": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Quick Look thumbnails.",
+        "pt": "Miniaturas do Quick Look."
+      }
+    },
+    "svc_time_machine": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "The local restore point.",
+        "pt": "O ponto de restauração local."
+      },
+      "owner": {
+        "en": "macOS (Time Machine)",
+        "pt": "macOS (Time Machine)"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Local Time Machine snapshots, as seen by the service that deletes them when space runs low. They are the same bytes as the Snapshots line.",
+        "pt": "Snapshots locais do Time Machine, vistos pelo serviço que os apaga quando falta espaço. São os mesmos bytes da linha Snapshots."
+      }
+    },
+    "swap_large": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "restart",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing; on restart, open work that was not saved.",
+        "pt": "Nada; ao reiniciar, o trabalho aberto que não foi salvo."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/spec-fase5.md §6"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "when heavy apps quit or on restart",
+        "pt": "ao fechar apps pesados ou reiniciar"
+      },
+      "step": {
+        "en": "The Mac is using the disk as memory; quitting heavy apps or restarting gives it back.",
+        "pt": "O Mac está usando o disco como memória. Fechar apps pesados ou reiniciar devolve o espaço."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Memory that ended up on disk (swap).",
+        "pt": "Memória que foi parar no disco (swap)."
+      }
+    },
+    "system_folders": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "do_not_touch",
+      "loses": {
+        "en": "macOS itself stops working.",
+        "pt": "O funcionamento do macOS."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Proibido"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Do not touch: it belongs to the system; macOS needs these folders.",
+        "pt": "Não mexer: é do sistema; o macOS precisa dessas pastas."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "System folders and folders macOS protects.",
+        "pt": "Pastas do sistema e pastas que o macOS protege."
+      }
+    },
+    "term_large_xattrs": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "do_not_touch",
+      "loses": {
+        "en": "Information apps keep alongside the files.",
+        "pt": "Informações que os apps guardam junto dos arquivos."
+      },
+      "owner": {
+        "en": "The apps that write them to your files.",
+        "pt": "Os apps que os gravam nos seus arquivos."
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §3"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Large extended attributes, stored outside the file.",
+        "pt": "Atributos estendidos grandes, guardados fora do arquivo."
+      }
+    },
+    "term_snapshots": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Depends on the snapshot: the restore point it keeps.",
+        "pt": "Depende do snapshot: o ponto de restauração que ele guarda."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §3"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "depends on the snapshot",
+        "pt": "depende do snapshot"
+      },
+      "step": {
+        "en": "See the snapshot breakdown.",
+        "pt": "Veja o raio-X dos snapshots."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Blocks that exist only in local snapshots.",
+        "pt": "Blocos que só existem em snapshots locais."
+      }
+    },
+    "time_machine_snapshots": {
+      "actions": [
+        {
+          "command": "tmutil listlocalsnapshots /",
+          "kind": "command",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "The local restore point for that time.",
+        "pt": "O ponto de restauração local daquele horário."
+      },
+      "owner": {
+        "en": "macOS (Time Machine)",
+        "pt": "macOS (Time Machine)"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §3"
+        }
+      ],
+      "self_cleans": "yes",
+      "self_cleans_text": {
+        "en": "when space runs low",
+        "pt": "quando falta espaço"
+      },
+      "step": {
+        "en": "Nothing to do: macOS deletes local Time Machine snapshots when space runs low. To list them: tmutil listlocalsnapshots /",
+        "pt": "Nada a fazer: o macOS apaga esses snapshots sozinho quando falta espaço. Para ver a lista, use o comando abaixo no Terminal."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Local snapshots Time Machine creates on the Data volume between backups.",
+        "pt": "Snapshots locais que o Time Machine cria no volume Data entre os backups."
+      }
+    },
+    "tm_backup_stuck": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "settings",
+          "target": "time_machine"
+        },
+        {
+          "command": "tmutil listlocalsnapshots /",
+          "kind": "command",
+          "target": null
+        }
+      ],
+      "level": "check_first",
+      "loses": {
+        "en": "Nothing: it is only a matter of checking the backup destination.",
+        "pt": "Nada: é só conferir o destino do backup."
+      },
+      "owner": {
+        "en": "macOS (Time Machine)",
+        "pt": "macOS (Time Machine)"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §3"
+        },
+        {
+          "kind": "internal",
+          "ref": "docs/spec-fase6.md §4.4"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Time Machine has tried again several times since the last recorded backup without recording another, and the base snapshot stays on disk. See the destination in System Settings > Time Machine.",
+        "pt": "O Time Machine tentou de novo várias vezes desde o último backup registrado, sem registrar outro, e o snapshot de base segue no disco. Veja o destino em Ajustes > Time Machine."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Time Machine tried to back up several times without recording a new backup; meanwhile the base snapshot stays on disk.",
+        "pt": "O Time Machine tentou fazer backup várias vezes sem registrar um novo; enquanto isso, o snapshot de base fica no disco."
+      }
+    },
+    "trash": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "finder",
+          "target": null
+        }
+      ],
+      "level": "safe",
+      "loses": {
+        "en": "The files in the Trash, for good.",
+        "pt": "Os arquivos do Lixo, de vez."
+      },
+      "owner": {
+        "en": "You.",
+        "pt": "Você."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/spec-fase5.md §6"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "if the Finder option to remove items from the Trash after 30 days is on",
+        "pt": "se a opção de remover itens do Lixo após 30 dias estiver ligada no Finder"
+      },
+      "step": {
+        "en": "Empty the Trash.",
+        "pt": "Esvazie o Lixo no Finder. O espaço volta quando o Lixo é esvaziado."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Files you moved to the Trash.",
+        "pt": "Arquivos que você mandou para o Lixo."
+      }
+    },
+    "updater_caches": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "finder",
+          "target": null
+        }
+      ],
+      "level": "safe",
+      "loses": {
+        "en": "Nothing; they were already applied.",
+        "pt": "Nada; já foram aplicados."
+      },
+      "owner": {
+        "en": "The apps that update themselves.",
+        "pt": "Os apps que se atualizam sozinhos."
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Seguro"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Installers already applied: move to the Trash in Finder.",
+        "pt": "Instaladores já aplicados: mova para o Lixo pelo Finder. O espaço volta quando o Lixo é esvaziado."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "App update installers that were already applied.",
+        "pt": "Instaladores de atualização de apps que já foram aplicados."
+      }
+    },
+    "user_folder": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "finder",
+          "target": null
+        }
+      ],
+      "level": "check_first",
+      "loses": {
+        "en": "Your files that you delete.",
+        "pt": "Os arquivos seus que você apagar."
+      },
+      "owner": {
+        "en": "You.",
+        "pt": "Você."
+      },
+      "refs": [
+        {
+          "kind": "apple",
+          "ref": "https://support.apple.com/guide/mac-help/folders-that-come-with-your-mac-mchlp1143/mac"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Your folder. Look at what takes the space inside it before changing anything.",
+        "pt": "Pasta sua. Veja o que pesa em Pastas maiores antes de mexer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "A folder of yours that came with the Mac: Desktop, Documents, Downloads, Movies, Music or Pictures.",
+        "pt": "Pasta sua que veio com o Mac: Mesa, Documentos, Downloads, Filmes, Música ou Imagens."
+      }
+    },
+    "vol_preboot": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "do_not_touch",
+      "loses": {
+        "en": "The Mac's ability to start up.",
+        "pt": "A inicialização do Mac."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Do not touch.",
+        "pt": "Não mexer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Files to start up the Mac and the system cryptexes.",
+        "pt": "Arquivos para ligar o Mac e os cryptexes do sistema."
+      }
+    },
+    "vol_recovery": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "do_not_touch",
+      "loses": {
+        "en": "The Mac's recovery.",
+        "pt": "A recuperação do Mac."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Do not touch.",
+        "pt": "Não mexer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "The recovery system.",
+        "pt": "O sistema de recuperação."
+      }
+    },
+    "vol_system": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "do_not_touch",
+      "loses": {
+        "en": "macOS itself stops working.",
+        "pt": "O funcionamento do macOS."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Do not touch.",
+        "pt": "Não mexer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "macOS itself, sealed and read-only.",
+        "pt": "O macOS em si, selado e só leitura."
+      }
+    },
+    "vol_update": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing that does not come back: macOS recreates or downloads it again when needed.",
+        "pt": "Nada que não volte: o macOS recria ou baixa de novo quando precisa."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "when the update finishes",
+        "pt": "ao terminar a atualização"
+      },
+      "step": {
+        "en": "Nothing to do.",
+        "pt": "Nada a fazer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Working area for macOS updates.",
+        "pt": "Área de trabalho das atualizações do macOS."
+      }
+    },
+    "vol_vm": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "restart",
+          "target": null
+        }
+      ],
+      "level": "system_handles",
+      "loses": {
+        "en": "Nothing; on restart, open work that was not saved.",
+        "pt": "Nada; ao reiniciar, o trabalho aberto que não foi salvo."
+      },
+      "owner": {
+        "en": "macOS",
+        "pt": "macOS"
+      },
+      "refs": [
+        {
+          "kind": "measured",
+          "ref": "research/mapa-de-fontes.md §1"
+        }
+      ],
+      "self_cleans": "when",
+      "self_cleans_text": {
+        "en": "swap goes away on restart",
+        "pt": "o swap sai ao reiniciar"
+      },
+      "step": {
+        "en": "Quitting heavy apps or restarting gives the swap back.",
+        "pt": "Fechar apps pesados ou reiniciar devolve o swap."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Swap files (memory that ended up on disk) and the kernel image.",
+        "pt": "Arquivos de swap (memória que foi parar no disco) e a imagem do kernel."
+      }
+    },
+    "whatsapp_data": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "none",
+          "target": null
+        }
+      ],
+      "level": "check_first",
+      "loses": {
+        "en": "What WhatsApp wrote on this Mac.",
+        "pt": "O que o WhatsApp gravou neste Mac."
+      },
+      "owner": {
+        "en": "The WhatsApp app.",
+        "pt": "O app WhatsApp."
+      },
+      "refs": [
+        {
+          "kind": "report",
+          "ref": "https://faq.whatsapp.com/5503646096388294/?cms_platform=mac-desktop"
+        },
+        {
+          "kind": "apple",
+          "ref": "https://developer.apple.com/documentation/foundation/filemanager/containerurl(forsecurityapplicationgroupidentifier:)"
+        }
+      ],
+      "self_cleans": "unknown",
+      "self_cleans_text": null,
+      "step": {
+        "en": "WhatsApp for Mac does not have the free-up-storage feature the phone app has. The folder belongs to the app: check before touching it.",
+        "pt": "O WhatsApp para Mac não tem a função de liberar espaço que o app do celular tem. A pasta é do app: confira antes de mexer."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Shared folder (app group) of WhatsApp for Mac, where the app writes its data.",
+        "pt": "Pasta compartilhada (app group) do WhatsApp para Mac, onde o app grava os dados dele."
+      }
+    },
+    "xcode_derived_data": {
+      "actions": [
+        {
+          "command": null,
+          "kind": "finder",
+          "target": null
+        }
+      ],
+      "level": "cost",
+      "loses": {
+        "en": "Time: the next build recompiles everything.",
+        "pt": "Tempo: o próximo build recompila tudo."
+      },
+      "owner": {
+        "en": "Xcode",
+        "pt": "Xcode"
+      },
+      "refs": [
+        {
+          "kind": "internal",
+          "ref": "docs/04-catalogo-de-alvos.md Custo"
+        }
+      ],
+      "self_cleans": "no",
+      "self_cleans_text": null,
+      "step": {
+        "en": "Delete in Finder; the next build recompiles everything.",
+        "pt": "Mova para o Lixo pelo Finder; o próximo build recompila tudo. O espaço volta quando o Lixo é esvaziado."
+      },
+      "verified_on": "27.0",
+      "what": {
+        "en": "Xcode build products and indexes.",
+        "pt": "Resultados de build e índices do Xcode."
+      }
+    }
+  },
+  "kind": "catalog",
+  "schema_version": 1,
+  "sources": {
+    "attr_vol_spaceused": {
+      "apple_command": "df -k /System/Volumes/Data",
+      "checked": "byte",
+      "checked_at": "2026-10-01",
+      "checked_on": [
+        "15",
+        "26",
+        "27"
+      ]
+    },
+    "cachedelete": {
+      "apple_command": null,
+      "checked": "byte",
+      "checked_at": "2026-10-01",
+      "checked_on": [
+        "27"
+      ]
+    },
+    "difference": {
+      "apple_command": null,
+      "checked": "n/a",
+      "checked_at": null,
+      "checked_on": []
+    },
+    "dir_stats_like_settings": {
+      "apple_command": null,
+      "checked": "byte",
+      "checked_at": "2026-10-01",
+      "checked_on": [
+        "27"
+      ]
+    },
+    "diskutil_capacity_in_use": {
+      "apple_command": "diskutil apfs list -plist",
+      "checked": "byte",
+      "checked_at": "2026-10-01",
+      "checked_on": [
+        "15",
+        "26",
+        "27"
+      ]
+    },
+    "diskutil_list_snapshots": {
+      "apple_command": "diskutil apfs listSnapshots /System/Volumes/Data",
+      "checked": "no",
+      "checked_at": null,
+      "checked_on": []
+    },
+    "fsctl_dir_stats": {
+      "apple_command": null,
+      "checked": "byte",
+      "checked_at": "2026-10-01",
+      "checked_on": [
+        "15",
+        "26",
+        "27"
+      ]
+    },
+    "fsctl_snapshot_private_size": {
+      "apple_command": null,
+      "checked": "margin",
+      "checked_at": "2026-10-01",
+      "checked_on": [
+        "27"
+      ]
+    },
+    "getattrlistbulk": {
+      "apple_command": null,
+      "checked": "margin",
+      "checked_at": "2026-10-01",
+      "checked_on": [
+        "15",
+        "26",
+        "27"
+      ]
+    },
+    "listxattr": {
+      "apple_command": null,
+      "checked": "no",
+      "checked_at": null,
+      "checked_on": []
+    },
+    "lsof_proc_pidfdinfo": {
+      "apple_command": "lsof -b -w +L1",
+      "checked": "no",
+      "checked_at": null,
+      "checked_on": []
+    },
+    "settings_ui_log": {
+      "apple_command": "/usr/bin/log show --last 1h --predicate 'subsystem == \"com.apple.settings.Storage\"'",
+      "checked": "byte",
+      "checked_at": "2026-10-01",
+      "checked_on": [
+        "27"
+      ]
+    },
+    "statfs": {
+      "apple_command": "df -k /",
+      "checked": "byte",
+      "checked_at": "2026-10-01",
+      "checked_on": [
+        "27"
+      ]
+    },
+    "storage_management_log": {
+      "apple_command": null,
+      "checked": "no",
+      "checked_at": null,
+      "checked_on": []
+    },
+    "sysctl_kern_boottime": {
+      "apple_command": "sysctl kern.boottime",
+      "checked": "no",
+      "checked_at": null,
+      "checked_on": []
+    },
+    "sysctl_vm_swapusage": {
+      "apple_command": "sysctl vm.swapusage",
+      "checked": "no",
+      "checked_at": null,
+      "checked_on": []
+    },
+    "tm_preferences_plist": {
+      "apple_command": null,
+      "checked": "no",
+      "checked_at": null,
+      "checked_on": []
+    }
+  }
+}

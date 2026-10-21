@@ -1,0 +1,70 @@
+sdtally 0.1.0-teste · 2026-09-29 14:00 · macOS 27.0
+GB = 10^9 bytes, como o Ajustes
+INCOMPLETO (sem sudo)
+  - arquivos apagados e abertos: só os processos do seu usuário
+  - 30 pastas sem permissão de leitura: entram por dir-stats quando o APFS
+    guarda o número
+  Para a conta completa: sudo sdtally
+
+Tela do Ajustes (reproduzida)                                   GB   fonte
+  macOS (Σ CapacityInUse − Data)                             39,82   diskutil
+    Volumes à parte, somados no macOS e não em Dados do Sistema: Sistema 12,00 ·
+    Preboot 10,00 · Recovery 5,40 · Update 0,08 · VM 12,34
+  Apple Intelligence (dentro de Dados do Sistema)       não medido
+      nenhum asset no log 'AssetGC determine' das últimas 24 h
+  Dados do Sistema                                    sem registro   log show
+    Abra Ajustes do Sistema > Geral > Armazenamento, espere carregar e rode de
+    novo (o log guarda o valor por menos de ~21 h).
+
+Volume Data                                                 150,00   getattrlist
+  O que mais pesa (5 de 5 caminhos)
+    ~/Music                                                  38,28   travessia
+    ~/Library/Mobile Documents/com~apple~CloudDocs           36,12   travessia
+    Snapshots locais (8)                                     32,18   fsctl
+    /System/Library/AssetsV2…_UAF_FM_GenerativeModels        17,40   dir-stats
+    /private/tmp                                              4,13   travessia
+    Metadados do APFS                                         1,65   IOKit APFS
+    Arquivos apagados ainda abertos                          ≥0,21
+        lsof +L1 (quem mais segura: chronod, 0,19)
+    /Library/(demais)                                         0,15   travessia
+  Parcial ou não medido (o que falta fica bloqueado pelo macOS)
+    xattrs grandes: não medido (--sem-xattr)
+    apagados e abertos: parcial (3 de 20 arquivos sem tamanho alocado legível)
+    pastas protegidas (dir-stats): parcial (2 de 30 pastas sem dir-stats)
+  Bloqueado pelo macOS                                       19,88
+      diferença (13,25 % do usado; inclui o que não foi medido)
+
+Informativo (não somar: já está nas linhas acima ou é outra conta)
+  O macOS libera sozinho (purgeable)                         36,71   CacheDelete
+    com.apple.TMCacheDelete                                  31,75
+    com.apple.fspurgeable_data                                4,39
+    a                                                        <0,01
+  Clones completos repetidos (81.998 arquivos)               26,21   travessia
+  Hardlinks repetidos (28.934 arquivos)                      12,02   travessia
+  Raízes de enxerto puladas: 7 (blocos já contados)                  travessia
+  Só na nuvem (dataless): 2.802 arquivos, 140 pastas         55,62
+      tamanho aparente; 0 no disco
+  Metadados do APFS (árvores vivas do volume)                 1,65   IOKit APFS
+    Nós omap, fsroot e extentref × 4096 B. Já entra na conta acima (a travessia
+    só soma arquivos). Não inclui as árvores dos snapshots.
+  Lixo: itens há mais de 30 dias (3 de 12)                    1,23   getattrlist
+    De 4,56 GB em ~/.Trash. A idade é a data em que o item entrou no Lixo, não a
+    de modificação. Só o Lixo desta conta, neste volume; outros volumes não são
+    percorridos.
+
+Por que o espaço pode não voltar (só o que foi medido)
+  Arquivos só na nuvem (2.802 arquivos)                      55,62   travessia
+    Arquivos só na nuvem (iCloud Drive e outros provedores) não ocupam espaço no
+    disco: apagá-los aqui não devolve nada. O número é o tamanho aparente, não o
+    ocupado.
+  Purgeable                                                  36,71   CacheDelete
+    O Disponível do Ajustes é o livre mais o purgeable. O purgeable só vira
+    livre quando o macOS o libera; quem olha o livre (df, Terminal) não o vê
+    como livre.
+  Snapshots locais (8)                                       32,18   fsctl
+    Um snapshot local ainda segura os blocos dos arquivos que você apagou: o
+    espaço só volta quando o snapshot sai. O macOS remove os do Time Machine
+    sozinho se faltar espaço.
+  Clones APFS (81.998 arquivos)                              26,21   travessia
+    Um clone APFS divide os blocos com o arquivo original: apagar só um dos dois
+    devolve pouco ou nada. O espaço volta quando o último sai.

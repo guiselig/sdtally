@@ -1,0 +1,11 @@
+[package]
+name = "sdc-frente-d"
+version = "0.1.0"
+edition = "2024"
+
+# Experimentos da frente D (permissões, volumes, arquivos apagados-e-abertos).
+# Só leitura. Compilar com CARGO_TARGET_DIR fora do iCloud:
+#   CARGO_TARGET_DIR=/tmp/sdc-target cargo build --release --offline
+
+[dependencies]
+libc = "0.2.189"

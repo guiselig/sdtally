@@ -1,0 +1,874 @@
+{
+ "_comment": "Mac M4 com macOS 27.0 medido em 2026-10-18 (20:5x), sem root e com Acesso Total ao Disco. Nomes de apps e pastas trocados por nomes genéricos; a soma de cada linha do Ajustes foi conferida antes e depois da troca. settings_screen.screen.categories vem do frenteq (as próprias funções da Apple: StorageManagement, CacheDelete, PhotoLibraryServicesCore e o Library.musicdb) rodado no mesmo minuto: o painel do Ajustes não estava aberto, então não há log. O frenteq não leu o iCloud Drive (banco do File Provider), por isso ele não está nas categorias. facts.tree.buckets são os baldes da travessia sem dobrar, já com as cópias de clone (alocado + dup_clone).",
+ "macos_version": "27.0",
+ "root": false,
+ "incomplete_reasons": [
+  "no_root"
+ ],
+ "top": [
+  {
+   "path": null,
+   "folded": false,
+   "term": "snapshots",
+   "bytes": 40606400512,
+   "private_bytes": null,
+   "lower_bound": false,
+   "count": 2,
+   "top_process": null,
+   "source": "fsctl_snapshot_private_size"
+  },
+  {
+   "path": null,
+   "folded": false,
+   "term": "deleted_open",
+   "bytes": 284717056,
+   "private_bytes": null,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "lsof_proc_pidfdinfo"
+  },
+  {
+   "path": "/System/Library/AssetsV2",
+   "folded": false,
+   "term": "protected_folders",
+   "bytes": 28091359232,
+   "private_bytes": null,
+   "lower_bound": false,
+   "count": null,
+   "top_process": null,
+   "source": "fsctl_dir_stats"
+  }
+ ],
+ "settings_screen": {
+  "screen": {
+   "state": "measured",
+   "reason": null,
+   "logged_at": null,
+   "categories": [
+    {
+     "id": "com.apple.STMExtension.Applications",
+     "bytes": 87228026880
+    },
+    {
+     "id": "com.apple.STMExtension.Documents",
+     "bytes": 59682349056
+    },
+    {
+     "id": "com.apple.Music.MusicStorageExtension",
+     "bytes": 36408682190
+    },
+    {
+     "id": "com.apple.Photos.StorageManagementExtension",
+     "bytes": 10545486082
+    },
+    {
+     "id": "com.apple.TV.TVStorageExtension",
+     "bytes": 0
+    },
+    {
+     "id": "com.apple.iBooksX.DiskSpaceEfficiency",
+     "bytes": 0
+    },
+    {
+     "id": "com.apple.podcasts.MacPodcastsStorageExtension",
+     "bytes": 0
+    },
+    {
+     "id": "com.apple.STMExtension.Trash",
+     "bytes": 4476928
+    },
+    {
+     "id": "com.apple.STMExtension.GarageBand",
+     "bytes": 0
+    },
+    {
+     "id": "com.apple.STMExtension.iOSFiles",
+     "bytes": 0
+    },
+    {
+     "id": "com.apple.STMExtension.Developer",
+     "bytes": 2050146304
+    },
+    {
+     "id": "com.apple.STMExtension.Mail",
+     "bytes": 960143360
+    },
+    {
+     "id": "com.apple.messages.StorageManagementExtension",
+     "bytes": 1172134
+    },
+    {
+     "id": "com.apple.STMExtension.OtherUsers",
+     "bytes": 884736
+    }
+   ],
+   "categories_total": 196881367670,
+   "source": "frenteq"
+  }
+ },
+ "facts": {
+  "apps": [
+   "com.apple.AddressBook",
+   "com.apple.AppStore",
+   "com.apple.BluetoothFileExchange",
+   "com.apple.Chess",
+   "com.apple.Dictionary",
+   "com.apple.FaceTime",
+   "com.apple.FontBook",
+   "com.apple.GenerativePlaygroundApp",
+   "com.apple.Home",
+   "com.apple.Maps",
+   "com.apple.Notes",
+   "com.apple.Passwords",
+   "com.apple.PhotoBooth",
+   "com.apple.Preview",
+   "com.apple.QuickTimePlayerX",
+   "com.apple.Safari",
+   "com.apple.Safari.WebApp",
+   "com.apple.ScreenContinuity",
+   "com.apple.ScreenSharing",
+   "com.apple.Stickies",
+   "com.apple.TextEdit",
+   "com.apple.VoiceMemos",
+   "com.apple.calculator",
+   "com.apple.clock",
+   "com.apple.configurator.ui",
+   "com.apple.findmy",
+   "com.apple.freeform",
+   "com.apple.garageband10",
+   "com.apple.grapher",
+   "com.apple.helpviewer",
+   "com.apple.iCal",
+   "com.apple.iMovieApp",
+   "com.apple.iWork.Keynote",
+   "com.apple.iWork.Numbers",
+   "com.apple.iWork.Pages",
+   "com.apple.journal",
+   "com.apple.mobilephone",
+   "com.apple.printcenter",
+   "com.apple.reminders",
+   "com.apple.shortcuts",
+   "com.apple.stocks",
+   "com.apple.systempreferences",
+   "com.apple.weather",
+   "com.exemplo.Cont1",
+   "com.exemplo.Cont10",
+   "com.exemplo.Cont11",
+   "com.exemplo.Cont12",
+   "com.exemplo.Cont13",
+   "com.exemplo.Cont14",
+   "com.exemplo.Cont15",
+   "com.exemplo.Cont16",
+   "com.exemplo.Cont17",
+   "com.exemplo.Cont18",
+   "com.exemplo.Cont19",
+   "com.exemplo.Cont2",
+   "com.exemplo.Cont20",
+   "com.exemplo.Cont21",
+   "com.exemplo.Cont22",
+   "com.exemplo.Cont3",
+   "com.exemplo.Cont4",
+   "com.exemplo.Cont5",
+   "com.exemplo.Cont6",
+   "com.exemplo.Cont7",
+   "com.exemplo.Cont8",
+   "com.exemplo.Cont9",
+   "com.exemplo.ContPequenos"
+  ],
+  "desktop_in_icloud": true,
+  "documents_in_icloud": true,
+  "music": 36408682190,
+  "tv": 0,
+  "books": null,
+  "podcasts": 0,
+  "messages": 1172134,
+  "mail_purgeable": null,
+  "other_accounts": 0,
+  "tree": {
+   "clones": 26212212736,
+   "buckets": [
+    [
+     "~/Library/Caches/sistema",
+     63464816640
+    ],
+    [
+     "~/Library/Mobile Documents/com~apple~CloudDocs",
+     62901006336
+    ],
+    [
+     "~/Music/Music/Media.localized",
+     37972103168
+    ],
+    [
+     "/private/var/db/sistema",
+     30905106432
+    ],
+    [
+     "~/Library/Application Support/Dados39",
+     15150182400
+    ],
+    [
+     "~/pasta11",
+     11814621184
+    ],
+    [
+     "~/Pictures/Photos Library.photoslibrary",
+     10741936128
+    ],
+    [
+     "~/.oculta16/sub",
+     9215254528
+    ],
+    [
+     "~/pasta2",
+     6438375424
+    ],
+    [
+     "~/.oculta2/sub",
+     5359910912
+    ],
+    [
+     "~/.oculta6/sub",
+     4663480320
+    ],
+    [
+     "/Applications/App55.app/Contents/Frameworks",
+     4176908288
+    ],
+    [
+     "/Applications/App72.app/Contents/Frameworks",
+     3997782016
+    ],
+    [
+     "~/Applications",
+     3917021184
+    ],
+    [
+     "~/.oculta19/sub",
+     3390615552
+    ],
+    [
+     "~/.oculta29/sub",
+     3095924736
+    ],
+    [
+     "~/Library/Application Support/Dados37",
+     2949275648
+    ],
+    [
+     "~/Library/Application Support/Dados38",
+     2814992384
+    ],
+    [
+     "~/pasta18",
+     2657189888
+    ],
+    [
+     "/Applications/App31.app/Contents/Frameworks",
+     2644279296
+    ],
+    [
+     "~/Library/Containers/com.apple.Safari/Data",
+     2502021120
+    ],
+    [
+     "~/.oculta5/sub",
+     2472423424
+    ],
+    [
+     "~/Library/Application Support/Dados65",
+     2343333888
+    ],
+    [
+     "/Applications/App4.app/Contents/Frameworks",
+     2110738432
+    ],
+    [
+     "~/.oculta8/sub",
+     2052100096
+    ],
+    [
+     "/Applications/App28.app/Contents/Frameworks",
+     1958522880
+    ],
+    [
+     "~/pasta8",
+     1891659776
+    ],
+    [
+     "~/Library/Developer/CoreSimulator/Devices",
+     1817124864
+    ],
+    [
+     "~/.oculta24/sub",
+     1633390592
+    ],
+    [
+     "/Applications/App61.app/Contents/Frameworks",
+     1507028992
+    ],
+    [
+     "/Applications/App27.app/Contents/Frameworks",
+     1501458432
+    ],
+    [
+     "/Applications/App24.app/Contents/Frameworks",
+     1464385536
+    ],
+    [
+     "~/Library/Application Support/Dados8",
+     1458929664
+    ],
+    [
+     "/Applications/App52.app/Contents/Frameworks",
+     1452417024
+    ],
+    [
+     "/Applications/App1.app/Contents/Frameworks",
+     1380081664
+    ],
+    [
+     "/Library/Developer/CommandLineTools/SDKs",
+     1273724928
+    ],
+    [
+     "/Applications/App80.app/Contents/Frameworks",
+     1153933312
+    ],
+    [
+     "/Applications/App51.app/Contents/Frameworks",
+     1153331200
+    ],
+    [
+     "~/pasta16",
+     1152585728
+    ],
+    [
+     "/Applications/App50.app/Contents/Frameworks",
+     1126019072
+    ],
+    [
+     "/Applications/App74.app/Contents/Frameworks",
+     1111805952
+    ],
+    [
+     "~/Library/Containers/com.apple.Safari.WebApp/Data",
+     1071173632
+    ],
+    [
+     "/Applications/App92.app/Contents/Frameworks",
+     1046650880
+    ],
+    [
+     "/Applications/App71.app/Contents/Frameworks",
+     1020383232
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Cont3/Data",
+     1008603136
+    ],
+    [
+     "~/Library/Mail/V10",
+     960139264
+    ],
+    [
+     "/Applications/App2.app/Contents/Frameworks",
+     953114624
+    ],
+    [
+     "~/.oculta28/sub",
+     904286208
+    ],
+    [
+     "/Applications/App84.app/Contents/Frameworks",
+     807030784
+    ],
+    [
+     "/Applications/App53.app/Contents/Frameworks",
+     765157376
+    ],
+    [
+     "/Applications/App21.app/Contents/Frameworks",
+     741433344
+    ],
+    [
+     "/Applications/App69.app/Contents/Frameworks",
+     740159488
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Cont6/Data",
+     718233600
+    ],
+    [
+     "/Applications/App30.app/Contents/Frameworks",
+     714362880
+    ],
+    [
+     "/Applications/App8.app/Contents/Frameworks",
+     693456896
+    ],
+    [
+     "~/.oculta13/sub",
+     681463808
+    ],
+    [
+     "/Applications/App16.app/Contents/Frameworks",
+     678670336
+    ],
+    [
+     "/Library/Developer/CommandLineTools/usr",
+     664866816
+    ],
+    [
+     "/Applications/App86.app/Contents/Frameworks",
+     649150464
+    ],
+    [
+     "/Applications/App87.app/Contents/Frameworks",
+     638001152
+    ],
+    [
+     "/Applications/Pequenos.app/Contents/Frameworks",
+     620376064
+    ],
+    [
+     "/Applications/App89.app/Contents/Frameworks",
+     608165888
+    ],
+    [
+     "/Applications/App23.app/Contents/Frameworks",
+     573440000
+    ],
+    [
+     "/Applications/App54.app/Contents/Frameworks",
+     569937920
+    ],
+    [
+     "/Applications/App35.app/Contents/Frameworks",
+     569720832
+    ],
+    [
+     "/Applications/App32.app/Contents/Frameworks",
+     530276352
+    ],
+    [
+     "/Applications/App98.app/Contents/Frameworks",
+     504143872
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Sistema548/Data",
+     496971776
+    ],
+    [
+     "~/Library/Application Support/Dados5",
+     489951232
+    ],
+    [
+     "/Applications/App37.app/Contents/Frameworks",
+     482897920
+    ],
+    [
+     "/Applications/App36.app/Contents/Frameworks",
+     459952128
+    ],
+    [
+     "~/Library/Application Support/Dados13",
+     459018240
+    ],
+    [
+     "/Applications/App63.app/Contents/Frameworks",
+     458420224
+    ],
+    [
+     "/Applications/App64.app/Contents/Frameworks",
+     457437184
+    ],
+    [
+     "/Applications/App33.app/Contents/Frameworks",
+     441716736
+    ],
+    [
+     "/Applications/App68.app/Contents/Frameworks",
+     418123776
+    ],
+    [
+     "/Applications/App29.app/Contents/Frameworks",
+     394436608
+    ],
+    [
+     "~/Movies/pasta1",
+     381206528
+    ],
+    [
+     "~/Library/Application Support/Dados88",
+     375308288
+    ],
+    [
+     "/Applications/App60.app/Contents/Frameworks",
+     370761728
+    ],
+    [
+     "/Applications/App39.app/Contents/Frameworks",
+     362098688
+    ],
+    [
+     "/Applications/App82.app/Contents/Frameworks",
+     329031680
+    ],
+    [
+     "/Applications/App43.app/Contents/Frameworks",
+     312131584
+    ],
+    [
+     "~/Library/Application Support/Pequenos",
+     311345152
+    ],
+    [
+     "~/pasta20",
+     302837760
+    ],
+    [
+     "/Applications/App34.app/Contents/Frameworks",
+     284123136
+    ],
+    [
+     "/Applications/App40.app/Contents/Frameworks",
+     278310912
+    ],
+    [
+     "~/Library/Application Support/Dados42",
+     274108416
+    ],
+    [
+     "~/.oculta4/sub",
+     272732160
+    ],
+    [
+     "/Applications/App6.app/Contents/Frameworks",
+     269848576
+    ],
+    [
+     "~/.oculta3/sub",
+     254328832
+    ],
+    [
+     "/Applications/App77.app/Contents/Frameworks",
+     248295424
+    ],
+    [
+     "/Applications/App90.app/Contents/Frameworks",
+     247463936
+    ],
+    [
+     "/Applications/App88.app/Contents/Frameworks",
+     244051968
+    ],
+    [
+     "~/Library/Application Support/Dados45",
+     238641152
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Sistema74/Data",
+     223748096
+    ],
+    [
+     "/Applications/App97.app/Contents/Frameworks",
+     223649792
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Sistema569/Data",
+     218681344
+    ],
+    [
+     "~/Music/Music/Previous Libraries.localized",
+     216928256
+    ],
+    [
+     "~/Library/Containers/com.exemplo.ContPequenos/Data",
+     208416768
+    ],
+    [
+     "~/.oculta11/sub",
+     207990784
+    ],
+    [
+     "~/Library/Application Support/Dados41",
+     207003648
+    ],
+    [
+     "~/pasta21",
+     203010048
+    ],
+    [
+     "/Applications/App75.app/Contents/Frameworks",
+     202887168
+    ],
+    [
+     "/Applications/App66.app/Contents/Frameworks",
+     202145792
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Sistema358/Data",
+     200372224
+    ],
+    [
+     "/Applications/App101.app/Contents/Frameworks",
+     199778304
+    ],
+    [
+     "/Applications/App45.app/Contents/Frameworks",
+     193810432
+    ],
+    [
+     "~/.oculta46/sub",
+     188952576
+    ],
+    [
+     "/Applications/App83.app/Contents/Frameworks",
+     188612608
+    ],
+    [
+     "~/Library/Application Support/Dados3",
+     186757120
+    ],
+    [
+     "/Applications/App100.app/Contents/Frameworks",
+     183709696
+    ],
+    [
+     "/Applications/App26.app/Contents/Frameworks",
+     177164288
+    ],
+    [
+     "~/Library/Application Support/Dados1",
+     173490176
+    ],
+    [
+     "/Applications/App14.app/Contents/Frameworks",
+     170819584
+    ],
+    [
+     "~/Library/Containers/com.exemplo.SistemaPequenos/Data",
+     170557440
+    ],
+    [
+     "/Applications/App91.app/Contents/Frameworks",
+     168247296
+    ],
+    [
+     "~/.oculta21/sub",
+     158724096
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Sistema580/Data",
+     158134272
+    ],
+    [
+     "/Applications/App15.app/Contents/Frameworks",
+     154591232
+    ],
+    [
+     "/Applications/App93.app/Contents/Frameworks",
+     153853952
+    ],
+    [
+     "/Applications/App59.app/Contents/Frameworks",
+     153288704
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Cont2/Data",
+     144896000
+    ],
+    [
+     "/Applications/App7.app/Contents/Frameworks",
+     144560128
+    ],
+    [
+     "/Applications/App3.app/Contents/Frameworks",
+     138678272
+    ],
+    [
+     "~/pasta4",
+     138436608
+    ],
+    [
+     "~/Library/Application Support/Dados74",
+     130064384
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Cont17/Data",
+     126873600
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Cont16/Data",
+     125779968
+    ],
+    [
+     "/Applications/App13.app/Contents/Frameworks",
+     117456896
+    ],
+    [
+     "/Library/Developer/CommandLineTools/Library",
+     106143744
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Sistema21/Data",
+     105955328
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Cont11/Data",
+     101605376
+    ],
+    [
+     "~/Library/Application Support/Dados102",
+     86597632
+    ],
+    [
+     "~/Library/Application Support/Dados30",
+     81371136
+    ],
+    [
+     "/Applications/App10.app/Contents/Frameworks",
+     74637312
+    ],
+    [
+     "~/Music/Music/Music Library.musiclibrary",
+     71577600
+    ],
+    [
+     "/Applications/App44.app/Contents/Frameworks",
+     71401472
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Sistema490/Data",
+     66277376
+    ],
+    [
+     "~/Library/Containers/com.exemplo.Sistema210/Data",
+     65302528
+    ],
+    [
+     "/Applications/App85.app/Contents/Frameworks",
+     63893504
+    ],
+    [
+     "/Applications/App5.app/Contents/Frameworks",
+     62697472
+    ],
+    [
+     "/Applications/App17.app/Contents/Frameworks",
+     61792256
+    ],
+    [
+     "~/Documents",
+     60432384
+    ],
+    [
+     "~/Library/Application Support/Dados19",
+     59965440
+    ],
+    [
+     "~/Library/Application Support/Dados23",
+     59781120
+    ],
+    [
+     "~/Library/Application Support/Dados14",
+     58417152
+    ],
+    [
+     "/Applications/App70.app/Contents/Frameworks",
+     55762944
+    ],
+    [
+     "/Applications/App48.app/Contents/Frameworks",
+     55152640
+    ],
+    [
+     "~/Movies",
+     52932608
+    ],
+    [
+     "~/pastaPequenas",
+     43180032
+    ],
+    [
+     "~/.ocultaPequenas/sub",
+     29995008
+    ],
+    [
+     "~/Library/Messages",
+     28119040
+    ],
+    [
+     "~/Music/pasta2",
+     17104896
+    ],
+    [
+     "~/Pictures",
+     6975488
+    ],
+    [
+     "/Library/Developer/CoreSimulator/Profiles",
+     5324800
+    ],
+    [
+     "~/.Trash",
+     4476928
+    ],
+    [
+     "/Users/Shared",
+     884736
+    ],
+    [
+     "~",
+     843776
+    ],
+    [
+     "~/Movies/TV/Media.localized",
+     184320
+    ],
+    [
+     "~/Library/Application Support",
+     151552
+    ],
+    [
+     "/Applications",
+     106496
+    ],
+    [
+     "~/Library/Developer/Xcode/DerivedData",
+     81920
+    ],
+    [
+     "~/Movies/TV/Previous Libraries.localized",
+     69632
+    ],
+    [
+     "~/Music",
+     32768
+    ],
+    [
+     "~/Movies/TV/TV Library.tvlibrary",
+     16384
+    ],
+    [
+     "~/Desktop",
+     8192
+    ],
+    [
+     "~/Public",
+     8192
+    ],
+    [
+     "/Library/Developer/CoreSimulator/Images",
+     4096
+    ],
+    [
+     "~/Library/Mail",
+     4096
+    ]
+   ]
+  }
+ }
+}

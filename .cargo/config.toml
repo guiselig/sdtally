@@ -1,0 +1,3 @@
+# Suporte declarado: macOS 15, 26 e 27 (PLANO §7). O CI confere minos 15.0 no binário.
+[env]
+MACOSX_DEPLOYMENT_TARGET = "15.0"

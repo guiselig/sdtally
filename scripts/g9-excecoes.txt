@@ -1,0 +1,2 @@
+# Linhas exatas (sensíveis a maiúsculas) de código que contêm uma palavra de g9-proibidas.txt
+# sem ser texto para o usuário (nome de API, por exemplo). Uma por linha, inteira.

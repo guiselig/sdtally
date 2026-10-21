@@ -1,0 +1,278 @@
+# macOS 15, 26 e 27 em arm64 (labels conferidos no README do actions/runner-images em 29/09/2026).
+# O passo com sudo roda os fsctl privados do APFS nas versões que a máquina do dono não tem.
+name: ci
+
+# Só manual: repo privado, e o minuto de macOS é pago (10x). O dono não quer custo pessoal (13/10/2026).
+# Os testes rodam na máquina antes de cada merge. Quando o repo for público, voltar push e pull_request.
+on:
+  workflow_dispatch:
+
+jobs:
+  teste:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, macos-26, xcode-27]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Toolchain stable
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          sw_vers
+          rustc --version
+
+      - name: Testes (inclui a fixture APFS com hdiutil)
+        run: cargo test --release -- --nocapture
+
+      - name: Build release
+        run: cargo build --release
+
+      - name: minos 15.0 nos binários
+        run: |
+          for b in sdtally sdc-coleta; do
+            vtool -show-build "target/release/$b" | tee /dev/stderr | grep -q 'minos 15.0'
+          done
+
+      # Snapshot com privado > 0: o arquivo precisa existir quando o snapshot é tirado e ser
+      # apagado depois (os blocos ficam presos só no snapshot). Exercita o fsctl de snapshot.
+      # continue-on-error: passo novo não pode impedir as coletas com sudo que já estavam verdes.
+      - name: Snapshot local com ~200 MB presos
+        id: snap
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          antes=$(tmutil listlocalsnapshots / | grep -c com.apple || true)
+          dd if=/dev/urandom of="$RUNNER_TEMP/preso.bin" bs=1m count=200
+          sync
+          sudo tmutil localsnapshot
+          rm "$RUNNER_TEMP/preso.bin"
+          sync
+          depois=$(tmutil listlocalsnapshots / | grep -c com.apple || true)
+          echo "snapshots locais: $antes -> $depois"
+          test "$depois" -gt "$antes"
+
+      # Invariantes da conta no JSON real (mesmos de tests/relatorio.rs, que usa conta sintética).
+      - name: sdtally --json com sudo
+        if: success() || failure()
+        timeout-minutes: 20
+        env:
+          SDC_PANIC: "1"
+          SNAP: ${{ steps.snap.outcome }}
+        run: |
+          sudo -E ./target/release/sdtally --json > sdtally.json
+          python3 - <<'EOF'
+          import json, os
+          d = json.load(open("sdtally.json"))
+          v = d["data_volume"]
+          medidos = sum(t["bytes"] for t in v["terms"] if t["bytes"] is not None)
+          assert v["used"]["bytes"] - medidos == v["unexplained"]["bytes"], "conta não fecha"
+          assert sum(t["bytes"] for t in d["top"]) == medidos, "top não soma os termos medidos"
+          assert not d["stage_errors"], d["stage_errors"]
+          s = next(t for t in v["terms"] if t["key"] == "snapshots")
+          print("snapshots:", s)
+          if os.environ["SNAP"] == "success":
+              assert s["state"] == "measured" and s["bytes"] >= 190_000_000, "snapshot sem os ~200 MB presos"
+          EOF
+
+      # Tempo próprio: travessia lenta ou travada aparece neste passo, não no timeout do job.
+      # SDC_PANIC=1 deixa panic no stderr (sudo -E para a variável chegar).
+      - name: sdc-coleta com sudo (VM do CI, não é dado pessoal)
+        if: success() || failure()
+        timeout-minutes: 20
+        env:
+          SDC_PANIC: "1"
+        run: sudo -E ./target/release/sdc-coleta --saida report.json
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: report-${{ matrix.os }}
+          path: |
+            report.json
+            sdtally.json
+          if-no-files-found: warn
+
+  # spec-fase5 §1.10: o app e a CLI só leem e não usam a rede. Reprova o job se aparecer.
+  grep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Sem apagar e sem rede
+        run: |
+          falhou=0
+          # Apagar: tests/nunca_apaga.rs (cargo test) cobre Rust e Swift, com a lista do que o programa apaga dos próprios arquivos.
+          grep -rnE 'URLSession|NWConnection|NWListener|socket\(' app/Sources && falhou=1
+          grep -rnE 'TcpStream|UdpSocket' src && falhou=1
+          exit $falhou
+      # spec-fase6 §7 G9: carta anti-scareware (palavras proibidas, badge, vermelho, Toggle).
+      - name: G9
+        run: sh scripts/g9.sh
+
+  # App: compila nos três macOS (precisa de Swift 6.2+, Xcode 26 ou mais novo) e fotografa com o
+  # binário cru (nunca o .app) e as fixtures sintéticas. O montar.sh roda só para provar que monta.
+  app:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, macos-26, xcode-27]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Toolchain stable e Xcode mais novo
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+          x=$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)
+          sudo xcode-select -s "$x"
+          swift --version
+
+      - name: Testes do app (fixtures sintéticas)
+        run: swift test --package-path app --scratch-path "$RUNNER_TEMP/app-test"
+
+      - name: Binários crus (sdtally e app)
+        run: |
+          cargo build --bin sdtally
+          swift build --package-path app --scratch-path "$RUNNER_TEMP/app-build"
+
+      - name: Fotos pelo binário cru
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          F=app/Tests/SDTallyTests/Fixtures
+          for s in armazenamento permissoes info; do
+            SDTALLY_BIN="$PWD/target/debug/sdtally" SDTALLY_COMPLETO=$F/completo.json SDTALLY_DADOS=$F/dados \
+              SDTALLY_SECAO=$s SDTALLY_FOTO="$PWD/$s.png" "$RUNNER_TEMP/app-build/debug/SDTally"
+            test -s "$s.png"
+          done
+
+      - name: Montar SDTally.app (só prova que monta; não abre)
+        env:
+          SDTALLY_BUILD: ${{ runner.temp }}/sdtally-build
+        run: app/montar.sh
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: app-${{ matrix.os }}
+          path: "*.png"
+          if-no-files-found: warn
+
+  # Fontes que só foram vistas no 27 (research/mapa-de-fontes.md §7.1), na VM do CI: símbolos
+  # privados, linhas de log do painel, categorias contra o log, macOS contra a tela e dir-stats
+  # contra a travessia. Nada aqui reprova o job: o resultado vai no resumo e nos artefatos.
+  # Pesquisa (research/mapa-de-fontes.md §7), ~40 min por macOS: só a pedido
+  # (gh workflow run ci.yml --ref main).
+  fontes:
+    if: github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, macos-26, xcode-27]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Toolchain stable
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+
+      # Antes de abrir o painel, para a pasta do repositório (Documentos) não mudar durante a medição.
+      - name: Build (sdtally e frenteq)
+        run: |
+          cargo build --release
+          cargo build --release --manifest-path research/experimentos/frenteQ/Cargo.toml
+          swiftc -O -o cap research/experimentos/ci/capacidade.swift
+
+      - name: Símbolos privados
+        continue-on-error: true
+        run: research/experimentos/frenteQ/target/release/frenteq simbolos | tee simbolos.json
+
+      # Espera o número de blocos STMVolumeCategory parar de crescer por 60 s (o valor muda
+      # enquanto o painel carrega; vale o último bloco).
+      - name: Abrir Ajustes > Armazenamento e esperar o cálculo
+        continue-on-error: true
+        timeout-minutes: 20
+        run: |
+          open "x-apple.systempreferences:com.apple.settings.Storage"
+          ant=-1; parado=0
+          for i in $(seq 1 60); do
+            sleep 15
+            ./cap >> capacidade.txt || true
+            n=$(/usr/bin/log show --last 30m --style compact --predicate 'subsystem == "com.apple.storage" AND eventMessage CONTAINS "STMVolumeCategory"' | grep -c STMVolumeCategory || true)
+            echo "$((i * 15)) s: $n blocos"
+            if [ "$n" -gt 0 ] && [ "$n" -eq "$ant" ]; then parado=$((parado + 1)); else parado=0; fi
+            [ "$parado" -ge 4 ] && break
+            ant=$n
+          done
+          ./cap >> capacidade.txt || true
+          screencapture -x tela.png || echo "screencapture falhou"
+          swift research/experimentos/ci/rolar.swift || echo "rolagem falhou"
+          sleep 3
+          screencapture -x tela2.png || echo "screencapture 2 falhou"
+          ./cap >> capacidade.txt || true
+          /usr/bin/log show --last 40m --info --debug --style ndjson --predicate 'subsystem == "com.apple.storage" OR subsystem == "com.apple.settings.Storage"' > painel.ndjson
+          wc -l painel.ndjson
+
+      # Sem sudo: as categorias são do usuário que abriu o painel.
+      - name: Categorias (frenteq)
+        continue-on-error: true
+        timeout-minutes: 30
+        env:
+          FRENTEQ_POR_ITEM: "1"
+        run: research/experimentos/frenteQ/target/release/frenteq > categorias.json
+
+      # Developer: o que há em /Library/Developer/CoreSimulator (montagens contam?) e o que a
+      # extensão da Apple registrou ("path is unreadable" etc.).
+      - name: Developer (diagnóstico)
+        continue-on-error: true
+        timeout-minutes: 10
+        run: |
+          {
+            echo "## mount"; mount | grep -i -E "simulator|cryptex" || true
+            echo "## ls"; ls -la /Library/Developer/CoreSimulator /Library/Developer/CoreSimulator/Volumes || true
+            echo "## du -x (sem cruzar volume), KiB"; sudo du -sxk /Library/Developer/CoreSimulator/* 2>&1 || true
+            echo "## du (cruzando), KiB"; sudo du -sk /Library/Developer/CoreSimulator/* 2>&1 || true
+            echo "## FileProvider (iCloud)"; ls -la "$HOME/Library/Application Support/FileProvider" || true
+            echo "## caminhos no binário da extensão"
+            strings -a /System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/DeveloperStorageExtension.appex/Contents/MacOS/DeveloperStorageExtension | grep -E "^/|Library/Developer|Simulator" | sort -u
+            echo "## log da extensão (sem cache_delete)"
+            /usr/bin/log show --last 45m --info --debug --style compact --predicate 'process == "DeveloperStorageExtension" AND NOT category == "client"' | grep -v -E "CACHE_DELETE|^ |^}" | tail -150
+          } > developer.txt 2>&1
+
+      - name: sdtally com sudo
+        continue-on-error: true
+        timeout-minutes: 20
+        run: sudo ./target/release/sdtally --json > sdtally.json
+
+      - name: dir-stats contra a travessia (sudo)
+        continue-on-error: true
+        timeout-minutes: 20
+        run: sudo python3 research/experimentos/ci/dirstats_cmp.py ./target/release/sdtally > dirstats.md
+
+      - name: Resumo
+        if: always()
+        run: python3 research/experimentos/ci/fontes_cmp.py | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: fontes-${{ matrix.os }}
+          path: |
+            simbolos.json
+            painel.ndjson
+            tela.png
+            tela2.png
+            capacidade.txt
+            categorias.json
+            sdtally.json
+            dirstats.md
+            developer.txt
+          if-no-files-found: warn

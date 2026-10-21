@@ -1,0 +1,12 @@
+[package]
+name = "frenteq"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+# Crate isolado: não vira membro do pacote sdtally da raiz.
+[workspace]
+
+[dependencies]
+libc = "0.2.189"
+serde_json = "1"
