@@ -2,8 +2,10 @@
 # Publica uma versão: monta o .app assinado, gera o DMG e cria o release no GitHub, que é onde o botão
 # "Ver versões novas" das Configurações leva (o app não acessa a rede).
 #   scripts/publicar.sh    usa a versão do Cargo.toml; recusa pré-lançamento (0.1.0-dev etc.)
-# Precisa de: gh autenticado, árvore limpa e HEAD igual ao origin/main (a tag aponta para ele).
+# Precisa de: gh autenticado, dmgbuild (pipx install dmgbuild), árvore limpa e HEAD igual ao
+# origin/main (a tag aponta para ele).
 set -eu
+command -v dmgbuild >/dev/null || { echo "falta o dmgbuild: pipx install dmgbuild" >&2; exit 1; }
 
 repo=$(cd "$(dirname "$0")/.." && pwd)
 versao=$(sed -n 's/^version = "\(.*\)"/\1/p' "$repo/Cargo.toml" | head -1)
@@ -17,12 +19,11 @@ head=$(git -C "$repo" rev-parse HEAD)
 
 # montar.sh escreve o caminho do .app na última linha.
 pacote=$("$repo/app/montar.sh" | tail -1)
-# DMG com o app e um atalho para Aplicativos: abrir e arrastar.
+# DMG com o app e um atalho para Aplicativos: abrir e arrastar. Fundo, tamanho da janela e posição
+# dos ícones em scripts/dmg (o dmgbuild grava o .DS_Store sem abrir o Finder).
 dmg=$(dirname "$pacote")/SDTally-$versao.dmg
-pasta=$(mktemp -d)
-cp -R "$pacote" "$pasta/"
-ln -s /Applications "$pasta/Applications"
-hdiutil create -quiet -volname "SDTally $versao" -srcfolder "$pasta" -ov -format UDZO "$dmg"
+dmgbuild -s "$repo/scripts/dmg/ajustes.py" -D app="$pacote" -D pasta="$repo/scripts/dmg" \
+    "SDTally $versao" "$dmg"
 hdiutil verify -quiet "$dmg"
 
 # 0.x leva "(beta)" no título. Não usa Pre-release: o GitHub esconde pre-release da caixa
