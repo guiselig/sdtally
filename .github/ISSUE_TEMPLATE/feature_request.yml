@@ -1,0 +1,45 @@
+name: Feature request
+description: Suggest something SDTally could measure, explain or show.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        SDTally measures and explains; it never deletes, never uses the network, and never guesses a number. Requests that need any of those are out of scope. Please do not include personal data.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: What were you trying to understand about your disk, and what was missing?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like SDTally to do?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: How could it be measured?
+      description: If you know a syscall, API, log or Apple command that reports the number, name it. Measured beats estimated.
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part?
+      multiple: true
+      options:
+        - App
+        - CLI
+        - JSON / MCP
+        - Documentation
+        - Translation
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: This does not require deleting files, using the network, or estimating numbers.
+          required: true

@@ -1,0 +1,98 @@
+name: Bug report
+description: Something does not work, or a number looks wrong.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Before you post anything, **remove personal data**: real user names, home folder paths, file and folder names, UUIDs, volume names. Use `~` or `<user>` in paths.
+
+        For security problems, do not use this form: report privately from the Security tab.
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part?
+      options:
+        - App (SDTally.app)
+        - CLI (sdtally)
+        - Passwordless Root helper
+        - MCP server / AI access
+        - Export (JSON or PDF)
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: SDTally version
+      description: From the app's Info section, or `sdtally --version`.
+      placeholder: "0.1.1"
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version and Mac
+      description: For example "macOS 26.1, MacBook Air M3". SDTally supports Apple Silicon and macOS 15 or later.
+    validations:
+      required: true
+  - type: dropdown
+    id: how
+    attributes:
+      label: How was it running?
+      multiple: true
+      options:
+        - Automatic mode
+        - Full Measurement with administrator password
+        - Full Measurement with Passwordless Root
+        - Automatic with root
+        - CLI without sudo
+        - CLI with sudo
+        - Not sure
+  - type: dropdown
+    id: fda
+    attributes:
+      label: Full Disk Access
+      options:
+        - Granted
+        - Not granted
+        - Not sure
+  - type: dropdown
+    id: install
+    attributes:
+      label: How did you install it?
+      options:
+        - GitHub Releases disk image
+        - Built from source with app/montar.sh (Apple Development identity)
+        - Built from source with app/montar.sh (ad hoc, no identity)
+        - Built the CLI with cargo
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what you saw instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+  - type: textarea
+    id: output
+    attributes:
+      label: Output or measurement (redacted)
+      description: |
+        Paste error messages or the relevant part of the JSON. Redact first: export with "Replace Personal Names" on, or run `sdtally --redact names --stdin < measurement.json`. Review it before posting.
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I removed personal data (user name, real paths, file names, UUIDs) from everything above.
+          required: true
+        - label: I checked the FAQ in the wiki.
