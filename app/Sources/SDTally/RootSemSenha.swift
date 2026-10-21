@@ -13,6 +13,12 @@ import SwiftUI
     return (try? await c.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: motivo)) ?? false
 }
 
+extension Painel {
+    /// O Automático com root está valendo (a escolha e o Root sem Senha ativo): o app fica só no
+    /// Automático, sem o alternador, o cartão de tempo real e o botão de medir.
+    var soAuto: Bool { autoComRoot && helper == .enabled }
+}
+
 /// "Instalar Root sem Senha?" antes de registrar o helper. Os botões de instalar só ligam
 /// `painel.perguntarInstalar`; o alerta fica na janela (JanelaView).
 struct AvisoInstalarRoot: ViewModifier {

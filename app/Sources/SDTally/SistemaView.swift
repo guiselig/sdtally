@@ -15,16 +15,18 @@ struct SistemaView: View {
         ScrollViewReader { proxy in
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                // No Manual, enquanto mede, o cartão diz que está medindo (com o cronômetro) no
-                // lugar do convite para medir com senha.
-                if painel.manual && painel.medindo {
-                    CartaoTempoReal(simbolo: "hourglass", titulo: String(localized: "Medindo o disco"),
-                                    texto: String(localized: "A medição completa percorre o disco arquivo por arquivo e leva alguns minutos. Os números novos aparecem quando ela terminar."))
-                } else if !painel.manual {
-                    CartaoTempoReal()
-                } else if c == nil {
-                    CartaoTempoReal(simbolo: "lock.open", titulo: String(localized: "Nenhuma medição completa"),
-                                    texto: String(localized: "A medição com senha entra nas pastas do sistema e de outros usuários e mede arquivo por arquivo: valores mais completos e precisos que os do Automático."))
+                if !painel.soAuto {
+                    // No Manual, enquanto mede, o cartão diz que está medindo (com o cronômetro) no
+                    // lugar do convite para medir com senha.
+                    if painel.manual && painel.medindo {
+                        CartaoTempoReal(simbolo: "hourglass", titulo: String(localized: "Medindo o disco"),
+                                        texto: String(localized: "A medição completa percorre o disco arquivo por arquivo e leva alguns minutos. Os números novos aparecem quando ela terminar."))
+                    } else if !painel.manual {
+                        CartaoTempoReal()
+                    } else if c == nil {
+                        CartaoTempoReal(simbolo: "lock.open", titulo: String(localized: "Nenhuma medição completa"),
+                                        texto: String(localized: "A medição com senha entra nas pastas do sistema e de outros usuários e mede arquivo por arquivo: valores mais completos e precisos que os do Automático."))
+                    }
                 }
                 CartaoInicio()
                 if let c {
