@@ -2,12 +2,12 @@
 
 ## Supported versions
 
-SDTally is in 0.x. Only the **latest release** on [GitHub Releases](https://github.com/guiselig/sdtally/releases) receives security fixes. Please check that a problem still happens on the latest release or on `main` before reporting it.
+Only the **latest release** on [GitHub Releases](https://github.com/guiselig/sdtally/releases) receives security fixes. Please check that a problem still happens on the latest release or on `main` before reporting it.
 
 | Version | Supported |
 |---|---|
-| Latest 0.x release | Yes |
-| Older 0.x releases | No |
+| Latest release | Yes |
+| Older releases | No |
 
 ## Reporting a vulnerability
 

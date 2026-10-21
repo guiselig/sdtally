@@ -12,8 +12,6 @@ SDTally has two parts that share one measuring engine:
 - **`sdtally`**, a command-line tool written in Rust. It does all the measuring and prints text or JSON.
 - **SDTally.app**, a SwiftUI app that runs the embedded `sdtally` and shows the results: a live view, a full measurement, history, recommendations, a menu bar icon and exports.
 
-> Status: beta (0.x). See [Releases](https://github.com/guiselig/sdtally/releases).
-
 ## Contents
 
 - [Screenshots](#screenshots)
