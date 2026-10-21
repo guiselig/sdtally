@@ -21347,6 +21347,220 @@
         }
       }
     },
+    "A medição completa percorre o disco arquivo por arquivo e leva alguns minutos. Os números novos aparecem quando ela terminar." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يمر القياس الكامل على القرص ملفًا ملفًا ويستغرق بضع دقائق. تظهر الأرقام الجديدة عند انتهائه."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La mesura completa recorre el disc fitxer per fitxer i triga uns minuts. Les xifres noves apareixen quan acaba."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Úplné měření prochází disk soubor po souboru a trvá několik minut. Nová čísla se zobrazí po jeho dokončení."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den fulde måling gennemgår disken fil for fil og tager et par minutter. De nye tal vises, når den er færdig."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die vollständige Messung geht die Festplatte Datei für Datei durch und dauert einige Minuten. Die neuen Zahlen erscheinen, wenn sie fertig ist."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η πλήρης μέτρηση διατρέχει τον δίσκο αρχείο προς αρχείο και διαρκεί λίγα λεπτά. Οι νέοι αριθμοί εμφανίζονται όταν τελειώσει."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The full measurement goes through the disk file by file and takes a few minutes. The new numbers appear when it finishes."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La medición completa recorre el disco archivo por archivo y tarda unos minutos. Las cifras nuevas aparecen cuando termina."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La medición completa recorre el disco archivo por archivo y tarda unos minutos. Las cifras nuevas aparecen cuando termina."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Täysi mittaus käy levyn läpi tiedosto kerrallaan ja kestää muutaman minuutin. Uudet luvut näkyvät, kun se valmistuu."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La mesure complète parcourt le disque fichier par fichier et prend quelques minutes. Les nouveaux chiffres s’affichent à la fin."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "המדידה המלאה עוברת על הכונן קובץ אחר קובץ ונמשכת כמה דקות. המספרים החדשים יופיעו כשהיא תסתיים."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पूरा माप डिस्क की हर फ़ाइल से गुज़रता है और कुछ मिनट लेता है। पूरा होने पर नए आँकड़े दिखेंगे।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potpuno mjerenje prolazi disk datoteku po datoteku i traje nekoliko minuta. Novi brojevi pojavit će se kad završi."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A teljes mérés fájlonként végigmegy a lemezen, és néhány percig tart. Az új számok a végén jelennek meg."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengukuran lengkap menelusuri disk file demi file dan memerlukan beberapa menit. Angka baru muncul setelah selesai."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La misurazione completa scorre il disco file per file e richiede qualche minuto. I nuovi numeri compaiono al termine."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完全な測定はディスクをファイルごとに調べるため、数分かかります。終了すると新しい数値が表示されます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전체 측정은 디스크를 파일 단위로 살펴보며 몇 분 정도 걸립니다. 완료되면 새 수치가 표시됩니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pengukuran penuh menyemak cakera fail demi fail dan mengambil masa beberapa minit. Nombor baharu muncul apabila selesai."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den fullstendige målingen går gjennom disken fil for fil og tar noen minutter. De nye tallene vises når den er ferdig."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De volledige meting loopt de schijf bestand voor bestand door en duurt een paar minuten. De nieuwe getallen verschijnen als ze klaar is."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pełny pomiar przechodzi przez dysk plik po pliku i trwa kilka minut. Nowe liczby pojawią się po jego zakończeniu."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A medição completa percorre o disco ficheiro a ficheiro e demora alguns minutos. Os números novos aparecem quando terminar."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Măsurarea completă parcurge discul fișier cu fișier și durează câteva minute. Cifrele noi apar când se termină."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Полное измерение проходит по диску файл за файлом и занимает несколько минут. Новые значения появятся, когда оно закончится."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Úplné meranie prechádza disk súbor po súbore a trvá niekoľko minút. Nové čísla sa zobrazia po jeho skončení."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popolno merjenje pregleda disk datoteko za datoteko in traja nekaj minut. Nove številke se prikažejo, ko konča."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den fullständiga mätningen går igenom disken fil för fil och tar några minuter. De nya siffrorna visas när den är klar."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การวัดแบบเต็มจะตรวจดิสก์ทีละไฟล์และใช้เวลาสองสามนาที ตัวเลขใหม่จะแสดงเมื่อเสร็จ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tam ölçüm diski dosya dosya tarar ve birkaç dakika sürer. Yeni değerler bittiğinde görünür."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Повне вимірювання проходить диск файл за файлом і триває кілька хвилин. Нові значення з’являться, коли воно завершиться."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phép đo đầy đủ duyệt ổ đĩa từng tệp và mất vài phút. Số liệu mới sẽ hiện khi đo xong."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完整测量会逐个文件检查磁盘，需要几分钟。完成后会显示新的数值。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完整測量會逐一檢查磁碟中的檔案，需要幾分鐘。完成後會顯示新的數值。"
+          }
+        }
+      }
+    },
     "A primeira leitura automática leva cerca de 1 minuto." : {
       "localizations" : {
         "en" : {
@@ -90475,6 +90689,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Medido; sin comparación con Apple."
+          }
+        }
+      }
+    },
+    "Medindo o disco" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جارٍ قياس القرص"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S’està mesurant el disc"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Měření disku"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Måler disken"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Festplatte wird gemessen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Μέτρηση του δίσκου"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Measuring the Disk"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Midiendo el disco"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Midiendo el disco"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Levyä mitataan"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesure du disque"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מודד את הכונן"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिस्क मापी जा रही है"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mjerenje diska"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A lemez mérése"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengukur Disk"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Misurazione del disco"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクを測定中"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "디스크 측정 중"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengukur Cakera"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Måler disken"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schijf wordt gemeten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mierzenie dysku"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A medir o disco"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se măsoară discul"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Измерение диска"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meranie disku"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merjenje diska"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mäter disken"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กำลังวัดดิสก์"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disk Ölçülüyor"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вимірювання диска"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang đo ổ đĩa"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在测量磁盘"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在測量磁碟"
           }
         }
       }

@@ -16,7 +16,12 @@ struct SistemaView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 if !painel.soAuto {
-                    if !painel.manual {
+                    // No Manual, enquanto mede, o cartão diz que está medindo (com o cronômetro) no
+                    // lugar do convite para medir com senha.
+                    if painel.manual && painel.medindo {
+                        CartaoTempoReal(simbolo: "hourglass", titulo: String(localized: "Medindo o disco"),
+                                        texto: String(localized: "A medição completa percorre o disco arquivo por arquivo e leva alguns minutos. Os números novos aparecem quando ela terminar."))
+                    } else if !painel.manual {
                         CartaoTempoReal()
                     } else if c == nil {
                         CartaoTempoReal(simbolo: "lock.open", titulo: String(localized: "Nenhuma medição completa"),
