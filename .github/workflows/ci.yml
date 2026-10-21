@@ -9,6 +9,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+# Só leitura: o CI não escreve no repositório.
+permissions:
+  contents: read
+
 jobs:
   teste:
     strategy:
@@ -18,7 +22,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Toolchain stable
         run: |
@@ -89,7 +93,7 @@ jobs:
           SDC_PANIC: "1"
         run: sudo -E ./target/release/sdc-coleta --saida report.json
 
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         if: always()
         with:
           name: report-${{ matrix.os }}
@@ -102,7 +106,7 @@ jobs:
   grep:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Sem apagar e sem rede
         run: |
           falhou=0
@@ -124,7 +128,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Toolchain stable e Xcode mais novo
         run: |
@@ -158,7 +162,7 @@ jobs:
           SDTALLY_BUILD: ${{ runner.temp }}/sdtally-build
         run: app/montar.sh
 
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         if: always()
         with:
           name: app-${{ matrix.os }}
@@ -179,7 +183,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 75
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Toolchain stable
         run: |
@@ -263,7 +267,7 @@ jobs:
         if: always()
         run: python3 research/experimentos/ci/fontes_cmp.py | tee -a "$GITHUB_STEP_SUMMARY"
 
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         if: always()
         with:
           name: fontes-${{ matrix.os }}
