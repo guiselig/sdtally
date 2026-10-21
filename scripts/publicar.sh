@@ -20,9 +20,22 @@ pacote=$("$repo/app/montar.sh" | tail -1)
 zip=$(dirname "$pacote")/SDTally-$versao.zip
 ditto -c -k --keepParent "$pacote" "$zip"
 
-# 0.x sai marcado como Pre-release (beta) no GitHub.
-beta=
-case $versao in 0.*) beta=--prerelease ;; esac
-gh release create "v$versao" "$zip" -R guiselig/sdtally --target "$head" --title "SDTally $versao" $beta \
+# 0.x leva "(beta)" no título. Não usa Pre-release: o GitHub esconde pre-release da caixa
+# Releases da página do repositório.
+titulo="SDTally $versao"
+case $versao in 0.*) titulo="$titulo (beta)" ;; esac
+gh release create "v$versao" "$zip" -R guiselig/sdtally --target "$head" --title "$titulo" --latest \
     --generate-notes --notes "Baixe o SDTally-$versao.zip, descompacte e arraste o SDTally.app para Aplicativos.
-O app não é notarizado pela Apple: na primeira vez, abra Ajustes do Sistema > Privacidade e Segurança e clique em \"Abrir Mesmo Assim\"."
+O app não é notarizado pela Apple: na primeira vez, abra Ajustes do Sistema > Privacidade e Segurança e clique em \"Abrir Mesmo Assim\".
+Pelo Homebrew: brew install guiselig/sdtally/sdtally (linha de comando) ou brew install --cask guiselig/sdtally/sdtally (app)."
+
+# Tap do Homebrew (guiselig/homebrew-sdtally): versão e sha256 da fórmula (código da tag) e do cask (zip).
+tap=$(mktemp -d)
+gh repo clone guiselig/homebrew-sdtally "$tap" -- -q
+fonte=$(curl -fsSL "https://github.com/guiselig/sdtally/archive/refs/tags/v$versao.tar.gz" | shasum -a 256 | cut -d' ' -f1)
+binario=$(shasum -a 256 "$zip" | cut -d' ' -f1)
+sed -i '' -e "s|/tags/v[^/]*\.tar\.gz|/tags/v$versao.tar.gz|" -e "s|^  sha256 \".*\"|  sha256 \"$fonte\"|" "$tap/Formula/sdtally.rb"
+sed -i '' -e "s|^  version \".*\"|  version \"$versao\"|" -e "s|^  sha256 \".*\"|  sha256 \"$binario\"|" "$tap/Casks/sdtally.rb"
+git -C "$tap" commit -qam "sdtally $versao"
+git -C "$tap" push -q
+echo "tap atualizado para $versao"
