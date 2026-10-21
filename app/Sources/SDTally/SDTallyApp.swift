@@ -185,6 +185,22 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         Painel.unico.atualizarHelper()  // aprovação em Ajustes volta com o app ativo
         Task { await Painel.unico.atualizar() }
     }
+    /// Fechar com a medição completa com root rodando (senha ou helper) perde a medição: pergunta antes.
+    /// Logout, reinício e desligamento (kAEQuitReason no evento) fecham sem perguntar, para não travar o sistema.
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        guard case .medindo(_, true, _) = Painel.unico.medicao else { return .terminateNow }
+        let e = NSAppleEventManager.shared().currentAppleEvent
+        if e?.attributeDescriptor(forKeyword: kAEQuitReason) != nil || e?.paramDescriptor(forKeyword: kAEQuitReason) != nil {
+            return .terminateNow
+        }
+        NSApp.activate()
+        let a = NSAlert()
+        a.messageText = String(localized: "A medição completa está em andamento")
+        a.informativeText = String(localized: "Se o SDTally fechar agora, a medição em andamento se perde e terá de começar de novo.")
+        a.addButton(withTitle: String(localized: "Continuar medindo"))
+        a.addButton(withTitle: String(localized: "Fechar mesmo assim")).hasDestructiveAction = true
+        return a.runModal() == .alertFirstButtonReturn ? .terminateCancel : .terminateNow
+    }
     func applicationWillTerminate(_ notification: Notification) {
         Painel.unico.fecharAjustes()
         Painel.unico.pararEscuta()
