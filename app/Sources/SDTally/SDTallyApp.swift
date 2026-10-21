@@ -277,9 +277,11 @@ private struct BarraLateral: View {
     var body: some View {
         VStack(spacing: 4) {
             lista(Secao.barra)
-            Divider().padding(.horizontal, 6).padding(.vertical, 6)
-            // Com o Automático com root, não há medição manual.
-            if !painel.soAuto { medir }
+            // Com o Automático com root, não há medição manual (nem a divisória que a separava).
+            if !painel.soAuto {
+                Divider().padding(.horizontal, 6).padding(.vertical, 6)
+                medir
+            }
             Spacer(minLength: 0)
             botao("Github", nome: "Github") { LogoGithub().frame(width: ladoRedondo, height: ladoRedondo) } acao: { NSWorkspace.shared.open(urlRepositorio) }
             // A List tem margem própria em cima: sem ela, o Github ficava mais longe do Informações
@@ -310,7 +312,10 @@ private struct BarraLateral: View {
         .listStyle(.sidebar)
         .scrollContentBackground(.hidden)
         .scrollDisabled(true)
-        .frame(height: CGFloat(secoes.count) * passoBarra + 12)
+        // A List rola até a linha escolhida quando o conteúdo passa da altura dela, e os ícones
+        // subiam uns pontos fora da primeira linha: 30 pt de folga embaixo, por cima do que vem depois.
+        .frame(height: CGFloat(secoes.count) * passoBarra + 12 + 30)
+        .frame(height: CGFloat(secoes.count) * passoBarra + 12, alignment: .top)
     }
 
     private func botao(_ ajuda: String, nome: String, @ViewBuilder icone: () -> some View, acao: @escaping () -> Void) -> some View {
