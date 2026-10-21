@@ -13,6 +13,11 @@ on:
 permissions:
   contents: read
 
+# Push novo cancela o run anterior do mesmo ramo: os runners macOS gratuitos são poucos e a fila crescia.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   teste:
     strategy:
@@ -91,7 +96,7 @@ jobs:
         timeout-minutes: 20
         env:
           SDC_PANIC: "1"
-        run: sudo -E ./target/release/sdc-coleta --saida report.json
+        run: sudo -E ./target/release/sdc-coleta --saida report.json --minutos 0
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         if: always()
@@ -118,13 +123,14 @@ jobs:
       - name: G9
         run: sh scripts/g9.sh
 
-  # App: compila nos três macOS (precisa de Swift 6.2+, Xcode 26 ou mais novo) e fotografa com o
-  # binário cru (nunca o .app) e as fixtures sintéticas. O montar.sh roda só para provar que monta.
+  # App: compila e fotografa com o binário cru (nunca o .app) e as fixtures sintéticas. O montar.sh
+  # roda só para provar que monta. Só no Xcode 27: o Swift do Xcode 16 não tipa o HistoricoView a
+  # tempo e o do Xcode 26 trava compilando (21/10/2026). O app compilado roda no macOS 15+.
   app:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-15, macos-26, xcode-27]
+        os: [xcode-27]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 30
     steps:
