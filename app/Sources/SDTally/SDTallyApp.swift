@@ -78,7 +78,7 @@ private struct Menus: Commands {
         CommandMenu("Medição") {
             Button(painel.helperAtivo ? String(localized: "Calcular como administrador") : String(localized: "Calcular com senha de administrador…")) { painel.medirComSenha() }
                 .keyboardShortcut("r")
-                .disabled(painel.medindo || painel.soAuto)
+                .disabled(painel.medindo)
             if painel.helperAtivo {
                 Button("Calcular com senha, sem o Root sem Senha…") { painel.medir(admin: true, semHelper: true) }
                     .disabled(painel.medindo)
@@ -88,7 +88,7 @@ private struct Menus: Commands {
                 .disabled(!painel.podeParar)
             Divider()
             // O alternador do cabeçalho (AlternadorModo), só nas telas que o têm.
-            let comModo = AlternadorModo.mostra(painel.secao ?? .sistema) && !painel.soAuto
+            let comModo = AlternadorModo.mostra(painel.secao ?? .sistema)
             Button("Automático") { withAnimation(.smooth(duration: 0.3)) { painel.manual = false } }
                 .keyboardShortcut(.leftArrow)
                 .disabled(!comModo || !painel.manual)
@@ -279,7 +279,7 @@ private struct BarraLateral: View {
             lista(Secao.barra)
             Divider().padding(.horizontal, 6).padding(.vertical, 6)
             // Com o Automático com root, não há medição manual.
-            if !painel.soAuto { medir }
+            medir
             Spacer(minLength: 0)
             botao("Github", nome: "Github") { LogoGithub().frame(width: ladoRedondo, height: ladoRedondo) } acao: { NSWorkspace.shared.open(urlRepositorio) }
             // A List tem margem própria em cima: sem ela, o Github ficava mais longe do Informações
@@ -474,7 +474,7 @@ struct JanelaView: View {
         let s = painel.secao ?? .sistema
         return VStack(spacing: 10) {
             Text(s.titulo).font(.title3.weight(.semibold))
-            if AlternadorModo.mostra(s) && !painel.soAuto { AlternadorModo() }
+            if AlternadorModo.mostra(s) { AlternadorModo() }
         }
         .frame(maxWidth: .infinity)
         .padding(.top, 14).padding(.bottom, 14)
