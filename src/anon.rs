@@ -202,7 +202,7 @@ fn separar_camel(s: &str) -> String {
 
 /// Token no texto (os dois já dobrados): com 5 letras ou mais, em qualquer lugar; mais curto, só
 /// como palavra inteira ("ron" não casa com "chronod", nem "tim" com "TimeMachine").
-pub fn tem_token(texto: &str, t: &str) -> bool {
+pub(crate) fn tem_token(texto: &str, t: &str) -> bool {
     if t.chars().count() >= 5 {
         return texto.contains(t);
     }

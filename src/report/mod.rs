@@ -11,7 +11,7 @@ use crate::sources::snapshots;
 use i18n::Lang;
 use serde_json::{Value, json};
 
-pub const SCHEMA_VERSION: u32 = 1;
+pub(crate) const SCHEMA_VERSION: u32 = 1;
 
 /// De onde vem cada número (vira enum no JSON e texto traduzido na tela).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]

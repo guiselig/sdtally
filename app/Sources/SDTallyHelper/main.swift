@@ -227,7 +227,7 @@ final class Servico: NSObject, HelperProtocolo {
     func pararAuto() { Cfg.autos.parar(de: id) }
 }
 
-final class Delegado: NSObject, NSXPCListenerDelegate {
+final class Delegado: NSObject, NSXPCListenerDelegate, Sendable {
     /// Conexões vivas. Sem nenhuma e sem processo rodando, o helper sai: o launchd sobe de novo
     /// na próxima conexão, já com o executável do app atualizado (sem registrar de novo).
     private let abertas = Mutex(0)

@@ -84,7 +84,3 @@ pub fn medir(pasta: &Path, agora: i64, threads: usize, ctl: Arc<walk::Controle>)
     }
     Ok(r)
 }
-
-pub fn agora() -> i64 {
-    std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).map_or(0, |d| d.as_secs() as i64)
-}

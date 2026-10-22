@@ -328,7 +328,7 @@ final class Painel {
         return ValoresVolume(livre: l, importante: purgVivo?.bytes.map { l + $0 }, opcional: opcionalAgora, em: .now)
     }
 
-    private nonisolated(unsafe) static let itemizado: (@convention(c) (CFDictionary) -> Unmanaged<CFDictionary>?)? = {
+    private nonisolated static let itemizado: (@convention(c) (CFDictionary) -> Unmanaged<CFDictionary>?)? = {
         // Pelo install-name, como o sdtally (src/sys/cachedelete.rs). Só consulta, nunca purge.
         guard let h = dlopen("/System/Library/PrivateFrameworks/CacheDelete.framework/Versions/A/CacheDelete", RTLD_LAZY),
               let f = dlsym(h, "CacheDeleteCopyItemizedPurgeableSpaceWithInfo") else { return nil }
@@ -535,8 +535,8 @@ final class Painel {
     func escutarTela() {
         guard escuta == nil, Foto.rapidoFixo == nil, Foto.env["SDTALLY_FOTO"] == nil else { return }
         escuta = try? Executor.escutar(
-            linha: { d in Task { @MainActor [weak self] in self?.aplicarEscuta(d) } },
-            saiu: { Task { @MainActor [weak self] in self?.escutaSaiu() } })
+            linha: { [weak self] d in Task { @MainActor [self] in self?.aplicarEscuta(d) } },
+            saiu: { [weak self] in Task { @MainActor [self] in self?.escutaSaiu() } })
     }
 
     private func escutaSaiu() {

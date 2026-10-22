@@ -17,7 +17,7 @@ const CONSULTA_APPS: &str = "kMDItemContentType == 'com.apple.application-bundle
 
 /// `mdfind -attr kMDItemCFBundleIdentifier`: uma linha "<caminho>   kMDItemCFBundleIdentifier = <id>"
 /// por app. Fora: apps dentro de ~/Library e do lixo (a extensão os ignora) e id vazio ou "(null)".
-pub fn ler_mdfind(saida: &str, home: &str) -> BTreeSet<String> {
+pub(crate) fn ler_mdfind(saida: &str, home: &str) -> BTreeSet<String> {
     const CHAVE: &str = "kMDItemCFBundleIdentifier = ";
     saida
         .lines()

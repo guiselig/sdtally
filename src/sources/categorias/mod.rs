@@ -13,7 +13,7 @@ use serde_json::{Value, json};
 use std::collections::{BTreeMap, BTreeSet};
 
 /// Σ reproduzida contra Σ do log da tela: o critério da fase 2 (PLANO §5).
-pub const TOLERANCIA_PCT: f64 = 1.0;
+pub(crate) const TOLERANCIA_PCT: f64 = 1.0;
 
 /// O que só a máquina sabe. `None` é "não lido": a categoria que depende dele sai parcial ou não
 /// medida, nunca zero.

@@ -63,17 +63,6 @@ pub fn politicas_seguranca() -> Result<(), (i32, i32)> {
     if r1 != 0 || r2 != 0 { Err((r1, r2)) } else { Ok(()) }
 }
 
-/// Preparo comum dos bins: panic vira erro registrado (SDC_PANIC=1, no CI, deixa a mensagem no
-/// stderr), as políticas acima e QoS utility. Err: abortar sem ler nada.
-pub fn preparar() -> Result<(), (i32, i32)> {
-    if std::env::var_os("SDC_PANIC").is_none() {
-        std::panic::set_hook(Box::new(|_| {}));
-    }
-    politicas_seguranca()?;
-    qos_utility();
-    Ok(())
-}
-
 pub fn qos_utility() {
     unsafe { pthread_set_qos_class_self_np(QOS_CLASS_UTILITY, 0) };
 }
@@ -119,7 +108,7 @@ pub fn escrita_processos() -> Vec<(i32, u64, String, u64, u64)> {
 
 /// Caminhos dos dois processos que gravam a tela do Ajustes no log: a extensão `Storage` (linha
 /// "Sum of all categories") e o StorageManagementService (bloco StorageLogInvestigation).
-pub fn e_processo_do_painel(caminho: &str) -> bool {
+pub(crate) fn e_processo_do_painel(caminho: &str) -> bool {
     caminho.ends_with("/Storage.appex/Contents/MacOS/Storage")
         || caminho.ends_with("/StorageManagement.framework/PlugIns/StorageManagementService")
 }
@@ -326,7 +315,7 @@ impl Drop for Filho {
 }
 
 /// SIGKILL nos filhos registrados. Só atômicos e kill(2): seguro dentro de handler de sinal.
-pub fn matar_filhos() {
+pub(crate) fn matar_filhos() {
     for v in &FILHOS {
         let p = v.swap(0, std::sync::atomic::Ordering::SeqCst);
         if p > 0 {
@@ -421,7 +410,7 @@ pub fn boot_time() -> Option<String> {
 /// As únicas chaves que `plist_chave` aceita, com o formato de cada uma (spec fase 6 §4.4):
 /// `Destinations` (raw: contagem) e, por destino N, as datas, o RESULT e as listas de datas.
 /// NetworkURL, LastKnownVolumeName, DestinationID e UUIDs nunca são pedidos.
-pub fn chave_tm_permitida(chave: &str, formato: &str) -> bool {
+pub(crate) fn chave_tm_permitida(chave: &str, formato: &str) -> bool {
     if chave == "Destinations" {
         return formato == "raw";
     }

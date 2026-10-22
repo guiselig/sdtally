@@ -43,7 +43,7 @@ pub fn criador(nome: &str) -> Option<String> {
 
 /// "AAAA-MM-DD[T ]HH:MM[:SS][Z]" → segundos do calendário civil (com Z, é a época Unix). Sem
 /// fuso: serve para diferença entre duas datas locais.
-pub fn segundos_civis(s: &str) -> Option<i64> {
+pub(crate) fn segundos_civis(s: &str) -> Option<i64> {
     let s = s.strip_suffix('Z').unwrap_or(s);
     let n = |a: usize, b: usize| s.get(a..b).filter(|x| x.bytes().all(|c| c.is_ascii_digit())).and_then(|x| x.parse::<i64>().ok());
     let sep = |i: usize, c: &[u8]| s.as_bytes().get(i).is_some_and(|x| c.contains(x));
@@ -101,7 +101,7 @@ pub fn running(st: Result<&str, &str>) -> Option<bool> {
 }
 
 /// As `<date>` de um `plutil -extract … xml1` (UTC) → segundos Unix.
-pub fn datas_xml(x: &str) -> Vec<i64> {
+pub(crate) fn datas_xml(x: &str) -> Vec<i64> {
     x.lines().filter_map(|l| l.trim().strip_prefix("<date>")?.strip_suffix("</date>")).filter_map(segundos_civis).collect()
 }
 

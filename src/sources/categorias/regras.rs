@@ -20,7 +20,7 @@ pub const ICLOUD: &str = "com.apple.CloudDocsDaemon.StorageManagement";
 pub const MAIL: &str = "com.apple.STMExtension.Mail";
 pub const MENSAGENS: &str = "com.apple.messages.StorageManagementExtension";
 pub const OUTROS: &str = "com.apple.STMExtension.OtherUsers";
-pub const SISTEMA: &str = "system_data";
+pub(crate) const SISTEMA: &str = "system_data";
 
 /// As 15 categorias, na ordem da tabela da Frente P.
 pub const IDS: [&str; 15] = [APPS, DOCS, MUSICA, FOTOS, TV, LIVROS, PODCASTS, LIXO, GARAGEBAND, IOS, DEV, ICLOUD, MAIL, MENSAGENS, OUTROS];

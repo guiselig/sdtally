@@ -977,7 +977,7 @@ fn txt(t: &Txt) -> Value {
     crate::traducao::json(t.pt, t.en)
 }
 
-pub fn ficha_json(f: &Ficha) -> Value {
+pub(crate) fn ficha_json(f: &Ficha) -> Value {
     let (sozinho, texto) = match &f.sozinho {
         Sozinho::Sim(t) => ("yes", txt(t)),
         Sozinho::Quando(t) => ("when", txt(t)),

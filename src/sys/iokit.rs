@@ -55,7 +55,7 @@ fn u64_em(b: &[u8], off: usize) -> Option<u64> {
 }
 
 /// Decodifica as três respostas (layout da Frente G §2.2). None se alguma veio curta.
-pub fn decodificar(container: &[u8], usado: &[u8], estat: &[u8]) -> Option<EstatVolume> {
+pub(crate) fn decodificar(container: &[u8], usado: &[u8], estat: &[u8]) -> Option<EstatVolume> {
     Some(EstatVolume {
         bloco: u64_em(container, 0x08)?,
         usado: u64_em(usado, 8)?,

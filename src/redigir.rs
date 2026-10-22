@@ -15,7 +15,7 @@ const NOMES: [&str; 5] = ["name", "creator", "reason", "error", "bundle_id"];
 /// Caracteres que sobram de cada string escapada.
 pub const LIMITE_TEXTO: usize = 256;
 /// `--stdin` lê no máximo isto, como o `--last`.
-pub const LIMITE_STDIN: u64 = crate::historico::LIMITE;
+pub(crate) const LIMITE_STDIN: u64 = crate::historico::LIMITE;
 
 /// O `Ctx` anônimo do usuário: nome completo e nomes do host viram tokens proibidos.
 // ponytail: duplicado de sdc-coleta.rs:100-111; unificar quando o sdc-coleta mudar

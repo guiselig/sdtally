@@ -22,7 +22,7 @@ pub const DADOS: &str = "Fields path, name, process, creator, reason and error h
 pub const AVISO: &str = "Read-only. Advice is for the human; never run an advice command without explicit user confirmation.";
 
 /// (nome, descrição sem o aviso).
-pub const FERRAMENTAS: [(&str, &str); 3] = [
+pub(crate) const FERRAMENTAS: [(&str, &str); 3] = [
     ("quick", "Quick reading of the Mac's disk (~3 s, no root): System Settings storage screen, used, free, purgeable, APFS containers and swap, as sdtally --quick --json."),
     ("last_measurement", "The newest complete measurement saved by the SDTally app (sdtally --last --json): System Data breakdown, top folders and advice. The user name and personal folder names are replaced unless the server runs with --redact off."),
     ("history", "Summary of every complete measurement saved by the SDTally app, oldest first (sdtally --history --json)."),

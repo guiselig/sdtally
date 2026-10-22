@@ -171,7 +171,7 @@ pub fn coletar(o: &Opcoes, home: &str, ctx: Arc<Ctx>, ctl: Arc<walk::Controle>) 
 }
 
 /// A coleta completa com a árvore vinda de `arvore` (a travessia, ou a árvore viva do `--auto`).
-pub fn coletar_com(o: &Opcoes, home: &str, ctx: Arc<Ctx>, ctl: Arc<walk::Controle>, arvore: impl FnOnce() -> Result<walk::Result, String>) -> Coleta {
+pub(crate) fn coletar_com(o: &Opcoes, home: &str, ctx: Arc<Ctx>, ctl: Arc<walk::Controle>, arvore: impl FnOnce() -> Result<walk::Result, String>) -> Coleta {
     let et = Etapas::new(ctl.clone());
     // Versão e capacidades lidas uma vez; cada fonte consulta daqui.
     let caps = Caps::ler(DATA);
@@ -208,7 +208,7 @@ pub fn coletar_com(o: &Opcoes, home: &str, ctx: Arc<Ctx>, ctl: Arc<walk::Control
             let purg = et.run("purgeable", |err| sources::purgeable::coletar(&ctx, err));
             let apag = et.run("apagados_abertos", |err| sources::apagados::coletar(&ctx, o.root, err));
             // O motivo de não medido fica no próprio resultado: informativo, não derruba a coleta (INCOMPLETO).
-            let lixo = et.run("lixo", |_| sources::lixo::medir(Path::new(&format!("{home}/.Trash")), sources::lixo::agora(), 2, ctl.clone()));
+            let lixo = et.run("lixo", |_| sources::lixo::medir(Path::new(&format!("{home}/.Trash")), sys::agora_epoch(), 2, ctl.clone()));
             (purg, apag, lixo)
         });
         // ---- árvore ----

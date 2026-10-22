@@ -371,7 +371,7 @@ fn numero_apos(m: &str, rotulo: &str) -> Option<i64> {
 }
 
 /// Puro: eventos (timestamp, mensagem) em ordem cronológica.
-pub fn tela_do_log(ev: &[(String, String)]) -> TelaLog {
+pub(crate) fn tela_do_log(ev: &[(String, String)]) -> TelaLog {
     let mut tela = None;
     let mut blocos: Vec<(String, BTreeMap<String, i64>)> = Vec::new();
     for (ts, m) in ev {
