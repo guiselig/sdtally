@@ -181,7 +181,7 @@ private struct Capa: View {
             Spacer()
             VStack(alignment: .trailing, spacing: 2) {
                 Text("Medido em \(Armazenamento.dataCurta(c.generatedAt))")
-                Text("macOS \(c.macosVersion) · \(c.tool)")
+                Text("macOS \(c.macosVersion ?? "?") · \(c.tool)")
                 Text(c.root ? String(localized: "como administrador") : String(localized: "sem senha de administrador"))
             }
             .font(.caption).foregroundStyle(.secondary)

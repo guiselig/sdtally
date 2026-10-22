@@ -174,7 +174,8 @@ nonisolated struct Rapido: Decodable, Sendable {
 
     let generatedAt: String
     let tool: String?
-    let macosVersion: String
+    /// Option no Rust: null não derruba a leitura inteira.
+    let macosVersion: String?
     let home: String
     let root: Bool
     let fullDiskAccess: Bool?
@@ -371,7 +372,8 @@ nonisolated struct Completo: Decodable, Sendable {
 
     let generatedAt: String
     let tool: String
-    let macosVersion: String
+    /// Option no Rust: null não derruba a leitura inteira.
+    let macosVersion: String?
     let home: String
     let complete: Bool
     let incompleteReasons: [String]

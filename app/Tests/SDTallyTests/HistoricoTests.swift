@@ -183,6 +183,18 @@ private func completo(_ muda: (inout [String: Any]) -> Void) throws -> Completo 
     #expect(Historico.leituraAnterior([antigo], telaEm: p.telaEm) == nil)
 }
 
+/// Pontos novos com fuso; os velhos, sem fuso, continuam lendo. Na hora repetida do fim do
+/// horário de verão o fuso desfaz a volta no tempo.
+@Test func carimboComFusoLeOsDoisFormatos() throws {
+    let velho = try #require(data("2026-10-02 09:36:00"))
+    let novo = carimboComFuso("2026-10-02 09:36:00", agora: velho)
+    #expect(novo.count == 25 && novo.dropFirst(10).first == "T" && data(novo) == velho)
+    #expect(carimboComFuso("2026-10-02 09:36", agora: velho) == novo)
+    #expect(carimboComFuso(novo) == novo && carimboComFuso("x") == "x")
+    let antes = try #require(data("2026-11-01T01:50:00-04:00")), depois = try #require(data("2026-11-01T01:10:00-05:00"))
+    #expect(depois.timeIntervalSince(antes) == 20 * 60)
+}
+
 /// Pastas do Histórico: primeira e última amostra de cada uma; precisa de duas; ordem pelo tamanho da mudança.
 @MainActor @Test func variacoesDePastas() {
     let gb: Int64 = 1_000_000_000

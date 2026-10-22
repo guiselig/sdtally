@@ -239,9 +239,9 @@ nonisolated enum Historico {
     }
 
     /// A amostra de agora, ou nil: no máximo uma por hora.
-    static func proximoPontoPastas(_ c: Completo, depois pontos: [PontoPastas]) -> PontoPastas? {
+    static func proximoPontoPastas(_ c: Completo, depois pontos: [PontoPastas], agora: Date = .now) -> PontoPastas? {
         let pastas = Dictionary(c.top.compactMap { l in l.folded == true ? nil : l.path.map { ($0, l.bytes) } }, uniquingKeysWith: +)
-        let p = PontoPastas(t: String(c.generatedAt.prefix(19)), pastas: pastas)
+        let p = PontoPastas(t: carimboComFuso(c.generatedAt, agora: agora), pastas: pastas)
         guard !pastas.isEmpty else { return nil }
         guard let u = pontos.last, let a = data(u.t), let b = data(p.t) else { return p }
         return b.timeIntervalSince(a) >= 3600 ? p : nil
@@ -251,7 +251,7 @@ nonisolated enum Historico {
 
     /// O ponto de agora, ou nil: no máximo um por hora, mais um a cada tela do Ajustes com
     /// `logged_at` novo (só esse traz `systemData`). `usado` = ceiling − free do container interno.
-    static func proximoPonto(_ r: Rapido, depois pontos: [Ponto]) -> Ponto? {
+    static func proximoPonto(_ r: Rapido, depois pontos: [Ponto], agora: Date = .now) -> Ponto? {
         let ultimaTela = pontos.last { $0.telaEm != nil }?.telaEm
         var tela: (em: String, sd: Int64)?
         if let t = r.settingsScreen.screen, t.state != "not_measured", let sd = t.systemData,
@@ -260,7 +260,7 @@ nonisolated enum Historico {
         }
         let c = r.containers?.first { $0.internal == true && $0.holdsData }
         let usado: Int64? = if let teto = c?.ceiling, let livre = c?.free { teto - livre } else { nil }
-        let p = Ponto(t: String(r.generatedAt.prefix(19)), total: r.capacity?.total, usado: usado, livre: r.capacity?.free,
+        let p = Ponto(t: carimboComFuso(r.generatedAt, agora: agora), total: r.capacity?.total, usado: usado, livre: r.capacity?.free,
                       purgeable: r.purgeable.bytes, systemData: tela?.sd, telaEm: tela?.em)
         guard tela == nil, let u = pontos.last, let a = data(u.t), let b = data(p.t) else { return p }
         return b.timeIntervalSince(a) >= 3600 ? p : nil

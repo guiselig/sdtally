@@ -114,12 +114,23 @@ nonisolated func hora(_ carimbo: String?) -> String? {
 /// Carimbo que sempre existe (generatedAt): sem checagem de nil na frase.
 nonisolated func hora(_ carimbo: String) -> String { hora(Optional(carimbo)) ?? carimbo }
 
-/// Date de um carimbo do log ("2026-10-02 09:29:42.302128-0300") ou do sdtally
-/// ("2026-10-02 09:36"), para idade.
+/// Date de um carimbo do log ("2026-10-02 09:29:42.302128-0300"), do sdtally
+/// ("2026-10-02 09:36") ou de um ponto do histórico com fuso ("2026-10-02T09:36:00-03:00"), para idade.
 nonisolated func data(_ carimbo: String?) -> Date? {
     guard let c = carimbo, c.count >= 16 else { return nil }
+    if c.dropFirst(10).first == "T" { return try? Date(c, strategy: .iso8601) }
     let longo = c.count >= 19
     return (longo ? formatoComSegundos : formatoSemSegundos).date(from: String(c.prefix(longo ? 19 : 16)))
+}
+
+/// Carimbo dos pontos do histórico: a hora de parede do sdtally com o fuso de `agora`
+/// ("2026-10-02T09:36:00-03:00"). Sem fuso, a hora repetida do fim do horário de verão voltava
+/// no tempo e dava intervalo negativo. Carimbo que não vira Date volta como veio.
+nonisolated func carimboComFuso(_ c: String, agora: Date = .now) -> String {
+    guard data(c) != nil, c.dropFirst(10).first == " " else { return c }
+    let parede = c.count >= 19 ? String(c.prefix(19)) : String(c.prefix(16)) + ":00"
+    let s = TimeZone.current.secondsFromGMT(for: agora)
+    return parede.replacing(" ", with: "T") + String(format: "%@%02d:%02d", s < 0 ? "-" : "+", abs(s) / 3600, abs(s) / 60 % 60)
 }
 
 // DateFormatter é caro de criar e seguro entre threads; um por formato.

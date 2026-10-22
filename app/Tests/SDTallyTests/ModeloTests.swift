@@ -365,7 +365,7 @@ private var dados: URL { Bundle.module.resourceURL!.appending(path: "Fixtures/da
     let esperadas = c.top.filter { $0.folded != true && $0.path != nil }
     #expect(!p.pastas.isEmpty && p.pastas.count <= esperadas.count)
     #expect(Historico.proximoPontoPastas(c, depois: [p]) == nil)
-    let depois = PontoPastas(t: "2026-10-21 11:00:00", pastas: p.pastas)
+    let depois = PontoPastas(t: carimboComFuso("2026-10-21 11:00:00"), pastas: p.pastas)
     v["generated_at"] = "2026-10-21 11:00:00"
     let c2 = try decodificar(Completo.self, try JSONSerialization.data(withJSONObject: v), kind: "auto")
     #expect(Historico.proximoPontoPastas(c2, depois: [p]) == depois)
@@ -374,4 +374,15 @@ private var dados: URL { Bundle.module.resourceURL!.appending(path: "Fixtures/da
     #expect(Historico.lerPontosPastas(dir) == [p, depois])
     let velho = PontoPastas(t: "2026-01-01 00:00:00", pastas: [:])
     #expect(Historico.recentes([velho, depois], agora: data("2026-10-21 12:00:00")!) == [depois])
+}
+
+/// macos_version é Option no Rust: null não derruba a leitura.
+@Test func macosVersionNulo() throws {
+    for (nome, kind) in [("quick", "quick"), ("completo", nil)] as [(String, String?)] {
+        var v = try #require(JSONSerialization.jsonObject(with: fixture(nome)) as? [String: Any])
+        v["macos_version"] = NSNull()
+        let d = try JSONSerialization.data(withJSONObject: v)
+        if kind == nil { #expect(try decodificar(Completo.self, d, kind: nil).macosVersion == nil) }
+        else { #expect(try decodificar(Rapido.self, d, kind: "quick").macosVersion == nil) }
+    }
 }
