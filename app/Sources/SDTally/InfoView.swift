@@ -7,7 +7,6 @@ import SDTallyXPC
 import SwiftUI
 
 struct InfoView: View {
-    @Environment(Painel.self) private var painel
 
     var body: some View {
         let info = Bundle.main.infoDictionary ?? [:]

@@ -10,20 +10,20 @@ private func fixture(_ nome: String) throws -> Data {
     return try Data(contentsOf: url)
 }
 
-private func linhaTop(_ path: String?, term: String = "tree", _ bytes: Int64, card: String? = nil, settings: String? = nil, count: Int? = nil) -> LinhaTop {
+private func linhaTop(_ path: String?, term: String = "tree", _ bytes: Int64, card: String? = nil, count: Int? = nil) -> LinhaTop {
     LinhaTop(path: path, term: term, bytes: bytes, privateBytes: nil, lowerBound: false, count: count, topProcess: nil,
-             source: "getattrlistbulk", folded: false, card: card, settingsLine: settings)
+             source: "getattrlistbulk", folded: false, card: card)
 }
 
-private func causa(_ id: String, termo: String = "tree", _ bytes: Int64, card: String? = nil, linha: String? = nil) -> Causa {
-    Causa(id: id, nome: id, caminho: id.hasPrefix("/") || id.hasPrefix("~") ? id : nil, termo: termo, card: card, bytes: bytes, pastas: 1, linha: linha)
+private func causa(_ id: String, termo: String = "tree", _ bytes: Int64, card: String? = nil) -> Causa {
+    Causa(id: id, nome: id, caminho: id.hasPrefix("/") || id.hasPrefix("~") ? id : nil, termo: termo, card: card, bytes: bytes, pastas: 1)
 }
 
 private func regra(_ id: String, term: String? = nil, card: String? = nil, paths: [String] = []) -> Conselho {
     Conselho(id: id, level: "check_first", bytes: 1, privateBytes: nil, paths: paths, term: term, process: nil, command: nil, text: "texto do sdtally", card: card)
 }
 
-private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615_863_808, card: "term_snapshots", linha: "system_data")
+private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615_863_808, card: "term_snapshots")
 
 @Test func mancheteBackup() {
     let tm = Completo.TimeMachine(state: "measured", reason: nil, source: "tm_preferences_plist", running: false, destinations: [
@@ -53,10 +53,10 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
     let m = manchete(advice: nil, tm: nil, snapshots: nil, causas: [causa("/Users/exemplo", termo: "protected_folders", 145_180_639_232)], usado: usado)
     #expect(m == Manchete(simbolo: "chart.bar.fill", texto: texto, ajustes: nil))
     // O swap não conta como pedaço; a linha do Ajustes não entra na frase (está na lista).
-    let swap = causa("swap", termo: "swap", 200_000_000_000, linha: "macos")
-    let outros = causa("/Users/exemplo", 145_180_639_232, linha: "com.apple.STMExtension.OtherUsers")
+    let swap = causa("swap", termo: "swap", 200_000_000_000)
+    let outros = causa("/Users/exemplo", 145_180_639_232)
     #expect(manchete(advice: nil, tm: nil, snapshots: nil, causas: [swap, outros], usado: usado)?.texto == texto)
-    #expect(manchete(advice: nil, tm: nil, snapshots: nil, causas: [causa("/Users/exemplo", 145_180_639_232, linha: "mixed")], usado: usado)?.texto == texto)
+    #expect(manchete(advice: nil, tm: nil, snapshots: nil, causas: [causa("/Users/exemplo", 145_180_639_232)], usado: usado)?.texto == texto)
 }
 
 @Test func purgavelNoAjustes() {
@@ -69,35 +69,29 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
     #expect(SDTally.purgavelNoAjustes(tela: nil, livre: 24_070_000_000, purg: 51_550_000_000) == nil)
 }
 
-@Test func nomeDaLinha() {
-    #expect(nomeLinha("system_data")?.nome == "Dados do Sistema" && nomeLinha("system_data")?.cor == Marca.dados)
-    #expect(nomeLinha("mixed")?.nome == "várias linhas" && nomeLinha("mixed")?.cor == .secondary)
-    #expect(nomeLinha("macos")?.nome == "macOS" && nomeLinha("macos")?.cor == .gray)
-    #expect(nomeLinha("com.apple.STMExtension.OtherUsers")?.nome == "Outros usuários")
-    #expect(nomeLinha(nil) == nil)
+@Test func categoriaDaLinha() {
+    #expect(categoria("com.apple.STMExtension.OtherUsers").nome == "Outros usuários")
     // Linha que o app não conhece: cinza, nunca o rosa que lembra Dados do Sistema.
     #expect(categoria("x").cor == .gray)
 }
 
-@Test func causaUsaSettingsLine() {
+@Test func causaAgrupaPorFicha() {
     let top = [
         linhaTop("/System/Library/AssetsV2/com_apple_MobileAsset_UAF_FM_GenerativeModels", term: "protected_folders", 17_397_940_224,
-                 card: "apple_intelligence_models", settings: "com.apple.STMExtension.Documents"),
-        linhaTop("~/Library/Mobile Documents/com~apple~CloudDocs", 37_026_758_656, card: "icloud_drive", settings: "com.apple.CloudDocsDaemon.StorageManagement"),
-        linhaTop("~/Library/Mobile Documents/exemplo~App", 2_488_881_152, card: "icloud_drive", settings: "system_data"),
+                 card: "apple_intelligence_models"),
+        linhaTop("~/Library/Mobile Documents/com~apple~CloudDocs", 37_026_758_656, card: "icloud_drive"),
+        linhaTop("~/Library/Mobile Documents/exemplo~App", 2_488_881_152, card: "icloud_drive"),
         linhaTop("/Users/exemplo", term: "protected_folders", 145_180_639_232),
-        linhaTop(nil, term: "snapshots", 49_615_863_808, card: "term_snapshots", settings: "system_data", count: 9),
+        linhaTop(nil, term: "snapshots", 49_615_863_808, card: "term_snapshots", count: 9),
     ]
     let cs = Dictionary(uniqueKeysWithValues: causas(top: top, swap: nil, fichas: nil, home: "/Users/exemplo").map { ($0.id, $0) })
-    // settings_line vence a provisória (Apple Intelligence seria system_data).
-    #expect(cs["apple_intelligence_models"]?.linha == "com.apple.STMExtension.Documents")
-    // Duas linhas diferentes no grupo: "mixed"; o caminho é o da maior.
+    #expect(cs["apple_intelligence_models"] != nil)
+    // Duas pastas da mesma ficha: um grupo; o caminho é o da maior.
     let icloud = cs["icloud_drive"]
-    #expect(icloud?.linha == "mixed" && icloud?.pastas == 2 && icloud?.bytes == 39_515_639_808 && icloud?.nome == "iCloud Drive")
+    #expect(icloud?.pastas == 2 && icloud?.bytes == 39_515_639_808 && icloud?.nome == "iCloud Drive")
     #expect(icloud?.caminho == "~/Library/Mobile Documents/com~apple~CloudDocs")
-    // Sem settings_line: protected_folders fica sem linha (pode ser a home de outra conta); snapshots, a provisória.
-    #expect(cs["/Users/exemplo"] != nil && cs["/Users/exemplo"]?.linha == nil)
-    #expect(cs["term_snapshots"]?.linha == "system_data" && cs["term_snapshots"]?.nome == "Snapshots locais do Time Machine (9)")
+    #expect(cs["/Users/exemplo"] != nil)
+    #expect(cs["term_snapshots"]?.nome == "Snapshots locais do Time Machine (9)")
     // A mesma pasta em dois termos (parte legível e parte protegida): soma, mas é uma pasta só.
     let pf = causas(top: [linhaTop("/private/var/folders", 1_380_000_000), linhaTop("/private/var/folders", term: "protected_folders", 840_000_000)],
                     swap: nil, fichas: nil, home: "/Users/exemplo")
@@ -116,8 +110,8 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
         linhaTop("~/Library/Mobile Documents/com~apple~CloudDocs", 37_026_758_656, card: "icloud_drive"),
         linhaTop("~/Library/Mobile Documents/exemplo~App", 2_488_881_152, card: "icloud_drive"),
         linhaTop("~/Library/Caches/CloudKit/com.apple.bird", 20_643_913_728, card: "cloudkit_cache"),
-        linhaTop("/System/Library/AssetsV2/com_apple_MobileAsset_UAF_FM_GenerativeModels", term: "protected_folders", 17_397_940_224, card: "apple_intelligence_models", settings: "system_data"),
-        linhaTop("/System/Library/AssetsV2/com_apple_MobileAsset_UAF_FM_Visual", term: "protected_folders", 100_790_272, card: "apple_intelligence_models", settings: "system_data"),
+        linhaTop("/System/Library/AssetsV2/com_apple_MobileAsset_UAF_FM_GenerativeModels", term: "protected_folders", 17_397_940_224, card: "apple_intelligence_models"),
+        linhaTop("/System/Library/AssetsV2/com_apple_MobileAsset_UAF_FM_Visual", term: "protected_folders", 100_790_272, card: "apple_intelligence_models"),
         linhaTop("~/Library/Application Support/Claude/vm_bundles", 12_738_473_984, card: "claude_vm_bundles"),
         linhaTop("~/Pictures", 10_444_460_032, card: "user_folder"),
         linhaTop("~/My Drive", 6_438_375_424),
@@ -129,8 +123,8 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
     #expect(cs[2].pastas == 2 && cs[2].card == "icloud_drive")
     // user_folder não junta Música e Imagens; o nome vem do título ou da pasta, não do what.
     #expect(cs[1].nome == "Máquina virtual de contêineres" && cs[3].nome == "Music" && cs[7].caminho == "~/Pictures")
-    #expect(cs[5].bytes == 17_498_730_496 && cs[5].linha == "system_data")
-    #expect(cs[8].id == "swap" && cs[8].bytes == 9_181_462_528 && cs[8].linha == "macos")
+    #expect(cs[5].bytes == 17_498_730_496)
+    #expect(cs[8].id == "swap" && cs[8].bytes == 9_181_462_528)
     #expect(cs.count == 10 && !cs.contains { $0.caminho == "/Applications" || $0.caminho == "~/.gemini" })
 }
 
@@ -139,7 +133,7 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
     func v(_ r: String, _ b: Int64, _ m: Bool) -> Conteiner.Volume { Conteiner.Volume(roles: [r], capacityInUse: b, inSettingsMacos: m) }
     let p = Conteiner(internal: true, isc: false, holdsData: true, ceiling: 494_384_795_648, free: 21_073_506_304,
                       volumes: [v("System", 12_648_747_008, true), v("Data", 434_836_656_128, false), v("VM", 11_811_696_640, true)])
-    let s = segmentosDisco([snapshotsDoDono, causa("swap", termo: "swap", 9_181_462_528, linha: "macos")], top: [], containers: [p])
+    let s = segmentosDisco([snapshotsDoDono, causa("swap", termo: "swap", 9_181_462_528)], top: [], containers: [p])
     #expect(s.map(\.id) == ["term_snapshots", "resto", "macos", "livre"])
     #expect(s.map(\.bytes) == [49_615_863_808, 385_220_792_320, 24_460_443_648, 21_073_506_304])
     // Sem medição completa: o volume de dados inteiro, o macOS e o livre; sem container principal, nada.
@@ -212,13 +206,6 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
                            source: "getattrlistbulk", folded: true)
     #expect(rotulo(dobrada, home: "/Users/exemplo") == "Demais itens em ~/Library")
     #expect(rotulo(linhaTop("~/Library", 1), home: "/Users/exemplo") == "~/Library")
-}
-
-/// Fase 2: `system_data.by_line` decodifica.
-@Test func byLineDecodifica() throws {
-    let c = try decodificar(Completo.self, fixture("completo"), kind: nil)
-    let l = try #require(c.systemData?.byLine?.first { $0.line == "system_data" })
-    #expect(l.bytes == 129_200_000_000 && l.gradeBBytes == 60_000_000_000 && l.rows == 13)
 }
 
 // MARK: - dono por app (Fase 2, Frente C)

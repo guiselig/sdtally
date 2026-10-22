@@ -1,7 +1,7 @@
 // Causas do Início (spec-inicio §3 B2, B3, B5, B6): as linhas do `top` agrupadas pela ficha, a
 // linha do Ajustes em que cada uma cai, a manchete, a barra do disco e o passo seguro. Só funções
 // puras, nonisolated e testadas (ResumoTests). API estável:
-//   Causa, causas(top:swap:fichas:home:), conselho(de:em:), nomeLinha(_:)
+//   Causa, causas(top:swap:fichas:home:), conselho(de:em:)
 //   segmentosDisco(_:top:containers:), seguro(advice:cinco:)
 //   Manchete, manchete(advice:tm:snapshots:causas:usado:), purgavelNoAjustes(tela:livre:purg:)
 import AppKit
@@ -19,8 +19,6 @@ nonisolated struct Causa: Identifiable, Sendable, Equatable {
     let bytes: Int64
     /// Linhas agrupadas ("iCloud Drive · 2 pastas").
     let pastas: Int
-    /// `settings_line` ou nil (medição sem a chave).
-    let linha: String?
     /// App dono, quando todas as linhas do grupo têm o mesmo (`top[].owner`); nil sem fonte.
     var dono: String? = nil
 }
@@ -34,13 +32,12 @@ nonisolated func causas(top: [LinhaTop], swap: Swap?, fichas: MapaFichas?, home:
     }
     var cs = grupos.map { id, ls -> Causa in
         let maior = ls.max { $0.bytes < $1.bytes }!
-        let linhas = Set(ls.compactMap(\.settingsLine))
         return Causa(id: id, nome: nomeCausa(maior, fichas: fichas, home: home), caminho: maior.path, termo: maior.term,
                      card: maior.card, bytes: ls.reduce(0) { $0 + $1.bytes }, pastas: Set(ls.map { $0.path ?? $0.term }).count,
-                     linha: linhas.count > 1 ? "mixed" : linhas.first, dono: donoComum(ls))
+                     dono: donoComum(ls))
     }
     if let u = swap?.used {
-        cs.append(Causa(id: "swap", nome: String(localized: "Swap (memória no disco)"), caminho: nil, termo: "swap", card: nil, bytes: u, pastas: 1, linha: "macos"))
+        cs.append(Causa(id: "swap", nome: String(localized: "Swap (memória no disco)"), caminho: nil, termo: "swap", card: nil, bytes: u, pastas: 1))
     }
     return cs.filter { $0.bytes >= 1_000_000_000 }.sorted { ($0.bytes, $1.id) > ($1.bytes, $0.id) }
 }
@@ -94,17 +91,6 @@ nonisolated func conselho(de c: Causa, em advice: [Conselho]) -> Conselho? {
     guard !["tree", "protected_folders"].contains(c.termo) else { return nil }
     let doTermo = advice.filter { $0.term == c.termo }
     return doTermo.first { $0.id == "tm_backup_stuck" } ?? doTermo.first
-}
-
-/// Nome e cor da linha do Ajustes: Dados do Sistema no destaque do sistema, "várias linhas", macOS ou a categoria.
-nonisolated func nomeLinha(_ l: String?) -> (nome: String, cor: Color)? {
-    switch l {
-    case nil: nil
-    case "system_data": (String(localized: "Dados do Sistema"), Marca.dados)
-    case "mixed": (String(localized: "várias linhas"), .secondary)
-    case "macos": ("macOS", .gray)
-    case let id?: categoria(id)
-    }
 }
 
 /// Uma cor de sistema por posição nas 5 linhas de B5, na barra e no ícone da linha: as cores das

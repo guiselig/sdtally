@@ -12,7 +12,6 @@
 //   MapaFichas (cards[id] → Ficha; ficha sem campo obrigatório é descartada), fichas[id]
 //   Ficha.acoes: [AcaoFicha] (kind desconhecido é ignorado), Ficha.refs: [RefFicha]
 //   Catalogo (sdtally --catalog --json, kind "catalog"): .cards, .sources[source] → Conferencia
-//   LinhaTop.settingsLine (spec-inicio §9; nil antes do M5 do CLI)
 //   Completo.systemData (by_line, reproduced.total; nil em medição antiga)
 //   Completo.Informativo.trash (Lixo por idade), .apfsMetadata (nós das árvores vivas); nil em medição antiga
 import Foundation
@@ -224,9 +223,6 @@ nonisolated struct LinhaTop: Decodable, Sendable, Identifiable {
     /// Baldes pequenos dobrados: `path` é a pasta pai ("demais itens de …").
     let folded: Bool?
     var card: String? = nil
-    /// Linha do Ajustes em que a pasta cai: id da categoria da Apple, "system_data" ou "mixed";
-    /// nil sem regra ou em JSON sem a chave.
-    var settingsLine: String? = nil
     /// Provedor de `FileProvider/<uuid>` ("iCloud Drive", "File Provider"...), grau B. nil nas outras.
     var label: String? = nil
     /// App dono da pasta (`owner`), só quando há fonte; nil em JSON sem a chave.
@@ -355,17 +351,8 @@ nonisolated struct Completo: Decodable, Sendable {
         let folders: [Pasta]
     }
 
-    /// `system_data`: Σ do `top` por linha do Ajustes e as categorias reproduzidas. Ausente em
-    /// medição salva por um sdtally antigo.
+    /// `system_data`: as categorias reproduzidas. Ausente em medição salva por um sdtally antigo.
     struct SistemaDados: Decodable, Sendable {
-        /// `by_line[]`: `line` é o id da categoria, `system_data` ou `mixed`; `gradeBBytes` é a parte
-        /// que veio de regra de grau B.
-        struct PorLinha: Decodable, Sendable {
-            let line: String
-            let bytes: Int64
-            let gradeBBytes: Int64
-            let rows: Int
-        }
         /// `reproduced.total`: Σ das categorias reproduzidas contra Σ do log da tela.
         struct Total: Decodable, Sendable {
             let bytes: Int64
@@ -379,7 +366,6 @@ nonisolated struct Completo: Decodable, Sendable {
             let state: String
             let total: Total
         }
-        let byLine: [PorLinha]?
         var reproduced: Reproduzidas? = nil
     }
 

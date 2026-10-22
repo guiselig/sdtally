@@ -6,7 +6,6 @@
 import SwiftUI
 
 struct BoasVindasView: View {
-    @Environment(Painel.self) private var painel
     @Environment(\.dismiss) private var fechar
     @AppStorage("viuBoasVindas") private var viu = false
     @State var pagina = 0
