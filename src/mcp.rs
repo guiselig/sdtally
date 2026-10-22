@@ -90,7 +90,8 @@ pub fn responder(linha: &str, executar: &mut dyn FnMut(&str) -> Result<Value, St
 }
 
 /// O que uma ferramenta devolve: fichas anexadas (medição completa ou rápida), redigido quando
-/// `red` vem (o padrão; `--redact off` passa `None`) e escapado sempre. O erro troca a home por `~`.
+/// `red` vem (o padrão; `--redact off` passa `None`) e escapado sempre. O erro troca a home por `~`
+/// (por componente inteiro) e passa pelo `clean`, como o `error` da medição.
 pub fn fronteira(r: Result<Value, String>, red: Option<(&Ctx, &str)>) -> Result<Value, String> {
     match r {
         Ok(mut v) => {
@@ -104,8 +105,8 @@ pub fn fronteira(r: Result<Value, String>, red: Option<(&Ctx, &str)>) -> Result<
             Ok(v)
         }
         Err(m) => Err(redigir::escapar(&match red {
-            Some((_, home)) if !home.is_empty() => m.replace(home, "~"),
-            _ => m,
+            Some((c, home)) => c.clean(&redigir::sem_home(&m, home)),
+            None => m,
         })),
     }
 }

@@ -145,6 +145,46 @@ fn redige_pastas_sem_tamanho() {
     assert_eq!(v["informational"]["protected_without_size"]["count"], 2);
 }
 
+/// `largest_files` (caminho com nome de arquivo) e `growing_now` (do `--auto`) passam pelo balde:
+/// nenhum caminho original sobra, e o nome do arquivo some.
+#[test]
+fn redige_maiores_arquivos_e_crescendo() {
+    let mut v = completo("");
+    let arquivos = ["/Users/exemplo/Movies/Ferias com Fulano.mov", "/Users/exemplo/Projetos Pessoais/backup-beltrano.zip", "/Library/Caches/com.exemplo.app/grande.bin"];
+    let pastas = ["/System/Volumes/Data/Users/exemplo/Downloads/Conversa com Beltrano", "/Users/exemplo/Library/Caches/com.exemplo.sync"];
+    v["largest_files"] = json!(arquivos.iter().map(|p| json!({"path": p, "bytes": GB, "private_bytes": GB})).collect::<Vec<_>>());
+    v["growing_now"] = json!([{"window_seconds": 300, "covered_seconds": 300, "net_bytes": 2 * GB, "top": pastas.iter().map(|p| json!({"path": p, "bytes": GB})).collect::<Vec<_>>()}]);
+    redigir::redigir(&mut v, &ctx(), "/Users/exemplo");
+    let f: Vec<&str> = v["largest_files"].as_array().unwrap().iter().map(|x| x["path"].as_str().unwrap()).collect();
+    assert_eq!(f, ["~/Movies", "~/<pasta do usuário>", "/Library/Caches/<privado>"]);
+    let g: Vec<&str> = v["growing_now"][0]["top"].as_array().unwrap().iter().map(|x| x["path"].as_str().unwrap()).collect();
+    assert_eq!(g, ["~/Downloads", "~/Library/Caches/<privado>"]);
+    assert_eq!(v["largest_files"][0]["bytes"], GB);
+    let s = v.to_string();
+    for p in arquivos.iter().chain(&pastas) {
+        assert!(!s.contains(p), "{p}");
+    }
+    for x in ["exemplo", "fulano", "beltrano", ".mov", ".zip", "grande.bin"] {
+        assert!(!s.to_lowercase().contains(x), "{x}: {s}");
+    }
+}
+
+/// A home sai como `~` só por componente inteiro: `/Users/exemplo` não come `/Users/exemplos2`.
+#[test]
+fn home_por_componente() {
+    let h = "/Users/exemplo";
+    assert_eq!(redigir::sem_home("/Users/exemplo/a: falhou; /Users/exemplo", h), "~/a: falhou; ~");
+    assert_eq!(redigir::sem_home("stat /Users/exemplo: sem permissão", h), "stat ~: sem permissão");
+    assert_eq!(redigir::sem_home("/Users/exemplos2/x", h), "/Users/exemplos2/x");
+    assert_eq!(redigir::sem_home("/Users/exemplo.bak/x", h), "/Users/exemplo.bak/x");
+    assert_eq!(redigir::sem_home("x", ""), "x");
+    // No erro de ferramenta do MCP, o que sobra com o nome vira <privado>; a home vira ~.
+    let c = Ctx::new("ana", "Ana Lima", &[]);
+    assert_eq!(mcp::fronteira(Err("no saved measurement in /Users/ana/Library".into()), Some((&c, "/Users/ana"))), Err("no saved measurement in ~/Library".into()));
+    assert_eq!(mcp::fronteira(Err("/Users/anabela/x: unreadable".into()), Some((&c, "/Users/ana"))), Err("/Users/anabela/x: unreadable".into()));
+    assert_eq!(mcp::fronteira(Err("/Volumes/Backup da Ana/x: unreadable".into()), Some((&c, "/Users/ana"))), Err("<privado>".into()));
+}
+
 #[test]
 fn nome_hostil() {
     // 1. Pasta pessoal: some na redação, sai escapada no MCP sem redação, nunca entra num texto.

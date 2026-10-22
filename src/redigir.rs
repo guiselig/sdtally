@@ -71,19 +71,28 @@ fn cada_string(v: &mut Value, chaves: &[&str], f: &dyn Fn(&str) -> String) {
 pub fn redigir(v: &mut Value, ctx: &Ctx, home: &str) {
     // `~` relativo ao usuário do `ctx`, para o `bucket` reconhecer a home mesmo fora de /Users.
     let casa = format!("/Users/{}", ctx.user);
+    // O `growing_now` do `--auto` vem do FSEvents, que pode dar o caminho com o /System/Volumes/Data.
     let balde = |p: &str| match p.strip_prefix('~') {
         Some(r) if r.is_empty() || r.starts_with('/') => ctx.bucket(&format!("{casa}{r}")),
-        _ => ctx.bucket(p),
+        _ => ctx.bucket(p.strip_prefix(crate::sources::DATA).filter(|r| r.starts_with('/')).unwrap_or(p)),
     };
-    for x in v.get_mut("top").and_then(Value::as_array_mut).into_iter().flatten() {
+    let caminho = |x: &mut Value| {
         if let Some(p) = x["path"].as_str() {
             x["path"] = balde(p).into();
+        }
+    };
+    for k in ["/top", "/informational/protected_without_size/folders"] {
+        v.pointer_mut(k).and_then(Value::as_array_mut).into_iter().flatten().for_each(caminho);
+    }
+    // Arquivo vira o balde da pasta dele: o nome do arquivo nunca sai (o balde de /Library guarda
+    // até 3 componentes, que podem incluir o arquivo).
+    for x in v.get_mut("largest_files").and_then(Value::as_array_mut).into_iter().flatten() {
+        if let Some(p) = x["path"].as_str() {
+            x["path"] = balde(p.rsplit_once('/').map_or(p, |(d, _)| d)).into();
         }
     }
-    for x in v.pointer_mut("/informational/protected_without_size/folders").and_then(Value::as_array_mut).into_iter().flatten() {
-        if let Some(p) = x["path"].as_str() {
-            x["path"] = balde(p).into();
-        }
+    for j in v.get_mut("growing_now").and_then(Value::as_array_mut).into_iter().flatten() {
+        j.get_mut("top").and_then(Value::as_array_mut).into_iter().flatten().for_each(caminho);
     }
     for a in v.get_mut("advice").and_then(Value::as_array_mut).into_iter().flatten() {
         for p in a.get_mut("paths").and_then(Value::as_array_mut).into_iter().flatten() {
@@ -92,7 +101,7 @@ pub fn redigir(v: &mut Value, ctx: &Ctx, home: &str) {
             }
         }
     }
-    let nome = |s: &str| ctx.clean(&if home.is_empty() { s.to_string() } else { s.replace(home, "~") });
+    let nome = |s: &str| ctx.clean(&sem_home(s, home));
     // Nome de processo cortado em 31 bytes pode terminar num pedaço de nome: `processo` corta o fim.
     let processo = |s: &str| ctx.processo(s);
     no_texto(v, processo);
@@ -111,6 +120,24 @@ pub fn redigir(v: &mut Value, ctx: &Ctx, home: &str) {
     if v.get("home").is_some() {
         v["home"] = "/Users/<usuário>".into();
     }
+}
+
+/// Troca a home por `~` em qualquer ponto do texto, só por componente inteiro: com a home
+/// `/Users/ana`, `/Users/anabela/x` fica como está (e o `ctx.clean` que vem depois pega o nome).
+pub fn sem_home(s: &str, home: &str) -> String {
+    if home.is_empty() {
+        return s.to_string();
+    }
+    let (mut o, mut resto) = (String::with_capacity(s.len()), s);
+    while let Some(i) = resto.find(home) {
+        let depois = &resto[i + home.len()..];
+        o.push_str(&resto[..i]);
+        let continua_nome = depois.chars().next().is_some_and(|c| c.is_alphanumeric() || matches!(c, '.' | '-' | '_'));
+        o.push_str(if continua_nome { home } else { "~" });
+        resto = depois;
+    }
+    o.push_str(resto);
+    o
 }
 
 fn invisivel(c: char) -> bool {

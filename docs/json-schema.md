@@ -125,7 +125,8 @@ Nenhuma regra apaga nada; o app traduz pelo `id`.
 Os maiores arquivos que a travessia leu: de 100 MB ou mais, no máximo 30, do maior para o menor
 (empate: caminho). `[{"path", "bytes" (alocado), "private_bytes" (o que apagar libera: 0 num clone
 que divide tudo)}]`. Caminho sem o `/System/Volumes/Data` da frente. Pasta protegida (sem root) não
-entra. No `--auto` sai `null`: o modo vivo guarda pasta, não arquivo.
+entra. No `--auto` sai `null`: o modo vivo guarda pasta, não arquivo. Com redação (`--redact names`,
+MCP), `path` vira o balde da pasta do arquivo, como `top[].path`: o nome do arquivo não sai.
 
 ## `not_freed` ("Por que o espaço pode não voltar")
 
@@ -244,7 +245,8 @@ do que cada releitura mudou no alocado simples (sem repetidos nem blocos dividid
 clone não entram). A soma de uma pasta inclui as de baixo, e o `top` mostra a pasta mais funda com
 1 MB ou mais (a mãe só aparece quando o crescimento está espalhado em filhas abaixo do mínimo), no
 máximo 10, da que mais cresceu para a que menos cresceu. Só crescimento entra no `top`. Uma passada
-inteira (aviso perdido) não conta como crescimento.
+inteira (aviso perdido) não conta como crescimento. Com redação, cada `path` vira o balde, como
+`top[].path`.
 
 Custo medido (Mac M4, 458 mil pastas, 19–20/10/2026, com o dono usando o Mac): passada de ~40 s e
 ~53 s de CPU, primeira linha ~60 s depois de abrir; depois, 145–180 MB, pico de 185 MB; cada linha
