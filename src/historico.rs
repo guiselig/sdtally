@@ -51,8 +51,10 @@ pub fn ler(p: &Path) -> Result<Value, &'static str> {
     Ok(v)
 }
 
-/// As medições válidas de `dir`, da mais antiga para a mais nova por `generated_at` (não pelo nome).
-/// Arquivo recusado é pulado com aviso em stderr. Pasta ausente = nenhuma medição.
+/// As medições válidas de `dir`, da mais antiga para a mais nova (não pelo nome): pela
+/// `generated_at_epoch`; arquivo de antes dela, pelo mtime; empate, pelo `generated_at`. A hora
+/// local do `generated_at` não tem fuso: volta para trás no fim do horário de verão ou numa viagem
+/// para o oeste. Arquivo recusado é pulado com aviso em stderr. Pasta ausente = nenhuma medição.
 pub fn todas(dir: &Path) -> Result<Vec<Value>, String> {
     let entradas = match std::fs::read_dir(dir) {
         Ok(e) => e,
@@ -66,12 +68,16 @@ pub fn todas(dir: &Path) -> Result<Vec<Value>, String> {
             continue;
         }
         match ler(&p) {
-            Ok(m) => v.push(m),
+            Ok(m) => {
+                let mtime = p.symlink_metadata().ok().and_then(|x| x.modified().ok()).and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok()).map_or(0, |d| d.as_secs() as i64);
+                v.push((m["generated_at_epoch"].as_i64().unwrap_or(mtime), m));
+            }
             Err(motivo) => eprintln!("sdtally: skipped {}: {motivo}", e.file_name().to_string_lossy()),
         }
     }
-    v.sort_by(|a, b| a["generated_at"].as_str().unwrap_or("").cmp(b["generated_at"].as_str().unwrap_or("")));
-    Ok(v)
+    let texto = |m: &Value| m["generated_at"].as_str().unwrap_or("").to_string();
+    v.sort_by(|a, b| a.0.cmp(&b.0).then_with(|| texto(&a.1).cmp(&texto(&b.1))));
+    Ok(v.into_iter().map(|x| x.1).collect())
 }
 
 /// A mais nova, para `--last`.

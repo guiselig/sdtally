@@ -189,12 +189,20 @@ fn mcp_pelo_binario_todo_stdout_e_jsonrpc() {
     assert_eq!(linhas[4]["error"]["code"], -32602);
 }
 
+/// mtime do arquivo, em segundos desde a época.
+fn mtime(h: &Path, nome: &str, epoca: u64) {
+    let f = std::fs::File::options().write(true).open(historico::pasta(h.to_str().unwrap()).join(nome)).unwrap();
+    f.set_modified(std::time::UNIX_EPOCH + std::time::Duration::from_secs(epoca)).unwrap();
+}
+
 #[test]
 fn last_ordena_por_generated_at_e_recusa_sem_vazar() {
     let h = home("last");
-    // O nome mais antigo guarda a medição mais nova: vale o generated_at.
+    // O nome mais antigo guarda a medição mais nova: sem `generated_at_epoch`, vale o mtime.
     gravar(&h, "2026-09-01-0000.json", &medicao("2026-10-02 08:00", "sdtally 0.1.0", true));
     gravar(&h, "2026-10-01-0900.json", &medicao("2026-10-01 09:00", "sdtally 0.1.0", false));
+    mtime(&h, "2026-09-01-0000.json", 1_790_938_800);
+    mtime(&h, "2026-10-01-0900.json", 1_790_856_000);
     gravar_ruins(&h);
     let o = rodar(&h, &["--last", "--json"], "");
     assert!(o.status.success());
@@ -232,4 +240,28 @@ fn last_so_com_recusados_falha_sem_vazar() {
     assert!(!o.status.success());
     assert!(o.stdout.is_empty());
     sem_segredo(&o);
+}
+
+/// Fim do horário de verão (ou viagem para o oeste): a hora local volta. 01:50 e depois 01:10 do
+/// mesmo dia; vale a `generated_at_epoch`, não o texto. Arquivo antigo, sem ela, entra pelo mtime.
+#[test]
+fn last_ordena_pela_epoca_e_nao_pela_hora_local() {
+    let h = home("last-epoca");
+    let mut antes = medicao("2026-11-01 01:50", "sdtally 0.1.0", true);
+    antes["generated_at_epoch"] = json!(1_793_515_800_i64);
+    let mut depois = medicao("2026-11-01 01:10", "sdtally 0.1.0", false);
+    depois["generated_at_epoch"] = json!(1_793_517_000_i64);
+    gravar(&h, "2026-11-01-0150.json", &antes);
+    gravar(&h, "2026-11-01-0110.json", &depois);
+    // Sem época, com mtime de antes das duas.
+    gravar(&h, "2026-10-31-2300.json", &medicao("2026-10-31 23:00", "sdtally 0.0.9", true));
+    mtime(&h, "2026-10-31-2300.json", 1_793_500_000);
+    let o = rodar(&h, &["--last", "--json"], "");
+    assert!(o.status.success(), "{}", String::from_utf8_lossy(&o.stderr));
+    let v: Value = serde_json::from_slice(&o.stdout).unwrap();
+    assert_eq!(v["generated_at"], "2026-11-01 01:10");
+    let o = rodar(&h, &["--history", "--json"], "");
+    let v: Value = serde_json::from_slice(&o.stdout).unwrap();
+    let g: Vec<&str> = v["measurements"].as_array().unwrap().iter().map(|m| m["generated_at"].as_str().unwrap()).collect();
+    assert_eq!(g, ["2026-10-31 23:00", "2026-11-01 01:50", "2026-11-01 01:10"]);
 }

@@ -27,6 +27,7 @@ Todo número vem neste formato:
 | `schema_version` | int | 1 |
 | `home` | string | home da pessoa medida (com sudo, a do `SUDO_USER`): resolve o `~` dos caminhos |
 | `tool`, `generated_at`, `macos_version` | string | versão do sdtally, hora local `AAAA-MM-DD HH:MM`, versão do macOS |
+| `generated_at_epoch` | int | o mesmo instante em segundos desde a época (UTC); a hora local não tem fuso. Só na medição completa (`sdtally --json`); arquivo salvo antes dela não tem a chave |
 | `complete` | bool | `false` se houver qualquer motivo abaixo |
 | `incomplete_reasons` | [string] | `interrupted`, `no_root`, `no_full_disk_access`, `stage_failed` (alguma etapa da coleta registrou erro; ver `stage_errors`) |
 | `root`, `full_disk_access` | bool (FDA pode ser `null`) | modo em que rodou |
@@ -276,8 +277,9 @@ pastas negadas (252 sem root), passada de ~41 s; RAM igual (169 MB depois da pas
 
 ## `--last` e `--history`
 
-`sdtally --last --json` imprime, re-serializada, a medição completa mais nova (por `generated_at`)
-de `~/Library/Application Support/SDTally/Medicoes/`. Arquivo symlink, com mais de 20 MB, com
+`sdtally --last --json` imprime, re-serializada, a medição completa mais nova (por
+`generated_at_epoch`; arquivo sem ela, pelo mtime; empate, por `generated_at`) de
+`~/Library/Application Support/SDTally/Medicoes/`. Arquivo symlink, com mais de 20 MB, com
 `schema_version` ≠ 1 ou com `kind` é pulado com aviso em stderr, sem o conteúdo.
 
 `sdtally --history --json`: `{"schema_version": 1, "kind": "history", "measurements": [...]}`, da

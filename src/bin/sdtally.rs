@@ -374,12 +374,16 @@ fn main() {
         }
         Modo::Conta => {
             let (agora, _) = sys::now_local();
+            let epoca = sys::agora_epoch();
             let data_hora: String = agora.chars().take(16).collect::<String>().replace('T', " ");
             let pr = progresso(ctl.clone(), lang);
             let c = coleta::coletar(&Opcoes { threads: None, xattr: true, root }, &home, Arc::new(Ctx::real(&dono)), ctl.clone());
             parar(pr);
             if a.json {
-                imprimir(report::json_completo(&c, &format!("sdtally {VERSAO}"), &data_hora, &home, None), red, false);
+                let mut v = report::json_completo(&c, &format!("sdtally {VERSAO}"), &data_hora, &home, None);
+                // A hora local não tem fuso: o `--last` ordena por esta (historico::todas).
+                v["generated_at_epoch"] = epoca.into();
+                imprimir(v, red, false);
             } else {
                 escrever(&texto::conta(&report::montar(&c, &format!("sdtally {VERSAO}"), &data_hora), &e));
             }
