@@ -45,6 +45,8 @@ pub struct Ramo {
     pub protegidas_sem: u64,
     /// Entradas com erro de leitura, sem contar as negadas.
     pub erros: u64,
+    /// Dessas, as que deixam algo sem medir (`walk::nao_lidos`: sem as que sumiram): o total é um piso.
+    pub nao_lidos: u64,
     pub outros_volumes: u64,
     pub interrompida: bool,
 }
@@ -78,6 +80,7 @@ pub fn ramo(raiz: &Path, profundidade: usize, threads: usize, ctl: Arc<Controle>
         dirs: r.dirs,
         protegidas_sem: sem,
         erros: r.errors.iter().filter(|(k, _)| !negada(k)).map(|(_, v)| v).sum(),
+        nao_lidos: walk::nao_lidos(&r.errors),
         outros_volumes: r.other_dev,
         interrompida: r.interrompida,
     })

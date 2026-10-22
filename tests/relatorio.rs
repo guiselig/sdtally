@@ -431,10 +431,11 @@ fn montar_com_coleta_sintetica() {
     // (vão para o dir-stats).
     let r = c.arvore.as_mut().expect("arvore");
     r.interrompida = false;
-    r.errors.extend([(63, 2), (sdtally::walk::ERRO_INTERNO, 1), (1, 5), (13, 4)]);
+    r.errors.extend([(63, 2), (sdtally::walk::ERRO_INTERNO, 1), (1, 5), (13, 4), (2, 7), (20, 1)]);
     let conta = report::montar(&c, "sdtally teste", "2026-09-30 10:00");
     assert_eq!(conta.medida(Chave::Arvore), Some(&Medida::Parcial(7_050_000_000, "3 pastas/entradas não lidas".into())));
-    c.arvore.as_mut().expect("arvore").errors.retain(|k, _| *k == 1 || *k == 13);
+    // EPERM/EACCES (dir-stats) e ENOENT/ENOTDIR (sumiu entre a listagem e o open): árvore medida.
+    c.arvore.as_mut().expect("arvore").errors.retain(|k, _| [1, 13, 2, 20].contains(k));
     assert_eq!(report::montar(&c, "t", "t").medida(Chave::Arvore), Some(&Medida::Valor(7_050_000_000)));
     c.xattr = false;
     assert_eq!(report::montar(&c, "t", "t").medida(Chave::Xattr), Some(&Medida::NaoMedida("--sem-xattr".into())));
@@ -493,7 +494,11 @@ fn ramo_com_erro_de_leitura_e_piso() {
     let mut r = sdtally::detalhe::Ramo { raiz: "/tmp/x".into(), ..Default::default() };
     let j = report::json_ramo(&r, "/Users/x", "t");
     assert_eq!((j["complete"].as_bool(), j["total"]["lower_bound"].as_bool()), (Some(true), Some(false)));
-    r.erros = 1;
+    // Só entradas que sumiram: contam em read_errors, mas o total continua medido.
+    r.erros = 3;
+    let j = report::json_ramo(&r, "/Users/x", "t");
+    assert_eq!((j["complete"].as_bool(), j["total"]["lower_bound"].as_bool(), j["read_errors"].as_u64()), (Some(true), Some(false), Some(3)));
+    r.nao_lidos = 1;
     let j = report::json_ramo(&r, "/Users/x", "t");
     assert_eq!((j["complete"].as_bool(), j["total"]["lower_bound"].as_bool()), (Some(false), Some(true)));
 }

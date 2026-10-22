@@ -30,9 +30,10 @@ pub const ERRO_ATRIBUTO_AUSENTE: i32 = -3;
 pub const ERRO_LISTAGEM: i32 = -4;
 
 /// Erros que deixam algo sem ler: tudo menos EPERM/EACCES, que vão para o dir-stats
-/// (`Result::denied`). Com algum, a árvore é um piso.
+/// (`Result::denied`), e ENOENT/ENOTDIR (sumiu entre a listagem e o open: nada a medir). Com
+/// algum, a árvore é um piso.
 pub fn nao_lidos(errors: &HashMap<i32, u64>) -> u64 {
-    errors.iter().filter(|(k, _)| **k != libc::EPERM && **k != libc::EACCES).map(|(_, v)| v).sum()
+    errors.iter().filter(|(k, _)| ![libc::EPERM, libc::EACCES, libc::ENOENT, libc::ENOTDIR].contains(k)).map(|(_, v)| v).sum()
 }
 
 pub static MEASURE_XATTR: AtomicBool = AtomicBool::new(false);
@@ -1036,6 +1037,25 @@ mod tests {
         assert!(sys::apfs::abrir_pasta_sob(&fd, Path::new("real/x")).is_ok());
         assert_eq!(sys::apfs::abrir_pasta_sob(&fd, Path::new("link/x")).err(), Some(libc::ELOOP));
         assert_eq!(sys::apfs::abrir_pasta_sob(&fd, Path::new("link")).err(), Some(libc::ELOOP));
+    }
+
+    /// Pasta apagada entre a listagem e o open: conta em `errors`, mas não deixa a árvore parcial.
+    #[test]
+    fn pasta_que_sumiu_nao_e_nao_lida() {
+        let pasta = Pasta(std::env::temp_dir().join(format!("sdtsumiu-{}", std::process::id())));
+        let _ = std::fs::remove_dir_all(&pasta.0);
+        std::fs::create_dir_all(&pasta.0).expect("mkdir");
+        let raiz = std::fs::canonicalize(&pasta.0).expect("canonicalize");
+        static NUNCA: AtomicBool = AtomicBool::new(false);
+        let (ctx, ctl, nomes) = (Ctx::ramo(1), Controle::new(&NUNCA), Mutex::new(Nomes::default()));
+        let fd = sys::apfs::abrir_pasta(&raiz).expect("abre");
+        let w = Walker { root: raiz.to_str().expect("utf8"), mnt: "/", root_dev: 0, raiz_fd: Some(&fd), ctx: &ctx, montagens: None, ctl: &ctl, nomes: &nomes };
+        let mut l = Local::default();
+        w.scan_dir(&Job { path: raiz.join("sumiu"), bucket: 0, depth: 1, dono: 0 }, &mut [0u8; 4096], &mut l, &mut |_| {});
+        assert_eq!(l.errors.get(&libc::ENOENT), Some(&1));
+        assert_eq!(nao_lidos(&l.errors), 0);
+        let e: HashMap<i32, u64> = [(libc::ENOTDIR, 1), (libc::EPERM, 1), (libc::EIO, 2)].into();
+        assert_eq!(nao_lidos(&e), 2);
     }
 
     #[test]

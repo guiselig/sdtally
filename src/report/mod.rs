@@ -553,7 +553,7 @@ pub fn json_ramo(r: &crate::detalhe::Ramo, home: &str, ferramenta: &str) -> Valu
         "root": r.raiz,
         "display": texto::til(&r.raiz, home),
         "depth": r.profundidade,
-        "complete": !r.interrompida && r.protegidas_sem == 0 && r.erros == 0,
+        "complete": !r.interrompida && r.protegidas_sem == 0 && r.nao_lidos == 0,
         "interrupted": r.interrompida,
         "children": r.filhos.iter().map(|f| json!({
             // Vazio = arquivos soltos na própria raiz.
@@ -568,7 +568,7 @@ pub fn json_ramo(r: &crate::detalhe::Ramo, home: &str, ferramenta: &str) -> Valu
         "total": {
             // Piso quando a leitura parou, sobrou pasta protegida sem dir-stats ou algo não foi lido.
             "bytes": r.total.alloc + prot,
-            "lower_bound": r.interrompida || r.protegidas_sem > 0 || r.erros > 0,
+            "lower_bound": r.interrompida || r.protegidas_sem > 0 || r.nao_lidos > 0,
             "private_bytes": r.total.private,
             "files": r.total.files,
             "folders": r.dirs,

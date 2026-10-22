@@ -782,8 +782,8 @@ mod tests {
         assert_eq!((filhas(&e), e.usadas), (1, 2), "completa: b sai");
     }
 
-    /// Releitura que não abre a pasta (aqui ENOENT; no uso real EMFILE, EIO) fica com o que a última
-    /// leitura mediu e com o erro, que deixa a árvore parcial.
+    /// Releitura que não abre a pasta (aqui ENOENT; no uso real EMFILE, EIO, que deixam a árvore
+    /// parcial) fica com o que a última leitura mediu e com o erro.
     #[test]
     fn releitura_que_nao_abre_mantem_a_pasta() {
         let tmp = std::env::temp_dir().join(format!("sdtally-vivo-na-{}", std::process::id()));
@@ -802,10 +802,10 @@ mod tests {
         assert!(v.ler(&w, &job, &mut vec![0u8; 64 * 1024]).is_empty());
         let depois = v.resultado();
         assert_eq!((depois.total, depois.dirs, v.pastas()), (antes.total, antes.dirs, 3));
-        assert_eq!(nao_lidos(&depois.errors), 1, "{:?}", depois.errors);
+        assert_eq!(depois.errors.get(&libc::ENOENT), Some(&1), "{:?}", depois.errors);
         // Relida de verdade, o erro sai.
         v.reler(&format!("{raiz}/a"), false);
-        assert_eq!((v.resultado().total, nao_lidos(&v.resultado().errors)), (antes.total, 0));
+        assert_eq!((v.resultado().total, v.resultado().errors.len()), (antes.total, 0));
         fs::remove_dir_all(&tmp).unwrap();
     }
 
