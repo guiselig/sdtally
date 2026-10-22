@@ -110,11 +110,11 @@ fn args() -> Args {
                 }
             }
             "-V" | "--version" => {
-                println!("sdtally {VERSAO}");
+                escrever(&format!("sdtally {VERSAO}\n"));
                 std::process::exit(0);
             }
             "-h" | "--ajuda" | "--help" => {
-                println!("{}", lang.f("ajuda", &[VERSAO]));
+                escrever(&format!("{}\n", lang.f("ajuda", &[VERSAO])));
                 std::process::exit(0);
             }
             o if o.starts_with('-') => sair(&lang.f("arg_desconhecida", &[o])),
@@ -179,13 +179,28 @@ fn args() -> Args {
     a
 }
 
-/// JSON em stdout; com `red`, redigido e escapado (§4.5).
-fn imprimir(mut v: Value, red: Option<(&Ctx, &str)>) {
+/// Toda saída em stdout passa por aqui. Leitor que fechou o pipe (`| head`) encerra com 0: o
+/// `println!` daria panic, e o hook mudo viraria saída 101.
+fn escrever(s: &str) {
+    use std::io::Write;
+    let mut o = std::io::stdout().lock();
+    if let Err(e) = o.write_all(s.as_bytes()).and_then(|_| o.flush()) {
+        if e.kind() == std::io::ErrorKind::BrokenPipe {
+            std::process::exit(0);
+        }
+        sair(&e.to_string());
+    }
+}
+
+/// JSON em stdout (`linha`: compacto, uma linha, para o app ler linha a linha); com `red`,
+/// redigido e escapado (§4.5).
+fn imprimir(mut v: Value, red: Option<(&Ctx, &str)>, linha: bool) {
     if let Some((c, home)) = red {
         redigir::redigir(&mut v, c, home);
         redigir::escapar_json(&mut v);
     }
-    println!("{}", serde_json::to_string_pretty(&v).unwrap_or_default());
+    let s = if linha { serde_json::to_string(&v) } else { serde_json::to_string_pretty(&v) };
+    escrever(&(s.unwrap_or_default() + "\n"));
 }
 
 /// Contagem de arquivos em stderr a cada ~250 ms, só em TTY. Devolve a trava para parar.
@@ -262,9 +277,9 @@ fn main() {
                 Ok(w) if a.json => {
                     let mut v = report::json_why(&w, &home, &format!("sdtally {VERSAO}"));
                     catalogo::anexar(&mut v);
-                    println!("{}", serde_json::to_string_pretty(&v).unwrap_or_default());
+                    imprimir(v, None, false);
                 }
-                Ok(w) => print!("{}", texto::why(&w, &home, &e)),
+                Ok(w) => escrever(&texto::why(&w, &home, &e)),
                 Err(x) => sair(&x),
             }
         }
@@ -279,34 +294,34 @@ fn main() {
             let r = detalhe::ramo(&p, a.depth, threads, ctl.clone());
             parar(pr);
             match r {
-                Ok(r) if a.json => println!("{}", serde_json::to_string_pretty(&report::json_ramo(&r, &home, &format!("sdtally {VERSAO}"))).unwrap_or_default()),
-                Ok(r) => print!("{}", texto::ramo(&r, &home, &e)),
+                Ok(r) if a.json => imprimir(report::json_ramo(&r, &home, &format!("sdtally {VERSAO}")), None, false),
+                Ok(r) => escrever(&texto::ramo(&r, &home, &e)),
                 Err(x) => sair(&x),
             }
         }
         Modo::Verificar => {
             let v = verify::verificar(root, &home).unwrap_or_else(|k| sair(&lang.t(k)));
             if a.json {
-                println!("{}", serde_json::to_string_pretty(&v).unwrap_or_default());
+                imprimir(v.clone(), None, false);
             } else {
-                print!("{}", verify::texto(&v, lang));
+                escrever(&verify::texto(&v, lang));
             }
             if verify::algum_fora(&v) {
                 std::process::exit(1);
             }
         }
-        Modo::Catalogo => println!("{}", serde_json::to_string_pretty(&catalogo::json()).unwrap_or_default()),
+        Modo::Catalogo => imprimir(catalogo::json(), None, false),
         // Cru, sem `anexar`: o que sai é o arquivo que o app salvou.
         Modo::Ultima | Modo::Historico => {
             let r = if matches!(a.modo, Modo::Ultima) { historico::ultima(&home) } else { historico::historico(&home) };
             match r {
                 // Re-serializa: o que sai é o JSON lido, nunca os bytes do arquivo.
-                Ok(v) => imprimir(v, red),
+                Ok(v) => imprimir(v, red, false),
                 Err(x) => sair(&x),
             }
         }
         Modo::Stdin => match redigir::ler_entrada(std::io::stdin().lock()) {
-            Ok(v) => imprimir(v, red),
+            Ok(v) => imprimir(v, red, false),
             Err(x) => sair(x),
         },
         Modo::Mcp => {
@@ -323,25 +338,27 @@ fn main() {
                 };
                 mcp::fronteira(r, red)
             };
-            if let Err(x) = mcp::servir(std::io::stdin().lock(), std::io::stdout().lock(), &mut executar) {
-                sair(&x.to_string());
+            match mcp::servir(std::io::stdin().lock(), std::io::stdout().lock(), &mut executar) {
+                Err(x) if x.kind() == std::io::ErrorKind::BrokenPipe => {}
+                Err(x) => sair(&x.to_string()),
+                Ok(()) => {}
             }
         }
         Modo::Auto => {
             // Compacto, uma linha por mudança: o app lê linha a linha.
             let r = coleta::vigiar_arvore(root, &home, &format!("sdtally {VERSAO}"), Arc::new(Ctx::real(&dono)), ctl.clone(), |v| {
-                println!("{}", serde_json::to_string(v).unwrap_or_default())
+                escrever(&(serde_json::to_string(v).unwrap_or_default() + "\n"))
             });
             if let Err(x) = r {
                 sair(&x);
             }
         }
         Modo::Conta if a.vigiar => {
-            // Compacto, uma linha por tela: o app lê linha a linha.
+            // Compacto, uma linha por tela: o app lê linha a linha. `--redact names` vale aqui também.
             let r = coleta::vigiar_tela(root, ctl.clone(), |r| {
                 let (agora, _) = sys::now_local();
                 let data_hora: String = agora.chars().take(19).collect::<String>().replace('T', " ");
-                println!("{}", serde_json::to_string(&report::json_rapido(r, &format!("sdtally {VERSAO}"), &data_hora, &home)).unwrap_or_default());
+                imprimir(report::json_rapido(r, &format!("sdtally {VERSAO}"), &data_hora, &home), red, true);
             });
             if let Err(x) = r {
                 sair(&x);
@@ -353,7 +370,7 @@ fn main() {
             let r = coleta::coletar_rapido(root, &home, Arc::new(Ctx::real(&dono)), ctl.clone(), a.desde, a.partes.unwrap_or(coleta::Partes::TODAS));
             let mut v = report::json_rapido(&r, &format!("sdtally {VERSAO}"), &data_hora, &home);
             catalogo::anexar(&mut v);
-            imprimir(v, red);
+            imprimir(v, red, false);
         }
         Modo::Conta => {
             let (agora, _) = sys::now_local();
@@ -362,9 +379,9 @@ fn main() {
             let c = coleta::coletar(&Opcoes { threads: None, xattr: true, root }, &home, Arc::new(Ctx::real(&dono)), ctl.clone());
             parar(pr);
             if a.json {
-                imprimir(report::json_completo(&c, &format!("sdtally {VERSAO}"), &data_hora, &home, None), red);
+                imprimir(report::json_completo(&c, &format!("sdtally {VERSAO}"), &data_hora, &home, None), red, false);
             } else {
-                print!("{}", texto::conta(&report::montar(&c, &format!("sdtally {VERSAO}"), &data_hora), &e));
+                escrever(&texto::conta(&report::montar(&c, &format!("sdtally {VERSAO}"), &data_hora), &e));
             }
         }
     }
