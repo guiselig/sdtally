@@ -1,8 +1,8 @@
 // Causas do Início (spec-inicio §3 B2, B3, B5, B6): as linhas do `top` agrupadas pela ficha, a
 // linha do Ajustes em que cada uma cai, a manchete, a barra do disco e o passo seguro. Só funções
 // puras, nonisolated e testadas (ResumoTests). API estável:
-//   Causa, causas(top:swap:fichas:home:), conselho(de:em:), nomeLinha(_:), pastasEmDadosDoSistema(_:)
-//   corLinha(_:), segmentosDisco(_:top:containers:), seguro(advice:cinco:)
+//   Causa, causas(top:swap:fichas:home:), conselho(de:em:), nomeLinha(_:)
+//   segmentosDisco(_:top:containers:), seguro(advice:cinco:)
 //   Manchete, manchete(advice:tm:snapshots:causas:usado:), purgavelNoAjustes(tela:livre:purg:)
 import AppKit
 import SwiftUI
@@ -85,22 +85,6 @@ private nonisolated func nomeCausa(_ l: LinhaTop, fichas: MapaFichas?, home: Str
     return visivel(p)
 }
 
-/// Dados do Sistema pelas pastas medidas (`system_data.by_line`): Σ do `top` que cai na linha, a parte
-/// dela que vem de regra de grau B e quantas linhas do ranking entraram. nil em medição sem o campo
-/// ou sem nada nessa linha: o dado ausente some da tela.
-nonisolated func pastasEmDadosDoSistema(_ s: Completo.SistemaDados?) -> (bytes: Int64, incerto: Int64, itens: Int)? {
-    s?.byLine?.first { $0.line == "system_data" }.map { ($0.bytes, $0.gradeBBytes, $0.rows) }
-}
-
-/// Frase da soma das pastas medidas que caem em Dados do Sistema: o total, quantas linhas do
-/// ranking entram e, se houver, a parte que vem de regra menos certa.
-nonisolated func somaDasPastas(_ t: (bytes: Int64, incerto: Int64, itens: Int)) -> String {
-    if t.incerto > 0 {
-        return String(localized: "Pastas medidas que caem aqui: \(gb(t.bytes)) (\(t.itens) linhas do ranking); \(gb(t.incerto)) de regras menos certas.")
-    }
-    return String(localized: "Pastas medidas que caem aqui: \(gb(t.bytes)) (\(t.itens) linhas do ranking).")
-}
-
 /// Conselho da causa: o mesmo `card`; senão o que lista o caminho; senão o mesmo termo (fora tree
 /// e protected_folders), com o backup parado antes. Swap: `restart_worth` antes de `swap_large`.
 nonisolated func conselho(de c: Causa, em advice: [Conselho]) -> Conselho? {
@@ -121,11 +105,6 @@ nonisolated func nomeLinha(_ l: String?) -> (nome: String, cor: Color)? {
     case "macos": ("macOS", .gray)
     case let id?: categoria(id)
     }
-}
-
-/// Cor da causa na barra e no ícone: a da linha do Ajustes; sem linha, a do termo.
-nonisolated func corLinha(_ c: Causa) -> Color {
-    nomeLinha(c.linha)?.cor ?? termo(c.termo).cor
 }
 
 /// Uma cor de sistema por posição nas 5 linhas de B5, na barra e no ícone da linha: as cores das
@@ -194,12 +173,3 @@ nonisolated func purgavelNoAjustes(tela: Tela?, livre: Int64?, purg: Int64?) -> 
     return y - livre >= 1_000_000_000
 }
 
-/// Pasta única cujo privado medido arredonda abaixo do alocado: "Privado 18,6 MB; o resto é
-/// dividido com clones ou snapshots." (`ATTR_CMNEXT_PRIVATESIZE`, man getattrlist: bytes fora de
-/// clone ou snapshot). Grupo de pastas ou sem `private_bytes`: nil.
-nonisolated func fatoPrivado(_ c: Causa, top: [LinhaTop]) -> String? {
-    guard c.termo == "tree", c.pastas == 1,
-          let l = top.first(where: { $0.path == c.caminho && $0.term == "tree" && $0.folded != true }),
-          let p = l.privateBytes, gb(p) != gb(l.bytes) else { return nil }
-    return String(localized: "Privado \(gb(p))")
-}

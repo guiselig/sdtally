@@ -12,7 +12,7 @@
 //   MapaFichas (cards[id] → Ficha; ficha sem campo obrigatório é descartada), fichas[id]
 //   Ficha.acoes: [AcaoFicha] (kind desconhecido é ignorado), Ficha.refs: [RefFicha]
 //   Catalogo (sdtally --catalog --json, kind "catalog"): .cards, .sources[source] → Conferencia
-//   LinhaTop.settingsLine, .settingsLineGrade (spec-inicio §9; nil antes do M5 do CLI)
+//   LinhaTop.settingsLine (spec-inicio §9; nil antes do M5 do CLI)
 //   Completo.systemData (by_line, reproduced.total; nil em medição antiga)
 //   Completo.Informativo.trash (Lixo por idade), .apfsMetadata (nós das árvores vivas); nil em medição antiga
 import Foundation
@@ -225,9 +225,8 @@ nonisolated struct LinhaTop: Decodable, Sendable, Identifiable {
     let folded: Bool?
     var card: String? = nil
     /// Linha do Ajustes em que a pasta cai: id da categoria da Apple, "system_data" ou "mixed";
-    /// o grau ("A" ou "B") diz quão certa é a regra. nil sem regra ou em JSON sem a chave.
+    /// nil sem regra ou em JSON sem a chave.
     var settingsLine: String? = nil
-    var settingsLineGrade: String? = nil
     /// Provedor de `FileProvider/<uuid>` ("iCloud Drive", "File Provider"...), grau B. nil nas outras.
     var label: String? = nil
     /// App dono da pasta (`owner`), só quando há fonte; nil em JSON sem a chave.

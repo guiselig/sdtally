@@ -1,5 +1,5 @@
-// Protótipo (Fase 4): explica o "Dados do Sistema" do Ajustes com os números do sdtally embutido.
-// Só lê. Rápido sem senha a cada 180 s (30 min em segundo plano); medição completa sob demanda.
+// SDTally: explica o "Dados do Sistema" do Ajustes com os números do sdtally embutido.
+// Só lê. Leitura sem senha nos ritmos de Ritmos.swift; medição completa sob demanda.
 // Janela principal e ícone na barra de menus (BarraMenus.swift), os dois sobre Painel.unico.
 import AppKit
 import SwiftUI

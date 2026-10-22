@@ -79,9 +79,9 @@ private let idsDoSpec = [
 }
 
 @Test func dataDaMedicaoAteOMinuto() {
-    #expect(dataMedicao("2026-10-02 09:36") != nil)
-    #expect(dataMedicao("2026-10-02 09:36:12") != nil)
-    #expect(dataMedicao("ontem") == nil)
+    #expect(data("2026-10-02 09:36") != nil)
+    #expect(data("2026-10-02 09:36:12") != nil)
+    #expect(data("ontem") == nil)
 }
 
 @Test func maisDeCincoCaminhosRecolheOResto() {

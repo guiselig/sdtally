@@ -25,22 +25,11 @@ struct CartaoInicio: View {
     }
 }
 
-/// Texto do passo: o `step` da ficha; sem ficha (arquivo antigo), o pt-BR do id; sem os dois, o `text`.
-nonisolated func textoPasso(_ p: Conselho, fichas: MapaFichas?) -> String {
-    fichas?[p.card]?.step.texto ?? textoConselho(p.id) ?? p.text
-}
-
 /// Estado vazio da tela do Ajustes (V1, V2, V3); `ultimo`: o último Dados do Sistema do Histórico.
 nonisolated func vazioAjustes(_ t: Tela?, ultimo: Ponto?) -> Vazio {
     if t?.state == "partial" { return .v2 }
     if let r = t?.reason, r.localizedCaseInsensitiveContains("permission") || r.localizedCaseInsensitiveContains("not read") { return .v3 }
     return .v1(ultimo: ultimo?.systemData, hora: ultimo.map { hora($0.telaEm ?? $0.t) })
-}
-
-/// "há 2 dias" a partir de um dia; abaixo disso, `idade`.
-nonisolated func idadeMedicao(_ d: Date, agora: Date = .now) -> String {
-    let dias = Int(agora.timeIntervalSince(d) / 86_400)
-    return dias >= 1 ? String(localized: "há \(dias) dias") : idade(d, agora: agora)
 }
 
 /// Linha de ranking em texto: caminho, "demais itens em", ou o termo.
@@ -78,25 +67,6 @@ extension Painel {
     func abrir(_ s: Secao, rolando a: String) {
         rolarPara = a
         secao = s
-    }
-
-    /// O serviço do Time Machine no CacheDelete e onde o Ajustes pôs essa parte na última leitura
-    /// (parte de snapshots no cartão e detalhe da linha).
-    var notaSnapshots: String? {
-        guard let tm = completo?.informational?.purgeable?.topServices?.first(where: { $0.name == "com.apple.TMCacheDelete" })?.bytes,
-              tm > 0 else { return nil }
-        let t = telaBoa?.tela
-        guard let disponivel = purgavelNoAjustes(tela: t, livre: rapido?.capacity?.free, purg: purgVivo?.bytes) else {
-            return String(localized: "O macOS libera sozinho \(gb(tm)) destes; o Ajustes ora mostra essa parte em Disponível, ora em Dados do Sistema")
-        }
-        if let h = hora(t?.loggedAt) {
-            return disponivel
-                ? String(localized: "O macOS libera sozinho \(gb(tm)) destes; na leitura das \(h), em Disponível")
-                : String(localized: "O macOS libera sozinho \(gb(tm)) destes; na leitura das \(h), em Dados do Sistema")
-        }
-        return disponivel
-            ? String(localized: "O macOS libera sozinho \(gb(tm)) destes; no Ajustes, em Disponível")
-            : String(localized: "O macOS libera sozinho \(gb(tm)) destes; no Ajustes, em Dados do Sistema")
     }
 }
 
@@ -451,7 +421,7 @@ private struct LinhaMedicao: View {
                 }
             } else {
             switch painel.medicao {
-            case .medindo(let desde, let admin, let cancelavel):
+            case .medindo(let desde, let admin, _):
                 HStack(spacing: 10) {
                     ProgressView().controlSize(.small)
                     TimelineView(.periodic(from: desde, by: 1)) { ctx in
@@ -589,7 +559,7 @@ private struct MaisOcupa: View {
 
     /// Título, hora e modo da medição; avisos de idade (mais de 24 h) e de medição interrompida.
     @ViewBuilder private func cabecalho(_ c: Completo?) -> some View {
-        let d = c.flatMap { dataMedicao($0.generatedAt) }
+        let d = c.flatMap { data($0.generatedAt) }
         let velho = d.map { Date.now.timeIntervalSince($0) > 24 * 3600 } ?? false
         let interrompida = c.map(Historico.interrompida) ?? false
         HStack(alignment: .firstTextBaseline) {

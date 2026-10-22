@@ -270,15 +270,6 @@ nonisolated func custoNivel(_ level: String) -> String {
     }
 }
 
-/// Date do `generated_at` da medição completa ("2026-10-02 09:36", só até o minuto).
-nonisolated func dataMedicao(_ carimbo: String) -> Date? {
-    if let d = data(carimbo) { return d }
-    let f = DateFormatter()
-    f.locale = Locale(identifier: "en_US_POSIX")
-    f.dateFormat = "yyyy-MM-dd HH:mm"
-    return f.date(from: String(carimbo.prefix(16)))
-}
-
 let rodapeConselhos = String(localized: "O SDTally não apaga nada. Cada passo é seu, no Finder, no Terminal ou no app dono. Depois, meça de novo: o Histórico mostra quanto voltou.")
 
 struct ConselhosView: View {
@@ -293,7 +284,7 @@ struct ConselhosView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     // R7
-                    if let d = dataMedicao(c.generatedAt), Date.now.timeIntervalSince(d) > 24 * 3600 {
+                    if let d = data(c.generatedAt), Date.now.timeIntervalSince(d) > 24 * 3600 {
                         Faixa(simbolo: "clock.badge.exclamationmark", texto: String(localized: "Medido \(idade(d))"))
                     }
                     // V17

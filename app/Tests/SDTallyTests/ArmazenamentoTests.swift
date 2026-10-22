@@ -57,9 +57,6 @@ private func fixture(_ nome: String) throws -> Data {
     #expect(Armazenamento.dataCurta("2026-10-02 08:12") == "02/10 às 08:12")
     // generated_at do sdtally vem sem segundos; a idade da medição (R7) depende disso.
     #expect(data("2026-10-02 09:36") != nil && data("2026-10-02 09:29:42.302128-0300") != nil)
-    let agora = Date(timeIntervalSince1970: 1_000_000)
-    #expect(idadeMedicao(agora.addingTimeInterval(-2 * 86_400 - 60), agora: agora) == "há 2 dias")
-    #expect(idadeMedicao(agora.addingTimeInterval(-600), agora: agora) == "há 10 min")
 }
 
 /// Recuperação e Atualização moram noutro container interno: a lista de volumes precisa dele para

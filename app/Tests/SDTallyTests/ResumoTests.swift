@@ -173,17 +173,6 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
     #expect(SDTally.conselho(de: causa("~/Music", 38_263_365_632), em: a) == nil)
 }
 
-@Test func textoDoPassoVemDaFicha() throws {
-    let c = try decodificar(Completo.self, fixture("completo-assinaturas"), kind: nil)
-    let a = try #require(c.advice)
-    let os = try #require(a.first { $0.id == "asset_os_update" })
-    #expect(textoPasso(os, fichas: c.cards).hasPrefix("Atualização do macOS baixada."))
-    // Sem ficha (arquivo antigo): o pt-BR do id; id sem tradução: o text do sdtally.
-    let lixo = try #require(a.first { $0.id == "trash" })
-    #expect(textoPasso(lixo, fichas: nil) == textoConselho("trash"))
-    #expect(textoPasso(os, fichas: nil) == os.text)
-}
-
 @Test func vazioDaTelaDoAjustes() {
     let p = Ponto(t: "2026-10-02 09:00", total: nil, usado: nil, livre: nil, purgeable: nil, systemData: 221_266_053_536, telaEm: "2026-10-02 08:41:10.1-0300")
     #expect(vazioAjustes(nil, ultimo: p) == .v1(ultimo: 221_266_053_536, hora: "08:41"))
@@ -213,13 +202,9 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
     #expect(causas(top: [outro], swap: nil, fichas: nil, home: "/Users/exemplo").map(\.nome) == ["File Provider"])
     outro.label = nil
     #expect(causas(top: [outro], swap: nil, fichas: nil, home: "/Users/exemplo").map(\.nome) == ["File Provider"])
-    let c = try #require(causas(top: [l], swap: nil, fichas: nil, home: "/Users/exemplo").first)
-    #expect(fatoPrivado(c, top: [l]) == "Privado 18,6 MB")
-    // Sem `label`, o caminho; privado igual ao alocado, nenhum fato.
+    // Sem `label`, o caminho.
     let sem = linhaTop("~/Library/Application Support/Outro", 2_000_000_000)
     #expect(causas(top: [sem], swap: nil, fichas: nil, home: "/Users/exemplo").map(\.nome) == ["~/Library/Application Support/Outro"])
-    let igual = LinhaTop(path: "~/X", term: "tree", bytes: 2_000_000_000, privateBytes: 2_000_000_000, lowerBound: false, count: nil, topProcess: nil, source: "getattrlistbulk", folded: false)
-    #expect(fatoPrivado(causa("~/X", 2_000_000_000), top: [igual]) == nil)
 }
 
 @Test func pastaDobradaEmCaminhoComTil() {
@@ -229,17 +214,11 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
     #expect(rotulo(linhaTop("~/Library", 1), home: "/Users/exemplo") == "~/Library")
 }
 
-/// Fase 2: `system_data.by_line` decodifica; a soma só aparece com a linha `system_data` e some sem o campo.
-@Test func pastasEmDadosDoSistemaVemDeByLine() throws {
+/// Fase 2: `system_data.by_line` decodifica.
+@Test func byLineDecodifica() throws {
     let c = try decodificar(Completo.self, fixture("completo"), kind: nil)
-    let t = try #require(pastasEmDadosDoSistema(c.systemData))
-    #expect(t.bytes == 129_200_000_000 && t.incerto == 60_000_000_000 && t.itens == 13)
-    #expect(somaDasPastas(t) == "Pastas medidas que caem aqui: 129,20 GB (13 linhas do ranking); 60,00 GB de regras menos certas.")
-    // Sem grau B a frase não cita regras incertas.
-    #expect(!somaDasPastas((bytes: 5_000_000_000, incerto: 0, itens: 2)).contains("menos certas"))
-    // Medição antiga (sem o campo), ou sem linha system_data: nada na tela.
-    #expect(pastasEmDadosDoSistema(nil) == nil)
-    #expect(pastasEmDadosDoSistema(Completo.SistemaDados(byLine: [], reproduced: nil)) == nil)
+    let l = try #require(c.systemData?.byLine?.first { $0.line == "system_data" })
+    #expect(l.bytes == 129_200_000_000 && l.gradeBBytes == 60_000_000_000 && l.rows == 13)
 }
 
 // MARK: - dono por app (Fase 2, Frente C)

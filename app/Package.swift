@@ -1,5 +1,5 @@
 // swift-tools-version: 6.2
-// App de protótipo (Fase 4): SwiftUI que chama o binário `sdtally` embutido e lê o JSON dele.
+// App SDTally: SwiftUI que chama o binário `sdtally` embutido e lê o JSON dele.
 // Montar o .app: app/montar.sh (compila o sdtally, o app e o helper root, e assina).
 import PackageDescription
 
