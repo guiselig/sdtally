@@ -253,7 +253,7 @@ enum Secao: String, Hashable, CaseIterable {
 
     var titulo: String {
         switch self {
-        case .sistema: String(localized: "Dados de Sistema")
+        case .sistema: String(localized: "Dados do Sistema")
         case .fazer: String(localized: "Recomendações")
         case .armazenamento: String(localized: "Disco")
         case .ranking: String(localized: "Caminhos")
