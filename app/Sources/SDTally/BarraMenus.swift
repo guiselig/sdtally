@@ -180,6 +180,12 @@ struct BarraMenusView: View {
             if !cinco.isEmpty {
                 separador
                 cabecalho(String(localized: "O que mais ocupa"))
+                // Linha da execução anterior, lida do disco ao abrir: diz de quando é.
+                if painel.autoVivo != nil, let d = painel.idadeAuto {
+                    Text(String(localized: "Última leitura automática: \(idade(d))"))
+                        .font(.caption).foregroundStyle(.secondary)
+                        .padding(.horizontal, 14).padding(.bottom, 2)
+                }
                 ForEach(Array(cinco)) { x in
                     LinhaMenu(simbolo: x.id == "swap" ? "memorychip" : termo(x.termo).simbolo, nome: x.nome, valor: gb(x.bytes)) {
                         abrirJanela(id: "principal")

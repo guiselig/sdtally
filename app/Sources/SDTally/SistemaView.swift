@@ -30,6 +30,10 @@ struct SistemaView: View {
                 }
                 CartaoInicio()
                 if let c {
+                    // No Automático, até a primeira linha nova, os números são os da execução anterior.
+                    if !painel.manual, let d = painel.idadeAuto {
+                        Faixa(simbolo: "clock", texto: String(localized: "Números da última leitura automática (\(idade(d))). Os de agora chegam quando a primeira passada terminar, em cerca de 1 minuto."))
+                    }
                     BarraDesdobravel(raiz: .volumeData, fonte: c, aoVivo: !painel.manual).id("barra")
                     PartesDoSistema(c: c).id("partes")
                     if let i = c.informational {

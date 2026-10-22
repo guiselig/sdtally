@@ -113043,6 +113043,220 @@
         }
       }
     },
+    "Números da última leitura automática (%@). Os de agora chegam quando a primeira passada terminar, em cerca de 1 minuto." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أرقام آخر قراءة تلقائية (%@). تصل الأرقام الحالية عند انتهاء المرور الأول، خلال دقيقة تقريبًا."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xifres de l’última lectura automàtica (%@). Les d’ara arriben quan acabi la primera passada, en un minut aproximadament."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čísla z posledního automatického čtení (%@). Aktuální přijdou po dokončení prvního průchodu, asi za minutu."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tal fra seneste automatiske aflæsning (%@). De aktuelle kommer, når første gennemløb er færdigt, om cirka 1 minut."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zahlen der letzten automatischen Messung (%@). Die aktuellen kommen, wenn der erste Durchlauf fertig ist, in etwa 1 Minute."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αριθμοί από την τελευταία αυτόματη ανάγνωση (%@). Οι τρέχοντες έρχονται όταν τελειώσει το πρώτο πέρασμα, σε περίπου 1 λεπτό."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numbers from the last automatic reading (%@). Current ones arrive when the first pass finishes, in about 1 minute."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cifras de la última lectura automática (%@). Las actuales llegan cuando termine la primera pasada, en alrededor de 1 minuto."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cifras de la última lectura automática (%@). Las actuales llegan cuando termine la primera pasada, en alrededor de 1 minuto."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luvut viimeisimmästä automaattisesta luennasta (%@). Nykyiset tulevat, kun ensimmäinen kierros päättyy, noin minuutissa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiffres de la dernière lecture automatique (%@). Les actuels arrivent quand le premier passage se termine, dans environ 1 minute."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מספרים מהקריאה האוטומטית האחרונה (%@). המספרים העדכניים יגיעו כשהמעבר הראשון יסתיים, בעוד כדקה."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पिछली स्वचालित रीडिंग के आंकड़े (%@)। मौजूदा आंकड़े पहला दौर पूरा होने पर, लगभग 1 मिनट में आएंगे।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brojke iz posljednjeg automatskog očitanja (%@). Trenutne stižu kad završi prvi prolaz, za otprilike 1 minutu."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az utolsó automatikus leolvasás számai (%@). A mostaniak az első menet végén érkeznek, nagyjából 1 perc múlva."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angka dari pembacaan otomatis terakhir (%@). Angka saat ini muncul setelah putaran pertama selesai, sekitar 1 menit."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numeri dell’ultima lettura automatica (%@). Quelli attuali arrivano al termine del primo passaggio, in circa 1 minuto."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "前回の自動読み取りの数値です（%@）。現在の数値は最初の走査が終わると表示されます（約1分）。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마지막 자동 읽기의 수치입니다(%@). 현재 수치는 첫 번째 탐색이 끝나면 약 1분 후에 표시됩니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angka daripada bacaan automatik terakhir (%@). Angka semasa tiba apabila laluan pertama selesai, dalam kira-kira 1 minit."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tall fra siste automatiske avlesning (%@). De nåværende kommer når første gjennomgang er ferdig, om omtrent 1 minutt."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cijfers van de laatste automatische meting (%@). De huidige komen als de eerste doorloop klaar is, over ongeveer 1 minuut."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liczby z ostatniego automatycznego odczytu (%@). Aktualne pojawią się po zakończeniu pierwszego przebiegu, za około minutę."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Números da última leitura automática (%@). Os atuais chegam quando a primeira passagem terminar, dentro de cerca de 1 minuto."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cifrele ultimei citiri automate (%@). Cele actuale apar când se termină prima trecere, în aproximativ 1 minut."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Числа последнего автоматического чтения (%@). Текущие появятся после первого прохода, примерно через минуту."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čísla z posledného automatického čítania (%@). Aktuálne prídu po dokončení prvého prechodu, asi o minútu."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Številke zadnjega samodejnega branja (%@). Trenutne pridejo, ko se konča prvi prehod, v približno 1 minuti."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siffror från senaste automatiska avläsning (%@). De aktuella kommer när första genomgången är klar, om ungefär 1 minut."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตัวเลขจากการอ่านอัตโนมัติครั้งล่าสุด (%@) ตัวเลขปัจจุบันจะมาเมื่อรอบแรกเสร็จ ในราว 1 นาที"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Son otomatik okumanın sayıları (%@). Güncel sayılar ilk tarama bitince, yaklaşık 1 dakika içinde gelir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Числа останнього автоматичного читання (%@). Поточні з’являться після першого проходу, приблизно за хвилину."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Số liệu từ lần đọc tự động gần nhất (%@). Số liệu hiện tại sẽ có khi lượt quét đầu tiên xong, trong khoảng 1 phút."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上次自动读取的数字（%@）。当前数字会在第一轮扫描结束后出现，大约 1 分钟。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上次自動讀取的數字（%@）。目前的數字會在第一輪掃描結束後出現，大約 1 分鐘。"
+          }
+        }
+      }
+    },
     "O Ajustes ainda está calculando" : {
       "localizations" : {
         "en" : {
@@ -191133,6 +191347,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Índices que el propio APFS mantiene para encontrar los archivos del volumen."
+          }
+        }
+      }
+    },
+    "Última leitura automática: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "آخر قراءة تلقائية: %@"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última lectura automàtica: %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poslední automatické čtení: %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seneste automatiske aflæsning: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Letzte automatische Messung: %@"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τελευταία αυτόματη ανάγνωση: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last automatic reading: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última lectura automática: %@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última lectura automática: %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viimeisin automaattinen luenta: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dernière lecture automatique : %@"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הקריאה האוטומטית האחרונה: %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पिछली स्वचालित रीडिंग: %@"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posljednje automatsko očitanje: %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utolsó automatikus leolvasás: %@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembacaan otomatis terakhir: %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultima lettura automatica: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "前回の自動読み取り：%@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "마지막 자동 읽기: %@"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bacaan automatik terakhir: %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siste automatiske avlesning: %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laatste automatische meting: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatni automatyczny odczyt: %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última leitura automática: %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ultima citire automată: %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Последнее автоматическое чтение: %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posledné automatické čítanie: %@"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zadnje samodejno branje: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senaste automatiska avläsning: %@"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การอ่านอัตโนมัติครั้งล่าสุด: %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Son otomatik okuma: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Останнє автоматичне читання: %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lần đọc tự động gần nhất: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上次自动读取：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "上次自動讀取：%@"
           }
         }
       }
