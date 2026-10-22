@@ -75,7 +75,13 @@ impl Lang {
         if self == Lang::Pt {
             return r.to_string();
         }
-        MOTIVOS_EN.iter().fold(r.to_string(), |s, (pt, en)| s.replace(pt, en))
+        // Motivo que começa por caminho ("/Volumes/Disco de Backup: saiu com erro"): só o que vem
+        // depois do último ": " é traduzido, senão o " de " do caminho viraria " of ".
+        let (caminho, resto) = match r.rfind(": ") {
+            Some(i) if r.starts_with(['/', '~']) => r.split_at(i),
+            _ => ("", r),
+        };
+        format!("{caminho}{}", MOTIVOS_EN.iter().fold(resto.to_string(), |s, (pt, en)| s.replace(pt, en)))
     }
 
     /// Separador decimal do idioma.
@@ -130,6 +136,8 @@ static MOTIVOS_EN: &[(&str, &str)] = &[
     ("seletor ", "selector "),
     ("arquivos sem tamanho alocado legível", "files without a readable allocated size"),
     ("pasta ausente: modelos não baixados", "folder missing: models not downloaded"),
+    ("pastas/entradas não lidas", "folders/entries not read"),
+    ("dir-stats 0 (não mantido)", "dir-stats 0 (not maintained)"),
     ("falha interna (panic capturado)", "internal failure (panic caught)"),
     ("CacheDelete devolveu tipo inesperado", "CacheDelete returned an unexpected type"),
     ("não converteu a saída de", "did not convert the output of"),
@@ -618,5 +626,11 @@ mod tests {
             "3 of 20 files without a readable allocated size: system datavault, mapped outside regions, already closed, or owned by an unreadable process (3929 logical MB per lsof, left out of the sum)"
         );
         assert_eq!(Lang::Pt.motivo("interrompido"), "interrompido");
+        // O caminho na frente do motivo não é traduzido.
+        assert_eq!(Lang::En.motivo("/Volumes/Disco de Backup: saiu com erro"), "/Volumes/Disco de Backup: exited with an error");
+        assert_eq!(Lang::En.motivo("/Users/fulano/Pasta de Fotos: timeout de 10 s"), "/Users/fulano/Pasta de Fotos: timeout after 10 s");
+        assert_eq!(Lang::En.motivo("~/.Trash sem permissão (errno 1); falta Acesso Total ao Disco"), "~/.Trash: no permission (errno 1); Full Disk Access is missing");
+        assert_eq!(Lang::En.motivo("12 pastas/entradas não lidas"), "12 folders/entries not read");
+        assert_eq!(Lang::En.motivo("dir-stats 0 (não mantido)"), "dir-stats 0 (not maintained)");
     }
 }
