@@ -25,6 +25,7 @@ dmg=$(dirname "$pacote")/SDTally-$versao.dmg
 dmgbuild -s "$repo/scripts/dmg/ajustes.py" -D app="$pacote" -D pasta="$repo/scripts/dmg" \
     "SDTally $versao" "$dmg"
 hdiutil verify -quiet "$dmg"
+sha=$(shasum -a 256 "$dmg" | cut -d" " -f1)
 
 # 0.x leva "(beta)" no título. Não usa Pre-release: o GitHub esconde pre-release da caixa
 # Releases da página do repositório.
@@ -33,4 +34,6 @@ case $versao in 0.*) titulo="$titulo (beta)" ;; esac
 gh release create "v$versao" "$dmg" -R guiselig/sdtally --target "$head" --title "$titulo" --latest \
     --generate-notes --notes "Download **SDTally-$versao.dmg**, open it and drag SDTally to Applications. Requires Apple Silicon and macOS 15 or later.
 
-SDTally is not notarized by Apple. On first launch, open System Settings > Privacy & Security and click \"Open Anyway\"."
+SDTally is not notarized by Apple. On first launch, open System Settings > Privacy & Security and click \"Open Anyway\".
+
+SHA-256 of the DMG: `$sha` (check with `shasum -a 256 SDTally-$versao.dmg`)."

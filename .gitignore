@@ -16,3 +16,17 @@ target/
 
 # Python
 __pycache__/
+
+# saídas do sdtally e do coletor (têm caminhos e nomes pessoais)
+sdtally*.json
+report*.json
+sdc-relatorio-*.json
+
+# pacotes e segredos de assinatura
+*.dmg
+*.app/
+*.p12
+*.cer
+*.mobileprovision
+*.provisionprofile
+.env*
