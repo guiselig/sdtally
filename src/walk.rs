@@ -1,5 +1,5 @@
 //! Travessia paralela com getattrlistbulk(2), sem root. Lógica do
-//! research/experimentos/probe/src/bin/walk_par.rs (técnicas inspiradas no dua-core, MIT):
+//! research/experimentos/probe/src/bin/walk_par.rs, hoje só no histórico do git (técnicas inspiradas no dua-core, MIT):
 //! mesmo volume (DEVID), não desce em pasta dataless nem em raiz de enxerto, repete em EINTR,
 //! deduplica hardlink (fileid) e clone completo (cloneid). Baldes vêm de anon::Ctx::bucket.
 

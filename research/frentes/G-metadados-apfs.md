@@ -20,7 +20,7 @@ Programas em `research/experimentos/frenteG/` (compilar com `./build.sh`):
 | `regress_2026-09-27.csv` | Resultado bruto da imagem |
 | `denied_children.py` | Filhos diretos de pastas negadas via `lstat` (sem abrir) |
 | `mobileasset_sizes.py` | Tamanhos gravados pelo MobileAsset para assets automáticos (Apple Intelligence etc.) |
-| `snapc.c` | Teste de `fs_snapshot_create` sem root (falhou, esperado) |
+| `snapc.c` | Teste de `fs_snapshot_create` sem root (falhou, esperado; removido do repo, no histórico do git) |
 
 ---
 
