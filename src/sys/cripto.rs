@@ -28,9 +28,17 @@ pub fn aes128_ecb(chave: &[u8; 16], dados: &[u8]) -> Result<Vec<u8>, String> {
     Ok(saida)
 }
 
+/// Teto da saída do `inflate`.
+const TETO: usize = 1 << 32;
+
+/// Próximo tamanho da saída depois de um Z_BUF_ERROR: ×4 até o teto, nunca acima; no teto, None.
+fn crescer(cap: usize) -> Option<usize> {
+    (cap < TETO).then(|| cap.saturating_mul(4).min(TETO))
+}
+
 /// zlib com cabeçalho; dado depois do fim do fluxo é ignorado. Teto de 4 GiB na saída.
 pub fn inflate(s: &[u8]) -> Result<Vec<u8>, String> {
-    let mut cap = s.len() * 8 + 4096;
+    let mut cap = s.len().saturating_mul(8).saturating_add(4096).min(TETO);
     loop {
         let mut saida = vec![0u8; cap];
         let mut n = cap as libc::c_ulong;
@@ -40,7 +48,7 @@ pub fn inflate(s: &[u8]) -> Result<Vec<u8>, String> {
                 return Ok(saida);
             }
             // Z_BUF_ERROR: a saída não coube.
-            -5 if cap < 1 << 32 => cap *= 4,
+            -5 => cap = crescer(cap).ok_or("zlib: saída maior que 4 GiB")?,
             e => return Err(format!("zlib {e}")),
         }
     }
@@ -62,5 +70,13 @@ mod tests {
         let claro: Vec<u8> = (0..16).map(|i| (i * 0x11) as u8).collect();
         assert_eq!(aes128_ecb(&chave, &cifrado).unwrap(), claro);
         assert!(aes128_ecb(&chave, &cifrado[..15]).is_err());
+    }
+
+    #[test]
+    fn saida_para_no_teto() {
+        assert_eq!(crescer(4096), Some(16384));
+        assert_eq!(crescer(3 << 30), Some(TETO));
+        assert_eq!(crescer(TETO - 1), Some(TETO));
+        assert_eq!(crescer(TETO), None);
     }
 }
