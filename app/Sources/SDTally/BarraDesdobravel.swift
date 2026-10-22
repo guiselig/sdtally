@@ -130,7 +130,8 @@ struct BarraDesdobravel: View {
     var raiz: NivelBarra = .ajustes
     /// A medição dos níveis do volume Data; nil = a Medição completa (painel.completo).
     var fonte: Completo? = nil
-    /// `fonte` é o autoVivo: a legenda diz "ao vivo" e não chama de incompleto o que o auto não mede.
+    /// `fonte` é o autoVivo: a legenda não chama de incompleto o que o auto não mede, e diz "ao vivo"
+    /// só com a linha de agora (sem `painel.idadeAuto`).
     var aoVivo = false
     private var c: Completo? { fonte ?? painel.completo }
     @Environment(\.accessibilityReduceMotion) private var reduzir
@@ -288,8 +289,9 @@ struct BarraDesdobravel: View {
         case .macos: return nil
         case .volumeData, .termo:
             guard let c else { return nil }
-            // O auto nunca tem senha nem xattr: "incompleto" ali não é falha.
-            if aoVivo { return String(localized: "Ao vivo · sem senha") }
+            // O auto nunca tem senha nem xattr: "incompleto" ali não é falha. Com a linha da execução
+            // anterior (idadeAuto), não é ao vivo: a faixa de Dados do Sistema diz de quando é.
+            if aoVivo { return painel.idadeAuto == nil ? String(localized: "Ao vivo · sem senha") : String(localized: "Automático · sem senha") }
             let arquivo: String? = Foto.env["SDTALLY_COMPLETO"] != nil ? String(localized: "de arquivo") : nil
             let modo = c.root ? String(localized: "como administrador") : String(localized: "sem senha")
             let fim = c.complete ? String(localized: "completo") : String(localized: "incompleto")
