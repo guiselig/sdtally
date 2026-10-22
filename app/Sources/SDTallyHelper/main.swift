@@ -43,9 +43,10 @@ final class Estado: @unchecked Sendable {
         }
     }
     /// Sobe o processo sob a trava: ou o parar já chegou e não sobe, ou o parar acha o processo.
-    func iniciar(_ p: Process) throws {
+    /// `parado`: o parar (ou a conexão caída) que chegou antes de reservar a vaga.
+    func iniciar(_ p: Process, parado: () -> Bool) throws {
         try trava.withLock {
-            if cancelado { throw ErroHelper(description: "medição parada") }
+            if cancelado || parado() { throw ErroHelper(description: "medição parada") }
             try p.run()
             processo = p
         }
@@ -114,10 +115,11 @@ func ambiente(uid: uid_t) throws -> [String: String] {
     return ["SUDO_USER": String(cString: pw.pointee.pw_name), "SUDO_UID": "\(uid)", "PATH": "/usr/bin:/bin:/usr/sbin:/sbin"]
 }
 
-func executar(uid: uid_t, conexao: ObjectIdentifier) throws -> Data {
+func executar(uid: uid_t, conexao: ObjectIdentifier, parado: () -> Bool) throws -> Data {
     let env = try ambiente(uid: uid)
     guard Cfg.estado.reservar(conexao) else { throw ErroHelper(description: "já há uma medição em andamento") }
     defer { Cfg.estado.terminar() }
+    if parado() { throw ErroHelper(description: "medição parada") }
     let (dir, copia) = try prepararBinario()
     defer { apagarTemporaria(dir) }
 
@@ -128,7 +130,7 @@ func executar(uid: uid_t, conexao: ObjectIdentifier) throws -> Data {
     let out = Pipe(), err = Pipe()
     p.standardOutput = out
     p.standardError = err
-    try Cfg.estado.iniciar(p)
+    try Cfg.estado.iniciar(p, parado: parado)
     Cfg.log.info("medindo para uid \(uid), pid \(p.processIdentifier)")
     // stderr em paralelo: pipe cheio travaria o sdtally.
     let errDados = Mutex(Data())
@@ -158,7 +160,9 @@ final class Autos: @unchecked Sendable {
     private var atual: (dono: ObjectIdentifier, p: Process, stdin: FileHandle)?
     var ocioso: Bool { trava.withLock { atual == nil } }
 
-    func iniciar(uid: uid_t, conexao: ObjectIdentifier) throws -> FileHandle {
+    /// `fechada`: a conexão caiu enquanto o binário era copiado e conferido; conferida sob a trava,
+    /// e o invalidationHandler marca antes de chamar `parar(de:)`, então um dos dois vê o outro.
+    func iniciar(uid: uid_t, conexao: ObjectIdentifier, fechada: () -> Bool) throws -> FileHandle {
         let env = try ambiente(uid: uid)
         let (dir, copia) = try prepararBinario()
         let p = Process()
@@ -175,6 +179,7 @@ final class Autos: @unchecked Sendable {
             Cfg.log.info("automático saiu com \(p.terminationStatus)")
         }
         try trava.withLock {
+            if fechada() { apagarTemporaria(dir); throw ErroHelper(description: "conexão fechada") }
             // Um por vez: o novo pedido (o app reaberto antes de a conexão velha cair) fecha o anterior.
             if let a = atual { encerrar(a.p, a.stdin) }
             do { try p.run() } catch { apagarTemporaria(dir); throw error }
@@ -198,25 +203,37 @@ final class Autos: @unchecked Sendable {
     }
 }
 
-final class Servico: NSObject, HelperProtocolo {
+final class Servico: NSObject, HelperProtocolo, Sendable {
     let uid: uid_t
     let id: ObjectIdentifier
+    /// A conexão caiu (invalidationHandler): nada mais sobe por ela.
+    let fechada = Mutex(false)
+    /// O app pediu parar ou a conexão caiu; fica marcado mesmo antes de o medir reservar a vaga.
+    let parado = Mutex(false)
     init(uid: uid_t, id: ObjectIdentifier) { self.uid = uid; self.id = id }
 
     func medir(reply: @escaping @Sendable (Data?, String?) -> Void) {
-        let uid = uid, id = id
-        DispatchQueue.global(qos: .userInitiated).async {
-            do { reply(try executar(uid: uid, conexao: id), nil) } catch { reply(nil, "\(error)") }
+        DispatchQueue.global(qos: .userInitiated).async { [self] in
+            do { reply(try executar(uid: uid, conexao: id, parado: { parado.withLock { $0 } }), nil) } catch { reply(nil, "\(error)") }
         }
     }
 
-    func parar() { Cfg.estado.parar(de: id) }
+    func parar() {
+        parado.withLock { $0 = true }
+        Cfg.estado.parar(de: id)
+    }
+
+    /// Marca antes de parar: quem sobe processo confere a marca sob a trava de Estado/Autos.
+    func fechar() {
+        fechada.withLock { $0 = true }
+        parar()
+        Cfg.autos.parar(de: id)
+    }
 
     func iniciarAuto(reply: @escaping @Sendable (FileHandle?, String?) -> Void) {
-        let uid = uid, id = id
-        DispatchQueue.global(qos: .utility).async {
+        DispatchQueue.global(qos: .utility).async { [self] in
             do {
-                let h = try Cfg.autos.iniciar(uid: uid, conexao: id)
+                let h = try Cfg.autos.iniciar(uid: uid, conexao: id, fechada: { fechada.withLock { $0 } })
                 reply(h, nil)
                 // O XPC duplicou o descritor para o app; a cópia do helper não serve mais.
                 try? h.close()
@@ -230,12 +247,17 @@ final class Delegado: NSObject, NSXPCListenerDelegate, Sendable {
     /// na próxima conexão, já com o executável do app atualizado (sem registrar de novo).
     private let abertas = Mutex(0)
 
-    private func sairSeOcioso() {
+    /// Também ao subir: o launchd sobe o helper por uma conexão que pode ser recusada (não admin),
+    /// e ele ficaria residente como root. Conferir e sair sob a mesma trava da contagem: uma
+    /// conexão aceita no meio não morre com o exit.
+    func sairSeOcioso() {
         DispatchQueue.global().asyncAfter(deadline: .now() + 10) { [self] in
-            guard abertas.withLock({ $0 }) == 0 else { return }
-            guard Cfg.estado.ocioso, Cfg.autos.ocioso else { return sairSeOcioso() }
-            Cfg.log.info("sem conexões; saindo")
-            exit(0)
+            abertas.withLock { n in
+                guard n == 0 else { return }
+                guard Cfg.estado.ocioso, Cfg.autos.ocioso else { return sairSeOcioso() }
+                Cfg.log.info("sem conexões; saindo")
+                exit(0)
+            }
         }
     }
 
@@ -244,13 +266,13 @@ final class Delegado: NSObject, NSXPCListenerDelegate, Sendable {
             Cfg.log.error("recusado: uid \(c.effectiveUserIdentifier) não é admin")
             return false
         }
-        let id = ObjectIdentifier(c)
+        let s = Servico(uid: c.effectiveUserIdentifier, id: ObjectIdentifier(c))
         c.exportedInterface = NSXPCInterface(with: HelperProtocolo.self)
-        c.exportedObject = Servico(uid: c.effectiveUserIdentifier, id: id)
+        c.exportedObject = s
         // App fechou no meio: não deixa medição nem automático órfão.
         abertas.withLock { $0 += 1 }
         c.invalidationHandler = { [self] in
-            Cfg.estado.parar(de: id); Cfg.autos.parar(de: id)
+            s.fechar()
             if abertas.withLock({ $0 -= 1; return $0 }) == 0 { sairSeOcioso() }
         }
         c.resume()
@@ -268,5 +290,6 @@ listener.setConnectionCodeSigningRequirement(reqApp)
 let delegado = Delegado()
 listener.delegate = delegado
 listener.resume()
+delegado.sairSeOcioso()
 Cfg.log.info("helper pronto (time \(time, privacy: .public))")
 dispatchMain()
