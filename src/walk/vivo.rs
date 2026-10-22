@@ -9,6 +9,7 @@
 //! clone completo dividem todos os blocos, então as faixas de qualquer uma servem.
 
 use super::*;
+use std::os::darwin::fs::MetadataExt as _;
 
 const SEM_PAI: u32 = u32::MAX;
 /// Pastas por bloco do arranjo: crescer não copia o que já existe (sem o pico do Vec que dobra).
@@ -329,19 +330,22 @@ impl Estado {
         for (b, s) in &x.outras {
             self.plano.entry(*b).or_default().add(s);
         }
+        let cortada = l.cortada;
         let mut erros: Vec<(i32, u64)> = l.errors.into_iter().collect();
         erros.sort_unstable();
         x.erros = erros;
         x.negada = l.denied.first().map(|d| d.1);
         (x.other_dev, x.graft, x.sem_mapa, x.xattr_erros) = (l.other_dev, l.graft_roots, l.sem_mapa, l.xattr_erros);
 
-        // Filhas: as que sumiram saem; as novas viram pasta e voltam para ler.
+        // Filhas: as que sumiram saem; as novas viram pasta e voltam para ler. Listagem cortada
+        // no meio não diz quem sumiu: as antigas ficam.
         let antigas: Vec<u32> = self.pasta(id).map(|p| p.filhas.to_vec()).unwrap_or_default();
         let nomes: Vec<Box<[u8]>> = subs.iter().map(|j| j.path.file_name().map(|n| n.as_bytes().into()).unwrap_or_default()).collect();
         let mut ficam = Vec::new();
         for f in antigas {
             match self.pasta(f).map(|p| nomes.contains(&p.nome)) {
                 Some(true) => ficam.push(f),
+                Some(false) if cortada => ficam.push(f),
                 _ => self.remover(f),
             }
         }
@@ -451,7 +455,10 @@ pub struct Vivo {
     raiz: String,
     mnt: String,
     root_dev: u32,
-    montagens: Option<Vec<String>>,
+    /// Relida a cada leitura: volume montado depois (USB, SMB, destino do Time Machine em
+    /// /Volumes/.timemachine) não é aberto.
+    montagens: Mutex<Option<Vec<String>>>,
+    raiz_fd: Option<OwnedFd>,
     ctx: Arc<Ctx>,
     ctl: Arc<Controle>,
     nomes: Mutex<Nomes>,
@@ -466,7 +473,8 @@ impl Vivo {
             raiz: raiz.to_string(),
             mnt: sys::montado_em(Path::new(raiz)).unwrap_or_else(|_| raiz.to_string()),
             root_dev,
-            montagens: sys::montagens().ok(),
+            montagens: Mutex::new(sys::montagens().ok()),
+            raiz_fd: sys::apfs::abrir_pasta(Path::new(raiz)).ok(),
             ctx,
             ctl,
             nomes: Mutex::new(Nomes::default()),
@@ -477,8 +485,17 @@ impl Vivo {
         Ok(v)
     }
 
-    fn walker(&self) -> Walker<'_> {
-        Walker { root: &self.raiz, mnt: &self.mnt, root_dev: self.root_dev, ctx: &self.ctx, montagens: self.montagens.as_deref(), ctl: &self.ctl, nomes: &self.nomes }
+    fn walker<'a>(&'a self, montagens: Option<&'a [String]>) -> Walker<'a> {
+        Walker { root: &self.raiz, mnt: &self.mnt, root_dev: self.root_dev, raiz_fd: self.raiz_fd.as_ref(), ctx: &self.ctx, montagens, ctl: &self.ctl, nomes: &self.nomes }
+    }
+
+    /// Relê a tabela de montagens (getfsstat MNT_NOWAIT, barato); se falhar, fica a anterior.
+    fn montagens(&self) -> Option<Vec<String>> {
+        let mut m = lock(&self.montagens);
+        if let Ok(novas) = sys::montagens() {
+            *m = Some(novas);
+        }
+        m.clone()
     }
 
     /// Lê uma pasta e guarda; devolve as filhas novas a ler.
@@ -487,22 +504,36 @@ impl Vivo {
         let mut achados = Vec::new();
         let r = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| w.scan_dir(job, buf, &mut l, &mut |a| achados.push(a))));
         if r.is_err() {
-            // Como na travessia: a pasta conta como erro e não desce.
+            // Como na travessia: a pasta conta como erro e não desce; as filhas que já tinha ficam.
             *l.errors.entry(ERRO_INTERNO).or_default() += 1;
+            l.cortada = true;
             achados.retain(|a| !matches!(a, Achado::Pasta(_)));
         }
         let mut e = lock(&self.estado);
+        if l.nao_lida && e.pasta(job.dono).is_some_and(|p| p.aberta) {
+            // Não abriu desta vez (EMFILE, EIO, ...): fica o que a última leitura mediu, com o erro
+            // (o termo sai parcial até uma releitura dar certo).
+            if let Some(p) = e.pasta_mut(job.dono) {
+                let x = p.extra.get_or_insert_with(Box::default);
+                for (k, v) in l.errors {
+                    if !x.erros.iter().any(|o| o.0 == k) {
+                        x.erros.push((k, v));
+                    }
+                }
+            }
+            return Vec::new();
+        }
         e.limpar(job.dono);
         e.aplicar(job.dono, achados, l)
     }
 
     /// Lê os jobs e tudo abaixo deles, com `threads` threads.
-    fn percorrer(&self, jobs: Vec<Job>, threads: usize) {
+    fn percorrer(&self, jobs: Vec<Job>, threads: usize, montagens: Option<&[String]>) {
         let n = jobs.len();
         let q = Queue { stack: Mutex::new((jobs, n)), cv: Condvar::new() };
         let trabalho = || {
             sys::qos_utility();
-            let w = self.walker();
+            let w = self.walker(montagens);
             let mut buf = vec![0u8; 256 * 1024];
             loop {
                 let job = {
@@ -559,7 +590,8 @@ impl Vivo {
             Self::podar(&mut e, 0);
             Job { path: PathBuf::from(&self.raiz), bucket: e.pasta(0).map_or(0, |p| p.bucket), depth: 0, dono: 0 }
         };
-        self.percorrer(vec![job], threads);
+        let ms = self.montagens();
+        self.percorrer(vec![job], threads, ms.as_deref());
         let mut g = lock(&self.estado);
         let e = &mut *g;
         for g in e.links.values_mut().chain(e.clones.values_mut()) {
@@ -578,6 +610,7 @@ impl Vivo {
     /// (soma simples, sem repetidos nem blocos divididos): é o que alimenta o "crescendo agora".
     pub fn reler(&self, caminho: &str, recursivo: bool) -> i64 {
         let rel = caminho.strip_prefix(self.raiz.as_str()).filter(|r| r.is_empty() || r.starts_with('/')).unwrap_or(caminho);
+        let ms = self.montagens();
         let (job, antes) = {
             let mut e = lock(&self.estado);
             let antes = e.plano_alloc();
@@ -588,9 +621,15 @@ impl Vivo {
                     None => break,
                 }
             }
-            let path = e.caminho(&self.raiz, id);
-            // Sumiu do disco: sai da árvore; o pai tem o seu próprio aviso.
-            if id != 0 && std::fs::symlink_metadata(&path).is_err() {
+            let mut path = e.caminho(&self.raiz, id);
+            // Virou ponto de montagem (sem lstat, que acordaria um volume de rede) ou pasta
+            // dataless (listar materializaria): relê a mãe, que a pula ou a conta como dataless
+            // e a tira da árvore.
+            let montagem = id != 0 && ms.as_deref().is_some_and(|ms| e_montagem(ms, &self.mnt, &path.to_string_lossy()));
+            let lstat = (id != 0 && !montagem).then(|| std::fs::symlink_metadata(&path));
+            // Sumiu do disco (só ENOENT/ENOTDIR): sai da árvore; o pai tem o seu próprio aviso.
+            // Outro erro (EIO, EACCES, ...) não diz que sumiu: a pasta é relida e fica com o erro.
+            if matches!(&lstat, Some(Err(err)) if matches!(err.raw_os_error(), Some(libc::ENOENT | libc::ENOTDIR))) {
                 let pai = e.pasta(id).map_or(SEM_PAI, |p| p.pai);
                 e.remover(id);
                 if let Some(p) = e.pasta_mut(pai) {
@@ -598,13 +637,18 @@ impl Vivo {
                 }
                 return e.plano_alloc() - antes;
             }
-            if recursivo {
+            let subir = montagem || matches!(&lstat, Some(Ok(m)) if m.st_flags() & SF_DATALESS != 0);
+            if subir {
+                id = e.pasta(id).map_or(0, |p| p.pai);
+                path = e.caminho(&self.raiz, id);
+            }
+            if recursivo && !subir {
                 Self::podar(&mut e, id);
             }
             let Some(p) = e.pasta(id) else { return 0 };
             (Job { path, bucket: p.bucket, depth: usize::from(id != 0), dono: id }, antes)
         };
-        self.percorrer(vec![job], 1);
+        self.percorrer(vec![job], 1, ms.as_deref());
         lock(&self.estado).plano_alloc() - antes
     }
 
@@ -718,6 +762,51 @@ mod tests {
 
     fn escreve(p: &Path, n: usize) {
         fs::write(p, vec![7u8; n]).expect("escrever");
+    }
+
+    /// Listagem cortada no meio (erro depois de lotes lidos, panic) não apaga as filhas que não
+    /// vieram; a completa, sim.
+    #[test]
+    fn listagem_cortada_mantem_filhas() {
+        let mut e = Estado::default();
+        let raiz = e.nova(Pasta::nova(SEM_PAI, Box::default(), 0));
+        let pasta = |n: &str| Achado::Pasta(Job { path: PathBuf::from(format!("/r/{n}")), bucket: 0, depth: 1, dono: 0 });
+        let lida = |cortada| Local { dirs: 1, cortada, ..Default::default() };
+        assert_eq!(e.aplicar(raiz, vec![pasta("a"), pasta("b")], lida(false)).len(), 2);
+        let filhas = |e: &Estado| e.pasta(raiz).map_or(0, |p| p.filhas.len());
+        e.limpar(raiz);
+        assert!(e.aplicar(raiz, vec![pasta("a")], lida(true)).is_empty());
+        assert_eq!(filhas(&e), 2, "cortada: b fica");
+        e.limpar(raiz);
+        e.aplicar(raiz, vec![pasta("a")], lida(false));
+        assert_eq!((filhas(&e), e.usadas), (1, 2), "completa: b sai");
+    }
+
+    /// Releitura que não abre a pasta (aqui ENOENT; no uso real EMFILE, EIO) fica com o que a última
+    /// leitura mediu e com o erro, que deixa a árvore parcial.
+    #[test]
+    fn releitura_que_nao_abre_mantem_a_pasta() {
+        let tmp = std::env::temp_dir().join(format!("sdtally-vivo-na-{}", std::process::id()));
+        let _ = fs::remove_dir_all(&tmp);
+        fs::create_dir_all(tmp.join("a/b")).unwrap();
+        escreve(&tmp.join("a/f"), 40_000);
+        escreve(&tmp.join("a/b/g"), 40_000);
+        let raiz = tmp.to_str().unwrap().to_string();
+        let v = Vivo::novo(&raiz, ctx(), ctl()).unwrap();
+        v.passada(1);
+        let antes = v.resultado();
+        let a = lock(&v.estado).filha(0, b"a").expect("a");
+        let ms = v.montagens();
+        let w = v.walker(ms.as_deref());
+        let job = Job { path: tmp.join("nao-existe"), bucket: 0, depth: 1, dono: a };
+        assert!(v.ler(&w, &job, &mut vec![0u8; 64 * 1024]).is_empty());
+        let depois = v.resultado();
+        assert_eq!((depois.total, depois.dirs, v.pastas()), (antes.total, antes.dirs, 3));
+        assert_eq!(nao_lidos(&depois.errors), 1, "{:?}", depois.errors);
+        // Relida de verdade, o erro sai.
+        v.reler(&format!("{raiz}/a"), false);
+        assert_eq!((v.resultado().total, nao_lidos(&v.resultado().errors)), (antes.total, 0));
+        fs::remove_dir_all(&tmp).unwrap();
     }
 
     #[test]

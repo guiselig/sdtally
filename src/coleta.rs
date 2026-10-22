@@ -449,15 +449,16 @@ const CRESCER_MAX: usize = 100_000;
 
 /// As pastas que mais cresceram em cada janela, a partir do que cada releitura mudou. A soma de
 /// cada pasta inclui as de baixo; aparece a mais funda que passou do mínimo (a mãe só aparece
-/// quando o crescimento está espalhado em filhas que, sozinhas, ficam abaixo dele).
-fn crescendo(eventos: &std::collections::VecDeque<(std::time::Instant, String, i64)>, agora: std::time::Instant, desde: std::time::Instant) -> Value {
+/// quando o crescimento está espalhado em filhas que, sozinhas, ficam abaixo dele). Os instantes
+/// são do `sys::mono` (conta o repouso: a janela de 5 min depois de acordar não pega a véspera).
+fn crescendo(eventos: &std::collections::VecDeque<(std::time::Duration, String, i64)>, agora: std::time::Duration, desde: std::time::Duration) -> Value {
     use std::collections::{HashMap, HashSet};
     let janelas: Vec<Value> = CRESCER_JANELAS
         .iter()
         .map(|&seg| {
             let janela = std::time::Duration::from_secs(seg);
             let (mut soma, mut liquido) = (HashMap::<&str, i64>::new(), 0i64);
-            for (_, p, d) in eventos.iter().filter(|e| agora.saturating_duration_since(e.0) <= janela) {
+            for (_, p, d) in eventos.iter().filter(|e| agora.saturating_sub(e.0) <= janela) {
                 liquido += d;
                 let p = p.trim_end_matches('/');
                 if p.is_empty() {
@@ -475,7 +476,7 @@ fn crescendo(eventos: &std::collections::VecDeque<(std::time::Instant, String, i
             top.truncate(CRESCER_TOP);
             json!({
                 "window_seconds": seg,
-                "covered_seconds": agora.saturating_duration_since(desde).as_secs().min(seg),
+                "covered_seconds": agora.saturating_sub(desde).as_secs().min(seg),
                 "net_bytes": liquido,
                 "top": top.iter().map(|(p, b)| json!({"path": p, "bytes": b})).collect::<Vec<_>>(),
             })
@@ -530,7 +531,8 @@ pub fn vigiar_arvore(root: bool, home: &str, ferramenta: &str, ctx: Arc<Ctx>, ct
         (c, f)
     };
     let mut c = coletar_outras(None);
-    let mut outras = Instant::now();
+    // Idade das outras fontes pelo `sys::mono`: conta o tempo que o Mac dormiu.
+    let mut outras = sys::mono();
     let n = threads(None);
     let t = Instant::now();
     vivo.passada(n);
@@ -538,9 +540,9 @@ pub fn vigiar_arvore(root: bool, home: &str, ferramenta: &str, ctx: Arc<Ctx>, ct
     let (mut avisos, mut releituras, mut passadas) = (0u64, 0u64, 1u64);
     let (mut ms_reler, mut ms_somar) = (0f64, 0f64);
     // (quando, pasta, quanto mudou) de cada releitura, da última hora.
-    let mut cresc: std::collections::VecDeque<(Instant, String, i64)> = std::collections::VecDeque::new();
-    let vivo_desde = Instant::now();
-    let linha = |(c, f): &mut (Coleta, sources::categorias::Fatos), r: walk::Result, passada: f64, avisos: u64, releituras: u64, passadas: u64, pastas: usize, outras: &Instant, crescimento: Value| {
+    let mut cresc: std::collections::VecDeque<(Duration, String, i64)> = std::collections::VecDeque::new();
+    let vivo_desde = sys::mono();
+    let linha = |(c, f): &mut (Coleta, sources::categorias::Fatos), r: walk::Result, passada: f64, avisos: u64, releituras: u64, passadas: u64, pastas: usize, outras: Duration, crescimento: Value| {
         let (agora, _) = sys::now_local();
         f.arvore = Some(sources::categorias::fatos::arvore(&r));
         c.arvore = Some(r);
@@ -557,7 +559,7 @@ pub fn vigiar_arvore(root: bool, home: &str, ferramenta: &str, ctx: Arc<Ctx>, ct
             "events": avisos,
             "rereads": releituras,
             "folders_in_memory": pastas,
-            "other_sources_age_seconds": outras.elapsed().as_secs(),
+            "other_sources_age_seconds": sys::mono().saturating_sub(outras).as_secs(),
         });
         v["growing_now"] = crescimento;
         v
@@ -569,7 +571,7 @@ pub fn vigiar_arvore(root: bool, home: &str, ferramenta: &str, ctx: Arc<Ctx>, ct
     c.0.negadas = Some(neg);
     c.0.tempos.insert("arvore".into(), json!(round2(passada)));
     let (mut total, mut desde) = (r.total.alloc, Instant::now());
-    emitir(&linha(&mut c, r, passada, avisos, releituras, passadas, vivo.pastas(), &outras, crescendo(&cresc, Instant::now(), vivo_desde)));
+    emitir(&linha(&mut c, r, passada, avisos, releituras, passadas, vivo.pastas(), outras, crescendo(&cresc, sys::mono(), vivo_desde)));
     // Orçamento de releitura: `ORCAMENTO_MS` de trabalho por segundo (0,5 % de um núcleo), com
     // reserva de até 3 s. Só pasta cara (5 ms ou mais da última vez, como um cache com dezenas de
     // milhares de arquivos reescrita o tempo todo) espera crédito, e também 20× o que custou, no
@@ -582,17 +584,12 @@ pub fn vigiar_arvore(root: bool, home: &str, ferramenta: &str, ctx: Arc<Ctx>, ct
     let mut caras: std::collections::HashMap<String, f64> = std::collections::HashMap::new();
     loop {
         // Sem aviso nenhum, acorda ao menos para reler as outras fontes.
-        let prazo = espera.values().filter(|e| e.2).map(|e| e.0).chain([outras + OUTRAS]).min();
-        let mut lote = match prazo {
-            Some(p) => match rx.recv_timeout(p.saturating_duration_since(Instant::now())) {
-                Ok(l) => l,
-                Err(mpsc::RecvTimeoutError::Timeout) => Vec::new(),
-                Err(mpsc::RecvTimeoutError::Disconnected) => break,
-            },
-            None => match rx.recv() {
-                Ok(l) => l,
-                Err(_) => break,
-            },
+        let ja = Instant::now();
+        let prazo = espera.values().filter(|e| e.2).map(|e| e.0.saturating_duration_since(ja)).chain([OUTRAS.saturating_sub(sys::mono().saturating_sub(outras))]).min().unwrap_or(OUTRAS);
+        let mut lote = match rx.recv_timeout(prazo) {
+            Ok(l) => l,
+            Err(mpsc::RecvTimeoutError::Timeout) => Vec::new(),
+            Err(mpsc::RecvTimeoutError::Disconnected) => break,
         };
         // Junta o que chegar em seguida, até 2 s, para reler cada pasta uma vez só.
         let junta = Instant::now();
@@ -642,14 +639,14 @@ pub fn vigiar_arvore(root: bool, home: &str, ferramenta: &str, ctx: Arc<Ctx>, ct
                     (e.0, e.1, e.2) = (e.0.max(volta), e.1 | f, true);
                     continue;
                 }
-                let t1 = Instant::now();
+                let (t1, quando) = (Instant::now(), sys::mono());
                 let d = vivo.reler(p, f & RELER_ABAIXO != 0);
                 let custo = t1.elapsed();
                 if d != 0 {
                     if cresc.len() >= CRESCER_MAX {
                         cresc.pop_front();
                     }
-                    cresc.push_back((t1, p.clone(), d));
+                    cresc.push_back((quando, p.clone(), d));
                 }
                 credito -= custo.as_secs_f64() * 1e3;
                 if custo >= Duration::from_millis(5) {
@@ -671,19 +668,19 @@ pub fn vigiar_arvore(root: bool, home: &str, ferramenta: &str, ctx: Arc<Ctx>, ct
         if std::env::var_os("SDTALLY_DEBUG_AUTO").is_some() {
             eprintln!("lote {} avisos · reler {ms_reler:.0} ms · somar {ms_somar:.0} ms (acumulados)", lote.len());
         }
-        let velhas = outras.elapsed() >= OUTRAS;
+        let velhas = sys::mono().saturating_sub(outras) >= OUTRAS;
         if velhas {
             c = coletar_outras(Some(vivo.resultado()));
-            outras = Instant::now();
+            outras = sys::mono();
         }
         if velhas || (agora_total - total).abs() >= MUDANCA_AUTO || (agora_total != total && desde.elapsed() >= Duration::from_secs(60)) {
             let r = vivo.resultado();
             (total, desde) = (r.total.alloc, Instant::now());
-            let agora = Instant::now();
-            while cresc.front().is_some_and(|e| agora.saturating_duration_since(e.0).as_secs() > CRESCER_JANELAS[1]) {
+            let agora = sys::mono();
+            while cresc.front().is_some_and(|e| agora.saturating_sub(e.0).as_secs() > CRESCER_JANELAS[1]) {
                 cresc.pop_front();
             }
-            emitir(&linha(&mut c, r, passada, avisos, releituras, passadas, vivo.pastas(), &outras, crescendo(&cresc, agora, vivo_desde)));
+            emitir(&linha(&mut c, r, passada, avisos, releituras, passadas, vivo.pastas(), outras, crescendo(&cresc, agora, vivo_desde)));
         }
     }
     Ok(())
@@ -700,6 +697,8 @@ fn swap(err: &mut Vec<Value>) -> Option<(u64, u64)> {
 /// Acesso Total ao Disco pela pasta do Safari (TCC): true/false, ou o errno se indeterminado.
 fn fda_de(home: &str) -> Value {
     match std::fs::read_dir(format!("{home}/Library/Safari")).map(|mut d| d.next().map(|e| e.is_ok())) {
+        // Abriu, mas a primeira entrada não veio: o TCC negou a leitura.
+        Ok(Some(false)) => json!(false),
         Ok(_) => json!(true),
         Err(e) if e.kind() == std::io::ErrorKind::PermissionDenied => json!(false),
         Err(e) => json!(format!("indeterminado ({})", e.raw_os_error().unwrap_or(0))),
@@ -713,7 +712,12 @@ impl Coleta {
             None if self.interrompida => Medida::NaoMedida("interrompido".into()),
             None => Medida::NaoMedida("travessia falhou".into()),
             Some(r) if r.interrompida => Medida::Parcial(r.total.alloc, "interrompido".into()),
-            Some(r) => Medida::Valor(r.total.alloc),
+            // Pasta ou entrada que não deu para ler (ENAMETOOLONG, EIO, ENOENT, atributo ausente,
+            // panic) não vira 0: a árvore é um piso. EPERM/EACCES vão para o dir-stats.
+            Some(r) => match walk::nao_lidos(&r.errors) {
+                0 => Medida::Valor(r.total.alloc),
+                n => Medida::Parcial(r.total.alloc, format!("{n} pastas/entradas não lidas")),
+            },
         };
         let xattr_s = match (&self.arvore, self.xattr) {
             (_, false) => Medida::NaoMedida("--sem-xattr".into()),
@@ -763,9 +767,9 @@ mod tests {
     /// A mais funda acima do mínimo aparece; a mãe, só quando o crescimento está espalhado.
     #[test]
     fn crescendo_mostra_a_pasta_mais_funda() {
-        let agora = Instant::now();
+        let agora = std::time::Duration::from_secs(100_000);
         let ha = |s: u64| agora - std::time::Duration::from_secs(s);
-        let ev: std::collections::VecDeque<(Instant, String, i64)> = [
+        let ev: std::collections::VecDeque<(std::time::Duration, String, i64)> = [
             (ha(10), "/Users/x/Library/Caches/app/a", 3_000_000),
             (ha(20), "/Users/x/Library/Caches/app/a", 2_000_000),
             (ha(30), "/Users/x/Library/Logs/l1", 600_000),

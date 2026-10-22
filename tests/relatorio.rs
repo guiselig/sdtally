@@ -427,6 +427,15 @@ fn montar_com_coleta_sintetica() {
     assert_eq!(conta.medida(Chave::Arvore), Some(&Medida::Parcial(7_050_000_000, "interrompido".into())));
     assert_eq!(conta.medida(Chave::Xattr), Some(&Medida::Parcial(7_000_000, "interrompido".into())));
     assert!(conta.repetidos.expect("repetidos").parcial);
+    // Pasta ou entrada não lida (ENAMETOOLONG, panic) deixa a árvore parcial; EPERM/EACCES não
+    // (vão para o dir-stats).
+    let r = c.arvore.as_mut().expect("arvore");
+    r.interrompida = false;
+    r.errors.extend([(63, 2), (sdtally::walk::ERRO_INTERNO, 1), (1, 5), (13, 4)]);
+    let conta = report::montar(&c, "sdtally teste", "2026-09-30 10:00");
+    assert_eq!(conta.medida(Chave::Arvore), Some(&Medida::Parcial(7_050_000_000, "3 pastas/entradas não lidas".into())));
+    c.arvore.as_mut().expect("arvore").errors.retain(|k, _| *k == 1 || *k == 13);
+    assert_eq!(report::montar(&c, "t", "t").medida(Chave::Arvore), Some(&Medida::Valor(7_050_000_000)));
     c.xattr = false;
     assert_eq!(report::montar(&c, "t", "t").medida(Chave::Xattr), Some(&Medida::NaoMedida("--sem-xattr".into())));
 }
@@ -476,4 +485,15 @@ fn macos_da_tela_igual_soma_dos_containers() {
     let soma: i64 = cs.as_array().into_iter().flatten().flat_map(|c| c["volumes"].as_array().into_iter().flatten()).filter(|v| v["in_settings_macos"] == true).filter_map(|v| v["capacity_in_use"].as_i64()).sum();
     assert_eq!(soma, macos);
     assert!(cs.as_array().is_some_and(|c| c.iter().any(|c| c["holds_data"] == true && c["internal"] == true)), "{cs}");
+}
+
+/// Ramo com entrada não lida: piso, não completo (antes saía `complete: true`).
+#[test]
+fn ramo_com_erro_de_leitura_e_piso() {
+    let mut r = sdtally::detalhe::Ramo { raiz: "/tmp/x".into(), ..Default::default() };
+    let j = report::json_ramo(&r, "/Users/x", "t");
+    assert_eq!((j["complete"].as_bool(), j["total"]["lower_bound"].as_bool()), (Some(true), Some(false)));
+    r.erros = 1;
+    let j = report::json_ramo(&r, "/Users/x", "t");
+    assert_eq!((j["complete"].as_bool(), j["total"]["lower_bound"].as_bool()), (Some(false), Some(true)));
 }

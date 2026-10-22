@@ -440,6 +440,14 @@ pub fn agora_epoch() -> i64 {
 }
 
 /// Data/hora local e fuso: ("2026-09-28T14:40:00-0300", "AAAA-MM-DD-HHMM").
+/// Relógio monotônico que conta o tempo de repouso (CLOCK_MONOTONIC no Darwin; o `Instant` usa
+/// CLOCK_UPTIME_RAW, que para enquanto o Mac dorme). Tempo desde um ponto qualquer.
+pub fn mono() -> Duration {
+    let mut ts: libc::timespec = unsafe { std::mem::zeroed() };
+    unsafe { libc::clock_gettime(libc::CLOCK_MONOTONIC, &mut ts) };
+    Duration::new(ts.tv_sec as u64, ts.tv_nsec as u32)
+}
+
 pub fn now_local() -> (String, String) {
     let tm = tm_local(unsafe { libc::time(std::ptr::null_mut()) });
     let off = tm.tm_gmtoff / 60;

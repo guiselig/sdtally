@@ -9,8 +9,9 @@ use crate::anon::Ctx;
 use crate::parse::{self, EF_MAY_SHARE_BLOCKS, EF_NO_XATTRS, EF_SHARES_ALL_BLOCKS, Entrada, Item, SF_DATALESS, UF_COMPRESSED, VDIR, VREG};
 use crate::sys;
 use std::collections::hash_map::Entry;
-use std::collections::{BTreeMap, HashMap};
+use std::collections::{BTreeMap, HashMap, HashSet};
 use std::ffi::OsStr;
+use std::os::fd::OwnedFd;
 use std::os::unix::ffi::OsStrExt;
 use std::os::unix::fs::MetadataExt;
 use std::path::{Path, PathBuf};
@@ -24,6 +25,15 @@ pub const XATTR_MAX_EMBEDDED: i64 = 3804;
 pub const ERRO_INTERNO: i32 = -1;
 pub const ERRO_PARSE: i32 = -2;
 pub const ERRO_ATRIBUTO_AUSENTE: i32 = -3;
+/// getattrlistbulk falhou depois de lotes já lidos: a pasta ficou pela metade (fora do dir-stats,
+/// que contaria de novo o que já foi somado).
+pub const ERRO_LISTAGEM: i32 = -4;
+
+/// Erros que deixam algo sem ler: tudo menos EPERM/EACCES, que vão para o dir-stats
+/// (`Result::denied`). Com algum, a árvore é um piso.
+pub fn nao_lidos(errors: &HashMap<i32, u64>) -> u64 {
+    errors.iter().filter(|(k, _)| **k != libc::EPERM && **k != libc::EACCES).map(|(_, v)| v).sum()
+}
 
 pub static MEASURE_XATTR: AtomicBool = AtomicBool::new(false);
 
@@ -257,17 +267,20 @@ impl Mapas {
 const MAIORES_MIN: i64 = 100_000_000;
 const MAIORES_N: usize = 30;
 
-/// Do maior para o menor (empate: caminho), no máximo `MAIORES_N`.
-fn podar_maiores(v: &mut Vec<(i64, i64, PathBuf)>) {
+/// Do maior para o menor (empate: caminho), no máximo `MAIORES_N`. Hardlink aparece uma vez por
+/// nome: fica só o primeiro nome de cada FILEID.
+fn podar_maiores(v: &mut Vec<(i64, i64, PathBuf, Option<u64>)>) {
     v.sort_unstable_by(|a, b| b.0.cmp(&a.0).then_with(|| a.2.cmp(&b.2)));
+    let mut vistos = HashSet::new();
+    v.retain(|x| x.3.is_none_or(|id| vistos.insert(id)));
     v.truncate(MAIORES_N);
 }
 
 #[derive(Default)]
 struct Local {
     buckets: HashMap<u32, Sum>,
-    /// (alocado, privado, caminho) dos arquivos de `MAIORES_MIN` ou mais.
-    maiores: Vec<(i64, i64, PathBuf)>,
+    /// (alocado, privado, caminho, FILEID se hardlink) dos arquivos de `MAIORES_MIN` ou mais.
+    maiores: Vec<(i64, i64, PathBuf, Option<u64>)>,
     sem_mapa: u64,
     dirs: u64,
     errors: HashMap<i32, u64>,
@@ -275,6 +288,10 @@ struct Local {
     other_dev: u64,
     graft_roots: u64,
     xattr_erros: u64,
+    /// Só no modo vivo (um `Local` por pasta): a pasta não foi lida (abrir ou fstat falhou, fora
+    /// do dir-stats) ou a listagem parou no meio (panic, erro depois de lotes lidos).
+    nao_lida: bool,
+    cortada: bool,
 }
 
 #[derive(Default)]
@@ -345,6 +362,8 @@ struct Walker<'a> {
     /// Ponto de montagem do volume da raiz (ver `e_montagem`).
     mnt: &'a str,
     root_dev: u32,
+    /// A raiz aberta: as pastas abaixo dela abrem a partir dela (`abrir_pasta_sob`).
+    raiz_fd: Option<&'a OwnedFd>,
     ctx: &'a Ctx,
     montagens: Option<&'a [String]>,
     ctl: &'a Controle,
@@ -376,6 +395,10 @@ fn e_montagem(ms: &[String], mnt: &str, s: &str) -> bool {
 }
 
 impl Walker<'_> {
+    fn e_montagem(&self, p: &Path) -> bool {
+        self.montagens.is_some_and(|ms| e_montagem(ms, self.mnt, &p.to_string_lossy()))
+    }
+
     fn bucket_of(&self, p: &std::path::Path) -> u32 {
         let s = p.to_string_lossy();
         let b = self.ctx.bucket(s.strip_prefix(self.root).unwrap_or(&s));
@@ -393,15 +416,31 @@ impl Walker<'_> {
     }
 
     fn scan_dir(&self, job: &Job, buf: &mut [u8], l: &mut Local, achou: &mut impl FnMut(Achado)) {
+        // Nada lido da pasta: EPERM/EACCES deste volume vai para o dir-stats; o resto fica não lido.
         let negada = |l: &mut Local, e: i32| {
             *l.errors.entry(e).or_default() += 1;
             // Só pasta deste volume vai para o dir-stats: um ponto de montagem negado levaria o
             // fsctl a outro volume, que pode ser o destino do Time Machine (síntese §4.3 e §4.4).
             if (e == libc::EPERM || e == libc::EACCES) && self.mesmo_volume(&job.path) {
                 l.denied.push((job.path.clone(), e));
+            } else {
+                l.nao_lida = true;
             }
         };
-        let fd = match sys::apfs::abrir_pasta(&job.path) {
+        // Montagem que surgiu depois de a pasta mãe ser listada (o modo vivo relê a tabela a cada
+        // leitura): pula antes de abrir. A raiz é a única montagem que se abre.
+        if job.depth > 0 && self.e_montagem(&job.path) {
+            l.other_dev += 1;
+            return;
+        }
+        // Abaixo da raiz, a partir do fd dela: sem symlink em nenhum componente e sem o limite de
+        // PATH_MAX do caminho inteiro.
+        let rel = job.path.strip_prefix(self.root).ok().filter(|r| !r.as_os_str().is_empty());
+        let aberta = match (self.raiz_fd, rel) {
+            (Some(raiz), Some(rel)) => sys::apfs::abrir_pasta_sob(raiz, rel),
+            _ => sys::apfs::abrir_pasta(&job.path),
+        };
+        let fd = match aberta {
             Ok(fd) => fd,
             Err(e) => return negada(l, e),
         };
@@ -415,6 +454,7 @@ impl Walker<'_> {
             }
             Err(e) => {
                 *l.errors.entry(e).or_default() += 1;
+                l.nao_lida = true;
                 return;
             }
         }
@@ -427,15 +467,23 @@ impl Walker<'_> {
         let xattr = MEASURE_XATTR.load(Ordering::Relaxed);
         let bucket = job.bucket;
         let mut arquivos = 0u64;
+        let mut lotes = 0u32;
         loop {
             let n = match sys::apfs::ler_lote(&fd, buf) {
                 Ok(0) => break,
                 Ok(n) => n,
-                Err(e) => {
+                // Nada lido ainda: como se não abrisse.
+                Err(e) if lotes == 0 => {
                     negada(l, e);
                     break;
                 }
+                Err(_) => {
+                    *l.errors.entry(ERRO_LISTAGEM).or_default() += 1;
+                    l.cortada = true;
+                    break;
+                }
             };
+            lotes += 1;
             for it in parse::entradas(buf, n) {
                 let e = match it {
                     Ok(Item::Entrada(e)) => e,
@@ -463,7 +511,7 @@ impl Walker<'_> {
                         // da pasta coberta: o open atravessaria e, com o servidor fora do ar, travaria
                         // ou abriria o aviso de conexão do macOS. Pula antes de abrir; a trava do
                         // dev_da_pasta fica para montagem que surgir depois da tabela.
-                        if self.montagens.is_some_and(|ms| e_montagem(ms, self.mnt, &path.to_string_lossy())) {
+                        if self.e_montagem(&path) {
                             l.other_dev += 1;
                             continue;
                         }
@@ -489,7 +537,7 @@ impl Walker<'_> {
                             continue;
                         };
                         if alloc >= MAIORES_MIN {
-                            l.maiores.push((alloc, private, path()));
+                            l.maiores.push((alloc, private, path(), e.fileid.filter(|_| e.linkcount > Some(1))));
                             if l.maiores.len() >= 2 * MAIORES_N {
                                 podar_maiores(&mut l.maiores);
                             }
@@ -610,6 +658,7 @@ pub fn walk_ctl(root: &str, threads: usize, ctx: Arc<Ctx>, ctl: Arc<Controle>) -
     // Sem a tabela de montagens não dá para saber se uma pasta negada é ponto de montagem:
     // aí nenhuma negada sem lstat vai para o dir-stats (vira não medida).
     let montagens: Arc<Option<Vec<String>>> = Arc::new(sys::montagens().ok());
+    let raiz_fd: Arc<Option<OwnedFd>> = Arc::new(sys::apfs::abrir_pasta(Path::new(root)).ok());
     let nomes = Arc::new(Mutex::new(Nomes::default()));
     let (links, clones, mapas) = (Arc::new(Tabela::new()), Arc::new(Tabela::new()), Arc::new(Mutex::new(Mapas::default())));
     let q = Arc::new(Queue {
@@ -618,11 +667,11 @@ pub fn walk_ctl(root: &str, threads: usize, ctx: Arc<Ctx>, ctl: Arc<Controle>) -
     });
     let handles: Vec<_> = (0..threads.max(1))
         .map(|_| {
-            let (q, ctx, root_s, mnt, montagens, ctl) = (q.clone(), ctx.clone(), root_s.clone(), mnt.clone(), montagens.clone(), ctl.clone());
+            let (q, ctx, root_s, mnt, montagens, ctl, raiz_fd) = (q.clone(), ctx.clone(), root_s.clone(), mnt.clone(), montagens.clone(), ctl.clone(), raiz_fd.clone());
             let (nomes, links, clones, mapas) = (nomes.clone(), links.clone(), clones.clone(), mapas.clone());
             std::thread::spawn(move || {
                 sys::qos_utility();
-                let w = Walker { root: &root_s, mnt: &mnt, root_dev, ctx: &ctx, montagens: montagens.as_deref(), ctl: &ctl, nomes: &nomes };
+                let w = Walker { root: &root_s, mnt: &mnt, root_dev, raiz_fd: raiz_fd.as_ref().as_ref(), ctx: &ctx, montagens: montagens.as_deref(), ctl: &ctl, nomes: &nomes };
                 let mut l = Local::default();
                 let mut somas: HashMap<u32, Sum> = HashMap::new();
                 let mut buf = vec![0u8; 256 * 1024];
@@ -688,7 +737,7 @@ pub fn walk_ctl(root: &str, threads: usize, ctx: Arc<Ctx>, ctl: Arc<Controle>) -
         r.denied.extend(l.denied);
     }
     podar_maiores(&mut maiores);
-    r.maiores = Some(maiores.into_iter().map(|(a, p, c)| (c, a, p)).collect());
+    r.maiores = Some(maiores.into_iter().map(|(a, p, c, _)| (c, a, p)).collect());
     // Repetidos contam uma vez; hardlink que também é clone completo entra nos clones. Fatia a
     // fatia, para a tabela ir embora aos poucos.
     for fatia in &links.0 {
@@ -916,6 +965,86 @@ mod tests {
         // Hardlink sem FILEID seria somado uma vez por link.
         assert_eq!(tamanhos(&Entrada { linkcount: Some(2), ..e.clone() }), None);
         assert_eq!(tamanhos(&Entrada { linkcount: Some(2), fileid: Some(9), ..e }), Some((8192, 4096)));
+    }
+
+    /// Pasta além de PATH_MAX (1024 B): aberta a partir do fd da raiz, componente a componente. Antes
+    /// o open do caminho inteiro dava ENAMETOOLONG e os 5 MB sumiam com a árvore "completa".
+    #[test]
+    fn caminho_longo_e_medido() {
+        let pasta = Pasta(std::env::temp_dir().join(format!("sdtlongo-{}", std::process::id())));
+        let _ = std::fs::remove_dir_all(&pasta.0);
+        std::fs::create_dir_all(&pasta.0).expect("mkdir");
+        let raiz = std::fs::canonicalize(&pasta.0).expect("canonicalize");
+        let nome = "d".repeat(230);
+        // O shell cria descendo com `cd` relativo (mkdir do caminho inteiro daria ENAMETOOLONG).
+        let script = format!("for i in 1 2 3 4 5; do mkdir {nome} && cd -P {nome} || exit 1; done; head -c 5242880 /dev/urandom > f");
+        let ok = std::process::Command::new("/bin/sh").arg("-c").arg(script).current_dir(&raiz).status().is_ok_and(|s| s.success());
+        assert!(ok, "sh");
+        let fundo = (0..5).fold(raiz.clone(), |p, _| p.join(&nome));
+        assert!(fundo.join("f").as_os_str().len() >= 1180);
+        assert!(sys::apfs::abrir_pasta(&fundo).is_err_and(|e| e == libc::ENAMETOOLONG), "o caminho passa de PATH_MAX");
+        let r = walk(raiz.to_str().expect("utf8"), 2, Arc::new(Ctx::ramo(1))).expect("walk");
+        assert_eq!((r.total.files, nao_lidos(&r.errors)), (1, 0), "{:?}", r.errors);
+        assert!(r.total.alloc >= 5 << 20, "{}", r.total.alloc);
+    }
+
+    /// Montagem na tabela (injetada): nem a entrada na listagem nem um job direto nela abre a pasta.
+    #[test]
+    fn montagem_da_tabela_nao_e_aberta() {
+        static NUNCA: AtomicBool = AtomicBool::new(false);
+        let pasta = Pasta(std::env::temp_dir().join(format!("sdtmont-{}", std::process::id())));
+        let _ = std::fs::remove_dir_all(&pasta.0);
+        for d in ["a", "b"] {
+            std::fs::create_dir_all(pasta.0.join(d)).expect("mkdir");
+            std::fs::write(pasta.0.join(d).join("f"), b"x").expect("f");
+        }
+        let raiz = std::fs::canonicalize(&pasta.0).expect("canonicalize");
+        let raiz_s = raiz.to_str().expect("utf8");
+        let ms = vec!["/".to_string(), format!("{raiz_s}/a")];
+        let (ctx, ctl, nomes) = (Ctx::ramo(1), Controle::new(&NUNCA), Mutex::new(Nomes::default()));
+        let fd = sys::apfs::abrir_pasta(&raiz).expect("abre");
+        let root_dev = std::fs::symlink_metadata(&raiz).expect("lstat").dev() as u32;
+        let w = Walker { root: raiz_s, mnt: "/", root_dev, raiz_fd: Some(&fd), ctx: &ctx, montagens: Some(&ms), ctl: &ctl, nomes: &nomes };
+        let mut buf = vec![0u8; 64 * 1024];
+        let ler = |path: PathBuf, depth: usize| {
+            let (mut l, mut pastas) = (Local::default(), Vec::new());
+            w.scan_dir(&Job { path, bucket: 0, depth, dono: 0 }, &mut buf.clone(), &mut l, &mut |a| {
+                if let Achado::Pasta(j) = a {
+                    pastas.push(j.path);
+                }
+            });
+            (l, pastas)
+        };
+        let (l, pastas) = ler(raiz.clone(), 0);
+        assert_eq!((pastas, l.other_dev), (vec![raiz.join("b")], 1), "a/ é montagem: pulada na listagem");
+        // Montou depois de a mãe ser listada: o job já na fila não abre.
+        let (l, pastas) = ler(raiz.join("a"), 1);
+        assert_eq!((l.dirs, l.other_dev, pastas.len(), l.errors.len()), (0, 1, 0, 0));
+        let (l, _) = ler(raiz.join("b"), 1);
+        assert_eq!((l.dirs, l.other_dev), (1, 0));
+        buf.clear();
+    }
+
+    /// Pasta do meio trocada por symlink não leva a abertura para fora (O_NOFOLLOW_ANY).
+    #[test]
+    fn abrir_sob_nao_segue_symlink_do_meio() {
+        let pasta = Pasta(std::env::temp_dir().join(format!("sdtlink-{}", std::process::id())));
+        let _ = std::fs::remove_dir_all(&pasta.0);
+        std::fs::create_dir_all(pasta.0.join("real/x")).expect("mkdir");
+        std::os::unix::fs::symlink("real", pasta.0.join("link")).expect("symlink");
+        let fd = sys::apfs::abrir_pasta(&pasta.0).expect("abre");
+        assert!(sys::apfs::abrir_pasta_sob(&fd, Path::new("real/x")).is_ok());
+        assert_eq!(sys::apfs::abrir_pasta_sob(&fd, Path::new("link/x")).err(), Some(libc::ELOOP));
+        assert_eq!(sys::apfs::abrir_pasta_sob(&fd, Path::new("link")).err(), Some(libc::ELOOP));
+    }
+
+    #[test]
+    fn maiores_sem_hardlink_repetido() {
+        let mut v = vec![(500, 1, PathBuf::from("/z"), Some(7)), (500, 1, PathBuf::from("/a"), Some(7)), (500, 1, PathBuf::from("/m"), None), (900, 1, PathBuf::from("/c1"), None), (900, 1, PathBuf::from("/c2"), None)];
+        podar_maiores(&mut v);
+        let nomes: Vec<&str> = v.iter().map(|x| x.2.to_str().unwrap_or("")).collect();
+        // O hardlink fica uma vez (o primeiro nome); arquivos distintos (clones inclusive) ficam todos.
+        assert_eq!(nomes, ["/c1", "/c2", "/a", "/m"]);
     }
 
     #[test]

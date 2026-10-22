@@ -31,7 +31,8 @@ fn attrlist(common: u32, vol: u32, file: u32, ext: u32) -> libc::attrlist {
 pub fn dirstats(path: &str) -> Result<u64, i32> {
     let c = cpath(path)?;
     let mut b = [0u8; 0x110]; // zerado: operação "get"
-    let rc = unsafe { fsctl(c.as_ptr(), APFS_DIRSTATS, b.as_mut_ptr() as *mut c_void, 0) };
+    // FSOPT_NOFOLLOW: symlink trocado no lugar da pasta não leva o fsctl a outro lugar.
+    let rc = unsafe { fsctl(c.as_ptr(), APFS_DIRSTATS, b.as_mut_ptr() as *mut c_void, libc::FSOPT_NOFOLLOW) };
     if rc != 0 {
         return Err(errno());
     }
@@ -140,6 +141,35 @@ pub fn abrir_pasta(p: &Path) -> Result<OwnedFd, i32> {
             return Err(errno());
         }
     }
+}
+
+/// Abre `rel` (relativo, sem `..`) a partir da pasta já aberta `raiz`, sem seguir symlink em
+/// nenhum componente (O_NOFOLLOW_ANY): uma pasta do meio trocada por symlink durante a travessia
+/// não leva para fora. Caminho longo demais para uma chamada (ENAMETOOLONG): desce componente a
+/// componente, cada um com O_NOFOLLOW. Repete em EINTR.
+pub fn abrir_pasta_sob(raiz: &OwnedFd, rel: &Path) -> Result<OwnedFd, i32> {
+    const FLAGS: c_int = libc::O_RDONLY | libc::O_DIRECTORY | libc::O_CLOEXEC;
+    // O_NOFOLLOW_ANY já cobre o último componente; junto com O_NOFOLLOW o kernel dá EINVAL.
+    let abrir = |dir: c_int, c: &CString, nofollow: c_int| loop {
+        let fd = unsafe { libc::openat(dir, c.as_ptr(), FLAGS | nofollow) };
+        if fd >= 0 {
+            return Ok(unsafe { OwnedFd::from_raw_fd(fd) });
+        }
+        if errno() != libc::EINTR {
+            return Err(errno());
+        }
+    };
+    match abrir(raiz.as_raw_fd(), &cpath(rel)?, libc::O_NOFOLLOW_ANY) {
+        Err(libc::ENAMETOOLONG) => {}
+        r => return r,
+    }
+    let mut cur: Option<OwnedFd> = None;
+    for comp in rel.components() {
+        let std::path::Component::Normal(nome) = comp else { return Err(libc::EINVAL) };
+        let dir = cur.as_ref().unwrap_or(raiz).as_raw_fd();
+        cur = Some(abrir(dir, &cpath(nome)?, libc::O_NOFOLLOW)?);
+    }
+    cur.ok_or(libc::EINVAL)
 }
 
 /// Faixas físicas [início, fim) em bytes do volume dos dados do arquivo (`F_LOG2PHYS_EXT`), o fim
