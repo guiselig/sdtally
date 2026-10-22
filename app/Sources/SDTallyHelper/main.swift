@@ -223,8 +223,6 @@ final class Servico: NSObject, HelperProtocolo {
             } catch { reply(nil, "\(error)") }
         }
     }
-
-    func pararAuto() { Cfg.autos.parar(de: id) }
 }
 
 final class Delegado: NSObject, NSXPCListenerDelegate, Sendable {

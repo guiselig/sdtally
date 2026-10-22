@@ -74,7 +74,6 @@ final class Painel {
     /// refeito a cada mudança de 10 MB ou a cada minuto com mudança. Separado de `completo`
     /// (a medição completa); nil até a primeira passada (~40 s) terminar.
     var autoVivo: Completo?
-    var autoEstado: AutoEstado?
     /// `autoVivo` é a última linha da execução anterior (lida do disco ao abrir), não a de agora:
     /// fica true até a primeira linha do automático novo.
     var autoDoDisco = false
@@ -82,8 +81,6 @@ final class Painel {
     var pontosPastas: [PontoPastas] = []
     /// Quando a última linha do automático foi gravada (no máximo uma a cada 5 min).
     @ObservationIgnored private var autoGravadoEm: Date?
-    /// Bytes crus da linha que gerou `autoVivo`.
-    @ObservationIgnored var autoDados: Data?
     /// Fecha o automático aberto (stdin do `sdtally --auto` local ou a conexão com o helper);
     /// nil sem automático.
     @ObservationIgnored var pararAutoAtual: (() -> Void)?
@@ -398,7 +395,7 @@ final class Painel {
     /// Purgeable: no app (`lerPurgeavel`, ~4 ms contra ~20 ms do sdtally), 10 s ativo e 1 min em
     /// segundo plano; o rápido só na leitura inteira. Acesso Total: só ao abrir e ao voltar ao app
     /// (`atualizar()` lê tudo menos a tela).
-    nonisolated static func intervalo(_ p: ParteRapido, aguardando: Bool, ativo: Bool) -> TimeInterval {
+    nonisolated static func intervalo(_ p: ParteRapido, aguardando: Bool) -> TimeInterval {
         switch p {
         case .tela: aguardando ? Ritmo.telaAberta.valor : .infinity
         case .volumes, .uso, .swap, .purgeable, .meta: .infinity
@@ -406,8 +403,8 @@ final class Painel {
     }
 
     /// As partes cujo intervalo passou desde a última leitura (nunca lida = vencida).
-    nonisolated static func vencidas(_ lidas: [ParteRapido: Date], aguardando: Bool, ativo: Bool, agora: Date = .now) -> Set<ParteRapido> {
-        Set(ParteRapido.allCases.filter { agora.timeIntervalSince(lidas[$0] ?? .distantPast) >= intervalo($0, aguardando: aguardando, ativo: ativo) })
+    nonisolated static func vencidas(_ lidas: [ParteRapido: Date], aguardando: Bool, agora: Date = .now) -> Set<ParteRapido> {
+        Set(ParteRapido.allCases.filter { agora.timeIntervalSince(lidas[$0] ?? .distantPast) >= intervalo($0, aguardando: aguardando) })
     }
 
     /// Junta o JSON parcial (`--parts`) com o anterior: chave nova substitui a velha; dentro de
@@ -449,7 +446,7 @@ final class Painel {
     func vigiar() async {
         while !Task.isCancelled {
             // Com a escuta viva a tela chega sozinha: o laço não a lê.
-            let v = Self.vencidas(parteLidaEm, aguardando: aguardandoAjustes && escuta == nil, ativo: NSApp.isActive)
+            let v = Self.vencidas(parteLidaEm, aguardando: aguardandoAjustes && escuta == nil)
             // Durante a medição completa o rápido só disputa disco e CPU; ao terminar, medir() atualiza.
             if !medindo, !v.isEmpty, rapido == nil || aguardandoAjustes || !Self.poupar() {
                 await atualizar(v)
@@ -578,10 +575,9 @@ final class Painel {
         let linha: @Sendable (Data) -> Void = { [weak self] d in
             // Decodifica fora da main: a linha é o relatório inteiro.
             guard let c = try? decodificar(Completo.self, d, kind: "auto") else { return }
-            let e = (try? decodificar(LinhaAuto.self, d, kind: "auto"))?.auto
             Task { @MainActor in
                 guard let self, self.autoGeracao == g else { return }
-                self.aplicarAuto(d, c, e)
+                self.aplicarAuto(d, c)
             }
         }
         let saiu: @Sendable () -> Void = { [weak self] in Task { @MainActor in self?.autoSaiu(g) } }
@@ -615,10 +611,8 @@ final class Painel {
     }
 
     /// Uma linha do `sdtally --auto`: o sdtally já só emite com mudança, então toda linha publica.
-    func aplicarAuto(_ linha: Data, _ c: Completo, _ e: AutoEstado?) {
-        autoDados = linha
+    func aplicarAuto(_ linha: Data, _ c: Completo) {
         autoVivo = c
-        autoEstado = e
         autoDoDisco = false
         guard historicoLido, let pasta = pastaGravacao else { return }
         if autoGravadoEm.map({ Date.now.timeIntervalSince($0) >= 300 }) ?? true {
@@ -802,7 +796,6 @@ final class Painel {
         historicoLido = true
         if autoVivo == nil, let d = ultimo, let c = try? decodificar(Completo.self, d, kind: "auto") {
             autoVivo = c
-            autoDados = d
             autoDoDisco = true
         }
         if completo == nil, let s = m.last, let d = try? Data(contentsOf: s.url) {

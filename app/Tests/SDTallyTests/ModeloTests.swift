@@ -352,8 +352,6 @@ private var dados: URL { Bundle.module.resourceURL!.appending(path: "Fixtures/da
     let d = try JSONSerialization.data(withJSONObject: v)
     let c = try decodificar(Completo.self, d, kind: "auto")
     #expect(c.top.isEmpty == false)
-    let e = try decodificar(LinhaAuto.self, d, kind: "auto").auto
-    #expect(e.foldersInMemory == 458_000 && e.otherSourcesAgeSeconds == 12)
     #expect((try? decodificar(Completo.self, d, kind: nil)) == nil)
 }
 

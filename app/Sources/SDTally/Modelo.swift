@@ -546,20 +546,6 @@ nonisolated struct Ramo: Decodable, Sendable {
     let readErrors: Int64
 }
 
-/// O bloco `auto` da linha do `sdtally --auto` (docs/json-schema.md).
-nonisolated struct AutoEstado: Decodable, Sendable, Equatable {
-    let lastPassSeconds: Double
-    let passes: Int
-    let events: Int
-    let rereads: Int
-    let foldersInMemory: Int
-    let otherSourcesAgeSeconds: Int
-}
-
-nonisolated struct LinhaAuto: Decodable, Sendable {
-    let auto: AutoEstado
-}
-
 private nonisolated struct Cabecalho: Decodable {
     let schemaVersion: Int
     let kind: String?

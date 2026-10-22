@@ -28,24 +28,24 @@ private func ponto(_ horas: Double, usado: Int64, purgeable: Int64 = 0, livre: I
 }
 
 @Test func intervaloDoRapido() {
-    #expect(Painel.intervalo(.tela, aguardando: false, ativo: true) == .infinity)
-    #expect(Painel.intervalo(.tela, aguardando: false, ativo: false) == .infinity)
-    #expect(Painel.intervalo(.tela, aguardando: true, ativo: false) == 5)
-    #expect(Painel.intervalo(.volumes, aguardando: true, ativo: true) == .infinity)
-    #expect(Painel.intervalo(.purgeable, aguardando: false, ativo: true) == .infinity)
-    #expect(Painel.intervalo(.uso, aguardando: false, ativo: false) == .infinity)
-    #expect(Painel.intervalo(.swap, aguardando: false, ativo: true) == .infinity)
-    #expect(Painel.intervalo(.meta, aguardando: true, ativo: true) == .infinity)
+    #expect(Painel.intervalo(.tela, aguardando: false) == .infinity)
+    #expect(Painel.intervalo(.tela, aguardando: false) == .infinity)
+    #expect(Painel.intervalo(.tela, aguardando: true) == 5)
+    #expect(Painel.intervalo(.volumes, aguardando: true) == .infinity)
+    #expect(Painel.intervalo(.purgeable, aguardando: false) == .infinity)
+    #expect(Painel.intervalo(.uso, aguardando: false) == .infinity)
+    #expect(Painel.intervalo(.swap, aguardando: false) == .infinity)
+    #expect(Painel.intervalo(.meta, aguardando: true) == .infinity)
 }
 
 /// Cada parte no seu ritmo: nunca lida vence (menos Acesso Total, uso, swap e purgeable, que só o
 /// atualizar() lê; os três últimos vêm do laço do app).
 @Test func partesVencidas() {
-    #expect(Painel.vencidas([:], aguardando: false, ativo: true, agora: agora).isEmpty)
+    #expect(Painel.vencidas([:], aguardando: false, agora: agora).isEmpty)
     let lidas = Dictionary(uniqueKeysWithValues: ParteRapido.allCases.map { ($0, agora.addingTimeInterval(-61)) })
-    #expect(Painel.vencidas(lidas, aguardando: false, ativo: true, agora: agora).isEmpty)
-    #expect(Painel.vencidas(lidas, aguardando: true, ativo: true, agora: agora) == [.tela])
-    #expect(Painel.vencidas(lidas, aguardando: false, ativo: false, agora: agora).isEmpty)
+    #expect(Painel.vencidas(lidas, aguardando: false, agora: agora).isEmpty)
+    #expect(Painel.vencidas(lidas, aguardando: true, agora: agora) == [.tela])
+    #expect(Painel.vencidas(lidas, aguardando: false, agora: agora).isEmpty)
     // Voltar ao app e acordar não leem a tela (sem --since leria a hora inteira do log).
     #expect(!Painel.semTela.contains(.tela) && Painel.semTela.count == ParteRapido.allCases.count - 1)
 }

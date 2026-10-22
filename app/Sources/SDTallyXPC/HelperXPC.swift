@@ -41,7 +41,6 @@ public enum HelperXPC {
     func medir(reply: @escaping @Sendable (Data?, String?) -> Void)
     func parar()
     /// Automático com root: sobe `sdtally --auto` e devolve a ponta de leitura do stdout dele
-    /// (uma linha JSON por mudança), ou (nil, erro). Vive até `pararAuto` ou até a conexão cair.
+    /// (uma linha JSON por mudança), ou (nil, erro). Vive até a conexão cair (o app a invalida para parar).
     func iniciarAuto(reply: @escaping @Sendable (FileHandle?, String?) -> Void)
-    func pararAuto()
 }
