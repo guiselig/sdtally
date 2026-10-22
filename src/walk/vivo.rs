@@ -688,24 +688,6 @@ impl Vivo {
         r
     }
 
-    /// Contagens do estado (diagnóstico de memória).
-    pub fn contagens(&self) -> Vec<(&'static str, usize)> {
-        let e = lock(&self.estado);
-        let vistos = |t: &HashMap<u64, GrupoV>| t.values().map(|g| g.vistos.capacity()).sum::<usize>();
-        vec![
-            ("pastas", e.usadas),
-            ("blocos", e.blocos.len()),
-            ("tam_pasta", std::mem::size_of::<Option<Pasta>>()),
-            ("extras", e.todas().filter(|(_, p)| p.extra.is_some()).count()),
-            ("grupos_link", e.links.len()),
-            ("vistos_link", vistos(&e.links)),
-            ("grupos_clone", e.clones.len()),
-            ("vistos_clone", vistos(&e.clones)),
-            ("tam_visto", std::mem::size_of::<Visto>()),
-            ("cands", e.cands.len()),
-            ("raros", e.raros.len()),
-        ]
-    }
 }
 
 #[cfg(test)]

@@ -38,20 +38,6 @@ impl Medida {
             Medida::NaoDisponivel => ("not_available", None),
         }
     }
-
-    /// Para o texto: GB com vírgula, ou o estado no lugar do número.
-    pub fn gb(&self) -> String {
-        match self {
-            Medida::Valor(v) => gb(*v),
-            Medida::NaoDisponivel => "não disp.".into(),
-            Medida::NaoMedida(_) => "não medida".into(),
-            Medida::Parcial(v, _) => format!("≥{}", gb(*v)),
-        }
-    }
-}
-
-pub fn gb(b: i64) -> String {
-    format!("{:.2}", b as f64 / 1e9).replace('.', ",")
 }
 
 pub struct Termo {
@@ -86,9 +72,6 @@ mod tests {
         assert_eq!(Medida::Valor(0).estado(), "medida");
         assert_eq!(Medida::NaoDisponivel.estado(), "não disponível nesta versão");
         assert_eq!(Medida::NaoMedida("errno 1".into()).estado(), "não medida (errno 1)");
-        assert_eq!(Medida::Valor(1_234_560_000).gb(), "1,23");
-        assert_eq!(Medida::NaoMedida("x".into()).gb(), "não medida");
         assert_eq!(Medida::Parcial(1_234_560_000, "x".into()).estado(), "parcial (x)");
-        assert_eq!(Medida::Parcial(1_234_560_000, "x".into()).gb(), "≥1,23");
     }
 }

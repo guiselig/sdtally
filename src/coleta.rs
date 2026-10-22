@@ -36,7 +36,6 @@ pub struct Coleta {
     pub volumes: Value,
     /// macOS como o Ajustes calcula (Σ CapacityInUse − Data).
     pub macos: Medida,
-    pub macos_det: Vec<Value>,
     pub disco_tamanho: Value,
     /// (total, usado) do swap (vm.swapusage).
     pub swap: Option<(u64, u64)>,
@@ -267,7 +266,6 @@ pub(crate) fn coletar_com(o: &Opcoes, home: &str, ctx: Arc<Ctx>, ctl: Arc<walk::
         root: o.root,
         volumes,
         macos,
-        macos_det,
         disco_tamanho,
         swap,
         usado,
