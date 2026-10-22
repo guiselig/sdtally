@@ -133,8 +133,8 @@ nonisolated enum Executor {
     /// osascript não mata o filho root.
     static func rodarComoAdmin(_ args: [String], prompt: String) async throws -> Data {
         guard let bin = binario else { throw ErroSdtally.semBinario }
-        let cmd = "SUDO_USER=\(aspas(NSUserName())) SUDO_UID=\(getuid()) exec "
-            + ([bin] + args).map(aspas).joined(separator: " ")
+        let req = HelperXPC.timeProprio().flatMap { HelperXPC.requisito(identifier: HelperXPC.idCLI, time: $0) }
+        let cmd = scriptAdmin(bin: bin, args: args, usuario: NSUserName(), uid: getuid(), requisito: req)
         let script = [
             "on run argv",
             "do shell script (item 1 of argv) with prompt (item 2 of argv) with administrator privileges without altering line endings",
@@ -145,6 +145,22 @@ nonisolated enum Executor {
         } catch ErroSdtally.falhou(_, let e) where e.contains("(-128)") {
             throw ErroSdtally.senhaCancelada
         }
+    }
+
+    /// O shell do root: o sdtally do bundle fica numa pasta gravável pelo usuário e podia ser
+    /// trocado entre a senha e o exec. Copia para uma pasta nova do root (mktemp -d, 0700), confere
+    /// a assinatura da cópia com o mesmo requisito do helper (identifier + time), roda a cópia e
+    /// apaga a pasta ao sair (trap). Tudo que vem de fora passa por `aspas`.
+    /// shortcut: `requisito` nil (assinatura ad hoc, sem time) só confere que a assinatura é
+    /// íntegra; numa build ad hoc o próprio app é trocável, então não há o que proteger aqui.
+    static func scriptAdmin(bin: String, args: [String], usuario: String, uid: uid_t, requisito: String?) -> String {
+        [
+            "d=$(/usr/bin/mktemp -d /tmp/sdtally.XXXXXXXX) || exit 1",
+            "trap '/bin/rm -rf \"$d\"' EXIT",
+            "/bin/chmod 700 \"$d\" && /bin/cp \(aspas(bin)) \"$d/sdtally\" && /bin/chmod 500 \"$d/sdtally\" || exit 1",
+            "/usr/bin/codesign --verify --strict " + (requisito.map { aspas("-R=" + $0) + " " } ?? "") + "\"$d/sdtally\" || exit 1",
+            "SUDO_USER=\(aspas(usuario)) SUDO_UID=\(uid) \"$d/sdtally\" " + args.map(aspas).joined(separator: " "),
+        ].joined(separator: "\n")
     }
 
     /// Mede o volume inteiro pelo helper root (LaunchDaemon aprovado uma vez): sem senha.

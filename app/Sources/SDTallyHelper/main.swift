@@ -5,6 +5,8 @@
 // O sdtally do bundle fica numa pasta gravável pelo usuário: o helper copia para uma pasta do
 // root, recusa o que não for arquivo comum (symlink), confere a assinatura da cópia e executa a
 // cópia (sem janela entre conferir e executar).
+// A cópia ainda precisa ter o CDHash do sdtally da mesma build, que o montar.sh grava no Info.plist
+// embutido (e assinado) do helper: um sdtally antigo assinado pelo mesmo time não passa.
 // Limite conhecido (protótipo): a confiança é "assinado pelo time do dono". Com o certificado
 // Apple Development no chaveiro do próprio usuário, um programa rodando como ele que consiga
 // usar a chave assina um sdtally falso e vira root por aqui. Distribuir pede Developer ID, app em
@@ -20,7 +22,10 @@ enum Cfg {
     static let log = Logger(subsystem: "io.github.guiselig.sdtally", category: "helper")
     static let time = HelperXPC.timeProprio()
     static let reqApp = time.flatMap { HelperXPC.requisito(identifier: HelperXPC.idApp, time: $0) }
-    static let reqCLI = time.flatMap { HelperXPC.requisito(identifier: HelperXPC.idCLI, time: $0) }
+    /// Sem o CDHash no Info.plist embutido (build fora do montar.sh), nil: o helper não atende.
+    static let reqCLI = time.flatMap { t in
+        (HelperXPC.plistProprio()?[HelperXPC.chaveCDHash] as? String).flatMap { HelperXPC.requisito(identifier: HelperXPC.idCLI, time: t, cdhash: $0) }
+    }
     static let estado = Estado()
     static let autos = Autos()
 }
@@ -282,7 +287,7 @@ final class Delegado: NSObject, NSXPCListenerDelegate, Sendable {
 
 // Ad hoc não tem time: sem como validar o cliente, o helper não atende ninguém.
 guard let time = Cfg.time, let reqApp = Cfg.reqApp, Cfg.reqCLI != nil else {
-    Cfg.log.error("helper sem time de assinatura; saindo")
+    Cfg.log.error("helper sem time de assinatura ou sem o CDHash do sdtally; saindo")
     exit(78)  // EX_CONFIG
 }
 let listener = NSXPCListener(machServiceName: HelperXPC.servico)

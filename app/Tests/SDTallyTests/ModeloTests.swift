@@ -63,6 +63,48 @@ private func fixture(_ nome: String) throws -> Data {
     #expect(HelperXPC.requisito(identifier: HelperXPC.idApp, time: "abcde12345") == nil)
 }
 
+/// Com o CDHash da build: só aquele sdtally; texto que não é 40 hex não entra no requisito.
+@Test func requisitoComCDHash() {
+    let h = String(repeating: "a1", count: 20)
+    #expect(HelperXPC.requisito(identifier: HelperXPC.idCLI, time: "ABCDE12345", cdhash: h)?.hasSuffix(" and cdhash H\"\(h)\"") == true)
+    #expect(HelperXPC.requisito(identifier: HelperXPC.idCLI, time: "ABCDE12345", cdhash: "a1") == nil)
+    #expect(HelperXPC.requisito(identifier: HelperXPC.idCLI, time: "ABCDE12345", cdhash: String(h.dropLast(2)) + "\" o") == nil)
+}
+
+/// O shell do root pelo osascript, rodado aqui sem root com um script assinado ad hoc no papel do
+/// sdtally: copia, confere a assinatura da cópia e roda a cópia; requisito que não bate ou binário
+/// trocado depois de assinado não roda nada.
+@Test func scriptAdminConfereACopia() throws {
+    let dir = FileManager.default.temporaryDirectory.appending(path: "sdtally-admin-\(UUID().uuidString)")
+    try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+    let bin = dir.appending(path: "eco").path
+    try Data("#!/bin/sh\necho \"$@\"\n".utf8).write(to: URL(fileURLWithPath: bin))
+    try FileManager.default.setAttributes([.posixPermissions: 0o755], ofItemAtPath: bin)
+    func rodar(_ exe: String, _ args: [String]) throws -> (Int32, String) {
+        let p = Process()
+        p.executableURL = URL(fileURLWithPath: exe)
+        p.arguments = args
+        let out = Pipe()
+        p.standardOutput = out
+        p.standardError = FileHandle.nullDevice
+        try p.run()
+        let d = out.fileHandleForReading.readDataToEndOfFile()
+        p.waitUntilExit()
+        return (p.terminationStatus, String(decoding: d, as: UTF8.self))
+    }
+    func admin(_ req: String?) throws -> (Int32, String) {
+        try rodar("/bin/sh", ["-c", Executor.scriptAdmin(bin: bin, args: ["a'b", "$c d"], usuario: "x'y", uid: 501, requisito: req)])
+    }
+    #expect(try rodar("/usr/bin/codesign", ["--sign", "-", "--identifier", "io.teste.eco", bin]).0 == 0)
+    #expect(try admin("identifier \"io.teste.eco\"") == (0, "a'b $c d\n"))
+    #expect(try admin(nil) == (0, "a'b $c d\n"))
+    #expect(try admin(HelperXPC.requisito(identifier: HelperXPC.idCLI, time: "ABCDE12345")) == (1, ""))
+    // Trocado depois de assinado (o que a cópia evita entre a senha e o exec): não roda.
+    try Data("#!/bin/sh\necho trocado\n".utf8).write(to: URL(fileURLWithPath: bin))
+    #expect(try admin("identifier \"io.teste.eco\"") == (1, ""))
+}
+
+
 // MARK: - Chaves da fase 5 (containers, swap, snapshots, apagados por processo, advice)
 
 private func macosDosVolumes(_ cs: [Conteiner]) -> Int64 {

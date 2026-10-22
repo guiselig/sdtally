@@ -41,7 +41,6 @@ cp "$saida/swift/release/SDTally" "$pacote/Contents/MacOS/SDTally"
 # Traduções: o SwiftPM compila o Localizable.xcstrings em .lproj dentro do SDTally_SDTally.bundle;
 # no Contents/Resources o Bundle.main as acha (o SwiftUI procura os textos no Bundle.main).
 cp -R "$saida/swift/release/SDTally_SDTally.bundle/Contents/Resources/"*.lproj "$pacote/Contents/Resources/"
-cp "$saida/swift/release/SDTallyHelper" "$pacote/Contents/MacOS/SDTallyHelper"
 cp "$CARGO_TARGET_DIR/release/sdtally" "$pacote/Contents/Helpers/sdtally"
 cp "$app_dir/LaunchDaemon.plist" "$pacote/Contents/Library/LaunchDaemons/io.github.guiselig.sdtally.helper.plist"
 versao=$(sed -n 's/^version = "\(.*\)"/\1/p' "$repo/Cargo.toml" | head -1)
@@ -52,6 +51,17 @@ sed -e "s/@VERSAO@/$versao/" -e "s/@BUILD@/${versao%%-*}/" -e "s/@COMMIT@/$commi
 # fixos: o helper confere o sdtally e o app pelo identifier + time (app/Sources/SDTallyXPC).
 assinar() { codesign --force --options runtime --timestamp=none --sign "$id" "$@"; }
 assinar --identifier io.github.guiselig.sdtally.cli "$pacote/Contents/Helpers/sdtally"
+# O helper só executa este sdtally: o CDHash dele vai no Info.plist embutido (e assinado) do
+# helper, que por isso é linkado aqui, depois de o sdtally ser assinado (HelperXPC.chaveCDHash).
+# Um sdtally antigo assinado pelo mesmo time não passa. Pasta própria: o linker muda só aqui.
+cdhash=$(codesign -dvvv "$pacote/Contents/Helpers/sdtally" 2>&1 | sed -n 's/^CDHash=//p')
+[ ${#cdhash} -eq 40 ] || { echo "erro: não deu para ler o CDHash do sdtally" >&2; exit 1; }
+printf '<?xml version="1.0" encoding="UTF-8"?>\n<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">\n<plist version="1.0"><dict><key>SDTallyCLICDHash</key><string>%s</string></dict></plist>\n' "$cdhash" > "$saida/helper-info.plist"
+# O SwiftPM não vê o plist mudar: sem o executável, ele linka de novo.
+rm -f "$saida/swift-helper/release/SDTallyHelper"
+swift build -c release --package-path "$app_dir" --scratch-path "$saida/swift-helper" --product SDTallyHelper \
+    -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __info_plist -Xlinker "$saida/helper-info.plist"
+cp "$saida/swift-helper/release/SDTallyHelper" "$pacote/Contents/MacOS/SDTallyHelper"
 assinar --identifier io.github.guiselig.sdtally.helper "$pacote/Contents/MacOS/SDTallyHelper"
 assinar "$pacote"
 codesign --verify --strict --deep "$pacote"
