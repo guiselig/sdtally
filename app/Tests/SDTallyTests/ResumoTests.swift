@@ -192,7 +192,7 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
 
 /// spec-inicio §1: a barra lateral tem 5 itens; Permissões e Sobre ficam só no enum (⚙ e ⓘ).
 @MainActor @Test func secoesDaBarra() {
-    #expect(Secao.barra.map(\.titulo) == ["Dados de Sistema", "Disco", "Caminhos", "Histórico", "Recomendações"])
+    #expect(Secao.barra.map(\.titulo) == ["Dados do Sistema", "Disco", "Caminhos", "Histórico", "Recomendações"])
     #expect(Secao.allCases.count == 7)
 }
 
