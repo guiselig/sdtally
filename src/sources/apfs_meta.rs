@@ -37,13 +37,13 @@ pub fn coletar() -> ApfsMeta {
 pub fn conferir(est: EstatVolume, attr_usado: u64) -> ApfsMeta {
     let dif = est.usado.abs_diff(attr_usado);
     let nao = |m: &str| ApfsMeta { medida: Medida::NaoMedida(m.into()), detalhe: None };
-    if dif * 100 > attr_usado {
+    if dif.checked_mul(100).is_none_or(|d| d > attr_usado) {
         return nao("o volume do AppleAPFSUserClient não confere com o ATTR_VOL_SPACEUSED do Data");
     }
-    if est.bloco == 0 || est.metadados() == 0 || est.metadados() > attr_usado {
-        return nao("contadores de nós do AppleAPFSUserClient incoerentes");
+    match est.metadados() {
+        Some(m) if est.bloco != 0 && m != 0 && m <= attr_usado => ApfsMeta { medida: Medida::Valor(m as i64), detalhe: Some(est) },
+        _ => nao("contadores de nós do AppleAPFSUserClient incoerentes"),
     }
-    ApfsMeta { medida: Medida::Valor(est.metadados() as i64), detalhe: Some(est) }
 }
 
 #[cfg(test)]
@@ -62,6 +62,11 @@ mod tests {
         assert!(matches!(m.medida, Medida::NaoMedida(_)) && m.detalhe.is_none());
         // Mais metadado que volume usado: contador de outra versão do macOS.
         let m = conferir(EstatVolume { nos_fsroot: u64::MAX / 8192, ..est(1_000_000) }, 1_000_000);
+        assert!(matches!(m.medida, Medida::NaoMedida(_)));
+        // Contador que estoura a conta não vira número (nem panic).
+        let m = conferir(EstatVolume { nos_fsroot: u64::MAX / 2, ..est(1_000_000) }, 1_000_000);
+        assert!(matches!(m.medida, Medida::NaoMedida(_)));
+        let m = conferir(est(u64::MAX), 1);
         assert!(matches!(m.medida, Medida::NaoMedida(_)));
     }
 }

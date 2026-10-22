@@ -44,9 +44,10 @@ pub struct EstatVolume {
 }
 
 impl EstatVolume {
-    /// Metadados das árvores vivas do volume: (omap + fsroot + extentref) × bloco.
-    pub fn metadados(&self) -> u64 {
-        (self.nos_omap + self.nos_fsroot + self.nos_extentref) * self.bloco
+    /// Metadados das árvores vivas do volume: (omap + fsroot + extentref) × bloco. None se
+    /// estoura (contador de outra versão do macOS): não vira número.
+    pub fn metadados(&self) -> Option<u64> {
+        self.nos_omap.checked_add(self.nos_fsroot)?.checked_add(self.nos_extentref)?.checked_mul(self.bloco)
     }
 }
 
@@ -153,7 +154,7 @@ mod tests {
         }
         let s = decodificar(&c, &u, &e).expect("decodifica");
         assert_eq!((s.arquivos, s.pastas, s.usado), (10, 3, 777));
-        assert_eq!(s.metadados(), (100 + 1000 + 5) * 4096);
+        assert_eq!(s.metadados(), Some((100 + 1000 + 5) * 4096));
         assert!(decodificar(&c, &u, &e[..0x20]).is_none());
     }
 

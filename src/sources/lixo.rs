@@ -48,8 +48,13 @@ pub fn medir(pasta: &Path, agora: i64, threads: usize, ctl: Arc<walk::Controle>)
         }
     };
     let mut entradas: Vec<(String, bool, i64)> = Vec::new();
-    for e in rd.flatten() {
-        let Ok(m) = e.metadata() else { continue };
+    // Item que não deu para listar ou ler (lstat) fica fora da soma: o total é um piso.
+    let mut sem_lstat = false;
+    for e in rd {
+        let Ok((m, e)) = e.and_then(|e| Ok((e.metadata()?, e))) else {
+            sem_lstat = true;
+            continue;
+        };
         use std::os::darwin::fs::MetadataExt as _;
         entradas.push((e.file_name().to_string_lossy().into_owned(), m.is_dir(), m.st_blocks() as i64 * 512));
     }
@@ -62,7 +67,7 @@ pub fn medir(pasta: &Path, agora: i64, threads: usize, ctl: Arc<walk::Controle>)
             *por_pasta.entry(topo).or_default() += f.alocado;
         }
     }
-    let mut r = Lixo { piso: ramo.interrompida || ramo.protegidas_sem > 0 || ramo.erros > 0, ..Lixo::default() };
+    let mut r = Lixo { piso: sem_lstat || ramo.interrompida || ramo.protegidas_sem > 0 || ramo.erros > 0, ..Lixo::default() };
     for (nome, pasta_, blocos) in &entradas {
         let bytes = if *pasta_ { por_pasta.get(nome.as_str()).copied().unwrap_or(0) } else { *blocos };
         r.itens += 1;

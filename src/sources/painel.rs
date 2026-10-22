@@ -154,6 +154,8 @@ fn eventos(r: &Log) -> Vec<(String, String)> {
 
 fn dirstats_medida(r: &Result<u64, i32>) -> Medida {
     match r {
+        // 0 não se distingue de "não mantido" (dirstats.rs): não vira 0 medido.
+        Ok(0) => Medida::NaoMedida("dir-stats 0 (não mantido)".into()),
         Ok(v) => Medida::Valor(*v as i64),
         Err(e) if *e == libc::ENOENT => Medida::NaoMedida("pasta ausente: modelos não baixados".into()),
         Err(e) => Medida::NaoMedida(format!("dir-stats errno {e}")),
@@ -192,7 +194,11 @@ pub fn coletar(
     if pode {
         for id in ids {
             match sys::apfs::dirstats(&format!("{id}/.AssetData")) {
-                Ok(0) => vazias += 1,
+                // 0 = não mantido (dirstats.rs): sem medida, como uma falha.
+                Ok(0) => {
+                    vazias += 1;
+                    falhas += 1;
+                }
                 Ok(v) => {
                     montados += 1;
                     enx += v as i64;
