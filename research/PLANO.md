@@ -237,7 +237,7 @@ num terminal `sudo fs_usage -w -f filesys sdtally > /tmp/fsu.txt`, noutro
 
 ## 6. Em paralelo
 
-- **Coleta com amigos:** `coleta/dist/sdc-coleta` + `coleta/LEIAME.md`. Cada relatório entra em
+- **Coleta com amigos:** `coleta/dist/sdc-coleta` + `coleta/LEIAME.md` (hoje `src/bin/sdc-coleta.rs` e `docs/sdc-coleta.md`). Cada relatório entra em
   `research/coletas/` (gitignored se o dono preferir) e alimenta a fase 2.
 - **Perguntas abertas** (síntese §10): SYS do serviço, arredondamento 39,81/39,82, semântica de
   `CACHE_DELETE_SHARED_PURGEABLE`, "Otimizar armazenamento".

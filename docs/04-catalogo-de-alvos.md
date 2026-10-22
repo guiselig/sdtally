@@ -1,7 +1,8 @@
 # Catálogo de alvos
 
 Caminhos candidatos a limpeza, com risco e comportamento de regeneração verificados.
-Esta é a whitelist do app — nada fora dela deve ser oferecido para remoção.
+Pesquisa da época. A lista que vale hoje está em `src/catalogo.rs` e `src/conselho.rs`, e o app
+nunca apaga: só mostra o que é seguro e o comando para o usuário rodar.
 
 Classificação de risco:
 

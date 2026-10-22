@@ -83,7 +83,7 @@ trás desses atributos só foi medido no 27 (ver §1.3).
 **`walk.rs` lê `ATTR_CMN_ERROR` no lugar errado** (A: `man 2 getattrlistbulk` e
 `vfs_attrlist.c` em 2782, 7195 e 12377). Numa entrada com erro o kernel devolve só
 `RETURNED_ATTRS|NAME|ERROR`, no layout `len | attrset(20) | errno(4) | nameref{off,len}(8) | nome`.
-O parser ([walk.rs:229-247](../../coleta/src/walk.rs)) lê o nameref logo depois do attrset e o
+O parser (`coleta/src/walk.rs:229-247`, hoje [src/walk.rs](../../src/walk.rs)) lê o nameref logo depois do attrset e o
 erro só depois de FILEID. Por isso usa o errno como offset do nome e o `attr_length` do nameref
 (tamanho do nome + 1) como "errno". O histograma `errors` sai com chaves falsas, iguais ao
 tamanho do nome. Se o offset falso cair fora do buffer, a entrada some sem ser contada. Não

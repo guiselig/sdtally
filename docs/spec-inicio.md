@@ -2,7 +2,7 @@
 
 Base: a proposta "resposta", que levou os 3 votos, com as ideias boas de "ajustes" e "saude" que os juízes apontaram. Os problemas que os juízes viram estão resolvidos no texto abaixo.
 
-Não mudei nenhum arquivo do repositório. Para conferir o `.tint`, compilei uma cópia do app no scratch (`proto-tint/`, `build-sintese/`) e tirei a foto `fotos/sintese-tint.png`. Essa foto também trouxe um dado real novo: o Ajustes foi lido às 18:49, com Dados do Sistema em 176,45 GB (§8).
+Histórico: registro do desenho da fase 6; o código atual manda onde divergir.
 
 **Marcas usadas no texto**
 - **‡**: depende do detector do Time Machine corrigido (M2).

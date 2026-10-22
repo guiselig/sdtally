@@ -13,7 +13,6 @@ target/
 
 # memória local do Claude
 .claude/
-coleta/dist/
 
 # Python
 __pycache__/

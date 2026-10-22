@@ -50,8 +50,8 @@ Alternativas sem pagar:
 3. Distribuir só o CLI via Homebrew tap. Binários de linha de comando sofrem menos com
    Gatekeeper e um tap não custa nada.
 
-**Recomendação: começar pelo CLI via tap.** Adiar os USD 99 até existir demanda pelo app
-gráfico.
+**Recomendação da época: começar pelo CLI via tap.** Decidido depois (out/2026): sem tap; app e
+CLI saem juntos no `.dmg` do GitHub Releases, sem notarização (caminho 2).
 
 ---
 
@@ -103,8 +103,8 @@ nunca apaga, nem o `sleepimage` (2 GB que voltam sozinhos).
 |---|---|
 | Sandbox | Não |
 | App Store | Não (consequência do acima) |
-| Distribuição | GitHub Releases (`.dmg`) + Homebrew tap para o CLI |
-| Notarização | Adiar. CLI primeiro |
+| Distribuição | GitHub Releases (`.dmg` com o app; o CLI vai dentro dele) |
+| Notarização | Não; o usuário abre com "Abrir Mesmo Assim" |
 | Helper privilegiado | Só para medir; nunca apaga |
 | Deleção | Nunca pelo app; só recomenda ao usuário |
-| Mínimo do sistema | macOS 13 (`MenuBarExtra` do SwiftUI) |
+| Mínimo do sistema | macOS 15, Apple Silicon |

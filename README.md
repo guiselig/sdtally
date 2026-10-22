@@ -341,7 +341,7 @@ SDTally.app (SwiftUI, runs as you)
 - **`sdtally`** (Rust, `src/`) does all measuring and all arithmetic. The app does not compute numbers; it stores and displays what `sdtally` returned.
 - **The app** (`app/Sources/SDTally`) runs the embedded binary and decodes its JSON.
 - **The helper** (`app/Sources/SDTallyHelper`) is optional. It runs only `sdtally --json` or `sdtally --auto`, for the user of the XPC connection. Its security model is described in [SECURITY.md](SECURITY.md) and in [the wiki](https://github.com/guiselig/sdtally/wiki/Passwordless-Root-helper).
-- **`sdc-coleta`** (`src/bin/sdc-coleta.rs`) is a separate research collector that writes an anonymized JSON report. It is not part of the app.
+- **`sdc-coleta`** (`src/bin/sdc-coleta.rs`) is a separate research collector that writes an anonymized JSON report. It is not part of the app. Usage (pt-BR): [docs/sdc-coleta.md](docs/sdc-coleta.md).
 
 ### Where data is stored
 

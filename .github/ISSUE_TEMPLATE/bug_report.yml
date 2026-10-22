@@ -27,7 +27,7 @@ body:
     attributes:
       label: SDTally version
       description: From the app's Info section, or `sdtally --version`.
-      placeholder: "0.1.1"
+      placeholder: "1.0.0"
     validations:
       required: true
   - type: input
