@@ -10,8 +10,9 @@ use std::io::{self, BufRead, Read, Write};
 
 /// Versões publicadas com o handshake `initialize` (modelcontextprotocol.io/specification). A
 /// 2026-07-28 troca o handshake por `_meta` em cada pedido e `server/discover`: fica de fora; o
-/// cliente dela recebe -32601 no `server/discover` e volta para o `initialize`.
-pub const SUPORTADAS: [&str; 4] = ["2024-11-05", "2025-03-26", "2025-06-18", "2025-11-25"];
+/// cliente dela recebe -32601 no `server/discover` e volta para o `initialize`. A 2024-11-05 e a
+/// 2025-03-26 exigem lote (array JSON-RPC), que não atendemos: ficam de fora também.
+pub const SUPORTADAS: [&str; 2] = ["2025-06-18", "2025-11-25"];
 
 /// Linha maior que isto é recusada sem interpretar.
 pub const LIMITE_LINHA: usize = 1_000_000;
@@ -46,6 +47,11 @@ pub fn responder(linha: &str, executar: &mut dyn FnMut(&str) -> Result<Value, St
         return Some(erro(Value::Null, -32600, "Invalid Request"));
     };
     let id = o.get("id").cloned();
+    // MCP: `id` só string ou número (nunca null nem objeto), e `jsonrpc` igual a "2.0".
+    let id_ok = id.as_ref().is_none_or(|i| i.is_string() || i.is_number());
+    if !id_ok || o.get("jsonrpc").and_then(Value::as_str) != Some("2.0") {
+        return Some(erro(if id_ok { id.unwrap_or(Value::Null) } else { Value::Null }, -32600, "Invalid Request"));
+    }
     let Some(metodo) = o.get("method").and_then(Value::as_str) else {
         // Resposta do cliente a um pedido nosso (nunca fazemos pedido): ignora.
         if o.contains_key("result") || o.contains_key("error") {

@@ -46,6 +46,23 @@ fn codigos_de_erro() {
     assert_eq!(codigo(&pedir(r#"{"jsonrpc":"2.0","id":1,"method":"resources/list"}"#)), -32601);
     assert_eq!(codigo(&pedir("{nao é json")), -32700);
     assert_eq!(codigo(&pedir("[1,2]")), -32600);
+    // Lote: não atendido (as versões que o exigem não estão em SUPORTADAS).
+    assert_eq!(codigo(&pedir(r#"[{"jsonrpc":"2.0","id":1,"method":"ping"}]"#)), -32600);
+    assert!(!SUPORTADAS.contains(&"2024-11-05") && !SUPORTADAS.contains(&"2025-03-26"));
+    // id só string ou número; o de tipo errado não é ecoado.
+    for id in [json!(null), json!({"a": 1}), json!([1]), json!(true)] {
+        let r = pedir(&json!({"jsonrpc": "2.0", "id": id, "method": "ping"}).to_string());
+        assert_eq!(codigo(&r), -32600, "{id}");
+        assert_eq!(r.unwrap()["id"], Value::Null);
+    }
+    assert_eq!(pedir(r#"{"jsonrpc":"2.0","id":"x","method":"ping"}"#).unwrap()["id"], "x");
+    assert_eq!(pedir(r#"{"jsonrpc":"2.0","id":1.5,"method":"ping"}"#).unwrap()["id"], 1.5);
+    // jsonrpc ausente ou diferente de "2.0".
+    for l in [r#"{"id":1,"method":"ping"}"#, r#"{"jsonrpc":"1.0","id":1,"method":"ping"}"#, r#"{"jsonrpc":2,"id":1,"method":"ping"}"#] {
+        let r = pedir(l);
+        assert_eq!(codigo(&r), -32600, "{l}");
+        assert_eq!(r.unwrap()["id"], 1);
+    }
     for args in [json!({"x": 1}), json!([]), json!("a")] {
         let l = json!({"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": "quick", "arguments": args}});
         assert_eq!(codigo(&pedir(&l.to_string())), -32602, "{args}");
