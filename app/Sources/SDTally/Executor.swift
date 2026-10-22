@@ -172,6 +172,9 @@ nonisolated enum Executor {
                     fim(.failure(ErroSdtally.falhou(codigo: -1, stderr: "helper root indisponível: \(e.localizedDescription)")))
                 } as? HelperProtocolo
                 guard let proxy else { return fim(.failure(ErroSdtally.falhou(codigo: -1, stderr: "helper root: interface inválida"))) }
+                // Parado antes de começar: sem isto o helper mediria tudo (o parar chega antes do medir
+                // e não acha vaga; o helper também guarda esse parar, para a corrida que sobra).
+                guard !Task.isCancelled else { return fim(.failure(CancellationError())) }
                 proxy.medir { dados, erro in
                     if let dados { fim(.success(dados)) } else { fim(.failure(ErroSdtally.falhou(codigo: -1, stderr: erro ?? "helper root sem resposta"))) }
                 }

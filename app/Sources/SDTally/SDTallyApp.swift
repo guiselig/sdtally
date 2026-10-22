@@ -195,13 +195,16 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         }
         NSApp.activate()
         let a = NSAlert()
+        a.alertStyle = .warning
         a.messageText = String(localized: "A medição completa está em andamento")
         a.informativeText = String(localized: "Se o SDTally fechar agora, a medição em andamento se perde e terá de começar de novo.")
-        a.addButton(withTitle: String(localized: "Continuar medindo"))
+        // Esc fica com o botão seguro (o padrão do NSAlert é Esc só num botão "Cancelar").
+        a.addButton(withTitle: String(localized: "Continuar medindo")).keyEquivalent = "\u{1b}"
         a.addButton(withTitle: String(localized: "Fechar mesmo assim")).hasDestructiveAction = true
         return a.runModal() == .alertFirstButtonReturn ? .terminateCancel : .terminateNow
     }
     func applicationWillTerminate(_ notification: Notification) {
+        Painel.unico.cancelarMedicao()
         Painel.unico.fecharAjustes()
         Painel.unico.pararEscuta()
     }

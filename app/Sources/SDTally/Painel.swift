@@ -77,6 +77,8 @@ final class Painel {
     /// `autoVivo` é a última linha da execução anterior (lida do disco ao abrir), não a de agora:
     /// fica true até a primeira linha do automático novo.
     var autoDoDisco = false
+    /// Hora da linha do disco (`autoDoDisco`) para o rótulo de idade; nil com o automático de agora.
+    var idadeAuto: Date? { autoDoDisco ? data(autoVivo?.generatedAt) : nil }
     /// Amostras por hora das pastas do automático (Historico.PontoPastas), de até 90 dias.
     var pontosPastas: [PontoPastas] = []
     /// Quando a última linha do automático foi gravada (no máximo uma a cada 5 min).
@@ -87,6 +89,10 @@ final class Painel {
     /// Cada abertura do automático ganha um número: aviso de saída de uma abertura velha não
     /// derruba a nova.
     @ObservationIgnored private var autoGeracao = 0
+    /// Pedido ao helper sem resposta: um segundo pedido fecharia o processo do primeiro (o helper
+    /// tem um automático por vez), então o reinício espera a resposta (`reabrirAoResponder`).
+    @ObservationIgnored private var helperPendente = false
+    @ObservationIgnored private var reabrirAoResponder = false
     /// "Automático com root" (boas-vindas e menu). Só vale com o Root sem Senha aprovado
     /// (`helper == .enabled`); sem ele, ou se o helper falhar, o automático roda sem root.
     /// `autoVivo?.root` diz como a linha mostrada foi medida.
@@ -140,6 +146,8 @@ final class Painel {
     private let servicoHelper = SMAppService.daemon(plistName: HelperXPC.plist)
     private var ramos: [String: Ramo] = [:]
     private var lendo = false
+    /// Partes pedidas durante uma leitura: rodam logo depois dela.
+    @ObservationIgnored private var pendentes: Set<ParteRapido> = []
     private var tarefaMedicao: Task<Void, Never>?
     /// O laço de leitura: um só, criado em iniciar() e nunca cancelado ao fechar a janela.
     private(set) var tarefaVigia: Task<Void, Never>?
@@ -448,7 +456,9 @@ final class Painel {
             // Com a escuta viva a tela chega sozinha: o laço não a lê.
             let v = Self.vencidas(parteLidaEm, aguardando: aguardandoAjustes && escuta == nil)
             // Durante a medição completa o rápido só disputa disco e CPU; ao terminar, medir() atualiza.
-            if !medindo, !v.isEmpty, rapido == nil || aguardandoAjustes || !Self.poupar() {
+            // Leitura que falhou não marca as partes: o laço tenta de novo, no máximo a cada 30 s.
+            if !medindo, !v.isEmpty, rapido == nil || aguardandoAjustes || !Self.poupar(),
+               Date.now.timeIntervalSince(rapidoFalhou?.em ?? .distantPast) >= 30 {
                 await atualizar(v)
             }
             if let a = abriuAjustesEm, Date.now.timeIntervalSince(a) > Self.ajustesAbertoAte { fecharAjustes() }
@@ -471,16 +481,11 @@ final class Painel {
     /// Sem argumento, tudo menos a tela (voltar ao app, acordar, depois de calcular). A primeira
     /// leitura é sempre inteira.
     func atualizar(_ pedidas: Set<ParteRapido> = semTela) async {
-        guard !lendo else { return }
+        guard !lendo else { return pendentes.formUnion(pedidas) }
         lendo = true
         // A primeira leitura é inteira: o JSON juntado precisa de todas as chaves.
         let partes = jsonRapido == nil ? Set(ParteRapido.allCases) : pedidas
         let inicio = Date.now
-        defer {
-            lendo = false
-            lidoEm = .now
-            for p in partes { parteLidaEm[p] = inicio }
-        }
         do {
             let dados: Data
             if let f = Foto.rapidoFixo {
@@ -508,8 +513,21 @@ final class Painel {
             if partes.contains(.tela) { inicioDaUltimaLeitura = inicio }
             // Uso, swap e purgeable vêm do laço do app, não do JSON juntado.
             anotar(rapidoVivo ?? r)
+            // Só a leitura que deu certo marca as partes: a que falhou fica vencida para o laço.
+            lidoEm = .now
+            for p in partes { parteLidaEm[p] = inicio }
+        } catch is CancellationError {
+            // Tarefa de quem pediu cancelada (rajada de discos): não é falha, as partes voltam à fila.
+            pendentes.formUnion(partes)
         } catch {
             rapidoFalhou = (error.localizedDescription, .now)
+        }
+        lendo = false
+        // Fora da tarefa de quem pediu, que pode ter sido cancelada.
+        if !pendentes.isEmpty {
+            let p = pendentes
+            pendentes = []
+            Task { await atualizar(p) }
         }
     }
 
@@ -569,6 +587,7 @@ final class Painel {
     /// Abre o `sdtally --auto` (sem foto nem leitura fixa): pelo helper com `autoComRoot` e o
     /// helper aprovado, senão local, sem root. Se ele cair, tenta de novo em 1 min.
     func escutarAuto() {
+        guard !helperPendente else { reabrirAoResponder = true; return }
         guard pararAutoAtual == nil, Foto.rapidoFixo == nil, Foto.env["SDTALLY_FOTO"] == nil else { return }
         autoGeracao += 1
         let g = autoGeracao
@@ -583,14 +602,19 @@ final class Painel {
         let saiu: @Sendable () -> Void = { [weak self] in Task { @MainActor in self?.autoSaiu(g) } }
         guard autoComRoot, helper == .enabled, !Dev.ativo else { return abrirAutoLocal(linha: linha, saiu: saiu) }
         pararAutoAtual = {}  // vaga tomada enquanto o helper responde
+        helperPendente = true
         Task {
             do {
                 let c = try await Executor.escutarPeloHelper(linha: linha, saiu: saiu)
                 if autoGeracao == g { pararAutoAtual = { c.invalidate() } } else { c.invalidate() }
             } catch {
                 Executor.log.error("automático com root falhou, segue sem root: \(error.localizedDescription, privacy: .public)")
-                guard autoGeracao == g else { return }
-                abrirAutoLocal(linha: linha, saiu: saiu)
+                if autoGeracao == g { abrirAutoLocal(linha: linha, saiu: saiu) }
+            }
+            helperPendente = false
+            if reabrirAoResponder {
+                reabrirAoResponder = false
+                escutarAuto()
             }
         }
     }
@@ -601,8 +625,10 @@ final class Painel {
     }
 
     private func autoSaiu(_ g: Int) {
-        guard g == autoGeracao, pararAutoAtual != nil else { return }  // velho, ou fechado pelo app
+        guard g == autoGeracao, let a = pararAutoAtual else { return }  // velho, ou fechado pelo app
         pararAutoAtual = nil
+        // Conexão interrompida segue aberta até alguém invalidar.
+        a()
         Task { [weak self] in
             try? await Task.sleep(for: .seconds(60))
             guard self?.autoGeracao == g else { return }
@@ -759,10 +785,12 @@ final class Painel {
                 medicao = .senhaCancelada
                 if voltarAoAuto { manual = false }
             } catch {
-                medicao = .falhou(error.localizedDescription)
+                // Parar antes de o processo subir: CancellationError aqui, "medição parada" do helper.
+                medicao = Task.isCancelled || error is CancellationError ? .parada : .falhou(error.localizedDescription)
             }
             voltarAoAuto = false
-            await atualizar()
+            // Fora desta tarefa: depois do Parar ela está cancelada e o rápido nem subiria.
+            Task { await self.atualizar() }
         }
     }
 
@@ -779,6 +807,12 @@ final class Painel {
     /// Sem senha ou pelo helper: SIGINT, e o sdtally devolve o parcial marcado "interrompido".
     func parar() {
         guard podeParar else { return }
+        tarefaMedicao?.cancel()
+    }
+
+    /// Ao fechar o app: cancelar manda o SIGINT na hora (o onCancel do Executor roda dentro do
+    /// cancel()), sem deixar um `sdtally --json` órfão rodando por minutos.
+    func cancelarMedicao() {
         tarefaMedicao?.cancel()
     }
 
@@ -870,7 +904,7 @@ final class Painel {
             // falha de verdade: decide pelo status.
             if ![.requiresApproval, .enabled].contains(servicoHelper.status) { helperErro = error.localizedDescription }
         }
-        helper = servicoHelper.status
+        atualizarHelper()  // com o automático com root, troca o caminho (root ou local)
         if helper == .requiresApproval { SMAppService.openSystemSettingsLoginItems() }
     }
 
@@ -878,7 +912,7 @@ final class Painel {
         guard !medindo, !Dev.ativo else { return }
         Task {
             do { try await servicoHelper.unregister() } catch { helperErro = error.localizedDescription }
-            helper = servicoHelper.status
+            atualizarHelper()
         }
     }
 
