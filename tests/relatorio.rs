@@ -502,3 +502,27 @@ fn ramo_com_erro_de_leitura_e_piso() {
     let j = report::json_ramo(&r, "/Users/x", "t");
     assert_eq!((j["complete"].as_bool(), j["total"]["lower_bound"].as_bool()), (Some(false), Some(true)));
 }
+
+/// Itens do Lixo sem data: o número sai com a unidade, como o resto do bloco.
+#[test]
+fn lixo_sem_data_com_unidade() {
+    let mut c = conta();
+    c.lixo = Some(Ok(Lixo { itens: 12, bytes: 4_560_000_000, velhos_itens: 3, velhos_bytes: 1_230_000_000, sem_data_itens: 2, sem_data_bytes: 1_230_000_000, piso: false }));
+    let s = texto::conta(&c, &estilo(Lang::En));
+    assert!(s.contains("2 items without an entry date (1.23 GB)"), "{s}");
+    let s = texto::conta(&c, &estilo(Lang::Pt));
+    assert!(s.contains("(1,23 GB)"), "{s}");
+}
+
+/// Ramo com entrada que não foi lida: o total é piso (≥), como o `total.lower_bound` do JSON.
+#[test]
+fn ramo_texto_com_erro_de_leitura_e_piso() {
+    let mut r = sdtally::detalhe::Ramo { raiz: "/Users/fulano/Exemplo".into(), profundidade: 1, ..Default::default() };
+    r.total.alloc = 2_000_000_000;
+    let total = |r: &sdtally::detalhe::Ramo| texto::ramo(r, "/Users/fulano", &estilo(Lang::En)).lines().find(|l| l.contains("2.00")).unwrap_or_default().to_string();
+    assert!(!total(&r).contains("≥2.00"), "{}", total(&r));
+    r.erros = 3;
+    assert!(!total(&r).contains("≥2.00"), "só sumidas: {}", total(&r));
+    r.nao_lidos = 1;
+    assert!(total(&r).contains("≥2.00"), "{}", total(&r));
+}

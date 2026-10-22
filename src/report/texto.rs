@@ -317,7 +317,7 @@ pub fn conta(c: &Conta, e: &Estilo) -> String {
             let piso = if l.piso { "≥" } else { "" };
             quebra(&mut o, 4, 4, &e.f("trash_note", &[&format!("{piso}{}", e.num(l.bytes)), e.unidade()]));
             if l.sem_data_itens > 0 {
-                quebra(&mut o, 4, 4, &e.f("trash_undated", &[&e.lang.int(l.sem_data_itens), &e.num(l.sem_data_bytes)]));
+                quebra(&mut o, 4, 4, &e.f("trash_undated", &[&e.lang.int(l.sem_data_itens), &format!("{} {}", e.num(l.sem_data_bytes), e.unidade())]));
             }
         }
         Some(Err(r)) => linha(&mut o, 2, &e.t("trash_old_none"), &e.t("nao_medido_curto"), &e.lang.motivo(r)),
@@ -413,7 +413,9 @@ pub fn ramo(r: &Ramo, home: &str, e: &Estilo) -> String {
         let _ = writeln!(o, "{}", fmt(&e.lang.p("demais", resto.len() as u64), &e.num(a), &p, ""));
     }
     let prot: i64 = r.filhos.iter().filter(|f| f.protegida).map(|f| f.alocado).sum();
-    let piso = r.interrompida || r.protegidas_sem > 0;
+    // Piso como o `total.lower_bound` do JSON: leitura parada, pasta protegida sem dir-stats ou
+    // entrada que não foi lida.
+    let piso = r.interrompida || r.protegidas_sem > 0 || r.nao_lidos > 0;
     let a = e.num(r.total.alloc + prot);
     let a = if piso { format!("≥{a}") } else { a };
     let _ = writeln!(o, "{}", fmt(&e.t("ramo_total"), &a, &format!("≥{}", e.num(r.total.private)), ""));
