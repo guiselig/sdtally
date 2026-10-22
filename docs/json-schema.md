@@ -267,6 +267,12 @@ pastas negadas (252 sem root), passada de ~41 s; RAM igual (169 MB depois da pas
 `dataless_files`, `dataless_apparent_bytes`}), `protected_without_size`, `read_errors`,
 `other_volume_entries`.
 
+`total.lower_bound` é `true` e `complete` é `false` quando alguma pasta ou entrada não foi lida
+por motivo que não seja EPERM/EACCES (essas vão para dir-stats) nem ENOENT/ENOTDIR (sumiram durante
+a medição: contam em `read_errors`, mas não deixam nada sem medir). No relatório completo, o termo
+`tree` sai `partial` pelo mesmo critério (`reason` "<n> pastas/entradas não lidas"), e dir-stats
+0 sai como não medido ("dir-stats 0 (não mantido)").
+
 ## `sdtally why <caminho> --json` (kind `item`)
 
 `path`, `display`, `type` (`file`, `folder`, `symlink`, `other`), `attributes` ({`logical_bytes`,
