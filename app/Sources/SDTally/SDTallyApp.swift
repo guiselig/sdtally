@@ -163,6 +163,7 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         }
         Painel.unico.iniciar()
         abrirSeFoiAMao()
+        MenuContexto.vigiarBarra()
         // Ícone da barra desligado sem janela aberta: o app ficaria sem Dock e sem ícone. Abre a janela.
         NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { _ in
             Task { @MainActor in
@@ -230,6 +231,8 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         NSApp.windows.first { $0.identifier?.rawValue.hasPrefix("principal") == true }?.makeKeyAndOrderFront(nil)
         NSApp.activate()
     }
+
+    func applicationDockMenu(_ sender: NSApplication) -> NSMenu? { MenuContexto.menu(barra: false) }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
         if !flag { Painel.unico.mostrar(Painel.unico.secao ?? .sistema) }
