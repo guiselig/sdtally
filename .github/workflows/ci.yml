@@ -82,7 +82,12 @@ jobs:
           d = json.load(open("sdtally.json"))
           v = d["data_volume"]
           medidos = sum(t["bytes"] for t in v["terms"] if t["bytes"] is not None)
-          assert v["used"]["bytes"] - medidos == v["unexplained"]["bytes"], "conta não fecha"
+          u = v["unexplained"]
+          # Termos acima do usado: o resto vira null com overlap_bytes (sobreposição medida), não negativo.
+          if u["bytes"] is None:
+              assert u["overlap_bytes"] == medidos - v["used"]["bytes"] > 0, ("conta não fecha", u)
+          else:
+              assert v["used"]["bytes"] - medidos == u["bytes"], "conta não fecha"
           assert sum(t["bytes"] for t in d["top"]) == medidos, "top não soma os termos medidos"
           assert not d["stage_errors"], d["stage_errors"]
           s = next(t for t in v["terms"] if t["key"] == "snapshots")

@@ -14,13 +14,15 @@ const PROIBIDOS: [&str; 15] = [
 ];
 
 /// (arquivo, pedaço, vezes): apaga só arquivo do próprio programa, nunca dado do usuário.
-const PERMITIDOS: [(&str, &str, usize); 3] = [
+const PERMITIDOS: [(&str, &str, usize); 4] = [
     // Dir::remover: o temporário que o sdc-coleta criou ao gravar.
     ("src/sys/mod.rs", "unlink", 1),
     // Historico.podar: medições antigas do próprio SDTally (Medicoes/AAAA-MM-DD-HHMM.json comum).
     ("app/Sources/SDTally/Historico.swift", "removeItem", 1),
     // A cópia temporária do sdtally que o helper executa, na pasta 0700 criada por ele.
     ("app/Sources/SDTallyHelper/main.swift", "removeItem", 1),
+    // Executor.scriptAdmin: a pasta mktemp -d do root com a cópia conferida do sdtally (trap EXIT).
+    ("app/Sources/SDTally/Executor.swift", "rm", 1),
 ];
 
 fn palavra(l: &str, p: &str) -> bool {
