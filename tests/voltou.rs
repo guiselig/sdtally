@@ -46,6 +46,8 @@ fn base() -> Conta {
         lixo: None,
         apfs_meta: None,
         negadas_sem_tamanho: None,
+        maiores: None,
+        duplicados: None,
     }
 }
 

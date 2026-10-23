@@ -107,6 +107,8 @@ fn conta() -> Conta {
             detalhe: Some(EstatVolume { bloco: 4096, usado: 421_787_705_344, arquivos: 2_404_065, pastas: 459_473, nos_omap: 6_835, nos_fsroot: 391_006, nos_extentref: 6_179 }),
         }),
         negadas_sem_tamanho: Some(vec![("/Library/Exemplo".into(), None), ("~/Library/Exemplo".into(), Some(1))]),
+        maiores: None,
+        duplicados: None,
     }
 }
 
@@ -525,4 +527,38 @@ fn ramo_texto_com_erro_de_leitura_e_piso() {
     assert!(!total(&r).contains("≥2.00"), "só sumidas: {}", total(&r));
     r.nao_lidos = 1;
     assert!(total(&r).contains("≥2.00"), "{}", total(&r));
+}
+
+/// `largest_files` com `logical_bytes`/`kind_of_size`, `duplicates` e as linhas do texto.
+#[test]
+fn esparso_e_copias_no_json_e_no_texto() {
+    use sdtally::duplicados::{Duplicados, Grupo};
+    use sdtally::walk::Maior;
+    use std::path::PathBuf;
+    let m = |p: &str, alloc, logico, comprimido| Maior { caminho: PathBuf::from(p), alloc, privado: alloc, logico, comprimido, link: None };
+    let maiores = vec![
+        m("/System/Volumes/Data/Users/exemplo/vm/Docker.raw", 12 * GB, Some(64 * GB), false),
+        m("/Users/exemplo/a.dmg", 3 * GB, Some(3 * GB), false),
+        m("/Library/x.bin", GB, Some(5 * GB / 2), true),
+        m("/Library/sem.bin", GB, None, false),
+    ];
+    let j = report::maiores_json(Some(&maiores));
+    assert_eq!(j[0], serde_json::json!({"path": "/Users/exemplo/vm/Docker.raw", "bytes": 12 * GB, "private_bytes": 12 * GB, "logical_bytes": 64 * GB, "kind_of_size": "sparse"}));
+    assert_eq!((j[1]["kind_of_size"].is_null(), j[2]["kind_of_size"].as_str(), j[3]["logical_bytes"].is_null()), (true, Some("compressed"), true));
+    assert!(report::maiores_json(None).is_null() && report::duplicados_json(None).is_null());
+    let g = Grupo { bytes_each: 2 * GB, caminhos: vec![PathBuf::from("/System/Volumes/Data/Users/exemplo/a.mov"), PathBuf::from("/Users/exemplo/b.mov")] };
+    let d = Duplicados { grupos: vec![g], candidatos: 7, bytes_lidos: 4 * GB as u64, motivos: vec!["limite de 60 s na comparação"] };
+    let jd = report::duplicados_json(Some(&d));
+    assert_eq!(jd, serde_json::json!({"state": "partial", "reason": "comparison stopped at the 60 s limit", "source": "content", "candidates": 7, "bytes_read": 4 * GB,
+        "groups": [{"bytes_each": 2 * GB, "copies": 2, "wasted_bytes": 2 * GB, "paths": ["/Users/exemplo/a.mov", "/Users/exemplo/b.mov"]}]}));
+    let mut c = conta();
+    (c.maiores, c.duplicados) = (Some(maiores), Some(d));
+    let en = texto::conta(&c, &estilo(Lang::En));
+    let pt = texto::conta(&c, &estilo(Lang::Pt));
+    for (t, linhas) in [(&en, ["Identical copies: ≥1 file extra", "content, byte by byte", "partial (comparison stopped at the 60 s limit)", "Files that look larger than they take", "sparse, appears as 64.00 GB", "compressed, 2.50 GB uncompressed"]), (&pt, ["Cópias idênticas: ≥1 arquivo a mais", "conteúdo, byte a byte", "parcial (limite de 60 s na comparação)", "Arquivos que aparecem maiores do que ocupam", "esparso, aparece como 64,00 GB", "comprimido, 2,50 GB sem compressão"])] {
+        for l in linhas {
+            assert!(t.contains(l), "{l}:\n{t}");
+        }
+        assert!(!t.contains("a.dmg") && !t.contains("sem.bin"), "só esparso e comprimido:\n{t}");
+    }
 }

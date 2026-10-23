@@ -6,6 +6,7 @@
 pub mod vivo;
 
 use crate::anon::Ctx;
+use crate::duplicados::{self, CAND_MAX, Candidatos};
 use crate::parse::{self, EF_MAY_SHARE_BLOCKS, EF_NO_XATTRS, EF_SHARES_ALL_BLOCKS, Entrada, Item, SF_DATALESS, UF_COMPRESSED, VDIR, VREG};
 use crate::sys;
 use std::collections::hash_map::Entry;
@@ -265,23 +266,70 @@ impl Mapas {
 
 /// Maiores arquivos da travessia: a partir deste tamanho (alocado), no máximo `MAIORES_N`. O piso
 /// deixa o custo perto de zero (o caminho só é montado para arquivo grande).
-const MAIORES_MIN: i64 = 100_000_000;
+/// O mesmo piso vale para os candidatos a cópia idêntica (`duplicados`).
+pub const MAIORES_MIN: i64 = 100_000_000;
 const MAIORES_N: usize = 30;
+/// Esparso: o lógico passa do alocado em pelo menos isto (e é o dobro ou mais).
+const ESPARSO_MIN: i64 = 1_000_000_000;
+
+/// Um dos maiores arquivos. Lógico (TOTALSIZE) e UF_COMPRESSED vêm do mesmo lote do
+/// getattrlistbulk: nenhuma syscall a mais.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct Maior {
+    pub caminho: PathBuf,
+    pub alloc: i64,
+    pub privado: i64,
+    /// None: o kernel não devolveu o TOTALSIZE.
+    pub logico: Option<i64>,
+    pub comprimido: bool,
+    /// FILEID se hardlink (para podar os nomes repetidos).
+    pub link: Option<u64>,
+}
+
+impl Maior {
+    /// `kind_of_size`: "sparse" (lógico ≥ 2 × alocado e ≥ 1 GB a mais, sem UF_COMPRESSED),
+    /// "compressed" (UF_COMPRESSED e lógico > alocado), None no resto ou sem lógico.
+    pub fn tipo(&self) -> Option<&'static str> {
+        let l = self.logico?;
+        if self.comprimido {
+            return (l > self.alloc).then_some("compressed");
+        }
+        (l >= 2 * self.alloc && l - self.alloc >= ESPARSO_MIN).then_some("sparse")
+    }
+}
 
 /// Do maior para o menor (empate: caminho), no máximo `MAIORES_N`. Hardlink aparece uma vez por
 /// nome: fica só o primeiro nome de cada FILEID.
-fn podar_maiores(v: &mut Vec<(i64, i64, PathBuf, Option<u64>)>) {
-    v.sort_unstable_by(|a, b| b.0.cmp(&a.0).then_with(|| a.2.cmp(&b.2)));
+fn podar_maiores(v: &mut Vec<Maior>) {
+    v.sort_unstable_by(|a, b| b.alloc.cmp(&a.alloc).then_with(|| a.caminho.cmp(&b.caminho)));
     let mut vistos = HashSet::new();
-    v.retain(|x| x.3.is_none_or(|id| vistos.insert(id)));
+    v.retain(|x| x.link.is_none_or(|id| vistos.insert(id)));
     v.truncate(MAIORES_N);
+}
+
+/// Candidatos a cópia idêntica, um por chave: (true, CLONEID) para clone completo, (false, FILEID)
+/// no resto (hardlinks dividem o FILEID). Fica o menor caminho de cada chave; em ordem de caminho.
+/// Mais de `CAND_MAX`: corta os menores e devolve `true` (lista cheia).
+fn juntar_candidatos(mut v: Vec<((bool, u64), duplicados::Cand)>) -> (Vec<duplicados::Cand>, bool) {
+    v.sort_unstable_by(|a, b| a.0.cmp(&b.0).then_with(|| a.1.caminho.cmp(&b.1.caminho)));
+    v.dedup_by(|a, b| a.0 == b.0);
+    let mut l: Vec<duplicados::Cand> = v.into_iter().map(|x| x.1).collect();
+    let cheio = l.len() > CAND_MAX;
+    if cheio {
+        l.sort_unstable_by(|a, b| b.logico.cmp(&a.logico).then_with(|| a.caminho.cmp(&b.caminho)));
+        l.truncate(CAND_MAX);
+    }
+    l.sort_unstable_by(|a, b| a.caminho.cmp(&b.caminho));
+    (l, cheio)
 }
 
 #[derive(Default)]
 struct Local {
     buckets: HashMap<u32, Sum>,
-    /// (alocado, privado, caminho, FILEID se hardlink) dos arquivos de `MAIORES_MIN` ou mais.
-    maiores: Vec<(i64, i64, PathBuf, Option<u64>)>,
+    /// Arquivos de `MAIORES_MIN` ou mais.
+    maiores: Vec<Maior>,
+    /// Candidatos a cópia idêntica com a chave de deduplicação; para de crescer passado `CAND_MAX`.
+    dups: Vec<((bool, u64), duplicados::Cand)>,
     sem_mapa: u64,
     dirs: u64,
     errors: HashMap<i32, u64>,
@@ -321,9 +369,11 @@ pub struct Result {
     pub xattr_erros: u64,
     /// Cancelada no meio: os totais são só do que foi lido (um piso).
     pub interrompida: bool,
-    /// (caminho, alocado, privado) dos maiores arquivos; só a travessia única mede (o modo vivo
-    /// guarda pasta, não arquivo): None nele.
-    pub maiores: Option<Vec<(PathBuf, i64, i64)>>,
+    /// Os maiores arquivos; só a travessia única mede (o modo vivo guarda pasta, não arquivo):
+    /// None nele.
+    pub maiores: Option<Vec<Maior>>,
+    /// Candidatos a cópia idêntica (`duplicados::achar`); None no modo vivo.
+    pub duplicaveis: Option<Candidatos>,
 }
 
 /// Soma dos valores de xattr sem ler conteúdo. Falha ao ler não some: vira erro contado.
@@ -537,13 +587,28 @@ impl Walker<'_> {
                             *l.errors.entry(ERRO_ATRIBUTO_AUSENTE).or_default() += 1;
                             continue;
                         };
+                        let ext = e.ext_flags.unwrap_or(0);
                         if alloc >= MAIORES_MIN {
-                            l.maiores.push((alloc, private, path(), e.fileid.filter(|_| e.linkcount > Some(1))));
+                            let p = path();
+                            let link = e.fileid.filter(|_| e.linkcount > Some(1));
+                            // Cópia idêntica: dataless nunca é lido (materializaria); clone parcial
+                            // que divide blocos (privado < alocado) já não custa em dobro.
+                            let parcial = ext & EF_MAY_SHARE_BLOCKS != 0 && ext & EF_SHARES_ALL_BLOCKS == 0 && private < alloc;
+                            if let (Some(id), Some(t), 0, false) = (e.fileid, e.totalsize, flags & SF_DATALESS, parcial)
+                                && l.dups.len() <= CAND_MAX
+                            {
+                                let chave = match e.cloneid {
+                                    Some(c) if ext & EF_SHARES_ALL_BLOCKS != 0 => (true, c),
+                                    _ => (false, id),
+                                };
+                                l.dups.push((chave, duplicados::Cand { caminho: p.clone(), alloc, logico: t, fileid: id }));
+                            }
+                            let logico = e.totalsize.map(|t| t as i64);
+                            l.maiores.push(Maior { caminho: p, alloc, privado: private, logico, comprimido: flags & UF_COMPRESSED != 0, link });
                             if l.maiores.len() >= 2 * MAIORES_N {
                                 podar_maiores(&mut l.maiores);
                             }
                         }
-                        let ext = e.ext_flags.unwrap_or(0);
                         let mut s = Sum { files: 1, alloc, private, ..Default::default() };
                         if xattr && ext & EF_NO_XATTRS == 0 {
                             xattr_sizes(&path(), &mut s, l);
@@ -720,10 +785,11 @@ pub fn walk_ctl(root: &str, threads: usize, ctx: Arc<Ctx>, ctl: Arc<Controle>) -
 
     let mut r = Result::default();
     let mut buckets: HashMap<u32, Sum> = HashMap::new();
-    let mut maiores = Vec::new();
+    let (mut maiores, mut dups) = (Vec::new(), Vec::new());
     for h in handles {
         let Ok(mut l) = h.join() else { return Err("thread da travessia morreu".into()) };
         maiores.append(&mut l.maiores);
+        dups.append(&mut l.dups);
         for (k, v) in l.buckets {
             buckets.entry(k).or_default().add(&v);
         }
@@ -738,7 +804,10 @@ pub fn walk_ctl(root: &str, threads: usize, ctx: Arc<Ctx>, ctl: Arc<Controle>) -
         r.denied.extend(l.denied);
     }
     podar_maiores(&mut maiores);
-    r.maiores = Some(maiores.into_iter().map(|(a, p, c, _)| (c, a, p)).collect());
+    r.maiores = Some(maiores);
+    let (lista, cheio) = juntar_candidatos(dups);
+    let motivos = [(cheio, duplicados::M_CHEIO), (ctl.cancelado(), duplicados::M_TRAVESSIA)].into_iter().filter(|x| x.0).map(|x| x.1).collect();
+    r.duplicaveis = Some(Candidatos { lista, dev: root_dev, motivos });
     // Repetidos contam uma vez; hardlink que também é clone completo entra nos clones. Fatia a
     // fatia, para a tabela ir embora aos poucos.
     for fatia in &links.0 {
@@ -1060,11 +1129,51 @@ mod tests {
 
     #[test]
     fn maiores_sem_hardlink_repetido() {
-        let mut v = vec![(500, 1, PathBuf::from("/z"), Some(7)), (500, 1, PathBuf::from("/a"), Some(7)), (500, 1, PathBuf::from("/m"), None), (900, 1, PathBuf::from("/c1"), None), (900, 1, PathBuf::from("/c2"), None)];
+        let m = |alloc, p: &str, link| Maior { caminho: PathBuf::from(p), alloc, privado: 1, logico: None, comprimido: false, link };
+        let mut v = vec![m(500, "/z", Some(7)), m(500, "/a", Some(7)), m(500, "/m", None), m(900, "/c1", None), m(900, "/c2", None)];
         podar_maiores(&mut v);
-        let nomes: Vec<&str> = v.iter().map(|x| x.2.to_str().unwrap_or("")).collect();
+        let nomes: Vec<&str> = v.iter().map(|x| x.caminho.to_str().unwrap_or("")).collect();
         // O hardlink fica uma vez (o primeiro nome); arquivos distintos (clones inclusive) ficam todos.
         assert_eq!(nomes, ["/c1", "/c2", "/a", "/m"]);
+    }
+
+    #[test]
+    fn tipo_de_tamanho() {
+        const GB: i64 = 1_000_000_000;
+        let m = |alloc, logico, comprimido| Maior { caminho: PathBuf::new(), alloc, privado: alloc, logico, comprimido, link: None }.tipo();
+        assert_eq!(m(12 * GB, Some(64 * GB), false), Some("sparse"));
+        assert_eq!(m(GB, Some(2 * GB), false), Some("sparse"), "o dobro e 1 GB a mais, no limite");
+        assert_eq!(m(GB, Some(2 * GB - 1), false), None, "menos que o dobro");
+        assert_eq!(m(200_000_000, Some(900_000_000), false), None, "o dobro, mas menos de 1 GB a mais");
+        assert_eq!(m(12 * GB, Some(64 * GB), true), Some("compressed"), "UF_COMPRESSED nunca é esparso");
+        assert_eq!(m(GB, Some(GB + 1), true), Some("compressed"));
+        assert_eq!(m(GB, Some(GB), true), None);
+        assert_eq!(m(GB, None, false), None, "sem lógico não se classifica");
+        assert_eq!(m(GB, Some(GB / 2), false), None);
+    }
+
+    /// Arquivo esparso de verdade (APFS): 3 GB lógicos, ~101 MB escritos em três trechos.
+    #[test]
+    fn esparso_nos_maiores() {
+        use std::os::unix::fs::FileExt;
+        let pasta = Pasta(std::env::temp_dir().join(format!("sdtesparso-{}", std::process::id())));
+        let _ = std::fs::remove_dir_all(&pasta.0);
+        std::fs::create_dir_all(&pasta.0).expect("mkdir");
+        let raiz = std::fs::canonicalize(&pasta.0).expect("canonicalize");
+        let f = std::fs::File::create(raiz.join("disco.raw")).expect("cria");
+        f.set_len(3_000_000_000).expect("ftruncate");
+        let bloco = aleatorio(34 << 20, 5);
+        for off in [0u64, 1_500_000_000, 2_900_000_000] {
+            f.write_all_at(&bloco, off).expect("escreve");
+        }
+        drop(f);
+        let r = walk(raiz.to_str().expect("utf8"), 2, Arc::new(Ctx::ramo(1))).expect("walk");
+        let m = &r.maiores.expect("maiores")[0];
+        if m.logico == Some(m.alloc) {
+            return; // volume sem arquivo esparso (não é APFS): nada a medir
+        }
+        assert_eq!((m.logico, m.comprimido, m.tipo()), (Some(3_000_000_000), false, Some("sparse")), "{m:?}");
+        assert!(m.alloc >= 3 * (34 << 20) && m.alloc < 200_000_000, "{}", m.alloc);
     }
 
     #[test]

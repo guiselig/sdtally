@@ -219,6 +219,18 @@ pub const CATALOGO: &[Ficha] = &[
         ..B
     },
     Ficha {
+        id: "duplicate_files",
+        o_que_e: t("Arquivos grandes com o mesmo conteúdo, byte a byte, em mais de um lugar.", "Large files with the same content, byte for byte, in more than one place."),
+        dono: VOCE,
+        sozinho: Sozinho::Nao,
+        nivel: "check_first",
+        perde: t("A cópia que um app ainda usa, se for essa a que sair.", "The copy an app still uses, if that is the one that goes."),
+        passo: t("Cópias idênticas ocupam espaço a mais. Fique com uma; antes de tirar as outras, veja qual cópia seus apps usam.", "Identical copies take extra space. Keep one; before removing the others, check which copy your apps use."),
+        agir: &[Acao::Finder],
+        fonte: &[Ref::Interno("docs/json-schema.md `duplicates`")],
+        ..B
+    },
+    Ficha {
         id: "tm_backup_stuck",
         o_que_e: t("O Time Machine tentou fazer backup várias vezes sem registrar um novo; enquanto isso, o snapshot de base fica no disco.", "Time Machine tried to back up several times without recording a new backup; meanwhile the base snapshot stays on disk."),
         dono: t("macOS (Time Machine)", "macOS (Time Machine)"),
@@ -836,6 +848,8 @@ pub const FONTES: &[(&str, Conf)] = &[
     ("getattrlist_addedtime", c("no", &[], "", None)),
     ("apfs_user_client", c("no", &[], "", None)),
     ("difference", c("n/a", &[], "", None)),
+    // Cópias idênticas comparadas byte a byte (`duplicates`): não é número da Apple.
+    ("content", c("n/a", &[], "", None)),
     // Categorias do Ajustes reproduzidas (Fase 2): conferidas contra as funções da Apple no macOS 27 (frenteq).
     // Σ dos baldes da travessia pelas regras da Apple; Aplicativos +0,05 %, Documentos 0,0 %, Fotos +1,86 %.
     ("tree_buckets", c("margin", SO27, "2026-10-18", None)),

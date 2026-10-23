@@ -129,6 +129,67 @@ que divide tudo)}]`. Caminho sem o `/System/Volumes/Data` da frente. Pasta prote
 entra. No `--auto` sai `null`: o modo vivo guarda pasta, não arquivo. Com redação (`--redact names`,
 MCP), `path` vira o balde da pasta do arquivo, como `top[].path`: o nome do arquivo não sai.
 
+## `largest_files[].logical_bytes` e `kind_of_size` (arquivo esparso ou comprimido)
+
+Aditivo em cada item de `largest_files`. `logical_bytes`: o tamanho lógico (ATTR_FILE_TOTALSIZE, o
+que o Finder mostra), do mesmo lote do getattrlistbulk que dá o alocado: nenhuma syscall a mais;
+`null` se o kernel não devolveu. `kind_of_size`:
+
+| valor | quando |
+|---|---|
+| `"sparse"` | lógico ≥ 2 × `bytes` e lógico − `bytes` ≥ 1 GB, sem UF_COMPRESSED (disco de VM: Docker.raw, imagens do UTM/Parallels) |
+| `"compressed"` | UF_COMPRESSED (decmpfs) e lógico > `bytes` |
+| `null` | o resto, ou sem `logical_bytes` |
+
+O número da conta continua o alocado (`bytes`). No texto da CLI, em "Informativo", só os esparsos e
+comprimidos aparecem: `Docker.raw  12.00  sparse, appears as 64.00 GB` (pt: `esparso, aparece como
+64,00 GB`; comprimido: `compressed, 30.00 GB uncompressed` / `comprimido, 30,00 GB sem compressão`).
+
+## `duplicates` (cópias idênticas; só na medição completa)
+
+Só no `sdtally --json` completo e no texto (a mesma rodada que monta `largest_files`); nunca no
+`--auto`, `--quick`, ramo ou `why`. `null` quando a etapa não rodou (sem travessia única, Ctrl-C).
+
+Candidatos, juntados na travessia sem syscall a mais: arquivo comum com alocado ≥ 100 MB, não
+dataless (nunca é aberto: materializaria), com FILEID e TOTALSIZE. Um por hardlink (FILEID) e um por
+grupo de clone completo (CLONEID, EF_SHARES_ALL_BLOCKS; fica o menor caminho): o clone não custa em
+dobro. Clone parcial que divide blocos (EF_MAY_SHARE_BLOCKS e privado < alocado) fica de fora. No
+máximo 5000 (passou: ficam os 5000 maiores e sai `partial`).
+
+Comparação (`src/duplicados.rs`): agrupa pelo tamanho lógico exato, do maior para o menor; nos
+grupos de 2 ou mais, hash do primeiro e do último MiB (SipHash da std, chave fixa: só separa) e,
+onde bate, o conteúdo inteiro byte a byte, todos os arquivos do grupo em blocos de 1 MiB juntos
+(no máximo 16 por grupo). Sem falso positivo: quem decide são os bytes, não o hash. Só leitura:
+`open(O_RDONLY | O_NOFOLLOW_ANY | O_NONBLOCK)`, `F_NOCACHE` (não enche o cache de páginas), EINTR
+repetido, e o arquivo aberto tem de ser o da travessia (mesmo volume, FILEID, tamanho, não
+dataless); senão não é lido. Orçamento: 20 GB lidos ou 60 s; Ctrl-C também para. Parou no meio de
+um grupo: ele não conta.
+
+```
+"duplicates": {
+  "state": "measured" | "partial",
+  "reason": null | "comparison stopped at the 20 GB read limit; ...",
+  "source": "content",
+  "groups": [{"bytes_each", "copies", "wasted_bytes", "paths": ["/Users/...", ...]}],
+  "candidates": 123,
+  "bytes_read": 4567890
+}
+```
+
+- `groups`: do maior `wasted_bytes` para o menor (empate: caminhos), no máximo 20. `bytes_each` é o
+  menor alocado entre as cópias (piso); `wasted_bytes` = `bytes_each` × (`copies` − 1). `paths` sem
+  o `/System/Volumes/Data` da frente, em ordem.
+- `reason` (em `partial`, juntos por `; `): `more than 5000 candidates`, `scan interrupted`,
+  `comparison stopped at the 20 GB read limit`, `comparison stopped at the 60 s limit`,
+  `interrupted`, `a file changed or did not open during the comparison`, `more than 16 files with
+  the same size and the same ends`.
+- Conselho `duplicate_files` (`check_first`, ficha própria, sem `command`): quando Σ `wasted_bytes`
+  de todos os grupos (não só os 20) ≥ 1 GB. `bytes` = essa soma, `term: "tree"`, `paths` = as cópias
+  dos grupos listados, `bytes_floor: true` se `partial`. O `text` nunca leva o nome do arquivo.
+- Texto da CLI, em "Informativo": `Identical copies: 3 files extra  4.20  content, byte by byte`.
+- Redação (`--redact names`, MCP): cada caminho de `groups[].paths` e dos `paths` do
+  `duplicate_files` vira o balde da pasta do arquivo, como `largest_files`: o nome não sai.
+
 ## `not_freed` ("Por que o espaço pode não voltar")
 
 Gerado por `src/voltou.rs` só a partir da `Conta` medida, no `--json` completo (o texto da CLI tem

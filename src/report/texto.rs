@@ -300,6 +300,23 @@ pub fn conta(c: &Conta, e: &Estilo) -> String {
         let pastas = format!("{ge}{}", e.lang.p("n_pastas", r.dataless.2));
         linha(&mut o, 2, &e.f("dataless", &[&arqs(r.dataless.0), &pastas]), &gb(r.dataless.1), &e.t("fonte_dataless"));
     }
+    if let Some(d) = &c.duplicados {
+        let ge = if d.parcial() { "≥" } else { "" };
+        let extra = d.grupos.iter().map(|g| g.caminhos.len() as u64 - 1).sum();
+        linha(&mut o, 2, &e.f("duplicados", &[&format!("{ge}{}", e.lang.p("n_arquivos", extra))]), &format!("{ge}{}", e.num(d.desperdicio())), &e.t("fonte_conteudo"));
+        if let Some(r) = d.motivo() {
+            quebra(&mut o, 4, 4, &format!("{} ({})", e.t("parcial"), e.lang.motivo(&r)));
+        }
+    }
+    // Esparso e comprimido, entre os maiores arquivos: o alocado na coluna, o lógico ao lado.
+    let aparentes: Vec<_> = c.maiores.iter().flatten().filter_map(|m| Some((m, m.tipo()?, m.logico?))).collect();
+    if !aparentes.is_empty() {
+        let _ = writeln!(o, "  {}", e.t("aparentes"));
+        for (m, tipo, logico) in aparentes {
+            let k = if tipo == "sparse" { "esparso" } else { "comprimido" };
+            linha(&mut o, 4, &super::caminho_json(&m.caminho), &e.num(m.alloc), &e.f(k, &[&format!("{} {}", e.num(logico), e.unidade())]));
+        }
+    }
     if let Some(m) = &c.apfs_meta {
         let f = match &m.medida {
             Medida::NaoMedida(r) => e.lang.motivo(r),

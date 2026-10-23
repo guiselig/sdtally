@@ -202,6 +202,8 @@ Notes:
 - Ctrl-C stops the scan and prints the partial report, marked INCOMPLETE (interrupted). The exit code is 130.
 - No color when `NO_COLOR` is set or stdout is not a terminal, unless `--color always`.
 - `sdtally` only measures paths on the Data volume. A path on another volume is refused.
+- Among the largest files, the full measurement marks sparse files (a VM disk that appears as 64 GB but takes 12 GB) and compressed files, with the logical size next to the allocated one.
+- The full measurement also looks for identical copies of large files (100 MB or more): same size, then the first and last MiB, then every byte. Clones and hard links are not counted, cloud-only files are never read, and the comparison stops at 20 GB read or 60 seconds. It only recommends; it never deletes.
 
 A shortened example of the text output (synthetic data from the test suite):
 

@@ -53,6 +53,8 @@ fn base(ranking: Vec<Item>) -> Conta {
         lixo: None,
         apfs_meta: None,
         negadas_sem_tamanho: None,
+        maiores: None,
+        duplicados: None,
     }
 }
 
@@ -497,4 +499,28 @@ fn time_machine_sem_url() {
         assert!(!s.contains(p), "{p}");
     }
     assert!(s.contains("tm_backup_stuck"));
+}
+
+/// `duplicate_files`: só com 1 GB+ de cópias a mais, `check_first`, sem comando, sem o nome do
+/// arquivo no texto e com as cópias em `paths`; parcial vira piso.
+#[test]
+fn copias_identicas() {
+    use sdtally::duplicados::{Duplicados, Grupo};
+    use std::path::PathBuf;
+    let g = |b: i64, ps: &[&str]| Grupo { bytes_each: b, caminhos: ps.iter().map(PathBuf::from).collect() };
+    let mut c = base(vec![]);
+    c.duplicados = Some(Duplicados { grupos: vec![g(400_000_000, &["/Users/exemplo/a.mov", "/Users/exemplo/b.mov"])], candidatos: 3, ..Default::default() });
+    assert!(!ids(&conselho::conselhos(&c)).contains(&"duplicate_files"), "abaixo de 1 GB");
+    let um = g(3 * GB / 2, &["/System/Volumes/Data/Users/exemplo/Filme Secreto.mov", "/Users/exemplo/x/Filme Secreto.mov", "/Users/exemplo/y/Filme Secreto.mov"]);
+    c.duplicados = Some(Duplicados { grupos: vec![um.clone()], candidatos: 3, ..Default::default() });
+    let v = conselho::conselhos(&c);
+    let a = v.iter().find(|x| x.id == "duplicate_files").expect("conselho");
+    assert_eq!((a.nivel, a.bytes, a.comando, a.piso), ("check_first", 3 * GB, None, false));
+    assert_eq!(a.caminhos, ["/Users/exemplo/Filme Secreto.mov", "/Users/exemplo/x/Filme Secreto.mov", "/Users/exemplo/y/Filme Secreto.mov"]);
+    assert_eq!(a.texto, "3 identical copies of a 1.5 GB file take 3.0 GB more. Keep one of each; before removing the others, check which copy your apps use.");
+    c.duplicados = Some(Duplicados { grupos: vec![um, g(GB, &["/a", "/b"])], motivos: vec!["limite de 60 s na comparação"], ..Default::default() });
+    let v = conselho::conselhos(&c);
+    let a = v.iter().find(|x| x.id == "duplicate_files").expect("conselho");
+    assert!(a.piso && a.bytes == 4 * GB && a.texto.starts_with("3 files are identical copies of others and take 4.0 GB more."), "{a:?}");
+    assert!(!a.texto.contains("Secreto"));
 }

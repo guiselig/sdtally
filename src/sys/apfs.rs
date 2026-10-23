@@ -219,6 +219,14 @@ pub fn faixas_fisicas(p: &Path) -> Result<Vec<(u64, u64)>, i32> {
     Ok(out)
 }
 
+/// Liga F_NOCACHE no arquivo aberto: o que for lido dele não fica no cache de páginas. Err(errno).
+pub fn sem_cache(fd: &impl AsRawFd) -> Result<(), i32> {
+    if unsafe { libc::fcntl(fd.as_raw_fd(), libc::F_NOCACHE, 1) } < 0 {
+        return Err(errno());
+    }
+    Ok(())
+}
+
 /// st_dev da pasta aberta: o volume em que ela está de fato (depois de uma montagem, o de dentro).
 pub fn dev_da_pasta(fd: &OwnedFd) -> Result<u32, i32> {
     let mut st: libc::stat = unsafe { std::mem::zeroed() };

@@ -9,6 +9,7 @@ pub mod catalogo;
 pub mod coleta;
 pub mod conselho;
 pub mod detalhe;
+pub mod duplicados;
 pub mod historico;
 pub mod ledger;
 pub mod linhas;

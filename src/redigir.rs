@@ -86,15 +86,30 @@ pub fn redigir(v: &mut Value, ctx: &Ctx, home: &str) {
     }
     // Arquivo vira o balde da pasta dele: o nome do arquivo nunca sai (o balde de /Library guarda
     // até 3 componentes, que podem incluir o arquivo).
+    let arquivo = |p: &str| balde(p.rsplit_once('/').map_or(p, |(d, _)| d));
     for x in v.get_mut("largest_files").and_then(Value::as_array_mut).into_iter().flatten() {
         if let Some(p) = x["path"].as_str() {
-            x["path"] = balde(p.rsplit_once('/').map_or(p, |(d, _)| d)).into();
+            x["path"] = arquivo(p).into();
         }
+    }
+    let arquivos = |l: Option<&mut Value>| {
+        for p in l.and_then(Value::as_array_mut).into_iter().flatten() {
+            if let Some(s) = p.as_str() {
+                *p = arquivo(s).into();
+            }
+        }
+    };
+    for g in v.pointer_mut("/duplicates/groups").and_then(Value::as_array_mut).into_iter().flatten() {
+        arquivos(g.get_mut("paths"));
+    }
+    // As cópias do conselho `duplicate_files` também são arquivos.
+    for a in v.get_mut("advice").and_then(Value::as_array_mut).into_iter().flatten().filter(|a| a["id"] == "duplicate_files") {
+        arquivos(a.get_mut("paths"));
     }
     for j in v.get_mut("growing_now").and_then(Value::as_array_mut).into_iter().flatten() {
         j.get_mut("top").and_then(Value::as_array_mut).into_iter().flatten().for_each(caminho);
     }
-    for a in v.get_mut("advice").and_then(Value::as_array_mut).into_iter().flatten() {
+    for a in v.get_mut("advice").and_then(Value::as_array_mut).into_iter().flatten().filter(|a| a["id"] != "duplicate_files") {
         for p in a.get_mut("paths").and_then(Value::as_array_mut).into_iter().flatten() {
             if let Some(s) = p.as_str() {
                 *p = balde(s).into();

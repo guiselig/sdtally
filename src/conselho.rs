@@ -232,6 +232,18 @@ pub fn conselhos(c: &Conta) -> Vec<Conselho> {
         v.push(item("apple_intelligence_models", "system_handles", b, "Apple Intelligence models; macOS manages them. Do not delete the folder.".into()));
     }
 
+    // ---- cópias idênticas (só a medição completa compara conteúdo) ----
+    if let Some(d) = c.duplicados.as_ref().filter(|d| d.desperdicio() >= GB) {
+        let w = d.desperdicio();
+        let texto = match d.grupos.as_slice() {
+            [g] => format!("{} identical copies of a {} file take {} more.", g.caminhos.len(), gb_en(g.bytes_each), gb_en(w)),
+            gs => format!("{} files are identical copies of others and take {} more.", gs.iter().map(|g| g.caminhos.len() - 1).sum::<usize>(), gb_en(w)),
+        };
+        let caminhos = d.grupos.iter().take(report::LIMITE_GRUPOS).flat_map(|g| &g.caminhos).map(|p| report::caminho_json(p)).collect();
+        let texto = format!("{texto} Keep one of each; before removing the others, check which copy your apps use.");
+        v.push(Conselho { caminhos, termo: Some(Chave::Arvore.json()), piso: d.parcial(), ..item("duplicate_files", "check_first", w, texto) });
+    }
+
     // ---- linhas do ranking ----
     let mut grupos: Vec<Vec<&report::Item>> = REGRAS.iter().map(|_| Vec::new()).collect();
     let ativa: Vec<bool> = REGRAS.iter().map(|r| r.versoes.is_none_or(|f| c.macos.as_deref().is_some_and(|v| na_faixa(v, f)))).collect();

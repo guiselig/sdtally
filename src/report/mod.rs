@@ -186,6 +186,10 @@ pub struct Conta {
     pub apfs_meta: Option<crate::sources::apfs_meta::ApfsMeta>,
     /// Pastas negadas sem dir-stats: (balde, errno; None = dir-stats devolveu 0). None sem a etapa.
     pub negadas_sem_tamanho: Option<Vec<(String, Option<i32>)>>,
+    /// Os maiores arquivos da travessia única; None no modo vivo e sem travessia.
+    pub maiores: Option<Vec<crate::walk::Maior>>,
+    /// Cópias idênticas; None se a etapa não rodou.
+    pub duplicados: Option<crate::duplicados::Duplicados>,
 }
 
 impl Conta {
@@ -325,6 +329,8 @@ pub fn montar(c: &Coleta, ferramenta: &str, data_hora: &str) -> Conta {
         lixo: c.lixo.clone(),
         apfs_meta: c.apfs_meta.clone(),
         negadas_sem_tamanho: c.negadas.as_ref().map(|n| n.sem_tamanho.clone()),
+        maiores: c.arvore.as_ref().and_then(|r| r.maiores.clone()),
+        duplicados: c.duplicados.clone(),
     }
 }
 
@@ -385,6 +391,41 @@ fn sem_tamanho_json(v: Option<&[(String, Option<i32>)]>) -> Value {
     })
 }
 
+/// Caminho de arquivo no JSON: sem o `/System/Volumes/Data` da frente.
+pub fn caminho_json(p: &std::path::Path) -> String {
+    let p = p.to_string_lossy();
+    p.strip_prefix(crate::sources::DATA).filter(|r| r.starts_with('/')).unwrap_or(&p).to_string()
+}
+
+/// Máximo de grupos em `duplicates.groups` (o conselho soma todos).
+pub const LIMITE_GRUPOS: usize = 20;
+
+/// `largest_files`; null sem a travessia única.
+pub fn maiores_json(m: Option<&[crate::walk::Maior]>) -> Value {
+    json!(m.map(|m| m
+        .iter()
+        .map(|x| json!({"path": caminho_json(&x.caminho), "bytes": x.alloc, "private_bytes": x.privado, "logical_bytes": x.logico, "kind_of_size": x.tipo()}))
+        .collect::<Vec<_>>()))
+}
+
+/// `duplicates`: cópias de conteúdo idêntico; null se a etapa não rodou.
+pub fn duplicados_json(d: Option<&crate::duplicados::Duplicados>) -> Value {
+    let Some(d) = d else { return Value::Null };
+    json!({
+        "state": if d.parcial() { "partial" } else { "measured" },
+        "reason": d.motivo().map(|r| Lang::En.motivo(&r)),
+        "source": "content",
+        "groups": d.grupos.iter().take(LIMITE_GRUPOS).map(|g| json!({
+            "bytes_each": g.bytes_each,
+            "copies": g.caminhos.len(),
+            "wasted_bytes": g.desperdicio(),
+            "paths": g.caminhos.iter().map(|p| caminho_json(p)).collect::<Vec<_>>(),
+        })).collect::<Vec<_>>(),
+        "candidates": d.candidatos,
+        "bytes_read": d.bytes_lidos,
+    })
+}
+
 /// O relatório completo em JSON (`sdtally --json`): conta, conselhos, o que não voltou, catálogo
 /// e categorias. `home` resolve o `~` dos caminhos do ranking (com sudo é a home do SUDO_USER).
 /// `fatos`: os das categorias já lidos (o `--auto` guarda os seus); None lê agora.
@@ -396,13 +437,8 @@ pub fn json_completo(c: &Coleta, ferramenta: &str, data_hora: &str, home: &str, 
     crate::conselho::detectar(&mut v);
     v["not_freed"] = crate::voltou::json(&crate::voltou::causas(&conta));
     // Só a travessia única guarda arquivo; o modo vivo (pasta) sai null.
-    v["largest_files"] = json!(c.arvore.as_ref().and_then(|r| r.maiores.as_ref()).map(|m| m
-        .iter()
-        .map(|(p, a, pr)| {
-            let p = p.to_string_lossy();
-            json!({"path": p.strip_prefix(crate::sources::DATA).filter(|r| r.starts_with('/')).unwrap_or(&p), "bytes": a, "private_bytes": pr})
-        })
-        .collect::<Vec<_>>()));
+    v["largest_files"] = maiores_json(conta.maiores.as_deref());
+    v["duplicates"] = duplicados_json(conta.duplicados.as_ref());
     crate::catalogo::anexar(&mut v);
     match fatos {
         Some(f) => crate::sources::categorias::anexar(&mut v, f),

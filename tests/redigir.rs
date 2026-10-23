@@ -66,6 +66,8 @@ fn conta(extra: &str) -> Conta {
         lixo: None,
         apfs_meta: None,
         negadas_sem_tamanho: None,
+        maiores: None,
+        duplicados: None,
     }
 }
 
@@ -165,6 +167,28 @@ fn redige_maiores_arquivos_e_crescendo() {
         assert!(!s.contains(p), "{p}");
     }
     for x in ["exemplo", "fulano", "beltrano", ".mov", ".zip", "grande.bin"] {
+        assert!(!s.to_lowercase().contains(x), "{x}: {s}");
+    }
+}
+
+/// `duplicates.groups[].paths` e os `paths` do conselho `duplicate_files` são arquivos: viram o
+/// balde da pasta, sem o nome; os outros conselhos seguem com o balde do caminho inteiro.
+#[test]
+fn redige_copias_identicas() {
+    let mut v = completo("");
+    let copias = ["/Users/exemplo/Movies/Ferias com Fulano.mov", "/Users/exemplo/Projetos Pessoais/Ferias com Fulano.mov", "/Library/Caches/com.exemplo.app/grande.bin"];
+    v["duplicates"] = json!({"state": "measured", "reason": null, "source": "content", "candidates": 3, "bytes_read": GB,
+        "groups": [{"bytes_each": GB, "copies": 3, "wasted_bytes": 2 * GB, "paths": copias}]});
+    v["advice"].as_array_mut().unwrap().push(json!({"id": "duplicate_files", "level": "check_first", "bytes": 2 * GB, "paths": copias, "text": "3 identical copies of a 1.0 GB file take 2.0 GB more."}));
+    redigir::redigir(&mut v, &ctx(), "/Users/exemplo");
+    let esperado = json!(["~/Movies", "~/<pasta do usuário>", "/Library/Caches/<privado>"]);
+    assert_eq!(v["duplicates"]["groups"][0]["paths"], esperado);
+    let a = v["advice"].as_array().unwrap();
+    assert_eq!(a.iter().find(|x| x["id"] == "duplicate_files").unwrap()["paths"], esperado);
+    assert!(a.iter().any(|x| x["id"] != "duplicate_files" && x["paths"].as_array().is_some_and(|p| !p.is_empty())), "outros conselhos com caminho seguem lá");
+    assert_eq!(v["duplicates"]["groups"][0]["wasted_bytes"], 2 * GB);
+    let s = v.to_string();
+    for x in ["exemplo", "fulano", ".mov", "grande.bin"] {
         assert!(!s.to_lowercase().contains(x), "{x}: {s}");
     }
 }

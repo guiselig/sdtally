@@ -14,8 +14,8 @@ use std::process::Command;
 const GB: i64 = 1_000_000_000;
 const BIN: &str = env!("CARGO_BIN_EXE_sdtally");
 const NIVEIS: [&str; 7] = ["measurement", "system_handles", "safe", "cost", "check_first", "anomaly", "do_not_touch"];
-/// As 8 regras montadas no código (fora de `REGRAS`).
-const ESPECIAIS: [&str; 8] = ["grant_full_disk_access", "measure_as_admin", "time_machine_snapshots", "other_snapshots", "purgeable_auto", "deleted_open", "swap_large", "apple_intelligence_models"];
+/// As 9 regras montadas no código (fora de `REGRAS`).
+const ESPECIAIS: [&str; 9] = ["grant_full_disk_access", "measure_as_admin", "time_machine_snapshots", "other_snapshots", "purgeable_auto", "deleted_open", "swap_large", "apple_intelligence_models", "duplicate_files"];
 
 fn caminhos() -> impl Iterator<Item = &'static str> {
     CATALOGO.iter().flat_map(|f| f.casa.iter()).filter_map(|c| match c {
@@ -342,6 +342,8 @@ fn conta(ranking: Vec<Item>) -> Conta {
         lixo: None,
         apfs_meta: None,
         negadas_sem_tamanho: None,
+        maiores: None,
+        duplicados: None,
     }
 }
 

@@ -57,13 +57,15 @@ pub struct Coleta {
     pub lixo: Option<Result<Lixo, String>>,
     /// Metadados das árvores vivas do APFS no Data; None se a etapa não rodou.
     pub apfs_meta: Option<ApfsMeta>,
+    /// Cópias idênticas; None se a etapa não rodou (sem a lista da travessia única, Ctrl-C).
+    pub duplicados: Option<crate::duplicados::Duplicados>,
     /// Ctrl-C: etapas depois dele não rodaram e a travessia é um piso.
     pub interrompida: bool,
 }
 
 /// Ordem em que as etapas aparecem em `stage_errors`, qualquer que seja a ordem em que terminem.
-const ORDEM: [&str; 14] =
-    ["meta", "volumes", "swap", "volume_data", "capacidade", "snapshots", "purgeable", "apagados_abertos", "lixo", "apfs_metadata", "arvore", "dirstats_negadas", "painel", "tela_log"];
+const ORDEM: [&str; 15] =
+    ["meta", "volumes", "swap", "volume_data", "capacidade", "snapshots", "purgeable", "apagados_abertos", "lixo", "apfs_metadata", "arvore", "dirstats_negadas", "duplicados", "painel", "tela_log"];
 
 /// Compartilhada entre as threads das etapas independentes (`coletar`): por isso os Mutex.
 struct Etapas {
@@ -241,6 +243,9 @@ pub(crate) fn coletar_com(o: &Opcoes, home: &str, ctx: Arc<Ctx>, ctl: Arc<walk::
         None => Medida::NaoMedida("sem travessia".into()),
     };
 
+    // ---- cópias idênticas: só com a lista da travessia única (o modo vivo do --auto não a tem) ----
+    let duplicados = arvore.as_ref().and_then(|r| r.duplicaveis.as_ref()).and_then(|d| et.run("duplicados", |_| crate::duplicados::achar(d, &ctl, &crate::duplicados::ORCAMENTO)));
+
     // ---- painel: log + fórmulas reproduzidas ----
     let painel = et.run("painel", |err| {
         let la = log_painel.and_then(|h| h.join().ok()).unwrap_or((Err("thread".into()), Err("thread".into())));
@@ -283,6 +288,7 @@ pub(crate) fn coletar_com(o: &Opcoes, home: &str, ctx: Arc<Ctx>, ctl: Arc<walk::
         tela_log,
         lixo,
         apfs_meta,
+        duplicados,
         interrompida: ctl.cancelado(),
     }
 }
