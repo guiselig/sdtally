@@ -293,7 +293,8 @@ struct GraficoLinha: View {
             if let sel {
                 RuleMark(x: .value("Hora", sel.d))
                     .foregroundStyle(.secondary)
-                    .annotation(position: .top, spacing: 4, overflowResolution: .init(x: .fit(to: .chart), y: .disabled)) {
+                    // Dentro da área do gráfico: ela é recortada (chartPlotStyle), e o cartão em cima dela sumia.
+                    .annotation(position: .top, spacing: 4, overflowResolution: .init(x: .fit(to: .plot), y: .fit(to: .plot))) {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(sel.d.formatted(.dateTime.day(.twoDigits).month(.twoDigits).hour().minute().locale(localApp)))
                                 .font(.caption.weight(.semibold))
