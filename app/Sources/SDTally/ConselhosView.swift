@@ -365,7 +365,11 @@ struct CartaoConselho: View {
                 Spacer()
                 numeros
             }
-            if !c.paths.isEmpty { caminhos }
+            // Duplicados: as cópias agrupadas ficam no cartão do Disco; aqui, só o link.
+            if c.id == "duplicate_files", painel.dados?.duplicates != nil {
+                Button("Ver as cópias agrupadas no Disco ›") { painel.abrir(.armazenamento, rolando: "duplicados") }
+                    .buttonStyle(.link)
+            } else if !c.paths.isEmpty { caminhos }
             Grid(alignment: .leadingFirstTextBaseline, horizontalSpacing: 12, verticalSpacing: 6) {
                 if let f = ficha {
                     linha(String(localized: "O que se perde"), f.loses.texto)
@@ -490,9 +494,11 @@ struct CartaoConselho: View {
 
     private func caminho(_ p: String) -> some View {
         let abs = absoluto(p, home: home)
+        var pasta: ObjCBool = true
+        let arquivo = FileManager.default.fileExists(atPath: abs, isDirectory: &pasta) && !pasta.boolValue
         return HStack(spacing: 8) {
-            Image(systemName: "folder").foregroundStyle(.secondary).accessibilityHidden(true)
-            Text(p).font(.callout.monospaced()).lineLimit(1).truncationMode(.middle).help(abs)
+            Image(systemName: arquivo ? "doc" : "folder").foregroundStyle(.secondary).accessibilityHidden(true)
+            Text(rotuloArquivo(p, home: home)).font(.callout.monospaced()).lineLimit(1).truncationMode(.middle).help(abs)
             Spacer(minLength: 8)
             Button("Mostrar no Finder") { NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: abs)]) }
             Button("Copiar caminho") { copiar(abs) }

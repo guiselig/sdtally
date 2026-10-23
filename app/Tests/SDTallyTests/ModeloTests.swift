@@ -76,6 +76,7 @@ private func fixture(_ nome: String) throws -> Data {
 /// trocado depois de assinado não roda nada.
 @Test func scriptAdminConfereACopia() throws {
     let dir = FileManager.default.temporaryDirectory.appending(path: "sdtally-admin-\(UUID().uuidString)")
+    defer { try? FileManager.default.removeItem(at: dir) }
     try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
     let bin = dir.appending(path: "eco").path
     try Data("#!/bin/sh\necho \"$@\"\n".utf8).write(to: URL(fileURLWithPath: bin))
@@ -429,6 +430,7 @@ private var dados: URL { Bundle.module.resourceURL!.appending(path: "Fixtures/da
     let c2 = try decodificar(Completo.self, try JSONSerialization.data(withJSONObject: v), kind: "auto")
     #expect(Historico.proximoPontoPastas(c2, depois: [p]) == depois)
     let dir = FileManager.default.temporaryDirectory.appending(path: "sdtally-pastas-\(UUID().uuidString)")
+    defer { try? FileManager.default.removeItem(at: dir) }
     try Historico.gravarPontosPastas([p, depois], em: dir)
     #expect(Historico.lerPontosPastas(dir) == [p, depois])
     let velho = PontoPastas(t: "2026-01-01 00:00:00", pastas: [:])
