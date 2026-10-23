@@ -241,7 +241,8 @@ struct GraficoHistorico: View {
                 if let s = i.sistema {
                     PointMark(x: .value("Hora", i.d), y: .value("GB", s))
                         .foregroundStyle(by: .value("Série", Self.sistema))
-                        .symbolSize(50)
+                        // Pontos pequenos: leituras perto umas das outras viravam bolhas sobrepostas.
+                        .symbolSize(12)
                 }
             }
             if let sel {
