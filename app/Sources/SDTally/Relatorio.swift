@@ -404,7 +404,7 @@ private struct PaginaHistorico: View {
         let ps = pontos.compactMap { p in data(p.t).map { (quando: $0, p: p) } }
         titulo(String(localized: "Histórico"))
         if let a = ps.first, let b = ps.last {
-            Text("\(ps.count) pontos, de \(Armazenamento.dataCurta(a.p.t)) a \(Armazenamento.dataCurta(b.p.t)). A linha é o usado menos o que o macOS libera sozinho; os pontos são Dados do Sistema, só onde houve leitura da tela, sem interpolar.")
+            Text("De \(Armazenamento.dataCurta(a.p.t)) a \(Armazenamento.dataCurta(b.p.t)). A linha contínua é o usado menos o que o macOS libera sozinho; a picotada é Dados do Sistema, ligando só as leituras da tela.")
                 .font(.callout).foregroundStyle(.secondary)
         }
         Chart {
@@ -414,8 +414,9 @@ private struct PaginaHistorico: View {
                         .foregroundStyle(termo("tree").cor)
                 }
                 if let sd = x.p.systemData {
-                    PointMark(x: .value("Quando", x.quando), y: .value("GB", Double(sd) / 1e9))
+                    LineMark(x: .value("Quando", x.quando), y: .value("GB", Double(sd) / 1e9), series: .value("s", "sistema"))
                         .foregroundStyle(Marca.dados)
+                        .lineStyle(StrokeStyle(lineWidth: 1.5, dash: [4, 3]))
                 }
             }
         }

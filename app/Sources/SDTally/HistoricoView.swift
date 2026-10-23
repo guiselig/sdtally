@@ -1,7 +1,7 @@
 // Histórico (spec-fase5 §4.1): período e data, gráfico, pastas, "O que mudou desde a última vez" e
 // as medições manuais.
 //   HistoricoView()      lê Painel do ambiente
-//   GraficoHistorico     LineMark + AreaMark, PointMark de Dados do Sistema, chartXSelection
+//   GraficoHistorico     LineMark + AreaMark, linha picotada de Dados do Sistema, chartXSelection
 import Charts
 import SwiftUI
 
@@ -239,10 +239,10 @@ struct GraficoHistorico: View {
                 LineMark(x: .value("Hora", i.d), y: .value("GB", i.usado))
                     .foregroundStyle(by: .value("Série", Self.usado))
                 if let s = i.sistema {
-                    PointMark(x: .value("Hora", i.d), y: .value("GB", s))
+                    // Linha picotada: só liga as leituras da tela, não é medida contínua como o usado.
+                    LineMark(x: .value("Hora", i.d), y: .value("GB", s))
                         .foregroundStyle(by: .value("Série", Self.sistema))
-                        // Pontos pequenos: leituras perto umas das outras viravam bolhas sobrepostas.
-                        .symbolSize(12)
+                        .lineStyle(StrokeStyle(lineWidth: 1.5, dash: [4, 3]))
                 }
             }
             if let sel {

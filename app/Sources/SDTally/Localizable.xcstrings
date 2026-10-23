@@ -15359,760 +15359,6 @@
         }
       }
     },
-    "%lld pontos, de %@ a %@. A linha é o usado menos o que o macOS libera sozinho; os pontos são Dados do Sistema, só onde houve leitura da tela, sem interpolar." : {
-      "localizations" : {
-        "pt-BR" : {
-          "variations" : {
-            "plural" : {
-              "zero" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld pontos, de %@ a %@. A linha é o usado menos o que o macOS libera sozinho; os pontos são Dados do Sistema, só onde houve leitura da tela, sem interpolar."
-                }
-              },
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld ponto, de %@ a %@. A linha é o usado menos o que o macOS libera sozinho; os pontos são Dados do Sistema, só onde houve leitura da tela, sem interpolar."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld pontos, de %@ a %@. A linha é o usado menos o que o macOS libera sozinho; os pontos são Dados do Sistema, só onde houve leitura da tela, sem interpolar."
-                }
-              }
-            }
-          }
-        },
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld point, from %@ to %@. The line is used minus what macOS frees on its own; the points are System Data, only where the screen was read, with no interpolation."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld points, from %@ to %@. The line is used minus what macOS frees on its own; the points are System Data, only where the screen was read, with no interpolation."
-                }
-              }
-            }
-          }
-        },
-        "it" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punto, da %@ a %@. La linea è l’usato meno ciò che macOS libera da solo; i punti sono Dati sistema, solo dove la schermata è stata letta, senza interpolazione."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punti, da %@ a %@. La linea è l’usato meno ciò che macOS libera da solo; i punti sono Dati sistema, solo dove la schermata è stata letta, senza interpolazione."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punti, da %@ a %@. La linea è l’usato meno ciò che macOS libera da solo; i punti sono Dati sistema, solo dove la schermata è stata letta, senza interpolazione."
-                }
-              }
-            }
-          }
-        },
-        "uk" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Точок: %lld, від %@ до %@. Лінія — це використане мінус те, що macOS звільняє сама; точки — Системні дані, лише там, де екран було прочитано, без інтерполяції."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Точок: %lld, від %@ до %@. Лінія — це використане мінус те, що macOS звільняє сама; точки — Системні дані, лише там, де екран було прочитано, без інтерполяції."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Точок: %lld, від %@ до %@. Лінія — це використане мінус те, що macOS звільняє сама; точки — Системні дані, лише там, де екран було прочитано, без інтерполяції."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Точок: %lld, від %@ до %@. Лінія — це використане мінус те, що macOS звільняє сама; точки — Системні дані, лише там, де екран було прочитано, без інтерполяції."
-                }
-              }
-            }
-          }
-        },
-        "ru" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld точка, с %@ по %@. Линия — занятое минус то, что macOS освобождает сам; точки — «Системные данные», только там, где экран был прочитан, без интерполяции."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld точки, с %@ по %@. Линия — занятое минус то, что macOS освобождает сам; точки — «Системные данные», только там, где экран был прочитан, без интерполяции."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld точек, с %@ по %@. Линия — занятое минус то, что macOS освобождает сам; точки — «Системные данные», только там, где экран был прочитан, без интерполяции."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld точки, с %@ по %@. Линия — занятое минус то, что macOS освобождает сам; точки — «Системные данные», только там, где экран был прочитан, без интерполяции."
-                }
-              }
-            }
-          }
-        },
-        "sv" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punkt, från %@ till %@. Linjen är det använda minus det som macOS frigör själv; punkterna är Systemdata, bara där vyn lästes, utan interpolering."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punkter, från %@ till %@. Linjen är det använda minus det som macOS frigör själv; punkterna är Systemdata, bara där vyn lästes, utan interpolering."
-                }
-              }
-            }
-          }
-        },
-        "da" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punkt, fra %@ til %@. Linjen er det brugte minus det, macOS frigiver af sig selv; punkterne er Systemdata, kun hvor skærmen blev aflæst, uden interpolation."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punkter, fra %@ til %@. Linjen er det brugte minus det, macOS frigiver af sig selv; punkterne er Systemdata, kun hvor skærmen blev aflæst, uden interpolation."
-                }
-              }
-            }
-          }
-        },
-        "nb" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punkt, fra %@ til %@. Linjen er det brukte minus det macOS frigjør selv; punktene er Systemdata, bare der skjermbildet ble lest, uten interpolasjon."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punkter, fra %@ til %@. Linjen er det brukte minus det macOS frigjør selv; punktene er Systemdata, bare der skjermbildet ble lest, uten interpolasjon."
-                }
-              }
-            }
-          }
-        },
-        "zh-Hant" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld 個資料點，從 %@ 到 %@。線是已用空間扣除 macOS 自行釋出的部分；資料點為系統資料，僅限有讀取畫面之處，不做內插。"
-                }
-              }
-            }
-          }
-        },
-        "pt-PT" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld ponto, de %@ a %@. A linha é o utilizado menos o que o macOS liberta sozinho; os pontos são Dados do sistema, só onde houve leitura do ecrã, sem interpolar."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld pontos, de %@ a %@. A linha é o utilizado menos o que o macOS liberta sozinho; os pontos são Dados do sistema, só onde houve leitura do ecrã, sem interpolar."
-                }
-              }
-            }
-          }
-        },
-        "zh-Hans" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld 个数据点，从 %@ 到 %@。线条是已用空间减去 macOS 自动释放的部分；数据点是系统数据，仅限读取过页面的时候，不做插值。"
-                }
-              }
-            }
-          }
-        },
-        "ja" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld個の点（%@〜%@）。線は使用量からmacOSが自動で解放する分を引いた値です。点はシステムデータの値で、画面を読み取れた時点のみを示し、補間はしていません。"
-                }
-              }
-            }
-          }
-        },
-        "cs" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld bod, od %@ do %@. Čára je použité místo minus to, co macOS uvolní samo; body jsou Systémová data, jen tam, kde proběhlo čtení obrazovky, bez interpolace."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld body, od %@ do %@. Čára je použité místo minus to, co macOS uvolní samo; body jsou Systémová data, jen tam, kde proběhlo čtení obrazovky, bez interpolace."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld bodu, od %@ do %@. Čára je použité místo minus to, co macOS uvolní samo; body jsou Systémová data, jen tam, kde proběhlo čtení obrazovky, bez interpolace."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld bodů, od %@ do %@. Čára je použité místo minus to, co macOS uvolní samo; body jsou Systémová data, jen tam, kde proběhlo čtení obrazovky, bez interpolace."
-                }
-              }
-            }
-          }
-        },
-        "ko" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld개 지점, %@부터 %@까지. 선은 사용량에서 macOS가 자동으로 비우는 양을 뺀 값이고, 점은 시스템 데이터이며 화면을 읽은 곳에만 있고 보간하지 않았습니다."
-                }
-              }
-            }
-          }
-        },
-        "ar" : {
-          "variations" : {
-            "plural" : {
-              "zero" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld نقطة، من %@ إلى %@. الخط هو المستخدم مطروحًا منه ما يحرره macOS تلقائيًا؛ والنقاط هي بيانات النظام، فقط حيث جرت قراءة الشاشة، بدون استيفاء."
-                }
-              },
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "نقطة واحدة، من %@ إلى %@. الخط هو المستخدم مطروحًا منه ما يحرره macOS تلقائيًا؛ والنقطة هي بيانات النظام، فقط حيث جرت قراءة الشاشة، بدون استيفاء."
-                }
-              },
-              "two" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "نقطتان، من %@ إلى %@. الخط هو المستخدم مطروحًا منه ما يحرره macOS تلقائيًا؛ والنقطتان هما بيانات النظام، فقط حيث جرت قراءة الشاشة، بدون استيفاء."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld نقاط، من %@ إلى %@. الخط هو المستخدم مطروحًا منه ما يحرره macOS تلقائيًا؛ والنقاط هي بيانات النظام، فقط حيث جرت قراءة الشاشة، بدون استيفاء."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld نقطة، من %@ إلى %@. الخط هو المستخدم مطروحًا منه ما يحرره macOS تلقائيًا؛ والنقاط هي بيانات النظام، فقط حيث جرت قراءة الشاشة، بدون استيفاء."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld نقطة، من %@ إلى %@. الخط هو المستخدم مطروحًا منه ما يحرره macOS تلقائيًا؛ والنقاط هي بيانات النظام، فقط حيث جرت قراءة الشاشة، بدون استيفاء."
-                }
-              }
-            }
-          }
-        },
-        "ca" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punt, de %@ a %@. La línia és l’utilitzat menys el que macOS allibera automàticament; els punts són Dades del sistema, només on hi ha hagut lectura de la pantalla, sense interpolar."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punts, de %@ a %@. La línia és l’utilitzat menys el que macOS allibera automàticament; els punts són Dades del sistema, només on hi ha hagut lectura de la pantalla, sense interpolar."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punts, de %@ a %@. La línia és l’utilitzat menys el que macOS allibera automàticament; els punts són Dades del sistema, només on hi ha hagut lectura de la pantalla, sense interpolar."
-                }
-              }
-            }
-          }
-        },
-        "de" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld Punkt, von %@ bis %@. Die Linie ist das Belegte abzüglich dessen, was macOS von selbst freigibt; die Punkte sind Systemdaten, nur wo der Bildschirm gelesen wurde, ohne Interpolation."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld Punkte, von %@ bis %@. Die Linie ist das Belegte abzüglich dessen, was macOS von selbst freigibt; die Punkte sind Systemdaten, nur wo der Bildschirm gelesen wurde, ohne Interpolation."
-                }
-              }
-            }
-          }
-        },
-        "el" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld σημείο, από %@ έως %@. Η γραμμή είναι τα χρησιμοποιημένα μείον όσα ελευθερώνει μόνο του το macOS· τα σημεία είναι Δεδομένα συστήματος, μόνο όπου έγινε ανάγνωση της οθόνης, χωρίς παρεμβολή."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld σημεία, από %@ έως %@. Η γραμμή είναι τα χρησιμοποιημένα μείον όσα ελευθερώνει μόνο του το macOS· τα σημεία είναι Δεδομένα συστήματος, μόνο όπου έγινε ανάγνωση της οθόνης, χωρίς παρεμβολή."
-                }
-              }
-            }
-          }
-        },
-        "fi" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld piste, %@ – %@. Viiva on käytetty miinus se, minkä macOS vapauttaa itse; pisteet ovat Järjestelmätietoja, vain missä näkymä luettiin, ilman interpolointia."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld pistettä, %@ – %@. Viiva on käytetty miinus se, minkä macOS vapauttaa itse; pisteet ovat Järjestelmätietoja, vain missä näkymä luettiin, ilman interpolointia."
-                }
-              }
-            }
-          }
-        },
-        "fr" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld point, du %@ au %@. La ligne est l’espace utilisé moins ce que macOS libère automatiquement ; les points correspondent à Données système, uniquement là où l’écran a été lu, sans interpolation."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld points, du %@ au %@. La ligne est l’espace utilisé moins ce que macOS libère automatiquement ; les points correspondent à Données système, uniquement là où l’écran a été lu, sans interpolation."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld points, du %@ au %@. La ligne est l’espace utilisé moins ce que macOS libère automatiquement ; les points correspondent à Données système, uniquement là où l’écran a été lu, sans interpolation."
-                }
-              }
-            }
-          }
-        },
-        "he" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "נקודה אחת, מ-%@ עד %@. הקו הוא השימוש פחות מה ש-macOS משחרר בעצמו; הנקודות הן נתוני המערכת, רק היכן שמסך הגדרות המערכת נקרא, בלי אינטרפולציה."
-                }
-              },
-              "two" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "שתי נקודות, מ-%@ עד %@. הקו הוא השימוש פחות מה ש-macOS משחרר בעצמו; הנקודות הן נתוני המערכת, רק היכן שמסך הגדרות המערכת נקרא, בלי אינטרפולציה."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld נקודות, מ-%@ עד %@. הקו הוא השימוש פחות מה ש-macOS משחרר בעצמו; הנקודות הן נתוני המערכת, רק היכן שמסך הגדרות המערכת נקרא, בלי אינטרפולציה."
-                }
-              }
-            }
-          }
-        },
-        "hi" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld पॉइंट, %@ से %@ तक। रेखा इस्तेमाल में से वह घटाकर है जो macOS अपने-आप खाली करता है; पॉइंट सिस्टम डेटा हैं, सिर्फ़ वहीं जहाँ स्क्रीन पढ़ी गई, बिना इंटरपोलेशन के।"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld पॉइंट, %@ से %@ तक। रेखा इस्तेमाल में से वह घटाकर है जो macOS अपने-आप खाली करता है; पॉइंट सिस्टम डेटा हैं, सिर्फ़ वहीं जहाँ स्क्रीन पढ़ी गई, बिना इंटरपोलेशन के।"
-                }
-              }
-            }
-          }
-        },
-        "hr" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld točka, od %@ do %@. Crta je iskorišteno minus ono što macOS oslobađa sam; točke su Podaci sustava, samo ondje gdje je zaslon pročitan, bez interpolacije."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld točke, od %@ do %@. Crta je iskorišteno minus ono što macOS oslobađa sam; točke su Podaci sustava, samo ondje gdje je zaslon pročitan, bez interpolacije."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld točaka, od %@ do %@. Crta je iskorišteno minus ono što macOS oslobađa sam; točke su Podaci sustava, samo ondje gdje je zaslon pročitan, bez interpolacije."
-                }
-              }
-            }
-          }
-        },
-        "id" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld titik, dari %@ sampai %@. Garisnya adalah yang terpakai dikurangi yang dibebaskan macOS sendiri; titiknya adalah Data Sistem, hanya di tempat layar dibaca, tanpa interpolasi."
-                }
-              }
-            }
-          }
-        },
-        "ms" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld titik, dari %@ hingga %@. Garis ialah yang digunakan tolak apa yang dibebaskan macOS sendiri; titik ialah Data Sistem, hanya di mana skrin dibaca, tanpa interpolasi."
-                }
-              }
-            }
-          }
-        },
-        "pl" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punkt, od %@ do %@. Linia to zajęte miejsce minus to, co macOS zwalnia samodzielnie; punkty to Dane systemowe, tylko tam, gdzie odczytano ekran, bez interpolacji."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punkty, od %@ do %@. Linia to zajęte miejsce minus to, co macOS zwalnia samodzielnie; punkty to Dane systemowe, tylko tam, gdzie odczytano ekran, bez interpolacji."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punktów, od %@ do %@. Linia to zajęte miejsce minus to, co macOS zwalnia samodzielnie; punkty to Dane systemowe, tylko tam, gdzie odczytano ekran, bez interpolacji."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punktu, od %@ do %@. Linia to zajęte miejsce minus to, co macOS zwalnia samodzielnie; punkty to Dane systemowe, tylko tam, gdzie odczytano ekran, bez interpolacji."
-                }
-              }
-            }
-          }
-        },
-        "ro" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punct, de la %@ la %@. Linia este spațiul folosit minus ce eliberează macOS singur; punctele sunt Date de sistem, doar unde s-a citit ecranul, fără interpolare."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld puncte, de la %@ la %@. Linia este spațiul folosit minus ce eliberează macOS singur; punctele sunt Date de sistem, doar unde s-a citit ecranul, fără interpolare."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld de puncte, de la %@ la %@. Linia este spațiul folosit minus ce eliberează macOS singur; punctele sunt Date de sistem, doar unde s-a citit ecranul, fără interpolare."
-                }
-              }
-            }
-          }
-        },
-        "sk" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld bod, od %@ do %@. Čiara je použité miesto mínus to, čo macOS uvoľní samo; body sú Systémové dáta, iba tam, kde sa čítala obrazovka, bez interpolácie."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld body, od %@ do %@. Čiara je použité miesto mínus to, čo macOS uvoľní samo; body sú Systémové dáta, iba tam, kde sa čítala obrazovka, bez interpolácie."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld bodu, od %@ do %@. Čiara je použité miesto mínus to, čo macOS uvoľní samo; body sú Systémové dáta, iba tam, kde sa čítala obrazovka, bez interpolácie."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld bodov, od %@ do %@. Čiara je použité miesto mínus to, čo macOS uvoľní samo; body sú Systémové dáta, iba tam, kde sa čítala obrazovka, bez interpolácie."
-                }
-              }
-            }
-          }
-        },
-        "sl" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld točka, od %@ do %@. Črta je uporabljeno minus to, kar macOS sprosti sam; točke so Sistemski podatki, samo kjer je bil zaslon prebran, brez interpolacije."
-                }
-              },
-              "two" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld točki, od %@ do %@. Črta je uporabljeno minus to, kar macOS sprosti sam; točke so Sistemski podatki, samo kjer je bil zaslon prebran, brez interpolacije."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld točke, od %@ do %@. Črta je uporabljeno minus to, kar macOS sprosti sam; točke so Sistemski podatki, samo kjer je bil zaslon prebran, brez interpolacije."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld točk, od %@ do %@. Črta je uporabljeno minus to, kar macOS sprosti sam; točke so Sistemski podatki, samo kjer je bil zaslon prebran, brez interpolacije."
-                }
-              }
-            }
-          }
-        },
-        "tr" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%1$lld nokta, %2$@ ile %3$@ arası. Çizgi, kullanılandan macOS'in kendiliğinden boşalttığının çıkarılmasıdır; noktalar Sistem Verileri'dir, yalnızca ekranın okunduğu yerlerde, ara değer hesaplanmadan."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%1$lld nokta, %2$@ ile %3$@ arası. Çizgi, kullanılandan macOS'in kendiliğinden boşalttığının çıkarılmasıdır; noktalar Sistem Verileri'dir, yalnızca ekranın okunduğu yerlerde, ara değer hesaplanmadan."
-                }
-              }
-            }
-          }
-        },
-        "vi" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld điểm, từ %@ đến %@. Đường là phần đã dùng trừ phần macOS tự giải phóng; các điểm là Dữ liệu hệ thống, chỉ ở nơi đã đọc màn hình, không nội suy."
-                }
-              }
-            }
-          }
-        },
-        "es" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punto, de %@ a %@. La línea es lo usado menos lo que macOS libera por sí solo; los puntos son Datos del sistema, solo donde hubo lectura de la pantalla, sin interpolar."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld puntos, de %@ a %@. La línea es lo usado menos lo que macOS libera por sí solo; los puntos son Datos del sistema, solo donde hubo lectura de la pantalla, sin interpolar."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld puntos, de %@ a %@. La línea es lo usado menos lo que macOS libera por sí solo; los puntos son Datos del sistema, solo donde hubo lectura de la pantalla, sin interpolar."
-                }
-              }
-            }
-          }
-        },
-        "nl" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punt, van %@ tot %@. De lijn is het gebruikte min wat macOS zelf vrijmaakt; de punten zijn Systeemgegevens, alleen waar het scherm is gelezen, zonder interpolatie."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punten, van %@ tot %@. De lijn is het gebruikte min wat macOS zelf vrijmaakt; de punten zijn Systeemgegevens, alleen waar het scherm is gelezen, zonder interpolatie."
-                }
-              }
-            }
-          }
-        },
-        "th" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld จุด ตั้งแต่ %@ ถึง %@ เส้นคือพื้นที่ที่ใช้หักส่วนที่ macOS ล้างให้เอง ส่วนจุดคือข้อมูลระบบ เฉพาะตอนที่อ่านหน้าจอได้ โดยไม่เติมค่าระหว่างจุด"
-                }
-              }
-            }
-          }
-        },
-        "hu" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld pont, %@ és %@ között. A vonal a használt mínusz amit a macOS magától felszabadít; a pontok a Rendszeradatok, csak ahol a képernyő beolvasása megtörtént, interpoláció nélkül."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld pont, %@ és %@ között. A vonal a használt mínusz amit a macOS magától felszabadít; a pontok a Rendszeradatok, csak ahol a képernyő beolvasása megtörtént, interpoláció nélkül."
-                }
-              }
-            }
-          }
-        },
-        "es-419" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld punto, de %@ a %@. La línea es lo usado menos lo que macOS libera por sí solo; los puntos son Datos del sistema, solo donde hubo lectura de la pantalla, sin interpolar."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld puntos, de %@ a %@. La línea es lo usado menos lo que macOS libera por sí solo; los puntos son Datos del sistema, solo donde hubo lectura de la pantalla, sin interpolar."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld puntos, de %@ a %@. La línea es lo usado menos lo que macOS libera por sí solo; los puntos son Datos del sistema, solo donde hubo lectura de la pantalla, sin interpolar."
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "%lld s" : {
       "localizations" : {
         "en" : {
@@ -56327,6 +55573,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dar acceso completo al disco"
+          }
+        }
+      }
+    },
+    "De %@ a %@. A linha contínua é o usado menos o que o macOS libera sozinho; a picotada é Dados do Sistema, ligando só as leituras da tela." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "من %@ إلى %@. الخط المتصل هو المستخدم مطروحًا منه ما يحرره macOS تلقائيًا؛ والخط المتقطع هو بيانات النظام، يصل فقط بين قراءات الشاشة."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De %@ a %@. La línia contínua és l’usat menys el que el macOS allibera sol; la discontínua és Dades del sistema i només uneix les lectures de la pantalla."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Od %@ do %@. Plná čára je využité místo bez toho, co macOS uvolní sám; přerušovaná jsou Systémová data a spojuje jen odečty z obrazovky."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fra %@ til %@. Den fuldt optrukne linje er brugt minus det, macOS selv frigør; den stiplede er Systemdata og forbinder kun aflæsningerne af skærmen."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Von %@ bis %@. Die durchgezogene Linie ist das Belegte abzüglich dessen, was macOS von selbst freigibt; die gestrichelte sind Systemdaten und verbindet nur die Ablesungen des Bildschirms."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Από %@ έως %@. Η συνεχής γραμμή είναι ο χρησιμοποιημένος χώρος μείον όσα ελευθερώνει μόνο του το macOS· η διακεκομμένη είναι τα Δεδομένα συστήματος και ενώνει μόνο τις αναγνώσεις της οθόνης."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From %@ to %@. The solid line is used minus what macOS frees on its own; the dashed line is System Data, joining only the screen readings."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De %@ a %@. La línea continua es lo usado menos lo que macOS libera solo; la discontinua es Datos del sistema y solo une las lecturas de la pantalla."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De %@ a %@. La línea continua es lo usado menos lo que macOS libera solo; la discontinua es Datos del sistema y solo une las lecturas de la pantalla."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@–%@. Yhtenäinen viiva on käytetty tila miinus se, minkä macOS vapauttaa itse; katkoviiva on Järjestelmätiedot ja yhdistää vain näytön lukemat."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du %@ au %@. La ligne continue est l’utilisé moins ce que macOS libère seul ; la ligne pointillée est Données système et ne relie que les lectures de l’écran."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מ‑%@ עד %@. הקו הרציף הוא השטח בשימוש פחות מה ש‑macOS משחרר לבד; הקו המקווקו הוא נתוני מערכת ומחבר רק את הקריאות מהמסך."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ से %@ तक। ठोस रेखा उपयोग किए गए स्थान में से macOS के अपने-आप खाली किए गए हिस्से को घटाकर है; बिंदीदार रेखा सिस्टम डेटा है, जो केवल स्क्रीन की रीडिंग को जोड़ती है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Od %@ do %@. Puna crta je zauzeto umanjeno za ono što macOS sam oslobodi; isprekidana su Podaci sustava i spaja samo očitanja zaslona."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ – %@. A folytonos vonal a foglalt hely, levonva, amit a macOS magától felszabadít; a szaggatott a Rendszeradatok, és csak a képernyő leolvasásait köti össze."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dari %@ sampai %@. Garis utuh adalah ruang terpakai dikurangi yang dibebaskan macOS sendiri; garis putus-putus adalah Data Sistem, hanya menghubungkan pembacaan layar."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dal %@ al %@. La linea continua è lo spazio usato meno ciò che macOS libera da solo; quella tratteggiata è Dati di sistema e unisce solo le letture dello schermo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@〜%@。実線は使用量からmacOSが自動で解放する分を引いた値、破線はシステムデータで、画面を読み取った時点だけを結んでいます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@부터 %@까지. 실선은 사용 공간에서 macOS가 스스로 비우는 양을 뺀 값이고, 점선은 시스템 데이터로 화면을 읽은 시점만 잇습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dari %@ hingga %@. Garis penuh ialah ruang digunakan tolak apa yang dibebaskan macOS sendiri; garis putus-putus ialah Data Sistem, hanya menyambung bacaan skrin."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fra %@ til %@. Den heltrukne linjen er brukt minus det macOS frigjør selv; den stiplede er Systemdata og binder bare sammen avlesningene av skjermen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Van %@ tot %@. De doorgetrokken lijn is het gebruikte min wat macOS zelf vrijmaakt; de stippellijn is Systeemdata en verbindt alleen de schermmetingen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Od %@ do %@. Linia ciągła to zajęte miejsce minus to, co macOS zwalnia sam; przerywana to Dane systemowe i łączy tylko odczyty z ekranu."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De %@ a %@. A linha contínua é o espaço usado menos o que o macOS liberta sozinho; a tracejada são Dados do sistema e liga só as leituras do ecrã."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De la %@ la %@. Linia continuă este spațiul folosit minus ce eliberează macOS singur; cea întreruptă sunt Datele de sistem și unește doar citirile ecranului."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "С %@ по %@. Сплошная линия — занятое место за вычетом того, что macOS освобождает сама; пунктирная — Системные данные, соединяет только показания экрана."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Od %@ do %@. Plná čiara je využité miesto bez toho, čo macOS uvoľní sám; prerušovaná sú Systémové dáta a spája len odčítania z obrazovky."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Od %@ do %@. Polna črta je porabljen prostor brez tistega, kar macOS sprosti sam; črtkana so Sistemski podatki in povezuje le odčitke zaslona."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Från %@ till %@. Den heldragna linjen är använt minus det macOS frigör själv; den streckade är Systemdata och binder bara ihop avläsningarna av skärmen."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตั้งแต่ %@ ถึง %@ เส้นทึบคือพื้นที่ที่ใช้ลบส่วนที่ macOS ปล่อยเองได้ เส้นประคือข้อมูลระบบ ซึ่งเชื่อมเฉพาะค่าที่อ่านได้จากหน้าจอ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ile %@ arası. Düz çizgi, kullanılan alandan macOS’in kendiliğinden boşalttığı kısmın çıkarılmış hâlidir; kesikli çizgi Sistem Verileridir ve yalnızca ekran okumalarını birleştirir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "З %@ по %@. Суцільна лінія — зайняте місце без того, що macOS звільняє сама; пунктирна — Системні дані, з’єднує лише показники екрана."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Từ %@ đến %@. Đường liền là dung lượng đã dùng trừ phần macOS tự giải phóng; đường nét đứt là Dữ liệu hệ thống, chỉ nối các lần đọc màn hình."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 至 %@。实线是已用空间减去 macOS 自行释放的部分；虚线是系统数据，只连接读取屏幕的时刻。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 至 %@。實線是已用空間減去 macOS 自行釋放的部分；虛線是系統資料，只連接讀取螢幕的時間點。"
           }
         }
       }
