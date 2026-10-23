@@ -255,10 +255,10 @@ fn escapar_invisiveis() {
 }
 
 #[test]
-fn tools_list_continua_3() {
+fn tools_list_continua_4() {
     let r = mcp::responder(r#"{"jsonrpc":"2.0","id":1,"method":"tools/list"}"#, &mut |_: &str| Ok(Value::Null)).unwrap();
     let t = r["result"]["tools"].as_array().unwrap();
-    assert_eq!(t.len(), 3);
+    assert_eq!(t.len(), 4);
     for x in t {
         let d = x["description"].as_str().unwrap();
         assert!(d.contains(DADOS) && d.contains(AVISO), "{d}");

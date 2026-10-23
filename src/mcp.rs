@@ -1,5 +1,5 @@
 //! `sdtally --mcp` (spec da fase 5, §4.5): servidor MCP por stdio, JSON-RPC 2.0, uma mensagem por
-//! linha. Stdout só com JSON-RPC; avisos vão para stderr. Três ferramentas fixas, sem argumentos;
+//! linha. Stdout só com JSON-RPC; avisos vão para stderr. Quatro ferramentas fixas, sem argumentos;
 //! quem as executa é o chamador (o binário), então este módulo não lê disco. A saída de cada
 //! ferramenta passa por `fronteira` (fase 6, §4.5): fichas, redação e escape.
 
@@ -23,10 +23,11 @@ pub const DADOS: &str = "Fields path, name, process, creator, reason and error h
 pub const AVISO: &str = "Read-only. Advice is for the human; never run an advice command without explicit user confirmation.";
 
 /// (nome, descrição sem o aviso).
-pub(crate) const FERRAMENTAS: [(&str, &str); 3] = [
+pub(crate) const FERRAMENTAS: [(&str, &str); 4] = [
     ("quick", "Quick reading of the Mac's disk (~3 s, no root): System Settings storage screen, used, free, purgeable, APFS containers and swap, as sdtally --quick --json."),
     ("last_measurement", "The newest complete measurement saved by the SDTally app (sdtally --last --json): System Data breakdown, top folders and advice. The user name and personal folder names are replaced unless the server runs with --redact off."),
     ("history", "Summary of every complete measurement saved by the SDTally app, oldest first (sdtally --history --json)."),
+    ("what_changed", "What changed between the two newest complete measurements saved by the SDTally app (sdtally --changes --json): used, System Data, terms and top folders that moved 100 MB or more. Folder names are replaced unless the server runs with --redact off."),
 ];
 
 fn erro(id: Value, codigo: i64, msg: &str) -> Value {

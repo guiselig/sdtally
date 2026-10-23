@@ -293,6 +293,27 @@ mais antiga para a mais nova, cada uma com `generated_at`, `tool`, `root`, `full
 `complete`, `used` (`data_volume.used.bytes`), `unexplained` e `percent_of_used`
 (`data_volume.unexplained`).
 
+## `--changes` (kind `changes`)
+
+`sdtally --changes --json` (e a ferramenta MCP `what_changed`): o que mudou entre as duas medições
+completas mais novas da mesma pasta, na mesma ordem do `--last`. As mesmas regras do "O que mudou"
+do app (`Historico.mudancas`). Menos de duas medições válidas: erro em stderr, saída 2, como o
+`--last` sem medição. Recusa root.
+
+| Chave | O quê |
+|---|---|
+| `from`, `to` | `{generated_at, generated_at_epoch, file}` da penúltima e da última; `generated_at_epoch` é `null` em arquivo antigo; `file` é só o nome do arquivo |
+| `span_seconds` | `to` − `from` pela chave de ordem (época; sem ela, mtime) |
+| `comparable`, `reason` | `false` com `reason`: `interrupted` (uma delas tem `interrupted` em `incomplete_reasons`), `different_modes` (`root`, `full_disk_access` ou `complete` diferentes), `different_versions` (`tool` diferente); senão `true` e `null`. Não comparáveis: `terms` e `folders` vazios |
+| `used` | `{from, to, delta}` de `data_volume.used.bytes`; lado ausente = `null`, e o `delta` também |
+| `system_data` | `{from, to, delta}` de `settings_screen.screen.system_data`; só quando as duas têm |
+| `terms` | `[{key, from, to, delta}]` de `data_volume.terms`, só termos com `bytes` nas duas |
+| `folders` | `[{path, term, folded, from, to, delta}]` das linhas do `top`, pela chave `path`+`term`+`folded` (a primeira de cada chave vale); linha só de um lado tem o outro `null`, nunca `0`, e `delta` = o valor dela (negativo se saiu). Até 30 |
+
+`terms` e `folders`: só |`delta`| ≥ 100 MB (10^8), do maior para o menor. Com redação
+(`--redact names`, ou o padrão do MCP), `folders[].path` passa pelo mesmo balde de `top[].path`,
+linha por linha, sem juntar linhas, e `file` pelo mesmo filtro de nomes.
+
 ## Fase 6: catálogo
 
 Tudo aditivo; `schema_version` continua 1. As fichas vêm de `src/catalogo.rs` (`CATALOGO`), em

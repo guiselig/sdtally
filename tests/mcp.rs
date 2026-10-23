@@ -71,11 +71,11 @@ fn codigos_de_erro() {
 }
 
 #[test]
-fn tools_list_tres_com_schema_e_aviso() {
+fn tools_list_quatro_com_schema_e_aviso() {
     let r = pedir(r#"{"jsonrpc":"2.0","id":1,"method":"tools/list"}"#).unwrap();
     let t = r["result"]["tools"].as_array().unwrap();
     let nomes: Vec<&str> = t.iter().map(|x| x["name"].as_str().unwrap()).collect();
-    assert_eq!(nomes, ["quick", "last_measurement", "history"]);
+    assert_eq!(nomes, ["quick", "last_measurement", "history", "what_changed"]);
     for x in t {
         assert_eq!(x["inputSchema"], json!({"type": "object", "properties": {}, "additionalProperties": false}));
         assert!(x["description"].as_str().unwrap().contains(AVISO));
@@ -175,7 +175,7 @@ fn mcp_pelo_binario_tres_linhas_jsonrpc() {
     let s = String::from_utf8(o.stdout).unwrap();
     let linhas: Vec<Value> = s.lines().map(|l| serde_json::from_str(l).unwrap()).collect();
     assert_eq!(linhas.len(), 3, "{s}");
-    assert_eq!(linhas[2]["result"]["tools"].as_array().unwrap().len(), 3);
+    assert_eq!(linhas[2]["result"]["tools"].as_array().unwrap().len(), 4);
 }
 
 #[test]
@@ -281,4 +281,119 @@ fn last_ordena_pela_epoca_e_nao_pela_hora_local() {
     let v: Value = serde_json::from_slice(&o.stdout).unwrap();
     let g: Vec<&str> = v["measurements"].as_array().unwrap().iter().map(|m| m["generated_at"].as_str().unwrap()).collect();
     assert_eq!(g, ["2026-10-31 23:00", "2026-11-01 01:50", "2026-11-01 01:10"]);
+}
+
+// ---- --changes e what_changed ----
+
+const GB: i64 = 1_000_000_000;
+
+/// Medição comparável com termos, `top` e Dados do Sistema da tela.
+fn com_pastas(gerada: &str, usado: i64, sd: i64, arvore: i64, top: Value) -> Value {
+    let mut m = medicao(gerada, "sdtally 1.0.2", true);
+    m["data_volume"]["used"]["bytes"] = json!(usado);
+    m["data_volume"]["terms"] = json!([{"key": "tree", "bytes": arvore}, {"key": "snapshots", "bytes": 5 * GB}, {"key": "apfs_metadata", "bytes": null}]);
+    m["settings_screen"] = json!({"screen": {"system_data": sd}});
+    m["top"] = top;
+    m
+}
+
+#[test]
+fn changes_compara_as_duas_mais_novas() {
+    let h = home("changes");
+    // A mais antiga, sem época (vale o mtime), fica de fora: só as duas mais novas contam.
+    gravar(&h, "velha.json", &com_pastas("2026-10-01 09:00", 1, 1, 1, json!([])));
+    mtime(&h, "velha.json", 1_790_000_000);
+    let mut a = com_pastas("2026-10-20 09:00", 400 * GB, 80 * GB, 300 * GB, json!([
+        {"path": "~/Library/Caches", "folded": false, "term": "tree", "bytes": 10 * GB},
+        {"path": "~/Library/Saiu", "folded": false, "term": "tree", "bytes": 2 * GB},
+        {"path": "~/Library/Pouco", "folded": false, "term": "tree", "bytes": GB},
+        {"path": "~/Library", "folded": true, "term": "tree", "bytes": 3 * GB},
+    ]));
+    a.as_object_mut().unwrap().remove("generated_at_epoch");
+    gravar(&h, "a.json", &a);
+    mtime(&h, "a.json", 1_792_000_000);
+    let mut b = com_pastas("2026-10-21 09:00", 403 * GB, 82 * GB, 302 * GB, json!([
+        {"path": "~/Library/Caches", "folded": false, "term": "tree", "bytes": 13 * GB},
+        {"path": "~/Library/Nova", "folded": false, "term": "tree", "bytes": 500_000_000},
+        {"path": "~/ClienteSecreto/Contratos", "folded": false, "term": "tree", "bytes": 150_000_000},
+        {"path": "~/Library/Pouco", "folded": false, "term": "tree", "bytes": GB + 50_000_000},
+        {"path": "~/Library", "folded": true, "term": "tree", "bytes": 3 * GB + 200_000_000},
+    ]));
+    b["generated_at_epoch"] = json!(1_792_086_400_i64);
+    gravar(&h, "b.json", &b);
+
+    let o = rodar(&h, &["--changes", "--json"], "");
+    assert!(o.status.success(), "{}", String::from_utf8_lossy(&o.stderr));
+    let v: Value = serde_json::from_slice(&o.stdout).unwrap();
+    assert_eq!(v["kind"], "changes");
+    assert_eq!(v["from"], json!({"generated_at": "2026-10-20 09:00", "generated_at_epoch": null, "file": "a.json"}));
+    assert_eq!(v["to"]["generated_at_epoch"], 1_792_086_400_i64);
+    assert_eq!(v["span_seconds"], 86_400);
+    assert_eq!(v["comparable"], true);
+    assert_eq!(v["used"], json!({"from": 400 * GB, "to": 403 * GB, "delta": 3 * GB}));
+    assert_eq!(v["system_data"], json!({"from": 80 * GB, "to": 82 * GB, "delta": 2 * GB}));
+    // snapshots não mudou; apfs_metadata sem bytes fica de fora.
+    assert_eq!(v["terms"], json!([{"key": "tree", "from": 300 * GB, "to": 302 * GB, "delta": 2 * GB}]));
+    let f = v["folders"].as_array().unwrap();
+    let ps: Vec<(&str, bool)> = f.iter().map(|x| (x["path"].as_str().unwrap(), x["folded"].as_bool().unwrap())).collect();
+    // |Δ| decrescente; 50 MB (Pouco) fica abaixo do limite.
+    assert_eq!(ps, [("~/Library/Caches", false), ("~/Library/Saiu", false), ("~/Library/Nova", false), ("~/Library", true), ("~/ClienteSecreto/Contratos", false)]);
+    assert_eq!(f[1], json!({"path": "~/Library/Saiu", "term": "tree", "folded": false, "from": 2 * GB, "to": null, "delta": -2 * GB}));
+    assert_eq!(f[2]["from"], Value::Null);
+    assert_eq!(f[2]["to"], 500_000_000);
+
+    // Redigido: os caminhos passam pelo balde, linha por linha.
+    let o = rodar(&h, &["--changes", "--json", "--redact", "names"], "");
+    assert!(o.status.success());
+    let r: Value = serde_json::from_slice(&o.stdout).unwrap();
+    assert_eq!(r["folders"].as_array().unwrap().len(), 5);
+    assert_eq!(r["folders"][0]["path"], "~/Library/Caches");
+    assert!(!String::from_utf8_lossy(&o.stdout).contains("ClienteSecreto"));
+
+    // what_changed pelo MCP devolve o mesmo documento (redigido por padrão).
+    let e = r#"{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"what_changed"}}"#;
+    let o = rodar(&h, &["--mcp"], &(e.to_string() + "\n"));
+    assert!(o.status.success());
+    let l: Value = serde_json::from_slice(&o.stdout).unwrap();
+    let m: Value = serde_json::from_str(l["result"]["content"][0]["text"].as_str().unwrap()).unwrap();
+    assert_eq!(m["kind"], "changes");
+    assert_eq!(m["folders"], r["folders"]);
+}
+
+#[test]
+fn changes_nao_compara_modos_diferentes() {
+    let h = home("changes-modos");
+    gravar(&h, "a.json", &com_pastas("2026-10-20 09:00", 400 * GB, 80 * GB, 300 * GB, json!([])));
+    mtime(&h, "a.json", 1_792_000_000);
+    let mut b = com_pastas("2026-10-21 09:00", 410 * GB, 80 * GB, 310 * GB, json!([]));
+    b["root"] = json!(false);
+    b["settings_screen"] = json!({"screen": {"system_data": null}});
+    gravar(&h, "b.json", &b);
+    mtime(&h, "b.json", 1_792_086_400);
+    let o = rodar(&h, &["--changes", "--json"], "");
+    assert!(o.status.success());
+    let v: Value = serde_json::from_slice(&o.stdout).unwrap();
+    assert_eq!(v["comparable"], false);
+    assert_eq!(v["reason"], "different_modes");
+    assert_eq!(v["terms"], json!([]));
+    assert_eq!(v["folders"], json!([]));
+    assert!(v.get("system_data").is_none());
+    assert_eq!(v["used"]["delta"], 10 * GB);
+}
+
+#[test]
+fn changes_falha_com_menos_de_duas_e_exige_json() {
+    let h = home("changes-uma");
+    gravar(&h, "a.json", &medicao("2026-10-20 09:00", "sdtally 1.0.2", true));
+    gravar_ruins(&h);
+    let o = rodar(&h, &["--changes", "--json"], "");
+    assert_eq!(o.status.code(), Some(2));
+    assert!(o.stdout.is_empty());
+    assert!(String::from_utf8_lossy(&o.stderr).contains("fewer than 2"));
+    sem_segredo(&o);
+    for args in [&["--changes"][..], &["--changes", "--json", "--last"], &["--changes", "--json", "--quick"]] {
+        let o = rodar(&h, args, "");
+        assert_eq!(o.status.code(), Some(2), "{args:?}");
+        assert!(String::from_utf8_lossy(&o.stderr).contains("--changes"), "{args:?}");
+    }
 }

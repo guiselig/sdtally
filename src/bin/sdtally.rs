@@ -23,6 +23,8 @@ enum Modo {
     // Acesso por IA (§4.5): só leem o que o app salvou ou o rápido; nunca como root.
     Ultima,
     Historico,
+    /// `--changes --json`: o que mudou entre as duas medições salvas mais novas.
+    Mudancas,
     Mcp,
     Catalogo,
     /// `--redact names --stdin`: redige o JSON da entrada (exportação do app).
@@ -88,6 +90,7 @@ fn args() -> Args {
             "--binary" => a.binario = true,
             "--last" => ia.push(Modo::Ultima),
             "--history" => ia.push(Modo::Historico),
+            "--changes" => ia.push(Modo::Mudancas),
             "--mcp" => ia.push(Modo::Mcp),
             "--catalog" => catalogo = true,
             "--stdin" => stdin = true,
@@ -128,7 +131,7 @@ fn args() -> Args {
         _ => sair(&lang.t("arg_uso")),
     };
     if !ia.is_empty() {
-        // --last e --history exigem --json; --mcp vai sem; nenhum aceita caminho, --quick ou outro deles.
+        // --last, --history e --changes exigem --json; --mcp vai sem; nenhum aceita caminho, --quick ou outro deles.
         let m = ia.remove(0);
         if !ia.is_empty() || !matches!(a.modo, Modo::Conta) || a.rapido || a.json == matches!(m, Modo::Mcp) {
             sair(&lang.t("arg_ia"));
@@ -171,8 +174,8 @@ fn args() -> Args {
         }
         a.modo = Modo::Stdin;
     }
-    // --redact só onde sai uma medição em JSON: completa, rápida, --last, --history, --mcp, --stdin.
-    let medicao_json = matches!(a.modo, Modo::Ultima | Modo::Historico | Modo::Mcp | Modo::Stdin) || (matches!(a.modo, Modo::Conta) && a.json);
+    // --redact só onde sai uma medição em JSON: completa, rápida, --last, --history, --changes, --mcp, --stdin.
+    let medicao_json = matches!(a.modo, Modo::Ultima | Modo::Historico | Modo::Mudancas | Modo::Mcp | Modo::Stdin) || (matches!(a.modo, Modo::Conta) && a.json);
     if a.redact.is_some() && !medicao_json {
         sair(&lang.t("arg_redact"));
     }
@@ -239,7 +242,7 @@ fn no_data(p: &std::path::Path, bruto: &str, lang: Lang) {
 fn main() {
     let a = args();
     let lang = a.lang;
-    if matches!(a.modo, Modo::Ultima | Modo::Historico | Modo::Mcp) {
+    if matches!(a.modo, Modo::Ultima | Modo::Historico | Modo::Mudancas | Modo::Mcp) {
         historico::guarda(sys::e_root()).unwrap_or_else(|k| sair(&lang.t(k)));
     }
     // Panic numa etapa vira erro registrado; SDC_PANIC=1 (CI) deixa a mensagem no stderr.
@@ -312,8 +315,12 @@ fn main() {
         }
         Modo::Catalogo => imprimir(catalogo::json(), None, false),
         // Cru, sem `anexar`: o que sai é o arquivo que o app salvou.
-        Modo::Ultima | Modo::Historico => {
-            let r = if matches!(a.modo, Modo::Ultima) { historico::ultima(&home) } else { historico::historico(&home) };
+        Modo::Ultima | Modo::Historico | Modo::Mudancas => {
+            let r = match a.modo {
+                Modo::Ultima => historico::ultima(&home),
+                Modo::Mudancas => historico::mudancas(&home, red),
+                _ => historico::historico(&home),
+            };
             match r {
                 // Re-serializa: o que sai é o JSON lido, nunca os bytes do arquivo.
                 Ok(v) => imprimir(v, red, false),
@@ -334,6 +341,7 @@ fn main() {
                         Ok(report::json_rapido(&r, &format!("sdtally {VERSAO}"), &data_hora, &home))
                     }
                     "last_measurement" => historico::ultima(&home),
+                    "what_changed" => historico::mudancas(&home, red),
                     _ => historico::historico(&home),
                 };
                 mcp::fronteira(r, red)

@@ -300,9 +300,9 @@ static PT: &[(&str, &str)] = &[
     ("arg_since", "--since só vale com --quick e pede os segundos desde a época da leitura anterior"),
     ("arg_parts", "--parts só vale com --quick e pede uma lista de meta, volumes, swap, uso, purgeable e tela separada por vírgula"),
     ("arg_catalog", "--catalog exige --json e não aceita caminho nem outro modo"),
-    ("arg_ia", "--last e --history exigem --json; --mcp vai sem --json; nenhum aceita caminho, --quick ou outro deles"),
-    ("arg_root", "não rode como root: --last, --history, --mcp e --verify nunca precisam de root"),
-    ("arg_redact", "--redact precisa de names ou off e só vale com saída JSON de medição (--json, --quick, --last, --history, --mcp, --stdin)"),
+    ("arg_ia", "--last, --history e --changes exigem --json; --mcp vai sem --json; nenhum aceita caminho, --quick ou outro deles"),
+    ("arg_root", "não rode como root: --last, --history, --changes, --mcp e --verify nunca precisam de root"),
+    ("arg_redact", "--redact precisa de names ou off e só vale com saída JSON de medição (--json, --quick, --last, --history, --changes, --mcp, --stdin)"),
     ("arg_stdin", "--stdin exige --redact names e não aceita caminho nem outro modo"),
     ("arg_verify", "--verify não aceita caminho, --quick nem outro modo"),
     ("verify_titulo", "Conferência com os comandos da Apple (lado a lado, agora)"),
@@ -336,10 +336,11 @@ uso:
       árvore viva: uma passada inteira e depois só as pastas que o FSEvents avisar; escreve uma
       linha JSON a cada mudança de 10 MB ou mais; como root (o helper do app) abre também as pastas
       protegidas; termina quando o stdin fecha
-  sdtally --last --json | --history --json
-      a medição completa mais nova que o app salvou | o resumo de todas
+  sdtally --last --json | --history --json | --changes --json
+      a medição completa mais nova que o app salvou | o resumo de todas | o que mudou entre as duas
+      mais novas
   sdtally --mcp
-      servidor MCP por stdio para agentes de IA (quick, last_measurement, history); sem root;
+      servidor MCP por stdio para agentes de IA (quick, last_measurement, history, what_changed); sem root;
       redige por padrão (--redact off desliga)
   sdtally --redact names --stdin
       redige o JSON de uma medição lido da entrada (até 20 MB)
@@ -499,9 +500,9 @@ static EN: &[(&str, &str)] = &[
     ("arg_since", "--since only works with --quick and takes the seconds since the epoch of the previous reading"),
     ("arg_parts", "--parts only works with --quick and takes a comma-separated list of meta, volumes, swap, uso, purgeable and tela"),
     ("arg_catalog", "--catalog requires --json and takes no path or other mode"),
-    ("arg_ia", "--last and --history require --json; --mcp goes without --json; none takes a path, --quick or another of them"),
-    ("arg_root", "do not run as root: --last, --history, --mcp and --verify never need root"),
-    ("arg_redact", "--redact needs names or off and only works with measurement JSON output (--json, --quick, --last, --history, --mcp, --stdin)"),
+    ("arg_ia", "--last, --history and --changes require --json; --mcp goes without --json; none takes a path, --quick or another of them"),
+    ("arg_root", "do not run as root: --last, --history, --changes, --mcp and --verify never need root"),
+    ("arg_redact", "--redact needs names or off and only works with measurement JSON output (--json, --quick, --last, --history, --changes, --mcp, --stdin)"),
     ("arg_stdin", "--stdin requires --redact names and takes no path or other mode"),
     ("arg_verify", "--verify takes no path, --quick or other mode"),
     ("verify_titulo", "Check against Apple's commands (side by side, now)"),
@@ -536,10 +537,11 @@ usage:
       live tree: one full pass, then only the folders FSEvents reports; writes one JSON line per
       change of 10 MB or more; as root (the app helper) it also opens protected folders;
       ends when stdin closes
-  sdtally --last --json | --history --json
-      the newest complete measurement saved by the app | a summary of all of them
+  sdtally --last --json | --history --json | --changes --json
+      the newest complete measurement saved by the app | a summary of all of them | what changed
+      between the two newest
   sdtally --mcp
-      MCP server over stdio for AI agents (quick, last_measurement, history); no root;
+      MCP server over stdio for AI agents (quick, last_measurement, history, what_changed); no root;
       redacts by default (--redact off turns it off)
   sdtally --redact names --stdin
       redacts the JSON of a measurement read from stdin (up to 20 MB)

@@ -114,7 +114,7 @@ Also in the app:
 - Raw attributes of one file or folder (`sdtally why <path>`).
 - A live tree driven by FSEvents (`--auto`), one JSON line per change.
 - A cross-check against Apple's own commands (`--verify`).
-- Read access to the measurements the app saved (`--last`, `--history`) and an MCP server for AI agents (`--mcp`).
+- Read access to the measurements the app saved (`--last`, `--history`, `--changes`) and an MCP server for AI agents (`--mcp`).
 
 ## Requirements
 
@@ -237,6 +237,7 @@ Why space may not come back (measured only)
 | `sdtally --auto` | Live tree: one full pass, then only folders FSEvents reports. One JSON line per change of 10 MB or more, until stdin closes | Optional (the app's helper runs it as root) |
 | `sdtally --last --json` | The newest full measurement saved by the app | Refuses root |
 | `sdtally --history --json` | A summary of every saved full measurement, oldest first | Refuses root |
+| `sdtally --changes --json` | What changed between the two newest saved full measurements (used, System Data, terms and folders that moved 100 MB or more) | Refuses root |
 | `sdtally --mcp` | MCP server over stdio for AI agents | Refuses root |
 | `sdtally --redact names --stdin` | Redacts a measurement JSON read from stdin (up to 20 MB) | Not needed |
 | `sdtally --catalog --json` | The explanation cards and how each data source was checked | Not needed |
@@ -272,12 +273,13 @@ For AI agents, these commands never run as root and never measure as administrat
 sdtally --quick --json --redact names    # the quick reading, no root
 sdtally --last --json --redact names     # the newest full measurement the app saved
 sdtally --history --json                 # a summary of all saved measurements
+sdtally --changes --json                 # what changed between the two newest
 claude mcp add sdtally -- sdtally --mcp  # MCP server over stdio
 ```
 
 If you installed only the app, use the embedded binary, for example `"/Applications/SDTally.app/Contents/Helpers/sdtally" --mcp`. The app's Info section has these commands ready to copy with the right path.
 
-The MCP server exposes three tools, without arguments: `quick`, `last_measurement` and `history`. Over MCP:
+The MCP server exposes four tools, without arguments: `quick`, `last_measurement`, `history` and `what_changed`. Over MCP:
 
 - The user name and personal folder names are replaced before anything leaves `sdtally` (`--mcp --redact off` turns this off). Known folders such as `~/Library/Caches` and app identifiers stay visible. Numbers are never changed and rows are never merged.
 - Control, bidirectional and invisible characters in strings that come from disk are escaped, and those strings are cut at 256 characters. The fields `path`, `name`, `process`, `creator`, `reason` and `error` hold text from disk and are marked as data, never instructions.
@@ -354,7 +356,7 @@ Everything the app saves lives in `~/Library/Application Support/SDTally`:
 | `pastas.jsonl` | Hourly samples of the largest folders from Automatic | 90 days |
 | `auto.json` | The last line of Automatic, so the app opens with numbers while a new pass runs | Overwritten |
 
-The CLI writes nothing. `--last` and `--history` only read `Medicoes/`, skipping symlinks, files over 20 MB and files with an unexpected schema. **File > Show Saved Measurements in Finder** opens the folder.
+The CLI writes nothing. `--last`, `--history` and `--changes` only read `Medicoes/`, skipping symlinks, files over 20 MB and files with an unexpected schema. **File > Show Saved Measurements in Finder** opens the folder.
 
 ## Languages
 
