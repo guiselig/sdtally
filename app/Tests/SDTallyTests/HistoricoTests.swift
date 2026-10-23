@@ -226,3 +226,15 @@ private func completo(_ muda: (inout [String: Any]) -> Void) throws -> Completo 
     #expect(eixoTempo(7 * 86_400).0 == .day && eixoTempo(7 * 86_400).1 == 1)
     #expect(eixoTempo(365 * 86_400).0 == .month)
 }
+
+@Test func leiturasPorFaixa() {
+    let a = Date(timeIntervalSince1970: 0)
+    let h = { (s: Double, g: Double) in (d: a.addingTimeInterval(s), gb: g) }
+    // Três leituras que pulam na mesma faixa viram uma: a última, com mínimo e máximo.
+    let itens = [h(100, 290), h(200, 160), h(300, 280), h(4000, 161), h(40_000, 300)]
+    let g = agruparLeituras(itens, dominio: a...a.addingTimeInterval(80_000), partes: 80)
+    #expect(g.count == 3)
+    #expect(g[0].gb == 280 && g[0].min == 160 && g[0].max == 290)
+    // Vão de 10 h sem leitura: outro trecho da linha.
+    #expect(g[1].trecho == 0 && g[2].trecho == 1)
+}

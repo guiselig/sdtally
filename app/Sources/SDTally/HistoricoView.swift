@@ -52,7 +52,7 @@ struct HistoricoView: View {
                             if sistema.isEmpty {
                                 Text("Nenhuma leitura da tela do Ajustes neste período.").foregroundStyle(.secondary)
                             } else {
-                                GraficoLinha(itens: sistema, nome: String(localized: "Dados do Sistema"), cor: Marca.dados, pontos: true,
+                                GraficoLinha(itens: sistema, nome: String(localized: "Dados do Sistema"), cor: Marca.dados, faixas: true,
                                              limite: inicio...fim, janela: $janela).frame(height: 200)
                             }
                         }
@@ -250,6 +250,9 @@ struct GraficoLinha: View {
     let cor: Color
     var area = false
     var pontos = false
+    /// Leituras soltas e que pulam (a tela do Ajustes): uma por faixa de tempo, em degraus, com o
+    /// mínimo e o máximo da faixa numa barra clara (agruparLeituras).
+    var faixas = false
     let limite: ClosedRange<Date>
     @Binding var janela: ClosedRange<Date>?
     @State private var selecao: Date?
@@ -261,9 +264,23 @@ struct GraficoLinha: View {
         let piso = ((vals.min() ?? 0) * 0.95 / 10).rounded(.down) * 10
         let teto = ((vals.max() ?? 1) * 1.02 / 10).rounded(.up) * 10
         let eixo = eixoTempo(dominio.upperBound.timeIntervalSince(dominio.lowerBound))
-        let sel = selecao.flatMap { s in visiveis.min { abs($0.d.timeIntervalSince(s)) < abs($1.d.timeIntervalSince(s)) } }
+        let grupos = faixas ? agruparLeituras(itens, dominio: dominio) : []
+        let perto = { (s: Date, d: Date) in abs(d.timeIntervalSince(s)) }
+        let sel: GrupoLeituras? = selecao.flatMap { s in
+            faixas ? grupos.min { perto(s, $0.d) < perto(s, $1.d) }
+                : visiveis.min { perto(s, $0.d) < perto(s, $1.d) }.map { GrupoLeituras(id: 0, d: $0.d, gb: $0.gb, min: $0.gb, max: $0.gb, trecho: 0) }
+        }
         Chart {
-            ForEach(itens, id: \.d) { i in
+            ForEach(grupos) { g in
+                if g.min < g.max {
+                    RectangleMark(x: .value("Hora", g.d), yStart: .value("GB", g.min), yEnd: .value("GB", g.max), width: 4)
+                        .foregroundStyle(cor.opacity(0.3))
+                }
+                LineMark(x: .value("Hora", g.d), y: .value("GB", g.gb), series: .value("Trecho", g.trecho))
+                    .interpolationMethod(.stepEnd)
+                    .foregroundStyle(cor)
+            }
+            ForEach(faixas ? [] : itens, id: \.d) { i in
                 if area {
                     AreaMark(x: .value("Hora", i.d), yStart: .value("GB", piso), yEnd: .value("GB", i.gb))
                         .foregroundStyle(cor.opacity(0.15))
@@ -281,6 +298,9 @@ struct GraficoLinha: View {
                             Text(sel.d.formatted(.dateTime.day(.twoDigits).month(.twoDigits).hour().minute().locale(localApp)))
                                 .font(.caption.weight(.semibold))
                             Text(verbatim: "\(nome): \(gb(Int64(sel.gb * 1e9)))")
+                            if sel.min < sel.max {
+                                Text("entre \(gb(Int64(sel.min * 1e9))) e \(gb(Int64(sel.max * 1e9))) nesta faixa").foregroundStyle(.secondary)
+                            }
                         }
                         .font(.caption.monospacedDigit())
                         .padding(6)
@@ -320,6 +340,38 @@ struct GraficoLinha: View {
         }
         .environment(\.locale, localApp)
     }
+}
+
+/// Leituras de uma faixa de tempo: a última (`d`, `gb`), o mínimo e o máximo, e o trecho da linha.
+nonisolated struct GrupoLeituras: Identifiable, Equatable {
+    let id: Int
+    let d: Date
+    let gb, min, max: Double
+    let trecho: Int
+}
+
+/// Leituras juntas por faixa (`partes` faixas iguais no trecho visível): a última de cada uma, com o
+/// mínimo e o máximo. Um vão sem leitura maior que 6 faixas e que 2 h começa outro trecho: a linha
+/// não liga leituras distantes como se o valor tivesse andado entre elas.
+nonisolated func agruparLeituras(_ itens: [(d: Date, gb: Double)], dominio: ClosedRange<Date>, partes: Int = 80) -> [GrupoLeituras] {
+    let span = dominio.upperBound.timeIntervalSince(dominio.lowerBound)
+    guard span > 0, partes > 0 else { return [] }
+    let w = span / Double(partes)
+    var porFaixa: [Int: [(d: Date, gb: Double)]] = [:]
+    for i in itens where dominio.contains(i.d) {
+        porFaixa[Int(i.d.timeIntervalSince(dominio.lowerBound) / w), default: []].append(i)
+    }
+    var r: [GrupoLeituras] = []
+    var trecho = 0
+    var anterior: Date?
+    for k in porFaixa.keys.sorted() {
+        let v = porFaixa[k]!.sorted { $0.d < $1.d }
+        if let a = anterior, v[0].d.timeIntervalSince(a) > Swift.max(6 * w, 7200) { trecho += 1 }
+        let gbs = v.map(\.gb)
+        r.append(GrupoLeituras(id: k, d: v[v.count - 1].d, gb: v[v.count - 1].gb, min: gbs.min()!, max: gbs.max()!, trecho: trecho))
+        anterior = v[v.count - 1].d
+    }
+    return r
 }
 
 /// Pega a rolagem que cai sobre ela (monitor local, sem receber cliques nem o hover do gráfico) e
