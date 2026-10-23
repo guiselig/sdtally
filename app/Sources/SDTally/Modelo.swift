@@ -350,6 +350,27 @@ nonisolated struct Completo: Decodable, Sendable {
         let count: Int
         let folders: [Pasta]
     }
+    /// `largest_files[]`: arquivos de 100 MB ou mais da travessia (até 30). `bytes` é o alocado;
+    /// `kind_of_size` ∈ "sparse", "compressed" ou nil, com o lógico em `logical_bytes`.
+    struct ArquivoGrande: Decodable, Sendable {
+        let path: String
+        let bytes: Int64
+        var privateBytes: Int64? = nil
+        var logicalBytes: Int64? = nil
+        var kindOfSize: String? = nil
+    }
+    /// `duplicates`: cópias idênticas (conteúdo, byte a byte). `state` ∈ measured, partial.
+    struct Duplicados: Decodable, Sendable {
+        struct Grupo: Decodable, Sendable {
+            let bytesEach: Int64
+            let copies: Int
+            let wastedBytes: Int64
+            let paths: [String]
+        }
+        let state: String
+        let reason: String?
+        let groups: [Grupo]
+    }
 
     let generatedAt: String
     let tool: String
@@ -373,6 +394,9 @@ nonisolated struct Completo: Decodable, Sendable {
     var cards: MapaFichas? = nil
     var adviceUnchecked: [NaoConferido]? = nil
     var notFreed: [NaoVoltou]? = nil
+    /// Só na medição completa; nil no --auto e em medição salva por um sdtally antigo.
+    var largestFiles: [ArquivoGrande]? = nil
+    var duplicates: Duplicados? = nil
 }
 
 // MARK: - Fase 6: fichas e catálogo (spec-fase6 §3.4)

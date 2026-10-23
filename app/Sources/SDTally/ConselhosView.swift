@@ -90,6 +90,7 @@ nonisolated let titulosFase6: [String: String] = [
     "container_vm": String(localized: "Máquina virtual de contêineres"),
     "whatsapp_data": String(localized: "Dados do WhatsApp"),
     "browser_cache": String(localized: "Cache do navegador"),
+    "duplicate_files": String(localized: "Arquivos duplicados"),
 ]
 
 /// Título do cartão e nome da ficha em "O que não deu para conferir".

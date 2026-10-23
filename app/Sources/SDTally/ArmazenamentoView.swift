@@ -111,6 +111,8 @@ struct ArmazenamentoView: View {
                 if let ia = c?.settingsScreen.appleIntelligence ?? r?.settingsScreen.appleIntelligence { AppleIntelligence(ia: ia) }
                 // Partes do sistema, snapshots, apagados abertos e reiniciar ficam em Dados do Sistema (SistemaView).
                 if let c { RecursosView(c: c).id("recursos") }
+                if let l = c?.largestFiles, !l.isEmpty, let c { MaioresArquivos(arquivos: l, home: c.home).id("maiores") }
+                if let d = c?.duplicates, let c { ArquivosDuplicados(d: d, home: c.home).id("duplicados") }
                 if let c {
                     InformativoBloco(c: c).id("informativo")
                     EstadoMedicao(c: c)
