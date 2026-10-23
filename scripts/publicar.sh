@@ -36,4 +36,4 @@ gh release create "v$versao" "$dmg" -R guiselig/sdtally --target "$head" --title
 
 SDTally is not notarized by Apple. On first launch, open System Settings > Privacy & Security and click \"Open Anyway\".
 
-SHA-256 of the DMG: `$sha` (check with `shasum -a 256 SDTally-$versao.dmg`)."
+SHA-256 of the DMG: \`$sha\` (check with \`shasum -a 256 SDTally-$versao.dmg\`)."
