@@ -171,6 +171,9 @@ private struct PastasNoPeriodo: View {
 
     var body: some View {
         let lista = variacoesPastas(amostras)
+        let padroes = Dictionary(uniqueKeysWithValues: lista.map { v in
+            (v.id, padraoCrescimento(amostras.compactMap { a in a.pastas[v.id].flatMap { b in data(a.t).map { (d: $0, b: b) } } }))
+        })
         VStack(alignment: .leading, spacing: 10) {
             Text("Pastas").font(.title3.weight(.semibold))
                 .help("Uma amostra por hora das maiores pastas do Automático, guardada por 90 dias. Uma pasta só entra na conta quando aparece em duas amostras do período.")
@@ -178,7 +181,7 @@ private struct PastasNoPeriodo: View {
                 Text("Sem duas amostras de pastas neste período.").foregroundStyle(.secondary)
             } else {
                 ForEach(lista) { v in
-                    Button { escolhida = escolhida == v.id ? nil : v.id } label: { linha(v) }
+                    Button { escolhida = escolhida == v.id ? nil : v.id } label: { linha(v, padroes[v.id]) }
                         .buttonStyle(.plain)
                 }
                 if let p = escolhida {
@@ -186,6 +189,10 @@ private struct PastasNoPeriodo: View {
                     let nome = (p as NSString).abbreviatingWithTildeInPath
                     Text(nome).font(.caption).foregroundStyle(.secondary)
                         .lineLimit(1).truncationMode(.middle).padding(.top, 6)
+                    if let c = padroes[p] {
+                        Text(verbatim: "\(c.etiqueta): \(c.detalhe)").font(.caption).foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
                     GraficoLinha(itens: pontos, nome: nome, cor: .teal, pontos: true, limite: limite, janela: $janela)
                         .frame(height: 160)
                 } else {
@@ -195,13 +202,22 @@ private struct PastasNoPeriodo: View {
         }
     }
 
-    private func linha(_ v: VariacaoPasta) -> some View {
+    private func linha(_ v: VariacaoPasta, _ c: Crescimento?) -> some View {
         HStack(alignment: .firstTextBaseline, spacing: 10) {
             Image(systemName: v.delta >= 0 ? "arrow.up.right" : "arrow.down.right")
                 .foregroundStyle(.secondary).frame(width: 18).accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 2) {
                 Text((v.id as NSString).abbreviatingWithTildeInPath).lineLimit(1).truncationMode(.middle)
-                Text(verbatim: "\(gb(v.antes)) → \(gb(v.depois))").font(.caption).foregroundStyle(.secondary)
+                HStack(spacing: 6) {
+                    Text(verbatim: "\(gb(v.antes)) → \(gb(v.depois))").font(.caption).foregroundStyle(.secondary)
+                    // O padrão na janela; o detalhe (inclinação e de quando a quando) no balão.
+                    if let c {
+                        Text(c.etiqueta).font(.caption2.weight(.semibold)).foregroundStyle(.secondary)
+                            .padding(.horizontal, 6).padding(.vertical, 1)
+                            .background(.quaternary, in: .capsule)
+                            .help(c.detalhe)
+                    }
+                }
             }
             Spacer(minLength: 12)
             Text((v.delta >= 0 ? "+" : "−") + gb(abs(v.delta))).monospacedDigit().fontWeight(.semibold)
