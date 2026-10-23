@@ -126,8 +126,6 @@ private struct Glifo: View {
 struct BarraMenusView: View {
     @Environment(Painel.self) private var painel
     @Environment(\.openWindow) private var abrirJanela
-    /// true quando o fundo do sistema foi escondido e o vidro é nosso (VidroDaJanela).
-    @State private var vidro = false
 
     // No padrão dos menus da Apple (Wi-Fi, Bluetooth): título em negrito, seções com cabeçalho
     // cinza, linhas com ícone redondo e valor à direita, separadores recuados, ação no fim.
@@ -162,11 +160,20 @@ struct BarraMenusView: View {
                 abrirJanela(id: "principal")
                 NSApp.activate()
             }
-            .padding(.bottom, 6)
+            // Os mesmos itens do menu de botão direito do ícone (MenuContexto), menos o Abrir.
+            ForEach(Array(itensContexto(barra: true, medindo: painel.medindo, podeParar: painel.podeParar, soAuto: painel.soAuto).enumerated()), id: \.offset) { _, item in
+                switch item {
+                case .medir: AcaoMenu(titulo: String(localized: "Medição completa")) { painel.medirComSenha(); painel.mostrar(.sistema) }
+                case .parar(let ativo): AcaoMenu(titulo: String(localized: "Parar medição")) { painel.parar() }.disabled(!ativo)
+                case .configuracoes: AcaoMenu(titulo: String(localized: "Configurações…"), tecla: "⌘,") { painel.mostrar(.permissoes) }
+                case .separador: separador
+                case .sair: AcaoMenu(titulo: String(localized: "Sair do SDTally"), tecla: "⌘Q") { NSApp.terminate(nil) }
+                case .abrir, .novaJanela: EmptyView()
+                }
+            }
+            Color.clear.frame(height: 6)
         }
         .frame(width: 330)
-        .modifier(FundoMenu(vidro: vidro))
-        .background(VidroDaJanela(vidro: $vidro))
         .onAppear { painel.atualizarSeVelho() }
     }
 
@@ -308,124 +315,30 @@ private struct LinhaMenu: View {
     }
 }
 
-/// Item de ação no fim do menu: texto à esquerda, realce arredondado ao passar o mouse.
+/// Item de ação no fim do menu, como num menu do sistema: texto à esquerda, atalho em cinza à
+/// direita e, ao passar o mouse, o realce na cor de destaque com o texto branco.
 private struct AcaoMenu: View {
     let titulo: String
+    var tecla: String? = nil
     let acao: () -> Void
     @State private var sobre = false
+    @Environment(\.isEnabled) private var ativo
 
     var body: some View {
+        let realce = sobre && ativo
         Button(action: acao) {
-            Text(titulo)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal, 9).padding(.vertical, 4)
-                .background(RoundedRectangle(cornerRadius: 8).fill(sobre ? AnyShapeStyle(.quaternary) : AnyShapeStyle(.clear)))
-                .contentShape(.rect)
+            HStack {
+                Text(titulo)
+                Spacer(minLength: 8)
+                if let tecla { Text(tecla).foregroundStyle(realce ? AnyShapeStyle(.white.opacity(0.8)) : AnyShapeStyle(.secondary)) }
+            }
+            .foregroundStyle(realce ? AnyShapeStyle(.white) : AnyShapeStyle(ativo ? .primary : .tertiary))
+            .padding(.horizontal, 9).padding(.vertical, 4)
+            .background(RoundedRectangle(cornerRadius: 6).fill(realce ? AnyShapeStyle(Color.accentColor) : AnyShapeStyle(.clear)))
+            .contentShape(.rect)
         }
         .buttonStyle(.plain)
         .onHover { sobre = $0 }
         .padding(.horizontal, 5)
-    }
-}
-
-/// Vidro com cantos grandes, como os menus do sistema no macOS 26+, quando o fundo da janela é nosso.
-/// O glassEffect não segue o ajuste "Liquid Glass" de Aparência; ele fica em NSGlassTintAmount
-/// (domínio global, sem API pública), e o tom vem de uma camada do fundo da janela sobre o vidro.
-private struct FundoMenu: ViewModifier {
-    let vidro: Bool
-    @AppStorage("NSGlassTintAmount") private var tom = 0.0
-
-    func body(content: Content) -> some View {
-        if vidro, #available(macOS 26, *) {
-            let t = min(max(tom, 0), 1)
-            content
-                .background(RoundedRectangle(cornerRadius: raioMenu)
-                    .fill(Color(nsColor: .windowBackgroundColor).opacity(0.85 * t)))
-                // O conteúdo dentro do vidro (não ao lado dele): o SwiftUI aplica a vibrancy do texto.
-                .glassEffect(.regular, in: .rect(cornerRadius: raioMenu, style: .continuous))
-                // Sem o fundo padrão do MenuBarExtra: o vidro o refletiria (fosco) e a borda dele aparece.
-                .containerBackground(.clear, for: .window)
-        } else {
-            content
-        }
-    }
-}
-
-private let raioMenu: CGFloat = 18
-
-/// Deixa a janela do MenuBarExtra transparente e esconde o fundo que o sistema põe atrás do
-/// conteúdo, para o vidro de FundoMenu ser o único. Se o fundo do sistema for ancestral do
-/// conteúdo (não dá para esconder sem esconder tudo), só arredonda os cantos dele.
-private struct VidroDaJanela: NSViewRepresentable {
-    @Binding var vidro: Bool
-
-    func makeNSView(context: Context) -> NSView { Vista(aoEntrar: { vidro = $0 }) }
-    func updateNSView(_ v: NSView, context: Context) {}
-
-    final class Vista: NSView {
-        let aoEntrar: (Bool) -> Void
-        init(aoEntrar: @escaping (Bool) -> Void) { self.aoEntrar = aoEntrar; super.init(frame: .zero) }
-        required init?(coder: NSCoder) { nil }
-
-        override func viewDidMoveToWindow() {
-            super.viewDidMoveToWindow()
-            guard #available(macOS 26, *), let w = window, let raiz = w.contentView?.superview ?? w.contentView else { return }
-            var proprio = true
-            func passar(_ v: NSView) {
-                if let e = v as? NSVisualEffectView {
-                    if isDescendant(of: e) {
-                        e.maskImage = Self.mascara
-                        proprio = false
-                    } else {
-                        e.isHidden = true
-                    }
-                }
-                v.subviews.forEach(passar)
-            }
-            passar(raiz)
-            if proprio {
-                w.isOpaque = false
-                w.backgroundColor = .clear
-                // A sombra da janela segue o retângulo dela e traz um contorno de cantos pequenos.
-                w.hasShadow = false
-                self.proprio = true
-                NotificationCenter.default.addObserver(self, selector: #selector(mudouTamanho), name: NSWindow.didResizeNotification, object: w)
-                DispatchQueue.main.async { self.limpar() }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { self.limpar() }
-            }
-            DispatchQueue.main.async { self.aoEntrar(proprio) }
-        }
-
-        private var proprio = false
-        @objc private func mudouTamanho(_ n: Notification) { limpar() }
-
-        // O SwiftUI refaz as camadas de fundo quando a janela muda de tamanho (os 5 chegam).
-        override func layout() {
-            super.layout()
-            if proprio { limpar() }
-        }
-
-        /// O fundo padrão do MenuBarExtra: as vistas antes das nossas (desfoque CABackdropLayer,
-        /// camada clareadora e a do Chameleon) e o fundo da moldura. containerBackground não as tira.
-        private func limpar() {
-            guard let w = window, let h = w.contentView else { return }
-            (h.superview ?? h).layer?.backgroundColor = .clear
-            for v in h.subviews {
-                if String(describing: type(of: v)).hasPrefix("AppKitPlatformViewHost") || isDescendant(of: v) { break }
-                v.isHidden = true
-            }
-            w.invalidateShadow()
-        }
-
-        static let mascara: NSImage = {
-            let r = raioMenu, lado = 2 * r + 1
-            let img = NSImage(size: NSSize(width: lado, height: lado), flipped: false) { rect in
-                NSBezierPath(roundedRect: rect, xRadius: r, yRadius: r).fill()
-                return true
-            }
-            img.capInsets = NSEdgeInsets(top: r, left: r, bottom: r, right: r)
-            img.resizingMode = .stretch
-            return img
-        }()
     }
 }

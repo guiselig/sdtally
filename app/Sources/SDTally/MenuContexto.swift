@@ -30,9 +30,9 @@ enum MenuContexto {
             // Abre a janela em Dados do Sistema, onde fica o cronômetro.
             case .medir: m.addItem(novoItem(String(localized: "Medição completa")) { p.medirComSenha(); p.mostrar(.sistema) })
             case .parar(let ativo): m.addItem(novoItem(String(localized: "Parar medição"), ativo: ativo) { p.parar() })
-            case .configuracoes: m.addItem(novoItem(String(localized: "Configurações…")) { p.mostrar(.permissoes) })
+            case .configuracoes: m.addItem(novoItem(String(localized: "Configurações…"), tecla: ",") { p.mostrar(.permissoes) })
             case .separador: m.addItem(.separator())
-            case .sair: m.addItem(novoItem(String(localized: "Sair do SDTally")) { NSApp.terminate(nil) })
+            case .sair: m.addItem(novoItem(String(localized: "Sair do SDTally"), tecla: "q") { NSApp.terminate(nil) })
             }
         }
         return m
@@ -61,8 +61,9 @@ private final class Acao {
     init(_ bloco: @escaping () -> Void) { self.bloco = bloco }
 }
 
-private func novoItem(_ titulo: String, ativo: Bool = true, acao: @escaping () -> Void) -> NSMenuItem {
-    let i = NSMenuItem(title: titulo, action: #selector(AlvoMenu.rodar(_:)), keyEquivalent: "")
+/// `tecla`: o atalho com ⌘ mostrado à direita, como nos menus do sistema ("Settings… ⌘,").
+private func novoItem(_ titulo: String, ativo: Bool = true, tecla: String = "", acao: @escaping () -> Void) -> NSMenuItem {
+    let i = NSMenuItem(title: titulo, action: #selector(AlvoMenu.rodar(_:)), keyEquivalent: tecla)
     i.target = AlvoMenu.unico
     i.representedObject = Acao(acao)
     i.isEnabled = ativo
