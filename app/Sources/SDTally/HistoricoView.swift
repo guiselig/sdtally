@@ -1,16 +1,21 @@
-// Histórico (spec-fase5 §4.1): período e data, gráfico, pastas, "O que mudou desde a última vez" e
-// as medições manuais.
+// Histórico (spec-fase5 §4.1): período e data; no Automático, Dados do Sistema, espaço usado e pastas;
+// no Manual, "O que mudou desde a última vez" e as medições manuais.
 //   HistoricoView()      lê Painel do ambiente
-//   GraficoHistorico     LineMark + AreaMark, linha picotada de Dados do Sistema, chartXSelection
+//   GraficoLinha         uma série no tempo, valor ao passar o mouse, zoom no tempo pela rolagem
+//   zoomTempo(_:limite:fracao:delta:), eixoTempo(_:)   puras, testadas (HistoricoTests)
+import AppKit
 import Charts
 import SwiftUI
 
-/// Uma página só, nos dois modos: o período (Hora a Ano, terminando na data escolhida), o espaço
-/// usado, as pastas que mais mudaram e as medições manuais do período.
+/// O período (Hora a Ano, terminando na data escolhida) nos dois modos. Automático: Dados do Sistema
+/// em cima e o espaço usado embaixo, com o mesmo zoom no tempo, e as pastas que mais mudaram.
+/// Manual: o que mudou entre as duas últimas medições e as medições manuais do período.
 struct HistoricoView: View {
     @Environment(Painel.self) private var painel
     @State private var periodo = PeriodoHistorico.semana
     @State private var dia = Date.now
+    /// Trecho do período aproximado pela rolagem sobre um gráfico; nil = o período inteiro.
+    @State private var janela: ClosedRange<Date>?
     private static let desligado = Historico.pastaLeitura(env: Foto.env, bundleID: Bundle.main.bundleIdentifier) == nil
 
     var body: some View {
@@ -31,29 +36,48 @@ struct HistoricoView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     // Numa linha quando cabe; senão a data desce (línguas de rótulos longos).
                     ViewThatFits(in: .horizontal) {
-                        HStack { seletorPeriodo; Spacer(minLength: 12); seletorData }
-                        VStack(alignment: .leading, spacing: 10) { seletorPeriodo; seletorData }
+                        HStack { seletorPeriodo; Spacer(minLength: 12); periodoInteiro; seletorData }
+                        VStack(alignment: .leading, spacing: 10) { seletorPeriodo; HStack { seletorData; periodoInteiro } }
                     }
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Espaço usado").font(.title3.weight(.semibold))
-                            .help("Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Os pontos são Dados do Sistema, só onde a tela do Ajustes foi lida.")
+                    if painel.manual && !painel.soAuto {
+                        OQueMudou(medicoes: painel.medicoes).cartao()
+                        ListaMedicoes(medicoes: painel.medicoes.filter { noPeriodo($0.completo.generatedAt) }).cartao()
+                    } else {
                         let pontos = painel.pontos.filter { noPeriodo($0.t) }
-                        if pontos.isEmpty {
-                            Text("Nenhum ponto neste período.").foregroundStyle(.secondary)
-                        } else {
-                            GraficoHistorico(pontos: pontos, inicio: inicio, fim: fim, periodo: periodo).frame(height: 240)
+                        let sistema = pontos.compactMap { p in p.systemData.flatMap { b in data(p.t).map { (d: $0, gb: Double(b) / 1e9) } } }
+                        let usado = pontos.compactMap { p in p.usado.flatMap { u in data(p.t).map { (d: $0, gb: Double(u - (p.purgeable ?? 0)) / 1e9) } } }
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Dados do Sistema").font(.title3.weight(.semibold))
+                                .help("Dados do Sistema como a tela de Armazenamento do Ajustes mostra, só nas horas em que ela foi lida. Role sobre o gráfico para aproximar ou afastar.")
+                            if sistema.isEmpty {
+                                Text("Nenhuma leitura da tela do Ajustes neste período.").foregroundStyle(.secondary)
+                            } else {
+                                GraficoLinha(itens: sistema, nome: String(localized: "Dados do Sistema"), cor: Marca.dados, pontos: true,
+                                             limite: inicio...fim, janela: $janela).frame(height: 200)
+                            }
                         }
-                    }
-                    .cartao()
-                    PastasNoPeriodo(amostras: painel.pontosPastas.filter { noPeriodo($0.t) }, inicio: inicio, fim: fim, periodo: periodo)
                         .cartao()
-                    OQueMudou(medicoes: painel.medicoes).cartao()
-                    ListaMedicoes(medicoes: painel.medicoes.filter { noPeriodo($0.completo.generatedAt) }).cartao()
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Espaço usado").font(.title3.weight(.semibold))
+                                .help("Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Role sobre o gráfico para aproximar ou afastar.")
+                            if usado.isEmpty {
+                                Text("Nenhum ponto neste período.").foregroundStyle(.secondary)
+                            } else {
+                                GraficoLinha(itens: usado, nome: String(localized: "Usado − liberável"), cor: .teal, area: true,
+                                             limite: inicio...fim, janela: $janela).frame(height: 200)
+                            }
+                        }
+                        .cartao()
+                        PastasNoPeriodo(amostras: painel.pontosPastas.filter { noPeriodo($0.t) }, limite: inicio...fim, janela: $janela)
+                            .cartao()
+                    }
                 }
                 .padding(24)
                 .frame(maxWidth: 760)
                 .frame(maxWidth: .infinity)
             }
+            .onChange(of: periodo) { janela = nil }
+            .onChange(of: dia) { janela = nil }
         }
     }
 }
@@ -64,6 +88,11 @@ extension HistoricoView {
             ForEach(PeriodoHistorico.allCases) { Text($0.nome).tag($0) }
         }
         .pickerStyle(.segmented).labelsHidden().fixedSize()
+    }
+
+    /// Só com zoom: volta ao período inteiro.
+    @ViewBuilder private var periodoInteiro: some View {
+        if janela != nil { Button("Ver o período inteiro") { janela = nil } }
     }
 
     private var seletorData: some View {
@@ -99,24 +128,35 @@ enum PeriodoHistorico: CaseIterable, Identifiable {
         }
     }
 
-    /// Marcas do eixo X: de quanto em quanto e com que formato.
-    var passo: (Calendar.Component, Int) {
-        switch self {
-        case .hora: (.minute, 15)
-        case .dia: (.hour, 4)
-        case .semana: (.day, 1)
-        case .mes, .trintaDias: (.day, 7)
-        case .ano: (.month, 1)
-        }
-    }
+}
 
-    var formato: Date.FormatStyle {
-        switch self {
-        case .hora, .dia: .dateTime.hour().minute().locale(localApp)
-        case .semana, .mes, .trintaDias: .dateTime.day(.twoDigits).month(.twoDigits).locale(localApp)
-        case .ano: .dateTime.month(.abbreviated).locale(localApp)
-        }
+/// Marcas do eixo X para um trecho de `s` segundos: de quanto em quanto e com que formato. Segue o
+/// zoom, não o período escolhido.
+nonisolated func eixoTempo(_ s: TimeInterval) -> (Calendar.Component, Int, Date.FormatStyle) {
+    let hora = Date.FormatStyle.dateTime.hour().minute().locale(localApp)
+    let dia = Date.FormatStyle.dateTime.day(.twoDigits).month(.twoDigits).locale(localApp)
+    return switch s {
+    case ..<(2 * 3600): (.minute, 15, hora)
+    case ..<(12 * 3600): (.hour, 2, hora)
+    case ..<(36 * 3600): (.hour, 6, hora)
+    case ..<(10 * 86_400): (.day, 1, dia)
+    case ..<(70 * 86_400): (.day, 7, dia)
+    default: (.month, 1, .dateTime.month(.abbreviated).locale(localApp))
     }
+}
+
+/// Trecho novo depois de rolar `delta` com o ponteiro em `fracao` da largura (0 = começo, 1 = fim):
+/// para cima aproxima, para baixo afasta, com o ponto sob o ponteiro parado. Não sai de `limite`
+/// nem fica menor que 10 min.
+nonisolated func zoomTempo(_ j: ClosedRange<Date>, limite: ClosedRange<Date>, fracao: Double, delta: Double) -> ClosedRange<Date> {
+    let span = j.upperBound.timeIntervalSince(j.lowerBound)
+    let maximo = limite.upperBound.timeIntervalSince(limite.lowerBound)
+    let novo = min(max(span * exp(-delta * 0.02), min(600, maximo)), maximo)
+    let f = min(max(fracao, 0), 1)
+    var a = j.lowerBound.addingTimeInterval(span * f - novo * f)
+    if a < limite.lowerBound { a = limite.lowerBound }
+    if a.addingTimeInterval(novo) > limite.upperBound { a = limite.upperBound.addingTimeInterval(-novo) }
+    return a...a.addingTimeInterval(novo)
 }
 
 // MARK: - Pastas
@@ -125,8 +165,8 @@ enum PeriodoHistorico: CaseIterable, Identifiable {
 /// (ausente numa hora não é zero: só não estava entre as maiores). Clicar mostra a linha dela.
 private struct PastasNoPeriodo: View {
     let amostras: [PontoPastas]
-    let inicio, fim: Date
-    let periodo: PeriodoHistorico
+    let limite: ClosedRange<Date>
+    @Binding var janela: ClosedRange<Date>?
     @State private var escolhida: String?
 
     var body: some View {
@@ -142,18 +182,12 @@ private struct PastasNoPeriodo: View {
                         .buttonStyle(.plain)
                 }
                 if let p = escolhida {
-                    let pontos = amostras.compactMap { a in a.pastas[p].flatMap { b in data(a.t).map { ($0, Double(b) / 1e9) } } }
-                    Text((p as NSString).abbreviatingWithTildeInPath).font(.caption).foregroundStyle(.secondary)
+                    let pontos = amostras.compactMap { a in a.pastas[p].flatMap { b in data(a.t).map { (d: $0, gb: Double(b) / 1e9) } } }
+                    let nome = (p as NSString).abbreviatingWithTildeInPath
+                    Text(nome).font(.caption).foregroundStyle(.secondary)
                         .lineLimit(1).truncationMode(.middle).padding(.top, 6)
-                    Chart(pontos, id: \.0) { d, g in
-                        LineMark(x: .value("Hora", d), y: .value("GB", g)).foregroundStyle(Color.teal)
-                        PointMark(x: .value("Hora", d), y: .value("GB", g)).foregroundStyle(Color.teal).symbolSize(20)
-                    }
-                    .chartXScale(domain: inicio...fim)
-                    .chartYAxis { AxisMarks { v in AxisGridLine(); AxisValueLabel { if let g = v.as(Double.self) { Text(gb(Int64(g * 1e9))) } } } }
-                    .chartXAxis { AxisMarks(values: .stride(by: periodo.passo.0, count: periodo.passo.1)) { _ in AxisGridLine(); AxisValueLabel(format: periodo.formato) } }
-                    .frame(height: 160)
-                    .environment(\.locale, localApp)
+                    GraficoLinha(itens: pontos, nome: nome, cor: .teal, pontos: true, limite: limite, janela: $janela)
+                        .frame(height: 160)
                 } else {
                     Text("Clique numa pasta para ver a linha dela.").font(.caption).foregroundStyle(.secondary)
                 }
@@ -207,42 +241,36 @@ func variacoesPastas(_ amostras: [PontoPastas]) -> [VariacaoPasta] {
 
 // MARK: - Gráfico
 
-/// Linha e área de (usado − purgeable); Dados do Sistema só como ponto, onde houve tela (sem
-/// interpolar). Passar o mouse mostra os valores da hora mais próxima.
-struct GraficoHistorico: View {
-    let pontos: [Ponto]
-    let inicio, fim: Date
-    let periodo: PeriodoHistorico
+/// Uma série no tempo: linha (com área embaixo, se `area`; com pontos, se `pontos`), eixo Y do
+/// trecho visível, o valor da hora mais perto ao passar o mouse e zoom no tempo pela rolagem sobre a
+/// área do gráfico. `janela` é dividida entre os gráficos da tela: o zoom vale para todos.
+struct GraficoLinha: View {
+    let itens: [(d: Date, gb: Double)]
+    let nome: String
+    let cor: Color
+    var area = false
+    var pontos = false
+    let limite: ClosedRange<Date>
+    @Binding var janela: ClosedRange<Date>?
     @State private var selecao: Date?
 
-    private struct Item {
-        let d: Date
-        let usado: Double
-        let sistema: Double?
-    }
-
-    private static let usado = String(localized: "Usado − liberável"), sistema = String(localized: "Dados do Sistema")
-
     var body: some View {
-        let itens = pontos.compactMap { p -> Item? in
-            guard let d = data(p.t), let u = p.usado else { return nil }
-            return Item(d: d, usado: Double(u - (p.purgeable ?? 0)) / 1e9, sistema: p.systemData.map { Double($0) / 1e9 })
-        }
-        let valores = itens.flatMap { [$0.usado] + ($0.sistema.map { [$0] } ?? []) }
-        let piso = ((valores.min() ?? 0) * 0.95 / 10).rounded(.down) * 10
-        let teto = ((valores.max() ?? 1) * 1.02 / 10).rounded(.up) * 10
-        let sel = selecao.flatMap { s in itens.min { abs($0.d.timeIntervalSince(s)) < abs($1.d.timeIntervalSince(s)) } }
+        let dominio = janela ?? limite
+        let visiveis = itens.filter { dominio.contains($0.d) }
+        let vals = (visiveis.isEmpty ? itens : visiveis).map(\.gb)
+        let piso = ((vals.min() ?? 0) * 0.95 / 10).rounded(.down) * 10
+        let teto = ((vals.max() ?? 1) * 1.02 / 10).rounded(.up) * 10
+        let eixo = eixoTempo(dominio.upperBound.timeIntervalSince(dominio.lowerBound))
+        let sel = selecao.flatMap { s in visiveis.min { abs($0.d.timeIntervalSince(s)) < abs($1.d.timeIntervalSince(s)) } }
         Chart {
             ForEach(itens, id: \.d) { i in
-                AreaMark(x: .value("Hora", i.d), yStart: .value("GB", piso), yEnd: .value("GB", i.usado))
-                    .foregroundStyle(Color.teal.opacity(0.15))
-                LineMark(x: .value("Hora", i.d), y: .value("GB", i.usado))
-                    .foregroundStyle(by: .value("Série", Self.usado))
-                if let s = i.sistema {
-                    // Linha picotada: só liga as leituras da tela, não é medida contínua como o usado.
-                    LineMark(x: .value("Hora", i.d), y: .value("GB", s))
-                        .foregroundStyle(by: .value("Série", Self.sistema))
-                        .lineStyle(StrokeStyle(lineWidth: 1.5, dash: [4, 3]))
+                if area {
+                    AreaMark(x: .value("Hora", i.d), yStart: .value("GB", piso), yEnd: .value("GB", i.gb))
+                        .foregroundStyle(cor.opacity(0.15))
+                }
+                LineMark(x: .value("Hora", i.d), y: .value("GB", i.gb)).foregroundStyle(cor)
+                if pontos {
+                    PointMark(x: .value("Hora", i.d), y: .value("GB", i.gb)).foregroundStyle(cor).symbolSize(16)
                 }
             }
             if let sel {
@@ -252,8 +280,7 @@ struct GraficoHistorico: View {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(sel.d.formatted(.dateTime.day(.twoDigits).month(.twoDigits).hour().minute().locale(localApp)))
                                 .font(.caption.weight(.semibold))
-                            Text("\(Self.usado): \(gb(Int64(sel.usado * 1e9)))")
-                            if let s = sel.sistema { Text("\(Self.sistema): \(gb(Int64(s * 1e9)))") }
+                            Text(verbatim: "\(nome): \(gb(Int64(sel.gb * 1e9)))")
                         }
                         .font(.caption.monospacedDigit())
                         .padding(6)
@@ -261,7 +288,6 @@ struct GraficoHistorico: View {
                     }
             }
         }
-        .chartForegroundStyleScale([Self.usado: Color.teal, Self.sistema: Marca.dados])
         .chartYScale(domain: piso...max(teto, piso + 10))
         .chartYAxis {
             AxisMarks { v in
@@ -269,16 +295,63 @@ struct GraficoHistorico: View {
                 AxisValueLabel { if let g = v.as(Double.self) { Text("\(Int(g)) GB") } }
             }
         }
-        .chartXScale(domain: inicio...fim)
+        .chartXScale(domain: dominio)
         .chartXAxis {
-            AxisMarks(values: .stride(by: periodo.passo.0, count: periodo.passo.1)) { _ in
+            AxisMarks(values: .stride(by: eixo.0, count: eixo.1)) { _ in
                 AxisGridLine()
-                AxisValueLabel(format: periodo.formato)
+                AxisValueLabel(format: eixo.2)
             }
         }
+        // Com zoom, as marcas fora do trecho não passam da área do gráfico.
+        .chartPlotStyle { $0.clipped() }
         .chartXSelection(value: $selecao)
-        .chartLegend(position: .bottom, alignment: .leading)
+        .chartOverlay { proxy in
+            GeometryReader { g in
+                if let f = proxy.plotFrame {
+                    let r = g[f]
+                    RolagemZoom { fracao, delta in
+                        janela = zoomTempo(dominio, limite: limite, fracao: fracao, delta: delta)
+                    }
+                    .allowsHitTesting(false)
+                    .frame(width: r.width, height: r.height)
+                    .offset(x: r.minX, y: r.minY)
+                }
+            }
+        }
         .environment(\.locale, localApp)
+    }
+}
+
+/// Pega a rolagem que cai sobre ela (monitor local, sem receber cliques nem o hover do gráfico) e
+/// passa a posição do ponteiro em fração da largura e o quanto rolou; a página não rola junto.
+private struct RolagemZoom: NSViewRepresentable {
+    let aoRolar: (_ fracao: Double, _ delta: Double) -> Void
+
+    func makeNSView(context: Context) -> Vista { Vista() }
+    func updateNSView(_ v: Vista, context: Context) { v.aoRolar = aoRolar }
+
+    final class Vista: NSView {
+        var aoRolar: ((Double, Double) -> Void)?
+        private var monitor: Any?
+
+        override func hitTest(_ p: NSPoint) -> NSView? { nil }
+
+        override func viewDidMoveToWindow() {
+            super.viewDidMoveToWindow()
+            if let monitor { NSEvent.removeMonitor(monitor) }
+            monitor = nil
+            guard window != nil else { return }
+            monitor = NSEvent.addLocalMonitorForEvents(matching: .scrollWheel) { [weak self] e in
+                guard let self, e.window === self.window, e.scrollingDeltaY != 0 else { return e }
+                // Só a parte à vista: o pedaço escondido pela rolagem da página não conta.
+                let r = self.convert(self.visibleRect, to: nil)
+                guard r.width > 0, r.contains(e.locationInWindow) else { return e }
+                let delta = e.hasPreciseScrollingDeltas ? e.scrollingDeltaY : e.scrollingDeltaY * 8
+                let fracao = (e.locationInWindow.x - self.convert(self.bounds, to: nil).minX) / self.bounds.width
+                self.aoRolar?(fracao, delta)
+                return nil
+            }
+        }
     }
 }
 

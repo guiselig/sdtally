@@ -54079,6 +54079,220 @@
         }
       }
     },
+    "Dados do Sistema como a tela de Armazenamento do Ajustes mostra, só nas horas em que ela foi lida. Role sobre o gráfico para aproximar ou afastar." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بيانات النظام كما تعرضها شاشة التخزين في الإعدادات، فقط في الأوقات التي قُرئت فيها. مرّر فوق الرسم البياني للتكبير أو التصغير."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dades del sistema tal com les mostra la pantalla d’Emmagatzematge de Configuració, només a les hores en què es va llegir. Desplaça’t sobre el gràfic per apropar o allunyar."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systémová data, jak je ukazuje obrazovka Úložiště v Nastavení, jen v hodinách, kdy byla přečtena. Posouváním nad grafem přibližujete nebo oddalujete."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systemdata, som skærmen Lagring i Indstillinger viser dem, kun de timer, hvor den blev aflæst. Rul over grafen for at zoome ind eller ud."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systemdaten, wie sie der Bildschirm „Speicher“ in den Einstellungen zeigt, nur zu den Stunden, in denen er abgelesen wurde. Über dem Diagramm scrollen, um zu vergrößern oder zu verkleinern."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τα Δεδομένα συστήματος όπως τα δείχνει η οθόνη Αποθήκευσης στις Ρυθμίσεις, μόνο τις ώρες που διαβάστηκε. Κάντε κύλιση πάνω στο γράφημα για μεγέθυνση ή σμίκρυνση."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "System Data as the Storage screen in Settings shows it, only at the hours it was read. Scroll over the chart to zoom in or out."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datos del sistema tal como los muestra la pantalla de Almacenamiento de Ajustes, solo en las horas en que se leyó. Desplázate sobre el gráfico para acercar o alejar."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datos del sistema tal como los muestra la pantalla de Almacenamiento de Ajustes, solo en las horas en que se leyó. Desplázate sobre el gráfico para acercar o alejar."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Järjestelmätiedot niin kuin Asetusten Tallennustila-näyttö ne näyttää, vain niinä tunteina, joina se luettiin. Vieritä kaavion päällä lähentääksesi tai loitontaaksesi."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Données système telles que l’écran Stockage des Réglages les affiche, seulement aux heures où il a été lu. Faites défiler sur le graphique pour zoomer ou dézoomer."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "נתוני מערכת כפי שמסך האחסון בהגדרות מציג אותם, רק בשעות שבהן הוא נקרא. גללו מעל התרשים כדי להתקרב או להתרחק."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिस्टम डेटा, जैसा सेटिंग्स की स्टोरेज स्क्रीन दिखाती है, केवल उन घंटों में जब उसे पढ़ा गया। ज़ूम इन या आउट करने के लिए चार्ट पर स्क्रॉल करें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podaci sustava kako ih prikazuje zaslon Pohrana u Postavkama, samo u satima kad je očitan. Pomičite nad grafom za približavanje ili udaljavanje."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Rendszeradatok úgy, ahogy a Beállítások Tárhely képernyője mutatja, csak azokban az órákban, amikor leolvastuk. Görgessen a grafikon fölött a nagyításhoz vagy kicsinyítéshez."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data Sistem seperti yang ditampilkan layar Penyimpanan di Pengaturan, hanya pada jam saat layar itu dibaca. Gulir di atas grafik untuk memperbesar atau memperkecil."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dati di sistema come li mostra la schermata Spazio di Impostazioni, solo nelle ore in cui è stata letta. Scorri sul grafico per ingrandire o ridurre."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定のストレージ画面が示すシステムデータで、読み取った時刻だけを示します。グラフの上でスクロールすると拡大・縮小します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정의 저장 공간 화면이 보여 주는 시스템 데이터로, 화면을 읽은 시간에만 표시됩니다. 그래프 위에서 스크롤하면 확대하거나 축소합니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data Sistem seperti yang ditunjukkan skrin Storan dalam Seting, hanya pada jam skrin itu dibaca. Tatal di atas carta untuk zum masuk atau keluar."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systemdata slik Lagring-skjermen i Innstillinger viser dem, bare de timene den ble avlest. Rull over grafen for å zoome inn eller ut."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systeemdata zoals het scherm Opslag in Instellingen ze toont, alleen op de uren waarop het werd gemeten. Scrol boven de grafiek om in of uit te zoomen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dane systemowe tak, jak pokazuje je ekran Pamięć w Ustawieniach, tylko w godzinach, w których został odczytany. Przewijaj nad wykresem, aby przybliżyć lub oddalić."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dados do sistema tal como o ecrã de Armazenamento das Definições os mostra, só nas horas em que foi lido. Desloque sobre o gráfico para aproximar ou afastar."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datele de sistem așa cum le arată ecranul Spațiu de stocare din Configurări, doar la orele la care a fost citit. Derulează peste grafic pentru a mări sau micșora."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Системные данные так, как их показывает экран «Хранилище» в Настройках, только в часы, когда он считывался. Прокрутите над графиком, чтобы приблизить или отдалить."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systémové dáta, ako ich ukazuje obrazovka Úložisko v Nastaveniach, len v hodinách, keď bola prečítaná. Posúvaním nad grafom približujete alebo odďaľujete."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistemski podatki, kot jih prikazuje zaslon Shramba v Nastavitvah, samo ob urah, ko je bil odčitan. Pomikajte nad grafom za povečavo ali pomanjšavo."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Systemdata som skärmen Lagring i Inställningar visar dem, bara de timmar då den lästes av. Rulla över diagrammet för att zooma in eller ut."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ข้อมูลระบบตามที่หน้าจอพื้นที่จัดเก็บในการตั้งค่าแสดง เฉพาะชั่วโมงที่อ่านหน้าจอนั้น เลื่อนบนกราฟเพื่อซูมเข้าหรือออก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar’daki Depolama ekranının gösterdiği Sistem Verileri, yalnızca ekranın okunduğu saatlerde. Yakınlaştırmak veya uzaklaştırmak için grafiğin üzerinde kaydırın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Системні дані так, як їх показує екран «Сховище» в Параметрах, лише в години, коли його зчитували. Прокручуйте над графіком, щоб наблизити або віддалити."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dữ liệu hệ thống như màn hình Dung lượng trong Cài đặt hiển thị, chỉ vào những giờ màn hình đó được đọc. Cuộn trên biểu đồ để phóng to hoặc thu nhỏ."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“设置”中“储存空间”屏幕显示的系统数据，只在读取该屏幕的时刻。在图表上滚动可放大或缩小。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「設定」中「儲存空間」畫面顯示的系統資料，只在讀取該畫面的時間點。在圖表上捲動可放大或縮小。"
+          }
+        }
+      }
+    },
     "Dados do Sistema da tela do Ajustes contra a abertura anterior, guardada no Histórico" : {
       "localizations" : {
         "en" : {
@@ -102757,6 +102971,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ninguno."
+          }
+        }
+      }
+    },
+    "Nenhuma leitura da tela do Ajustes neste período." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا توجد قراءة لشاشة الإعدادات في هذه الفترة."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cap lectura de la pantalla de Configuració en aquest període."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V tomto období žádné čtení obrazovky Nastavení."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen aflæsning af skærmen i Indstillinger i denne periode."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Ablesen des Einstellungsbildschirms in diesem Zeitraum."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Καμία ανάγνωση της οθόνης των Ρυθμίσεων σε αυτή την περίοδο."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Settings screen reading in this period."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ninguna lectura de la pantalla de Ajustes en este período."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ninguna lectura de la pantalla de Ajustes en este período."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei Asetusten näytön lukemia tällä jaksolla."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune lecture de l’écran de Réglages sur cette période."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אין קריאה של מסך ההגדרות בתקופה הזו."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इस अवधि में सेटिंग्स स्क्रीन की कोई रीडिंग नहीं।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nema očitanja zaslona Postavki u ovom razdoblju."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ebben az időszakban nincs leolvasás a Beállítások képernyőjéről."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada pembacaan layar Pengaturan dalam periode ini."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna lettura della schermata di Impostazioni in questo periodo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この期間に設定画面の読み取りはありません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 기간에 설정 화면을 읽은 기록이 없습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiada bacaan skrin Seting dalam tempoh ini."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen avlesning av Innstillinger-skjermen i denne perioden."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen meting van het scherm in Instellingen in deze periode."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak odczytu ekranu Ustawień w tym okresie."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nenhuma leitura do ecrã das Definições neste período."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicio citire a ecranului din Configurări în această perioadă."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "За этот период экран Настроек не считывался."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V tomto období žiadne čítanie obrazovky Nastavení."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V tem obdobju ni odčitkov zaslona Nastavitev."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen avläsning av skärmen i Inställningar under perioden."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไม่มีการอ่านหน้าจอการตั้งค่าในช่วงนี้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu dönemde Ayarlar ekranı okunmadı."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "За цей період екран Параметрів не зчитувався."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có lần đọc màn hình Cài đặt nào trong khoảng này."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此时段没有读取“设置”屏幕。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此時段沒有讀取「設定」畫面。"
           }
         }
       }
@@ -160727,216 +161155,216 @@
         }
       }
     },
-    "Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Os pontos são Dados do Sistema, só onde a tela do Ajustes foi lida." : {
+    "Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Role sobre o gráfico para aproximar ou afastar." : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Used on disk minus what macOS frees up on its own, once an hour (diskutil and CacheDelete). The points are System Data, only where the System Settings screen was read."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Usato sul disco meno ciò che macOS libera da solo, una volta all’ora (diskutil e CacheDelete). I punti sono Dati sistema, solo dove la schermata di Impostazioni di Sistema è stata letta."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Використане на диску мінус те, що macOS звільняє сама, раз на годину (diskutil і CacheDelete). Точки — це Системні дані, лише там, де екран Параметрів системи було прочитано."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Занято на диске минус то, что macOS освобождает сам, раз в час (diskutil и CacheDelete). Точки — «Системные данные», только там, где экран Настроек был прочитан."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Använt på disken minus det som macOS frigör själv, en gång i timmen (diskutil och CacheDelete). Punkterna är Systemdata, bara där vyn i Systeminställningar lästes."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brugt på disken minus det, macOS frigiver af sig selv, én gang i timen (diskutil og CacheDelete). Punkterne er Systemdata, kun hvor skærmen i Systemindstillinger blev aflæst."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brukt på disken minus det macOS frigjør selv, én gang i timen (diskutil og CacheDelete). Punktene er Systemdata, bare der skjermbildet fra Systeminnstillinger ble lest."
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "磁碟已用空間扣除 macOS 自行釋出的部分，每小時一次（diskutil 與 CacheDelete）。資料點為系統資料，僅限讀取過系統設定畫面的時候。"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Utilizado no disco menos o que o macOS liberta sozinho, uma vez por hora (diskutil e CacheDelete). Os pontos são Dados do sistema, só onde o ecrã das Definições do Sistema foi lido."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "磁盘已用空间减去 macOS 自动释放的部分，每小时记录一次（diskutil 和 CacheDelete）。数据点是系统数据，仅限读取过系统设置页面的时候。"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ディスクの使用量から、macOSが自動で解放する分を引いた値を1時間ごとに記録します（diskutilとCacheDelete）。点はシステムデータの値で、システム設定の画面を読み取れたときのみ記録されます。"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Použité místo na disku minus to, co macOS uvolní samo, jednou za hodinu (diskutil a CacheDelete). Body jsou Systémová data, jen tam, kde se četla obrazovka Nastavení systému."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "디스크 사용량에서 macOS가 자동으로 비우는 양을 뺀 값이며, 한 시간에 한 번 계산합니다(diskutil 및 CacheDelete). 지점은 시스템 데이터이며, 시스템 설정 화면을 읽은 경우에만 표시됩니다."
-          }
-        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "المستخدم على القرص مطروحًا منه ما يحرره macOS تلقائيًا، مرة كل ساعة (diskutil وCacheDelete). النقاط هي بيانات النظام، فقط حيث قُرئت شاشة إعدادات النظام."
+            "value" : "المستخدم من القرص مطروحًا منه ما يحرره macOS تلقائيًا، مرة كل ساعة (diskutil وCacheDelete). مرّر فوق الرسم البياني للتكبير أو التصغير."
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Utilitzat al disc menys el que macOS allibera automàticament, un cop per hora (diskutil i CacheDelete). Els punts són Dades del sistema, només on s’ha llegit la pantalla de Configuració del Sistema."
+            "value" : "Usat al disc menys el que el macOS allibera sol, un cop per hora (diskutil i CacheDelete). Desplaça’t sobre el gràfic per apropar o allunyar."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Využité místo na disku bez toho, co macOS uvolní sám, jednou za hodinu (diskutil a CacheDelete). Posouváním nad grafem přibližujete nebo oddalujete."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brugt på disken minus det, macOS selv frigør, én gang i timen (diskutil og CacheDelete). Rul over grafen for at zoome ind eller ud."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Belegt auf der Festplatte abzüglich dessen, was macOS von selbst freigibt, einmal pro Stunde (diskutil und CacheDelete). Die Punkte sind Systemdaten, nur dort, wo der Bildschirm der Systemeinstellungen gelesen wurde."
+            "value" : "Belegt auf der Festplatte abzüglich dessen, was macOS von selbst freigibt, einmal pro Stunde (diskutil und CacheDelete). Über dem Diagramm scrollen, um zu vergrößern oder zu verkleinern."
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Χώρος σε χρήση στον δίσκο μείον όσα ελευθερώνει μόνο του το macOS, μία φορά την ώρα (diskutil και CacheDelete). Τα σημεία είναι Δεδομένα συστήματος, μόνο όπου διαβάστηκε η οθόνη των Ρυθμίσεων συστήματος."
+            "value" : "Χρησιμοποιημένος χώρος στον δίσκο μείον όσα ελευθερώνει μόνο του το macOS, μία φορά την ώρα (diskutil και CacheDelete). Κάντε κύλιση πάνω στο γράφημα για μεγέθυνση ή σμίκρυνση."
           }
         },
-        "fi" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Levyllä käytetty miinus se, minkä macOS vapauttaa itse, kerran tunnissa (diskutil ja CacheDelete). Pisteet ovat Järjestelmätietoja, vain missä Järjestelmäasetusten näkymä luettiin."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Utilisé sur le disque moins ce que macOS libère automatiquement, une fois par heure (diskutil et CacheDelete). Les points correspondent à Données système, uniquement là où l’écran des Réglages Système a été lu."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "בשימוש בכונן פחות מה ש-macOS משחרר בעצמו, פעם בשעה (diskutil ו-CacheDelete). הנקודות הן נתוני המערכת, רק איפה שמסך הגדרות המערכת נקרא."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "डिस्क पर इस्तेमाल में से वह घटाकर जो macOS अपने-आप खाली करता है, घंटे में एक बार (diskutil और CacheDelete)। पॉइंट सिस्टम डेटा के हैं, सिर्फ़ वहीं जहाँ सिस्टम सेटिंग की स्क्रीन पढ़ी गई थी।"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Iskorišteno na disku minus ono što macOS oslobađa sam, jednom na sat (diskutil i CacheDelete). Točke su Podaci sustava, samo ondje gdje je zaslon Postavki sustava pročitan."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Terpakai di disk dikurangi yang dibebaskan macOS sendiri, sekali per jam (diskutil dan CacheDelete). Titiknya adalah Data Sistem, hanya saat layar Pengaturan Sistem dibaca."
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Digunakan pada cakera tolak yang dibebaskan macOS sendiri, sekali sejam (diskutil dan CacheDelete). Titik ialah Data Sistem, hanya di mana skrin Seting Sistem dibaca."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zajęte na dysku minus to, co macOS zwalnia samodzielnie, raz na godzinę (diskutil i CacheDelete). Punkty to Dane systemowe, tylko tam, gdzie odczytano ekran Ustawień."
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Folosit pe disc minus ce eliberează macOS singur, o dată pe oră (diskutil și CacheDelete). Punctele sunt Date de sistem, doar acolo unde ecranul Configurări a fost citit."
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Použité na disku mínus to, čo macOS uvoľní samo, raz za hodinu (diskutil a CacheDelete). Body sú Systémové dáta, iba tam, kde sa čítala obrazovka Systémových nastavení."
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Uporabljeno na disku minus to, kar macOS sprosti sam, enkrat na uro (diskutil in CacheDelete). Točke so Sistemski podatki, samo kjer je bil zaslon Nastavitev prebran."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diskte kullanılan eksi macOS'in kendiliğinden boşalttığı, saatte bir (diskutil ve CacheDelete). Noktalar Sistem Verileri'dir, yalnızca Sistem Ayarları ekranının okunduğu yerlerde."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Đã dùng trên ổ đĩa trừ phần macOS tự giải phóng, mỗi giờ một lần (diskutil và CacheDelete). Các điểm là Dữ liệu hệ thống, chỉ ở nơi màn hình Cài đặt hệ thống được đọc."
+            "value" : "Disk space used minus what macOS frees on its own, once an hour (diskutil and CacheDelete). Scroll over the chart to zoom in or out."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usado en el disco menos lo que macOS libera por sí solo, una vez por hora (diskutil y CacheDelete). Los puntos son Datos del sistema, solo donde se leyó la pantalla de Ajustes del Sistema."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gebruikt op schijf min wat macOS zelf vrijmaakt, eens per uur (diskutil en CacheDelete). De punten zijn Systeemgegevens, alleen waar het scherm van Systeeminstellingen is gelezen."
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "พื้นที่ที่ใช้บนดิสก์ หักส่วนที่ macOS ล้างให้เอง วัดทุกชั่วโมง (diskutil และ CacheDelete) จุดข้อมูลคือข้อมูลระบบ เฉพาะตอนที่อ่านหน้าจอของการตั้งค่าระบบได้"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A lemezen használt hely mínusz amit a macOS magától felszabadít, óránként egyszer (diskutil és CacheDelete). A pontok a Rendszeradatok, csak ahol a Rendszerbeállítások képernyőjét beolvasták."
+            "value" : "Usado en el disco menos lo que macOS libera solo, una vez por hora (diskutil y CacheDelete). Desplázate sobre el gráfico para acercar o alejar."
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usado en el disco menos lo que macOS libera por sí solo, una vez por hora (diskutil y CacheDelete). Los puntos son Datos del sistema, solo donde se leyó la pantalla de Configuración del Sistema."
+            "value" : "Usado en el disco menos lo que macOS libera solo, una vez por hora (diskutil y CacheDelete). Desplázate sobre el gráfico para acercar o alejar."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Levyllä käytetty tila miinus se, minkä macOS vapauttaa itse, kerran tunnissa (diskutil ja CacheDelete). Vieritä kaavion päällä lähentääksesi tai loitontaaksesi."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisé sur le disque moins ce que macOS libère seul, une fois par heure (diskutil et CacheDelete). Faites défiler sur le graphique pour zoomer ou dézoomer."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "השטח בשימוש בדיסק פחות מה ש‑macOS משחרר לבד, פעם בשעה (diskutil ו‑CacheDelete). גללו מעל התרשים כדי להתקרב או להתרחק."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिस्क पर उपयोग किया गया स्थान, macOS के अपने-आप खाली किए गए हिस्से को घटाकर, हर घंटे एक बार (diskutil और CacheDelete)। ज़ूम इन या आउट करने के लिए चार्ट पर स्क्रॉल करें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zauzeto na disku umanjeno za ono što macOS sam oslobodi, jednom na sat (diskutil i CacheDelete). Pomičite nad grafom za približavanje ili udaljavanje."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A lemezen foglalt hely, levonva, amit a macOS magától felszabadít, óránként egyszer (diskutil és CacheDelete). Görgessen a grafikon fölött a nagyításhoz vagy kicsinyítéshez."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruang disk terpakai dikurangi yang dibebaskan macOS sendiri, sekali per jam (diskutil dan CacheDelete). Gulir di atas grafik untuk memperbesar atau memperkecil."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spazio usato sul disco meno ciò che macOS libera da solo, una volta all’ora (diskutil e CacheDelete). Scorri sul grafico per ingrandire o ridurre."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクの使用量からmacOSが自動で解放する分を引いた値で、1時間に1回記録します（diskutilとCacheDelete）。グラフの上でスクロールすると拡大・縮小します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "디스크 사용 공간에서 macOS가 스스로 비우는 양을 뺀 값으로, 한 시간에 한 번 기록합니다(diskutil과 CacheDelete). 그래프 위에서 스크롤하면 확대하거나 축소합니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruang cakera digunakan tolak apa yang dibebaskan macOS sendiri, sekali sejam (diskutil dan CacheDelete). Tatal di atas carta untuk zum masuk atau keluar."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brukt på disken minus det macOS frigjør selv, én gang i timen (diskutil og CacheDelete). Rull over grafen for å zoome inn eller ut."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruikt op de schijf min wat macOS zelf vrijmaakt, eens per uur (diskutil en CacheDelete). Scrol boven de grafiek om in of uit te zoomen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zajęte miejsce na dysku minus to, co macOS zwalnia sam, raz na godzinę (diskutil i CacheDelete). Przewijaj nad wykresem, aby przybliżyć lub oddalić."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espaço usado no disco menos o que o macOS liberta sozinho, uma vez por hora (diskutil e CacheDelete). Desloque sobre o gráfico para aproximar ou afastar."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spațiul folosit pe disc minus ce eliberează macOS singur, o dată pe oră (diskutil și CacheDelete). Derulează peste grafic pentru a mări sau micșora."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Занятое на диске место за вычетом того, что macOS освобождает сама, раз в час (diskutil и CacheDelete). Прокрутите над графиком, чтобы приблизить или отдалить."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Využité miesto na disku bez toho, čo macOS uvoľní sám, raz za hodinu (diskutil a CacheDelete). Posúvaním nad grafom približujete alebo odďaľujete."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Porabljen prostor na disku brez tistega, kar macOS sprosti sam, enkrat na uro (diskutil in CacheDelete). Pomikajte nad grafom za povečavo ali pomanjšavo."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använt på disken minus det macOS frigör själv, en gång i timmen (diskutil och CacheDelete). Rulla över diagrammet för att zooma in eller ut."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "พื้นที่ดิสก์ที่ใช้ลบส่วนที่ macOS ปล่อยเองได้ ชั่วโมงละครั้ง (diskutil และ CacheDelete) เลื่อนบนกราฟเพื่อซูมเข้าหรือออก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diskte kullanılan alandan macOS’in kendiliğinden boşalttığı kısım çıkarılmış hâli, saatte bir (diskutil ve CacheDelete). Yakınlaştırmak veya uzaklaştırmak için grafiğin üzerinde kaydırın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зайняте на диску місце без того, що macOS звільняє сама, раз на годину (diskutil і CacheDelete). Прокручуйте над графіком, щоб наблизити або віддалити."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dung lượng đĩa đã dùng trừ phần macOS tự giải phóng, mỗi giờ một lần (diskutil và CacheDelete). Cuộn trên biểu đồ để phóng to hoặc thu nhỏ."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "磁盘已用空间减去 macOS 自行释放的部分，每小时记录一次（diskutil 和 CacheDelete）。在图表上滚动可放大或缩小。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "磁碟已用空間減去 macOS 自行釋放的部分，每小時記錄一次（diskutil 和 CacheDelete）。在圖表上捲動可放大或縮小。"
           }
         }
       }
@@ -164789,6 +165217,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ver en Qué hacer ›"
+          }
+        }
+      }
+    },
+    "Ver o período inteiro" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عرض الفترة كاملة"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veure tot el període"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zobrazit celé období"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis hele perioden"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganzen Zeitraum zeigen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προβολή όλης της περιόδου"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Whole Period"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver todo el período"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver todo el período"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näytä koko jakso"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir toute la période"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הצגת כל התקופה"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पूरी अवधि देखें"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prikaži cijelo razdoblje"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teljes időszak"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lihat seluruh periode"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra tutto il periodo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "期間全体を表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전체 기간 보기"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lihat seluruh tempoh"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis hele perioden"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hele periode tonen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż cały okres"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver o período inteiro"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vezi toată perioada"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показать весь период"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zobraziť celé obdobie"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prikaži celotno obdobje"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visa hela perioden"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ดูทั้งช่วง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm dönemi göster"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати весь період"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Xem cả khoảng thời gian"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "查看整个时段"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "檢視整個時段"
           }
         }
       }

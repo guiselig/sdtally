@@ -6,7 +6,7 @@ import SwiftUI
 struct AlternadorModo: View {
     @Environment(Painel.self) private var painel
 
-    static func mostra(_ s: Secao) -> Bool { [.sistema, .ranking, .fazer].contains(s) }
+    static func mostra(_ s: Secao) -> Bool { [.sistema, .ranking, .historico, .fazer].contains(s) }
 
     var body: some View {
         @Bindable var painel = painel

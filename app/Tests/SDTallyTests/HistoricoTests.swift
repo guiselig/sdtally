@@ -207,3 +207,22 @@ private func completo(_ muda: (inout [String: Any]) -> Void) throws -> Completo 
     #expect(variacoesPastas(Array(a.prefix(1))).isEmpty)
     #expect(PeriodoHistorico.semana.inicio(data("2026-10-21 12:00:00")!) == data("2026-10-14 12:00:00"))
 }
+
+@Test func zoomNoTempo() {
+    let a = Date(timeIntervalSince1970: 0), b = a.addingTimeInterval(7 * 86_400)
+    // Rolar para cima aproxima em volta do ponteiro: o ponto sob ele fica parado.
+    let z = zoomTempo(a...b, limite: a...b, fracao: 0.5, delta: 50)
+    #expect(z.upperBound.timeIntervalSince(z.lowerBound) < 7 * 86_400)
+    #expect(abs(z.lowerBound.timeIntervalSince(a) + z.upperBound.timeIntervalSince(a) - 7 * 86_400) < 1)
+    // Afastar não passa do período, nem aproximar fica abaixo de 10 min.
+    #expect(zoomTempo(z, limite: a...b, fracao: 0.9, delta: -10_000) == a...b)
+    let perto = zoomTempo(a...b, limite: a...b, fracao: 0, delta: 10_000)
+    #expect(perto == a...a.addingTimeInterval(600))
+}
+
+@Test func eixoSegueOTrecho() {
+    #expect(eixoTempo(3600).0 == .minute && eixoTempo(3600).1 == 15)
+    #expect(eixoTempo(86_400).0 == .hour)
+    #expect(eixoTempo(7 * 86_400).0 == .day && eixoTempo(7 * 86_400).1 == 1)
+    #expect(eixoTempo(365 * 86_400).0 == .month)
+}
