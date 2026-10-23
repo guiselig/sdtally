@@ -12,7 +12,7 @@ import SwiftUI
 
 /// O que o botão de um estado vazio faz; o rótulo é fixo.
 nonisolated enum AcaoVazio: Sendable, Equatable {
-    case abrirArmazenamento, permissoes, medir, medirDeNovo, verArmazenamento, lerAjustes, medidorRoot
+    case abrirArmazenamento, permissoes, medir, medirDeNovo, verArmazenamento, medidorRoot
 
     var rotulo: String {
         switch self {
@@ -21,7 +21,6 @@ nonisolated enum AcaoVazio: Sendable, Equatable {
         case .medir: String(localized: "Calcular com senha…")
         case .medirDeNovo: String(localized: "Calcular de novo")
         case .verArmazenamento: String(localized: "Ver em Dados do Sistema")
-        case .lerAjustes: String(localized: "Ler do Ajustes")
         case .medidorRoot: String(localized: "Calcular como administrador")
         }
     }
@@ -45,26 +44,16 @@ nonisolated enum Vazio: Sendable, Equatable {
     case v8(root: Bool)
     /// `swap.total == 0`.
     case v9
-    /// `denied_folders > 0`.
-    case v11(pastas: Int)
     /// `incomplete_reasons ∋ no_root`: Bloqueado pelo macOS de hoje e, se houver, a medição com senha do histórico.
     case v12(semExplicacao: Int64?, porcento: Double?, dataComSenha: String?, bytesComSenha: Int64?)
-    /// `not_available`.
-    case v13(versao: String)
     /// `time_machine.state == not_measured` com `reason == "plist unreadable"`.
     case v16
     /// Sem itens `safe`, `cost` ou `check_first`.
     case v17
     /// `advice_unchecked != []`: título da seção; as linhas saem de `linhaNaoConferido`.
     case v18
-    /// Histórico: nenhuma medição salva.
-    case v19
     /// O que fazer sem medição completa.
     case v20
-    /// Histórico fora do .app.
-    case v21
-    /// Histórico com uma medição só.
-    case v22
     /// Barra de menus sem tela e sem `Ponto`.
     case v23
 
@@ -78,16 +67,11 @@ nonisolated enum Vazio: Sendable, Equatable {
         case .v7: String(localized: "Snapshots não medidos")
         case .v8: String(localized: "Nenhum apagado ainda aberto")
         case .v9: String(localized: "Sem swap agora")
-        case .v11: String(localized: "Pastas que não abriram")
         case .v12: String(localized: "Medido sem senha")
-        case .v13: String(localized: "Não existe neste macOS")
         case .v16: String(localized: "Estado do Time Machine não lido")
         case .v17: String(localized: "Nada passou de 1 GB")
         case .v18: String(localized: "O que não deu para conferir")
-        case .v19: String(localized: "Nenhuma medição salva")
         case .v20: String(localized: "Falta a medição completa")
-        case .v21: String(localized: "Histórico desligado")
-        case .v22: String(localized: "Só uma medição salva")
         case .v23: String(localized: "Dados do Sistema ainda não lido")
         }
     }
@@ -107,21 +91,16 @@ nonisolated enum Vazio: Sendable, Equatable {
             root ? String(localized: "Nenhum app segurando arquivo apagado (medido).")
                 : String(localized: "Nenhum app segurando arquivo apagado (medido). Sem senha: só seus processos.")
         case .v9: String(localized: "Sem swap agora.")
-        case let .v11(n): n == 1 ? String(localized: "1 pasta não abriu e ficou bloqueada pelo macOS.") : String(localized: "\(n) pastas não abriram e ficaram bloqueadas pelo macOS.")
         case let .v12(b, p, data, antes):
             ([
                 p.map { String(localized: "Bloqueado pelo macOS: \(valorOuNaoMedido(b)) (\($0.formatted(.number.precision(.fractionLength(0...1)).locale(localApp))) %), sem senha.") }
                     ?? String(localized: "Bloqueado pelo macOS: \(valorOuNaoMedido(b)), sem senha."),
                 data.flatMap { d in antes.map { String(localized: "Com senha, em \(d): \(gb($0)).") } },
             ] as [String?]).compactMap { $0 }.joined(separator: " ")
-        case let .v13(v): String(localized: "Não existe no macOS \(v).")
         case .v16: String(localized: "Não deu para ler as preferências do Time Machine.")
         case .v17: String(localized: "Nada passou de 1 GB.")
         case .v18: String(localized: "O que não deu para conferir")
-        case .v19: String(localized: "Nenhuma medição salva.")
         case .v20: String(localized: "Sem medição completa.")
-        case .v21: String(localized: "Histórico desligado fora do .app (desenvolvimento).")
-        case .v22: String(localized: "Só uma medição salva.")
         case .v23: String(localized: "Dados do Sistema não lido.")
         }
     }
@@ -135,24 +114,16 @@ nonisolated enum Vazio: Sendable, Equatable {
         case .v7, .v16: "circle.dashed"
         case .v8: "doc.badge.ellipsis"
         case .v9: "memorychip"
-        case .v11: "lock"
         case .v12: "lock.open"
-        case .v13: "nosign"
         case .v17: "checkmark.circle"
         case .v18: "questionmark.circle"
-        case .v19, .v21, .v22: "clock"
         }
     }
 
     var acao: AcaoVazio? {
         switch self {
         case .v1: .abrirArmazenamento
-        case .v3, .v11: .permissoes
-        case .v5, .v20: .medir
-        case .v7: .medirDeNovo
-        case .v12: .medidorRoot
-        case .v17: .verArmazenamento
-        case .v23: .lerAjustes
+        case .v3: .permissoes
         default: nil
         }
     }

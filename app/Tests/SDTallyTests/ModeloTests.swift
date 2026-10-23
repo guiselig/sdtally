@@ -286,6 +286,23 @@ private var dados: URL { Bundle.module.resourceURL!.appending(path: "Fixtures/da
     #expect(cat.cards["logs"] == nil && cat.cards["homebrew_cache"] != nil)
 }
 
+/// O CLI ainda emite `restart`, `log_out` e `none`: a ficha decodifica inteira, sem essas ações.
+@Test func acoesRemovidasDoAppNaoQuebramADecodificacao() throws {
+    let base = try JSONSerialization.jsonObject(with: fixture("catalogo")) as! [String: Any]
+    let original = try decodificar(Catalogo.self, JSONSerialization.data(withJSONObject: base), kind: "catalog").cards["trash"]
+    for kind in ["restart", "log_out", "none"] {
+        var j = base
+        var cards = j["cards"] as! [String: Any]
+        var f = cards["trash"] as! [String: Any]
+        f["actions"] = [["kind": kind, "target": NSNull(), "command": NSNull()]]
+        cards["trash"] = f
+        j["cards"] = cards
+        let ficha = try #require(decodificar(Catalogo.self, JSONSerialization.data(withJSONObject: j), kind: "catalog").cards["trash"])
+        #expect(ficha.acoes.isEmpty, "\(kind)")
+        #expect(ficha.owner.texto == original?.owner.texto && ficha.step.texto == original?.step.texto && ficha.level == original?.level, "\(kind)")
+    }
+}
+
 @Test func arquivoAntigoSemChavesDaFase6() throws {
     let velha = try decodificar(Completo.self, Data(contentsOf: dados.appending(path: "Medicoes/2026-09-28-1015.json")), kind: nil)
     #expect(velha.cards == nil && velha.bootTime == nil && velha.adviceUnchecked == nil)

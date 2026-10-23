@@ -65,7 +65,7 @@ final class Painel {
     /// Ficha de cada serviço do CacheDelete, da última leitura do sdtally (o catálogo casa pelo nome).
     @ObservationIgnored var fichaDoServico: [String: String] = [:]
     /// stdin do `sdtally --watch` (a tela chega pelo `log stream`). nil: sem escuta, e o laço lê a
-    /// tela como antes, a cada `Ritmo.telaAberta` com o Ajustes aberto.
+    /// tela como antes, a cada `intervaloTela` com o Ajustes aberto.
     @ObservationIgnored var escuta: FileHandle?
     /// `logged_at` da última tela vista (`notarTela`).
     @ObservationIgnored var telaNotada: String?
@@ -396,6 +396,9 @@ final class Painel {
         tarefaVigia = Task { await laco() }
     }
 
+    // Espera entre leituras da tela do Ajustes, sem a escuta: fixa em 5 s (sem ajuste na interface).
+    private nonisolated static let intervaloTela: TimeInterval = 5
+
     /// Ritmo de cada parte. Tela: 5 s esperando o Ajustes, só sem a escuta (`sdtally --watch`).
     /// Volumes: o usado dos montados vem do laço de 1 s; o diskutil só quando um disco ou volume
     /// aparece, some ou monta (`vigiarDiscos`), e na leitura inteira. Uso e swap: no laço de 1 s do
@@ -405,7 +408,7 @@ final class Painel {
     /// (`atualizar()` lê tudo menos a tela).
     nonisolated static func intervalo(_ p: ParteRapido, aguardando: Bool) -> TimeInterval {
         switch p {
-        case .tela: aguardando ? Ritmo.telaAberta.valor : .infinity
+        case .tela: aguardando ? intervaloTela : .infinity
         case .volumes, .uso, .swap, .purgeable, .meta: .infinity
         }
     }

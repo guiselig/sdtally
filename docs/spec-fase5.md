@@ -179,7 +179,7 @@ Também ficam em Permissões:
 - o bloco fixo "O SDTally nunca".
 
 **Informações** (`InfoView.swift`): `IconeApp` de 96 pt, o nome em `.rounded` bold e um `Form(.grouped)` com:
-- Versão `CFBundleShortVersionString` e commit `SDTallyCommit`. Com `Dev.ativo`: "Fora do .app (desenvolvimento)" e `rapido.tool`.
+- Versão `CFBundleShortVersionString`. Com `Dev.ativo`: "Fora do .app (desenvolvimento)" e `rapido.tool`.
 - sdtally: `rapido.tool`. Formato do JSON: schema 1.
 - Repositório: o link `github.com/guiselig/sdtally` ("privado por enquanto"), que só abre no clique. Licença MIT, © 2026 Guilherme Selig.
 - Assinatura: "Apple Development · time XXXXXXXXXX" (`HelperXPC.timeProprio()`, que já existe), ou "ad hoc (o medidor root não funciona)".
@@ -278,8 +278,7 @@ A `BarraView` não é reescrita.
 - O `montar.sh`:
   - roda isso no binário cru;
   - chama `iconutil -c icns` e copia o resultado para `Contents/Resources/SDTally.icns`;
-  - põe `CFBundleIconFile` no Info.plist;
-  - grava `SDTallyCommit` (`git rev-parse --short HEAD`).
+  - põe `CFBundleIconFile` no Info.plist.
 - Nenhum binário entra no repositório.
 
 ## 4. Funções
@@ -517,7 +516,7 @@ Há duas trilhas que não compartilham arquivo: **Rust** (R1 → R2 → R3) e **
 | **R2** Conselhos | `src/conselho.rs`, `src/lib.rs`, `src/bin/sdtally.rs` (`v["advice"]`), `docs/json-schema.md`, `tests/conselho.rs` | `cargo test`: `so_de_medido`; `dobrado_dentro_conta`; `dobrado_ancestral_nao`; `limite_usa_privado` (5 GB alocados e 0,2 GB privados não passam); `comandos_na_lista`; `sem_texto_perigoso`; `componente_inteiro`; `system_folders_sem_library` | `sdtally --json \| jq .advice` |
 | **R3** IA | `src/bin/sdtally.rs` (`--last`, `--history`, `--mcp`), `src/mcp.rs`, `src/historico.rs` (guardas e ordem por `generated_at`), `README.md`, `tests/mcp.rs` | `cargo test`: `initialize` (versão suportada ecoa; desconhecida vira a mais nova; `serverInfo`); notificação sem resposta; `ping`; `-32601`; `tools/list` = 3 com `inputSchema` e a frase "Read-only"; argumento dá `-32602`; todo stdout é JSON-RPC; symlink, 21 MB e schema 2 são recusados sem vazar conteúdo; `recusaComoRoot` | `printf … \| sdtally --mcp` |
 | **A1** Base | `Marca.swift` (tokens, `Marca.nivel`, `TallyShape`, `IconeApp`, `.cartao`, `.transicaoNumero`, `Faixa`, `FichaKPI`); `Modelo.swift` (campos novos opcionais, `nonisolated`); fixtures finais `quick.json`, `quick-vm-negativo.json`, `completo.json` (`containers`, `swap`, `advice` em todos os níveis, linhas `folded`), `completo-injetado.json` (`command` fora da lista) e `dados/{Medicoes/3 arquivos (um com outro tool), pontos.jsonl}`, tudo com `/Users/exemplo`; `SDTallyApp.swift` (7 seções, grupos, `IconeSecao`, selos, menus chamando stubs, sheet); esqueletos das 6 telas novas; `Historico.swift` (só `pastaLeitura`); `Relatorio.swift` (stubs); `Painel.swift` (`completoDados`); `Foto.swift` (`Dev.ativo`; 7 seções mais `boasvindas`/`barra`; `SDTALLY_ESQUEMA`, `SDTALLY_ICONE`, `SDTALLY_PDF`; janela por `identifier` com prefixo `principal`; `renderizar`); `.github/workflows/ci.yml` (foto pelo binário cru; fotos `armazenamento`/`permissoes`/`info`; grep do §1.10) | `swift test` (`ModeloTests`): decode das chaves novas e nil quando ausentes | 7 fotos claras, 1 escura |
-| **A2** Informações, Permissões, segurança | `InfoView.swift`, `PermissoesView.swift` (com `ehAdmin` local; "Comportamento" como esqueleto desligado), `Executor.swift` (`binario(env:bundleID:)`, C4), `Painel.swift` (P2), `app/montar.sh` (ícone, commit), `app/Info.plist` (`CFBundleIconFile`, `SDTallyCommit`). Não toca `SDTallyHelper` nem `SDTallyXPC` | `InfoPermissoesTests`: `ehAdmin(99999) == false`, `binarioIgnoraEnvNoBundle`, caminho sem `/` recusado, Acesso Total divergente mostra faixa | fotos `info` e `permissoes`; iconset em `$TMPDIR` |
+| **A2** Informações, Permissões, segurança | `InfoView.swift`, `PermissoesView.swift` (com `ehAdmin` local; "Comportamento" como esqueleto desligado), `Executor.swift` (`binario(env:bundleID:)`, C4), `Painel.swift` (P2), `app/montar.sh` (ícone), `app/Info.plist` (`CFBundleIconFile`). Não toca `SDTallyHelper` nem `SDTallyXPC` | `InfoPermissoesTests`: `ehAdmin(99999) == false`, `binarioIgnoraEnvNoBundle`, caminho sem `/` recusado, Acesso Total divergente mostra faixa | fotos `info` e `permissoes`; iconset em `$TMPDIR` |
 | **A3** Armazenamento e Resumo | `ArmazenamentoView.swift` (com "Partes do sistema"), `ResumoView.swift`, `Formato.swift` (`cor`, `nomePapel(role)`, `nomeFonte`), `BarraView.swift`, `RankingView.swift` | `ArmazenamentoTests`: Σ dos volumes = `macos.bytes`; VM − swap negativo vira nil; só `internal`; agrupamento das partes; próximos passos sem `system_handles` | fotos `resumo` e `armazenamento`, claro e escuro |
 | **A4** O que fazer e boas-vindas | `ConselhosView.swift` (textos, `comandosPermitidos`, R3, R6, R7), `BoasVindasView.swift` | `ConselhosTests`: `id` desconhecido mostra `text`; `comandoInjetadoSemBotao`; `apagadosAbertosSoNomeiaApp`; `apagadosAbertosNomeCortado` | fotos `fazer` e `boasvindas` |
 | **A5** Histórico | `Historico.swift`, `HistoricoView.swift`, `Painel.swift` (guardar, restaurar, anotar ponto), `ResumoView.swift` ("desde a última leitura"), `SDTallyApp.swift` (data no `Rodape`), `Tests/HistoricoTests.swift` | `HistoricoTests` (pasta temporária, sem `@MainActor`): 0600/0700; retenção; `pastaGravacao` nil com `Dev.ativo`; `SDTALLY_DADOS` só lê; corrompido pulado; ordem por `generated_at`; `naoComparaModos`; `naoComparaVersoes`; `ausenteNaoEZero` | foto `historico` |

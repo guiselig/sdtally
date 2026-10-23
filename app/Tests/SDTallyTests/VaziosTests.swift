@@ -5,10 +5,10 @@ import Testing
 
 private let todos: [Vazio] = [
     .v1(ultimo: 221_266_053_536, hora: "09:29"), .v1(ultimo: nil, hora: nil), .v2, .v3, .v5(usadoData: nil), .v5(usadoData: 410_000_000_000),
-    .v6(hora: "09:36"), .v7(motivo: "no root"), .v8(root: false), .v8(root: true), .v9, .v11(pastas: 1), .v11(pastas: 251),
+    .v6(hora: "09:36"), .v7(motivo: "no root"), .v8(root: false), .v8(root: true), .v9,
     .v12(semExplicacao: 41_000_000_000, porcento: 10, dataComSenha: "28/09", bytesComSenha: 2_000_000_000),
     .v12(semExplicacao: nil, porcento: nil, dataComSenha: nil, bytesComSenha: nil),
-    .v13(versao: "15.6"), .v16, .v17, .v18, .v19, .v20, .v21, .v22, .v23,
+    .v16, .v17, .v18, .v20, .v23,
 ]
 
 /// scripts/g9-proibidas.txt, a mesma lista do scripts/g9.sh (grep -F, sensível a maiúsculas).

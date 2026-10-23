@@ -67,7 +67,5 @@
 	<string>public.app-category.utilities</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>© 2026 Guilherme Selig · GPL-3.0-or-later</string>
-	<key>SDTallyCommit</key>
-	<string>@COMMIT@</string>
 </dict>
 </plist>

@@ -4,7 +4,7 @@
 import SwiftUI
 
 nonisolated enum Ritmo: String, CaseIterable, Identifiable, Sendable {
-    case tempoReal, purgAtivo, purgFundo, telaAberta, ajustesEscondido, ajustesFundo
+    case tempoReal, purgAtivo, purgFundo, ajustesEscondido, ajustesFundo
 
     var id: String { rawValue }
     var chave: String { "ritmo." + rawValue }
@@ -15,7 +15,6 @@ nonisolated enum Ritmo: String, CaseIterable, Identifiable, Sendable {
         case .tempoReal: 1
         case .purgAtivo: 10
         case .purgFundo: 60
-        case .telaAberta: 5
         case .ajustesEscondido: 600
         // ~58 s de CPU e ~400 MB do macOS por abertura (medido em 19/10): em segundo plano, só se pedir.
         case .ajustesFundo: 0
@@ -27,19 +26,17 @@ nonisolated enum Ritmo: String, CaseIterable, Identifiable, Sendable {
         case .tempoReal: String(localized: "Livre, uso e swap")
         case .purgAtivo: String(localized: "O macOS libera sozinho, com o app aberto")
         case .purgFundo: String(localized: "O macOS libera sozinho, em segundo plano")
-        case .telaAberta: String(localized: "Leitura do armazenamento, com o Ajustes aberto")
         case .ajustesEscondido: String(localized: "Abrir o Ajustes escondido, com o app aberto")
         case .ajustesFundo: String(localized: "Abrir o Ajustes escondido, em segundo plano")
         }
     }
 
-    /// 0 = desligado; a tela do Ajustes aberto não desliga (sem ela o número para).
+    /// 0 = desligado.
     var opcoes: [TimeInterval] {
         switch self {
         case .tempoReal: [1, 2, 5, 10, 30, 0]
         case .purgAtivo: [5, 10, 30, 60, 0]
         case .purgFundo: [30, 60, 300, 600, 0]
-        case .telaAberta: [2, 5, 10, 30]
         case .ajustesEscondido: [300, 600, 1800, 3600, 0]
         case .ajustesFundo: [600, 1800, 3600, 0]
         }
@@ -64,9 +61,7 @@ nonisolated enum Ritmo: String, CaseIterable, Identifiable, Sendable {
 
 struct RitmosView: View {
     var body: some View {
-        // A tela com o Ajustes aberto vem da escuta (`sdtally --watch`); o ritmo dela só vale se a
-        // escuta cair, e fica no padrão.
-        ForEach(Ritmo.allCases.filter { $0 != .telaAberta }) { LinhaRitmo(ritmo: $0) }
+        ForEach(Ritmo.allCases) { LinhaRitmo(ritmo: $0) }
     }
 }
 

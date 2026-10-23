@@ -12,7 +12,6 @@
 //   MapaFichas (cards[id] → Ficha; ficha sem campo obrigatório é descartada), fichas[id]
 //   Ficha.acoes: [AcaoFicha] (kind desconhecido é ignorado), Ficha.refs: [RefFicha]
 //   Catalogo (sdtally --catalog --json, kind "catalog"): .cards, .sources[source] → Conferencia
-//   Completo.systemData (by_line, reproduced.total; nil em medição antiga)
 //   Completo.Informativo.trash (Lixo por idade), .apfsMetadata (nós das árvores vivas); nil em medição antiga
 import Foundation
 
@@ -352,24 +351,6 @@ nonisolated struct Completo: Decodable, Sendable {
         let folders: [Pasta]
     }
 
-    /// `system_data`: as categorias reproduzidas. Ausente em medição salva por um sdtally antigo.
-    struct SistemaDados: Decodable, Sendable {
-        /// `reproduced.total`: Σ das categorias reproduzidas contra Σ do log da tela.
-        struct Total: Decodable, Sendable {
-            let bytes: Int64
-            let screenBytes: Int64?
-            let errorPercent: Double?
-            let tolerancePercent: Double
-            let withinTolerance: Bool?
-            let notReproduced: Int
-        }
-        struct Reproduzidas: Decodable, Sendable {
-            let state: String
-            let total: Total
-        }
-        var reproduced: Reproduzidas? = nil
-    }
-
     let generatedAt: String
     let tool: String
     /// Option no Rust: null não derruba a leitura inteira.
@@ -392,7 +373,6 @@ nonisolated struct Completo: Decodable, Sendable {
     var cards: MapaFichas? = nil
     var adviceUnchecked: [NaoConferido]? = nil
     var notFreed: [NaoVoltou]? = nil
-    var systemData: SistemaDados? = nil
 }
 
 // MARK: - Fase 6: fichas e catálogo (spec-fase6 §3.4)
@@ -430,10 +410,11 @@ nonisolated struct TextoFicha: Decodable, Sendable, Equatable {
     }
 }
 
-/// Ação da ficha já validada: `kind` desconhecido, `settings` sem `target` e `command` sem
+/// Ação da ficha já validada: `kind` desconhecido (inclusive `restart`, `log_out` e `none`, que o CLI
+/// ainda emite e o app não mostra), `settings` sem `target` e `command` sem
 /// comando não viram ação. O alvo de `settings` ainda passa por `ajustesPermitidos` (A11).
 nonisolated enum AcaoFicha: Sendable, Equatable {
-    case finder, ajustes(String), appDono, comando(String), reiniciar, encerrarSessao, nenhuma
+    case finder, ajustes(String), appDono, comando(String)
 
     init?(kind: String, target: String?, command: String?) {
         switch (kind, target, command) {
@@ -441,9 +422,6 @@ nonisolated enum AcaoFicha: Sendable, Equatable {
         case ("settings", let t?, _): self = .ajustes(t)
         case ("owner_app", _, _): self = .appDono
         case ("command", _, let c?): self = .comando(c)
-        case ("restart", _, _): self = .reiniciar
-        case ("log_out", _, _): self = .encerrarSessao
-        case ("none", _, _): self = .nenhuma
         default: return nil
         }
     }

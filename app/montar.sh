@@ -44,8 +44,7 @@ cp -R "$saida/swift/release/SDTally_SDTally.bundle/Contents/Resources/"*.lproj "
 cp "$CARGO_TARGET_DIR/release/sdtally" "$pacote/Contents/Helpers/sdtally"
 cp "$app_dir/LaunchDaemon.plist" "$pacote/Contents/Library/LaunchDaemons/io.github.guiselig.sdtally.helper.plist"
 versao=$(sed -n 's/^version = "\(.*\)"/\1/p' "$repo/Cargo.toml" | head -1)
-commit=$(git -C "$repo" rev-parse --short HEAD 2>/dev/null || echo "—")
-sed -e "s/@VERSAO@/$versao/" -e "s/@BUILD@/${versao%%-*}/" -e "s/@COMMIT@/$commit/" "$app_dir/Info.plist" > "$pacote/Contents/Info.plist"
+sed -e "s/@VERSAO@/$versao/" -e "s/@BUILD@/${versao%%-*}/" "$app_dir/Info.plist" > "$pacote/Contents/Info.plist"
 
 # De dentro para fora (assinar o app depois invalidaria a assinatura de dentro). Identifiers
 # fixos: o helper confere o sdtally e o app pelo identifier + time (app/Sources/SDTallyXPC).
