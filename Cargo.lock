@@ -40,7 +40,7 @@ dependencies = [
 
 [[package]]
 name = "sdtally"
-version = "1.0.2"
+version = "1.0.3"
 dependencies = [
  "libc",
  "serde_json",
