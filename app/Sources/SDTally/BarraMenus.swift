@@ -123,6 +123,26 @@ private struct Glifo: View {
 
 // MARK: - Janela
 
+/// MenuBarExtra(.window) sai com cantos menores que os menus do sistema no macOS 26: o quadro da
+/// janela (que desenha o fundo; não há NSVisualEffectView dentro) passa a `raio`, e a sombra é refeita.
+private struct CantosDaJanela: NSViewRepresentable {
+    static let raio: CGFloat = 14
+    func makeNSView(context: Context) -> NSView { Vista() }
+    func updateNSView(_ v: NSView, context: Context) {}
+
+    final class Vista: NSView {
+        override func viewDidMoveToWindow() {
+            super.viewDidMoveToWindow()
+            guard let w = window, let quadro = w.contentView?.superview else { return }
+            quadro.wantsLayer = true
+            quadro.layer?.cornerRadius = CantosDaJanela.raio
+            quadro.layer?.cornerCurve = .continuous
+            quadro.layer?.masksToBounds = true
+            w.invalidateShadow()
+        }
+    }
+}
+
 struct BarraMenusView: View {
     @Environment(Painel.self) private var painel
     @Environment(\.openWindow) private var abrirJanela
@@ -174,6 +194,7 @@ struct BarraMenusView: View {
             Color.clear.frame(height: 6)
         }
         .frame(width: 330)
+        .background(CantosDaJanela())
         .onAppear { painel.atualizarSeVelho() }
     }
 
