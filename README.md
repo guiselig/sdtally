@@ -153,11 +153,11 @@ On first launch the app shows a short welcome sheet (also under **SDTally > Welc
 
 | Permission | What it is for | Without it | Where |
 |---|---|---|---|
-| **Full Disk Access** | Lets SDTally read folders macOS hides even from administrators, such as Mail, Messages and Safari | Those folders stay blocked and the measurement is marked incomplete | System Settings > Privacy & Security > Full Disk Access. The app has an "Open Privacy & Security" button |
+| **Full Disk Access** (required) | Lets SDTally read folders macOS hides even from administrators, such as Mail, Messages and Safari, without macOS asking about each protected folder | The app shows only the steps to grant it and measures nothing until it is granted | System Settings > Privacy & Security > Full Disk Access. The app has an "Open Privacy & Security" button and continues on its own once access is on |
 | **Administrator password** | A full measurement as root, so every folder can be opened | Measurement runs without root and is marked incomplete | macOS asks for it each time you choose **Measure with Administrator Password…** (⌘R) |
 | **Passwordless Root** (optional) | Measures as root without asking for the password each time | Each full measurement asks for the password and cannot be stopped midway | Settings > Install… and then approve it once in System Settings > General > Login Items |
 
-During a measurement macOS may also ask about Desktop, Documents and Downloads. For the CLI, grant Full Disk Access to your terminal app instead.
+For the CLI, grant Full Disk Access to your terminal app instead; without it the CLI still runs and marks the measurement incomplete.
 
 Step-by-step: [First run and permissions](https://github.com/guiselig/sdtally/wiki/First-run-and-permissions).
 
