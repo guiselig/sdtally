@@ -124,16 +124,34 @@ private struct Glifo: View {
 // MARK: - Janela
 
 /// MenuBarExtra(.window) sai com cantos menores que os menus do sistema no macOS 26: o quadro da
-/// janela (que desenha o fundo; não há NSVisualEffectView dentro) passa a `raio`, e a sombra é refeita.
+/// janela (que desenha o fundo; não há NSVisualEffectView dentro) passa a `raio`. A janela é criada
+/// escondida e o servidor de janelas só refaz a forma (fundo, contorno e sombra) quando ela muda de
+/// tamanho; por isso a sombra é refeita cada vez que ela aparece, senão abre com os cantos retos
+/// até a primeira leitura nova redimensioná-la.
 private struct CantosDaJanela: NSViewRepresentable {
     static let raio: CGFloat = 14
     func makeNSView(context: Context) -> NSView { Vista() }
     func updateNSView(_ v: NSView, context: Context) {}
 
     final class Vista: NSView {
+        private var observador: NSObjectProtocol?
+
         override func viewDidMoveToWindow() {
             super.viewDidMoveToWindow()
-            guard let w = window, let quadro = w.contentView?.superview else { return }
+            observador.map(NotificationCenter.default.removeObserver)
+            observador = nil
+            guard let w = window else { return }
+            arredondar(w)
+            observador = NotificationCenter.default.addObserver(forName: NSWindow.didChangeOcclusionStateNotification, object: w, queue: .main) { [weak self] _ in
+                MainActor.assumeIsolated {
+                    guard w.occlusionState.contains(.visible) else { return }
+                    self?.arredondar(w)
+                }
+            }
+        }
+
+        private func arredondar(_ w: NSWindow) {
+            guard let quadro = w.contentView?.superview else { return }
             quadro.wantsLayer = true
             quadro.layer?.cornerRadius = CantosDaJanela.raio
             quadro.layer?.cornerCurve = .continuous
