@@ -14,13 +14,26 @@ nonisolated func temAcessoTotal() -> Bool {
     static let unico = Portao()
     private(set) var liberado = Dev.ativo || temAcessoTotal()
 
-    /// Roda `aoLiberar` quando houver Acesso Total, conferindo a cada 2 s.
+    /// Roda `aoLiberar` quando houver Acesso Total, conferindo a cada 2 s. Depois segue conferindo a
+    /// cada 5 s: tirado com o app aberto, ele reabre, e a abertura nova para tudo e mostra os passos.
     func esperar(_ aoLiberar: @escaping @MainActor () -> Void) {
-        guard !liberado else { return aoLiberar() }
         Task {
-            while !temAcessoTotal() { try? await Task.sleep(for: .seconds(2)) }
-            liberado = true
+            while !liberado {
+                try? await Task.sleep(for: .seconds(2))
+                liberado = temAcessoTotal()
+            }
             aoLiberar()
+            guard !Dev.ativo else { return }
+            while temAcessoTotal() { try? await Task.sleep(for: .seconds(5)) }
+            reabrir()
+        }
+    }
+
+    private func reabrir() {
+        let c = NSWorkspace.OpenConfiguration()
+        c.createsNewApplicationInstance = true
+        NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: c) { _, _ in
+            DispatchQueue.main.async { NSApp.terminate(nil) }
         }
     }
 }

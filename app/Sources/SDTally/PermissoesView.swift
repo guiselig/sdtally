@@ -142,7 +142,7 @@ struct LinhaAcessoTotal: View {
             LinhaPermissao(
                 nome: String(localized: "Acesso Total ao Disco"), ok: app, estados: estados,
                 serve: String(localized: "Deixa o SDTally ler pastas que o macOS esconde até do administrador, como Mail, Mensagens e Safari."),
-                semEla: String(localized: "essas pastas ficam bloqueadas pelo macOS e a medição sai incompleta. Durante a medição, o macOS também pode perguntar por Documentos, Mesa e Downloads."),
+                semEla: String(localized: "o SDTally não mede nada e mostra só os passos para liberar."),
                 explicar: explicar
             ) {
                 Button("Abrir Privacidade e Segurança") { painel.abrirAcessoTotal() }

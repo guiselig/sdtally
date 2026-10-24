@@ -181233,220 +181233,6 @@
         }
       }
     },
-    "essas pastas ficam bloqueadas pelo macOS e a medição sai incompleta. Durante a medição, o macOS também pode perguntar por Documentos, Mesa e Downloads." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "those folders stay blocked by macOS and the measurement comes out incomplete. During the measurement, macOS may also ask about Documents, Desktop, and Downloads."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "queste cartelle restano bloccate da macOS e la misurazione risulta incompleta. Durante la misurazione, macOS può anche chiedere di Documenti, Scrivania e Download."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ці папки заблоковано macOS, і вимірювання виходить неповним. Під час вимірювання macOS також може запитати про Документи, Робочий стіл і Завантаження."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "эти папки блокируются macOS, и измерение получается неполным. Во время измерения macOS также может спросить о Документах, Рабочем столе и Загрузках."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "de här mapparna förblir blockerade av macOS och mätningen blir ofullständig. Under mätningen kan macOS också fråga om Dokument, Skrivbord och Hämtade filer."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "disse mapper er blokeret af macOS, og målingen bliver ufuldstændig. Under målingen kan macOS også spørge om Dokumenter, Skrivebord og Downloads."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "disse mappene blir blokkert av macOS, og målingen blir ufullstendig. Under målingen kan macOS også spørre om Dokumenter, Skrivebord og Nedlastinger."
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "這些檔案夾會被 macOS 封鎖，測量結果會不完整。測量期間，macOS 也可能詢問是否取用文件、桌面與下載項目。"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "essas pastas ficam bloqueadas pelo macOS e a medição sai incompleta. Durante a medição, o macOS também pode perguntar por Documentos, Secretária e Transferências."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "这些文件夹会被 macOS 阻止，测量结果会不完整。测量期间，macOS 还可能询问是否允许访问“文稿”、“桌面”和“下载”。"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "これらのフォルダはmacOSによりブロックされ、測定が不完全になります。測定中に、書類、デスクトップ、ダウンロードについてmacOSから確認される場合もあります。"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "tyto složky zůstanou blokované systémem macOS a měření bude neúplné. Během měření se macOS může zeptat i na Dokumenty, Plochu a Stažené."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이 폴더가 macOS에서 차단되어 측정이 불완전해집니다. 측정 중 macOS가 문서, 데스크탑, 다운로드에 대해서도 물어볼 수 있습니다."
-          }
-        },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تبقى هذه المجلدات محظورة من macOS ويخرج القياس غير مكتمل. وأثناء القياس قد يسأل macOS أيضًا عن المستندات وسطح المكتب والتنزيلات."
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "aquestes carpetes queden bloquejades per macOS i el mesurament surt incomplet. Durant el mesurament, macOS també pot preguntar per Documents, Escriptori i Descàrregues."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "diese Ordner bleiben von macOS blockiert, und die Messung wird unvollständig. Bei der Messung kann macOS außerdem nach Dokumenten, Schreibtisch und Downloads fragen."
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "αυτοί οι φάκελοι αποκλείονται από το macOS και η μέτρηση βγαίνει ελλιπής. Κατά τη μέτρηση, το macOS μπορεί να ρωτήσει και για τα Έγγραφα, την Επιφάνεια εργασίας και τις Λήψεις."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "nämä kansiot jäävät macOS:n estämiksi ja mittaus jää vajaaksi. Mittauksen aikana macOS saattaa kysyä myös Dokumentit-, Työpöytä- ja Lataukset-kansioista."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ces dossiers restent bloqués par macOS et la mesure est incomplète. Pendant la mesure, macOS peut aussi demander l’accès à Documents, Bureau et Téléchargements."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "התיקיות האלה נשארות חסומות על ידי macOS והמדידה יוצאת חלקית. במהלך המדידה, macOS עשוי גם לשאול על מסמכים, שולחן העבודה והורדות."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ये फ़ोल्डर macOS द्वारा ब्लॉक रहते हैं और माप अधूरी रहती है। माप के दौरान macOS दस्तावेज़, डेस्कटॉप और डाउनलोड के लिए भी पूछ सकता है।"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "te mape ostaju blokirane od macOS-a i mjerenje ispada nepotpuno. Tijekom mjerenja macOS može pitati i za Dokumente, Radnu površinu i Preuzimanja."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "folder itu diblokir oleh macOS dan pengukuran jadi tidak lengkap. Saat mengukur, macOS juga bisa menanyakan Dokumen, Desktop, dan Unduhan."
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "folder ini disekat oleh macOS dan pengukuran menjadi tidak lengkap. Semasa pengukuran, macOS juga mungkin bertanya tentang Dokumen, Desktop dan Muat Turun."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "te foldery są zablokowane przez macOS, a pomiar wychodzi niepełny. Podczas pomiaru macOS może też zapytać o Dokumenty, Biurko i Pobrane."
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "aceste foldere rămân blocate de macOS, iar măsurarea iese incompletă. În timpul măsurării, macOS poate întreba și despre Documente, Birou și Descărcări."
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "tieto priečinky zostanú blokované systémom macOS a meranie bude neúplné. Počas merania sa macOS môže opýtať aj na Dokumenty, Plochu a Stiahnuté súbory."
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "te mape ostanejo blokirane z macOS in meritev je nepopolna. Med meritvijo lahko macOS vpraša tudi za Dokumente, Namizje in Prenose."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "bu klasörler macOS tarafından engellenir ve ölçüm eksik çıkar. Ölçüm sırasında macOS ayrıca Belgeler, Masaüstü ve İndirilenler için de sorabilir."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "các thư mục này bị macOS chặn và phép đo không đầy đủ. Trong lúc đo, macOS cũng có thể hỏi về Tài liệu, Màn hình nền và Tải về."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "esas carpetas quedan bloqueadas por macOS y la medición sale incompleta. Durante la medición, macOS también puede preguntar por Documentos, Escritorio y Descargas."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "deze mappen blijven geblokkeerd door macOS en de meting is onvolledig. Tijdens de meting kan macOS ook vragen naar Documenten, Bureaublad en Downloads."
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "โฟลเดอร์เหล่านี้จะถูก macOS บล็อกและการวัดจะไม่สมบูรณ์ ระหว่างการวัด macOS อาจถามถึงเอกสาร เดสก์ท็อป และดาวน์โหลดด้วย"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ezek a mappák blokkolva maradnak a macOS által, és a mérés hiányos lesz. Mérés közben a macOS rákérdezhet a Dokumentumok, az Asztal és a Letöltések mappára is."
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "esas carpetas quedan bloqueadas por macOS y la medición sale incompleta. Durante la medición, macOS también puede preguntar por Documentos, Escritorio y Descargas."
-          }
-        }
-      }
-    },
     "etapa com falha" : {
       "localizations" : {
         "en" : {
@@ -188983,6 +188769,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "no medido: %@"
+          }
+        }
+      }
+    },
+    "o SDTally não mede nada e mostra só os passos para liberar." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يقيس SDTally أي شيء ويعرض فقط خطوات منحه."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally no mesura res i només mostra els passos per concedir-lo."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally nic neměří a ukazuje jen kroky, jak ho udělit."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally måler intet og viser kun trinnene til at give den."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally misst nichts und zeigt nur die Schritte, um ihn zu erteilen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "το SDTally δεν μετρά τίποτα και δείχνει μόνο τα βήματα για να τη δώσετε."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally measures nothing and shows only the steps to grant it."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally no mide nada y solo muestra los pasos para concederlo."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally no mide nada y solo muestra los pasos para otorgarlo."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ei mittaa mitään ja näyttää vain ohjeet luvan antamiseen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ne mesure rien et affiche seulement les étapes pour l’accorder."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally לא מודד דבר ומציג רק את השלבים למתן הגישה."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally कुछ भी नहीं मापता और केवल अनुमति देने के चरण दिखाता है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ništa ne mjeri i prikazuje samo korake za njegovo odobrenje."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "az SDTally semmit nem mér, csak a megadás lépéseit mutatja."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally tidak mengukur apa pun dan hanya menampilkan langkah untuk memberikannya."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally non misura nulla e mostra solo i passaggi per concederlo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTallyは何も測定せず、許可する手順だけを表示します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally는 아무것도 측정하지 않고 권한을 주는 단계만 보여 줍니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally tidak mengukur apa-apa dan hanya menunjukkan langkah untuk memberikannya."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally måler ingenting og viser bare trinnene for å gi den."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally meet niets en toont alleen de stappen om het toe te staan."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally niczego nie mierzy i pokazuje tylko kroki, jak go przyznać."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "o SDTally não mede nada e mostra só os passos para o conceder."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally nu măsoară nimic și arată doar pașii pentru a-l acorda."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ничего не измеряет и показывает только шаги, как его выдать."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally nič nemeria a ukazuje len kroky, ako ho udeliť."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ničesar ne meri in prikaže le korake, kako ga dodeliti."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally mäter ingenting och visar bara stegen för att ge den."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally จะไม่วัดอะไรเลย และแสดงเพียงขั้นตอนการให้สิทธิ์"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally hiçbir şey ölçmez ve yalnızca izni verme adımlarını gösterir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally нічого не вимірює і показує лише кроки, як його надати."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally không đo gì cả và chỉ hiển thị các bước để cấp quyền."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 不会测量任何内容，只显示授予权限的步骤。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 不會測量任何內容，只顯示授予權限的步驟。"
           }
         }
       }
