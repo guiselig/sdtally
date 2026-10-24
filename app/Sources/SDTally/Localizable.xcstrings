@@ -43593,6 +43593,220 @@
         }
       }
     },
+    "Clique em Abrir Privacidade e Segurança." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر على فتح الخصوصية والأمن."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fes clic a Obre Privacitat i seguretat."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klikněte na Otevřít Soukromí a zabezpečení."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klik på Åbn Anonymitet & sikkerhed."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicke auf „Datenschutz & Sicherheit öffnen“."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κάντε κλικ στο «Άνοιγμα του Απόρρητο και ασφάλεια»."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Click Open Privacy & Security."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz clic en Abrir Privacidad y seguridad."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz clic en Abrir Privacidad y seguridad."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klikkaa Avaa Tietosuoja ja suojaus."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cliquez sur Ouvrir Confidentialité et sécurité."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "לחצו על ״פתח פרטיות ואבטחה״."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "गोपनीयता और सुरक्षा खोलें पर क्लिक करें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kliknite Otvori Privatnost i sigurnost."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kattints az Adatvédelem és biztonság megnyitása gombra."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klik Buka Privasi & Keamanan."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fai clic su Apri Privacy e sicurezza."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「プライバシーとセキュリティを開く」をクリックします。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "개인정보 보호 및 보안 열기를 클릭하세요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klik Buka Privasi & Keselamatan."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klikk på Åpne Personvern og sikkerhet."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klik op Open Privacy en beveiliging."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kliknij Otwórz Prywatność i ochronę."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique em Abrir Privacidade e segurança."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fă clic pe Deschide Intimitate și securitate."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нажмите «Открыть настройки защиты»."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kliknite na Otvoriť Súkromie a bezpečnosť."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kliknite Odpri Zasebnost in varnost."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klicka på Öppna Integritet och säkerhet."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คลิกเปิดความเป็นส่วนตัวและความปลอดภัย"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gizlilik ve Güvenlik'i Aç'a tıklayın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Натисніть «Відкрити Приватність і безпека»."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bấm Mở Quyền riêng tư & Bảo mật."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "点按“打开‘隐私与安全’”。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按一下「開啟『隱私權與安全性』」。"
+          }
+        }
+      }
+    },
     "Clique numa pasta para ver a linha dela." : {
       "localizations" : {
         "ar" : {
@@ -64779,6 +64993,220 @@
         }
       }
     },
+    "Dê Acesso Total ao Disco ao SDTally" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "امنح SDTally الوصول الكامل إلى القرص"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dona a SDTally accés complet al disc"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dejte SDTally plný přístup k disku"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giv SDTally fuld adgang til disk"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally Festplattenvollzugriff geben"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δώστε στο SDTally πλήρη πρόσβαση στον δίσκο"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Give SDTally Full Disk Access"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dale a SDTally acceso total al disco"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dale a SDTally acceso completo al disco"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anna SDTallylle koko levyn käyttö"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accordez l’accès complet au disque à SDTally"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "תנו ל־SDTally גישה מלאה לכונן"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally को पूर्ण डिस्क ऐक्सेस दें"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dajte SDTallyju puni pristup disku"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adj teljes hozzáférést a lemezhez az SDTallynak"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beri SDTally Akses Disk Penuh"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concedi a SDTally l’accesso completo al disco"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTallyにフルディスクアクセスを許可してください"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally에 전체 디스크 접근 권한을 주세요"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beri SDTally Akses Cakera Penuh"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gi SDTally full disktilgang"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geef SDTally volledige schijftoegang"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daj SDTally pełny dostęp do dysku"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dê Acesso completo ao disco ao SDTally"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dă-i lui SDTally acces complet la disc"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предоставьте SDTally доступ к диску"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dajte SDTally plný prístup k disku"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dajte SDTally poln dostop do diska"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ge SDTally full skivtillgång"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ให้ SDTally เข้าถึงดิสก์ทั้งหมด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally'ye Tam Disk Erişimi verin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Надайте SDTally повний доступ до диска"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cấp cho SDTally quyền truy cập đầy đủ vào ổ đĩa"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请给 SDTally 完全磁盘访问权限"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請給 SDTally 完全取用磁碟權限"
+          }
+        }
+      }
+    },
     "Encolhe" : {
       "localizations" : {
         "ar" : {
@@ -66701,6 +67129,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Espacio usado en los últimos 7 días"
+          }
+        }
+      }
+    },
+    "Esperando o Acesso Total ao Disco…" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "في انتظار الوصول الكامل إلى القرص…"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esperant l’accés complet al disc…"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čeká se na plný přístup k disku…"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Venter på fuld adgang til disk…"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warte auf Festplattenvollzugriff …"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αναμονή για πλήρη πρόσβαση στον δίσκο…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waiting for Full Disk Access…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esperando el acceso total al disco…"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esperando el acceso completo al disco…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odotetaan koko levyn käyttöä…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En attente de l’accès complet au disque…"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ממתין לגישה מלאה לכונן…"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पूर्ण डिस्क ऐक्सेस की प्रतीक्षा…"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čeka se puni pristup disku…"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Várakozás a teljes lemezhozzáférésre…"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menunggu Akses Disk Penuh…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In attesa dell’accesso completo al disco…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フルディスクアクセスを待っています…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전체 디스크 접근 권한을 기다리는 중…"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menunggu Akses Cakera Penuh…"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Venter på full disktilgang …"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wachten op volledige schijftoegang…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oczekiwanie na pełny dostęp do dysku…"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À espera do Acesso completo ao disco…"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se așteaptă accesul complet la disc…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ожидание доступа к диску…"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čaká sa na plný prístup k disku…"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čakanje na poln dostop do diska …"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Väntar på full skivtillgång …"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กำลังรอสิทธิ์เข้าถึงดิสก์ทั้งหมด…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tam Disk Erişimi bekleniyor…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очікування повного доступу до диска…"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang chờ quyền truy cập đầy đủ vào ổ đĩa…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在等待完全磁盘访问权限…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在等待完全取用磁碟權限…"
           }
         }
       }
@@ -83083,6 +83725,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Encendido hace menos de 1 día"
+          }
+        }
+      }
+    },
+    "Ligue o SDTally na lista do Acesso Total ao Disco." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شغّل SDTally في قائمة الوصول الكامل إلى القرص."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activa SDTally a la llista d’accés complet al disc."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapněte SDTally v seznamu Plný přístup k disku."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slå SDTally til på listen Fuld adgang til disk."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktiviere SDTally in der Liste „Festplattenvollzugriff“."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ενεργοποιήστε το SDTally στη λίστα «Πλήρης πρόσβαση στον δίσκο»."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turn on SDTally in the Full Disk Access list."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activa SDTally en la lista de acceso total al disco."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activa SDTally en la lista de acceso completo al disco."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laita SDTally päälle Koko levyn käyttö -luettelossa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activez SDTally dans la liste Accès complet au disque."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הפעילו את SDTally ברשימת הגישה המלאה לכונן."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पूर्ण डिस्क ऐक्सेस सूची में SDTally चालू करें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uključite SDTally na popisu Puni pristup disku."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kapcsold be az SDTallyt a Teljes hozzáférés a lemezhez listában."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyalakan SDTally di daftar Akses Disk Penuh."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Attiva SDTally nell’elenco Accesso completo al disco."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フルディスクアクセスのリストでSDTallyをオンにします。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "전체 디스크 접근 권한 목록에서 SDTally를 켜세요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidupkan SDTally dalam senarai Akses Cakera Penuh."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slå på SDTally i listen Full disktilgang."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zet SDTally aan in de lijst Volledige schijftoegang."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Włącz SDTally na liście Pełny dostęp do dysku."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ative o SDTally na lista do Acesso completo ao disco."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activează SDTally în lista Acces complet la disc."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Включите SDTally в списке «Доступ к диску»."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapnite SDTally v zozname Plný prístup k disku."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vklopite SDTally na seznamu Poln dostop do diska."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slå på SDTally i listan Full skivtillgång."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิด SDTally ในรายการการเข้าถึงดิสก์ทั้งหมด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tam Disk Erişimi listesinde SDTally'yi açın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкніть SDTally у списку «Повний доступ до диска»."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bật SDTally trong danh sách Quyền truy cập đầy đủ vào ổ đĩa."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在“完全磁盘访问权限”列表中打开 SDTally。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在「完全取用磁碟」列表中開啟 SDTally。"
           }
         }
       }
@@ -115601,6 +116457,434 @@
         }
       }
     },
+    "O SDTally precisa do Acesso Total ao Disco." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يحتاج SDTally إلى الوصول الكامل إلى القرص."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally necessita accés complet al disc."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally potřebuje plný přístup k disku."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally har brug for fuld adgang til disk."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally benötigt Festplattenvollzugriff."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το SDTally χρειάζεται πλήρη πρόσβαση στον δίσκο."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally needs Full Disk Access."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally necesita acceso total al disco."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally necesita acceso completo al disco."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally tarvitsee koko levyn käytön."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally a besoin de l’accès complet au disque."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally צריך גישה מלאה לכונן."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally को पूर्ण डिस्क ऐक्सेस चाहिए।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally treba puni pristup disku."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az SDTallynak teljes hozzáférés kell a lemezhez."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally memerlukan Akses Disk Penuh."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ha bisogno dell’accesso completo al disco."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTallyにはフルディスクアクセスが必要です。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally에는 전체 디스크 접근 권한이 필요합니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally memerlukan Akses Cakera Penuh."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally trenger full disktilgang."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally heeft volledige schijftoegang nodig."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally potrzebuje pełnego dostępu do dysku."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O SDTally precisa do Acesso completo ao disco."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally are nevoie de acces complet la disc."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally нужен доступ к диску."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally potrebuje plný prístup k disku."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally potrebuje poln dostop do diska."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally behöver full skivtillgång."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ต้องการสิทธิ์เข้าถึงดิสก์ทั้งหมด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally'nin Tam Disk Erişimi'ne ihtiyacı var."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally потрібен повний доступ до диска."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally cần quyền truy cập đầy đủ vào ổ đĩa."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 需要完全磁盘访问权限。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 需要完全取用磁碟權限。"
+          }
+        }
+      }
+    },
+    "O SDTally só funciona com o Acesso Total ao Disco. Sem ele, o macOS esconde pastas como Mail, Mensagens e Safari e pergunta por cada pasta protegida. O SDTally só lê: não apaga nem altera nada." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يعمل SDTally إلا مع الوصول الكامل إلى القرص. بدونه، يُخفي macOS مجلدات مثل البريد والرسائل وSafari ويطلب الإذن لكل مجلد محمي. SDTally يقرأ فقط: لا يحذف أي شيء ولا يغيّره."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally només funciona amb accés complet al disc. Sense això, el macOS amaga carpetes com Mail, Missatges i Safari i pregunta per cada carpeta protegida. SDTally només llegeix: no esborra ni canvia res."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally funguje jen s plným přístupem k disku. Bez něj macOS skrývá složky jako Mail, Zprávy a Safari a ptá se na každou chráněnou složku. SDTally jen čte: nic nemaže ani nemění."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally virker kun med fuld adgang til disk. Uden den skjuler macOS mapper som Mail, Beskeder og Safari og spørger om hver beskyttet mappe. SDTally læser kun: det sletter eller ændrer ikke noget."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally funktioniert nur mit Festplattenvollzugriff. Ohne ihn blendet macOS Ordner wie Mail, Nachrichten und Safari aus und fragt bei jedem geschützten Ordner nach. SDTally liest nur: Es löscht und ändert nichts."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το SDTally λειτουργεί μόνο με πλήρη πρόσβαση στον δίσκο. Χωρίς αυτήν, το macOS κρύβει φακέλους όπως το Mail, τα Μηνύματα και το Safari και ζητά άδεια για κάθε προστατευμένο φάκελο. Το SDTally μόνο διαβάζει: δεν διαγράφει ούτε αλλάζει τίποτα."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally only works with Full Disk Access. Without it, macOS hides folders such as Mail, Messages and Safari and asks about each protected folder. SDTally only reads: it never deletes or changes anything."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally solo funciona con acceso total al disco. Sin él, macOS oculta carpetas como Mail, Mensajes y Safari y pregunta por cada carpeta protegida. SDTally solo lee: nunca borra ni cambia nada."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally solo funciona con acceso completo al disco. Sin él, macOS oculta carpetas como Mail, Mensajes y Safari y pregunta por cada carpeta protegida. SDTally solo lee: nunca borra ni cambia nada."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally toimii vain, kun sillä on koko levyn käyttö. Ilman sitä macOS piilottaa kansioita, kuten Mailin, Viestien ja Safarin, ja kysyy lupaa jokaiseen suojattuun kansioon. SDTally vain lukee: se ei poista eikä muuta mitään."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ne fonctionne qu’avec l’accès complet au disque. Sans lui, macOS masque des dossiers comme Mail, Messages et Safari et demande l’autorisation pour chaque dossier protégé. SDTally ne fait que lire : il ne supprime ni ne modifie rien."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally עובד רק עם גישה מלאה לכונן. בלעדיה, macOS מסתיר תיקיות כמו דואר, הודעות ו־Safari ומבקש אישור לכל תיקייה מוגנת. SDTally רק קורא: הוא לא מוחק ולא משנה דבר."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally केवल पूर्ण डिस्क ऐक्सेस के साथ काम करता है। इसके बिना macOS मेल, संदेश और Safari जैसे फ़ोल्डर छिपा देता है और हर सुरक्षित फ़ोल्डर के लिए अनुमति माँगता है। SDTally केवल पढ़ता है: कुछ भी नहीं हटाता या बदलता।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally radi samo s punim pristupom disku. Bez njega macOS skriva mape kao što su Mail, Poruke i Safari i pita za svaku zaštićenu mapu. SDTally samo čita: ništa ne briše niti mijenja."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az SDTally csak teljes lemezhozzáféréssel működik. Enélkül a macOS elrejti például a Mail, az Üzenetek és a Safari mappáit, és minden védett mappánál engedélyt kér. Az SDTally csak olvas: semmit nem töröl és nem módosít."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally hanya berfungsi dengan Akses Disk Penuh. Tanpanya, macOS menyembunyikan folder seperti Mail, Pesan, dan Safari serta meminta izin untuk setiap folder yang dilindungi. SDTally hanya membaca: tidak menghapus atau mengubah apa pun."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally funziona solo con l’accesso completo al disco. Senza, macOS nasconde cartelle come Mail, Messaggi e Safari e chiede il permesso per ogni cartella protetta. SDTally legge soltanto: non elimina né modifica nulla."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTallyはフルディスクアクセスがある場合にのみ動作します。許可がないと、macOSはメール、メッセージ、Safariなどのフォルダを隠し、保護されたフォルダごとに許可を求めます。SDTallyは読み取るだけで、何も削除・変更しません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally는 전체 디스크 접근 권한이 있어야만 작동합니다. 권한이 없으면 macOS가 Mail, 메시지, Safari 같은 폴더를 숨기고 보호된 폴더마다 허락을 묻습니다. SDTally는 읽기만 하며 아무것도 삭제하거나 바꾸지 않습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally hanya berfungsi dengan Akses Cakera Penuh. Tanpanya, macOS menyembunyikan folder seperti Mail, Mesej dan Safari serta meminta kebenaran untuk setiap folder yang dilindungi. SDTally hanya membaca: ia tidak memadam atau mengubah apa-apa."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally fungerer bare med full disktilgang. Uten den skjuler macOS mapper som Mail, Meldinger og Safari og spør om hver beskyttede mappe. SDTally leser bare: det sletter eller endrer ingenting."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally werkt alleen met volledige schijftoegang. Zonder die toegang verbergt macOS mappen zoals Mail, Berichten en Safari en vraagt het om toestemming voor elke beschermde map. SDTally leest alleen: het verwijdert of wijzigt niets."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally działa tylko z pełnym dostępem do dysku. Bez niego macOS ukrywa foldery takie jak Mail, Wiadomości i Safari i pyta o każdy chroniony folder. SDTally tylko czyta: niczego nie usuwa ani nie zmienia."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O SDTally só funciona com o Acesso completo ao disco. Sem ele, o macOS esconde pastas como Mail, Mensagens e Safari e pergunta por cada pasta protegida. O SDTally só lê: não apaga nem altera nada."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally funcționează doar cu acces complet la disc. Fără el, macOS ascunde dosare precum Mail, Mesaje și Safari și cere permisiunea pentru fiecare dosar protejat. SDTally doar citește: nu șterge și nu modifică nimic."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally работает только с полным доступом к диску. Без него macOS скрывает такие папки, как Почта, Сообщения и Safari, и спрашивает разрешение на каждую защищённую папку. SDTally только читает: ничего не удаляет и не меняет."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally funguje len s plným prístupom k disku. Bez neho macOS skrýva priečinky ako Mail, Správy a Safari a pýta sa na každý chránený priečinok. SDTally len číta: nič nemaže ani nemení."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally deluje samo s polnim dostopom do diska. Brez njega macOS skrije mape, kot so Mail, Sporočila in Safari, in vpraša za vsako zaščiteno mapo. SDTally samo bere: ničesar ne izbriše ali spremeni."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally fungerar bara med full skivtillgång. Utan den döljer macOS mappar som Mail, Meddelanden och Safari och frågar om varje skyddad mapp. SDTally läser bara: det raderar eller ändrar ingenting."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ทำงานได้เฉพาะเมื่อมีสิทธิ์เข้าถึงดิสก์ทั้งหมด หากไม่มี macOS จะซ่อนโฟลเดอร์อย่างเมล ข้อความ และ Safari และขออนุญาตทุกโฟลเดอร์ที่ได้รับการป้องกัน SDTally อ่านอย่างเดียว ไม่ลบหรือเปลี่ยนแปลงอะไรเลย"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally yalnızca Tam Disk Erişimi ile çalışır. Bu izin olmadan macOS, Mail, Mesajlar ve Safari gibi klasörleri gizler ve her korumalı klasör için izin ister. SDTally yalnızca okur: hiçbir şeyi silmez veya değiştirmez."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally працює лише з повним доступом до диска. Без нього macOS приховує такі папки, як Пошта, Повідомлення і Safari, і питає дозвіл на кожну захищену папку. SDTally лише читає: нічого не видаляє і не змінює."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally chỉ hoạt động khi có quyền truy cập đầy đủ vào ổ đĩa. Nếu không, macOS sẽ ẩn các thư mục như Mail, Tin nhắn và Safari và hỏi quyền cho từng thư mục được bảo vệ. SDTally chỉ đọc: không xóa hay thay đổi gì."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 只有在获得完全磁盘访问权限时才能工作。没有它，macOS 会隐藏“邮件”“信息”和 Safari 等文件夹，并对每个受保护的文件夹询问权限。SDTally 只读取：不会删除或更改任何内容。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 只有在取得完全取用磁碟權限時才能運作。沒有它，macOS 會隱藏「郵件」「訊息」和 Safari 等檔案夾，並對每個受保護的檔案夾詢問權限。SDTally 只會讀取：不會刪除或更改任何內容。"
+          }
+        }
+      }
+    },
     "O SDTally vai ler o disco como administrador para medir as pastas do sistema. Nada é apagado nem alterado." : {
       "localizations" : {
         "en" : {
@@ -146501,6 +147785,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "如果現在結束 SDTally，正在進行的測量將會遺失，需要重新開始。"
+          }
+        }
+      }
+    },
+    "Se o macOS pedir, reabra o SDTally." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إذا طلب macOS ذلك، أعد فتح SDTally."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si el macOS ho demana, torna a obrir SDTally."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokud o to macOS požádá, otevřete SDTally znovu."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvis macOS beder om det, så åbn SDTally igen."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn macOS fragt, öffne SDTally erneut."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αν το ζητήσει το macOS, ανοίξτε ξανά το SDTally."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If macOS asks, reopen SDTally."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si macOS lo pide, vuelve a abrir SDTally."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si macOS lo pide, vuelve a abrir SDTally."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jos macOS pyytää, avaa SDTally uudelleen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si macOS le demande, rouvrez SDTally."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אם macOS מבקש, פתחו את SDTally מחדש."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अगर macOS कहे, तो SDTally फिर से खोलें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ako macOS zatraži, ponovno otvorite SDTally."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ha a macOS kéri, nyisd meg újra az SDTallyt."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jika macOS meminta, buka ulang SDTally."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se macOS lo chiede, riapri SDTally."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOSに求められたら、SDTallyを開き直してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOS가 요청하면 SDTally를 다시 여세요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jika macOS meminta, buka semula SDTally."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hvis macOS ber om det, åpner du SDTally på nytt."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als macOS erom vraagt, open SDTally opnieuw."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli macOS poprosi, otwórz SDTally ponownie."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se o macOS pedir, volte a abrir o SDTally."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dacă macOS cere, redeschide SDTally."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Если macOS попросит, откройте SDTally заново."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ak o to macOS požiada, otvorte SDTally znova."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Če macOS to zahteva, znova odprite SDTally."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Om macOS ber om det, öppna SDTally igen."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "หาก macOS ขอ ให้เปิด SDTally ใหม่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOS isterse SDTally'yi yeniden açın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Якщо macOS попросить, відкрийте SDTally знову."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nếu macOS yêu cầu, hãy mở lại SDTally."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "如果 macOS 要求，请重新打开 SDTally。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "如果 macOS 要求，請重新開啟 SDTally。"
           }
         }
       }

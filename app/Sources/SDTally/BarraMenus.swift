@@ -165,9 +165,31 @@ struct BarraMenusView: View {
     @Environment(Painel.self) private var painel
     @Environment(\.openWindow) private var abrirJanela
 
+    var body: some View {
+        Group {
+            if Portao.unico.liberado { lista } else { semAcesso }
+        }
+        .frame(width: 330)
+        .background(CantosDaJanela())
+    }
+
+    /// Sem Acesso Total: só o aviso, o botão do Ajustes e o Sair.
+    private var semAcesso: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Label("O SDTally precisa do Acesso Total ao Disco.", systemImage: "lock.fill")
+                .font(.headline).fixedSize(horizontal: false, vertical: true)
+                .padding(.horizontal, 14).padding(.top, 12).padding(.bottom, 8)
+            separador
+            AcaoMenu(titulo: String(localized: "Abrir Privacidade e Segurança")) { painel.abrirAcessoTotal() }
+            separador
+            AcaoMenu(titulo: String(localized: "Sair do SDTally"), tecla: "⌘Q") { NSApp.terminate(nil) }
+            Color.clear.frame(height: 6)
+        }
+    }
+
     // No padrão dos menus da Apple (Wi-Fi, Bluetooth): título em negrito, seções com cabeçalho
     // cinza, linhas com ícone redondo e valor à direita, separadores recuados, ação no fim.
-    var body: some View {
+    private var lista: some View {
         VStack(alignment: .leading, spacing: 0) {
             sistema.padding(.horizontal, 14).padding(.top, 12).padding(.bottom, 8)
             if let t = painel.telaBoa {
@@ -211,8 +233,6 @@ struct BarraMenusView: View {
             }
             Color.clear.frame(height: 6)
         }
-        .frame(width: 330)
-        .background(CantosDaJanela())
         .onAppear { painel.atualizarSeVelho() }
     }
 

@@ -161,7 +161,7 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         } else {
             UNUserNotificationCenter.current().delegate = self
         }
-        Painel.unico.iniciar()
+        Portao.unico.esperar { Painel.unico.iniciar() }
         abrirSeFoiAMao()
         MenuContexto.vigiarBarra()
         // Ícone da barra desligado sem janela aberta: o app ficaria sem Dock e sem ícone. Abre a janela.
@@ -212,7 +212,8 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
     /// Com o ícone na barra, a janela não abre sozinha (.suppressed), para o início de sessão
     /// mostrar só o ícone. Aberto à mão (Finder, Dock, Spotlight), a janela abre.
     private func abrirSeFoiAMao() {
-        guard !Dev.ativo, !aoLogin, UserDefaults.standard.bool(forKey: "barraDeMenus") else { return }
+        // Sem Acesso Total, a janela abre até no início de sessão: é ela que diz como liberar.
+        guard !Dev.ativo, !aoLogin || !Portao.unico.liberado, UserDefaults.standard.bool(forKey: "barraDeMenus") else { return }
         let p = Painel.unico
         if p.abrirJanela != nil { p.mostrar(p.secao ?? .sistema) } else { p.abrirAoAparecer = true }
     }
@@ -466,6 +467,31 @@ struct JanelaView: View {
 
     var body: some View {
         @Bindable var painel = painel
+        Group {
+            if Portao.unico.liberado { principal } else { TelaAcessoTotal() }
+        }
+        .modifier(AvisoInstalarRoot())
+        .sheet(isPresented: $painel.mostrarBoasVindas) { BoasVindasView().environment(painel) }
+        .onAppear {
+            Delegado.ajustarDock(janela: true)
+            if Portao.unico.liberado { mostrarBoasVindasNaPrimeiraVez() }
+        }
+        .onChange(of: Portao.unico.liberado) { _, sim in if sim { mostrarBoasVindasNaPrimeiraVez() } }
+        .onDisappear { Delegado.ajustarDock(janela: false) }
+        .onChange(of: painel.secao) { _, s in if let s { ultimaSecao = s.rawValue } }
+        .frame(width: Self.tamanho.width).frame(minHeight: Self.tamanho.height - Self.alturaTitulo, maxHeight: .infinity)
+        .task {
+            painel.abrirJanela = abrirJanela
+            Foto.preparar(painel)
+            await Foto.tirarSePedido(painel)
+        }
+    }
+
+    private func mostrarBoasVindasNaPrimeiraVez() {
+        if !viuBoasVindas && Foto.env["SDTALLY_FOTO"] == nil { painel.mostrarBoasVindas = true }
+    }
+
+    private var principal: some View {
         HStack(spacing: 0) {
             BarraLateral()
             Color.clear.frame(width: 1)  // o lugar da divisória, que o fundo desenha
@@ -492,20 +518,6 @@ struct JanelaView: View {
                 Color(nsColor: .windowBackgroundColor)
             }
             .ignoresSafeArea()
-        }
-        .modifier(AvisoInstalarRoot())
-        .sheet(isPresented: $painel.mostrarBoasVindas) { BoasVindasView().environment(painel) }
-        .onAppear {
-            Delegado.ajustarDock(janela: true)
-            if !viuBoasVindas && Foto.env["SDTALLY_FOTO"] == nil { painel.mostrarBoasVindas = true }
-        }
-        .onDisappear { Delegado.ajustarDock(janela: false) }
-        .onChange(of: painel.secao) { _, s in if let s { ultimaSecao = s.rawValue } }
-        .frame(width: Self.tamanho.width).frame(minHeight: Self.tamanho.height - Self.alturaTitulo, maxHeight: .infinity)
-        .task {
-            painel.abrirJanela = abrirJanela
-            Foto.preparar(painel)
-            await Foto.tirarSePedido(painel)
         }
     }
 
