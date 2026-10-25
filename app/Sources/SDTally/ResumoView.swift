@@ -462,6 +462,10 @@ private struct LinhaMedicao: View {
                     Text(fraseSemExplicacao(c))
                     InfoBloqueado(c: c)
                 }
+                if !restoReduzivel(c) {
+                    Text("Pastas protegidas até do administrador e mudanças durante a medição. Nenhuma permissão reduz isto.")
+                        .foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                }
             } else {
                 HStack(alignment: .firstTextBaseline, spacing: 12) {
                     Text(Vazio.v12(c, comSenha: painel.medicoes.last { $0.completo.root }?.completo).texto)

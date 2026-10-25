@@ -65,7 +65,7 @@ nonisolated func segmentos(_ n: NivelBarra, rapido: Rapido?, completo: Completo?
             return Segmento(id: t.key, nome: nomeTermo(t.key), bytes: b, cor: termo(t.key).cor, fonte: t.source, estado: t.state, desdobra: .termo(t.key))
         }
         if let b = v.unexplained.bytes, b > 0 {
-            p.append(Segmento(id: "sem", nome: String(localized: "Bloqueado pelo macOS"), bytes: b, cor: .clear, tracejado: true, estado: v.unexplained.state))
+            p.append(Segmento(id: "sem", nome: nomeResto(c), bytes: b, cor: .clear, tracejado: true, estado: v.unexplained.state))
         }
         let w = valorOuNaoMedido(c.informational?.purgeable?.bytes ?? rapido?.purgeable.bytes)
         let x = v.used.bytes

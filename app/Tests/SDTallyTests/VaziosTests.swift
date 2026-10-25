@@ -35,7 +35,7 @@ private func proibidas() throws -> [String] {
     #expect(valorOuNaoMedido(0) == "0 B")  // zero medido é zero
     #expect(Vazio.v5(usadoData: nil).texto.hasSuffix("agora: não medido (volume APFS)."))
     let v12 = Vazio.v12(semExplicacao: nil, porcento: nil, dataComSenha: nil, bytesComSenha: nil).texto
-    #expect(v12 == "Bloqueado pelo macOS: não medido, sem senha.")
+    #expect(v12 == "Bloqueado pelo macOS: não medido, sem senha. Medir com senha pode reduzir isto.")
     for v in todos { #expect(!v.texto.contains(" 0 ") && !v.texto.contains(": 0"), "\(v.texto)") }
 }
 
@@ -44,7 +44,7 @@ private func proibidas() throws -> [String] {
     #expect(!Vazio.v1(ultimo: nil, hora: nil).texto.contains("Último lido"))
     #expect(Vazio.v1(ultimo: 221_266_053_536, hora: nil).texto.hasSuffix("Último lido: 221,27 GB."))
     #expect(Vazio.v12(semExplicacao: 41_000_000_000, porcento: 10, dataComSenha: "28/09", bytesComSenha: 2_000_000_000).texto
-        == "Bloqueado pelo macOS: 41,00 GB (10 %), sem senha. Com senha, em 28/09: 2,00 GB.")
+        == "Bloqueado pelo macOS: 41,00 GB (10 %), sem senha. Medir com senha pode reduzir isto. Com senha, em 28/09: 2,00 GB.")
     #expect(Vazio.v16.texto == "Não deu para ler as preferências do Time Machine.")
     #expect(Vazio.v8(root: true).texto == "Nenhum app segurando arquivo apagado (medido).")
     #expect(nenhum(fonte: "fsctl_snapshot_private_size", hora: "09:36") == "Nenhum (snapshots (APFS), medido às 09:36).")

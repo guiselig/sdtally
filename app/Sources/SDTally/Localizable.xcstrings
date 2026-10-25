@@ -37173,6 +37173,220 @@
         }
       }
     },
+    "Bloqueado ou não medido" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "محظور أو غير مقيس"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloquejat o no mesurat"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blokováno nebo nezměřeno"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blokeret eller ikke målt"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blockiert oder nicht gemessen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αποκλεισμένο ή χωρίς μέτρηση"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blocked or not measured"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueado o no medido"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueado o no medido"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estetty tai mittaamatta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqué ou non mesuré"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "חסום או לא נמדד"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अवरुद्ध या नहीं मापा गया"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blokirano ili neizmjereno"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Letiltva vagy nem mérve"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diblokir atau tidak diukur"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloccato o non misurato"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ブロックまたは未測定"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "차단됨 또는 측정 안 됨"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disekat atau tidak diukur"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blokkert eller ikke målt"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geblokkeerd of niet gemeten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zablokowane lub niezmierzone"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloqueado ou não medido"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blocat sau nemăsurat"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заблокировано или не измерено"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blokované alebo nezmerané"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blokirano ali neizmerjeno"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blockerat eller inte mätt"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ถูกบล็อกหรือยังไม่ได้วัด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Engelli veya ölçülmedi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заблоковано або не виміряно"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bị chặn hoặc chưa đo"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "被阻止或未测量"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "被阻擋或未測量"
+          }
+        }
+      }
+    },
     "Bloqueado pelo macOS" : {
       "localizations" : {
         "en" : {
@@ -95271,6 +95485,220 @@
         }
       }
     },
+    "Medir com senha pode reduzir isto." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "القياس بكلمة السر قد يقلل هذا."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesurar amb contrasenya ho pot reduir."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Měření s heslem to může zmenšit."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Måling med adgangskode kan mindske dette."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine Messung mit Passwort kann das verringern."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η μέτρηση με συνθηματικό μπορεί να το μειώσει."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Measuring with your password can reduce this."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medir con contraseña puede reducir esto."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medir con contraseña puede reducir esto."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mittaus salasanalla voi pienentää tätä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mesurer avec le mot de passe peut réduire cela."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מדידה עם סיסמה יכולה להקטין את זה."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पासवर्ड के साथ मापने से यह कम हो सकता है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mjerenje s lozinkom može to smanjiti."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jelszóval mérve ez csökkenhet."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengukur dengan kata sandi dapat mengurangi ini."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Misurare con la password può ridurre questo valore."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "パスワードありで測定すると減らせることがあります。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "암호로 측정하면 줄어들 수 있습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengukur dengan kata laluan boleh mengurangkan ini."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Måling med passord kan redusere dette."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meten met je wachtwoord kan dit verkleinen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomiar z hasłem może to zmniejszyć."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medir com a palavra-passe pode reduzir isto."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Măsurarea cu parola poate reduce asta."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Измерение с паролем может это уменьшить."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meranie s heslom to môže zmenšiť."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merjenje z geslom lahko to zmanjša."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Att mäta med lösenord kan minska detta."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การวัดด้วยรหัสผ่านอาจลดส่วนนี้ได้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parolayla ölçmek bunu azaltabilir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вимірювання з паролем може це зменшити."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đo bằng mật khẩu có thể giảm phần này."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用密码测量可以减少这部分。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用密碼測量可以減少這部分。"
+          }
+        }
+      }
+    },
     "Medir como administrador (⌘R)" : {
       "localizations" : {
         "en" : {
@@ -113243,6 +113671,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No medido: %@"
+          }
+        }
+      }
+    },
+    "Não medido: %@ (%@ %% do usado)" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غير مقاس: %@ (%@%% من المستخدَم)"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No mesurat: %@ (%@ %% de l’utilitzat)"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neměřeno: %@ (%@ %% z použitého)"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ikke målt: %@ (%@ %% af det brugte)"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicht gemessen: %@ (%@ %% des Belegten)"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν μετρήθηκε: %@ (%@%% των χρησιμοποιημένων)"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not measured: %@ (%@%% of used)"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No medido: %@ (%@ %% de lo usado)"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No medido: %@ (%@ %% de lo usado)"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei mitattu: %@ (%@ %% käytetystä)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non mesuré : %@ (%@ %% de l’espace utilisé)"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "לא נמדד: %@ (%@%% מהשטח שבשימוש)"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मापा नहीं गया: %@ (इस्तेमाल का %@ %%)"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nije izmjereno: %@ (%@ %% iskorištenog)"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nincs mérve: %@ (a használt %@%%-a)"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum diukur: %@ (%@ %% dari yang terpakai)"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non misurato: %@ (%@%% dell’usato)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未測定：%@（使用量の%@%%）"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "측정 안 됨: %@(사용량의 %@%%)"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak diukur: %@ (%@ %% daripada yang digunakan)"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ikke målt: %@ (%@ %% av det brukte)"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niet gemeten: %@ (%@%% van het gebruikte)"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niezmierzone: %@ (%@ %% zajętego)"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não medido: %@ (%@ %% do utilizado)"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nemăsurat: %@ (%@%% din spațiul folosit)"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не измерено: %@ (%@ %% от занятого)"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nezmerané: %@ (%@ %% použitého)"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ni izmerjeno: %@ (%@ %% uporabljenega)"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ej mätt: %@ (%@ %% av det använda)"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยังไม่ได้วัด: %@ (%@%% ของพื้นที่ที่ใช้)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ölçülmedi: %@ (kullanılanın %%%@)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не виміряно: %@ (%@ %% використаного)"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa đo: %@ (%@%% phần đã dùng)"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未测量：%@（占已用空间的 %@%%）"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未測量：%@（佔已用空間 %@%%）"
           }
         }
       }
@@ -132931,6 +133573,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Las carpetas del sistema y de otros usuarios solo se abren como administrador; sin la contraseña, quedan bloqueadas por macOS."
+          }
+        }
+      }
+    },
+    "Pastas protegidas até do administrador e mudanças durante a medição. Nenhuma permissão reduz isto." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مجلدات محمية حتى من المسؤول وتغييرات أثناء القياس. لا يقلل أي إذن من هذا."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carpetes protegides fins i tot per a l’administrador i canvis durant la mesura. Cap permís ho redueix."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Složky chráněné i před administrátorem a změny během měření. Žádné oprávnění to nezmenší."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapper, der er beskyttet selv mod administratorer, og ændringer under målingen. Ingen tilladelse mindsker dette."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordner, die sogar vor Administratoren geschützt sind, und Änderungen während der Messung. Keine Berechtigung verringert das."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Φάκελοι προστατευμένοι ακόμη και από τον διαχειριστή και αλλαγές κατά τη μέτρηση. Καμία άδεια δεν το μειώνει."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folders protected even from administrators, and changes during the measurement. No permission reduces this."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carpetas protegidas incluso para el administrador y cambios durante la medición. Ningún permiso reduce esto."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carpetas protegidas incluso para el administrador y cambios durante la medición. Ningún permiso reduce esto."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jopa ylläpitäjältä suojatut kansiot ja mittauksen aikana tapahtuneet muutokset. Mikään lupa ei pienennä tätä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dossiers protégés même pour l’administrateur et changements pendant la mesure. Aucune autorisation ne réduit cela."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "תיקיות מוגנות אפילו מפני מנהל המערכת ושינויים במהלך המדידה. שום הרשאה לא מקטינה את זה."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "व्यवस्थापक से भी सुरक्षित फ़ोल्डर और मापन के दौरान हुए बदलाव। कोई भी अनुमति इसे कम नहीं करती।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mape zaštićene čak i od administratora i promjene tijekom mjerenja. Nijedno dopuštenje to ne smanjuje."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Még a rendszergazda elől is védett mappák és a mérés közbeni változások. Ezt semmilyen engedély nem csökkenti."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folder yang dilindungi bahkan dari administrator dan perubahan selama pengukuran. Tidak ada izin yang mengurangi ini."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartelle protette anche dall’amministratore e modifiche durante la misurazione. Nessun permesso riduce questo valore."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "管理者からも保護されたフォルダと、測定中の変化です。どの権限でも減りません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "관리자에게도 보호된 폴더와 측정 중의 변화입니다. 어떤 권한으로도 줄어들지 않습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folder yang dilindungi walaupun daripada pentadbir dan perubahan semasa pengukuran. Tiada kebenaran yang mengurangkan ini."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapper som er beskyttet selv mot administratorer, og endringer under målingen. Ingen tillatelse reduserer dette."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mappen die zelfs voor beheerders beschermd zijn en wijzigingen tijdens de meting. Geen enkele toestemming verkleint dit."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foldery chronione nawet przed administratorem i zmiany w trakcie pomiaru. Żadne uprawnienie tego nie zmniejszy."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pastas protegidas até do administrador e alterações durante a medição. Nenhuma permissão reduz isto."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dosare protejate chiar și față de administrator și modificări din timpul măsurării. Nicio permisiune nu reduce asta."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Папки, защищённые даже от администратора, и изменения во время измерения. Никакое разрешение это не уменьшит."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Priečinky chránené aj pred administrátorom a zmeny počas merania. Žiadne povolenie to nezmenší."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mape, zaščitene celo pred skrbnikom, in spremembe med merjenjem. Nobeno dovoljenje tega ne zmanjša."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mappar som är skyddade även för administratörer och ändringar under mätningen. Ingen behörighet minskar detta."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "โฟลเดอร์ที่ป้องกันแม้แต่จากผู้ดูแลระบบ และการเปลี่ยนแปลงระหว่างการวัด ไม่มีสิทธิ์ใดลดส่วนนี้ได้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yöneticiden bile korunan klasörler ve ölçüm sırasındaki değişiklikler. Hiçbir izin bunu azaltmaz."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Папки, захищені навіть від адміністратора, і зміни під час вимірювання. Жоден дозвіл цього не зменшить."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thư mục được bảo vệ ngay cả với quản trị viên và các thay đổi trong lúc đo. Không quyền nào giảm được phần này."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "连管理员也无法访问的受保护文件夹，以及测量期间的变化。任何权限都无法减少这部分。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "連管理者也無法取用的受保護檔案夾，以及測量期間的變化。任何權限都無法減少這部分。"
           }
         }
       }

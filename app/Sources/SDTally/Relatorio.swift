@@ -240,7 +240,7 @@ private struct Capa: View {
         HStack(alignment: .top, spacing: 8) {
             FichaKPI(titulo: String(localized: "Livre"), bytes: Armazenamento.principal(c.containers ?? [])?.free, fonte: nomeFonte("diskutil_apfs_list"))
             FichaKPI(titulo: String(localized: "O macOS libera sozinho"), bytes: c.informational?.purgeable?.bytes, fonte: nomeFonte("cachedelete"), variacao: String(localized: "já dentro do usado"))
-            FichaKPI(titulo: String(localized: "Bloqueado pelo macOS"), bytes: u.bytes, fonte: nomeFonte("difference"),
+            FichaKPI(titulo: nomeResto(c), bytes: u.bytes, fonte: nomeFonte("difference"),
                      variacao: u.percentOfUsed.map { String(localized: "\($0.formatted(.number.precision(.fractionLength(1)).locale(localApp))) % do usado") })
         }
     }
@@ -285,7 +285,7 @@ private struct PaginaArmazenamento: View {
         }
         let v = c.dataVolume
         let segs = v.terms.compactMap { t in t.bytes.map { Segmento(id: t.key, nome: nomeTermo(t.key), bytes: $0, cor: termo(t.key).cor) } }
-            + (v.unexplained.bytes.flatMap { $0 > 0 ? [Segmento(id: "sem", nome: String(localized: "Bloqueado pelo macOS"), bytes: $0, cor: .clear, tracejado: true)] : nil } ?? [])
+            + (v.unexplained.bytes.flatMap { $0 > 0 ? [Segmento(id: "sem", nome: nomeResto(c), bytes: $0, cor: .clear, tracejado: true)] : nil } ?? [])
         secao(String(localized: "Conta do volume de dados")) {
             BarraView(segmentos: segs, altura: 12)
             tabela {

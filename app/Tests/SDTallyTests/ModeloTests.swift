@@ -325,13 +325,13 @@ private var dados: URL { Bundle.module.resourceURL!.appending(path: "Fixtures/da
 /// Nenhum caminho mostra negativo: o sdtally novo manda null + overlap_bytes, e a medição salva por
 /// um antigo (bytes negativo) é lida como não medida.
 @MainActor @Test func restoNegativoNuncaChegaATela() throws {
-    func completo(_ unexplained: [String: Any]) throws -> Completo {
+    func completo(_ unexplained: [String: Any], acessoTotal: Bool = false) throws -> Completo {
         var j = try JSONSerialization.jsonObject(with: fixture("completo")) as! [String: Any]
         var dv = j["data_volume"] as! [String: Any]
         dv["unexplained"] = unexplained
         j["data_volume"] = dv
         j["root"] = true
-        j["full_disk_access"] = false
+        j["full_disk_access"] = acessoTotal
         return try decodificar(Completo.self, JSONSerialization.data(withJSONObject: j), kind: nil)
     }
     let novo = try completo(["bytes": NSNull(), "percent_of_used": NSNull(), "state": "not_measured", "overlap_bytes": 14_680_000_000, "reason": "x", "source": "difference"])
@@ -343,11 +343,16 @@ private var dados: URL { Bundle.module.resourceURL!.appending(path: "Fixtures/da
         #expect(f == "Bloqueado pelo macOS: não medido")
         #expect(explicarBloqueado(c).texto.contains { $0.contains("passam do usado em 14,68 GB") })
         #expect(!f.contains("-14") && !f.contains("−"))
-        #expect(Vazio.v12(c, comSenha: nil).texto == "Bloqueado pelo macOS: não medido, sem senha.")
+        #expect(Vazio.v12(c, comSenha: nil).texto == "Bloqueado pelo macOS: não medido, sem senha. Medir com senha pode reduzir isto.")
     }
     // Resto normal não muda.
     let ok = try completo(["bytes": 6_000_000_000, "percent_of_used": 1.5, "state": "partial", "source": "difference"])
     #expect(fraseSemExplicacao(ok) == "Bloqueado pelo macOS: 6,00 GB (1,5 % do usado)")
+    // Com root e Acesso Total nenhuma permissão reduz o resto: "Não medido".
+    let tudo = try completo(["bytes": 6_000_000_000, "percent_of_used": 1.5, "state": "partial", "source": "difference"], acessoTotal: true)
+    #expect(!restoReduzivel(tudo) && restoReduzivel(ok))
+    #expect(nomeResto(tudo) == "Não medido" && nomeResto(ok) == "Bloqueado pelo macOS")
+    #expect(fraseSemExplicacao(tudo) == "Não medido: 6,00 GB (1,5 % do usado)")
 }
 
 @Test func lixoPorIdadeEMetadadosDoAPFS() throws {

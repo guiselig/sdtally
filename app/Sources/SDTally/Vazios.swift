@@ -95,6 +95,7 @@ nonisolated enum Vazio: Sendable, Equatable {
             ([
                 p.map { String(localized: "Bloqueado pelo macOS: \(valorOuNaoMedido(b)) (\($0.formatted(.number.precision(.fractionLength(0...1)).locale(localApp))) %), sem senha.") }
                     ?? String(localized: "Bloqueado pelo macOS: \(valorOuNaoMedido(b)), sem senha."),
+                String(localized: "Medir com senha pode reduzir isto."),
                 data.flatMap { d in antes.map { String(localized: "Com senha, em \(d): \(gb($0)).") } },
             ] as [String?]).compactMap { $0 }.joined(separator: " ")
         case .v16: String(localized: "Não deu para ler as preferências do Time Machine.")
@@ -145,14 +146,26 @@ nonisolated func nenhum(fonte: String, hora h: String?) -> String {
     h.map { String(localized: "Nenhum (\(nomeFonte(fonte)), medido às \($0)).") } ?? String(localized: "Nenhum (\(nomeFonte(fonte))).")
 }
 
-/// B4: a frase do Bloqueado pelo macOS. Nunca negativa: se as partes passaram do usado (dir-stats das
+/// O resto só é "bloqueado" quando uma permissão o reduziria (sem root ou sem Acesso Total). Com os
+/// dois, nenhuma permissão reduz: pastas protegidas até do administrador, partes parciais e o que
+/// mudou durante a medição viram "Não medido" (feedback do Reddit; dono, 24/10).
+nonisolated func restoReduzivel(_ c: Completo) -> Bool { !c.root || c.fullDiskAccess != true }
+
+nonisolated func nomeResto(_ c: Completo) -> String {
+    restoReduzivel(c) ? String(localized: "Bloqueado pelo macOS") : String(localized: "Não medido")
+}
+
+/// B4: a frase do Bloqueado pelo macOS (ou do Não medido, com root e Acesso Total). Nunca negativa: se as partes passaram do usado (dir-stats das
 /// pastas protegidas conta o que a travessia já contou), o número não existe e a frase diz isso.
 nonisolated func fraseSemExplicacao(_ c: Completo) -> String {
     let u = c.dataVolume.unexplained
     // A sobreposição (partes medidas acima do usado) fica no ⓘ, em explicarBloqueado.
-    return u.percentOfUsed.map {
-        String(localized: "Bloqueado pelo macOS: \(valorOuNaoMedido(u.bytes)) (\($0.formatted(.number.precision(.fractionLength(1)).locale(localApp))) % do usado)")
-    } ?? String(localized: "Bloqueado pelo macOS: \(valorOuNaoMedido(u.bytes))")
+    let v = valorOuNaoMedido(u.bytes)
+    let p = u.percentOfUsed.map { $0.formatted(.number.precision(.fractionLength(1)).locale(localApp)) }
+    guard restoReduzivel(c) else {
+        return p.map { String(localized: "Não medido: \(v) (\($0) % do usado)") } ?? String(localized: "Não medido: \(v)")
+    }
+    return p.map { String(localized: "Bloqueado pelo macOS: \(v) (\($0) % do usado)") } ?? String(localized: "Bloqueado pelo macOS: \(v)")
 }
 
 /// O ⓘ ao lado do Bloqueado pelo macOS: por que o número existe e o que ficou sem tamanho.

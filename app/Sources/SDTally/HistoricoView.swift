@@ -499,7 +499,7 @@ private struct ListaMedicoes: View {
                         Text("Medida em")
                         Text("Modo")
                         Text("Usado").gridColumnAlignment(.trailing)
-                        Text("Bloqueado pelo macOS").gridColumnAlignment(.trailing)
+                        Text("Bloqueado ou não medido").gridColumnAlignment(.trailing)
                         Text("sdtally")
                     }
                     .font(.caption).foregroundStyle(.secondary)
@@ -514,6 +514,7 @@ private struct ListaMedicoes: View {
                                 .background(.quaternary, in: .capsule)
                             Text(c.dataVolume.used.bytes.map(gb) ?? "—")
                             Text((u.bytes.map(gb) ?? "—") + (u.percentOfUsed.map { " · " + $0.formatted(.number.precision(.fractionLength(1)).locale(localApp)) + " %" } ?? ""))
+                                .help(nomeResto(c))
                             Text(c.tool.replacing("sdtally ", with: "")).font(.caption).foregroundStyle(.secondary)
                         }
                         .monospacedDigit()
