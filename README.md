@@ -374,7 +374,7 @@ The CLI writes nothing. `--last`, `--history` and `--changes` only read `Medicoe
 
 **The System Data line says "no record".** The number only exists in the Storage pane's log, which keeps it for less than about 21 hours. Open System Settings > General > Storage, wait for it to finish loading, and run again. The app can also open System Settings out of sight to refresh it (every 10 minutes while the app is open by default; see Settings > Automatic Refresh).
 
-**Why is there an "unexplained" or "Blocked by macOS" line?** It is used space minus everything measured. It shrinks with root and Full Disk Access; it never goes negative (if parts overlap, it becomes "not measured" with the overlap reported).
+**Why is there an "unexplained", "Blocked by macOS" or "Not measured" line?** It is used space minus everything measured, and it never goes negative (if parts overlap, it becomes "not measured" with the overlap reported). Without root or Full Disk Access the app calls it "Blocked by macOS": most of it is folders macOS would not let SDTally read, and measuring with the password reduces it. With both, the app calls it "Not measured": what remains is folders protected even from administrators and changes during the measurement, and no permission reduces it.
 
 **Why is the app not notarized?** Notarization requires a paid Apple Developer membership. The app is signed with an Apple Development certificate. Use "Open Anyway" once, or build it yourself.
 
