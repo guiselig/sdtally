@@ -3,6 +3,7 @@
 // API estável:
 //   BoasVindasView(pagina:)  lê Painel do ambiente; "Começar" grava @AppStorage("viuBoasVindas")
 // A JanelaView apresenta a folha por painel.mostrarBoasVindas.
+import AppKit
 import SwiftUI
 
 struct BoasVindasView: View {
@@ -51,9 +52,21 @@ struct BoasVindasView: View {
     @ViewBuilder private var conteudo: some View {
         switch pagina {
         case 0:
-            Text("O que tem dentro de Dados do Sistema, com o número do próprio Ajustes.")
-                .font(.title3).foregroundStyle(.secondary)
-                .multilineTextAlignment(.center).frame(maxWidth: .infinity)
+            VStack(spacing: 28) {
+                Text("O que tem dentro de Dados do Sistema, com o número do próprio Ajustes.")
+                    .font(.title3).foregroundStyle(.secondary)
+                // Pedido de estrela só aqui, sem lembrete depois (dono, 26/10). Abre no navegador: o app segue sem rede.
+                VStack(spacing: 4) {
+                    Text("Se o SDTally te ajudar, uma estrela no GitHub ajuda outras pessoas a encontrá-lo.")
+                        .foregroundStyle(.secondary)
+                    Button("Dar uma estrela no GitHub", systemImage: "star") {
+                        NSWorkspace.shared.open(URL(string: "https://github.com/guiselig/sdtally")!)
+                    }
+                    .buttonStyle(.link)
+                }
+                .font(.callout)
+            }
+            .multilineTextAlignment(.center).frame(maxWidth: .infinity)
         case 1: lista(Self.faz)
         case 2: lista(Self.como)
         default:
