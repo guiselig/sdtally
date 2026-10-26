@@ -142784,13 +142784,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يبحث في github.com عن إصدار جديد مرة في اليوم وينبّهك في النافذة وفي شريط القوائم وفي الإعدادات › الإصدارات. لا يثبّت إلا عند النقر: يتحقق من التوقيع ومن SHA-256 ثم يستبدل التطبيق ويعيد فتحه، دون “فتح على أي حال”."
+            "value" : "يبحث في github.com عن إصدار جديد مرة في اليوم وينبّهك في النافذة وفي شريط القوائم وفي الإعدادات › الإصدارات. لا يثبّت إلا عند النقر: يتحقق من التوقيع ومن SHA-256 ثم يستبدل التطبيق ويعيد فتحه، دون “فتح على أية حال”."
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cerca una versió nova a github.com un cop al dia i t’avisa a la finestra, a la barra de menús i a Configuració › Versions. Només s’instal·la quan fas clic: comprova la signatura i el SHA-256, substitueix l’app i la torna a obrir, sense «Obre igualment»."
+            "value" : "Cerca una versió nova a github.com un cop al dia i t’avisa a la finestra, a la barra de menús i a Configuració › Versions. Només s’instal·la quan fas clic: comprova la signatura i el SHA-256, substitueix l’app i la torna a obrir, sense «Obre de tota manera»."
           }
         },
         "cs" : {
@@ -142814,7 +142814,7 @@
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Αναζητά νέα έκδοση στο github.com μία φορά την ημέρα και σας ειδοποιεί στο παράθυρο, στη γραμμή μενού και στις Ρυθμίσεις › Εκδόσεις. Εγκαθιστά μόνο όταν πατήσετε: ελέγχει την υπογραφή και το SHA-256, αντικαθιστά την εφαρμογή και την ανοίγει ξανά, χωρίς «Άνοιγμα ούτως ή άλλως»."
+            "value" : "Αναζητά νέα έκδοση στο github.com μία φορά την ημέρα και σας ειδοποιεί στο παράθυρο, στη γραμμή μενού και στις Ρυθμίσεις › Εκδόσεις. Εγκαθιστά μόνο όταν πατήσετε: ελέγχει την υπογραφή και το SHA-256, αντικαθιστά την εφαρμογή και την ανοίγει ξανά, χωρίς «Άνοιγμα οπωσδήποτε»."
           }
         },
         "en" : {
@@ -142838,7 +142838,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Etsii uutta versiota osoitteesta github.com kerran päivässä ja ilmoittaa ikkunassa, valikkorivillä ja kohdassa Asetukset › Versiot. Asentaa vain, kun napsautat: tarkistaa allekirjoituksen ja SHA-256:n, korvaa apin ja avaa sen uudelleen ilman ”Avaa silti” -valintaa."
+            "value" : "Etsii uutta versiota osoitteesta github.com kerran päivässä ja ilmoittaa ikkunassa, valikkorivillä ja kohdassa Asetukset › Versiot. Asentaa vain, kun napsautat: tarkistaa allekirjoituksen ja SHA-256:n, korvaa apin ja avaa sen uudelleen ilman ”Avaa kuitenkin” -valintaa."
           }
         },
         "fr" : {
@@ -142850,7 +142850,7 @@
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "מחפש גרסה חדשה ב-github.com פעם ביום ומודיע בחלון, בשורת התפריטים ובהגדרות › גרסאות. מתקין רק כשלוחצים: בודק את החתימה ואת SHA-256, מחליף את היישום ופותח אותו מחדש, בלי “פתח בכל זאת”."
+            "value" : "מחפש גרסה חדשה ב-github.com פעם ביום ומודיע בחלון, בשורת התפריטים ובהגדרות › גרסאות. מתקין רק כשלוחצים: בודק את החתימה ואת SHA-256, מחליף את היישום ופותח אותו מחדש, בלי “פתיחה בכל זאת”."
           }
         },
         "hi" : {
@@ -142862,19 +142862,19 @@
         "hr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally jednom dnevno na github.com traži novu verziju i obavještava u prozoru, traci izbornika i u Postavke › Verzije. Instalira samo kad kliknete: provjerava potpis i SHA-256, zamjenjuje aplikaciju i ponovno je otvara, bez „Ipak otvori“."
+            "value" : "SDTally jednom dnevno na github.com traži novu verziju i obavještava u prozoru, traci izbornika i u Postavke › Verzije. Instalira samo kad kliknete: provjerava potpis i SHA-256, zamjenjuje aplikaciju i ponovno je otvara, bez „Otvori svejedno“."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Naponta egyszer új verziót keres a github.com oldalon, és jelzi az ablakban, a menüsorban és a Beállítások › Verziók részben. Csak kattintásra telepít: ellenőrzi az aláírást és az SHA-256 értéket, lecseréli az alkalmazást és újra megnyitja, „Megnyitás mégis” nélkül."
+            "value" : "Naponta egyszer új verziót keres a github.com oldalon, és jelzi az ablakban, a menüsorban és a Beállítások › Verziók részben. Csak kattintásra telepít: ellenőrzi az aláírást és az SHA-256 értéket, lecseréli az alkalmazást és újra megnyitja, „Megnyitás mindenképp” nélkül."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mencari versi baru di github.com sekali sehari dan memberi tahu di jendela, bilah menu, dan Pengaturan › Versi. Hanya memasang saat Anda mengeklik: memeriksa tanda tangan dan SHA-256, mengganti aplikasi, lalu membukanya kembali, tanpa “Buka Saja”."
+            "value" : "Mencari versi baru di github.com sekali sehari dan memberi tahu di jendela, bilah menu, dan Pengaturan › Versi. Hanya memasang saat Anda mengeklik: memeriksa tanda tangan dan SHA-256, mengganti aplikasi, lalu membukanya kembali, tanpa “Tetap Buka”."
           }
         },
         "it" : {
@@ -142898,7 +142898,7 @@
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Menyemak versi baharu di github.com sekali sehari dan memberitahu dalam tetingkap, bar menu dan Seting › Versi. Hanya memasang apabila anda klik: menyemak tandatangan dan SHA-256, menggantikan apl dan membukanya semula, tanpa “Tetap Buka”."
+            "value" : "Menyemak versi baharu di github.com sekali sehari dan memberitahu dalam tetingkap, bar menu dan Seting › Versi. Hanya memasang apabila anda klik: menyemak tandatangan dan SHA-256, menggantikan apl dan membukanya semula, tanpa “Buka Juga”."
           }
         },
         "nb" : {
@@ -142928,19 +142928,19 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Caută o versiune nouă pe github.com o dată pe zi și te anunță în fereastră, în bara de meniuri și în Setări › Versiuni. Instalează doar când apeși: verifică semnătura și SHA-256, înlocuiește aplicația și o redeschide, fără „Deschide oricum”."
+            "value" : "Caută o versiune nouă pe github.com o dată pe zi și te anunță în fereastră, în bara de meniuri și în Setări › Versiuni. Instalează doar când apeși: verifică semnătura și SHA-256, înlocuiește aplicația și o redeschide, fără „Deschideți oricum”."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Раз в день проверяет github.com на наличие новой версии и сообщает об этом в окне, в строке меню и в разделе «Настройки › Версии». Устанавливает только по вашему нажатию: проверяет подпись и SHA-256, заменяет приложение и открывает его снова, без «Всё равно открыть»."
+            "value" : "Раз в день проверяет github.com на наличие новой версии и сообщает об этом в окне, в строке меню и в разделе «Настройки › Версии». Устанавливает только по вашему нажатию: проверяет подпись и SHA-256, заменяет приложение и открывает его снова, без «Все равно открыть»."
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Raz denne vyhľadá novú verziu na github.com a upozorní vás v okne, na paneli ponúk a v Nastavenia › Verzie. Inštaluje iba po kliknutí: skontroluje podpis a SHA-256, nahradí aplikáciu a znova ju otvorí, bez „Aj tak otvoriť“."
+            "value" : "Raz denne vyhľadá novú verziu na github.com a upozorní vás v okne, na paneli ponúk a v Nastavenia › Verzie. Inštaluje iba po kliknutí: skontroluje podpis a SHA-256, nahradí aplikáciu a znova ju otvorí, bez „Otvoriť aj tak“."
           }
         },
         "sl" : {
@@ -142958,7 +142958,7 @@
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ตรวจหาเวอร์ชันใหม่ที่ github.com วันละครั้งและแจ้งในหน้าต่าง แถบเมนู และการตั้งค่า › เวอร์ชัน จะติดตั้งเมื่อคุณคลิกเท่านั้น: ตรวจสอบลายเซ็นและ SHA-256 แทนที่แอปแล้วเปิดใหม่ โดยไม่ต้องใช้ “เปิดต่อไป”"
+            "value" : "ตรวจหาเวอร์ชันใหม่ที่ github.com วันละครั้งและแจ้งในหน้าต่าง แถบเมนู และการตั้งค่า › เวอร์ชัน จะติดตั้งเมื่อคุณคลิกเท่านั้น: ตรวจสอบลายเซ็นและ SHA-256 แทนที่แอปแล้วเปิดใหม่ โดยไม่ต้องกด “ยืนยันจะเปิด”"
           }
         },
         "tr" : {
@@ -142988,7 +142988,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "每天在 github.com 上檢查一次新版本，並在視窗、選單列和「設定 › 版本」中提示。僅在你按一下後才安裝：驗證簽章和 SHA-256，取代 App 並重新打開，無需「仍要打開」。"
+            "value" : "每天在 github.com 上檢查一次新版本，並在視窗、選單列和「設定 › 版本」中提示。僅在你按一下後才安裝：驗證簽章和 SHA-256，取代 App 並重新打開，無需「強制打開」。"
           }
         }
       }
