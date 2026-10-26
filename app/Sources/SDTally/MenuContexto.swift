@@ -1,5 +1,5 @@
 // Menu de botão direito no ícone da Dock (Delegado.applicationDockMenu) e no ícone da barra de
-// menus (o MenuBarExtra não tem um: um monitor local pega o clique direito na janela do ícone).
+// menus (BarraDeStatus: um monitor local pega o clique direito na janela do ícone).
 //   itensContexto(barra:medindo:podeParar:soAuto:)   os itens de cada um, testados (MenuContextoTests)
 //   MenuContexto.menu(barra:), MenuContexto.vigiarBarra()
 import AppKit

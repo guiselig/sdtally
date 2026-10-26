@@ -35,13 +35,6 @@ struct SDTallyApp: App {
         // Com o ícone, o início de sessão mostra só ele. Fora do .app a janela abre sempre (fotos).
         .defaultLaunchBehavior(barraDeMenus && !Dev.ativo ? .suppressed : .automatic)
         .commands { Menus(painel: painel) }
-
-        MenuBarExtra(isInserted: $barraDeMenus) {
-            BarraMenusView().environment(painel)
-        } label: {
-            RotuloBarra().environment(painel)
-        }
-        .menuBarExtraStyle(.window)
     }
 }
 
@@ -51,6 +44,7 @@ private struct Menus: Commands {
     @Environment(\.openWindow) private var abrirJanela
 
     var body: some Commands {
+        let _ = Self.guardar(abrirJanela, painel)
         CommandGroup(replacing: .appInfo) {
             Button("Sobre o SDTally") { ir(.info) }
         }
@@ -124,6 +118,16 @@ private struct Menus: Commands {
         }
     }
 
+    /// O openWindow do Painel (Painel.mostrar) sai daqui: os menus do app existem desde a abertura,
+    /// mesmo sem janela, e o ícone da barra (BarraDeStatus, AppKit) não tem ambiente do SwiftUI.
+    private static func guardar(_ a: OpenWindowAction, _ p: Painel) {
+        p.abrirJanela = a
+        if p.abrirAoAparecer {
+            p.abrirAoAparecer = false
+            DispatchQueue.main.async { p.mostrar(p.secao ?? .sistema) }
+        }
+    }
+
     private static let pastaDados = Historico.pastaLeitura(env: Foto.env, bundleID: Bundle.main.bundleIdentifier)
 
     /// Vai para a seção e traz a janela para a frente (reabre se foi fechada).
@@ -164,10 +168,12 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         Portao.unico.esperar { Painel.unico.iniciar() }
         Atualizador.aoAbrir()
         abrirSeFoiAMao()
+        BarraDeStatus.unico.ajustar()
         MenuContexto.vigiarBarra()
         // Ícone da barra desligado sem janela aberta: o app ficaria sem Dock e sem ícone. Abre a janela.
         NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { _ in
             Task { @MainActor in
+                BarraDeStatus.unico.ajustar()
                 guard !Dev.ativo, !UserDefaults.standard.bool(forKey: "barraDeMenus"), NSApp.activationPolicy() == .accessory else { return }
                 Painel.unico.mostrar(Painel.unico.secao ?? .sistema)
             }

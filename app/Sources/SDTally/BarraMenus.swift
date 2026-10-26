@@ -84,7 +84,6 @@ nonisolated func gb1(_ bytes: Int64) -> String {
 /// o liberado automaticamente ou só o glifo. Com aviso, o triângulo vem antes. Dados do Sistema nunca vai aqui.
 struct RotuloBarra: View {
     @Environment(Painel.self) private var painel
-    @Environment(\.openWindow) private var abrirJanela
     @AppStorage("rotuloBarra") private var mostrar = "livre"
 
     @MainActor private static let glifo: NSImage = {
@@ -108,10 +107,6 @@ struct RotuloBarra: View {
             default: Text((painel.livre ?? painel.rapido?.capacity?.free).map(gb) ?? "—").monospacedDigit()
             }
         }
-        .onAppear {
-            painel.abrirJanela = abrirJanela
-            if painel.abrirAoAparecer { painel.abrirAoAparecer = false; painel.mostrar(painel.secao ?? .sistema) }
-        }
     }
 }
 
@@ -123,54 +118,19 @@ private struct Glifo: View {
 
 // MARK: - Janela
 
-/// MenuBarExtra(.window) sai com cantos menores que os menus do sistema no macOS 26: o quadro da
-/// janela (que desenha o fundo; não há NSVisualEffectView dentro) passa a `raio`. A janela é criada
-/// escondida e o servidor de janelas só refaz a forma (fundo, contorno e sombra) quando ela muda de
-/// tamanho; por isso a sombra é refeita cada vez que ela aparece, senão abre com os cantos retos
-/// até a primeira leitura nova redimensioná-la.
-private struct CantosDaJanela: NSViewRepresentable {
-    static let raio: CGFloat = 14
-    func makeNSView(context: Context) -> NSView { Vista() }
-    func updateNSView(_ v: NSView, context: Context) {}
-
-    final class Vista: NSView {
-        private var observador: NSObjectProtocol?
-
-        override func viewDidMoveToWindow() {
-            super.viewDidMoveToWindow()
-            observador.map(NotificationCenter.default.removeObserver)
-            observador = nil
-            guard let w = window else { return }
-            arredondar(w)
-            observador = NotificationCenter.default.addObserver(forName: NSWindow.didChangeOcclusionStateNotification, object: w, queue: .main) { [weak self] _ in
-                MainActor.assumeIsolated {
-                    guard w.occlusionState.contains(.visible) else { return }
-                    self?.arredondar(w)
-                }
-            }
-        }
-
-        private func arredondar(_ w: NSWindow) {
-            guard let quadro = w.contentView?.superview else { return }
-            quadro.wantsLayer = true
-            quadro.layer?.cornerRadius = CantosDaJanela.raio
-            quadro.layer?.cornerCurve = .continuous
-            quadro.layer?.masksToBounds = true
-            w.invalidateShadow()
-        }
-    }
+/// Fecha o NSMenu do cartão antes de uma ação (BarraDeStatus); fora do menu (fotos), não faz nada.
+extension EnvironmentValues {
+    @Entry var fecharMenu: () -> Void = {}
 }
 
 struct BarraMenusView: View {
     @Environment(Painel.self) private var painel
-    @Environment(\.openWindow) private var abrirJanela
 
     var body: some View {
         Group {
             if Portao.unico.liberado { lista } else { semAcesso }
         }
         .frame(width: 330)
-        .background(CantosDaJanela())
     }
 
     /// Sem Acesso Total: só o aviso, o botão do Ajustes e o Sair.
@@ -216,10 +176,7 @@ struct BarraMenusView: View {
                     .padding(.horizontal, 14).padding(.vertical, 6)
             }
             separador
-            AcaoMenu(titulo: String(localized: "Abrir SDTally…")) {
-                abrirJanela(id: "principal")
-                NSApp.activate()
-            }
+            AcaoMenu(titulo: String(localized: "Abrir SDTally…")) { painel.mostrar(painel.secao ?? .sistema) }
             // Os mesmos itens do menu de botão direito do ícone (MenuContexto), menos o Abrir.
             ForEach(Array(itensContexto(barra: true, medindo: painel.medindo, podeParar: painel.podeParar, soAuto: painel.soAuto).enumerated()), id: \.offset) { _, item in
                 switch item {
@@ -254,8 +211,7 @@ struct BarraMenusView: View {
                 }
                 ForEach(Array(cinco)) { x in
                     LinhaMenu(simbolo: x.id == "swap" ? "memorychip" : termo(x.termo).simbolo, nome: x.nome, valor: gb(x.bytes)) {
-                        abrirJanela(id: "principal")
-                        NSApp.activate()
+                        painel.mostrar(painel.secao ?? .sistema)
                         painel.ver(x)?.ir()
                     }
                 }
@@ -342,10 +298,11 @@ private struct LinhaMenu: View {
     let valor: String?
     var acao: (() -> Void)?
     @State private var sobre = false
+    @Environment(\.fecharMenu) private var fecharMenu
 
     var body: some View {
         if let acao {
-            Button(action: acao) {
+            Button { fecharMenu(); acao() } label: {
                 conteudo
                     .background(RoundedRectangle(cornerRadius: 8).fill(sobre ? AnyShapeStyle(.quaternary) : AnyShapeStyle(.clear)).padding(.horizontal, 5))
                     .contentShape(.rect)
@@ -382,10 +339,11 @@ private struct AcaoMenu: View {
     let acao: () -> Void
     @State private var sobre = false
     @Environment(\.isEnabled) private var ativo
+    @Environment(\.fecharMenu) private var fecharMenu
 
     var body: some View {
         let realce = sobre && ativo
-        Button(action: acao) {
+        Button { fecharMenu(); acao() } label: {
             HStack {
                 Text(titulo)
                 Spacer(minLength: 8)
