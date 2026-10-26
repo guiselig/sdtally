@@ -166,7 +166,7 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
             UNUserNotificationCenter.current().delegate = self
         }
         Portao.unico.esperar { Painel.unico.iniciar() }
-        Atualizador.aoAbrir()
+        Atualizacoes.unica.iniciar()
         abrirSeFoiAMao()
         BarraDeStatus.unico.ajustar()
         MenuContexto.vigiarBarra()
@@ -215,6 +215,8 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         Painel.unico.cancelarMedicao()
         Painel.unico.fecharAjustes()
         Painel.unico.pararEscuta()
+        // Depois do clique em Instalar: abre o executor, que espera o app sair e troca o bundle.
+        Atualizacoes.unica.aoFechar()
     }
     /// Com o ícone na barra, a janela não abre sozinha (.suppressed), para o início de sessão
     /// mostrar só o ícone. Aberto à mão (Finder, Dock, Spotlight), a janela abre.

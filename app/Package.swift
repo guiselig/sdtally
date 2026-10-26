@@ -11,9 +11,12 @@ let package = Package(
     platforms: [.macOS(.v15)],
     targets: [
         .target(name: "SDTallyXPC", path: "Sources/SDTallyXPC"),
+        // Instalar uma versão nova, sem rede: versão, assinatura, hdiutil, a troca do bundle e os
+        // argumentos do executor. Usada pelo app e pelo SDTallyUpdater.
+        .target(name: "SDTallyInstalacao", path: "Sources/SDTallyInstalacao"),
         .executableTarget(
             name: "SDTally",
-            dependencies: ["SDTallyXPC"],
+            dependencies: ["SDTallyXPC", "SDTallyInstalacao"],
             path: "Sources/SDTally",
             resources: [.process("Localizable.xcstrings")],
             swiftSettings: [.defaultIsolation(MainActor.self)]
@@ -24,13 +27,13 @@ let package = Package(
             dependencies: ["SDTallyXPC"],
             path: "Sources/SDTallyHelper"
         ),
-        // Atualizador opcional (item de início via SMAppService, desligado por padrão): vai em
-        // Contents/Library/LoginItems/SDTallyUpdater.app. É o único alvo que usa a rede.
+        // Executor da atualização, sem rede: vai em Contents/Helpers/SDTallyUpdater. O app o copia
+        // para a pasta temporária e o abre só depois do clique em Instalar. A rede do app fica só em
+        // Sources/SDTally/Atualizacao.
         .executableTarget(
             name: "SDTallyUpdater",
-            path: "Sources/SDTallyUpdater",
-            resources: [.process("Localizable.xcstrings")],
-            swiftSettings: [.defaultIsolation(MainActor.self)]
+            dependencies: ["SDTallyInstalacao"],
+            path: "Sources/SDTallyUpdater"
         ),
         .testTarget(
             name: "SDTallyTests",
@@ -39,8 +42,7 @@ let package = Package(
         ),
         .testTarget(
             name: "SDTallyUpdaterTests",
-            dependencies: ["SDTallyUpdater"],
-            resources: [.copy("Fixtures")]
+            dependencies: ["SDTallyInstalacao"]
         ),
     ]
 )

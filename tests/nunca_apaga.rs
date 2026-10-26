@@ -23,11 +23,12 @@ const PERMITIDOS: [(&str, &str, usize); 6] = [
     ("app/Sources/SDTallyHelper/main.swift", "removeItem", 1),
     // Executor.scriptAdmin: a pasta mktemp -d do root com a cópia conferida do sdtally (trap EXIT).
     ("app/Sources/SDTally/Executor.swift", "rm", 1),
-    // Atualizador (só depois do clique em Instalar): a troca do SDTally.app pelo novo, que tira o
-    // bundle antigo do próprio SDTally, e nada mais.
-    ("app/Sources/SDTallyUpdater/Lancamento.swift", "replaceItemAt", 1),
-    // Instalacao.apagarTemporario: o download e a pasta da troca, só dentro do temporário.
-    ("app/Sources/SDTallyUpdater/Lancamento.swift", "removeItem", 1),
+    // Instalacao.trocar (executor, só depois do clique em Instalar): a troca do SDTally.app pelo
+    // novo, que tira o bundle antigo do próprio SDTally, e nada mais.
+    ("app/Sources/SDTallyInstalacao/Instalacao.swift", "replaceItemAt", 1),
+    // Instalacao.apagarTemporario: a pasta da instalação (o DMG e a cópia do executor) e a da
+    // troca, só dentro do temporário. O app, ao desistir, e o executor, ao terminar, passam por ela.
+    ("app/Sources/SDTallyInstalacao/Instalacao.swift", "removeItem", 1),
 ];
 
 fn palavra(l: &str, p: &str) -> bool {

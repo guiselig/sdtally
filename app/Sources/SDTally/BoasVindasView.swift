@@ -55,7 +55,7 @@ struct BoasVindasView: View {
             VStack(spacing: 28) {
                 Text("O que tem dentro de Dados do Sistema, com o número do próprio Ajustes.")
                     .font(.title3).foregroundStyle(.secondary)
-                // Pedido de estrela só aqui, sem lembrete depois (dono, 26/10). Abre no navegador: o app segue sem rede.
+                // Pedido de estrela só aqui, sem lembrete depois (dono, 26/10). Abre no navegador: não é rede do app (internet só para atualizações, github.com).
                 VStack(spacing: 4) {
                     Text("Se o SDTally te ajudar, uma estrela no GitHub ajuda outras pessoas a encontrá-lo.")
                         .foregroundStyle(.secondary)

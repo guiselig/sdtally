@@ -1,11 +1,14 @@
-//! Guarda "sem rede": o app, o sdtally (CLI) e o helper root não têm código de rede. Vale para
-//! src/, app/Sources/SDTally, app/Sources/SDTallyHelper e app/Sources/SDTallyXPC, com as mesmas
-//! regras do nunca_apaga (fora o que vem depois de `#[cfg(test)]` e as linhas inteiras de
-//! comentário). Só o atualizador opcional, app/Sources/SDTallyUpdater, fala com o github.com.
+//! Guarda "sem rede": o sdtally (CLI), o helper root, o executor da atualização e o resto do app
+//! não têm código de rede. Vale para src/ e todo app/Sources, com as mesmas regras do nunca_apaga
+//! (fora o que vem depois de `#[cfg(test)]` e as linhas inteiras de comentário). Só uma pasta fica
+//! de fora, `PASTA_REDE`: as atualizações do app, que falam só com o github.com.
 //! Abrir uma página no navegador (NSWorkspace.open) não é rede do app e não casa aqui.
 
 use std::fs;
 use std::path::{Path, PathBuf};
+
+/// O único lugar com rede: checar e baixar a versão nova do GitHub (Atualizacoes.swift).
+const PASTA_REDE: &str = "app/Sources/SDTally/Atualizacao";
 
 /// APIs de rede (sensível a maiúsculas). Casam só no começo de um identificador.
 const PROIBIDOS: [&str; 14] = [
@@ -58,10 +61,14 @@ fn producao_sem_rede() {
     let raiz = Path::new(env!("CARGO_MANIFEST_DIR"));
     let (mut rs, mut sw) = (Vec::new(), Vec::new());
     arquivos(&raiz.join("src"), "rs", &mut rs);
-    for d in ["app/Sources/SDTally", "app/Sources/SDTallyHelper", "app/Sources/SDTallyXPC"] {
-        arquivos(&raiz.join(d), "swift", &mut sw);
-    }
+    arquivos(&raiz.join("app/Sources"), "swift", &mut sw);
+    let rede = raiz.join(PASTA_REDE);
+    sw.retain(|p| !p.starts_with(&rede));
     assert!(rs.len() > 20 && sw.len() > 20, "pastas não encontradas: {} rs, {} swift", rs.len(), sw.len());
+    // O helper root e o executor estão na lista (nada de alvo novo fora da guarda).
+    for d in ["SDTallyHelper", "SDTallyXPC", "SDTallyInstalacao", "SDTallyUpdater"] {
+        assert!(sw.iter().any(|p| p.starts_with(raiz.join("app/Sources").join(d))), "{d} fora da guarda");
+    }
     let mut fora = Vec::new();
     for (lista, rust) in [(rs, true), (sw, false)] {
         for p in lista {
@@ -71,7 +78,7 @@ fn producao_sem_rede() {
             }
         }
     }
-    assert!(fora.is_empty(), "rede fora do atualizador (arquivo, pedaço): {fora:#?}");
+    assert!(fora.is_empty(), "rede fora de {PASTA_REDE} (arquivo, pedaço): {fora:#?}");
 }
 
 /// Nenhuma dependência Rust de rede, nem indireta.
@@ -95,8 +102,8 @@ fn guarda_enxerga_o_que_deve() {
     let rust = "use std::net::TcpStream;\nfn f() {}\n#[cfg(test)]\nmod t { use std::net::UdpSocket; }\n";
     assert_eq!(achados(rust, true), ["std::net", "TcpStream"]);
     assert_eq!(achados("let x = libc::socket(2, 1, 0);\nlet c = hyper::Client::new();\nCommand::new(\"curl\")\n", true), ["socket(", "hyper", "curl"]);
-    // O atualizador tem rede, e a guarda a vê: é por isso que ele fica fora das pastas acima.
+    // A pasta das atualizações tem rede, e a guarda a vê: é por isso que só ela fica de fora.
     let mut sw = Vec::new();
-    arquivos(&Path::new(env!("CARGO_MANIFEST_DIR")).join("app/Sources/SDTallyUpdater"), "swift", &mut sw);
+    arquivos(&Path::new(env!("CARGO_MANIFEST_DIR")).join(PASTA_REDE), "swift", &mut sw);
     assert!(sw.iter().any(|p| achados(&fs::read_to_string(p).unwrap(), false).contains(&"URLSession")));
 }

@@ -45,14 +45,9 @@ cp "$CARGO_TARGET_DIR/release/sdtally" "$pacote/Contents/Helpers/sdtally"
 cp "$app_dir/LaunchDaemon.plist" "$pacote/Contents/Library/LaunchDaemons/io.github.guiselig.sdtally.helper.plist"
 versao=$(sed -n 's/^version = "\(.*\)"/\1/p' "$repo/Cargo.toml" | head -1)
 sed -e "s/@VERSAO@/$versao/" -e "s/@BUILD@/${versao%%-*}/" "$app_dir/Info.plist" > "$pacote/Contents/Info.plist"
-# Atualizador opcional: item de início (SMAppService.loginItem) em Contents/Library/LoginItems,
-# dormente até a pessoa ligar. Bundle próprio, com o ícone e as traduções dele.
-atualizador=$pacote/Contents/Library/LoginItems/SDTallyUpdater.app
-mkdir -p "$atualizador/Contents/MacOS" "$atualizador/Contents/Resources"
-cp "$saida/swift/release/SDTallyUpdater" "$atualizador/Contents/MacOS/SDTallyUpdater"
-cp "$icone/Assets.car" "$icone/SDTally.icns" "$atualizador/Contents/Resources/"
-cp -R "$saida/swift/release/SDTally_SDTallyUpdater.bundle/Contents/Resources/"*.lproj "$atualizador/Contents/Resources/"
-sed -e "s/@VERSAO@/$versao/" -e "s/@BUILD@/${versao%%-*}/" "$app_dir/Updater-Info.plist" > "$atualizador/Contents/Info.plist"
+# Executor da atualização (sem rede, sem interface): executável simples ao lado do sdtally. O app
+# o copia para a pasta temporária e o abre só depois do clique em Instalar.
+cp "$saida/swift/release/SDTallyUpdater" "$pacote/Contents/Helpers/SDTallyUpdater"
 
 # De dentro para fora (assinar o app depois invalidaria a assinatura de dentro). Identifiers
 # fixos: o helper confere o sdtally e o app pelo identifier + time (app/Sources/SDTallyXPC).
@@ -70,7 +65,7 @@ swift build -c release --package-path "$app_dir" --scratch-path "$saida/swift-he
     -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __info_plist -Xlinker "$saida/helper-info.plist"
 cp "$saida/swift-helper/release/SDTallyHelper" "$pacote/Contents/MacOS/SDTallyHelper"
 assinar --identifier io.github.guiselig.sdtally.helper "$pacote/Contents/MacOS/SDTallyHelper"
-assinar "$atualizador"
+assinar --identifier io.github.guiselig.sdtally.updater "$pacote/Contents/Helpers/SDTallyUpdater"
 assinar "$pacote"
 codesign --verify --strict --deep "$pacote"
 codesign -dv "$pacote" 2>&1 | grep -E "^(Identifier|TeamIdentifier|Signature)" >&2 || true

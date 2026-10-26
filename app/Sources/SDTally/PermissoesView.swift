@@ -61,7 +61,7 @@ struct PermissoesView: View {
             Section("Avançado") {
                 PickerAutoRoot()
             }
-            // Sem rede no app: a página de versões abre no navegador.
+            // A página de versões abre no navegador; a rede do app é só a das atualizações (Atualizacoes).
             Section("Versões") {
                 LabeledContent("O SDTally não usa a rede: as versões novas ficam no GitHub.") {
                     Button("Ver versões novas") { NSWorkspace.shared.open(urlVersoes) }
@@ -184,51 +184,12 @@ struct LinhaMedidorRoot: View {
     }
 }
 
-/// SDTallyUpdater (Atualizador, do UX): desligado de fábrica. Ligar pergunta antes, porque é a
-/// única parte que fala com a rede (só o github.com, uma vez por dia). Estados como os do Root sem
-/// Senha: ligado, desligado, aguardando aprovação em Itens de Início e indisponível fora do .app.
+/// Procurar atualizações sozinho (Atualizacoes.ligado). Provisório: a sessão de UI refaz esta linha.
 struct LinhaAtualizador: View {
-    @Environment(Painel.self) private var painel
-    @State private var estado = Atualizador.estado
-    @State private var perguntar = false
-    @State private var erro: String?
+    @Bindable private var atualizacoes = Atualizacoes.unica
 
     var body: some View {
-        let ativo = estado == .ligado || estado == .aguardandoAprovacao
-        VStack(alignment: .leading, spacing: 6) {
-            Toggle("Procurar atualizações automaticamente", isOn: Binding(get: { ativo }, set: { $0 ? (perguntar = true) : desligar() }))
-                .disabled(estado == .indisponivel)
-            switch estado {
-            case .aguardandoAprovacao:
-                HStack {
-                    Text("Aguardando aprovação em Itens de Início").font(.callout).foregroundStyle(Marca.aviso)
-                    Spacer()
-                    Button("Abrir Itens de Início") { painel.abrirItensDeInicio() }
-                }
-            case .indisponivel:
-                Text("Fora do .app (desenvolvimento)").font(.callout).foregroundStyle(.secondary)
-            default: EmptyView()
-            }
-            if let erro { Text(erro).font(.callout).foregroundStyle(Marca.aviso).textSelection(.enabled) }
-        }
-        .alert("Procurar atualizações automaticamente?", isPresented: $perguntar) {
-            Button("Ativar") { ligar() }
-            Button("Cancelar", role: .cancel) {}
-        } message: {
-            Text("O SDTally foi feito para nunca acessar a internet. Para procurar atualizações sozinho, ele ativa o SDTallyUpdater, um programa pequeno e separado que só fala com o github.com, uma vez por dia, e só instala quando você clicar em Instalar na notificação. O macOS pode pedir a sua aprovação em Itens de Início. Dá para desligar aqui quando quiser.")
-        }
-        .onAppear { estado = Atualizador.estado }
-        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in estado = Atualizador.estado }
-    }
-
-    private func ligar() {
-        do { try Atualizador.ligar(); erro = nil } catch { erro = error.localizedDescription }
-        estado = Atualizador.estado
-    }
-
-    private func desligar() {
-        do { try Atualizador.desligar(); erro = nil } catch { erro = error.localizedDescription }
-        estado = Atualizador.estado
+        Toggle("Procurar atualizações automaticamente", isOn: $atualizacoes.ligado)
     }
 }
 

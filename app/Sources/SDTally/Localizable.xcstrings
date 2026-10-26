@@ -18769,6 +18769,220 @@
         }
       }
     },
+    "A assinatura do app novo não é a do SDTally." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "توقيع التطبيق الجديد لا يعود إلى SDTally."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La signatura de l’app nova no és la de l’SDTally."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podpis nové aplikace není podpis SDTally."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den nye apps signatur er ikke SDTallys."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Signatur der neuen App ist nicht die von SDTally."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η υπογραφή της νέας εφαρμογής δεν είναι του SDTally."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The new app is not signed as SDTally."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La firma de la app nueva no es la de SDTally."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La firma de la app nueva no es la de SDTally."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uuden apin allekirjoitus ei ole SDTallyn."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La signature de la nouvelle app n’est pas celle de SDTally."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "החתימה של היישום החדש אינה של SDTally."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नए ऐप का हस्ताक्षर SDTally का नहीं है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nova aplikacija nije potpisana kao SDTally."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az új alkalmazás aláírása nem az SDTally-é."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikasi baru tidak ditandatangani sebagai SDTally."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La firma della nuova app non è quella di SDTally."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいアプリの署名がSDTallyのものではありません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 앱의 서명이 SDTally의 서명이 아닙니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikasi baharu tidak ditandatangani sebagai SDTally."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den nye appen er ikke signert som SDTally."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De nieuwe app is niet ondertekend als SDTally."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podpis nowej aplikacji nie należy do SDTally."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A assinatura da nova app não é a do SDTally."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semnătura aplicației noi nu este cea a SDTally."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подпись нового приложения не соответствует SDTally."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podpis novej aplikácie nezodpovedá SDTally."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podpis nove aplikacije ni podpis SDTally."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den nya appens signatur är inte SDTallys."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ลายเซ็นของแอปใหม่ไม่ใช่ของ SDTally"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni uygulamanın imzası SDTally'ye ait değil."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підпис нової програми не відповідає SDTally."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chữ ký của ứng dụng mới không phải của SDTally."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新 App 的签名不是 SDTally 的。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新 App 的簽章不是 SDTally 的。"
+          }
+        }
+      }
+    },
     "A diferença é %@; o purgeable medido é %@." : {
       "localizations" : {
         "en" : {
@@ -20905,6 +21119,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "La contraseña, Root sin contraseña y la lectura del log de Configuración del Sistema requieren una cuenta de administrador."
+          }
+        }
+      }
+    },
+    "A versão no DMG não é mais nova que a instalada." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإصدار في DMG ليس أحدث من المثبّت."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La versió del DMG no és més nova que la instal·lada."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verze v DMG není novější než nainstalovaná."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versionen i DMG'en er ikke nyere end den installerede."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Version im DMG ist nicht neuer als die installierte."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η έκδοση στο DMG δεν είναι νεότερη από την εγκατεστημένη."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The version in the DMG is not newer than the installed one."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La versión del DMG no es más nueva que la instalada."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La versión del DMG no es más nueva que la instalada."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG:n versio ei ole asennettua uudempi."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La version du DMG n’est pas plus récente que celle installée."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הגרסה ב-DMG אינה חדשה יותר מזו המותקנת."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG का संस्करण इंस्टॉल किए गए संस्करण से नया नहीं है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verzija u DMG-u nije novija od instalirane."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A DMG-ben lévő verzió nem újabb a telepítettnél."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versi di DMG tidak lebih baru dari yang terpasang."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La versione nel DMG non è più recente di quella installata."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMGのバージョンがインストール済みのバージョンより新しくありません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG의 버전이 설치된 버전보다 새롭지 않습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versi dalam DMG tidak lebih baharu daripada yang dipasang."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versjonen i DMG-en er ikke nyere enn den installerte."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De versie in de DMG is niet nieuwer dan de geïnstalleerde."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wersja w pliku DMG nie jest nowsza od zainstalowanej."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A versão no DMG não é mais recente do que a instalada."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versiunea din DMG nu este mai nouă decât cea instalată."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версия в DMG не новее установленной."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verzia v DMG nie je novšia ako nainštalovaná."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Različica v DMG ni novejša od nameščene."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versionen i DMG är inte nyare än den installerade."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เวอร์ชันใน DMG ไม่ใหม่กว่าเวอร์ชันที่ติดตั้งอยู่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG içindeki sürüm, yüklü olandan daha yeni değil."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версія в DMG не новіша за встановлену."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Phiên bản trong DMG không mới hơn phiên bản đã cài."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG 中的版本不比已安装的新。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG 中的版本不比已安裝的新。"
           }
         }
       }
@@ -111535,216 +111963,12 @@
         }
       }
     },
-    "Não deu para desligar o atualizador: %@" : {
+    "Não deu para instalar a versão nova. A versão instalada continua como estava." : {
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تعذّر إيقاف المحدّث: %@"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No s’ha pogut desactivar l’actualitzador: %@"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualizátor se nepodařilo vypnout: %@"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Opdateringsprogrammet kunne ikke deaktiveres: %@"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Der Updater konnte nicht deaktiviert werden: %@"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Δεν ήταν δυνατή η απενεργοποίηση του προγράμματος ενημέρωσης: %@"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Could not turn off the updater: %@"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No se pudo desactivar el actualizador: %@"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No se pudo desactivar el actualizador: %@"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Päivitysohjelmaa ei voitu poistaa käytöstä: %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Impossible de désactiver le programme de mise à jour : %@"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "לא ניתן לכבות את המעדכן: %@"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "अपडेटर बंद नहीं हो सका: %@"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nije moguće isključiti program za ažuriranje: %@"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nem sikerült kikapcsolni a frissítőt: %@"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tidak dapat menonaktifkan pembaru: %@"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Impossibile disattivare l’aggiornatore: %@"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "アップデータをオフにできませんでした: %@"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "업데이터를 끌 수 없습니다: %@"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tidak dapat menyahaktifkan pengemas kini: %@"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunne ikke slå av oppdatereren: %@"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kan de updater niet uitschakelen: %@"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nie udało się wyłączyć aktualizatora: %@"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Não foi possível desativar o atualizador: %@"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nu s-a putut dezactiva actualizatorul: %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не удалось отключить средство обновления: %@"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualizátor sa nepodarilo vypnúť: %@"
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Posodabljalnika ni bilo mogoče izklopiti: %@"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Det gick inte att stänga av uppdateraren: %@"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ปิดตัวอัปเดตไม่ได้: %@"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Güncelleyici kapatılamadı: %@"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не вдалося вимкнути засіб оновлення: %@"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Không thể tắt trình cập nhật: %@"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "无法关闭更新程序：%@"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "無法關閉更新程式：%@"
+            "value" : "Could not install the new version. The installed version is unchanged."
           }
         }
       }
@@ -112391,216 +112615,226 @@
         }
       }
     },
-    "Não deu para ligar o atualizador: %@" : {
+    "Não deu para procurar atualizações: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not check for updates: %@"
+          }
+        }
+      }
+    },
+    "Não deu para trocar o app: %@" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تعذّر تشغيل المحدّث: %@"
+            "value" : "تعذّر استبدال التطبيق: %@"
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No s’ha pogut activar l’actualitzador: %@"
+            "value" : "No s’ha pogut substituir l’app: %@"
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aktualizátor se nepodařilo zapnout: %@"
+            "value" : "Aplikaci se nepodařilo nahradit: %@"
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Opdateringsprogrammet kunne ikke aktiveres: %@"
+            "value" : "Appen kunne ikke erstattes: %@"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Der Updater konnte nicht aktiviert werden: %@"
+            "value" : "Die App konnte nicht ersetzt werden: %@"
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Δεν ήταν δυνατή η ενεργοποίηση του προγράμματος ενημέρωσης: %@"
+            "value" : "Δεν ήταν δυνατή η αντικατάσταση της εφαρμογής: %@"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Could not turn on the updater: %@"
+            "value" : "Could not replace the app: %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No se pudo activar el actualizador: %@"
+            "value" : "No se pudo reemplazar la app: %@"
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No se pudo activar el actualizador: %@"
+            "value" : "No se pudo reemplazar la app: %@"
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Päivitysohjelmaa ei voitu ottaa käyttöön: %@"
+            "value" : "Appia ei voitu korvata: %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Impossible d’activer le programme de mise à jour : %@"
+            "value" : "Impossible de remplacer l’app : %@"
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "לא ניתן להפעיל את המעדכן: %@"
+            "value" : "לא ניתן להחליף את היישום: %@"
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "अपडेटर चालू नहीं हो सका: %@"
+            "value" : "ऐप बदला नहीं जा सका: %@"
           }
         },
         "hr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nije moguće uključiti program za ažuriranje: %@"
+            "value" : "Nije moguće zamijeniti aplikaciju: %@"
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nem sikerült bekapcsolni a frissítőt: %@"
+            "value" : "Nem sikerült lecserélni az alkalmazást: %@"
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tidak dapat mengaktifkan pembaru: %@"
+            "value" : "Tidak dapat mengganti aplikasi: %@"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Impossibile attivare l’aggiornatore: %@"
+            "value" : "Impossibile sostituire l’app: %@"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "アップデータをオンにできませんでした: %@"
+            "value" : "アプリを置き換えられませんでした: %@"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "업데이터를 켤 수 없습니다: %@"
+            "value" : "앱을 교체할 수 없습니다: %@"
           }
         },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tidak dapat mengaktifkan pengemas kini: %@"
+            "value" : "Tidak dapat menggantikan aplikasi: %@"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kunne ikke slå på oppdatereren: %@"
+            "value" : "Kunne ikke bytte ut appen: %@"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kan de updater niet activeren: %@"
+            "value" : "Kan de app niet vervangen: %@"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nie udało się włączyć aktualizatora: %@"
+            "value" : "Nie udało się podmienić aplikacji: %@"
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Não foi possível ativar o atualizador: %@"
+            "value" : "Não foi possível substituir a app: %@"
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nu s-a putut activa actualizatorul: %@"
+            "value" : "Nu s-a putut înlocui aplicația: %@"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Не удалось включить средство обновления: %@"
+            "value" : "Не удалось заменить приложение: %@"
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aktualizátor sa nepodarilo zapnúť: %@"
+            "value" : "Aplikáciu sa nepodarilo nahradiť: %@"
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Posodabljalnika ni bilo mogoče vklopiti: %@"
+            "value" : "Aplikacije ni bilo mogoče zamenjati: %@"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Det gick inte att aktivera uppdateraren: %@"
+            "value" : "Det gick inte att byta ut appen: %@"
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "เปิดตัวอัปเดตไม่ได้: %@"
+            "value" : "เปลี่ยนแอปไม่ได้: %@"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Güncelleyici açılamadı: %@"
+            "value" : "Uygulama değiştirilemedi: %@"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Не вдалося ввімкнути засіб оновлення: %@"
+            "value" : "Не вдалося замінити програму: %@"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Không thể bật trình cập nhật: %@"
+            "value" : "Không thể thay thế ứng dụng: %@"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "无法启用更新程序：%@"
+            "value" : "无法替换 App：%@"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "無法啟用更新程式：%@"
+            "value" : "無法取代 App：%@"
           }
         }
       }
@@ -117099,6 +117333,220 @@
         }
       }
     },
+    "O DMG não abriu." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعذّر فتح DMG."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El DMG no s’ha obert."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG se neotevřel."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG'en blev ikke åbnet."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das DMG wurde nicht geöffnet."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το DMG δεν άνοιξε."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The DMG did not open."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El DMG no se abrió."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El DMG no se abrió."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG:tä ei voitu avata."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le DMG ne s’est pas ouvert."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ה-DMG לא נפתח."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG नहीं खुला।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG se nije otvorio."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A DMG nem nyílt meg."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG tidak terbuka."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il DMG non si è aperto."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMGを開けませんでした。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG가 열리지 않았습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG tidak dibuka."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG-en ble ikke åpnet."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De DMG is niet geopend."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się otworzyć pliku DMG."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O DMG não abriu."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG-ul nu s-a deschis."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG не открылся."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG sa neotvoril."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG se ni odprl."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG öppnades inte."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG ไม่เปิด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG açılmadı."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG не відкрився."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG không mở được."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG 未能打开。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DMG 未能開啟。"
+          }
+        }
+      }
+    },
     "O Mac está usando o disco como memória. Fechar apps pesados ou reiniciar devolve o espaço." : {
       "localizations" : {
         "en" : {
@@ -117527,220 +117975,6 @@
         }
       }
     },
-    "O SDTally foi feito para nunca acessar a internet. Para procurar atualizações sozinho, ele ativa o SDTallyUpdater, um programa pequeno e separado que só fala com o github.com, uma vez por dia, e só instala quando você clicar em Instalar na notificação. O macOS pode pedir a sua aprovação em Itens de Início. Dá para desligar aqui quando quiser." : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "صُمّم SDTally ليبقى بلا اتصال بالإنترنت. وللتحقق من التحديثات بنفسه، يفعّل SDTallyUpdater، وهو برنامج صغير ومنفصل يتصل بـ github.com فقط، مرة واحدة يوميًا، ولا يثبّت شيئًا إلا عندما تنقر على تثبيت في الإشعار. قد يطلب macOS موافقتك في عناصر تسجيل الدخول. يمكنك إيقافه من هنا في أي وقت."
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "L’SDTally està fet per no accedir mai a internet. Per cercar actualitzacions pel seu compte, activa l’SDTallyUpdater, un programa petit i separat que només parla amb github.com, un cop al dia, i només instal·la quan fas clic a Instal·la a la notificació. És possible que macOS et demani l’aprovació a Ítems d’inici de sessió. Pots desactivar-ho aquí quan vulguis."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally je navržené tak, aby nikdy nepřistupovalo k internetu. Aby mohlo samo hledat aktualizace, zapne SDTallyUpdater, malý samostatný program, který komunikuje jen s github.com, jednou denně, a instaluje jen po vašem kliknutí na Nainstalovat v oznámení. macOS může požádat o vaše schválení v Přihlášení. Zde to můžete kdykoli vypnout."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally er lavet til aldrig at bruge internettet. For selv at søge efter opdateringer aktiverer det SDTallyUpdater, et lille, separat program, der kun taler med github.com, én gang om dagen, og kun installerer, når du klikker på Installér i meddelelsen. macOS kan bede om din godkendelse i Loginemner. Du kan slå det fra her, når du vil."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally ist so gebaut, dass es nie das Internet nutzt. Um selbst nach Updates zu suchen, aktiviert es SDTallyUpdater, ein kleines, separates Programm, das nur mit github.com spricht, einmal am Tag, und nur installiert, wenn du in der Mitteilung auf Installieren klickst. macOS bittet dich eventuell unter Anmeldeobjekte um Genehmigung. Hier kannst du es jederzeit ausschalten."
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Το SDTally έχει σχεδιαστεί ώστε να μην έχει ποτέ πρόσβαση στο διαδίκτυο. Για να αναζητά ενημερώσεις μόνο του, ενεργοποιεί το SDTallyUpdater, ένα μικρό ξεχωριστό πρόγραμμα που επικοινωνεί μόνο με το github.com, μία φορά την ημέρα, και εγκαθιστά μόνο όταν κάνετε κλικ στην Εγκατάσταση στην ειδοποίηση. Το macOS μπορεί να ζητήσει την έγκρισή σας στα Στοιχεία εισόδου. Μπορείτε να το απενεργοποιήσετε εδώ ανά πάσα στιγμή."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally is built to never access the internet. To check for updates on its own, it turns on SDTallyUpdater, a small separate program that only talks to github.com, once a day, and only installs when you click Install in the notification. macOS may ask for your approval in Login Items. You can turn it off here at any time."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally está hecho para no acceder nunca a internet. Para buscar actualizaciones por sí solo, activa SDTallyUpdater, un programa pequeño y separado que solo habla con github.com, una vez al día, y solo instala cuando haces clic en Instalar en la notificación. macOS puede pedir tu aprobación en Ítems de inicio. Puedes desactivarlo aquí cuando quieras."
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally está hecho para no acceder nunca a internet. Para buscar actualizaciones por sí solo, activa SDTallyUpdater, un programa pequeño y separado que solo habla con github.com, una vez al día, y solo instala cuando haces clic en Instalar en la notificación. macOS puede pedir tu aprobación en Elementos de inicio. Puedes desactivarlo aquí cuando quieras."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally on tehty niin, ettei se koskaan käytä internetiä. Hakeakseen päivityksiä itse se ottaa käyttöön SDTallyUpdaterin, pienen erillisen ohjelman, joka puhuu vain github.com-palvelun kanssa kerran päivässä ja asentaa vain, kun napsautat ilmoituksessa kohtaa Asenna. macOS voi pyytää hyväksyntääsi kohdassa Kirjautumiskohteet. Voit poistaa sen käytöstä tästä milloin tahansa."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally est conçu pour ne jamais accéder à internet. Pour rechercher les mises à jour seul, il active SDTallyUpdater, un petit programme séparé qui ne parle qu’à github.com, une fois par jour, et n’installe que lorsque vous cliquez sur Installer dans la notification. macOS peut demander votre approbation dans Ouverture. Vous pouvez le désactiver ici à tout moment."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally נבנה כך שלעולם לא יגש לאינטרנט. כדי לחפש עדכונים בעצמו, הוא מפעיל את SDTallyUpdater, תוכנית קטנה ונפרדת שמדברת רק עם github.com, פעם ביום, ומתקינה רק כשלוחצים על התקן בהתראה. ייתכן ש-macOS יבקש את אישורך ב“פריטי התחברות”. אפשר לכבות את זה כאן בכל עת."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally इंटरनेट का उपयोग कभी न करने के लिए बना है। अपने आप अपडेट खोजने के लिए यह SDTallyUpdater चालू करता है, जो एक छोटा, अलग प्रोग्राम है। यह दिन में एक बार केवल github.com से बात करता है और सूचना में इंस्टॉल करें पर क्लिक करने पर ही इंस्टॉल करता है। macOS लॉगिन आइटम में आपकी मंज़ूरी माँग सकता है। आप इसे यहाँ से कभी भी बंद कर सकते हैं।"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally je napravljen tako da nikad ne pristupa internetu. Za samostalno traženje ažuriranja uključuje SDTallyUpdater, mali zaseban program koji komunicira samo s github.com, jednom dnevno, i instalira tek kad kliknete Instaliraj u obavijesti. macOS može zatražiti vaše odobrenje u Stavkama za prijavu. Možete ga isključiti ovdje kad god želite."
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Az SDTally úgy készült, hogy soha ne érje el az internetet. A frissítések önálló kereséséhez bekapcsolja az SDTallyUpdater programot, egy kicsi, különálló alkalmazást, amely naponta egyszer csak a github.com-mal kommunikál, és csak akkor telepít, ha az értesítésben a Telepítés gombra kattint. A macOS jóváhagyást kérhet az Indítóelemekben. Itt bármikor kikapcsolhatja."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally dibuat agar tidak pernah mengakses internet. Untuk mencari pembaruan sendiri, aplikasi ini mengaktifkan SDTallyUpdater, program kecil terpisah yang hanya berkomunikasi dengan github.com, sekali sehari, dan hanya menginstal saat Anda mengeklik Instal pada notifikasi. macOS mungkin meminta persetujuan Anda di Item Masuk. Anda dapat menonaktifkannya di sini kapan saja."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally è fatto per non accedere mai a internet. Per cercare aggiornamenti da solo, attiva SDTallyUpdater, un piccolo programma separato che parla solo con github.com, una volta al giorno, e installa solo quando fai clic su Installa nella notifica. macOS potrebbe chiedere la tua approvazione in Elementi login. Puoi disattivarlo qui quando vuoi."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTallyはインターネットに一切アクセスしない設計です。アップデートを自動で確認するために、別の小さなプログラムであるSDTallyUpdaterをオンにします。SDTallyUpdaterは1日1回github.comとのみ通信し、通知で「インストール」をクリックしたときだけインストールします。macOSがログイン項目で承認を求める場合があります。ここからいつでもオフにできます。"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally는 인터넷에 접속하지 않도록 만들어졌습니다. 업데이트를 자동으로 확인하기 위해 별도의 작은 프로그램인 SDTallyUpdater를 켭니다. 이 프로그램은 하루에 한 번 github.com과만 통신하며, 알림에서 설치를 클릭할 때만 설치합니다. macOS가 로그인 항목에서 승인을 요청할 수 있습니다. 여기서 언제든 끌 수 있습니다."
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally dibina supaya tidak pernah mengakses internet. Untuk mencari kemas kini sendiri, ia mengaktifkan SDTallyUpdater, program kecil yang berasingan yang hanya berhubung dengan github.com, sekali sehari, dan hanya memasang apabila anda klik Pasang pada pemberitahuan. macOS mungkin meminta kelulusan anda dalam Item Log Masuk. Anda boleh mematikannya di sini pada bila-bila masa."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally er laget for aldri å bruke internett. For å se etter oppdateringer på egen hånd slår det på SDTallyUpdater, et lite, separat program som bare snakker med github.com, én gang om dagen, og bare installerer når du klikker Installer i varselet. macOS kan be om godkjenning i Påloggingsobjekter. Du kan slå det av her når som helst."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally is gemaakt om nooit het internet te gebruiken. Om zelf naar updates te zoeken, activeert het SDTallyUpdater, een klein, apart programma dat alleen met github.com praat, één keer per dag, en alleen installeert wanneer je in de melding op Installeer klikt. macOS kan om je goedkeuring vragen bij Inloggen. Je kunt het hier altijd uitschakelen."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally został zaprojektowany tak, by nigdy nie łączyć się z internetem. Aby samodzielnie szukać aktualizacji, włącza SDTallyUpdater, mały, osobny program, który łączy się tylko z github.com, raz dziennie, i instaluje wyłącznie po kliknięciu Zainstaluj w powiadomieniu. macOS może poprosić o Twoje zatwierdzenie w sekcji Logowanie. Możesz to wyłączyć tutaj w dowolnej chwili."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O SDTally foi concebido para nunca aceder à internet. Para procurar atualizações sozinho, ativa o SDTallyUpdater, um programa pequeno e separado que só comunica com github.com, uma vez por dia, e só instala quando clicar em Instalar na notificação. O macOS pode pedir a sua aprovação em Início de sessão. Pode desativar aqui quando quiser."
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally este făcut să nu acceseze niciodată internetul. Pentru a căuta singur actualizări, activează SDTallyUpdater, un program mic și separat care comunică doar cu github.com, o dată pe zi, și instalează numai când apeși Instalează în notificare. macOS poate cere aprobarea ta în Lansare la login. Poți dezactiva oricând de aici."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally создан так, чтобы никогда не выходить в интернет. Чтобы самостоятельно проверять обновления, он включает SDTallyUpdater — небольшую отдельную программу, которая обращается только к github.com, раз в день, и устанавливает обновление только после вашего нажатия «Установить» в уведомлении. macOS может запросить ваше одобрение в «Объектах входа». Отключить можно здесь в любой момент."
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally je vytvorený tak, aby nikdy nepristupoval na internet. Na samostatné hľadanie aktualizácií aktivuje SDTallyUpdater, malý samostatný program, ktorý komunikuje iba s github.com, raz denne, a inštaluje len vtedy, keď v oznámení kliknete na Nainštalovať. macOS môže požiadať o vaše schválenie v Prihlásení. Vypnúť to môžete tu kedykoľvek."
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally je narejen tako, da nikoli ne dostopa do interneta. Za samostojno iskanje posodobitev vklopi SDTallyUpdater, majhen ločen program, ki komunicira samo z github.com, enkrat na dan, in namesti samo, ko v obvestilu kliknete Namesti. macOS vas lahko zaprosi za odobritev v Elementih prijave. Izklopite ga lahko tukaj kadar koli."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally är gjord för att aldrig komma åt internet. För att söka efter uppdateringar själv aktiverar den SDTallyUpdater, ett litet separat program som bara pratar med github.com, en gång om dagen, och bara installerar när du klickar på Installera i aviseringen. macOS kan be om ditt godkännande i Startobjekt. Du kan stänga av det här när du vill."
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally ถูกสร้างมาให้ไม่เข้าถึงอินเทอร์เน็ตเลย เพื่อตรวจหาอัปเดตด้วยตัวเอง แอปจะเปิดใช้ SDTallyUpdater ซึ่งเป็นโปรแกรมเล็กๆ แยกต่างหากที่สื่อสารกับ github.com เท่านั้น วันละครั้ง และจะติดตั้งก็ต่อเมื่อคุณคลิกติดตั้งในการแจ้งเตือน macOS อาจขอการอนุมัติจากคุณในรายการเข้าสู่ระบบ คุณปิดได้ที่นี่ทุกเมื่อ"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally hiçbir zaman internete erişmeyecek şekilde yapıldı. Güncellemeleri kendi kendine denetlemek için, yalnızca github.com ile günde bir kez konuşan küçük ve ayrı bir program olan SDTallyUpdater'ı etkinleştirir ve yalnızca bildirimde Yükle'ye tıkladığınızda yükler. macOS, Oturum Açma Öğeleri'nde onayınızı isteyebilir. Buradan istediğiniz zaman kapatabilirsiniz."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally створено так, щоб він ніколи не виходив в інтернет. Щоб самостійно перевіряти оновлення, він вмикає SDTallyUpdater — невелику окрему програму, яка звертається лише до github.com, раз на день, і встановлює оновлення лише після вашого натискання «Установити» в сповіщенні. macOS може попросити вашого схвалення в розділі «Автозапуск». Вимкнути можна тут будь-коли."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally được tạo ra để không bao giờ truy cập internet. Để tự kiểm tra bản cập nhật, ứng dụng bật SDTallyUpdater, một chương trình nhỏ và riêng chỉ kết nối với github.com, mỗi ngày một lần, và chỉ cài đặt khi bạn nhấp Cài đặt trong thông báo. macOS có thể xin bạn phê duyệt trong Mục đăng nhập. Bạn có thể tắt tại đây bất cứ lúc nào."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally 的设计是永不访问互联网。为了自行检查更新，它会启用 SDTallyUpdater，这是一个独立的小程序，只与 github.com 通信，每天一次，并且只有在你点按通知中的“安装”时才会安装。macOS 可能会请你在“登录项”中批准。你可以随时在此处关闭。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally 的設計是永不連上網際網路。為了自行檢查更新，它會啟用 SDTallyUpdater，這是一個獨立的小程式，只與 github.com 通訊，每天一次，而且只有在你按一下通知中的「安裝」時才會安裝。macOS 可能會請你在「登入項目」中核准。你可以隨時在此關閉。"
-          }
-        }
-      }
-    },
     "O SDTally não apaga nada. Cada passo é seu, no Finder, no Terminal ou no app dono. Depois, meça de novo: o Histórico mostra quanto voltou." : {
       "localizations" : {
         "en" : {
@@ -117951,6 +118185,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SDTally no elimina nada. Cada paso es tuyo, en el Finder, en Terminal o en la app propietaria. Después, vuelve a medir: el Historial muestra cuánto se recuperó."
+          }
+        }
+      }
+    },
+    "O SDTally não fechou a tempo. A versão instalada continua como estava." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally did not quit in time. The installed version is unchanged."
           }
         }
       }
@@ -119025,6 +119269,220 @@
         }
       }
     },
+    "O arquivo baixado não confere com o SHA-256 publicado." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الملف الذي تم تنزيله لا يطابق SHA-256 المنشور."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El fitxer baixat no coincideix amb el SHA-256 publicat."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stažený soubor neodpovídá zveřejněnému SHA-256."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den hentede fil matcher ikke den offentliggjorte SHA-256."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die geladene Datei stimmt nicht mit dem veröffentlichten SHA-256 überein."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το αρχείο που λήφθηκε δεν ταιριάζει με το δημοσιευμένο SHA-256."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The downloaded file does not match the published SHA-256."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El archivo descargado no coincide con el SHA-256 publicado."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El archivo descargado no coincide con el SHA-256 publicado."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ladattu tiedosto ei vastaa julkaistua SHA-256-tiivistettä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le fichier téléchargé ne correspond pas au SHA-256 publié."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הקובץ שהורד אינו תואם ל-SHA-256 שפורסם."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डाउनलोड की गई फ़ाइल प्रकाशित SHA-256 से मेल नहीं खाती।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preuzeta datoteka ne odgovara objavljenom SHA-256."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A letöltött fájl nem egyezik a közzétett SHA-256 értékkel."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "File yang diunduh tidak cocok dengan SHA-256 yang dipublikasikan."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il file scaricato non corrisponde allo SHA-256 pubblicato."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダウンロードしたファイルが公開されているSHA-256と一致しません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "내려받은 파일이 게시된 SHA-256과 일치하지 않습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fail yang dimuat turun tidak sepadan dengan SHA-256 yang diterbitkan."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den nedlastede filen samsvarer ikke med den publiserte SHA-256-verdien."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het gedownloade bestand komt niet overeen met de gepubliceerde SHA-256."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pobrany plik nie zgadza się z opublikowaną sumą SHA-256."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O ficheiro transferido não corresponde ao SHA-256 publicado."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fișierul descărcat nu corespunde cu SHA-256 publicat."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загруженный файл не совпадает с опубликованным SHA-256."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stiahnutý súbor nezodpovedá zverejnenému SHA-256."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prenesena datoteka se ne ujema z objavljenim SHA-256."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den hämtade filen matchar inte den publicerade SHA-256."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไฟล์ที่ดาวน์โหลดไม่ตรงกับ SHA-256 ที่เผยแพร่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İndirilen dosya yayımlanan SHA-256 ile eşleşmiyor."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завантажений файл не збігається з опублікованим SHA-256."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tệp đã tải không khớp với SHA-256 đã công bố."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下载的文件与已发布的 SHA-256 不符。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下載的檔案與已發布的 SHA-256 不符。"
+          }
+        }
+      }
+    },
     "O arquivo traz seu nome de usuário e nomes de pastas da sua home (por exemplo, ~/Documents). Revise antes de compartilhar." : {
       "localizations" : {
         "en" : {
@@ -119235,220 +119693,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "El archivo incluye tu nombre de usuario y nombres de carpetas de tu carpeta personal (por ejemplo, ~/Documents). Revísalo antes de compartir."
-          }
-        }
-      }
-    },
-    "O atualizador só funciona no SDTally.app." : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "المحدّث يعمل فقط داخل SDTally.app."
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "L’actualitzador només funciona a SDTally.app."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualizátor funguje jen v SDTally.app."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Opdateringsprogrammet virker kun i SDTally.app."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Der Updater funktioniert nur in SDTally.app."
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Το πρόγραμμα ενημέρωσης λειτουργεί μόνο στο SDTally.app."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The updater only works in SDTally.app."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El actualizador solo funciona en SDTally.app."
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El actualizador solo funciona en SDTally.app."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Päivitysohjelma toimii vain SDTally.app-sovelluksessa."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le programme de mise à jour ne fonctionne que dans SDTally.app."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "המעדכן פועל רק ב-SDTally.app."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "अपडेटर केवल SDTally.app में काम करता है।"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Program za ažuriranje radi samo u SDTally.app."
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A frissítő csak az SDTally.app-ban működik."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pembaru hanya berfungsi di SDTally.app."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "L’aggiornatore funziona solo in SDTally.app."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "アップデータはSDTally.appでのみ動作します。"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "업데이터는 SDTally.app에서만 작동합니다."
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pengemas kini hanya berfungsi dalam SDTally.app."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oppdatereren fungerer bare i SDTally.app."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "De updater werkt alleen in SDTally.app."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualizator działa tylko w SDTally.app."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "O atualizador só funciona no SDTally.app."
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Actualizatorul funcționează doar în SDTally.app."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Средство обновления работает только в SDTally.app."
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualizátor funguje iba v SDTally.app."
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Posodabljalnik deluje samo v SDTally.app."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Uppdateraren fungerar bara i SDTally.app."
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ตัวอัปเดตทำงานได้เฉพาะใน SDTally.app"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Güncelleyici yalnızca SDTally.app içinde çalışır."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Засіб оновлення працює лише в SDTally.app."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trình cập nhật chỉ hoạt động trong SDTally.app."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新程序只能在 SDTally.app 中运行。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "更新程式只能在 SDTally.app 中運作。"
           }
         }
       }
@@ -120519,6 +120763,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "diskutil solo da el total de cada volumen, y sdtally solo recorre el volumen Data."
+          }
+        }
+      }
+    },
+    "O download falhou: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فشل التنزيل: %@"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La baixada ha fallat: %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stažení se nezdařilo: %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download mislykkedes: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Download ist fehlgeschlagen: %@"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η λήψη απέτυχε: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The download failed: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La descarga falló: %@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La descarga falló: %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lataus epäonnistui: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le téléchargement a échoué : %@"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ההורדה נכשלה: %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डाउनलोड विफल रहा: %@"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preuzimanje nije uspjelo: %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A letöltés sikertelen: %@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unduhan gagal: %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download non riuscito: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ダウンロードに失敗しました: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다운로드에 실패했습니다: %@"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Muat turun gagal: %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nedlastingen mislyktes: %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De download is mislukt: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pobieranie nie powiodło się: %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A transferência falhou: %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descărcarea a eșuat: %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось загрузить: %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sťahovanie zlyhalo: %@"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prenos ni uspel: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hämtningen misslyckades: %@"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ดาวน์โหลดล้มเหลว: %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İndirme başarısız oldu: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося завантажити: %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tải về thất bại: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下载失败：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "下載失敗：%@"
           }
         }
       }
@@ -138713,220 +139171,6 @@
         }
       }
     },
-    "Procurar atualizações automaticamente?" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "التحقق من التحديثات تلقائيًا؟"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vols cercar actualitzacions automàticament?"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automaticky hledat aktualizace?"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Søg automatisk efter opdateringer?"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatisch nach Updates suchen?"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Αυτόματη αναζήτηση ενημερώσεων;"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Check for updates automatically?"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¿Buscar actualizaciones automáticamente?"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¿Buscar actualizaciones automáticamente?"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Haetaanko päivityksiä automaattisesti?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechercher les mises à jour automatiquement ?"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "לחפש עדכונים אוטומטית?"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "अपडेट अपने आप खोजें?"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatski tražiti ažuriranja?"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatikusan keresi a frissítéseket?"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cari pembaruan secara otomatis?"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cercare aggiornamenti automaticamente?"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "アップデートを自動で確認しますか？"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "업데이트를 자동으로 확인할까요?"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cari kemas kini secara automatik?"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se etter oppdateringer automatisk?"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatisch naar updates zoeken?"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatycznie szukać aktualizacji?"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Procurar atualizações automaticamente?"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cauți actualizări automat?"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Автоматически проверять обновления?"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automaticky hľadať aktualizácie?"
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Samodejno iskati posodobitve?"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Söka efter uppdateringar automatiskt?"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ตรวจหาอัปเดตโดยอัตโนมัติหรือไม่"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Güncellemeler otomatik denetlensin mi?"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Автоматично перевіряти оновлення?"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tự động kiểm tra bản cập nhật?"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自动检查更新？"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自動檢查更新？"
-          }
-        }
-      }
-    },
     "Projeto: %@" : {
       "localizations" : {
         "en" : {
@@ -152707,6 +152951,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sin acceso completo al disco, Mail, Mensajes, Safari y otras carpetas protegidas quedan bloqueados por macOS. Actívalo en Configuración (⌘,) y vuelve a medir."
+          }
+        }
+      }
+    },
+    "Sem permissão para gravar em %@. Baixe o DMG na página de versões." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يوجد إذن للكتابة في %@. نزّل DMG من صفحة الإصدارات."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hi ha permís per escriure a %@. Baixa el DMG de la pàgina de versions."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Není oprávnění k zápisu do %@. Stáhněte DMG ze stránky s verzemi."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen tilladelse til at skrive til %@. Hent DMG'en fra siden med versioner."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Berechtigung zum Schreiben in %@. Lade das DMG von der Seite mit den Versionen herunter."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν υπάρχει άδεια εγγραφής στο %@. Κατεβάστε το DMG από τη σελίδα των εκδόσεων."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No permission to write to %@. Download the DMG from the releases page."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin permiso para escribir en %@. Descarga el DMG desde la página de versiones."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin permiso para escribir en %@. Descarga el DMG desde la página de versiones."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei oikeutta kirjoittaa kohteeseen %@. Lataa DMG versiosivulta."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune autorisation d’écriture dans %@. Téléchargez le DMG depuis la page des versions."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אין הרשאה לכתוב ב-%@. הורד את ה-DMG מדף הגרסאות."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ में लिखने की अनुमति नहीं है। DMG को संस्करण पेज से डाउनलोड करें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nema dopuštenja za pisanje u %@. Preuzmite DMG sa stranice s verzijama."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nincs írási engedély ide: %@. Töltse le a DMG-t a verziók oldaláról."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada izin menulis ke %@. Unduh DMG dari halaman versi."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessun permesso di scrittura in %@. Scarica il DMG dalla pagina delle versioni."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@に書き込む権限がありません。バージョンのページからDMGをダウンロードしてください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@에 쓸 권한이 없습니다. 버전 페이지에서 DMG를 내려받으세요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiada kebenaran untuk menulis ke %@. Muat turun DMG daripada halaman versi."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingen tillatelse til å skrive til %@. Last ned DMG-en fra versjonssiden."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen toestemming om naar %@ te schrijven. Download de DMG van de versiepagina."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak uprawnień do zapisu w %@. Pobierz plik DMG ze strony wersji."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sem permissão para escrever em %@. Transfira o DMG na página de versões."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu există permisiunea de a scrie în %@. Descarcă DMG-ul de pe pagina de versiuni."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет разрешения на запись в %@. Скачайте DMG на странице версий."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chýba povolenie na zápis do %@. Stiahnite DMG zo stránky verzií."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ni dovoljenja za pisanje v %@. Prenesite DMG s strani različic."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saknar behörighet att skriva till %@. Hämta DMG från sidan med versioner."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไม่มีสิทธิ์เขียนไปยัง %@ ดาวน์โหลด DMG จากหน้าเวอร์ชัน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ konumuna yazma izni yok. DMG'yi sürümler sayfasından indirin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає дозволу на запис у %@. Завантажте DMG зі сторінки версій."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có quyền ghi vào %@. Hãy tải DMG ở trang phiên bản."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "没有写入 %@ 的权限。请在版本页面下载 DMG。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有寫入 %@ 的權限。請在版本頁面下載 DMG。"
           }
         }
       }
