@@ -471,6 +471,8 @@ struct JanelaView: View {
     @Environment(Painel.self) private var painel
     @Environment(\.openWindow) private var abrirJanela
     @AppStorage("viuBoasVindas") private var viuBoasVindas = false
+    /// Versão (maior.menor) da folha de novidades a mostrar nesta abertura (Novidades).
+    @State private var novidades: String?
     /// Lida por Foto.secaoInicial com "Abrir em: Última tela" (Permissões e aparência).
     @AppStorage("ultimaSecao") private var ultimaSecao = Secao.sistema.rawValue
 
@@ -478,6 +480,10 @@ struct JanelaView: View {
         @Bindable var painel = painel
         Group {
             if Portao.unico.liberado { principal } else { TelaAcessoTotal() }
+        }
+        // Num modificador antes do das boas-vindas: duas .sheet no mesmo nível podem não abrir.
+        .sheet(isPresented: Binding(get: { novidades != nil }, set: { if !$0 { novidades = nil } })) {
+            NovidadesView(versao: novidades ?? Novidades.versaoApp)
         }
         .modifier(AvisoInstalarRoot())
         .sheet(isPresented: $painel.mostrarBoasVindas) { BoasVindasView().environment(painel) }
@@ -498,6 +504,7 @@ struct JanelaView: View {
 
     private func mostrarBoasVindasNaPrimeiraVez() {
         if !viuBoasVindas && Foto.env["SDTALLY_FOTO"] == nil { painel.mostrarBoasVindas = true }
+        else if novidades == nil { novidades = Novidades.paraMostrar(viuBoasVindas: viuBoasVindas) }
     }
 
     private var principal: some View {

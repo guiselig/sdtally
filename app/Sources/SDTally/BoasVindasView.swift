@@ -111,7 +111,7 @@ struct BoasVindasView: View {
             if pagina < Self.titulos.count - 1 {
                 Button("Continuar") { pagina += 1 }.keyboardShortcut(.defaultAction)
             } else {
-                Button("Começar") { viu = true; Atualizacoes.unica.jaAvisouRede = true; fechar() }.keyboardShortcut(.defaultAction)
+                Button("Começar") { viu = true; Atualizacoes.unica.jaAvisouRede = true; Novidades.marcarVista(); fechar() }.keyboardShortcut(.defaultAction)
             }
         }
         .overlay {

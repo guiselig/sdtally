@@ -2,7 +2,7 @@
 // com Dev.ativo (binário cru, fora do .app); dentro do .app, Foto.env é vazio.
 //   SDTALLY_FOTO=/x.png     espera a leitura rápida, desenha a janela num PNG e sai
 //   SDTALLY_SECAO=<s>       resumo, sistema, armazenamento (o Disco), ranking, fazer, historico, permissoes, info,
-//                           boasvindas, barra, vazios, selo ou infointeira (as cinco últimas por
+//                           boasvindas, novidades, barra, vazios, selo ou infointeira (as cinco últimas por
 //                           Foto.renderizar; vazios: V1, V5 e V12 da medição carregada; selo: popovers
 //                           do selo; armazenamentointeiro, fazerinteiro, historicointeiro e permissoesinteira: a tela sem cortar; infointeira: Informações sem cortar, até "Comandos"; sistemainteiro: Dados do
 //                           Sistema sem cortar)
@@ -113,6 +113,8 @@ enum Foto {
         switch env["SDTALLY_SECAO"] {
         case "boasvindas":
             exit(await renderizar(BoasVindasView(pagina: Int(env["SDTALLY_PAGINA"] ?? "") ?? 0).environment(painel), destino: destino) ? 0 : 2)
+        case "novidades":
+            exit(await renderizar(NovidadesView(versao: "1.1"), destino: destino) ? 0 : 2)
         case "barra":
             exit(await renderizar(BarraMenusView().environment(painel).frame(width: 300), destino: destino) ? 0 : 2)
         case "vazios":

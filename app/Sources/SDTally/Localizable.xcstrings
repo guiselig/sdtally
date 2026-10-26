@@ -35033,6 +35033,220 @@
         }
       }
     },
+    "Atualizações pelo próprio app" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التحديثات من التطبيق نفسه"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actualitzacions des de la mateixa app"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizace přímo z aplikace"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opdateringer fra selve appen"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Updates direkt in der App"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ενημερώσεις από την ίδια την εφαρμογή"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Updates from the app itself"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actualizaciones desde la propia app"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actualizaciones desde la propia app"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Päivitykset appista itsestään"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mises à jour depuis l’app elle-même"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "עדכונים מהיישום עצמו"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ऐप से ही अपडेट"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ažuriranja iz same aplikacije"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frissítések magából az alkalmazásból"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembaruan dari aplikasi itu sendiri"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiornamenti dall’app stessa"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリ自身によるアップデート"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 자체 업데이트"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kemas kini daripada apl itu sendiri"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oppdateringer fra selve appen"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Updates via de app zelf"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizacje z samej aplikacji"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atualizações pela própria app"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actualizări din aplicația însăși"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обновления из самого приложения"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizácie priamo z aplikácie"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posodobitve iz same aplikacije"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uppdateringar från själva appen"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การอัปเดตจากแอปเอง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygulamanın kendisinden güncellemeler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оновлення з самої програми"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cập nhật từ chính ứng dụng"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用自身更新"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 自身更新"
+          }
+        }
+      }
+    },
     "Até" : {
       "localizations" : {
         "ar" : {
@@ -36959,6 +37173,220 @@
         }
       }
     },
+    "Barra de menus com o menu do macOS" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شريط القوائم بقائمة macOS"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barra de menús amb el menú del macOS"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Řádek nabídek s nabídkou macOS"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menulinje med macOS-menuen"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menüleiste mit dem macOS-Menü"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Γραμμή μενού με το μενού του macOS"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A real macOS menu in the menu bar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barra de menús con el menú de macOS"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barra de menús con el menú de macOS"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valikkorivi macOS-valikolla"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barre des menus avec le menu macOS"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שורת תפריטים עם תפריט macOS"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मेन्यू बार में असली macOS मेन्यू"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pravi macOS izbornik u traci izbornika"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valódi macOS menü a menüsorban"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu macOS asli di bilah menu"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un vero menu macOS nella barra dei menu"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メニューバーに本物のmacOSメニュー"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "메뉴 막대의 진짜 macOS 메뉴"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu macOS sebenar dalam bar menu"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ekte macOS-meny i menylinjen"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een echt macOS-menu in de menubalk"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prawdziwe menu macOS na pasku menu"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barra de menus com o menu do macOS"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bara de meniuri cu meniul macOS"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Строка меню с меню macOS"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panel ponúk s ponukou macOS"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menijska vrstica z menijem macOS"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menyrad med macOS-meny"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แถบเมนูพร้อมเมนูแบบ macOS"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOS menülü menü çubuğu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рядок меню з меню macOS"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thanh menu với menu macOS"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "带 macOS 菜单的菜单栏"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "含 macOS 選單的選單列"
+          }
+        }
+      }
+    },
     "Base do próximo backup" : {
       "localizations" : {
         "en" : {
@@ -37811,6 +38239,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Te damos la bienvenida a SDTally"
+          }
+        }
+      }
+    },
+    "Bem-vindo ao SDTally %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مرحبًا بك في SDTally %@"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Et donem la benvinguda a l’SDTally %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vítejte v SDTally %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velkommen til SDTally %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Willkommen bei SDTally %@"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Καλώς ήρθατε στο SDTally %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to SDTally %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Te damos la bienvenida a SDTally %@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Te damos la bienvenida a SDTally %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tervetuloa SDTallyyn %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bienvenue dans SDTally %@"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ברוכים הבאים ל-SDTally %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ में आपका स्वागत है"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dobro došli u SDTally %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Üdvözli az SDTally %@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selamat Datang di SDTally %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Benvenuto in SDTally %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@へようこそ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@에 오신 것을 환영합니다"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selamat Datang ke SDTally %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velkommen til SDTally %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welkom bij SDTally %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Witamy w SDTally %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bem-vindo ao SDTally %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bun venit la SDTally %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добро пожаловать в SDTally %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Víta vás SDTally %@"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dobrodošli v SDTally %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välkommen till SDTally %@"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยินดีต้อนรับสู่ SDTally %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ sürümüne Hoş Geldiniz"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ласкаво просимо до SDTally %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chào mừng đến với SDTally %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "欢迎使用 SDTally %@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "歡迎使用 SDTally %@"
           }
         }
       }
@@ -80835,6 +81477,220 @@
         }
       }
     },
+    "Internet só para atualizações" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الإنترنت للتحديثات فقط"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet només per a actualitzacions"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet jen pro aktualizace"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet kun til opdateringer"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet nur für Updates"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Διαδίκτυο μόνο για ενημερώσεις"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet only for updates"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet solo para actualizaciones"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet solo para actualizaciones"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet vain päivityksiin"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet uniquement pour les mises à jour"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אינטרנט רק לעדכונים"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इंटरनेट सिर्फ़ अपडेट के लिए"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet samo za ažuriranja"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet csak frissítésekhez"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet hanya untuk pembaruan"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet solo per gli aggiornamenti"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "インターネットはアップデートのみ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "인터넷은 업데이트에만 사용"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet hanya untuk kemas kini"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internett bare for oppdateringer"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet alleen voor updates"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet tylko do aktualizacji"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet só para atualizações"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet doar pentru actualizări"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Интернет только для обновлений"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet iba na aktualizácie"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet samo za posodobitve"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet bara för uppdateringar"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้อินเทอร์เน็ตเฉพาะการอัปเดต"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İnternet yalnızca güncellemeler için"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інтернет лише для оновлень"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Internet chỉ để cập nhật"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仅为更新联网"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "僅為更新連網"
+          }
+        }
+      }
+    },
     "Interrompida: os números são um piso" : {
       "localizations" : {
         "en" : {
@@ -105757,6 +106613,220 @@
         }
       }
     },
+    "Nada sobre o seu disco é enviado, e dá para desligar em Configurações › Versões. O CLI e o helper root nunca acessam a internet e são atualizados junto com o app." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يُرسل أي شيء عن قرصك، ويمكنك إيقاف ذلك من الإعدادات › الإصدارات. لا يصل CLI ولا المساعد ذو صلاحيات الجذر إلى الإنترنت أبدًا، ويُحدَّثان مع التطبيق."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No s’envia res sobre el teu disc, i ho pots desactivar a Configuració › Versions. El CLI i l’ajudant root no accedeixen mai a internet i s’actualitzen amb l’app."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nic o vašem disku se neodesílá a lze to vypnout v Nastavení › Verze. CLI a pomocník root nikdy nepřistupují k internetu a aktualizují se spolu s aplikací."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intet om din disk sendes, og du kan slå det fra i Indstillinger › Versioner. CLI og root-hjælperen får aldrig adgang til internettet og opdateres sammen med appen."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nichts über deine Festplatte wird gesendet, und du kannst das unter Einstellungen › Versionen abschalten. CLI und Root-Helper greifen nie auf das Internet zu und werden mit der App aktualisiert."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τίποτα για τον δίσκο σας δεν αποστέλλεται, και μπορείτε να το απενεργοποιήσετε στις Ρυθμίσεις › Εκδόσεις. Το CLI και ο βοηθός root δεν έχουν ποτέ πρόσβαση στο διαδίκτυο και ενημερώνονται μαζί με την εφαρμογή."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nothing about your disk is sent, and you can turn it off in Settings › Versions. The CLI and the root helper never access the internet and are updated with the app."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se envía nada sobre tu disco, y puedes desactivarlo en Ajustes › Versiones. El CLI y el helper root nunca acceden a internet y se actualizan junto con la app."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se envía nada sobre tu disco, y puedes desactivarlo en Configuración › Versiones. El CLI y el helper root nunca acceden a internet y se actualizan junto con la app."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mitään levystäsi ei lähetetä, ja voit kytkeä tämän pois kohdassa Asetukset › Versiot. CLI ja root-apuri eivät koskaan käytä internetiä, ja ne päivittyvät appin mukana."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rien sur votre disque n’est envoyé, et vous pouvez le désactiver dans Réglages › Versions. Le CLI et l’assistant root n’accèdent jamais à internet et sont mis à jour avec l’app."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שום דבר על הדיסק שלך לא נשלח, אפשר לכבות זאת בהגדרות › גרסאות. ה-CLI ועוזר ה-root אף פעם לא ניגשים לאינטרנט ומתעדכנים יחד עם היישום."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आपकी डिस्क के बारे में कुछ नहीं भेजा जाता, और इसे सेटिंग › संस्करण में बंद किया जा सकता है। CLI और रूट हेल्पर कभी इंटरनेट इस्तेमाल नहीं करते और ऐप के साथ ही अपडेट होते हैं।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ništa o vašem disku se ne šalje, a može se isključiti u Postavke › Verzije. CLI i root pomoćnik nikad ne pristupaju internetu i ažuriraju se zajedno s aplikacijom."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A lemezéről semmi nem kerül elküldésre, és a Beállítások › Verziók részben kikapcsolható. A CLI és a root segéd soha nem fér hozzá az internethez, és az alkalmazással együtt frissül."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak ada data tentang disk Anda yang dikirim, dan ini bisa dimatikan di Pengaturan › Versi. CLI dan helper root tidak pernah mengakses internet dan diperbarui bersama aplikasi."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non viene inviato nulla sul tuo disco e puoi disattivarlo in Impostazioni › Versioni. La CLI e l’helper root non accedono mai a internet e si aggiornano insieme all’app."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクに関する情報は送信されません。設定 › バージョンでオフにできます。CLIとrootヘルパーはインターネットに一切アクセスせず、アプリと一緒に更新されます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "디스크에 관한 정보는 전송되지 않으며, 설정 › 버전에서 끌 수 있습니다. CLI와 root 헬퍼는 인터넷에 접근하지 않으며 앱과 함께 업데이트됩니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiada apa-apa tentang cakera anda dihantar, dan ini boleh dimatikan dalam Seting › Versi. CLI dan pembantu root tidak pernah mengakses internet dan dikemas kini bersama apl."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingenting om disken din sendes, og du kan slå det av i Innstillinger › Versjoner. CLI-en og root-hjelperen bruker aldri internett og oppdateres sammen med appen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Er wordt niets over je schijf verstuurd en je kunt dit uitzetten in Instellingen › Versies. De CLI en de root-helper gebruiken nooit internet en worden samen met de app bijgewerkt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nic o Twoim dysku nie jest wysyłane, a można to wyłączyć w Ustawienia › Wersje. CLI i helper root nigdy nie korzystają z internetu i są aktualizowane razem z aplikacją."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nada sobre o seu disco é enviado, e pode desativar em Definições › Versões. O CLI e o helper root nunca acedem à internet e são atualizados com a app."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nimic despre discul tău nu este trimis, iar poți dezactiva în Setări › Versiuni. CLI-ul și helperul root nu accesează niciodată internetul și se actualizează odată cu aplicația."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ничего о вашем диске не отправляется, а отключить это можно в «Настройки › Версии». CLI и root-помощник никогда не обращаются к интернету и обновляются вместе с приложением."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nič o vašom disku sa neodosiela a môžete to vypnúť v Nastavenia › Verzie. CLI a root pomocník nikdy nepristupujú na internet a aktualizujú sa spolu s aplikáciou."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nič o vašem disku se ne pošlje, to pa lahko izklopite v Nastavitve › Različice. CLI in pomočnik root nikoli ne dostopata do interneta in se posodabljata skupaj z aplikacijo."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inget om din disk skickas, och du kan stänga av det i Inställningar › Versioner. CLI och root-hjälparen använder aldrig internet och uppdateras tillsammans med appen."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไม่มีข้อมูลเกี่ยวกับดิสก์ของคุณถูกส่งออกไป และปิดได้ในการตั้งค่า › เวอร์ชัน CLI และตัวช่วย root ไม่เคยเข้าถึงอินเทอร์เน็ต และอัปเดตไปพร้อมกับแอป"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diskiniz hakkında hiçbir şey gönderilmez ve Ayarlar › Sürümler'den kapatabilirsiniz. CLI ve root yardımcısı asla internete erişmez ve uygulamayla birlikte güncellenir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нічого про ваш диск не надсилається, а вимкнути це можна в «Параметри › Версії». CLI і root-помічник ніколи не звертаються до інтернету та оновлюються разом із програмою."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không có gì về ổ đĩa của bạn được gửi đi, và bạn có thể tắt trong Cài đặt › Phiên bản. CLI và trình trợ giúp root không bao giờ truy cập internet và được cập nhật cùng ứng dụng."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不会发送任何与你的磁盘有关的内容，并且可在“设置 › 版本”中关闭。CLI 和 root 辅助程序从不联网，并随 App 一起更新。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不會傳送任何與你的磁碟有關的內容，並且可在「設定 › 版本」中關閉。CLI 與 root 輔助程式從不連網，並隨 App 一起更新。"
+          }
+        }
+      }
+    },
     "Navegadores do Playwright" : {
       "localizations" : {
         "en" : {
@@ -122021,6 +123091,220 @@
         }
       }
     },
+    "O card da barra de menus agora é um menu nativo, com o mesmo vidro, borda e sombra dos menus do sistema." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أصبحت بطاقة شريط القوائم الآن قائمة أصلية، بالزجاج والحدود والظل نفسها في قوائم النظام."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La targeta de la barra de menús ara és un menú natiu, amb el mateix vidre, vora i ombra dels menús del sistema."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karta v řádku nabídek je nově nativní nabídka se stejným sklem, okrajem a stínem jako systémové nabídky."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kortet i menulinjen er nu en indbygget menu med samme glas, kant og skygge som systemets menuer."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Karte in der Menüleiste ist jetzt ein natives Menü mit demselben Glas, Rand und Schatten wie die Systemmenüs."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η κάρτα της γραμμής μενού είναι πλέον εγγενές μενού, με το ίδιο γυαλί, περίγραμμα και σκιά με τα μενού του συστήματος."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The menu bar card is now a native menu, with the same glass, border and shadow as the system menus."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La tarjeta de la barra de menús ahora es un menú nativo, con el mismo cristal, borde y sombra que los menús del sistema."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La tarjeta de la barra de menús ahora es un menú nativo, con el mismo vidrio, borde y sombra que los menús del sistema."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valikkorivin kortti on nyt natiivi valikko, jossa on sama lasi, reuna ja varjo kuin järjestelmävalikoissa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La carte de la barre des menus est désormais un menu natif, avec le même verre, bord et ombre que les menus du système."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הכרטיס בשורת התפריטים הוא עכשיו תפריט מקורי, עם אותו זכוכית, מסגרת וצל של תפריטי המערכת."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मेन्यू बार का कार्ड अब एक नेटिव मेन्यू है, जिसमें सिस्टम मेन्यू जैसा ही ग्लास, बॉर्डर और शैडो है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartica u traci izbornika sada je izvorni izbornik, s istim staklom, rubom i sjenom kao sistemski izbornici."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A menüsor kártyája mostantól natív menü, ugyanazzal az üveghatással, szegéllyel és árnyékkal, mint a rendszermenük."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartu bilah menu kini berupa menu native, dengan kaca, tepi, dan bayangan yang sama seperti menu sistem."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La scheda della barra dei menu ora è un menu nativo, con lo stesso vetro, bordo e ombra dei menu di sistema."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メニューバーのカードがネイティブメニューになり、システムメニューと同じガラス、境界線、影で表示されます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "메뉴 막대 카드가 이제 시스템 메뉴와 같은 유리 질감, 테두리, 그림자를 가진 기본 메뉴로 바뀌었습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kad bar menu kini ialah menu natif, dengan kaca, sempadan dan bayang yang sama seperti menu sistem."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menylinjekortet er nå en innebygd meny, med samme glass, kant og skygge som systemmenyene."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De kaart in de menubalk is nu een native menu, met hetzelfde glas, dezelfde rand en schaduw als de systeemmenu’s."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karta na pasku menu to teraz natywne menu, z takim samym szkłem, obramowaniem i cieniem jak menu systemowe."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O cartão da barra de menus é agora um menu nativo, com o mesmo vidro, contorno e sombra dos menus do sistema."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cardul din bara de meniuri este acum un meniu nativ, cu același sticlă, contur și umbră ca meniurile sistemului."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Карточка в строке меню теперь — стандартное меню с тем же стеклом, рамкой и тенью, что и у системных меню."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Karta na paneli ponúk je teraz natívna ponuka s rovnakým sklom, okrajom a tieňom ako systémové ponuky."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kartica v menijski vrstici je zdaj izvirni meni z enakim steklom, robom in senco kot sistemski meniji."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kortet i menyraden är nu en inbyggd meny, med samma glas, kant och skugga som systemmenyerna."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การ์ดในแถบเมนูตอนนี้เป็นเมนูแบบเนทีฟ มีกระจก ขอบ และเงาเหมือนเมนูของระบบ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü çubuğundaki kart artık sistem menüleriyle aynı cam, kenarlık ve gölgeye sahip yerel bir menü."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Картка в рядку меню тепер є рідним меню з тим самим склом, рамкою та тінню, що й системні меню."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thẻ trên thanh menu giờ là menu gốc, với cùng kính mờ, viền và bóng như các menu hệ thống."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "菜单栏卡片现在是原生菜单，玻璃质感、边框和阴影与系统菜单一致。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選單列卡片現在是原生選單，玻璃質感、邊框和陰影與系統選單一致。"
+          }
+        }
+      }
+    },
     "O contador cobre só as árvores vivas do volume; as de cada snapshot não têm contador." : {
       "localizations" : {
         "en" : {
@@ -127153,6 +128437,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Qué hacer"
+          }
+        }
+      }
+    },
+    "O que há de novo" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الجديد"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novetats"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co je nového"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyheder"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuerungen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Τι νέο υπάρχει"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's new"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novedades"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novedades"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uutta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveautés"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מה חדש"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नया क्या है"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Što je novo"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Újdonságok"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yang Baru"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novità"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新機能"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새로운 기능"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apa yang Baharu"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nytt i denne versjonen"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is er nieuw"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co nowego"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O que há de novo"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce este nou"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Что нового"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čo je nové"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaj je novega"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyheter"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "มีอะไรใหม่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yenilikler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Що нового"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Có gì mới"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新功能"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新功能"
           }
         }
       }
@@ -141277,6 +142775,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Procesador"
+          }
+        }
+      }
+    },
+    "Procura uma versão nova no github.com uma vez por dia e avisa na janela, na barra de menus e em Configurações › Versões. Só instala quando você clica: confere a assinatura e o SHA-256, troca o app e reabre, sem o “Abrir Mesmo Assim”." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يبحث في github.com عن إصدار جديد مرة في اليوم وينبّهك في النافذة وفي شريط القوائم وفي الإعدادات › الإصدارات. لا يثبّت إلا عند النقر: يتحقق من التوقيع ومن SHA-256 ثم يستبدل التطبيق ويعيد فتحه، دون “فتح على أي حال”."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerca una versió nova a github.com un cop al dia i t’avisa a la finestra, a la barra de menús i a Configuració › Versions. Només s’instal·la quan fas clic: comprova la signatura i el SHA-256, substitueix l’app i la torna a obrir, sense «Obre igualment»."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednou denně hledá na github.com novou verzi a upozorní vás v okně, v řádku nabídek a v Nastavení › Verze. Instaluje jen na kliknutí: ověří podpis a SHA-256, nahradí aplikaci a znovu ji otevře, bez „Přesto otevřít“."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Søger efter en ny version på github.com én gang om dagen og giver besked i vinduet, i menulinjen og i Indstillinger › Versioner. Installerer kun, når du klikker: tjekker signaturen og SHA-256, erstatter appen og åbner den igen, uden »Åbn alligevel«."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sucht einmal am Tag auf github.com nach einer neuen Version und meldet sich im Fenster, in der Menüleiste und unter Einstellungen › Versionen. Installiert nur, wenn du klickst: prüft die Signatur und den SHA-256, ersetzt die App und öffnet sie neu, ohne „Dennoch öffnen“."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αναζητά νέα έκδοση στο github.com μία φορά την ημέρα και σας ειδοποιεί στο παράθυρο, στη γραμμή μενού και στις Ρυθμίσεις › Εκδόσεις. Εγκαθιστά μόνο όταν πατήσετε: ελέγχει την υπογραφή και το SHA-256, αντικαθιστά την εφαρμογή και την ανοίγει ξανά, χωρίς «Άνοιγμα ούτως ή άλλως»."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checks github.com for a new version once a day and lets you know in the window, the menu bar and Settings › Versions. It installs only when you click: it checks the signature and the SHA-256, replaces the app and reopens it, with no “Open Anyway”."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Busca una versión nueva en github.com una vez al día y te avisa en la ventana, en la barra de menús y en Ajustes › Versiones. Solo instala cuando haces clic: comprueba la firma y el SHA-256, sustituye la app y la vuelve a abrir, sin “Abrir igualmente”."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Busca una versión nueva en github.com una vez al día y te avisa en la ventana, en la barra de menús y en Configuración › Versiones. Solo instala cuando haces clic: verifica la firma y el SHA-256, reemplaza la app y la vuelve a abrir, sin “Abrir de todos modos”."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etsii uutta versiota osoitteesta github.com kerran päivässä ja ilmoittaa ikkunassa, valikkorivillä ja kohdassa Asetukset › Versiot. Asentaa vain, kun napsautat: tarkistaa allekirjoituksen ja SHA-256:n, korvaa apin ja avaa sen uudelleen ilman ”Avaa silti” -valintaa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cherche une nouvelle version sur github.com une fois par jour et vous prévient dans la fenêtre, dans la barre des menus et dans Réglages › Versions. N’installe que quand vous cliquez : vérifie la signature et le SHA-256, remplace l’app et la rouvre, sans « Ouvrir quand même »."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מחפש גרסה חדשה ב-github.com פעם ביום ומודיע בחלון, בשורת התפריטים ובהגדרות › גרסאות. מתקין רק כשלוחצים: בודק את החתימה ואת SHA-256, מחליף את היישום ופותח אותו מחדש, בלי “פתח בכל זאת”."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally दिन में एक बार github.com पर नया संस्करण खोजता है और विंडो, मेन्यू बार और सेटिंग › संस्करण में बता देता है। यह सिर्फ़ तब इंस्टॉल करता है जब आप क्लिक करते हैं: हस्ताक्षर और SHA-256 जाँचता है, ऐप बदलता है और उसे दोबारा खोलता है, “फिर भी खोलें” की ज़रूरत के बिना।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally jednom dnevno na github.com traži novu verziju i obavještava u prozoru, traci izbornika i u Postavke › Verzije. Instalira samo kad kliknete: provjerava potpis i SHA-256, zamjenjuje aplikaciju i ponovno je otvara, bez „Ipak otvori“."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naponta egyszer új verziót keres a github.com oldalon, és jelzi az ablakban, a menüsorban és a Beállítások › Verziók részben. Csak kattintásra telepít: ellenőrzi az aláírást és az SHA-256 értéket, lecseréli az alkalmazást és újra megnyitja, „Megnyitás mégis” nélkül."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mencari versi baru di github.com sekali sehari dan memberi tahu di jendela, bilah menu, dan Pengaturan › Versi. Hanya memasang saat Anda mengeklik: memeriksa tanda tangan dan SHA-256, mengganti aplikasi, lalu membukanya kembali, tanpa “Buka Saja”."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerca una nuova versione su github.com una volta al giorno e te lo segnala nella finestra, nella barra dei menu e in Impostazioni › Versioni. Installa solo quando fai clic: controlla la firma e lo SHA-256, sostituisce l’app e la riapre, senza “Apri comunque”."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "github.comで新しいバージョンを1日1回探し、ウインドウ、メニューバー、設定 › バージョンでお知らせします。クリックしたときだけインストールします。署名とSHA-256を確認し、アプリを置き換えて再び開くので、「このまま開く」は不要です。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "github.com에서 하루에 한 번 새 버전을 확인하고 윈도우, 메뉴 막대, 설정 › 버전에서 알려 줍니다. 클릭할 때만 설치합니다. 서명과 SHA-256을 확인하고 앱을 교체한 뒤 다시 열며, ‘그래도 열기’는 필요 없습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menyemak versi baharu di github.com sekali sehari dan memberitahu dalam tetingkap, bar menu dan Seting › Versi. Hanya memasang apabila anda klik: menyemak tandatangan dan SHA-256, menggantikan apl dan membukanya semula, tanpa “Tetap Buka”."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ser etter en ny versjon på github.com én gang per dag og varsler i vinduet, menylinjen og Innstillinger › Versjoner. Installerer bare når du klikker: sjekker signaturen og SHA-256, bytter ut appen og åpner den på nytt, uten «Åpne likevel»."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoekt één keer per dag op github.com naar een nieuwe versie en meldt dit in het venster, de menubalk en Instellingen › Versies. Installeert alleen als je klikt: controleert de handtekening en de SHA-256, vervangt de app en opent hem opnieuw, zonder ‘Open toch’."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raz dziennie sprawdza na github.com, czy jest nowa wersja, i informuje w oknie, na pasku menu oraz w Ustawienia › Wersje. Instaluje tylko po kliknięciu: sprawdza podpis i SHA-256, podmienia aplikację i otwiera ją ponownie, bez „Otwórz mimo to”."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procura uma nova versão em github.com uma vez por dia e avisa na janela, na barra de menus e em Definições › Versões. Só instala quando clica: verifica a assinatura e o SHA-256, substitui a app e reabre, sem o “Abrir na mesma”."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caută o versiune nouă pe github.com o dată pe zi și te anunță în fereastră, în bara de meniuri și în Setări › Versiuni. Instalează doar când apeși: verifică semnătura și SHA-256, înlocuiește aplicația și o redeschide, fără „Deschide oricum”."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Раз в день проверяет github.com на наличие новой версии и сообщает об этом в окне, в строке меню и в разделе «Настройки › Версии». Устанавливает только по вашему нажатию: проверяет подпись и SHA-256, заменяет приложение и открывает его снова, без «Всё равно открыть»."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raz denne vyhľadá novú verziu na github.com a upozorní vás v okne, na paneli ponúk a v Nastavenia › Verzie. Inštaluje iba po kliknutí: skontroluje podpis a SHA-256, nahradí aplikáciu a znova ju otvorí, bez „Aj tak otvoriť“."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enkrat na dan poišče novo različico na github.com in vas obvesti v oknu, v menijski vrstici in v Nastavitve › Različice. Namesti samo, ko kliknete: preveri podpis in SHA-256, zamenja aplikacijo in jo znova odpre, brez „Vseeno odpri“."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Söker efter en ny version på github.com en gång om dagen och meddelar i fönstret, i menyraden och i Inställningar › Versioner. Installerar bara när du klickar: kontrollerar signaturen och SHA-256, ersätter appen och öppnar den igen, utan ”Öppna ändå”."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตรวจหาเวอร์ชันใหม่ที่ github.com วันละครั้งและแจ้งในหน้าต่าง แถบเมนู และการตั้งค่า › เวอร์ชัน จะติดตั้งเมื่อคุณคลิกเท่านั้น: ตรวจสอบลายเซ็นและ SHA-256 แทนที่แอปแล้วเปิดใหม่ โดยไม่ต้องใช้ “เปิดต่อไป”"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günde bir kez github.com'da yeni sürümü denetler ve pencerede, menü çubuğunda ve Ayarlar › Sürümler'de bildirir. Yalnızca siz tıkladığınızda yükler: imzayı ve SHA-256'yı denetler, uygulamayı değiştirir ve yeniden açar; “Yine de Aç” gerekmez."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Раз на день перевіряє github.com на наявність нової версії та повідомляє у вікні, у рядку меню та в розділі «Параметри › Версії». Встановлює лише після вашого натискання: перевіряє підпис і SHA-256, замінює програму та відкриває її знову, без «Все одно відкрити»."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiểm tra phiên bản mới trên github.com mỗi ngày một lần và thông báo trong cửa sổ, thanh menu và Cài đặt › Phiên bản. Chỉ cài đặt khi bạn nhấp: kiểm tra chữ ký và SHA-256, thay ứng dụng rồi mở lại, không cần “Vẫn mở”."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每天在 github.com 上检查一次新版本，并在窗口、菜单栏和“设置 › 版本”中提示。仅在你点击后才安装：校验签名和 SHA-256，替换 App 并重新打开，无需“仍要打开”。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "每天在 github.com 上檢查一次新版本，並在視窗、選單列和「設定 › 版本」中提示。僅在你按一下後才安裝：驗證簽章和 SHA-256，取代 App 並重新打開，無需「仍要打開」。"
           }
         }
       }
