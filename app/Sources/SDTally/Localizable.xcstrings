@@ -142922,7 +142922,7 @@
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Procura uma nova versão em github.com uma vez por dia e avisa na janela, na barra de menus e em Definições › Versões. Só instala quando clica: verifica a assinatura e o SHA-256, substitui a app e reabre, sem o “Abrir na mesma”."
+            "value" : "Procura uma nova versão em github.com uma vez por dia e avisa na janela, na barra de menus e em Definições › Versões. Só instala quando clica: verifica a assinatura e o SHA-256, substitui a app e reabre, sem passar por “Abrir” nas Definições do Sistema."
           }
         },
         "ro" : {
