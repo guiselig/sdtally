@@ -43,6 +43,12 @@ nonisolated enum Novidades {
 
     static var versaoApp: String { maiorMenor(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "") }
 
+    /// A busca automática só roda com o aviso de rede visto (Atualizacoes.jaAvisouRede). Sem a faixa de
+    /// aviso (dono, 26/10), quem já passou pelas boas-vindas conta como avisado: a opção está em
+    /// Configurações › Versões, com a frase de rede, e a folha pode nem aparecer (1.0.x direto para uma
+    /// versão sem lista). Instalação nova: o Começar das boas-vindas marca.
+    static func avisoDeRedeVisto(jaAvisou: Bool, viuBoasVindas: Bool) -> Bool { jaAvisou || viuBoasVindas }
+
     /// Grava a versão atual como vista: ao mostrar a folha e no Começar das boas-vindas.
     static func marcarVista() { UserDefaults.standard.set(versaoApp, forKey: chave) }
 
@@ -94,6 +100,8 @@ struct NovidadesView: View {
             .padding(20)
         }
         .frame(width: 560)
-        .onAppear { Novidades.marcarVista() }
+        .onAppear {
+            Novidades.marcarVista()
+        }
     }
 }

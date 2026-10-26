@@ -61,11 +61,7 @@ struct PermissoesView: View {
             Section("Avançado") {
                 PickerAutoRoot()
             }
-            // A página de versões abre no navegador; a busca e o download ficam em LinhaAtualizador.
             Section("Versões") {
-                LabeledContent("O app só se conecta à internet para procurar e baixar versões novas no github.com. O CLI e o helper root nunca acessam a internet; vêm dentro do app e são atualizados junto com ele.") {
-                    Button("Ver versões novas") { NSWorkspace.shared.open(urlVersoes) }
-                }
                 LinhaAtualizador()
             }
         }
@@ -184,20 +180,29 @@ struct LinhaMedidorRoot: View {
     }
 }
 
-/// Ajustes > Versões: a opção, o estado (textoAtualizacao), Instalar quando há versão nova e Procurar agora.
+/// Configurações › Versões: a opção e, com ela desligada, "Verificar atualizações" à mão (a página de
+/// versões no navegador) ou pela internet (uma busca agora). Embaixo, o estado e Instalar (dono, 26/10).
 struct LinhaAtualizador: View {
     var body: some View {
         let a = Atualizacoes.unica
-        VStack(alignment: .leading, spacing: 6) {
-            ToggleAtualizacoes()
-            HStack {
-                if let t = textoAtualizacao(a) {
-                    Text(t).font(.callout).foregroundStyle(a.estado.ehErro ? AnyShapeStyle(Marca.aviso) : AnyShapeStyle(.secondary))
-                        .textSelection(.enabled)
+        ToggleAtualizacoes()
+        if !a.ligado {
+            LabeledContent("Verificar atualizações") {
+                HStack {
+                    Button("Manualmente") { NSWorkspace.shared.open(urlVersoes) }
+                        .help(String(localized: "Abre a página de versões no GitHub, no navegador."))
+                    Button("Pela internet") { a.procurarAgora() }
+                        .disabled(atualizacaoOcupada(a))
+                        .help(String(localized: "Procura uma versão nova no github.com agora."))
                 }
+            }
+        }
+        if let t = textoAtualizacao(a) {
+            HStack {
+                Text(t).font(.callout).foregroundStyle(a.estado.ehErro ? AnyShapeStyle(Marca.aviso) : AnyShapeStyle(.secondary))
+                    .textSelection(.enabled)
                 Spacer()
                 if a.disponivel != nil && !atualizacaoOcupada(a) { Button("Instalar") { a.instalar() } }
-                Button("Procurar agora") { a.procurarAgora() }.disabled(atualizacaoOcupada(a))
             }
         }
     }
@@ -211,7 +216,13 @@ struct ToggleAtualizacoes: View {
     var body: some View {
         @Bindable var a = Atualizacoes.unica
         Toggle(isOn: $a.ligado) {
-            Rotulo(String(localized: "Procurar atualizações automaticamente"), Self.serve, explicar, simbolo: "arrow.down.circle")
+            if explicar {
+                Rotulo(String(localized: "Procurar atualizações automaticamente"), Self.serve, explicar, simbolo: "arrow.down.circle")
+            } else {
+                // Em Configurações, a frase explícita de rede fica embaixo (dono, 26/10: dizer no app).
+                Text("Procurar atualizações automaticamente")
+                Text("O app só se conecta à internet para procurar e baixar versões novas no github.com. O CLI e o helper root nunca acessam a internet; vêm dentro do app e são atualizados junto com ele.")
+            }
         }
         .help(Self.serve)
     }

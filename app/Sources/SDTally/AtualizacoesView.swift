@@ -1,6 +1,6 @@
 // Atualizações (dono, 26/10): o app só usa a rede para procurar e baixar versões no github.com,
-// e só instala com o clique. Aqui o texto do estado e a faixa do topo da janela (versão nova e o
-// aviso único de quem atualizou). A opção é ToggleAtualizacoes; a lógica, Atualizacoes.
+// e só instala com o clique. Aqui o texto do estado e a faixa do topo da janela (versão nova).
+// A opção é ToggleAtualizacoes; a lógica, Atualizacoes.
 import SwiftUI
 
 /// Download ou instalação em andamento: os botões de instalar e procurar esperam.
@@ -27,12 +27,9 @@ func textoAtualizacao(_ a: Atualizacoes) -> String? {
     }
 }
 
-/// Faixa discreta embaixo do título da tela: a versão nova, ou uma vez o aviso de que o app agora
-/// procura atualizações (só para quem já tinha visto as boas-vindas).
+/// Faixa discreta embaixo do título da tela quando há versão nova. O aviso único de rede saiu
+/// (dono, 26/10): quem atualiza fica sabendo pela folha de novidades (NovidadesView).
 struct FaixaAtualizacao: View {
-    @Environment(Painel.self) private var painel
-    @AppStorage("viuBoasVindas") private var viuBoasVindas = false
-
     var body: some View {
         let a = Atualizacoes.unica
         if let n = a.disponivel {
@@ -45,15 +42,6 @@ struct FaixaAtualizacao: View {
                     Button("Novidades") { NSWorkspace.shared.open(n.pagina) }.buttonStyle(.link)
                     Button("Instalar") { a.instalar() }.buttonStyle(.borderedProminent).controlSize(.small)
                 }
-            }
-        } else if viuBoasVindas && !a.jaAvisouRede {
-            faixa("network") {
-                Text("O SDTally agora procura atualizações no github.com. Dá para desligar em Configurações › Versões.")
-                    .fixedSize(horizontal: false, vertical: true)
-                Spacer(minLength: 8)
-                Button("Configurações") { a.jaAvisouRede = true; painel.mostrar(.permissoes) }.buttonStyle(.link)
-                Button("Fechar", systemImage: "xmark") { a.jaAvisouRede = true }
-                    .labelStyle(.iconOnly).buttonStyle(.borderless)
             }
         }
     }

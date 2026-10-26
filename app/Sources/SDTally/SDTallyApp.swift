@@ -166,7 +166,9 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
             UNUserNotificationCenter.current().delegate = self
         }
         Portao.unico.esperar { Painel.unico.iniciar() }
-        Atualizacoes.unica.iniciar()
+        let a = Atualizacoes.unica
+        a.jaAvisouRede = Novidades.avisoDeRedeVisto(jaAvisou: a.jaAvisouRede, viuBoasVindas: UserDefaults.standard.bool(forKey: "viuBoasVindas"))
+        a.iniciar()
         abrirSeFoiAMao()
         BarraDeStatus.unico.ajustar()
         MenuContexto.vigiarBarra()

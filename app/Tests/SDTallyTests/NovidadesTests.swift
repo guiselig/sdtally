@@ -30,3 +30,12 @@ private func com11(_ v: String) -> Bool { v == "1.1" }
     #expect(Novidades.maiorMenor("1.1.0") == "1.1")
     #expect(Novidades.itens("1.1")?.count == 3)
 }
+
+@Test func avisoDeRedeQuemPulouA11() {
+    // 1.0.x direto para uma 1.2 sem lista: nenhuma folha aparece, mas a busca automática é liberada.
+    #expect(!Novidades.deveMostrar(versaoApp: "1.2.0", vista: nil, viuBoasVindas: true, temLista: com11))
+    #expect(Novidades.avisoDeRedeVisto(jaAvisou: false, viuBoasVindas: true))
+    // Instalação nova antes do Começar: segue travada.
+    #expect(!Novidades.avisoDeRedeVisto(jaAvisou: false, viuBoasVindas: false))
+    #expect(Novidades.avisoDeRedeVisto(jaAvisou: true, viuBoasVindas: false))
+}
