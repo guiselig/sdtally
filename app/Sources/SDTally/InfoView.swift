@@ -16,7 +16,7 @@ struct InfoView: View {
         VStack(spacing: 8) {
             IconeApp(tamanho: 96)
             Text("SDTally").font(.system(.largeTitle, design: .rounded, weight: .bold))
-            Text("Só lê · Sem rede · Sem telemetria").foregroundStyle(.secondary)
+            Text("Só lê · Sem telemetria · Internet só para atualizações").foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity)
         .padding(.top, 8)
@@ -59,7 +59,7 @@ struct InfoView: View {
                 comando(String(localized: "Verificar"), "\(s) --verify")
             } header: {
                 Text("Comandos")
-                    .help("Pelo MCP, seu nome de usuário e os nomes de pastas pessoais são trocados antes de sair do sdtally (`--redact off` desliga). O SDTally não manda nada pela rede, mas o cliente de IA manda. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita no app.")
+                    .help("Pelo MCP, seu nome de usuário e os nomes de pastas pessoais são trocados antes de sair do sdtally (`--redact off` desliga). O SDTally não manda nada sobre o seu disco pela rede, mas o cliente de IA manda. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita no app.")
             }
         }
         .formStyle(.grouped)

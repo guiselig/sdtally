@@ -509,6 +509,7 @@ struct JanelaView: View {
             // tela e, embaixo, o alternador. Troca de tela curta: a nova entra num fade com um leve deslize.
             VStack(spacing: 0) {
                 cabecalho
+                FaixaAtualizacao()
                 VStack(spacing: 0) {
                     detalhe
                         .id(painel.secao)

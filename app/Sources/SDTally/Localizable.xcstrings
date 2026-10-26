@@ -36531,6 +36531,220 @@
         }
       }
     },
+    "Baixando a versão nova…" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جارٍ تنزيل الإصدار الجديد…"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baixant la versió nova…"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stahuji novou verzi…"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Henter den nye version…"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Version wird geladen…"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Λήψη της νέας έκδοσης…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Downloading the new version…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descargando la versión nueva…"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descargando la versión nueva…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ladataan uutta versiota…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Téléchargement de la nouvelle version…"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מוריד את הגרסה החדשה…"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नया संस्करण डाउनलोड हो रहा है…"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preuzimanje nove verzije…"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az új verzió letöltése…"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengunduh versi baru…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download della nuova versione…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいバージョンをダウンロード中…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 버전 다운로드 중…"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memuat turun versi baharu…"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laster ned den nye versjonen…"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuwe versie downloaden…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pobieranie nowej wersji…"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A transferir a nova versão…"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se descarcă versiunea nouă…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загрузка новой версии…"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sťahuje sa nová verzia…"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prenašanje nove različice …"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hämtar den nya versionen…"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กำลังดาวน์โหลดเวอร์ชันใหม่…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni sürüm indiriliyor…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завантаження нової версії…"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang tải phiên bản mới…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在下载新版本…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在下載新版本…"
+          }
+        }
+      }
+    },
     "Bancos de dados do sistema" : {
       "localizations" : {
         "en" : {
@@ -70985,6 +71199,220 @@
         }
       }
     },
+    "Fechar" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إغلاق"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanca"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zavřít"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luk"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schließen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κλείσιμο"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sulje"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermer"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "סגור"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बंद करें"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatvori"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bezárás"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutup"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiudi"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "閉じる"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "닫기"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutup"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lukk"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sluiten"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamknij"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fechar"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Închide"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрыть"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zavrieť"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapri"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stäng"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ปิด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kapat"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрити"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đóng"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "關閉"
+          }
+        }
+      }
+    },
     "Fechar mesmo assim" : {
       "localizations" : {
         "ar" : {
@@ -78909,6 +79337,220 @@
         }
       }
     },
+    "Instalando a versão nova…" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جارٍ تثبيت الإصدار الجديد…"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instal·lant la versió nova…"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instaluji novou verzi…"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installerer den nye version…"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Version wird installiert…"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εγκατάσταση της νέας έκδοσης…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installing the new version…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalando la versión nueva…"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalando la versión nueva…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asennetaan uutta versiota…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installation de la nouvelle version…"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מתקין את הגרסה החדשה…"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नया संस्करण इंस्टॉल हो रहा है…"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instaliranje nove verzije…"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az új verzió telepítése…"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menginstal versi baru…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installazione della nuova versione…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいバージョンをインストール中…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 버전 설치 중…"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memasang versi baharu…"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installerer den nye versjonen…"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuwe versie installeren…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalowanie nowej wersji…"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A instalar a nova versão…"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se instalează versiunea nouă…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Установка новой версии…"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inštaluje sa nová verzia…"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nameščanje nove različice …"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installerar den nya versionen…"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กำลังติดตั้งเวอร์ชันใหม่…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni sürüm yükleniyor…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Установлення нової версії…"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang cài đặt phiên bản mới…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在安装新版本…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在安裝新版本…"
+          }
+        }
+      }
+    },
     "Instalar" : {
       "localizations" : {
         "en" : {
@@ -79333,6 +79975,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Instalar Root sin contraseña…"
+          }
+        }
+      }
+    },
+    "Instalar SDTally %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تثبيت SDTally %@"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instal·la SDTally %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nainstalovat SDTally %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installér SDTally %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ installieren"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εγκατάσταση SDTally %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Install SDTally %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalar SDTally %@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalar SDTally %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Asenna SDTally %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installer SDTally %@"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "התקן את SDTally %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ इंस्टॉल करें"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instaliraj SDTally %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ telepítése"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instal SDTally %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installa SDTally %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ をインストール"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ 설치"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pasang SDTally %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installer SDTally %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installeer SDTally %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zainstaluj SDTally %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalar SDTally %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalează SDTally %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Установить SDTally %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nainštalovať SDTally %@"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Namesti SDTally %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installera SDTally %@"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ติดตั้ง SDTally %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ sürümünü yükle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Установити SDTally %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cài đặt SDTally %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "安装 SDTally %@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "安裝 SDTally %@"
           }
         }
       }
@@ -110893,216 +111749,430 @@
         }
       }
     },
-    "Nunca apaga nem altera arquivos, sem rede e sem telemetria." : {
+    "Novidades" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Never deletes or changes files, with no network and no telemetry."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Non elimina né modifica mai i file, senza rete e senza telemetria."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ніколи не видаляє й не змінює файли, без мережі й без телеметрії."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ничего не удаляет и не изменяет, без сети и телеметрии."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Raderar eller ändrar aldrig filer, utan nätverk och utan telemetri."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sletter eller ændrer aldrig filer, uden netværk og uden telemetri."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sletter eller endrer aldri filer, uten nettverk og uten telemetri."
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "絕不刪除或修改檔案，不連網，也沒有遙測。"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nunca elimina nem altera ficheiros, sem rede e sem telemetria."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "从不删除或修改文件，不联网，也没有遥测。"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ファイルを削除・変更することはなく、ネットワークも使わず、テレメトリもありません。"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nikdy nic nemaže ani nemění, bez sítě a bez telemetrie."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "파일을 삭제하거나 변경하지 않으며, 네트워크와 원격 측정을 사용하지 않습니다."
-          }
-        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "لا يحذف الملفات ولا يعدّلها أبدًا، بلا شبكة وبلا بيانات استخدام."
+            "value" : "ما الجديد"
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mai no elimina ni modifica fitxers, sense xarxa i sense telemetria."
+            "value" : "Novetats"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novinky"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyheder"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Löscht oder ändert nie Dateien, ohne Netzwerk und ohne Telemetrie."
+            "value" : "Neuigkeiten"
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Δεν διαγράφει ούτε αλλάζει ποτέ αρχεία, χωρίς δίκτυο και χωρίς τηλεμετρία."
+            "value" : "Τι νέο υπάρχει"
           }
         },
-        "fi" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ei koskaan poista tai muuta tiedostoja, ei verkkoa eikä telemetriaa."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ne supprime ni ne modifie jamais de fichiers, sans réseau ni télémétrie."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אף פעם לא מוחק ולא משנה קבצים, ללא רשת וללא טלמטריה."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "फ़ाइलें न कभी हटाता है, न बदलता है; कोई नेटवर्क नहीं, कोई टेलीमेट्री नहीं।"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nikad ne briše niti mijenja datoteke, bez mreže i bez telemetrije."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tidak pernah menghapus atau mengubah file, tanpa jaringan dan tanpa telemetri."
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tidak pernah memadam atau mengubah fail, tanpa rangkaian dan tanpa telemetri."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nigdy nie usuwa ani nie zmienia plików, bez sieci i bez telemetrii."
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nu șterge și nu modifică niciodată fișiere, fără rețea și fără telemetrie."
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nikdy nemaže ani nemení súbory, bez siete a bez telemetrie."
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nikoli ne izbriše ali spremeni datotek, brez omrežja in brez telemetrije."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dosyaları asla silmez veya değiştirmez; ağ yok, telemetri yok."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Không bao giờ xóa hay thay đổi tệp, không dùng mạng và không có telemetry."
+            "value" : "What's New"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nunca elimina ni modifica archivos, sin red y sin telemetría."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verwijdert of wijzigt nooit bestanden, geen netwerk en geen telemetrie."
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ไม่ลบหรือแก้ไขไฟล์ ไม่ใช้เครือข่าย และไม่มีการเก็บข้อมูลการใช้งาน"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Soha nem töröl és nem módosít fájlokat, nincs hálózat és nincs telemetria."
+            "value" : "Novedades"
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nunca elimina ni modifica archivos, sin red y sin telemetría."
+            "value" : "Novedades"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uutta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveautés"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מה חדש"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नया क्या है"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novosti"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Újdonságok"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yang Baru"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novità"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新機能"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새로운 기능"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yang Baharu"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nytt"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wat is er nieuw"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co nowego"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novidades"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noutăți"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Что нового"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novinky"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novosti"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nyheter"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "มีอะไรใหม่"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yenilikler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Що нового"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Có gì mới"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新功能"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新功能"
+          }
+        }
+      }
+    },
+    "Nunca apaga nem altera arquivos. Sem telemetria: nada sobre o seu disco sai do Mac." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يحذف الملفات ولا يعدّلها أبدًا. بلا بيانات استخدام: لا شيء عن قرصك يغادر الـ Mac."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mai no elimina ni modifica fitxers. Sense telemetria: res sobre el teu disc surt del Mac."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nikdy nemaže ani nemění soubory. Bez telemetrie: nic o vašem disku neopustí Mac."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sletter eller ændrer aldrig filer. Ingen telemetri: intet om din disk forlader Mac’en."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löscht oder ändert nie Dateien. Keine Telemetrie: Nichts über deine Festplatte verlässt den Mac."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν διαγράφει ούτε αλλάζει ποτέ αρχεία. Χωρίς τηλεμετρία: τίποτα για τον δίσκο σας δεν φεύγει από το Mac."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Never deletes or changes files. No telemetry: nothing about your disk leaves the Mac."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nunca elimina ni modifica archivos. Sin telemetría: nada sobre tu disco sale del Mac."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nunca elimina ni modifica archivos. Sin telemetría: nada sobre tu disco sale del Mac."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei koskaan poista tai muuta tiedostoja. Ei telemetriaa: mitään levystäsi ei lähde Macista."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ne supprime ni ne modifie jamais de fichiers. Sans télémétrie : rien sur votre disque ne quitte le Mac."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "אף פעם לא מוחק ולא משנה קבצים. ללא טלמטריה: שום דבר על הדיסק שלך לא יוצא מה-Mac."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ाइलें न कभी हटाता है, न बदलता है। कोई टेलीमेट्री नहीं: आपकी डिस्क के बारे में कुछ भी Mac से बाहर नहीं जाता।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nikad ne briše niti mijenja datoteke. Bez telemetrije: ništa o vašem disku ne izlazi s Maca."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soha nem töröl és nem módosít fájlokat. Nincs telemetria: a lemezéről semmi nem kerül ki a Mac-ről."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak pernah menghapus atau mengubah file. Tanpa telemetri: tidak ada data tentang disk Anda yang keluar dari Mac."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non elimina né modifica mai i file. Nessuna telemetria: nulla sul tuo disco esce dal Mac."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファイルを削除・変更することはありません。テレメトリなし: ディスクに関する情報がMacの外に出ることはありません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "파일을 삭제하거나 변경하지 않습니다. 원격 측정 없음: 디스크에 관한 정보는 Mac 밖으로 나가지 않습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak pernah memadam atau mengubah fail. Tanpa telemetri: tiada apa-apa tentang cakera anda keluar daripada Mac."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sletter eller endrer aldri filer. Ingen telemetri: ingenting om disken din forlater Macen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwijdert of wijzigt nooit bestanden. Geen telemetrie: niets over je schijf verlaat de Mac."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nigdy nie usuwa ani nie zmienia plików. Bez telemetrii: nic o Twoim dysku nie opuszcza Maca."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nunca elimina nem altera ficheiros. Sem telemetria: nada sobre o seu disco sai do Mac."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu șterge și nu modifică niciodată fișiere. Fără telemetrie: nimic despre discul tău nu părăsește Mac-ul."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Никогда не удаляет и не изменяет файлы. Без телеметрии: ничего о вашем диске не покидает Mac."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nikdy nemaže ani nemení súbory. Bez telemetrie: nič o vašom disku neopúšťa Mac."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nikoli ne izbriše ali spremeni datotek. Brez telemetrije: nič o vašem disku ne zapusti Maca."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raderar eller ändrar aldrig filer. Ingen telemetri: inget om din disk lämnar Macen."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ไม่ลบหรือแก้ไขไฟล์ ไม่มีการเก็บข้อมูลการใช้งาน: ไม่มีข้อมูลเกี่ยวกับดิสก์ของคุณออกจาก Mac"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dosyaları asla silmez veya değiştirmez. Telemetri yok: diskiniz hakkında hiçbir şey Mac'ten çıkmaz."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ніколи не видаляє й не змінює файли. Без телеметрії: нічого про ваш диск не залишає Mac."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không bao giờ xóa hay thay đổi tệp. Không có telemetry: không có gì về ổ đĩa của bạn rời khỏi Mac."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "从不删除或修改文件。无遥测：与你的磁盘有关的内容不会离开 Mac。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "絕不刪除或修改檔案。無遙測：與你的磁碟有關的內容不會離開 Mac。"
           }
         }
       }
@@ -111963,12 +113033,430 @@
         }
       }
     },
+    "Não deu para atualizar: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعذّر التحديث: %@"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No s’ha pogut actualitzar: %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizace se nepodařila: %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunne ikke opdatere: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualisierung fehlgeschlagen: %@"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η ενημέρωση δεν ήταν δυνατή: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not update: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo actualizar: %@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo actualizar: %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Päivitys ei onnistunut: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mise à jour impossible : %@"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "לא ניתן היה לעדכן: %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अपडेट नहीं हो सका: %@"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ažuriranje nije uspjelo: %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nem sikerült frissíteni: %@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak dapat memperbarui: %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile aggiornare: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップデートできませんでした: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "업데이트하지 못했습니다: %@"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak dapat mengemas kini: %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunne ikke oppdatere: %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bijwerken mislukt: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się zaktualizować: %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível atualizar: %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu s-a putut actualiza: %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось обновить: %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktualizácia sa nepodarila: %@"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Posodobitev ni uspela: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det gick inte att uppdatera: %@"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "อัปเดตไม่สำเร็จ: %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güncellenemedi: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося оновити: %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không thể cập nhật: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法更新：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法更新：%@"
+          }
+        }
+      }
+    },
     "Não deu para instalar a versão nova. A versão instalada continua como estava." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعذّر تثبيت الإصدار الجديد. بقي الإصدار المثبّت كما كان."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No s’ha pogut instal·lar la versió nova. La versió instal·lada continua com estava."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novou verzi se nepodařilo nainstalovat. Nainstalovaná verze zůstala beze změny."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunne ikke installere den nye version. Den installerede version er uændret."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die neue Version konnte nicht installiert werden. Die installierte Version bleibt unverändert."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η εγκατάσταση της νέας έκδοσης δεν ήταν δυνατή. Η εγκατεστημένη έκδοση παραμένει όπως ήταν."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Could not install the new version. The installed version is unchanged."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo instalar la versión nueva. La versión instalada sigue como estaba."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo instalar la versión nueva. La versión instalada sigue como estaba."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uuden version asennus ei onnistunut. Asennettu versio pysyy ennallaan."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installation de la nouvelle version impossible. La version installée reste inchangée."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "לא ניתן היה להתקין את הגרסה החדשה. הגרסה המותקנת נשארת כפי שהייתה."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नया संस्करण इंस्टॉल नहीं हो सका। इंस्टॉल किया हुआ संस्करण जैसा था वैसा ही है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalacija nove verzije nije uspjela. Instalirana verzija ostaje kakva je bila."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nem sikerült telepíteni az új verziót. A telepített verzió változatlan maradt."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak dapat menginstal versi baru. Versi yang terpasang tetap seperti semula."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile installare la nuova versione. La versione installata è rimasta com’era."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいバージョンをインストールできませんでした。インストール済みのバージョンは変更されていません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 버전을 설치하지 못했습니다. 설치된 버전은 그대로입니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak dapat memasang versi baharu. Versi yang dipasang kekal seperti sedia ada."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunne ikke installere den nye versjonen. Den installerte versjonen er som før."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installeren van de nieuwe versie mislukt. De geïnstalleerde versie is ongewijzigd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się zainstalować nowej wersji. Zainstalowana wersja pozostała bez zmian."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível instalar a nova versão. A versão instalada mantém-se como estava."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu s-a putut instala versiunea nouă. Versiunea instalată rămâne neschimbată."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось установить новую версию. Установленная версия осталась без изменений."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Novú verziu sa nepodarilo nainštalovať. Nainštalovaná verzia zostala nezmenená."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nove različice ni bilo mogoče namestiti. Nameščena različica ostaja nespremenjena."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det gick inte att installera den nya versionen. Den installerade versionen är oförändrad."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ติดตั้งเวอร์ชันใหม่ไม่สำเร็จ เวอร์ชันที่ติดตั้งไว้ยังคงเหมือนเดิม"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni sürüm yüklenemedi. Yüklü sürüm olduğu gibi duruyor."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося установити нову версію. Установлена версія залишилась без змін."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không thể cài đặt phiên bản mới. Phiên bản đã cài vẫn giữ nguyên."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法安装新版本。已安装的版本保持不变。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法安裝新版本。已安裝的版本保持不變。"
           }
         }
       }
@@ -112617,10 +114105,214 @@
     },
     "Não deu para procurar atualizações: %@" : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعذّر البحث عن التحديثات: %@"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No s’han pogut cercar actualitzacions: %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hledání aktualizací se nepodařilo: %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunne ikke søge efter opdateringer: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suche nach Updates fehlgeschlagen: %@"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η αναζήτηση ενημερώσεων δεν ήταν δυνατή: %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Could not check for updates: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo buscar actualizaciones: %@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo buscar actualizaciones: %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Päivitysten etsintä ei onnistunut: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recherche de mises à jour impossible : %@"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "לא ניתן היה לחפש עדכונים: %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अपडेट नहीं खोजे जा सके: %@"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traženje ažuriranja nije uspjelo: %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nem sikerült frissítéseket keresni: %@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak dapat mencari pembaruan: %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile cercare aggiornamenti: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アップデートを確認できませんでした: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "업데이트를 확인하지 못했습니다: %@"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tidak dapat menyemak kemas kini: %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kunne ikke se etter oppdateringer: %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoeken naar updates mislukt: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie udało się sprawdzić aktualizacji: %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível procurar atualizações: %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu s-au putut căuta actualizări: %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось проверить обновления: %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hľadanie aktualizácií sa nepodarilo: %@"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iskanje posodobitev ni uspelo: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Det gick inte att söka efter uppdateringar: %@"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตรวจหาอัปเดตไม่สำเร็จ: %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güncellemeler denetlenemedi: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося перевірити оновлення: %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Không thể kiểm tra bản cập nhật: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法检查更新：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法檢查更新：%@"
           }
         }
       }
@@ -117975,6 +119667,220 @@
         }
       }
     },
+    "O SDTally agora procura atualizações no github.com. Dá para desligar em Configurações › Versões." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يبحث SDTally الآن عن التحديثات في github.com. يمكنك إيقاف ذلك من الإعدادات › الإصدارات."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’SDTally ara cerca actualitzacions a github.com. Ho pots desactivar a Configuració › Versions."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally nově hledá aktualizace na github.com. Vypnout to můžete v Nastavení › Verze."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally søger nu efter opdateringer på github.com. Du kan slå det fra i Indstillinger › Versioner."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally sucht jetzt auf github.com nach Updates. Du kannst das unter Einstellungen › Versionen ausschalten."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το SDTally πλέον αναζητά ενημερώσεις στο github.com. Μπορείτε να το απενεργοποιήσετε στις Ρυθμίσεις › Εκδόσεις."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally now checks github.com for updates. You can turn this off in Settings › Versions."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ahora busca actualizaciones en github.com. Puedes desactivarlo en Ajustes › Versiones."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ahora busca actualizaciones en github.com. Puedes desactivarlo en Configuración › Versiones."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally etsii nyt päivityksiä osoitteesta github.com. Voit poistaa tämän käytöstä kohdassa Asetukset › Versiot."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally recherche désormais les mises à jour sur github.com. Vous pouvez le désactiver dans Réglages › Versions."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally מחפש עכשיו עדכונים ב-github.com. אפשר לכבות זאת ב-הגדרות › גרסאות."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally अब github.com पर अपडेट खोजता है। इसे सेटिंग › संस्करण में बंद किया जा सकता है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally sada traži ažuriranja na github.com. To možete isključiti u Postavke › Verzije."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az SDTally mostantól frissítéseket keres a github.com oldalon. Kikapcsolható itt: Beállítások › Verziók."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally kini mencari pembaruan di github.com. Bisa dimatikan di Pengaturan › Versi."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ora cerca aggiornamenti su github.com. Puoi disattivarlo in Impostazioni › Versioni."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTallyはgithub.comでアップデートを確認するようになりました。設定 › バージョンでオフにできます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally가 이제 github.com에서 업데이트를 확인합니다. 설정 › 버전에서 끌 수 있습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally kini menyemak kemas kini di github.com. Anda boleh mematikannya dalam Seting › Versi."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ser nå etter oppdateringer på github.com. Du kan slå det av i Innstillinger › Versjoner."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally zoekt nu naar updates op github.com. Je kunt dit uitzetten in Instellingen › Versies."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally sprawdza teraz aktualizacje na github.com. Możesz to wyłączyć w Ustawienia › Wersje."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O SDTally procura agora atualizações em github.com. Pode desativar em Definições › Versões."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally caută acum actualizări pe github.com. Poți dezactiva în Setări › Versiuni."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally теперь проверяет обновления на github.com. Это можно отключить в Настройки › Версии."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally teraz hľadá aktualizácie na github.com. Môžete to vypnúť v Nastavenia › Verzie."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally zdaj išče posodobitve na github.com. To lahko izklopite v Nastavitve › Različice."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally söker nu efter uppdateringar på github.com. Du kan stänga av det i Inställningar › Versioner."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตอนนี้ SDTally ตรวจหาอัปเดตที่ github.com คุณปิดได้ใน การตั้งค่า › เวอร์ชัน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally artık güncellemeleri github.com'da denetliyor. Bunu Ayarlar › Sürümler bölümünden kapatabilirsiniz."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally тепер перевіряє оновлення на github.com. Це можна вимкнути в Параметри › Версії."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally giờ kiểm tra bản cập nhật trên github.com. Bạn có thể tắt trong Cài đặt › Phiên bản."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 现在会在 github.com 上检查更新。你可以在“设置 › 版本”中关闭。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 現在會在 github.com 上檢查更新。你可以在「設定 › 版本」中關閉。"
+          }
+        }
+      }
+    },
     "O SDTally não apaga nada. Cada passo é seu, no Finder, no Terminal ou no app dono. Depois, meça de novo: o Histórico mostra quanto voltou." : {
       "localizations" : {
         "en" : {
@@ -118191,224 +120097,214 @@
     },
     "O SDTally não fechou a tempo. A versão instalada continua como estava." : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally did not quit in time. The installed version is unchanged."
-          }
-        }
-      }
-    },
-    "O SDTally não usa a rede: as versões novas ficam no GitHub." : {
-      "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "لا يستخدم SDTally الشبكة: الإصدارات الجديدة موجودة على GitHub."
+            "value" : "لم يُغلق SDTally في الوقت المناسب. بقي الإصدار المثبّت كما كان."
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L’SDTally no fa servir la xarxa: les versions noves són a GitHub."
+            "value" : "L’SDTally no s’ha tancat a temps. La versió instal·lada continua com estava."
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally nepoužívá síť: nové verze jsou na GitHubu."
+            "value" : "SDTally se nezavřel včas. Nainstalovaná verze zůstala beze změny."
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally bruger ikke netværket: Nye versioner findes på GitHub."
+            "value" : "SDTally blev ikke lukket i tide. Den installerede version er uændret."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally nutzt kein Netzwerk: Neue Versionen gibt es auf GitHub."
+            "value" : "SDTally wurde nicht rechtzeitig beendet. Die installierte Version bleibt unverändert."
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Το SDTally δεν χρησιμοποιεί το δίκτυο: οι νέες εκδόσεις βρίσκονται στο GitHub."
+            "value" : "Το SDTally δεν έκλεισε εγκαίρως. Η εγκατεστημένη έκδοση παραμένει όπως ήταν."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally doesn't use the network: new versions are on GitHub."
+            "value" : "SDTally did not quit in time. The installed version is unchanged."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally no usa la red: las versiones nuevas están en GitHub."
+            "value" : "SDTally no se cerró a tiempo. La versión instalada sigue como estaba."
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally no usa la red: las versiones nuevas están en GitHub."
+            "value" : "SDTally no se cerró a tiempo. La versión instalada sigue como estaba."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally ei käytä verkkoa: uudet versiot löytyvät GitHubista."
+            "value" : "SDTally ei sulkeutunut ajoissa. Asennettu versio pysyy ennallaan."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally n’utilise pas le réseau : les nouvelles versions sont sur GitHub."
+            "value" : "SDTally ne s’est pas fermé à temps. La version installée reste inchangée."
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally לא משתמש ברשת: הגרסאות החדשות נמצאות ב-GitHub."
+            "value" : "SDTally לא נסגר בזמן. הגרסה המותקנת נשארת כפי שהייתה."
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally नेटवर्क का उपयोग नहीं करता: नए संस्करण GitHub पर हैं।"
+            "value" : "SDTally समय पर बंद नहीं हुआ। इंस्टॉल किया हुआ संस्करण जैसा था वैसा ही है।"
           }
         },
         "hr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally ne koristi mrežu: nove verzije nalaze se na GitHubu."
+            "value" : "SDTally se nije zatvorio na vrijeme. Instalirana verzija ostaje kakva je bila."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Az SDTally nem használja a hálózatot: az új verziók a GitHubon érhetők el."
+            "value" : "Az SDTally nem állt le időben. A telepített verzió változatlan maradt."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally tidak menggunakan jaringan: versi baru ada di GitHub."
+            "value" : "SDTally tidak tertutup tepat waktu. Versi yang terpasang tetap seperti semula."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally non usa la rete: le nuove versioni sono su GitHub."
+            "value" : "SDTally non si è chiuso in tempo. La versione installata è rimasta com’era."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTallyはネットワークを使用しません。新しいバージョンはGitHubにあります。"
+            "value" : "SDTallyが時間内に終了しませんでした。インストール済みのバージョンは変更されていません。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally는 네트워크를 사용하지 않습니다. 새 버전은 GitHub에 있습니다."
+            "value" : "SDTally가 제시간에 종료되지 않았습니다. 설치된 버전은 그대로입니다."
           }
         },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally tidak menggunakan rangkaian: versi baharu ada di GitHub."
+            "value" : "SDTally tidak ditutup tepat pada masanya. Versi yang dipasang kekal seperti sedia ada."
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally bruker ikke nettverket: Nye versjoner finnes på GitHub."
+            "value" : "SDTally ble ikke lukket i tide. Den installerte versjonen er som før."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally gebruikt het netwerk niet: nieuwe versies staan op GitHub."
+            "value" : "SDTally is niet op tijd gestopt. De geïnstalleerde versie is ongewijzigd."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally nie korzysta z sieci: nowe wersje są w serwisie GitHub."
+            "value" : "SDTally nie zamknął się na czas. Zainstalowana wersja pozostała bez zmian."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "O SDTally não usa a rede: as novas versões estão no GitHub."
+            "value" : "O SDTally não fechou a tempo. A versão instalada mantém-se como estava."
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally nu folosește rețeaua: versiunile noi sunt pe GitHub."
+            "value" : "SDTally nu s-a închis la timp. Versiunea instalată rămâne neschimbată."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally не использует сеть: новые версии доступны на GitHub."
+            "value" : "SDTally не закрылся вовремя. Установленная версия осталась без изменений."
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally nepoužíva sieť: nové verzie sú na GitHube."
+            "value" : "SDTally sa nezavrel včas. Nainštalovaná verzia zostala nezmenená."
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally ne uporablja omrežja: nove različice so na GitHubu."
+            "value" : "SDTally se ni pravočasno zaprl. Nameščena različica ostaja nespremenjena."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally använder inte nätverket: nya versioner finns på GitHub."
+            "value" : "SDTally stängdes inte i tid. Den installerade versionen är oförändrad."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally ไม่ใช้เครือข่าย: เวอร์ชันใหม่อยู่บน GitHub"
+            "value" : "SDTally ปิดไม่ทันเวลา เวอร์ชันที่ติดตั้งไว้ยังคงเหมือนเดิม"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally ağı kullanmaz: Yeni sürümler GitHub’da."
+            "value" : "SDTally zamanında kapanmadı. Yüklü sürüm olduğu gibi duruyor."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally не використовує мережу: нові версії є на GitHub."
+            "value" : "SDTally не закрився вчасно. Установлена версія залишилась без змін."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally không dùng mạng: các phiên bản mới có trên GitHub."
+            "value" : "SDTally không thoát kịp. Phiên bản đã cài vẫn giữ nguyên."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally 不使用网络：新版本在 GitHub 上。"
+            "value" : "SDTally 未能及时退出。已安装的版本保持不变。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally 不使用網路：新版本在 GitHub 上。"
+            "value" : "SDTally 未能及時結束。已安裝的版本保持不變。"
           }
         }
       }
@@ -118841,6 +120737,220 @@
         }
       }
     },
+    "O SDTally só se conecta à internet para isso: procurar uma versão nova no github.com e baixá-la quando você clicar em Instalar. Nada sobre o seu disco é enviado." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتصل SDTally بالإنترنت لهذا الغرض فقط: البحث في github.com عن إصدار جديد وتنزيله عند النقر على تثبيت. لا يُرسل أي شيء عن قرصك."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’SDTally només es connecta a internet per a això: cercar una versió nova a github.com i baixar-la quan facis clic a Instal·la. No s’envia res sobre el teu disc."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally se k internetu připojuje jen kvůli tomuto: hledá na github.com novou verzi a stáhne ji, když kliknete na Nainstalovat. Nic o vašem disku se neodesílá."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally opretter kun forbindelse til internettet til dette: at søge efter en ny version på github.com og hente den, når du klikker på Installér. Intet om din disk sendes."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally verbindet sich nur dafür mit dem Internet: auf github.com nach einer neuen Version suchen und sie laden, wenn du auf Installieren klickst. Nichts über deine Festplatte wird gesendet."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το SDTally συνδέεται στο διαδίκτυο μόνο για αυτό: να αναζητήσει νέα έκδοση στο github.com και να την κατεβάσει όταν πατήσετε Εγκατάσταση. Τίποτα για τον δίσκο σας δεν αποστέλλεται."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally connects to the internet for this only: checking github.com for a new version and downloading it when you click Install. Nothing about your disk is sent."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally solo se conecta a internet para esto: buscar una versión nueva en github.com y descargarla cuando haces clic en Instalar. No se envía nada sobre tu disco."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally solo se conecta a internet para esto: buscar una versión nueva en github.com y descargarla cuando haces clic en Instalar. No se envía nada sobre tu disco."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally yhdistää internetiin vain tätä varten: etsii uutta versiota osoitteesta github.com ja lataa sen, kun napsautat Asenna. Mitään levystäsi ei lähetetä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally se connecte à internet uniquement pour cela : chercher une nouvelle version sur github.com et la télécharger quand vous cliquez sur Installer. Rien sur votre disque n’est envoyé."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally מתחבר לאינטרנט רק בשביל זה: לחפש גרסה חדשה ב-github.com ולהוריד אותה כשלוחצים על התקן. שום דבר על הדיסק שלך לא נשלח."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally इंटरनेट से सिर्फ़ इसी के लिए जुड़ता है: github.com पर नया संस्करण खोजना और आपके “इंस्टॉल करें” पर क्लिक करने पर उसे डाउनलोड करना। आपकी डिस्क के बारे में कुछ नहीं भेजा जाता।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally se na internet povezuje samo zbog toga: traži novu verziju na github.com i preuzima je kad kliknete Instaliraj. Ništa o vašem disku se ne šalje."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az SDTally csak ehhez csatlakozik az internetre: új verziót keres a github.com oldalon, és letölti, ha a Telepítés gombra kattint. A lemezéről semmi nem kerül elküldésre."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally hanya terhubung ke internet untuk ini: mencari versi baru di github.com dan mengunduhnya saat Anda mengeklik Instal. Tidak ada data tentang disk Anda yang dikirim."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally si connette a internet solo per questo: cercare una nuova versione su github.com e scaricarla quando fai clic su Installa. Non viene inviato nulla sul tuo disco."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTallyがインターネットに接続するのはこのためだけです。github.comで新しいバージョンを探し、「インストール」をクリックしたときにダウンロードします。ディスクに関する情報は送信されません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally는 이 용도로만 인터넷에 연결합니다. github.com에서 새 버전을 확인하고, ‘설치’를 클릭하면 내려받습니다. 디스크에 관한 정보는 전송되지 않습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally hanya bersambung ke internet untuk ini: menyemak versi baharu di github.com dan memuat turunnya apabila anda klik Pasang. Tiada apa-apa tentang cakera anda dihantar."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally kobler seg til internett bare for dette: lete etter en ny versjon på github.com og laste den ned når du klikker på Installer. Ingenting om disken din sendes."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally maakt alleen hiervoor verbinding met internet: een nieuwe versie zoeken op github.com en die downloaden als je op Installeer klikt. Er wordt niets over je schijf verstuurd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally łączy się z internetem tylko w tym celu: sprawdza nową wersję na github.com i pobiera ją, gdy klikniesz Zainstaluj. Nic o Twoim dysku nie jest wysyłane."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O SDTally só se liga à internet para isto: procurar uma nova versão em github.com e transferi-la quando clicar em Instalar. Nada sobre o seu disco é enviado."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally se conectează la internet doar pentru asta: caută o versiune nouă pe github.com și o descarcă atunci când apeși Instalează. Nimic despre discul tău nu este trimis."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally подключается к интернету только для этого: проверить новую версию на github.com и загрузить её, когда вы нажмёте «Установить». Ничего о вашем диске не отправляется."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally sa pripája na internet iba na toto: vyhľadať novú verziu na github.com a stiahnuť ju, keď kliknete na Nainštalovať. Nič o vašom disku sa neodosiela."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally se poveže z internetom samo zaradi tega: poišče novo različico na github.com in jo prenese, ko kliknete Namesti. Nič o vašem disku se ne pošlje."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ansluter till internet bara för detta: söka efter en ny version på github.com och hämta den när du klickar på Installera. Inget om din disk skickas."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally เชื่อมต่ออินเทอร์เน็ตเฉพาะเพื่อสิ่งนี้: ตรวจหาเวอร์ชันใหม่ที่ github.com และดาวน์โหลดเมื่อคุณคลิกติดตั้ง ไม่มีข้อมูลเกี่ยวกับดิสก์ของคุณถูกส่งออกไป"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally internete yalnızca bunun için bağlanır: github.com'da yeni sürümü denetlemek ve Yükle'ye tıkladığınızda indirmek. Diskiniz hakkında hiçbir şey gönderilmez."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally підключається до інтернету лише для цього: перевірити нову версію на github.com і завантажити її, коли ви натиснете «Установити». Нічого про ваш диск не надсилається."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally chỉ kết nối internet cho việc này: kiểm tra phiên bản mới trên github.com và tải về khi bạn nhấp Cài đặt. Không có gì về ổ đĩa của bạn được gửi đi."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 只为此联网：在 github.com 上检查新版本，并在你点击“安装”时下载。不会发送任何与你的磁盘有关的内容。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 只為此連網：在 github.com 上檢查新版本，並在你按一下「安裝」時下載。不會傳送任何與你的磁碟有關的內容。"
+          }
+        }
+      }
+    },
     "O SDTally vai ler o disco como administrador para medir as pastas do sistema. Nada é apagado nem alterado." : {
       "localizations" : {
         "en" : {
@@ -119265,6 +121375,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Time Machine suele eliminarlas en 24 h (regla de Apple, no medición)."
+          }
+        }
+      }
+    },
+    "O app só se conecta à internet para procurar e baixar versões novas no github.com. O CLI e o helper root nunca acessam a internet; vêm dentro do app e são atualizados junto com ele." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتصل التطبيق بالإنترنت فقط للبحث عن إصدارات جديدة وتنزيلها من github.com. لا يصل CLI ولا المساعد ذو صلاحيات الجذر إلى الإنترنت أبدًا؛ فهما داخل التطبيق ويُحدَّثان معه."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’app només es connecta a internet per cercar i baixar versions noves des de github.com. El CLI i l’ajudant root no accedeixen mai a internet; vénen dins l’app i s’actualitzen amb ella."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikace se připojuje k internetu jen kvůli hledání a stahování nových verzí z github.com. CLI a pomocník root nikdy nepřistupují k internetu; jsou součástí aplikace a aktualizují se s ní."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appen opretter kun forbindelse til internettet for at søge efter og hente nye versioner fra github.com. CLI og root-hjælperen får aldrig adgang til internettet; de følger med i appen og opdateres sammen med den."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die App verbindet sich nur mit dem Internet, um neue Versionen auf github.com zu suchen und herunterzuladen. CLI und Root-Helper greifen nie auf das Internet zu; sie sind in der App enthalten und werden mit ihr aktualisiert."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Η εφαρμογή συνδέεται στο διαδίκτυο μόνο για να αναζητήσει και να κατεβάσει νέες εκδόσεις από το github.com. Το CLI και ο βοηθός root δεν έχουν ποτέ πρόσβαση στο διαδίκτυο· περιλαμβάνονται στην εφαρμογή και ενημερώνονται μαζί της."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The app connects to the internet only to check for and download new versions from github.com. The CLI and the root helper never access the internet; they ship inside the app and are updated with it."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La app solo se conecta a internet para buscar y descargar versiones nuevas desde github.com. El CLI y el helper root nunca acceden a internet; vienen dentro de la app y se actualizan con ella."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La app solo se conecta a internet para buscar y descargar versiones nuevas desde github.com. El CLI y el helper root nunca acceden a internet; vienen dentro de la app y se actualizan con ella."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appi yhdistää internetiin vain etsiäkseen ja ladatakseen uusia versioita osoitteesta github.com. CLI ja root-apuri eivät koskaan käytä internetiä; ne tulevat appin mukana ja päivittyvät sen mukana."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’app se connecte à internet uniquement pour chercher et télécharger les nouvelles versions sur github.com. Le CLI et l’assistant root n’accèdent jamais à internet ; ils sont fournis dans l’app et mis à jour avec elle."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "היישום מתחבר לאינטרנט רק כדי לחפש גרסאות חדשות ולהוריד אותן מ-github.com. ה-CLI ועוזר ה-root אף פעם לא ניגשים לאינטרנט; הם מגיעים בתוך היישום ומתעדכנים יחד איתו."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ऐप इंटरनेट से सिर्फ़ github.com पर नए संस्करण खोजने और डाउनलोड करने के लिए जुड़ता है। CLI और रूट हेल्पर कभी इंटरनेट इस्तेमाल नहीं करते; वे ऐप के अंदर ही आते हैं और उसी के साथ अपडेट होते हैं।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikacija se na internet povezuje samo radi traženja i preuzimanja novih verzija s github.com. CLI i root pomoćnik nikad ne pristupaju internetu; dolaze unutar aplikacije i ažuriraju se zajedno s njom."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az alkalmazás csak azért csatlakozik az internetre, hogy új verziókat keressen és töltsön le a github.com oldalról. A CLI és a root segéd soha nem fér hozzá az internethez; az alkalmazással együtt érkeznek, és vele együtt frissülnek."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikasi hanya terhubung ke internet untuk mencari dan mengunduh versi baru dari github.com. CLI dan helper root tidak pernah mengakses internet; keduanya ada di dalam aplikasi dan diperbarui bersamanya."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’app si connette a internet solo per cercare e scaricare nuove versioni da github.com. La CLI e l’helper root non accedono mai a internet; sono inclusi nell’app e si aggiornano con essa."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アプリがインターネットに接続するのは、github.comで新しいバージョンを探してダウンロードするときだけです。CLIとrootヘルパーはインターネットに一切アクセスせず、アプリに同梱されて一緒に更新されます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱은 github.com에서 새 버전을 확인하고 내려받을 때만 인터넷에 연결합니다. CLI와 root 헬퍼는 인터넷에 접근하지 않으며, 앱 안에 포함되어 앱과 함께 업데이트됩니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikasi hanya bersambung ke internet untuk menyemak dan memuat turun versi baharu daripada github.com. CLI dan pembantu root tidak pernah mengakses internet; ia disertakan dalam aplikasi dan dikemas kini bersamanya."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appen kobler seg til internett bare for å lete etter og laste ned nye versjoner fra github.com. CLI-en og root-hjelperen bruker aldri internett; de følger med i appen og oppdateres sammen med den."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De app maakt alleen verbinding met internet om nieuwe versies te zoeken en te downloaden van github.com. De CLI en de root-helper gebruiken nooit internet; ze zitten in de app en worden samen met de app bijgewerkt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikacja łączy się z internetem tylko po to, by sprawdzać i pobierać nowe wersje z github.com. CLI i helper root nigdy nie korzystają z internetu; są wbudowane w aplikację i aktualizowane razem z nią."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A app só se liga à internet para procurar e transferir novas versões em github.com. O CLI e o helper root nunca acedem à internet; vêm dentro da app e são atualizados com ela."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplicația se conectează la internet doar pentru a căuta și a descărca versiuni noi de pe github.com. CLI-ul și helperul root nu accesează niciodată internetul; vin în aplicație și se actualizează odată cu ea."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Приложение подключается к интернету только для проверки и загрузки новых версий с github.com. CLI и root-помощник никогда не обращаются к интернету; они входят в состав приложения и обновляются вместе с ним."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikácia sa pripája na internet iba na vyhľadanie a stiahnutie nových verzií z github.com. CLI a root pomocník nikdy nepristupujú na internet; sú súčasťou aplikácie a aktualizujú sa spolu s ňou."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplikacija se poveže z internetom samo za iskanje in prenos novih različic z github.com. CLI in pomočnik root nikoli ne dostopata do interneta; sta del aplikacije in se posodabljata skupaj z njo."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appen ansluter till internet bara för att söka efter och hämta nya versioner från github.com. CLI och root-hjälparen använder aldrig internet; de ingår i appen och uppdateras tillsammans med den."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แอปเชื่อมต่ออินเทอร์เน็ตเฉพาะเพื่อตรวจหาและดาวน์โหลดเวอร์ชันใหม่จาก github.com เท่านั้น CLI และตัวช่วย root ไม่เคยเข้าถึงอินเทอร์เน็ต มาพร้อมกับแอปและอัปเดตไปพร้อมกัน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygulama internete yalnızca github.com'dan yeni sürümleri denetlemek ve indirmek için bağlanır. CLI ve root yardımcısı asla internete erişmez; uygulamanın içinde gelir ve onunla birlikte güncellenir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Програма підключається до інтернету лише для перевірки та завантаження нових версій з github.com. CLI і root-помічник ніколи не звертаються до інтернету; вони входять до складу програми й оновлюються разом із нею."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ứng dụng chỉ kết nối internet để kiểm tra và tải phiên bản mới từ github.com. CLI và trình trợ giúp root không bao giờ truy cập internet; chúng nằm trong ứng dụng và được cập nhật cùng ứng dụng."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 仅在检查和下载 github.com 上的新版本时联网。CLI 和 root 辅助程序从不联网；它们内置于 App 中，随 App 一起更新。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App 僅在檢查與下載 github.com 上的新版本時連網。CLI 與 root 輔助程式從不連網；它們內建於 App 中，隨 App 一起更新。"
           }
         }
       }
@@ -136175,216 +138499,216 @@
         }
       }
     },
-    "Pelo MCP, seu nome de usuário e os nomes de pastas pessoais são trocados antes de sair do sdtally (`--redact off` desliga). O SDTally não manda nada pela rede, mas o cliente de IA manda. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita no app." : {
+    "Pelo MCP, seu nome de usuário e os nomes de pastas pessoais são trocados antes de sair do sdtally (`--redact off` desliga). O SDTally não manda nada sobre o seu disco pela rede, mas o cliente de IA manda. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita no app." : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Through MCP, your username and personal folder names are swapped out before leaving sdtally (`--redact off` turns this off). SDTally sends nothing over the network, but the AI client does. The AI never measures as administrator or runs the steps in What to Do; it reads the latest full measurement made in the app."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tramite MCP, il tuo nome utente e i nomi delle cartelle personali vengono sostituiti prima di uscire da sdtally (`--redact off` lo disattiva). SDTally non invia nulla in rete, ma il client IA sì. L’IA non misura mai come amministratore né esegue i passi di Cosa fare; legge l’ultima misurazione completa fatta nell’app."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Через MCP ваше ім’я користувача та назви особистих папок замінюються до виходу з sdtally (`--redact off` вимикає це). SDTally нічого не надсилає мережею, а клієнт ШІ надсилає. ШІ ніколи не вимірює як адміністратор і не виконує кроки з розділу «Що робити»; він читає останнє повне вимірювання, зроблене в програмі."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Через MCP ваше имя пользователя и названия личных папок заменяются до того, как покинуть sdtally (`--redact off` отключает). SDTally ничего не отправляет по сети, но клиент ИИ отправляет. ИИ никогда не измеряет от администратора и не выполняет шаги из раздела «Что делать»; он читает последнее полное измерение, сделанное в приложении."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Via MCP byts ditt användarnamn och namnen på personliga mappar ut innan de lämnar sdtally (`--redact off` stänger av det). SDTally skickar inget över nätverket, men AI-klienten gör det. AI:n mäter aldrig som administratör och kör inte stegen i Vad du kan göra; den läser den senaste fullständiga mätningen som gjorts i appen."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Via MCP erstattes dit brugernavn og navnene på personlige mapper, før de forlader sdtally (`--redact off` slår det fra). SDTally sender intet over netværket, men AI-klienten gør. AI'en måler aldrig som administrator og udfører ikke trinnene under Hvad du kan gøre; den læser den seneste fulde måling fra appen."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Via MCP byttes brukernavnet ditt og navnene på personlige mapper ut før de forlater sdtally (`--redact off` slår det av). SDTally sender ingenting over nettverket, men AI-klienten gjør det. AI-en måler aldri som administrator og utfører ikke trinnene under Hva du kan gjøre; den leser den siste fullstendige målingen som ble gjort i appen."
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "透過 MCP，你的使用者名稱與個人檔案夾名稱，會在離開 sdtally 之前被替換（`--redact off` 可關閉）。SDTally 不會透過網路傳送任何東西，但 AI 用戶端會。AI 絕不會以管理員身分測量，也不會執行「該怎麼做」的步驟；它只讀取 App 中最近一次完整測量。"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pelo MCP, o seu nome de utilizador e os nomes de pastas pessoais são substituídos antes de saírem do sdtally (`--redact off` desativa). O SDTally não envia nada pela rede, mas o cliente de IA envia. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita na app."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "通过 MCP，你的用户名和个人文件夹的名称在离开 sdtally 之前会被替换（`--redact off` 可关闭）。SDTally 不会通过网络发送任何内容，但 AI 客户端会。AI 从不以管理员身份测量，也不会执行“该怎么做”中的步骤；它只读取在 App 中完成的上一次完整测量。"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MCP経由では、ユーザ名と個人フォルダ名はsdtallyから出る前に置き換えられます（`--redact off` で無効化）。SDTallyはネットワークで何も送信しませんが、AIクライアントは送信します。AIが管理者として測定したり「対処法」の手順を実行したりすることはなく、アプリで行った最新の完全測定を読み取ります。"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přes MCP se vaše uživatelské jméno a názvy osobních složek nahradí dřív, než opustí sdtally (`--redact off` to vypne). SDTally nic neposílá po síti, ale klient AI ano. AI nikdy neměří jako správce ani neprovádí kroky z části Co dělat; čte poslední úplné měření provedené v aplikaci."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MCP를 통해서는 사용자 이름과 개인 폴더 이름이 sdtally를 떠나기 전에 다른 이름으로 바뀝니다(`--redact off`로 끌 수 있음). SDTally는 네트워크로 아무것도 보내지 않지만, AI 클라이언트는 보냅니다. AI는 관리자 권한으로 측정하지 않으며 ‘할 일’의 단계도 실행하지 않습니다. 앱에서 실행한 마지막 전체 측정만 읽습니다."
-          }
-        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عبر MCP، يُستبدل اسم المستخدم وأسماء المجلدات الشخصية قبل خروجها من sdtally (يوقف `--redact off` ذلك). لا يرسل SDTally شيئًا عبر الشبكة، لكن عميل الذكاء الاصطناعي يفعل. لا يقيس الذكاء الاصطناعي كمسؤول أبدًا ولا ينفذ خطوات «ما العمل»؛ بل يقرأ آخر قياس كامل أُجري في التطبيق."
+            "value" : "عبر MCP، يُستبدل اسم المستخدم وأسماء المجلدات الشخصية قبل خروجها من sdtally (يوقف `--redact off` ذلك). لا يرسل SDTally شيئًا عن قرصك عبر الشبكة، لكن عميل الذكاء الاصطناعي يفعل. لا يقيس الذكاء الاصطناعي كمسؤول أبدًا ولا ينفذ خطوات «ما العمل»؛ بل يقرأ آخر قياس كامل أُجري في التطبيق."
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Amb MCP, el teu nom d’usuari i els noms de carpetes personals es canvien abans de sortir de l’sdtally (`--redact off` ho desactiva). L’SDTally no envia res per la xarxa, però el client d’IA sí. La IA mai no mesura com a administrador ni executa els passos de Què fer; llegeix l’últim mesurament complet fet a l’app."
+            "value" : "Amb MCP, el teu nom d’usuari i els noms de carpetes personals es canvien abans de sortir de l’sdtally (`--redact off` ho desactiva). L’SDTally no envia res sobre el teu disc per la xarxa, però el client d’IA sí. La IA mai no mesura com a administrador ni executa els passos de Què fer; llegeix l’últim mesurament complet fet a l’app."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přes MCP se vaše uživatelské jméno a názvy osobních složek nahradí dřív, než opustí sdtally (`--redact off` to vypne). SDTally nic o vašem disku neposílá po síti, ale klient AI ano. AI nikdy neměří jako správce ani neprovádí kroky z části Co dělat; čte poslední úplné měření provedené v aplikaci."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Via MCP erstattes dit brugernavn og navnene på personlige mapper, før de forlader sdtally (`--redact off` slår det fra). SDTally sender intet om din disk over netværket, men AI-klienten gør. AI'en måler aldrig som administrator og udfører ikke trinnene under Hvad du kan gøre; den læser den seneste fulde måling fra appen."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Über MCP werden dein Benutzername und die Namen persönlicher Ordner ersetzt, bevor sie sdtally verlassen (`--redact off` schaltet das aus). SDTally sendet nichts über das Netzwerk, der KI-Client aber schon. Die KI misst nie als Administrator und führt die Schritte unter „Was tun“ nicht aus; sie liest die letzte vollständige Messung aus der App."
+            "value" : "Über MCP werden dein Benutzername und die Namen persönlicher Ordner ersetzt, bevor sie sdtally verlassen (`--redact off` schaltet das aus). SDTally sendet nichts über deine Festplatte über das Netzwerk, der KI-Client aber schon. Die KI misst nie als Administrator und führt die Schritte unter „Was tun“ nicht aus; sie liest die letzte vollständige Messung aus der App."
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Μέσω MCP, το όνομα χρήστη σας και τα ονόματα των προσωπικών φακέλων αντικαθίστανται πριν φύγουν από το sdtally (το `--redact off` το απενεργοποιεί). Το SDTally δεν στέλνει τίποτα στο δίκτυο, αλλά ο πελάτης τεχνητής νοημοσύνης στέλνει. Η τεχνητή νοημοσύνη δεν μετρά ποτέ ως διαχειριστής ούτε εκτελεί τα βήματα του «Τι να κάνετε»· διαβάζει την τελευταία Πλήρη μέτρηση που έγινε στην εφαρμογή."
+            "value" : "Μέσω MCP, το όνομα χρήστη σας και τα ονόματα των προσωπικών φακέλων αντικαθίστανται πριν φύγουν από το sdtally (το `--redact off` το απενεργοποιεί). Το SDTally δεν στέλνει τίποτα για τον δίσκο σας στο δίκτυο, αλλά ο πελάτης τεχνητής νοημοσύνης στέλνει. Η τεχνητή νοημοσύνη δεν μετρά ποτέ ως διαχειριστής ούτε εκτελεί τα βήματα του «Τι να κάνετε»· διαβάζει την τελευταία Πλήρη μέτρηση που έγινε στην εφαρμογή."
           }
         },
-        "fi" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "MCP:n kautta käyttäjänimesi ja henkilökohtaisten kansioiden nimet korvataan, ennen kuin ne poistuvat sdtallysta (`--redact off` poistaa tämän). SDTally ei lähetä mitään verkon yli, mutta tekoälyasiakas lähettää. Tekoäly ei koskaan mittaa ylläpitäjänä eikä suorita Mitä tehdä -vaiheita; se lukee appissa tehdyn viimeisimmän täyden mittauksen."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Via MCP, votre nom d’utilisateur et les noms de dossiers personnels sont remplacés avant de quitter sdtally (`--redact off` le désactive). SDTally n’envoie rien sur le réseau, mais le client IA, si. L’IA ne mesure jamais en tant qu’administrateur et n’exécute pas les étapes de Que faire ; elle lit la dernière mesure complète faite dans l’app."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "דרך MCP, שם המשתמש שלך ושמות התיקיות האישיות מוחלפים לפני שהם יוצאים מ-sdtally (`--redact off` מכבה זאת). SDTally לא שולח דבר ברשת, אבל לקוח ה-AI שולח. ה-AI אף פעם לא מודד כמנהל ולא מבצע את הצעדים של “מה לעשות”; הוא קורא את המדידה המלאה האחרונה שנעשתה ביישום."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MCP के ज़रिए आपका यूज़रनेम और निजी फ़ोल्डर के नाम sdtally से निकलने से पहले बदल दिए जाते हैं (`--redact off` इसे बंद करता है)। SDTally नेटवर्क पर कुछ नहीं भेजता, पर AI क्लाइंट भेजता है। AI कभी एडमिन के रूप में नहीं मापता और “क्या करें” के चरण नहीं चलाता; वह ऐप में की गई आख़िरी पूरी माप पढ़ता है।"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preko MCP-a vaše korisničko ime i nazivi osobnih mapa zamjenjuju se prije nego što izađu iz programa sdtally (`--redact off` to isključuje). SDTally ne šalje ništa mrežom, ali AI klijent šalje. AI nikad ne mjeri kao administrator niti izvršava korake iz odjeljka Što učiniti; čita zadnje potpuno mjerenje napravljeno u aplikaciji."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lewat MCP, nama pengguna dan nama folder pribadi Anda diganti sebelum keluar dari sdtally (`--redact off` menonaktifkannya). SDTally tidak mengirim apa pun lewat jaringan, tetapi klien AI mengirim. AI tidak pernah mengukur sebagai administrator atau menjalankan langkah di Yang Perlu Dilakukan; ia membaca pengukuran lengkap terakhir yang dibuat di aplikasi."
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Melalui MCP, nama pengguna dan nama folder peribadi anda digantikan sebelum keluar daripada sdtally (`--redact off` mematikannya). SDTally tidak menghantar apa-apa melalui rangkaian, tetapi klien AI menghantarnya. AI tidak pernah mengukur sebagai pentadbir atau menjalankan langkah dalam Apa yang Perlu Dibuat; ia membaca pengukuran penuh terakhir yang dibuat dalam aplikasi."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Przez MCP Twoja nazwa użytkownika i nazwy folderów osobistych są zastępowane, zanim opuszczą sdtally (`--redact off` to wyłącza). SDTally nic nie wysyła przez sieć, ale klient AI tak. AI nigdy nie mierzy jako administrator ani nie wykonuje kroków z sekcji Co zrobić; czyta ostatni pełny pomiar wykonany w aplikacji."
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prin MCP, numele dvs. de utilizator și numele folderelor personale sunt înlocuite înainte să iasă din sdtally (`--redact off` dezactivează). SDTally nu trimite nimic prin rețea, dar clientul AI trimite. AI-ul nu măsoară niciodată ca administrator și nu execută pașii din Ce e de făcut; citește ultima măsurare completă făcută în aplicație."
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cez MCP sa vaše užívateľské meno a názvy osobných priečinkov nahradia skôr, než opustia sdtally (`--redact off` to vypne). SDTally nič neposiela cez sieť, ale AI klient áno. AI nikdy nemeria ako správca ani nevykonáva kroky z časti Čo robiť; číta posledné úplné meranie vykonané v aplikácii."
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prek MCP se vaše uporabniško ime in imena osebnih map zamenjajo, preden zapustijo sdtally (`--redact off` to izklopi). SDTally ničesar ne pošlje po omrežju, odjemalec umetne inteligence pa pošlje. Umetna inteligenca nikoli ne meri kot skrbnik in ne izvaja korakov iz razdelka Kaj storiti; prebere zadnjo popolno meritev, narejeno v aplikaciji."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MCP üzerinden, kullanıcı adınız ve kişisel klasör adları sdtally'den çıkmadan önce değiştirilir (`--redact off` bunu kapatır). SDTally ağa hiçbir şey göndermez, ama yapay zeka istemcisi gönderir. Yapay zeka asla yönetici olarak ölçmez ve Öneriler adımlarını çalıştırmaz; uygulamada yapılan son tam ölçümü okur."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Qua MCP, tên người dùng và tên các thư mục cá nhân của bạn được thay thế trước khi rời khỏi sdtally (`--redact off` sẽ tắt việc này). SDTally không gửi gì qua mạng, nhưng ứng dụng khách AI thì có. AI không bao giờ đo bằng quyền quản trị viên và không chạy các bước trong Nên làm gì; nó đọc phép đo đầy đủ gần nhất do ứng dụng thực hiện."
+            "value" : "Through MCP, your username and personal folder names are swapped out before leaving sdtally (`--redact off` turns this off). SDTally sends nothing about your disk over the network, but the AI client does. The AI never measures as administrator or runs the steps in What to Do; it reads the latest full measurement made in the app."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Por MCP, tu nombre de usuario y los nombres de carpetas personales se sustituyen antes de salir de sdtally (`--redact off` lo desactiva). SDTally no envía nada por la red, pero el cliente de IA sí. La IA nunca mide como administrador ni ejecuta los pasos de Qué hacer; lee la última medición completa hecha en la app."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Via MCP worden je gebruikersnaam en de namen van persoonlijke mappen vervangen voordat ze sdtally verlaten (`--redact off` zet dit uit). SDTally stuurt niets via het netwerk, maar de AI-client wel. De AI meet nooit als beheerder en voert de stappen van Wat te doen niet uit; ze leest de laatste volledige meting uit de app."
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ผ่าน MCP ชื่อผู้ใช้และชื่อโฟลเดอร์ส่วนตัวของคุณจะถูกแทนที่ก่อนออกจาก sdtally (`--redact off` ปิดการแทนที่) SDTally ไม่ส่งอะไรผ่านเครือข่าย แต่ไคลเอนต์ AI ส่ง AI ไม่เคยวัดในฐานะผู้ดูแลระบบ และไม่ทำตามขั้นตอนใน “ควรทำอะไร” โดยจะอ่านการวัดแบบเต็มล่าสุดที่ทำในแอป"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Az MCP-n keresztül a felhasználóneve és a személyes mappák nevei kicserélődnek, mielőtt elhagyják az sdtally-t (a `--redact off` kikapcsolja). Az SDTally nem küld semmit a hálózaton, de az MI-kliens igen. Az MI soha nem mér rendszergazdaként, és nem hajtja végre a Teendők lépéseit; az alkalmazásban készült utolsó teljes mérést olvassa."
+            "value" : "Por MCP, tu nombre de usuario y los nombres de carpetas personales se sustituyen antes de salir de sdtally (`--redact off` lo desactiva). SDTally no envía nada sobre tu disco por la red, pero el cliente de IA sí. La IA nunca mide como administrador ni ejecuta los pasos de Qué hacer; lee la última medición completa hecha en la app."
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Por MCP, tu nombre de usuario y los nombres de carpetas personales se sustituyen antes de salir de sdtally (`--redact off` lo desactiva). SDTally no envía nada por la red, pero el cliente de IA sí. La IA nunca mide como administrador ni ejecuta los pasos de Qué hacer; lee la última medición completa hecha en la app."
+            "value" : "Por MCP, tu nombre de usuario y los nombres de carpetas personales se sustituyen antes de salir de sdtally (`--redact off` lo desactiva). SDTally no envía nada sobre tu disco por la red, pero el cliente de IA sí. La IA nunca mide como administrador ni ejecuta los pasos de Qué hacer; lee la última medición completa hecha en la app."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MCP:n kautta käyttäjänimesi ja henkilökohtaisten kansioiden nimet korvataan, ennen kuin ne poistuvat sdtallysta (`--redact off` poistaa tämän). SDTally ei lähetä mitään levystäsi verkon yli, mutta tekoälyasiakas lähettää. Tekoäly ei koskaan mittaa ylläpitäjänä eikä suorita Mitä tehdä -vaiheita; se lukee appissa tehdyn viimeisimmän täyden mittauksen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Via MCP, votre nom d’utilisateur et les noms de dossiers personnels sont remplacés avant de quitter sdtally (`--redact off` le désactive). SDTally n’envoie rien sur votre disque par le réseau, mais le client IA, si. L’IA ne mesure jamais en tant qu’administrateur et n’exécute pas les étapes de Que faire ; elle lit la dernière mesure complète faite dans l’app."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "דרך MCP, שם המשתמש שלך ושמות התיקיות האישיות מוחלפים לפני שהם יוצאים מ-sdtally (`--redact off` מכבה זאת). SDTally לא שולח דבר על הדיסק שלך ברשת, אבל לקוח ה-AI שולח. ה-AI אף פעם לא מודד כמנהל ולא מבצע את הצעדים של “מה לעשות”; הוא קורא את המדידה המלאה האחרונה שנעשתה ביישום."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MCP के ज़रिए आपका यूज़रनेम और निजी फ़ोल्डर के नाम sdtally से निकलने से पहले बदल दिए जाते हैं (`--redact off` इसे बंद करता है)। SDTally आपकी डिस्क के बारे में नेटवर्क पर कुछ नहीं भेजता, पर AI क्लाइंट भेजता है। AI कभी एडमिन के रूप में नहीं मापता और “क्या करें” के चरण नहीं चलाता; वह ऐप में की गई आख़िरी पूरी माप पढ़ता है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preko MCP-a vaše korisničko ime i nazivi osobnih mapa zamjenjuju se prije nego što izađu iz programa sdtally (`--redact off` to isključuje). SDTally ne šalje ništa o vašem disku mrežom, ali AI klijent šalje. AI nikad ne mjeri kao administrator niti izvršava korake iz odjeljka Što učiniti; čita zadnje potpuno mjerenje napravljeno u aplikaciji."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az MCP-n keresztül a felhasználóneve és a személyes mappák nevei kicserélődnek, mielőtt elhagyják az sdtally-t (a `--redact off` kikapcsolja). Az SDTally nem küld semmit a lemezéről a hálózaton, de az MI-kliens igen. Az MI soha nem mér rendszergazdaként, és nem hajtja végre a Teendők lépéseit; az alkalmazásban készült utolsó teljes mérést olvassa."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lewat MCP, nama pengguna dan nama folder pribadi Anda diganti sebelum keluar dari sdtally (`--redact off` menonaktifkannya). SDTally tidak mengirim apa pun tentang disk Anda lewat jaringan, tetapi klien AI mengirim. AI tidak pernah mengukur sebagai administrator atau menjalankan langkah di Yang Perlu Dilakukan; ia membaca pengukuran lengkap terakhir yang dibuat di aplikasi."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tramite MCP, il tuo nome utente e i nomi delle cartelle personali vengono sostituiti prima di uscire da sdtally (`--redact off` lo disattiva). SDTally non invia in rete nulla sul tuo disco, ma il client IA sì. L’IA non misura mai come amministratore né esegue i passi di Cosa fare; legge l’ultima misurazione completa fatta nell’app."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MCP経由では、ユーザ名と個人フォルダ名はsdtallyから出る前に置き換えられます（`--redact off` で無効化）。SDTallyはディスクに関する情報をネットワークで送信しませんが、AIクライアントは送信します。AIが管理者として測定したり「対処法」の手順を実行したりすることはなく、アプリで行った最新の完全測定を読み取ります。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MCP를 통해서는 사용자 이름과 개인 폴더 이름이 sdtally를 떠나기 전에 다른 이름으로 바뀝니다(`--redact off`로 끌 수 있음). SDTally는 디스크에 관한 정보를 네트워크로 보내지 않지만, AI 클라이언트는 보냅니다. AI는 관리자 권한으로 측정하지 않으며 ‘할 일’의 단계도 실행하지 않습니다. 앱에서 실행한 마지막 전체 측정만 읽습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Melalui MCP, nama pengguna dan nama folder peribadi anda digantikan sebelum keluar daripada sdtally (`--redact off` mematikannya). SDTally tidak menghantar apa-apa tentang cakera anda melalui rangkaian, tetapi klien AI menghantarnya. AI tidak pernah mengukur sebagai pentadbir atau menjalankan langkah dalam Apa yang Perlu Dibuat; ia membaca pengukuran penuh terakhir yang dibuat dalam aplikasi."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Via MCP byttes brukernavnet ditt og navnene på personlige mapper ut før de forlater sdtally (`--redact off` slår det av). SDTally sender ingenting om disken din over nettverket, men AI-klienten gjør det. AI-en måler aldri som administrator og utfører ikke trinnene under Hva du kan gjøre; den leser den siste fullstendige målingen som ble gjort i appen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Via MCP worden je gebruikersnaam en de namen van persoonlijke mappen vervangen voordat ze sdtally verlaten (`--redact off` zet dit uit). SDTally stuurt niets over je schijf via het netwerk, maar de AI-client wel. De AI meet nooit als beheerder en voert de stappen van Wat te doen niet uit; ze leest de laatste volledige meting uit de app."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przez MCP Twoja nazwa użytkownika i nazwy folderów osobistych są zastępowane, zanim opuszczą sdtally (`--redact off` to wyłącza). SDTally nie wysyła przez sieć niczego o Twoim dysku, ale klient AI tak. AI nigdy nie mierzy jako administrator ani nie wykonuje kroków z sekcji Co zrobić; czyta ostatni pełny pomiar wykonany w aplikacji."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pelo MCP, o seu nome de utilizador e os nomes de pastas pessoais são substituídos antes de saírem do sdtally (`--redact off` desativa). O SDTally não envia nada sobre o seu disco pela rede, mas o cliente de IA envia. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita na app."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prin MCP, numele tău de utilizator și numele folderelor personale sunt înlocuite înainte să iasă din sdtally (`--redact off` dezactivează). SDTally nu trimite nimic despre discul tău prin rețea, dar clientul AI trimite. AI-ul nu măsoară niciodată ca administrator și nu execută pașii din Ce e de făcut; citește ultima măsurare completă făcută în aplicație."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Через MCP ваше имя пользователя и названия личных папок заменяются до того, как покинуть sdtally (`--redact off` отключает). SDTally ничего не отправляет о вашем диске по сети, но клиент ИИ отправляет. ИИ никогда не измеряет от администратора и не выполняет шаги из раздела «Что делать»; он читает последнее полное измерение, сделанное в приложении."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cez MCP sa vaše užívateľské meno a názvy osobných priečinkov nahradia skôr, než opustia sdtally (`--redact off` to vypne). SDTally neposiela nič o vašom disku cez sieť, ale AI klient áno. AI nikdy nemeria ako správca ani nevykonáva kroky z časti Čo robiť; číta posledné úplné meranie vykonané v aplikácii."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prek MCP se vaše uporabniško ime in imena osebnih map zamenjajo, preden zapustijo sdtally (`--redact off` to izklopi). SDTally ničesar o vašem disku ne pošlje po omrežju, odjemalec umetne inteligence pa pošlje. Umetna inteligenca nikoli ne meri kot skrbnik in ne izvaja korakov iz razdelka Kaj storiti; prebere zadnjo popolno meritev, narejeno v aplikaciji."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Via MCP byts ditt användarnamn och namnen på personliga mappar ut innan de lämnar sdtally (`--redact off` stänger av det). SDTally skickar inget om din disk över nätverket, men AI-klienten gör det. AI:n mäter aldrig som administratör och kör inte stegen i Vad du kan göra; den läser den senaste fullständiga mätningen som gjorts i appen."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ผ่าน MCP ชื่อผู้ใช้และชื่อโฟลเดอร์ส่วนตัวของคุณจะถูกแทนที่ก่อนออกจาก sdtally (`--redact off` ปิดการแทนที่) SDTally ไม่ส่งข้อมูลเกี่ยวกับดิสก์ของคุณผ่านเครือข่าย แต่ไคลเอนต์ AI ส่ง AI ไม่เคยวัดในฐานะผู้ดูแลระบบ และไม่ทำตามขั้นตอนใน “ควรทำอะไร” โดยจะอ่านการวัดแบบเต็มล่าสุดที่ทำในแอป"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MCP üzerinden, kullanıcı adınız ve kişisel klasör adları sdtally'den çıkmadan önce değiştirilir (`--redact off` bunu kapatır). SDTally diskiniz hakkında ağa hiçbir şey göndermez, ama yapay zeka istemcisi gönderir. Yapay zeka asla yönetici olarak ölçmez ve Ne Yapmalı adımlarını çalıştırmaz; uygulamada yapılan son tam ölçümü okur."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Через MCP ваше ім’я користувача та назви особистих папок замінюються до виходу з sdtally (`--redact off` вимикає це). SDTally нічого про ваш диск не надсилає мережею, а клієнт ШІ надсилає. ШІ ніколи не вимірює як адміністратор і не виконує кроки з розділу «Що робити»; він читає останнє повне вимірювання, зроблене в програмі."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qua MCP, tên người dùng và tên các thư mục cá nhân của bạn được thay thế trước khi rời khỏi sdtally (`--redact off` sẽ tắt việc này). SDTally không gửi gì về ổ đĩa của bạn qua mạng, nhưng ứng dụng khách AI thì có. AI không bao giờ đo bằng quyền quản trị viên và không chạy các bước trong Nên làm gì; nó đọc phép đo đầy đủ gần nhất do ứng dụng thực hiện."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过 MCP，你的用户名和个人文件夹的名称在离开 sdtally 之前会被替换（`--redact off` 可关闭）。SDTally 不会通过网络发送任何与你的磁盘有关的内容，但 AI 客户端会。AI 从不以管理员身份测量，也不会执行“该怎么做”中的步骤；它只读取在 App 中完成的上一次完整测量。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "透過 MCP，你的使用者名稱與個人檔案夾名稱，會在離開 sdtally 之前被替換（`--redact off` 可關閉）。SDTally 不會透過網路傳送任何與你的磁碟有關的內容，但 AI 用戶端會。AI 絕不會以管理員身分測量，也不會執行「該怎麼做」的步驟；它只讀取 App 中最近一次完整測量。"
           }
         }
       }
@@ -138953,6 +141277,434 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Procesador"
+          }
+        }
+      }
+    },
+    "Procurando versão nova…" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "جارٍ البحث عن إصدار جديد…"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cercant una versió nova…"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hledám novou verzi…"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Søger efter ny version…"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suche nach neuer Version…"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αναζήτηση νέας έκδοσης…"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checking for a new version…"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscando versión nueva…"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscando versión nueva…"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etsitään uutta versiota…"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recherche d’une nouvelle version…"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מחפש גרסה חדשה…"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नया संस्करण खोजा जा रहा है…"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traženje nove verzije…"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Új verzió keresése…"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mencari versi baru…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ricerca della nuova versione…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しいバージョンを確認中…"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "새 버전 확인 중…"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menyemak versi baharu…"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ser etter ny versjon…"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoeken naar nieuwe versie…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szukanie nowej wersji…"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A procurar nova versão…"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se caută o versiune nouă…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск новой версии…"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hľadá sa nová verzia…"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iskanje nove različice …"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Söker efter ny version…"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "กำลังตรวจหาเวอร์ชันใหม่…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni sürüm denetleniyor…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошук нової версії…"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đang kiểm tra phiên bản mới…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在检查新版本…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在檢查新版本…"
+          }
+        }
+      }
+    },
+    "Procurar agora" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بحث الآن"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerca ara"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hledat teď"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Søg nu"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jetzt suchen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αναζήτηση τώρα"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Check Now"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar ahora"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar ahora"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etsi nyt"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher maintenant"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "חפש עכשיו"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अभी खोजें"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traži sada"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keresés most"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cari Sekarang"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerca ora"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今すぐ確認"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "지금 확인"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semak Sekarang"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se etter nå"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu zoeken"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sprawdź teraz"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procurar agora"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caută acum"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проверить сейчас"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hľadať teraz"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preveri zdaj"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sök nu"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ตรวจหาตอนนี้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şimdi denetle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перевірити зараз"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiểm tra ngay"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "立即检查"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "立即檢查"
           }
         }
       }
@@ -148033,216 +150785,430 @@
         }
       }
     },
-    "SDTally · só lê, sem rede · página %lld de %lld" : {
+    "SDTally %@ disponível" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · read-only, no network · page %lld of %lld"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · solo lettura, nessuna rete · pagina %lld di %lld"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · лише читає, без мережі · сторінка %lld з %lld"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · только чтение, без сети · страница %lld из %lld"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · läser bara, inget nätverk · sida %lld av %lld"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · læser kun, intet netværk · side %lld af %lld"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · leser bare, uten nettverk · side %lld av %lld"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · 唯讀，不連網 · 第 %1$lld 頁，共 %2$lld 頁"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · só lê, sem rede · página %lld de %lld"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · 只读，不联网 · 第 %lld 页，共 %lld 页"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · 読み取りのみ、ネットワークなし · %2$lldページ中%1$lldページ目"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · jen čte, bez sítě · strana %lld z %lld"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · 읽기 전용, 네트워크 없음 · 페이지 %lld/%lld"
-          }
-        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally · للقراءة فقط، بلا شبكة · الصفحة %lld من %lld"
+            "value" : "SDTally %@ متاح"
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally · només llegeix, sense xarxa · pàgina %lld de %lld"
+            "value" : "SDTally %@ disponible"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ je k dispozici"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ er tilgængelig"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally · nur lesend, ohne Netzwerk · Seite %lld von %lld"
+            "value" : "SDTally %@ ist verfügbar"
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally · μόνο ανάγνωση, χωρίς δίκτυο · σελίδα %lld από %lld"
+            "value" : "Το SDTally %@ είναι διαθέσιμο"
           }
         },
-        "fi" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally · vain lukee, ei verkkoa · sivu %lld/%lld"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · lecture seule, sans réseau · page %lld sur %lld"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · קורא בלבד, ללא רשת · עמוד %lld מתוך %lld"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · सिर्फ़ पढ़ता है, कोई नेटवर्क नहीं · पेज %lld (कुल %lld में से)"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · samo čita, bez mreže · stranica %lld od %lld"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · hanya membaca, tanpa jaringan · halaman %lld dari %lld"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · baca sahaja, tanpa rangkaian · halaman %lld daripada %lld"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · tylko odczyt, bez sieci · strona %lld z %lld"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · doar citește, fără rețea · pagina %lld din %lld"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · iba číta, bez siete · strana %lld z %lld"
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · samo bere, brez omrežja · stran %lld od %lld"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · yalnızca okur, ağ yok · sayfa %lld / %lld"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · chỉ đọc, không dùng mạng · trang %lld trên %lld"
+            "value" : "SDTally %@ is available"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally · solo lee, sin red · página %lld de %lld"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · leest alleen, geen netwerk · pagina %lld van %lld"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · อ่านอย่างเดียว ไม่ใช้เครือข่าย · หน้า %lld จาก %lld"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SDTally · csak olvas, nincs hálózat · %lld. oldal / %lld"
+            "value" : "SDTally %@ disponible"
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally · solo lee, sin red · página %lld de %lld"
+            "value" : "SDTally %@ disponible"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ on saatavilla"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ est disponible"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ זמין"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ उपलब्ध है"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ je dostupan"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elérhető az SDTally %@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ tersedia"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ è disponibile"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ が利用可能です"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ 사용 가능"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ tersedia"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ er tilgjengelig"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ is beschikbaar"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ jest dostępny"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ disponível"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ este disponibil"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Доступна версия SDTally %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ je k dispozícii"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ je na voljo"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ är tillgänglig"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ พร้อมใช้งาน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ kullanıma hazır"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Доступна версія SDTally %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ đã sẵn sàng"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ 可用"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ 可用"
+          }
+        }
+      }
+    },
+    "SDTally · só lê, sem telemetria · página %lld de %lld" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · للقراءة فقط، بلا بيانات استخدام · الصفحة %lld من %lld"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · només llegeix, sense telemetria · pàgina %lld de %lld"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · jen čte, bez telemetrie · strana %lld z %lld"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · læser kun, ingen telemetri · side %lld af %lld"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · nur lesend, ohne Telemetrie · Seite %lld von %lld"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · μόνο ανάγνωση, χωρίς τηλεμετρία · σελίδα %lld από %lld"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · read-only, no telemetry · page %lld of %lld"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · solo lee, sin telemetría · página %lld de %lld"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · solo lee, sin telemetría · página %lld de %lld"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · vain lukee, ei telemetriaa · sivu %lld/%lld"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · lecture seule, sans télémétrie · page %lld sur %lld"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · קורא בלבד, ללא טלמטריה · עמוד %lld מתוך %lld"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · सिर्फ़ पढ़ता है, कोई टेलीमेट्री नहीं · पेज %lld (कुल %lld में से)"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · samo čita, bez telemetrije · stranica %lld od %lld"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · csak olvas, nincs telemetria · %lld. oldal / %lld"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · hanya membaca, tanpa telemetri · halaman %lld dari %lld"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · solo lettura, nessuna telemetria · pagina %lld di %lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · 読み取りのみ、テレメトリなし · ページ %lld / %lld"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · 읽기 전용, 원격 측정 없음 · 페이지 %lld/%lld"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · baca sahaja, tanpa telemetri · halaman %lld daripada %lld"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · leser bare, ingen telemetri · side %lld av %lld"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · leest alleen, geen telemetrie · pagina %lld van %lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · tylko odczyt, bez telemetrii · strona %lld z %lld"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · só lê, sem telemetria · página %lld de %lld"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · doar citește, fără telemetrie · pagina %lld din %lld"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · только чтение, без телеметрии · страница %lld из %lld"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · iba číta, bez telemetrie · strana %lld z %lld"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · samo bere, brez telemetrije · stran %lld od %lld"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · läser bara, ingen telemetri · sida %lld av %lld"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · อ่านอย่างเดียว ไม่มีการเก็บข้อมูลการใช้งาน · หน้า %lld จาก %lld"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · yalnızca okur, telemetri yok · sayfa %lld / %lld"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · лише читає, без телеметрії · сторінка %lld з %lld"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · chỉ đọc, không có telemetry · trang %lld trên %lld"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · 只读，无遥测 · 第 %lld 页，共 %lld 页"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally · 唯讀，無遙測 · 第 %lld 頁，共 %lld 頁"
           }
         }
       }
@@ -161929,216 +164895,216 @@
         }
       }
     },
-    "Só lê · Sem rede · Sem telemetria" : {
+    "Só lê · Sem telemetria · Internet só para atualizações" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Read-Only · No Network · No Telemetry"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Solo lettura · Nessuna rete · Nessuna telemetria"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Лише читає · Без мережі · Без телеметрії"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Только чтение · Без сети · Без телеметрии"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Läser bara · Inget nätverk · Ingen telemetri"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Læser kun · Intet netværk · Ingen telemetri"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leser bare · Uten nettverk · Uten telemetri"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "唯讀 · 不連網 · 無遙測"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Só lê · Sem rede · Sem telemetria"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "只读 · 不联网 · 无遥测"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "読み取りのみ · ネットワークなし · テレメトリなし"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jen čte · Bez sítě · Bez telemetrie"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "읽기 전용 · 네트워크 없음 · 원격 측정 없음"
-          }
-        },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "للقراءة فقط · بلا شبكة · بلا بيانات استخدام"
+            "value" : "للقراءة فقط · بلا بيانات استخدام · الإنترنت للتحديثات فقط"
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Només llegeix · Sense xarxa · Sense telemetria"
+            "value" : "Només llegeix · Sense telemetria · Internet només per a actualitzacions"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jen čte · Bez telemetrie · Internet jen pro aktualizace"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Læser kun · Ingen telemetri · Internet kun til opdateringer"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nur lesend · Ohne Netzwerk · Ohne Telemetrie"
+            "value" : "Nur lesend · Ohne Telemetrie · Internet nur für Updates"
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Μόνο ανάγνωση · Χωρίς δίκτυο · Χωρίς τηλεμετρία"
+            "value" : "Μόνο ανάγνωση · Χωρίς τηλεμετρία · Διαδίκτυο μόνο για ενημερώσεις"
           }
         },
-        "fi" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vain lukee · Ei verkkoa · Ei telemetriaa"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lecture seule · Sans réseau · Sans télémétrie"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "קורא בלבד · ללא רשת · ללא טלמטריה"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "सिर्फ़ पढ़ता है · कोई नेटवर्क नहीं · कोई टेलीमेट्री नहीं"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Samo čita · Bez mreže · Bez telemetrije"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hanya membaca · Tanpa jaringan · Tanpa telemetri"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Baca sahaja · Tanpa rangkaian · Tanpa telemetri"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tylko odczyt · Bez sieci · Bez telemetrii"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Doar citește · Fără rețea · Fără telemetrie"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Iba číta · Bez siete · Bez telemetrie"
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Samo bere · Brez omrežja · Brez telemetrije"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yalnızca okur · Ağ yok · Telemetri yok"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chỉ đọc · Không dùng mạng · Không có telemetry"
+            "value" : "Read-only · No telemetry · Internet only for updates"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Solo lee · Sin red · Sin telemetría"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leest alleen · Geen netwerk · Geen telemetrie"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "อ่านอย่างเดียว · ไม่ใช้เครือข่าย · ไม่มีการเก็บข้อมูลการใช้งาน"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Csak olvas · Nincs hálózat · Nincs telemetria"
+            "value" : "Solo lee · Sin telemetría · Internet solo para actualizaciones"
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Solo lee · Sin red · Sin telemetría"
+            "value" : "Solo lee · Sin telemetría · Internet solo para actualizaciones"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vain lukee · Ei telemetriaa · Internet vain päivityksiin"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecture seule · Sans télémétrie · Internet uniquement pour les mises à jour"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "קורא בלבד · ללא טלמטריה · אינטרנט רק לעדכונים"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिर्फ़ पढ़ता है · कोई टेलीमेट्री नहीं · इंटरनेट सिर्फ़ अपडेट के लिए"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samo čita · Bez telemetrije · Internet samo za ažuriranja"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Csak olvas · Nincs telemetria · Internet csak frissítésekhez"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hanya membaca · Tanpa telemetri · Internet hanya untuk pembaruan"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo lettura · Nessuna telemetria · Internet solo per gli aggiornamenti"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "読み取りのみ · テレメトリなし · インターネットはアップデートのみ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "읽기 전용 · 원격 측정 없음 · 인터넷은 업데이트에만 사용"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baca sahaja · Tanpa telemetri · Internet hanya untuk kemas kini"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leser bare · Ingen telemetri · Internett bare for oppdateringer"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leest alleen · Geen telemetrie · Internet alleen voor updates"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tylko odczyt · Bez telemetrii · Internet tylko do aktualizacji"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Só lê · Sem telemetria · Internet só para atualizações"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doar citește · Fără telemetrie · Internet doar pentru actualizări"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Только чтение · Без телеметрии · Интернет только для обновлений"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iba číta · Bez telemetrie · Internet iba na aktualizácie"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samo bere · Brez telemetrije · Internet samo za posodobitve"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Läser bara · Ingen telemetri · Internet bara för uppdateringar"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "อ่านอย่างเดียว · ไม่มีการเก็บข้อมูลการใช้งาน · ใช้อินเทอร์เน็ตเฉพาะการอัปเดต"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yalnızca okur · Telemetri yok · İnternet yalnızca güncellemeler için"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лише читає · Без телеметрії · Інтернет лише для оновлень"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chỉ đọc · Không có telemetry · Internet chỉ để cập nhật"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "只读 · 无遥测 · 仅为更新联网"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "唯讀 · 無遙測 · 僅為更新連網"
           }
         }
       }
@@ -174877,6 +177843,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lo eliminaste, pero una app aún lo retiene; el espacio vuelve cuando se cierre."
+          }
+        }
+      }
+    },
+    "Você está na versão mais nova. Última busca: %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أنت على أحدث إصدار. آخر بحث: %@"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tens la versió més recent. Última cerca: %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Máte nejnovější verzi. Poslední kontrola: %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du har den nyeste version. Sidst tjekket: %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du hast die neueste Version. Zuletzt geprüft: %@"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Έχετε την πιο πρόσφατη έκδοση. Τελευταίος έλεγχος: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You have the latest version. Last checked: %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tienes la versión más reciente. Última búsqueda: %@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tienes la versión más reciente. Última búsqueda: %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sinulla on uusin versio. Viimeksi tarkistettu: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous avez la dernière version. Dernière recherche : %@"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הגרסה שלך עדכנית. חיפוש אחרון: %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आप नवीनतम संस्करण पर हैं। आख़िरी जाँच: %@"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imate najnoviju verziju. Zadnja provjera: %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A legújabb verziót használja. Utolsó keresés: %@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anda memakai versi terbaru. Pengecekan terakhir: %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hai l’ultima versione. Ultimo controllo: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "最新バージョンです。最終確認: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "최신 버전입니다. 마지막 확인: %@"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anda menggunakan versi terkini. Semakan terakhir: %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du har den nyeste versjonen. Sist sjekket: %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je hebt de nieuwste versie. Laatst gecontroleerd: %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masz najnowszą wersję. Ostatnie sprawdzenie: %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tem a versão mais recente. Última procura: %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ai cea mai recentă versiune. Ultima căutare: %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У вас последняя версия. Последняя проверка: %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Máte najnovšiu verziu. Posledná kontrola: %@"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imate najnovejšo različico. Zadnje preverjanje: %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du har den senaste versionen. Senast kontrollerad: %@"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คุณใช้เวอร์ชันล่าสุดอยู่ ตรวจล่าสุด: %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En son sürümü kullanıyorsunuz. Son denetim: %@"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У вас остання версія. Остання перевірка: %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn đang dùng phiên bản mới nhất. Kiểm tra gần nhất: %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你使用的已是最新版本。上次检查：%@"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你使用的已是最新版本。上次檢查：%@"
           }
         }
       }

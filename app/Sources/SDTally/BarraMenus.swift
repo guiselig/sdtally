@@ -176,6 +176,15 @@ struct BarraMenusView: View {
                     .padding(.horizontal, 14).padding(.vertical, 6)
             }
             separador
+            if let n = Atualizacoes.unica.disponivel {
+                let a = Atualizacoes.unica
+                if atualizacaoOcupada(a) {
+                    AcaoMenu(titulo: textoAtualizacao(a) ?? "") {}.disabled(true)
+                } else {
+                    AcaoMenu(titulo: String(localized: "Instalar SDTally \(n.versao)")) { a.instalar() }
+                }
+                separador
+            }
             AcaoMenu(titulo: String(localized: "Abrir SDTally…")) { painel.mostrar(painel.secao ?? .sistema) }
             // Os mesmos itens do menu de botão direito do ícone (MenuContexto), menos o Abrir.
             ForEach(Array(itensContexto(barra: true, medindo: painel.medindo, podeParar: painel.podeParar, soAuto: painel.soAuto).enumerated()), id: \.offset) { _, item in

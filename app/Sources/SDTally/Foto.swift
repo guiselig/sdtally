@@ -128,7 +128,7 @@ enum Foto {
         case "historicointeiro":
             exit(await renderizar(HistoricoView().environment(painel).frame(width: JanelaView.tamanho.width, height: 1500), destino: destino) ? 0 : 2)
         case "permissoesinteira":
-            exit(await renderizar(PermissoesView().environment(painel).frame(width: JanelaView.tamanho.width, height: 1000), destino: destino) ? 0 : 2)
+            exit(await renderizar(PermissoesView().environment(painel).frame(width: JanelaView.tamanho.width, height: 1300), destino: destino) ? 0 : 2)
         case "infointeira":
             exit(await renderizar(InfoView().environment(painel).frame(width: 760, height: 1300), destino: destino) ? 0 : 2)
         default: break

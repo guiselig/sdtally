@@ -61,9 +61,9 @@ struct PermissoesView: View {
             Section("Avançado") {
                 PickerAutoRoot()
             }
-            // A página de versões abre no navegador; a rede do app é só a das atualizações (Atualizacoes).
+            // A página de versões abre no navegador; a busca e o download ficam em LinhaAtualizador.
             Section("Versões") {
-                LabeledContent("O SDTally não usa a rede: as versões novas ficam no GitHub.") {
+                LabeledContent("O app só se conecta à internet para procurar e baixar versões novas no github.com. O CLI e o helper root nunca acessam a internet; vêm dentro do app e são atualizados junto com ele.") {
                     Button("Ver versões novas") { NSWorkspace.shared.open(urlVersoes) }
                 }
                 LinhaAtualizador()
@@ -184,12 +184,36 @@ struct LinhaMedidorRoot: View {
     }
 }
 
-/// Procurar atualizações sozinho (Atualizacoes.ligado). Provisório: a sessão de UI refaz esta linha.
+/// Ajustes > Versões: a opção, o estado (textoAtualizacao), Instalar quando há versão nova e Procurar agora.
 struct LinhaAtualizador: View {
-    @Bindable private var atualizacoes = Atualizacoes.unica
+    var body: some View {
+        let a = Atualizacoes.unica
+        VStack(alignment: .leading, spacing: 6) {
+            ToggleAtualizacoes()
+            HStack {
+                if let t = textoAtualizacao(a) {
+                    Text(t).font(.callout).foregroundStyle(a.estado.ehErro ? AnyShapeStyle(Marca.aviso) : AnyShapeStyle(.secondary))
+                        .textSelection(.enabled)
+                }
+                Spacer()
+                if a.disponivel != nil && !atualizacaoOcupada(a) { Button("Instalar") { a.instalar() } }
+                Button("Procurar agora") { a.procurarAgora() }.disabled(atualizacaoOcupada(a))
+            }
+        }
+    }
+}
+
+/// Procurar e baixar versões novas no github.com: o único uso de rede do app (dono, 26/10).
+struct ToggleAtualizacoes: View {
+    var explicar = false
+    static let serve = String(localized: "O SDTally só se conecta à internet para isso: procurar uma versão nova no github.com e baixá-la quando você clicar em Instalar. Nada sobre o seu disco é enviado.")
 
     var body: some View {
-        Toggle("Procurar atualizações automaticamente", isOn: $atualizacoes.ligado)
+        @Bindable var a = Atualizacoes.unica
+        Toggle(isOn: $a.ligado) {
+            Rotulo(String(localized: "Procurar atualizações automaticamente"), Self.serve, explicar, simbolo: "arrow.down.circle")
+        }
+        .help(Self.serve)
     }
 }
 

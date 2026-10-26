@@ -119,7 +119,7 @@ struct RelatorioView: View {
                 }
             }
             Spacer(minLength: 0)
-            Text("SDTally · só lê, sem rede · página \(pagina) de \(pontos.isEmpty ? 4 : 5)")
+            Text("SDTally · só lê, sem telemetria · página \(pagina) de \(pontos.isEmpty ? 4 : 5)")
                 .font(.caption2).foregroundStyle(.tertiary)
         }
         .padding(40)

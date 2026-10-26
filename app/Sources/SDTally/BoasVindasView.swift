@@ -23,7 +23,7 @@ struct BoasVindasView: View {
     private static let como: [Item] = [
         Item("gearshape", String(localized: "Lê o Ajustes escondido"), String(localized: "Abre o Armazenamento sem mostrar a janela, lê o número e fecha.")),
         Item("magnifyingglass", String(localized: "Mede as pastas"), String(localized: "Percorre o disco quando você pede, com ou sem senha.")),
-        Item("eye", String(localized: "Só lê"), String(localized: "Nunca apaga nem altera arquivos, sem rede e sem telemetria.")),
+        Item("eye", String(localized: "Só lê"), String(localized: "Nunca apaga nem altera arquivos. Sem telemetria: nada sobre o seu disco sai do Mac.")),
         Item("number", String(localized: "Cada número com a fonte"), String(localized: "Passe o mouse sobre um número para ver de onde ele veio.")),
     ]
 
@@ -55,7 +55,7 @@ struct BoasVindasView: View {
             VStack(spacing: 28) {
                 Text("O que tem dentro de Dados do Sistema, com o número do próprio Ajustes.")
                     .font(.title3).foregroundStyle(.secondary)
-                // Pedido de estrela só aqui, sem lembrete depois (dono, 26/10). Abre no navegador: não é rede do app (internet só para atualizações, github.com).
+                // Pedido de estrela só aqui, sem lembrete depois (dono, 26/10). Abre no navegador.
                 VStack(spacing: 4) {
                     Text("Se o SDTally te ajudar, uma estrela no GitHub ajuda outras pessoas a encontrá-lo.")
                         .foregroundStyle(.secondary)
@@ -79,6 +79,7 @@ struct BoasVindasView: View {
                     ToggleBarraDeMenus(explicar: true)
                     ToggleIniciarSessao(explicar: true)
                     ToggleNotificar(explicar: true)
+                    ToggleAtualizacoes(explicar: true)
                 }
                 .toggleStyle(.switch)
             }
@@ -110,7 +111,7 @@ struct BoasVindasView: View {
             if pagina < Self.titulos.count - 1 {
                 Button("Continuar") { pagina += 1 }.keyboardShortcut(.defaultAction)
             } else {
-                Button("Começar") { viu = true; fechar() }.keyboardShortcut(.defaultAction)
+                Button("Começar") { viu = true; Atualizacoes.unica.jaAvisouRede = true; fechar() }.keyboardShortcut(.defaultAction)
             }
         }
         .overlay {
