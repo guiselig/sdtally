@@ -1,6 +1,6 @@
 # SDTally
 
-Explains what makes up **System Data** in macOS Storage settings by measuring it, never estimating. Read-only: it never deletes anything, never moves anything to the Trash and never uses the network.
+Explains what makes up **System Data** in macOS Storage settings by measuring it, never estimating. Read-only: it never deletes anything and never moves anything to the Trash. The app and the CLI never use the network. The optional updater (off by default) only contacts github.com once a day, and installs only when you click.
 
 [![ci](https://github.com/guiselig/sdtally/actions/workflows/ci.yml/badge.svg)](https://github.com/guiselig/sdtally/actions/workflows/ci.yml)
 [![License: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](LICENSE)
@@ -103,7 +103,8 @@ Also in the app:
 - **Notifications** when the disk grows 10 GB in a day or has less than 10 percent free (optional).
 - **Export JSON** (⌥⌘E) and **Export PDF** (⌘E). The save dialog has "Replace Personal Names (Recommended for Sharing)", on by default.
 - **Open at Login**, configurable refresh intervals, and an in-app language picker.
-- **See New Versions** in Settings opens the GitHub Releases page in your browser. The app itself never checks for updates.
+- **See New Versions** in Settings opens the GitHub Releases page in your browser.
+- **Check for updates automatically** (optional, off by default) turns on a small separate updater. It asks GitHub once a day for the latest release and shows a notification with **Install** and **Later**. Nothing is installed until you click Install. The app itself never checks for updates.
 - **Info** shows the paths of the app, the embedded `sdtally`, the helper and the data folder, plus ready-to-copy commands for AI agents.
 
 ### CLI
@@ -145,7 +146,7 @@ The `sdtally` CLI ships inside the app at `SDTally.app/Contents/Helpers/sdtally`
 
 ### Uninstall
 
-Quit the app. In Settings, remove Passwordless Root first if you installed it (or use **Measurement > Remove Passwordless Root**). Then delete `SDTally.app` and, if you want to remove saved measurements, `~/Library/Application Support/SDTally`.
+Quit the app. In Settings, turn off automatic updates and remove Passwordless Root first if you turned them on (or use **Measurement > Remove Passwordless Root**). Then delete `SDTally.app` and, if you want to remove saved measurements, `~/Library/Application Support/SDTally`.
 
 ## First run and permissions
 
@@ -293,8 +294,8 @@ The MCP server exposes four tools, without arguments: `quick`, `last_measurement
 These are design rules, enforced by tests and CI where possible.
 
 - **Measurement only, no estimates.** Every number comes from a syscall, an API, a log or exact arithmetic on measured numbers. What the system does not report is shown as unexplained or not measured, with the reason.
-- **Recommends, never deletes.** Neither the app nor the CLI deletes, moves to Trash or changes your files. The person executes the recommendation. A test (`tests/nunca_apaga.rs`) fails the build if production Rust or Swift code contains a delete or trash API, except for an exact, listed count of deletions of SDTally's own files (old saved measurements and the helper's temporary copy of the binary).
-- **No network.** CI fails if networking APIs (`URLSession`, `NWConnection`, `NWListener`, `socket(`, `TcpStream`, `UdpSocket`) appear in the sources. "See New Versions" only opens a web page in your browser.
+- **Recommends, never deletes.** Neither the app nor the CLI deletes, moves to Trash or changes your files. The person executes the recommendation. A test (`tests/nunca_apaga.rs`) fails the build if production Rust or Swift code contains a delete or trash API, except for an exact, listed count of deletions of SDTally's own files (old saved measurements, the helper's temporary copy of the binary, and the updater's replacement of the SDTally app with the new version and its temporary download).
+- **No network in the app and the CLI.** The app and the CLI never use the network. The optional updater (off by default) only contacts github.com once a day, and installs only when you click. A test (`tests/sem_rede.rs`) and CI fail if networking APIs (`URLSession`, `NWConnection`, `socket(`, `TcpStream`, `UdpSocket` and others) appear anywhere except the updater (`app/Sources/SDTallyUpdater`). "See New Versions" only opens a web page in your browser.
 - **Never touches dataless files' contents**, so it never triggers cloud downloads, and never updates access times.
 - **Never recommends** touching `/System` or `/Library` outside an explicit list, never recommends disabling SIP, and recommends removing Time Machine local snapshots only through Apple's tool (`tmutil`).
 - **Every category shown explains** what it is and what happens if it is removed.
@@ -381,6 +382,8 @@ The CLI writes nothing. `--last`, `--history` and `--changes` only read `Medicoe
 **Does it work on Intel Macs or macOS 14?** No. Apple Silicon and macOS 15 or later only.
 
 **Can I use it on an external disk?** No. SDTally measures the boot Data volume. External Trash folders (`/Volumes/*/.Trashes`) are not scanned.
+
+**Does SDTally update itself?** Only if you turn on **Check for updates automatically** in Settings. It is off by default. When on, a separate updater inside the app asks GitHub once a day for the latest release. If there is a newer one, you get a notification with **Install** and **Later**. Nothing is installed until you click Install. Before installing, it checks the download against the SHA-256 that GitHub publishes for the release and checks that the new app is signed by the same developer. If SDTally is open, it asks it to quit first. The app and the CLI never use the network; only the updater does, and only github.com.
 
 **Will it clean my Mac?** No. It explains and recommends. You decide and act, in Finder or in the owning app.
 
