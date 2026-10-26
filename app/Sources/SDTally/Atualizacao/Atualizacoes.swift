@@ -38,9 +38,13 @@ import ServiceManagement
     private(set) var ultimaChecagem: Date? {
         didSet { UserDefaults.standard.set(ultimaChecagem, forKey: Self.chaveChecagem) }
     }
-    /// Aviso único de rede para quem já tinha visto as boas-vindas. Só a UI lê e escreve.
+    /// A pessoa já viu a opção (boas-vindas ou o aviso único de rede). Só a UI escreve; a busca
+    /// automática espera por ele e começa assim que ele vira true.
     var jaAvisouRede: Bool {
-        didSet { UserDefaults.standard.set(jaAvisouRede, forKey: Self.chaveAvisou) }
+        didSet {
+            UserDefaults.standard.set(jaAvisouRede, forKey: Self.chaveAvisou)
+            if jaAvisouRede && !oldValue { procurarSePreciso() }
+        }
     }
 
     static let chaveLigado = "procurarAtualizacoes"
@@ -136,7 +140,8 @@ import ServiceManagement
     // MARK: Procurar
 
     func procurarSePreciso() {
-        guard pode(sozinho: true), !ocupado, Self.vence(agora: .now, ultima: ultimaChecagem) else { return }
+        // Nenhuma conexão sozinha antes de a pessoa ver a opção (boas-vindas ou o aviso único).
+        guard jaAvisouRede, pode(sozinho: true), !ocupado, Self.vence(agora: .now, ultima: ultimaChecagem) else { return }
         procurar(manual: false)
     }
 
