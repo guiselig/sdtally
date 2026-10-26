@@ -18888,7 +18888,7 @@
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aplikasi baharu tidak ditandatangani sebagai SDTally."
+            "value" : "Apl baharu tidak ditandatangani sebagai SDTally."
           }
         },
         "nb" : {
@@ -35170,7 +35170,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aktualizacje z samej aplikacji"
+            "value" : "Aktualizacje przez samą aplikację"
           }
         },
         "pt-PT" : {
@@ -35236,7 +35236,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "应用自身更新"
+            "value" : "App 自身更新"
           }
         },
         "zh-Hant" : {
@@ -36774,7 +36774,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Neue Version wird geladen…"
+            "value" : "Neue Version wird heruntergeladen…"
           }
         },
         "el" : {
@@ -59440,7 +59440,7 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Posa-li una estrella a GitHub"
+            "value" : "Dona una estrella a GitHub"
           }
         },
         "cs" : {
@@ -59464,7 +59464,7 @@
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Δώσε ένα αστέρι στο GitHub"
+            "value" : "Δώστε ένα αστέρι στο GitHub"
           }
         },
         "en" : {
@@ -59518,7 +59518,7 @@
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Csillag adása a GitHubon"
+            "value" : "Csillagozás a GitHubon"
           }
         },
         "id" : {
@@ -59638,7 +59638,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在 GitHub 上給星"
+            "value" : "在 GitHub 上加星號"
           }
         }
       }
@@ -62050,13 +62050,13 @@
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mais tarde"
+            "value" : "Noutra altura"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "以后"
+            "value" : "稍后"
           }
         },
         "ja" : {
@@ -62116,7 +62116,7 @@
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "אחר כך"
+            "value" : "מאוחר יותר"
           }
         },
         "hi" : {
@@ -62170,7 +62170,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Daha Sonra"
+            "value" : "Sonra"
           }
         },
         "vi" : {
@@ -106642,7 +106642,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nichts über deine Festplatte wird gesendet, und du kannst das unter Einstellungen › Versionen abschalten. CLI und Root-Helper greifen nie auf das Internet zu und werden mit der App aktualisiert."
+            "value" : "Nichts über deine Festplatte wird gesendet, und du kannst das unter Einstellungen › Versionen ausschalten. CLI und Root-Helper greifen nie auf das Internet zu und werden mit der App aktualisiert."
           }
         },
         "el" : {
@@ -106684,7 +106684,7 @@
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "שום דבר על הדיסק שלך לא נשלח, אפשר לכבות זאת בהגדרות › גרסאות. ה-CLI ועוזר ה-root אף פעם לא ניגשים לאינטרנט ומתעדכנים יחד עם היישום."
+            "value" : "שום דבר על הדיסק שלך לא נשלח, ואפשר לכבות זאת בהגדרות › גרסאות. ה-CLI ועוזר ה-root אף פעם לא ניגשים לאינטרנט ומתעדכנים יחד עם היישום."
           }
         },
         "hi" : {
@@ -106702,7 +106702,7 @@
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A lemezéről semmi nem kerül elküldésre, és a Beállítások › Verziók részben kikapcsolható. A CLI és a root segéd soha nem fér hozzá az internethez, és az alkalmazással együtt frissül."
+            "value" : "A lemezéről semmi nem kerül elküldésre, és a Beállítások › Verziók részben kikapcsolható. A CLI és a root segéd soha nem férnek hozzá az internethez, és az alkalmazással együtt frissülnek."
           }
         },
         "id" : {
@@ -106750,7 +106750,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nic o Twoim dysku nie jest wysyłane, a można to wyłączyć w Ustawienia › Wersje. CLI i helper root nigdy nie korzystają z internetu i są aktualizowane razem z aplikacją."
+            "value" : "Nic o Twoim dysku nie jest wysyłane, a można to wyłączyć w sekcji Ustawienia › Wersje. CLI i helper root nigdy nie korzystają z internetu i są aktualizowane razem z aplikacją."
           }
         },
         "pt-PT" : {
@@ -106762,7 +106762,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nimic despre discul tău nu este trimis, iar poți dezactiva în Setări › Versiuni. CLI-ul și helperul root nu accesează niciodată internetul și se actualizează odată cu aplicația."
+            "value" : "Nimic despre discul tău nu este trimis, și poți dezactiva din Setări › Versiuni. CLI-ul și helperul root nu accesează niciodată internetul și se actualizează odată cu aplicația."
           }
         },
         "ru" : {
@@ -106774,13 +106774,13 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nič o vašom disku sa neodosiela a môžete to vypnúť v Nastavenia › Verzie. CLI a root pomocník nikdy nepristupujú na internet a aktualizujú sa spolu s aplikáciou."
+            "value" : "Nič o vašom disku sa neodosiela a môžete to vypnúť v Nastaveniach › Verzie. CLI a root pomocník nikdy nepristupujú na internet a aktualizujú sa spolu s aplikáciou."
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nič o vašem disku se ne pošlje, to pa lahko izklopite v Nastavitve › Različice. CLI in pomočnik root nikoli ne dostopata do interneta in se posodabljata skupaj z aplikacijo."
+            "value" : "Nič o vašem disku se ne pošlje, to pa lahko izklopite v razdelku Nastavitve › Različice. CLI in pomočnik root nikoli ne dostopata do interneta in se posodabljata skupaj z aplikacijo."
           }
         },
         "sv" : {
@@ -113044,7 +113044,7 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mai no elimina ni modifica fitxers. Sense telemetria: res sobre el teu disc surt del Mac."
+            "value" : "Mai no elimina ni modifica fitxers. Sense telemetria: res sobre el teu disc no surt del Mac."
           }
         },
         "cs" : {
@@ -115458,7 +115458,7 @@
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "לא ניתן להחליף את היישום: %@"
+            "value" : "לא ניתן היה להחליף את היישום: %@"
           }
         },
         "hi" : {
@@ -115500,13 +115500,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "앱을 교체할 수 없습니다: %@"
+            "value" : "앱을 교체하지 못했습니다: %@"
           }
         },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tidak dapat menggantikan aplikasi: %@"
+            "value" : "Tidak dapat menggantikan apl: %@"
           }
         },
         "nb" : {
@@ -120124,7 +120124,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Das DMG wurde nicht geöffnet."
+            "value" : "Das DMG konnte nicht geöffnet werden."
           }
         },
         "el" : {
@@ -120808,7 +120808,7 @@
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally מחפש עכשיו עדכונים ב-github.com. אפשר לכבות זאת ב-הגדרות › גרסאות."
+            "value" : "SDTally מחפש עכשיו עדכונים ב-github.com. אפשר לכבות זאת בהגדרות › גרסאות."
           }
         },
         "hi" : {
@@ -120874,7 +120874,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally sprawdza teraz aktualizacje na github.com. Możesz to wyłączyć w Ustawienia › Wersje."
+            "value" : "SDTally sprawdza teraz aktualizacje na github.com. Możesz to wyłączyć w sekcji Ustawienia › Wersje."
           }
         },
         "pt-PT" : {
@@ -120892,19 +120892,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally теперь проверяет обновления на github.com. Это можно отключить в Настройки › Версии."
+            "value" : "SDTally теперь проверяет обновления на github.com. Это можно отключить в «Настройки › Версии»."
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally teraz hľadá aktualizácie na github.com. Môžete to vypnúť v Nastavenia › Verzie."
+            "value" : "SDTally teraz hľadá aktualizácie na github.com. Môžete to vypnúť v Nastaveniach › Verzie."
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally zdaj išče posodobitve na github.com. To lahko izklopite v Nastavitve › Različice."
+            "value" : "SDTally zdaj išče posodobitve na github.com. To lahko izklopite v razdelku Nastavitve › Različice."
           }
         },
         "sv" : {
@@ -120928,7 +120928,7 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally тепер перевіряє оновлення на github.com. Це можна вимкнути в Параметри › Версії."
+            "value" : "SDTally тепер перевіряє оновлення на github.com. Це можна вимкнути в «Параметри › Версії»."
           }
         },
         "vi" : {
@@ -122538,7 +122538,7 @@
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Az alkalmazás csak azért csatlakozik az internetre, hogy új verziókat keressen és töltsön le a github.com oldalról. A CLI és a root segéd soha nem fér hozzá az internethez; az alkalmazással együtt érkeznek, és vele együtt frissülnek."
+            "value" : "Az alkalmazás csak azért csatlakozik az internetre, hogy új verziókat keressen és töltsön le a github.com oldalról. A CLI és a root segéd soha nem férnek hozzá az internethez; az alkalmazással együtt érkeznek, és vele együtt frissülnek."
           }
         },
         "id" : {
@@ -122568,7 +122568,7 @@
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aplikasi hanya bersambung ke internet untuk menyemak dan memuat turun versi baharu daripada github.com. CLI dan pembantu root tidak pernah mengakses internet; ia disertakan dalam aplikasi dan dikemas kini bersamanya."
+            "value" : "Apl hanya bersambung ke internet untuk menyemak dan memuat turun versi baharu daripada github.com. CLI dan pembantu root tidak pernah mengakses internet; ia disertakan dalam apl dan dikemas kini bersamanya."
           }
         },
         "nb" : {
@@ -122692,7 +122692,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die geladene Datei stimmt nicht mit dem veröffentlichten SHA-256 überein."
+            "value" : "Die heruntergeladene Datei stimmt nicht mit dem veröffentlichten SHA-256 überein."
           }
         },
         "el" : {
@@ -123156,13 +123156,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La carte de la barre des menus est désormais un menu natif, avec le même verre, bord et ombre que les menus du système."
+            "value" : "La carte de la barre des menus est désormais un menu natif, avec le même effet verre, la même bordure et la même ombre que les menus du système."
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "הכרטיס בשורת התפריטים הוא עכשיו תפריט מקורי, עם אותו זכוכית, מסגרת וצל של תפריטי המערכת."
+            "value" : "הכרטיס בשורת התפריטים הוא עכשיו תפריט מקורי, עם אותה זכוכית, אותה מסגרת ואותו צל כמו בתפריטי המערכת."
           }
         },
         "hi" : {
@@ -123174,7 +123174,7 @@
         "hr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kartica u traci izbornika sada je izvorni izbornik, s istim staklom, rubom i sjenom kao sistemski izbornici."
+            "value" : "Kartica u traci izbornika sada je izvorni izbornik, s istim staklom, rubom i sjenom kao izbornici sustava."
           }
         },
         "hu" : {
@@ -123240,7 +123240,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cardul din bara de meniuri este acum un meniu nativ, cu același sticlă, contur și umbră ca meniurile sistemului."
+            "value" : "Cardul din bara de meniuri este acum un meniu nativ, cu aceeași sticlă, același contur și aceeași umbră ca meniurile sistemului."
           }
         },
         "ru" : {
@@ -123258,7 +123258,7 @@
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kartica v menijski vrstici je zdaj izvirni meni z enakim steklom, robom in senco kot sistemski meniji."
+            "value" : "Kartica v menijski vrstici je zdaj izvorni meni z enakim steklom, robom in senco kot sistemski meniji."
           }
         },
         "sv" : {
@@ -140020,19 +140020,19 @@
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Via MCP erstattes dit brugernavn og navnene på personlige mapper, før de forlader sdtally (`--redact off` slår det fra). SDTally sender intet om din disk over netværket, men AI-klienten gør. AI'en måler aldrig som administrator og udfører ikke trinnene under Hvad du kan gøre; den læser den seneste fulde måling fra appen."
+            "value" : "Via MCP erstattes dit brugernavn og navnene på personlige mapper, før de forlader sdtally (`--redact off` slår det fra). SDTally sender intet om din disk over netværket, men AI-klienten gør. AI'en måler aldrig som administrator og udfører ikke trinene under Hvad du kan gøre; den læser den seneste fulde måling fra appen."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Über MCP werden dein Benutzername und die Namen persönlicher Ordner ersetzt, bevor sie sdtally verlassen (`--redact off` schaltet das aus). SDTally sendet nichts über deine Festplatte über das Netzwerk, der KI-Client aber schon. Die KI misst nie als Administrator und führt die Schritte unter „Was tun“ nicht aus; sie liest die letzte vollständige Messung aus der App."
+            "value" : "Über MCP werden dein Benutzername und die Namen persönlicher Ordner ersetzt, bevor sie sdtally verlassen (`--redact off` schaltet das aus). SDTally sendet keine Daten über deine Festplatte ins Netzwerk, der KI-Client aber schon. Die KI misst nie als Administrator und führt die Schritte unter „Was tun“ nicht aus; sie liest die letzte vollständige Messung aus der App."
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Μέσω MCP, το όνομα χρήστη σας και τα ονόματα των προσωπικών φακέλων αντικαθίστανται πριν φύγουν από το sdtally (το `--redact off` το απενεργοποιεί). Το SDTally δεν στέλνει τίποτα για τον δίσκο σας στο δίκτυο, αλλά ο πελάτης τεχνητής νοημοσύνης στέλνει. Η τεχνητή νοημοσύνη δεν μετρά ποτέ ως διαχειριστής ούτε εκτελεί τα βήματα του «Τι να κάνετε»· διαβάζει την τελευταία Πλήρη μέτρηση που έγινε στην εφαρμογή."
+            "value" : "Μέσω MCP, το όνομα χρήστη σας και τα ονόματα των προσωπικών φακέλων αντικαθίστανται πριν φύγουν από το sdtally (το `--redact off` το απενεργοποιεί). Το SDTally δεν στέλνει τίποτα για τον δίσκο σας στο δίκτυο, αλλά το πρόγραμμα-πελάτης τεχνητής νοημοσύνης στέλνει. Η τεχνητή νοημοσύνη δεν μετρά ποτέ ως διαχειριστής ούτε εκτελεί τα βήματα του «Τι να κάνετε»· διαβάζει την τελευταία πλήρη μέτρηση που έγινε στην εφαρμογή."
           }
         },
         "en" : {
@@ -140056,13 +140056,13 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "MCP:n kautta käyttäjänimesi ja henkilökohtaisten kansioiden nimet korvataan, ennen kuin ne poistuvat sdtallysta (`--redact off` poistaa tämän). SDTally ei lähetä mitään levystäsi verkon yli, mutta tekoälyasiakas lähettää. Tekoäly ei koskaan mittaa ylläpitäjänä eikä suorita Mitä tehdä -vaiheita; se lukee appissa tehdyn viimeisimmän täyden mittauksen."
+            "value" : "MCP:n kautta käyttäjänimesi ja henkilökohtaisten kansioiden nimet korvataan, ennen kuin ne poistuvat sdtallysta (`--redact off` poistaa tämän). SDTally ei lähetä mitään levystäsi verkon yli, mutta tekoälyasiakasohjelma lähettää. Tekoäly ei koskaan mittaa ylläpitäjänä eikä suorita Mitä tehdä -vaiheita; se lukee appissa tehdyn viimeisimmän täyden mittauksen."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Via MCP, votre nom d’utilisateur et les noms de dossiers personnels sont remplacés avant de quitter sdtally (`--redact off` le désactive). SDTally n’envoie rien sur votre disque par le réseau, mais le client IA, si. L’IA ne mesure jamais en tant qu’administrateur et n’exécute pas les étapes de Que faire ; elle lit la dernière mesure complète faite dans l’app."
+            "value" : "Via MCP, votre nom d’utilisateur et les noms de dossiers personnels sont remplacés avant de quitter sdtally (`--redact off` le désactive). SDTally n’envoie rien sur votre disque par le réseau, mais le client IA, lui, en envoie. L’IA ne mesure jamais en tant qu’administrateur et n’exécute pas les étapes de « Que faire » ; elle lit la dernière mesure complète faite dans l’app."
           }
         },
         "he" : {
@@ -140152,7 +140152,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Через MCP ваше имя пользователя и названия личных папок заменяются до того, как покинуть sdtally (`--redact off` отключает). SDTally ничего не отправляет о вашем диске по сети, но клиент ИИ отправляет. ИИ никогда не измеряет от администратора и не выполняет шаги из раздела «Что делать»; он читает последнее полное измерение, сделанное в приложении."
+            "value" : "Через MCP ваше имя пользователя и названия личных папок заменяются до того, как покинут sdtally (`--redact off` отключает замену). SDTally ничего не отправляет о вашем диске по сети, но клиент ИИ отправляет. ИИ никогда не выполняет измерение с правами администратора и не выполняет шаги из раздела «Что делать»; он читает последнее полное измерение, сделанное в приложении."
           }
         },
         "sk" : {
@@ -142874,7 +142874,7 @@
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mencari versi baru di github.com sekali sehari dan memberi tahu di jendela, bilah menu, dan Pengaturan › Versi. Hanya memasang saat Anda mengeklik: memeriksa tanda tangan dan SHA-256, mengganti aplikasi, lalu membukanya kembali, tanpa “Tetap Buka”."
+            "value" : "Mencari versi baru di github.com sekali sehari dan memberi tahu di jendela, bilah menu, dan Pengaturan › Versi. Hanya menginstal saat Anda mengeklik: memeriksa tanda tangan dan SHA-256, mengganti aplikasi, lalu membukanya kembali, tanpa “Tetap Buka”."
           }
         },
         "it" : {
@@ -142916,13 +142916,13 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Raz dziennie sprawdza na github.com, czy jest nowa wersja, i informuje w oknie, na pasku menu oraz w Ustawienia › Wersje. Instaluje tylko po kliknięciu: sprawdza podpis i SHA-256, podmienia aplikację i otwiera ją ponownie, bez „Otwórz mimo to”."
+            "value" : "Raz dziennie sprawdza na github.com, czy jest nowa wersja, i informuje w oknie, na pasku menu oraz w sekcji Ustawienia › Wersje. Instaluje tylko po kliknięciu: sprawdza podpis i SHA-256, podmienia aplikację i otwiera ją ponownie, bez „Otwórz mimo to”."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Procura uma nova versão em github.com uma vez por dia e avisa na janela, na barra de menus e em Definições › Versões. Só instala quando clica: verifica a assinatura e o SHA-256, substitui a app e reabre, sem passar por “Abrir” nas Definições do Sistema."
+            "value" : "Procura uma nova versão em github.com uma vez por dia e avisa na janela, na barra de menus e em Definições › Versões. Só instala quando clica: verifica a assinatura e o SHA-256, substitui a app e reabre, sem o “Abrir”."
           }
         },
         "ro" : {
@@ -142940,13 +142940,13 @@
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Raz denne vyhľadá novú verziu na github.com a upozorní vás v okne, na paneli ponúk a v Nastavenia › Verzie. Inštaluje iba po kliknutí: skontroluje podpis a SHA-256, nahradí aplikáciu a znova ju otvorí, bez „Otvoriť aj tak“."
+            "value" : "Raz denne vyhľadá novú verziu na github.com a upozorní vás v okne, na paneli ponúk a v Nastaveniach › Verzie. Inštaluje iba po kliknutí: skontroluje podpis a SHA-256, nahradí aplikáciu a znova ju otvorí, bez „Otvoriť aj tak“."
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Enkrat na dan poišče novo različico na github.com in vas obvesti v oknu, v menijski vrstici in v Nastavitve › Različice. Namesti samo, ko kliknete: preveri podpis in SHA-256, zamenja aplikacijo in jo znova odpre, brez „Vseeno odpri“."
+            "value" : "Enkrat na dan poišče novo različico na github.com in vas obvesti v oknu, v menijski vrstici in v razdelku Nastavitve › Različice. Namesti samo, ko kliknete: preveri podpis in SHA-256, zamenja aplikacijo in jo znova odpre, brez „Vseeno odpri“."
           }
         },
         "sv" : {
@@ -142970,7 +142970,7 @@
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Раз на день перевіряє github.com на наявність нової версії та повідомляє у вікні, у рядку меню та в розділі «Параметри › Версії». Встановлює лише після вашого натискання: перевіряє підпис і SHA-256, замінює програму та відкриває її знову, без «Все одно відкрити»."
+            "value" : "Раз на день перевіряє github.com на наявність нової версії та повідомляє у вікні, у рядку меню та в розділі «Параметри › Версії». Установлює лише після вашого натискання: перевіряє підпис і SHA-256, замінює програму та відкриває її знову, без «Все одно відкрити»."
           }
         },
         "vi" : {
@@ -143426,7 +143426,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "التحقق من التحديثات تلقائيًا"
+            "value" : "البحث عن التحديثات تلقائيًا"
           }
         },
         "ca" : {
@@ -143480,7 +143480,7 @@
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hae päivityksiä automaattisesti"
+            "value" : "Etsi päivityksiä automaattisesti"
           }
         },
         "fr" : {
@@ -143540,7 +143540,7 @@
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cari kemas kini secara automatik"
+            "value" : "Semak kemas kini secara automatik"
           }
         },
         "nb" : {
@@ -152746,7 +152746,7 @@
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SDTally · μόνο ανάγνωση, χωρίς τηλεμετρία · σελίδα %lld από %lld"
+            "value" : "SDTally · μόνο διαβάζει, χωρίς τηλεμετρία · σελίδα %lld από %lld"
           }
         },
         "en" : {
@@ -155290,7 +155290,7 @@
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Si l'SDTally t'ajuda, una estrella a GitHub ajuda altres persones a trobar-lo."
+            "value" : "Si l’SDTally t’ajuda, una estrella a GitHub ajuda altres persones a trobar-lo."
           }
         },
         "cs" : {
@@ -155302,7 +155302,7 @@
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hvis SDTally hjælper dig, hjælper en stjerne på GitHub andre med at finde det."
+            "value" : "Hvis SDTally hjælper dig, hjælper en stjerne på GitHub andre med at finde den."
           }
         },
         "de" : {
@@ -155314,7 +155314,7 @@
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Αν το SDTally σε βοηθά, ένα αστέρι στο GitHub βοηθά άλλους να το βρουν."
+            "value" : "Αν το SDTally σάς βοηθά, ένα αστέρι στο GitHub βοηθά άλλους να το βρουν."
           }
         },
         "en" : {
@@ -155344,7 +155344,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Si SDTally vous aide, une étoile sur GitHub aide d'autres personnes à le trouver."
+            "value" : "Si SDTally vous aide, une étoile sur GitHub aide d’autres personnes à le trouver."
           }
         },
         "he" : {
@@ -157782,7 +157782,7 @@
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nu există permisiunea de a scrie în %@. Descarcă DMG-ul de pe pagina de versiuni."
+            "value" : "Nu ai permisiunea de a scrie în %@. Descarcă DMG-ul de pe pagina de versiuni."
           }
         },
         "ru" : {
@@ -166642,7 +166642,7 @@
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Μόνο ανάγνωση · Χωρίς τηλεμετρία · Διαδίκτυο μόνο για ενημερώσεις"
+            "value" : "Μόνο διαβάζει · Χωρίς τηλεμετρία · Διαδίκτυο μόνο για ενημερώσεις"
           }
         },
         "en" : {
