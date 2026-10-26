@@ -1,0 +1,156 @@
+{
+  "sourceLanguage" : "pt-BR",
+  "strings" : {
+    "A assinatura do app novo não é a do SDTally." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The new app is not signed as SDTally."
+          }
+        }
+      }
+    },
+    "A versão no DMG não é mais nova que a instalada." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The version in the DMG is not newer than the installed one."
+          }
+        }
+      }
+    },
+    "Clique em Instalar para atualizar. Nada é instalado sem o seu clique." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Click Install to update. Nothing is installed until you click."
+          }
+        }
+      }
+    },
+    "Depois" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Later"
+          }
+        }
+      }
+    },
+    "Feche o SDTally para terminar de instalar a versão %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close SDTally to finish installing version %@."
+          }
+        }
+      }
+    },
+    "Instalar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Install"
+          }
+        }
+      }
+    },
+    "Não deu para instalar o SDTally %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not install SDTally %@"
+          }
+        }
+      }
+    },
+    "Não deu para trocar o app: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not replace the app: %@"
+          }
+        }
+      }
+    },
+    "O DMG não abriu." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The DMG did not open."
+          }
+        }
+      }
+    },
+    "O SDTally instalado continua como estava." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The installed SDTally is unchanged."
+          }
+        }
+      }
+    },
+    "O arquivo baixado não confere com o SHA-256 publicado." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The downloaded file does not match the published SHA-256."
+          }
+        }
+      }
+    },
+    "O download falhou: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The download failed: %@"
+          }
+        }
+      }
+    },
+    "SDTally %@ disponível" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally %@ is available"
+          }
+        }
+      }
+    },
+    "Sem permissão para gravar em %@. Baixe o DMG na página de versões." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No permission to write to %@. Download the DMG from the releases page."
+          }
+        }
+      }
+    },
+    "Ver versões" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See releases"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

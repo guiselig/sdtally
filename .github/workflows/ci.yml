@@ -114,7 +114,7 @@ jobs:
             sdtally.json
           if-no-files-found: warn
 
-  # spec-fase5 §1.10: o app e a CLI só leem e não usam a rede. Reprova o job se aparecer.
+  # spec-fase5 §1.10: o app e a CLI só leem e não usam a rede (só o atualizador opcional usa). Reprova o job se aparecer.
   grep:
     runs-on: ubuntu-latest
     steps:
@@ -125,7 +125,8 @@ jobs:
         run: |
           falhou=0
           # Apagar: tests/nunca_apaga.rs (cargo test) cobre Rust e Swift, com a lista do que o programa apaga dos próprios arquivos.
-          grep -rnE 'URLSession|NWConnection|NWListener|socket\(' app/Sources && falhou=1
+          # Rede: só o atualizador opcional (app/Sources/SDTallyUpdater); tests/sem_rede.rs cobre a lista inteira.
+          grep -rnE --exclude-dir=SDTallyUpdater 'URLSession|NWConnection|NWListener|socket\(' app/Sources && falhou=1
           grep -rnE 'TcpStream|UdpSocket' src && falhou=1
           exit $falhou
       # spec-fase6 §7 G9: carta anti-scareware (palavras proibidas, badge, vermelho, Toggle).

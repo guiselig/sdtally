@@ -24,9 +24,22 @@ let package = Package(
             dependencies: ["SDTallyXPC"],
             path: "Sources/SDTallyHelper"
         ),
+        // Atualizador opcional (item de início via SMAppService, desligado por padrão): vai em
+        // Contents/Library/LoginItems/SDTallyUpdater.app. É o único alvo que usa a rede.
+        .executableTarget(
+            name: "SDTallyUpdater",
+            path: "Sources/SDTallyUpdater",
+            resources: [.process("Localizable.xcstrings")],
+            swiftSettings: [.defaultIsolation(MainActor.self)]
+        ),
         .testTarget(
             name: "SDTallyTests",
             dependencies: ["SDTally", "SDTallyXPC"],
+            resources: [.copy("Fixtures")]
+        ),
+        .testTarget(
+            name: "SDTallyUpdaterTests",
+            dependencies: ["SDTallyUpdater"],
             resources: [.copy("Fixtures")]
         ),
     ]

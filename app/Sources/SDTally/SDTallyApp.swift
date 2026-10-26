@@ -162,6 +162,7 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
             UNUserNotificationCenter.current().delegate = self
         }
         Portao.unico.esperar { Painel.unico.iniciar() }
+        Atualizador.aoAbrir()
         abrirSeFoiAMao()
         MenuContexto.vigiarBarra()
         // Ícone da barra desligado sem janela aberta: o app ficaria sem Dock e sem ícone. Abre a janela.

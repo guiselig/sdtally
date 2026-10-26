@@ -111107,6 +111107,16 @@
         }
       }
     },
+    "Não deu para desligar o atualizador: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not turn off the updater: %@"
+          }
+        }
+      }
+    },
     "Não deu para ler %@" : {
       "localizations" : {
         "en" : {
@@ -111745,6 +111755,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No se pudo leer el disco: %@"
+          }
+        }
+      }
+    },
+    "Não deu para ligar o atualizador: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Could not turn on the updater: %@"
           }
         }
       }
@@ -118165,6 +118185,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "El archivo incluye tu nombre de usuario y nombres de carpetas de tu carpeta personal (por ejemplo, ~/Documents). Revísalo antes de compartir."
+          }
+        }
+      }
+    },
+    "O atualizador só funciona no SDTally.app." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The updater only works in SDTally.app."
           }
         }
       }

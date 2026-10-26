@@ -8,13 +8,13 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 /// Pedaços de código que apagam, mover para o Lixo ou removem atributo (sensível a maiúsculas).
-const PROIBIDOS: [&str; 15] = [
+const PROIBIDOS: [&str; 16] = [
     "remove_file", "remove_dir", "unlink", "rmdir", "removefile", "libc::remove(", "removexattr", "removeItem", "trashItem",
-    "recycle(", ".moveItem(", "deletelocalsnapshots", "empty trash", "emptyTrash", "to delete",
+    "recycle(", ".moveItem(", "deletelocalsnapshots", "empty trash", "emptyTrash", "to delete", "replaceItemAt",
 ];
 
 /// (arquivo, pedaço, vezes): apaga só arquivo do próprio programa, nunca dado do usuário.
-const PERMITIDOS: [(&str, &str, usize); 4] = [
+const PERMITIDOS: [(&str, &str, usize); 6] = [
     // Dir::remover: o temporário que o sdc-coleta criou ao gravar.
     ("src/sys/mod.rs", "unlink", 1),
     // Historico.podar: medições antigas do próprio SDTally (Medicoes/AAAA-MM-DD-HHMM.json comum).
@@ -23,6 +23,11 @@ const PERMITIDOS: [(&str, &str, usize); 4] = [
     ("app/Sources/SDTallyHelper/main.swift", "removeItem", 1),
     // Executor.scriptAdmin: a pasta mktemp -d do root com a cópia conferida do sdtally (trap EXIT).
     ("app/Sources/SDTally/Executor.swift", "rm", 1),
+    // Atualizador (só depois do clique em Instalar): a troca do SDTally.app pelo novo, que tira o
+    // bundle antigo do próprio SDTally, e nada mais.
+    ("app/Sources/SDTallyUpdater/Lancamento.swift", "replaceItemAt", 1),
+    // Instalacao.apagarTemporario: o download e a pasta da troca, só dentro do temporário.
+    ("app/Sources/SDTallyUpdater/Lancamento.swift", "removeItem", 1),
 ];
 
 fn palavra(l: &str, p: &str) -> bool {
