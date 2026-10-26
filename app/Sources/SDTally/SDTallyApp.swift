@@ -167,8 +167,9 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         }
         Portao.unico.esperar { Painel.unico.iniciar() }
         let a = Atualizacoes.unica
-        a.jaAvisouRede = Novidades.avisoDeRedeVisto(jaAvisou: a.jaAvisouRede, viuBoasVindas: UserDefaults.standard.bool(forKey: "viuBoasVindas"))
         a.iniciar()
+        // Depois do iniciar: ao virar true, o didSet procura já com o resultado lido e o atualizador antigo fora.
+        a.jaAvisouRede = Novidades.avisoDeRedeVisto(jaAvisou: a.jaAvisouRede, viuBoasVindas: UserDefaults.standard.bool(forKey: "viuBoasVindas"))
         abrirSeFoiAMao()
         BarraDeStatus.unico.ajustar()
         MenuContexto.vigiarBarra()
