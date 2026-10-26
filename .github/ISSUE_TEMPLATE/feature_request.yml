@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        SDTally measures and explains; it never deletes, never uses the network, and never guesses a number. Requests that need any of those are out of scope. Please do not include personal data.
+        SDTally measures and explains; it never deletes, uses the network only to check for and download its own updates from github.com, and never guesses a number. Requests that need any of those are out of scope. Please do not include personal data.
   - type: textarea
     id: problem
     attributes:

@@ -15,7 +15,7 @@
 ## Checklist
 
 - [ ] Read-only: nothing deletes, moves to Trash or modifies user data (`tests/nunca_apaga.rs` passes).
-- [ ] No network access added.
+- [ ] No network access added (the only network code is the update check in `app/Sources/SDTally/Atualizacao`).
 - [ ] Every new number is measured and has a source; unmeasured values are `null` with a reason, never `0`.
 - [ ] User-facing text follows G9 (no alarming words, no urgency).
 - [ ] JSON changes are additive, or `schema_version` is raised, and `docs/json-schema.md` is updated.

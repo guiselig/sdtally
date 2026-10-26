@@ -185,7 +185,7 @@ Também ficam em Permissões:
 - Assinatura: "Apple Development · time XXXXXXXXXX" (`HelperXPC.timeProprio()`, que já existe), ou "ad hoc (o medidor root não funciona)".
 - Caminhos, com `abbreviatingWithTildeInPath` e o `MenuArquivo`: o app, o sdtally (`Executor.binario`), o helper e a pasta de dados.
 - Mac: `operatingSystemVersionString`, `machdep.cpu.brand_string` e `hw.model`.
-- "Só lê · Sem rede · Sem telemetria".
+- "Só lê · Sem rede · Sem telemetria". (Desde as atualizações pelo app: internet só para atualizações, github.com.)
 - Seção "Para agentes de IA" (§5).
 
 ### 2.5 Barra de menus (`MenuBarExtra(isInserted:content:label:)`, `.menuBarExtraStyle(.window)`)
@@ -405,7 +405,7 @@ Todos os tipos e funções puras (`Ponto`, `Mudanca`, `Aviso`, `mudancas`, `avis
 - Dicas:
   1. `minus.forwardslash.plus` **A Apple subtrai, não mede.** "Dados do Sistema é o que sobra do usado depois do macOS e das outras categorias. Caches, logs, snapshots do Time Machine e arquivos que um app ainda segura vão parar aí."
   2. `paintpalette` **Cor é medido; tracejado é sem explicação.** "Cada número traz a fonte ao lado. O que a medição não alcançou aparece tracejado, com o motivo, em vez de um palpite."
-  3. `eye` **Só lê.** "O SDTally não apaga nem altera nada, não usa a rede e não manda telemetria. Em O que fazer, ele diz o passo; quem decide e faz é você."
+  3. `eye` **Só lê.** "O SDTally não apaga nem altera nada, não usa a rede e não manda telemetria. Em O que fazer, ele diz o passo; quem decide e faz é você." (Desde as atualizações pelo app: internet só para atualizações, github.com.)
   4. `externaldrive.badge.questionmark` **Compare com o Ajustes.** "Abra Ajustes > Geral > Armazenamento e deixe a tela aberta alguns segundos: o SDTally lê a conta do próprio Ajustes e mostra o mesmo número, com a hora."
 - Linha final: "Para medir as pastas do sistema, o SDTally usa o Acesso Total ao Disco e a senha de administrador (ou o medidor root). Os dois são opcionais; veja em Permissões (⌘6)."
 - Botões: "Abrir Armazenamento no Ajustes" e **"Começar"** (padrão).

@@ -48,11 +48,11 @@ Notes:
 
 ### Never delete
 
-`tests/nunca_apaga.rs` scans production code in `src/` and `app/Sources/` (including the helper) for APIs and commands that delete, trash or remove attributes (`remove_file`, `unlink`, `removeItem`, `trashItem`, `deletelocalsnapshots` and others). The only allowed occurrences are listed in the test with an exact count, and each one deletes a file SDTally created itself (old saved measurements, the helper's temporary copy of `sdtally`, and the updater's replacement of the SDTally app and its temporary download). Do not add to that list without a very good reason.
+`tests/nunca_apaga.rs` scans production code in `src/` and `app/Sources/` (including the helper) for APIs and commands that delete, trash or remove attributes (`remove_file`, `unlink`, `removeItem`, `trashItem`, `deletelocalsnapshots` and others). The only allowed occurrences are listed in the test with an exact count, and each one deletes a file SDTally created itself (old saved measurements, the helper's temporary copy of `sdtally`, the replacement of the SDTally app when an update installs, and that update's temporary folder). Do not add to that list without a very good reason.
 
-### No network
+### Network only for updates
 
-The app and the CLI never use the network. `tests/sem_rede.rs` fails if networking APIs (`URLSession`, `import Network`, `socket(`, `getaddrinfo`, `WKWebView`, `std::net`, `TcpStream` and others) appear in `src/`, `app/Sources/SDTally`, `app/Sources/SDTallyHelper` or `app/Sources/SDTallyXPC`, or if `Cargo.lock` has a networking crate. The CI `grep` job checks the same for the common APIs. The only exception is the optional updater, `app/Sources/SDTallyUpdater`, which talks only to github.com. Opening a web page in the browser (`NSWorkspace.open`) is not network access by the app.
+The app connects to the internet for one thing only: checking github.com for a new version and downloading it when the user clicks Install. That code lives only in `app/Sources/SDTally/Atualizacao`. The CLI and the root helper never use the network; they ship inside the app and update with it. `tests/sem_rede.rs` fails if networking APIs (`URLSession`, `import Network`, `socket(`, `getaddrinfo`, `WKWebView`, `std::net`, `TcpStream` and others) appear in `src/` or anywhere in `app/Sources` outside that folder (including the helper, the XPC contract, `SDTallyInstalacao` and the update executor `SDTallyUpdater`), or if `Cargo.lock` has a networking crate. The CI `grep` job checks the same for the common APIs. Do not add network code anywhere else, and do not send anything about the disk. Opening a web page in the browser (`NSWorkspace.open`) is not network access by the app.
 
 ### G9: no scareware
 

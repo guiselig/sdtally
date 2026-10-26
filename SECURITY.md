@@ -25,7 +25,7 @@ Follow-up happens in the private advisory thread. Fixes ship as a new release, a
 
 ## Scope
 
-SDTally is read-only, and the app and the CLI do not use the network (only the optional updater does), so the most sensitive parts are the ones that run with elevated privileges or cross a trust boundary.
+SDTally is read-only. It connects to the internet for one thing only: checking github.com for a new version and downloading it when the user clicks Install. The CLI and the root helper never use the network; they ship inside the app and update with it. So the most sensitive parts are the ones that run with elevated privileges, cross a trust boundary, or install code.
 
 In scope:
 
@@ -33,9 +33,9 @@ In scope:
 - **The XPC interface** between the app and the helper (`app/Sources/SDTallyXPC/HelperXPC.swift`): four calls (`medir`, `parar`, `iniciarAuto`, `pararAuto`), no arguments from the client.
 - **The code signing requirement** used on both sides: fixed identifier, `anchor apple generic`, and the same Team ID in `certificate leaf[subject.OU]` as the helper's own signature.
 - **The binary copy check**: before running `sdtally`, the helper copies it from the app bundle into a new `0700` folder owned by root, refuses anything that is not a regular file (symlinks), sets it to `0500`, verifies its signature against the same-team requirement for the identifier `io.github.guiselig.sdtally.cli`, and executes that verified copy.
-- **The optional updater** (`app/Sources/SDTallyUpdater`, off by default): a login item that asks `api.github.com` once a day for the latest release and, only after the user clicks Install, downloads the DMG from github.com, checks its SHA-256 against the digest of an immutable release, checks the new app's signature against the same identifier and Team ID, and replaces the SDTally app. A way to make it install something else, install without the click, or reach another host is in scope.
+- **Updates** (`app/Sources/SDTally/Atualizacao`, the only network code; on by default, off in Settings > Versions): the app asks `api.github.com` for the latest release when it opens and once a day, over `https`, following redirects only to GitHub hosts. Only after the user clicks Install, it downloads the DMG from github.com, requires an immutable release with a `sha256` digest and checks the download against it, mounts the DMG read-only (`hdiutil attach -nobrowse -readonly -noautoopen`), and checks the new app's signature against the same identifier and Team ID and that its version is newer. It then hands off to the executor (`app/Sources/SDTallyUpdater`, `Contents/Helpers/SDTallyUpdater`, no network), which the app copies to its own temporary folder: the executor validates its arguments, waits for the app's process to exit, checks the signature again, replaces the SDTally app with `replaceItemAt`, unmounts the DMG and reopens the app. A way to make it install something else, install without the click, reach another host, send data about the disk, or make the executor touch a path other than the SDTally app is in scope.
 - **Running as root via the administrator password** (`osascript ... with administrator privileges`) in the app.
-- **Anything that would make SDTally delete, move or modify user data**, or use the network. Both are design violations.
+- **Anything that would make SDTally delete, move or modify user data**, or use the network for anything other than updates. Both are design violations.
 - **Redaction** (`--redact names`, MCP, exports): a case where the user name or a personal folder name leaks through redacted output.
 - **The MCP server** (`sdtally --mcp`): for example, text from disk escaping the data boundary in a way that could instruct an AI agent.
 
