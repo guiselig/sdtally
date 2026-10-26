@@ -1,7 +1,7 @@
 #!/bin/sh
 # Publica uma versão: monta o .app assinado, gera o DMG e cria o release no GitHub, que é onde o botão
 # "Ver versões novas" das Configurações leva (o app não acessa a rede).
-#   scripts/publicar.sh    usa a versão do Cargo.toml; recusa pré-lançamento (0.1.0-dev etc.)
+#   scripts/publicar.sh [novidades.md]    usa a versão do Cargo.toml; recusa pré-lançamento (0.1.0-dev etc.)
 # Precisa de: gh autenticado, dmgbuild (pipx install dmgbuild), árvore limpa e HEAD igual ao
 # origin/main (a tag aponta para ele).
 set -eu
@@ -31,9 +31,22 @@ sha=$(shasum -a 256 "$dmg" | cut -d" " -f1)
 # Releases da página do repositório.
 titulo="SDTally $versao"
 case $versao in 0.*) titulo="$titulo (beta)" ;; esac
+# Notas escritas à mão (o --generate-notes só listava PRs, inclusive do dependabot): o arquivo
+# opcional do 1º argumento entra como "What's new"; o link de comparação vem da tag anterior.
+novidades=""
+[ $# -ge 1 ] && novidades=$(cat "$1")
+anterior=$(git -C "$repo" describe --tags --abbrev=0 "$head^" 2>/dev/null || true)
+comparar=""
+[ -n "$anterior" ] && comparar="**Full Changelog**: https://github.com/guiselig/sdtally/compare/$anterior...v$versao"
 gh release create "v$versao" "$dmg" -R guiselig/sdtally --target "$head" --title "$titulo" --latest \
-    --generate-notes --notes "Download **SDTally-$versao.dmg**, open it and drag SDTally to Applications. Requires Apple Silicon and macOS 15 or later.
+    --notes "Download **SDTally-$versao.dmg**, open it and drag SDTally to Applications. Requires Apple Silicon and macOS 15 or later.
 
 SDTally is not notarized by Apple. On first launch, open System Settings > Privacy & Security and click \"Open Anyway\".
 
-SHA-256 of the DMG: \`$sha\` (check with \`shasum -a 256 SDTally-$versao.dmg\`)."
+SHA-256 of the DMG: \`$sha\` (check with \`shasum -a 256 SDTally-$versao.dmg\`).
+
+$novidades
+
+If SDTally helps you, a ⭐ on [GitHub](https://github.com/guiselig/sdtally) helps other people find it.
+
+$comparar"
