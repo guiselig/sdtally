@@ -196,9 +196,9 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
     #expect(causas(top: [outro], swap: nil, fichas: nil, home: "/Users/exemplo").map(\.nome) == ["File Provider"])
     outro.label = nil
     #expect(causas(top: [outro], swap: nil, fichas: nil, home: "/Users/exemplo").map(\.nome) == ["File Provider"])
-    // Sem `label`, o caminho.
+    // Sem `label` e fora de FileProvider: o nome curto (a pasta do app em Application Support).
     let sem = linhaTop("~/Library/Application Support/Outro", 2_000_000_000)
-    #expect(causas(top: [sem], swap: nil, fichas: nil, home: "/Users/exemplo").map(\.nome) == ["~/Library/Application Support/Outro"])
+    #expect(causas(top: [sem], swap: nil, fichas: nil, home: "/Users/exemplo").map(\.nome) == ["Outro"])
 }
 
 @Test func pastaDobradaEmCaminhoComTil() {

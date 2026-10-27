@@ -49,6 +49,14 @@ final class Painel {
     /// `purgVivo`, `rapidoVivo`), não toda tela que lê o `rapido`.
     var usoAgora: Int64?
     var swapAgora: Swap?
+    /// Apelidos das pastas (Apelidos). Observável: a lista muda na hora em que o dono dá ou tira um.
+    private(set) var apelidos = Apelidos.todos()
+
+    /// Vazio apaga. Grava nas preferências e atualiza as telas que usam `apelidos`.
+    func darApelido(_ apelido: String?, para caminho: String) {
+        Apelidos.definir(apelido, para: caminho)
+        apelidos = Apelidos.todos()
+    }
     /// Purgeable lido no app (CacheDelete por serviço); nil depois de uma leitura do sdtally, que é
     /// tão nova quanto ele.
     var purgAgora: Purgavel?

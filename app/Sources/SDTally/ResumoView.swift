@@ -14,7 +14,7 @@ struct CartaoInicio: View {
     var body: some View {
         let c = painel.dados
         let fichas = c?.cards ?? painel.catalogo?.cards
-        let cs = c.map { causas(top: $0.top, swap: $0.swap, fichas: fichas, home: $0.home) } ?? []
+        let cs = c.map { causas(top: $0.top, swap: $0.swap, fichas: fichas, home: $0.home, apelidos: painel.apelidos) } ?? []
         if painel.rapido?.fullDiskAccess == false {
             Faixa(simbolo: "lock.trianglebadge.exclamationmark", texto: String(localized: "Sem Acesso Total ao Disco")) {
                 Button("Abrir Permissões") { painel.secao = .permissoes }
@@ -79,7 +79,7 @@ struct Heroi: View {
     var body: some View {
         let c = painel.completo
         let fichas = c?.cards ?? painel.catalogo?.cards
-        let cs = c.map { causas(top: $0.top, swap: $0.swap, fichas: fichas, home: $0.home) } ?? []
+        let cs = c.map { causas(top: $0.top, swap: $0.swap, fichas: fichas, home: $0.home, apelidos: painel.apelidos) } ?? []
         let manchete = manchete(advice: c?.advice, tm: c?.informational?.timeMachine,
                                 snapshots: c?.advice?.first { $0.id == "tm_backup_stuck" }?.bytes,
                                 causas: cs, usado: c?.dataVolume.used.bytes)

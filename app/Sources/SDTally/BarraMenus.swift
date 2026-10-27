@@ -260,7 +260,7 @@ struct BarraMenusView: View {
     @ViewBuilder private var maisOcupam: some View {
         if let c = painel.autoVivo ?? painel.completo {
             let fichas = c.cards ?? painel.catalogo?.cards
-            let cinco = causas(top: c.top, swap: c.swap, fichas: fichas, home: c.home).prefix(5)
+            let cinco = causas(top: c.top, swap: c.swap, fichas: fichas, home: c.home, apelidos: painel.apelidos).prefix(5)
             if !cinco.isEmpty {
                 separador
                 cabecalho(String(localized: "O que mais ocupa"))
