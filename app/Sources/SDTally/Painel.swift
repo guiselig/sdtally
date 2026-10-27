@@ -859,14 +859,14 @@ final class Painel {
     // MARK: Avisos
 
     /// O aviso que o ícone e a janela da barra mostram: só a condição, sem histerese.
-    var avisoAtivo: Aviso? { aviso(pontos: pontos, agora: .now, ultimo: [:]) }
+    var avisoAtivo: Aviso? { aviso(pontos: pontos, agora: .now, ultimo: [:], limites: .ler(), swap: swapVivo?.used) }
 
     /// Com ponto novo: registra o aviso (um de cada tipo a cada 24 h) e notifica se o dono pediu.
     private func avisar() {
         let d = UserDefaults.standard
         var ultimo: [Aviso.Tipo: Date] = [:]
         for t in Aviso.Tipo.allCases { ultimo[t] = d.object(forKey: "ultimoAviso." + t.rawValue) as? Date }
-        guard let a = aviso(pontos: pontos, agora: .now, ultimo: ultimo) else { return }
+        guard let a = aviso(pontos: pontos, agora: .now, ultimo: ultimo, limites: .ler(), swap: swapVivo?.used) else { return }
         d.set(Date.now, forKey: "ultimoAviso." + a.tipo.rawValue)
         guard d.bool(forKey: "notificar"), !Dev.ativo else { return }
         let (titulo, corpo) = a.textos()

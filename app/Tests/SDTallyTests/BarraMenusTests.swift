@@ -103,7 +103,39 @@ private func ponto(_ horas: Double, usado: Int64, purgeable: Int64 = 0, livre: I
     #expect(aviso(pontos: [ponto(0, usado: 1, purgeable: 100_000_000_000, livre: 50_000_000_000, total: total)], agora: agora, ultimo: [:]) == nil)
     let a = try #require(aviso(pontos: [ponto(0, usado: 1, purgeable: 30_000_000_000, livre: 50_000_000_000, total: total)], agora: agora, ultimo: [:]))
     #expect(a.tipo == .poucoEspaco && a.bytes == 80_000_000_000)
-    #expect(a.textos().titulo == "Restam 8 % do disco livres, contando o que o macOS libera sozinho.")
+    #expect(a.textos().titulo == "Restam 80,0 GB livres (8 % do disco), contando o que o macOS libera sozinho.")
+}
+
+/// Limite fixo em GB (Configurações): 80 GB livres em 1 TB passam dos 10 %, mas não dos 100 GB.
+@Test func poucoEspacoComLimiteEmGB() {
+    let p = [ponto(0, usado: 1, purgeable: 0, livre: 80_000_000_000, total: 1_000_000_000_000)]
+    #expect(aviso(pontos: p, agora: agora, ultimo: [:], limites: .init(poucoEspacoGB: 100, swapGB: 0))?.tipo == .poucoEspaco)
+    #expect(aviso(pontos: p, agora: agora, ultimo: [:], limites: .init(poucoEspacoGB: 50, swapGB: 0)) == nil)
+    // 0 = os 10 % de antes: 120 GB livres em 1 TB não avisam.
+    let folga = [ponto(0, usado: 1, livre: 120_000_000_000)]
+    #expect(aviso(pontos: folga, agora: agora, ultimo: [:], limites: .init(poucoEspacoGB: 0, swapGB: 0)) == nil)
+}
+
+/// Swap em uso acima do limite: avisa que reiniciar devolve o espaço; 0 desliga; histerese de 24 h.
+@Test func avisoDeReiniciarPeloSwap() throws {
+    let p = [ponto(0, usado: 1)]
+    let lim = LimitesAviso(poucoEspacoGB: 0, swapGB: 20)
+    #expect(aviso(pontos: p, agora: agora, ultimo: [:], limites: lim, swap: 19_000_000_000) == nil)
+    let a = try #require(aviso(pontos: p, agora: agora, ultimo: [:], limites: lim, swap: 25_000_000_000))
+    #expect(a.tipo == .reiniciar && a.bytes == 25_000_000_000)
+    #expect(a.textos().titulo == "O Mac está usando 25,0 GB do disco como memória.")
+    #expect(aviso(pontos: p, agora: agora, ultimo: [.reiniciar: agora.addingTimeInterval(-3600)], limites: lim, swap: 25_000_000_000) == nil)
+    #expect(aviso(pontos: p, agora: agora, ultimo: [:], limites: .init(poucoEspacoGB: 0, swapGB: 0), swap: 90_000_000_000) == nil)
+    // Sem ponto no histórico, o swap ao vivo ainda avisa.
+    #expect(aviso(pontos: [], agora: agora, ultimo: [:], limites: lim, swap: 25_000_000_000)?.tipo == .reiniciar)
+}
+
+@Test func limitesPadraoSemNadaGravado() throws {
+    let d = try #require(UserDefaults(suiteName: "limites-teste-\(UUID())"))
+    #expect(LimitesAviso.ler(d) == .padrao)
+    d.set(0, forKey: LimitesAviso.chaveSwap)
+    d.set(10, forKey: LimitesAviso.chavePoucoEspaco)
+    #expect(LimitesAviso.ler(d) == LimitesAviso(poucoEspacoGB: 10, swapGB: 0))
 }
 
 @Test func crescimentoDescontaPurgeable() {

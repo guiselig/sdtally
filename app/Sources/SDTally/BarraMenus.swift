@@ -1,15 +1,15 @@
 // Barra de menus e avisos (spec-fase5 §2.5 e §4.2). Dono: A6. API estável:
 //   BarraMenusView()   lê Painel do ambiente; 330 pt de largura; no padrão dos menus da Apple
 //   RotuloBarra()      o livre, o liberado automaticamente ou só o glifo (chave rotuloBarra); triângulo com aviso
-//   aviso(pontos:agora:ultimo:) -> Aviso?   pura; `ultimo` vazio = só a condição, sem histerese
+//   aviso(pontos:agora:ultimo:limites:swap:) -> Aviso?   pura; `ultimo` vazio = só a condição, sem histerese
 import Charts
 import SwiftUI
 
 /// Aviso do ícone e da notificação. Crescimento leva a hora real do ponto de comparação.
 nonisolated struct Aviso: Sendable, Equatable {
-    enum Tipo: String, Sendable, CaseIterable { case crescimento, poucoEspaco = "pouco_espaco" }
+    enum Tipo: String, Sendable, CaseIterable { case crescimento, poucoEspaco = "pouco_espaco", reiniciar }
     let tipo: Tipo
-    /// Crescimento: Δ de (usado − purgeable). Pouco espaço: livre + purgeable.
+    /// Crescimento: Δ de (usado − purgeable). Pouco espaço: livre + purgeable. Reiniciar: swap em uso.
     let bytes: Int64
     /// Crescimento: hora do ponto de comparação. Pouco espaço: nil.
     let desde: Date?
@@ -31,23 +31,53 @@ nonisolated struct Aviso: Sendable, Equatable {
             }
             return (titulo, String(localized: "Abra o SDTally para ver o que cresceu."))
         case .poucoEspaco:
-            return (String(localized: "Restam \(Int(((fracao ?? 0) * 100).rounded(.down))) % do disco livres, contando o que o macOS libera sozinho."),
+            // Com limite em GB (Configurações), o número em GB diz mais que a porcentagem.
+            return (String(localized: "Restam \(gb1(bytes)) livres (\(Int(((fracao ?? 0) * 100).rounded(.down))) % do disco), contando o que o macOS libera sozinho."),
                     String(localized: "Veja em O que fazer o que dá para liberar."))
+        case .reiniciar:
+            return (String(localized: "O Mac está usando \(gb1(bytes)) do disco como memória."),
+                    String(localized: "Reiniciar devolve esse espaço. Salve o que estiver aberto antes."))
         }
     }
 }
 
-/// Pouco espaço: (livre + purgeable) / total < 10 % no último ponto. Crescimento: (usado − purgeable)
-/// do último ponto menos o do ponto mais perto de 24 h, só entre 20 e 28 h atrás, ≥ 10 GB.
-/// Histerese: um tipo avisado há menos de 24 h (`ultimo[tipo]`) não volta.
-nonisolated func aviso(pontos: [Ponto], agora: Date, ultimo: [Aviso.Tipo: Date]) -> Aviso? {
-    guard let atual = pontos.last else { return nil }
-    let bloqueado = { (t: Aviso.Tipo) in ultimo[t].map { agora.timeIntervalSince($0) < 86_400 } ?? false }
-    if !bloqueado(.poucoEspaco), let total = atual.total, total > 0, let livre = atual.livre {
-        let sobra = livre + (atual.purgeable ?? 0)
-        let f = Double(sobra) / Double(total)
-        if f < 0.10 { return Aviso(tipo: .poucoEspaco, bytes: sobra, desde: nil, fracao: f) }
+/// Limites escolhidos em Configurações (dono, 27/10). Pouco espaço: 0 = 10 % do total; senão GB
+/// fixos para livre + purgeable. Swap: 0 = sem aviso de reiniciar; senão GB de swap em uso.
+nonisolated struct LimitesAviso: Sendable, Equatable {
+    static let chavePoucoEspaco = "limitePoucoEspacoGB", chaveSwap = "limiteSwapGB"
+    static let padrao = LimitesAviso(poucoEspacoGB: 0, swapGB: 20)
+    var poucoEspacoGB: Int
+    var swapGB: Int
+
+    /// Sem nada gravado vale o padrão (o UserDefaults devolve 0 para chave ausente).
+    static func ler(_ d: UserDefaults = .standard) -> LimitesAviso {
+        LimitesAviso(poucoEspacoGB: d.integer(forKey: chavePoucoEspaco),
+                     swapGB: d.object(forKey: chaveSwap) == nil ? padrao.swapGB : d.integer(forKey: chaveSwap))
     }
+
+    func poucoEspaco(sobra: Int64, total: Int64) -> Bool {
+        poucoEspacoGB > 0 ? sobra < Int64(poucoEspacoGB) * 1_000_000_000 : Double(sobra) / Double(total) < 0.10
+    }
+}
+
+/// Pouco espaço: livre + purgeable abaixo do limite (padrão 10 % do total) no último ponto.
+/// Reiniciar: swap em uso (`swap`, ao vivo) ≥ o limite; o reinício devolve esse espaço.
+/// Crescimento: (usado − purgeable) do último ponto menos o do ponto mais perto de 24 h, só entre
+/// 20 e 28 h atrás, ≥ 10 GB. Histerese: um tipo avisado há menos de 24 h (`ultimo[tipo]`) não volta.
+nonisolated func aviso(pontos: [Ponto], agora: Date, ultimo: [Aviso.Tipo: Date],
+                       limites: LimitesAviso = .padrao, swap: Int64? = nil) -> Aviso? {
+    let bloqueado = { (t: Aviso.Tipo) in ultimo[t].map { agora.timeIntervalSince($0) < 86_400 } ?? false }
+    let atual = pontos.last
+    if !bloqueado(.poucoEspaco), let atual, let total = atual.total, total > 0, let livre = atual.livre {
+        let sobra = livre + (atual.purgeable ?? 0)
+        if limites.poucoEspaco(sobra: sobra, total: total) {
+            return Aviso(tipo: .poucoEspaco, bytes: sobra, desde: nil, fracao: Double(sobra) / Double(total))
+        }
+    }
+    if !bloqueado(.reiniciar), limites.swapGB > 0, let swap, swap >= Int64(limites.swapGB) * 1_000_000_000 {
+        return Aviso(tipo: .reiniciar, bytes: swap, desde: nil, fracao: nil)
+    }
+    guard let atual else { return nil }
     guard !bloqueado(.crescimento), let u = atual.usado else { return nil }
     var perto: (d: Date, valor: Int64)?
     // Do mais novo para o mais antigo, parando antes de 28 h: lê poucas datas.
