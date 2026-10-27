@@ -5,16 +5,16 @@
 import AppKit
 
 nonisolated enum ItemContexto: Equatable {
-    case abrir, novaJanela, medir, parar(ativo: Bool), configuracoes, separador, sair
+    case abrir, novaJanela, medir, parar(ativo: Bool), mostrarNaBarra, configuracoes, separador, sair
 }
 
 /// Dock: Nova janela e a medição (o macOS põe Opções, Mostrar e Sair). Barra: Abrir, a medição,
-/// Configurações e Sair. A medição segue o botão principal; com o Automático com root não há
+/// o que mostrar no ícone, Configurações e Sair. A medição segue o botão principal; com o Automático com root não há
 /// medição manual, e pelo osascript ela não para (Parar desligado).
 nonisolated func itensContexto(barra: Bool, medindo: Bool, podeParar: Bool, soAuto: Bool) -> [ItemContexto] {
     var i: [ItemContexto] = [barra ? .abrir : .novaJanela]
     if medindo { i.append(.parar(ativo: podeParar)) } else if !soAuto { i.append(.medir) }
-    if barra { i += [.configuracoes, .separador, .sair] }
+    if barra { i += [.mostrarNaBarra, .configuracoes, .separador, .sair] }
     return i
 }
 
@@ -30,6 +30,7 @@ enum MenuContexto {
             // Abre a janela em Dados do Sistema, onde fica o cronômetro.
             case .medir: m.addItem(novoItem(String(localized: "Medição completa")) { p.medirComSenha(); p.mostrar(.sistema) })
             case .parar(let ativo): m.addItem(novoItem(String(localized: "Parar medição"), ativo: ativo) { p.parar() })
+            case .mostrarNaBarra: m.addItem(itemMostrarNaBarra())
             case .configuracoes: m.addItem(novoItem(String(localized: "Configurações…"), tecla: ",") { p.mostrar(.permissoes) })
             case .separador: m.addItem(.separator())
             case .sair: m.addItem(novoItem(String(localized: "Sair do SDTally"), tecla: "q") { NSApp.terminate(nil) })
@@ -59,6 +60,20 @@ private final class AlvoMenu: NSObject {
 private final class Acao {
     let bloco: () -> Void
     init(_ bloco: @escaping () -> Void) { self.bloco = bloco }
+}
+
+/// Submenu com as opções do rótulo do ícone, marcada a atual; grava a mesma chave do Picker de Configurações.
+private func itemMostrarNaBarra() -> NSMenuItem {
+    let atual = UserDefaults.standard.string(forKey: "rotuloBarra") ?? "livre"
+    let sub = NSMenu()
+    for o in opcoesRotuloBarra {
+        let i = novoItem(o.nome) { UserDefaults.standard.set(o.chave, forKey: "rotuloBarra") }
+        i.state = o.chave == atual ? .on : .off
+        sub.addItem(i)
+    }
+    let item = NSMenuItem(title: String(localized: "Mostrar na barra"), action: nil, keyEquivalent: "")
+    item.submenu = sub
+    return item
 }
 
 /// `tecla`: o atalho com ⌘ mostrado à direita, como nos menus do sistema ("Settings… ⌘,").

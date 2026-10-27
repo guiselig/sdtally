@@ -1,6 +1,6 @@
 // Barra de menus e avisos (spec-fase5 §2.5 e §4.2). Dono: A6. API estável:
 //   BarraMenusView()   lê Painel do ambiente; 330 pt de largura; no padrão dos menus da Apple
-//   RotuloBarra()      o livre, o liberado automaticamente ou só o glifo (chave rotuloBarra); triângulo com aviso
+//   RotuloBarra()      livre, liberado automaticamente, Dados do Sistema, usado de total ou só o glifo (chave rotuloBarra); triângulo com aviso
 //   aviso(pontos:agora:ultimo:limites:swap:) -> Aviso?   pura; `ultimo` vazio = só a condição, sem histerese
 import Charts
 import SwiftUI
@@ -110,8 +110,24 @@ nonisolated func gb1(_ bytes: Int64) -> String {
 
 // MARK: - Rótulo
 
-/// O que o ícone da barra mostra ("O que mostrar", em Permissões e aparência): o livre (padrão),
-/// o liberado automaticamente ou só o glifo. Com aviso, o triângulo vem antes. Dados do Sistema nunca vai aqui.
+/// As opções da chave rotuloBarra, na ordem do Picker de Configurações e do submenu do clique direito.
+let opcoesRotuloBarra: [(chave: String, nome: String)] = [
+    ("livre", String(localized: "Espaço livre")),
+    ("liberado", String(localized: "Liberado automaticamente")),
+    ("sistema", String(localized: "Dados do Sistema")),
+    ("usado", String(localized: "Usado de total")),
+    ("icone", String(localized: "Só o ícone")),
+]
+
+/// "312 / 494 GB": usado e total em GB inteiros, para caber na barra.
+nonisolated func usadoDeTotal(usado: Int64, total: Int64) -> String {
+    let n = { (b: Int64) in (Double(b) / 1e9).formatted(.number.precision(.fractionLength(0)).locale(localApp)) }
+    return "\(n(usado)) / \(n(total)) GB"
+}
+
+/// O que o ícone da barra mostra (Configurações › Comportamento e o clique direito no ícone): o
+/// livre (padrão), o liberado automaticamente, Dados do Sistema, o usado de total ou só o glifo.
+/// Com aviso, o triângulo vem antes.
 struct RotuloBarra: View {
     @Environment(Painel.self) private var painel
     @AppStorage("rotuloBarra") private var mostrar = "livre"
@@ -134,6 +150,11 @@ struct RotuloBarra: View {
             switch mostrar {
             case "icone": EmptyView()
             case "liberado": Text(painel.purgVivo?.bytes.map(gb) ?? "—").monospacedDigit()
+            case "sistema": Text(sistemaBarra(tela: painel.telaBoa?.tela, pontos: painel.pontos).map { gb($0.bytes) } ?? "—").monospacedDigit()
+            case "usado":
+                if let u = painel.usoVivo?.bytes, let t = painel.rapido?.capacity?.total {
+                    Text(usadoDeTotal(usado: u, total: t)).monospacedDigit()
+                } else { Text(verbatim: "—") }
             default: Text((painel.livre ?? painel.rapido?.capacity?.free).map(gb) ?? "—").monospacedDigit()
             }
         }
@@ -224,7 +245,8 @@ struct BarraMenusView: View {
                 case .configuracoes: AcaoMenu(titulo: String(localized: "Configurações…"), tecla: "⌘,") { painel.mostrar(.permissoes) }
                 case .separador: separador
                 case .sair: AcaoMenu(titulo: String(localized: "Sair do SDTally"), tecla: "⌘Q") { NSApp.terminate(nil) }
-                case .abrir, .novaJanela: EmptyView()
+                // O rótulo do ícone muda no clique direito (MenuContexto) e em Configurações.
+                case .abrir, .novaJanela, .mostrarNaBarra: EmptyView()
                 }
             }
             Color.clear.frame(height: 6)

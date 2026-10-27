@@ -46,6 +46,7 @@ struct PermissoesView: View {
                 ToggleBarraDeMenus()
                 PickerRotuloBarra()
                 ToggleNotificar()
+                PickerLimitesAviso()
                 ToggleIniciarSessao()
             }
             Section("Atualização automática") {
@@ -247,11 +248,29 @@ struct PickerRotuloBarra: View {
 
     var body: some View {
         Picker("Na barra de menus, mostrar", selection: $mostrar) {
-            Text("Espaço livre").tag("livre")
-            Text("Liberado automaticamente").tag("liberado")
-            Text("Só o ícone").tag("icone")
+            ForEach(opcoesRotuloBarra, id: \.chave) { Text($0.nome).tag($0.chave) }
         }
         .disabled(!barraDeMenus)
+    }
+}
+
+/// Quando avisar (no ícone e, com a notificação ligada, também por ela). Chaves da lógica dos avisos (UX):
+/// limitePoucoEspacoGB, 0 = 10 % do disco; limiteSwapGB, 0 = desligado.
+struct PickerLimitesAviso: View {
+    @AppStorage(LimitesAviso.chavePoucoEspaco) private var poucoEspaco = LimitesAviso.padrao.poucoEspacoGB
+    @AppStorage(LimitesAviso.chaveSwap) private var swap = LimitesAviso.padrao.swapGB
+
+    var body: some View {
+        Picker("Avisar com pouco espaço abaixo de", selection: $poucoEspaco) {
+            Text("10 % do disco").tag(0)
+            ForEach([5, 10, 20, 50, 100], id: \.self) { Text(verbatim: "\($0) GB").tag($0) }
+        }
+        .help(String(localized: "Conta o espaço livre mais o que o macOS libera sozinho."))
+        Picker("Avisar para reiniciar com swap acima de", selection: $swap) {
+            Text("Desligado").tag(0)
+            ForEach([10, 20, 40], id: \.self) { Text(verbatim: "\($0) GB").tag($0) }
+        }
+        .help(String(localized: "O Mac usa parte do disco como memória (swap). Reiniciar devolve esse espaço."))
     }
 }
 
@@ -259,7 +278,7 @@ struct PickerRotuloBarra: View {
 struct ToggleNotificar: View {
     @AppStorage("notificar") private var notificar = false
     var explicar = false
-    static let serve = String(localized: "Notifica quando o disco cresce 10 GB em um dia ou fica com menos de 10 % livre. Sem ela, o aviso aparece só no ícone.")
+    static let serve = String(localized: "Notifica quando o disco cresce 10 GB em um dia, fica com pouco espaço livre ou o Mac usa muito disco como memória. Sem ela, o aviso aparece só no ícone.")
 
     var body: some View {
         Toggle(isOn: $notificar) { Rotulo(String(localized: "Avisar com notificação"), Self.serve, explicar, simbolo: "bell") }
