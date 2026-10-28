@@ -1,4 +1,4 @@
-// Nomes das pastas: apelido do dono, bibliotecas conhecidas e nome curto (Causas.swift).
+// Nomes das pastas: apelido do dono ou o caminho (Causas.swift).
 import Foundation
 import Testing
 @testable import SDTally
@@ -15,18 +15,9 @@ private func linha(_ p: String, _ bytes: Int64 = 5_000_000_000) -> LinhaTop {
     #expect(cs.first?.caminho == p)  // o caminho real continua na causa
 }
 
-@Test func bibliotecaConhecidaTemNome() {
-    let cs = causas(top: [linha("~/Music/Music/Media.localized")], swap: nil, fichas: nil, home: "/Users/exemplo", apelidos: [:])
-    #expect(cs.map(\.nome) == ["Biblioteca do app Música"])
-}
-
-@Test func nomeCurtoUsaAppDonoOuPastaMae() {
-    #expect(nomeCurto("~/Library/Application Support/Claude/a/b/Docs/session", home: "/Users/exemplo") == "Claude › session")
-    #expect(nomeCurto("~/Library/Caches/com.exemplo.app/fsCachedData", home: "/Users/exemplo") == "com.exemplo.app › fsCachedData")
-    #expect(nomeCurto("/opt/exemplo/dados/grande", home: "/Users/exemplo") == "dados › grande")
-    #expect(nomeCurto("~/Library/Application Support/Outro", home: "/Users/exemplo") == "Outro")
-    // Curto demais para cortar: o caminho como está.
-    #expect(nomeCurto("/opt/x", home: "/Users/exemplo") == "/opt/x")
+@Test func pastaSemFichaMostraOCaminho() {
+    let p = "~/Music/Music/Media.localized"
+    #expect(causas(top: [linha(p)], swap: nil, fichas: nil, home: "/Users/exemplo", apelidos: [:]).map(\.nome) == [p])
 }
 
 @Test func definirApelidoLimpaECorta() throws {

@@ -1,7 +1,7 @@
 // Causas do Início (spec-inicio §3 B2, B3, B5, B6): as linhas do `top` agrupadas pela ficha, a
 // linha do Ajustes em que cada uma cai, a manchete, a barra do disco e o passo seguro. Só funções
 // puras, nonisolated e testadas (ResumoTests). API estável:
-//   Causa, causas(top:swap:fichas:home:apelidos:), conselho(de:em:), Apelidos, nomeCurto(_:home:)
+//   Causa, causas(top:swap:fichas:home:apelidos:), conselho(de:em:), Apelidos
 //   segmentosDisco(_:top:containers:), seguro(advice:cinco:)
 //   Manchete, manchete(advice:tm:snapshots:causas:usado:), purgavelNoAjustes(tela:livre:purg:)
 import AppKit
@@ -84,36 +84,10 @@ nonisolated enum Apelidos {
     }
 }
 
-/// Bibliotecas grandes dos apps da Apple, que pelo caminho parecem pastas soltas ("Media.localized").
-private nonisolated let nomesConhecidos: [String: @Sendable () -> String] = [
-    "~/Music/Music/Media.localized": { String(localized: "Biblioteca do app Música") },
-    "~/Music/iTunes/iTunes Media": { String(localized: "Biblioteca do app Música") },
-    "~/Movies/TV/Media.localized": { String(localized: "Biblioteca do app TV") },
-    "~/Pictures/Photos Library.photoslibrary": { String(localized: "Biblioteca do app Fotos") },
-    "~/Library/Messages/Attachments": { String(localized: "Anexos do app Mensagens") },
-    "~/Library/Mail": { String(localized: "E-mails do app Mail") },
-    "~/Library/Application Support/MobileSync/Backup": { String(localized: "Backups do iPhone e do iPad") },
-]
-
-/// Nome curto de uma pasta sem nome melhor: o app dono em Application Support e Caches
-/// ("Claude › session"); senão a pasta mãe e a pasta, com o nome do Finder ("Music › Media").
-/// O caminho inteiro continua em `Causa.caminho`.
-nonisolated func nomeCurto(_ p: String, home: String) -> String {
-    for pre in ["~/Library/Application Support/", "~/Library/Caches/"] where p.hasPrefix(pre) {
-        let resto = p.dropFirst(pre.count).split(separator: "/")
-        if resto.count == 1 { return visivel(String(resto[0])) }  // a pasta inteira do app: o nome dele
-        if let ultimo = resto.last, resto.count >= 2 { return visivel("\(resto[0]) › \(ultimo)") }
-    }
-    let url = URL(fileURLWithPath: absoluto(p, home: home))
-    let pai = url.deletingLastPathComponent()
-    guard p.split(separator: "/").count >= 3, pai.path != "/" else { return visivel(p) }
-    let fm = FileManager.default
-    return visivel("\(fm.displayName(atPath: pai.path)) › \(fm.displayName(atPath: url.path))")
-}
-
 /// Apelido do dono; termo com contagem; senão o provedor do File Provider (`label`), o título do conselho, o `what` da ficha
-/// sem o ponto final (fora `user_folder`, que fala de seis pastas), as bibliotecas conhecidas, o nome do Finder de uma pasta
-/// direta da home ("Música"), "File Provider" para FileProvider/<uuid> sem `label` ou o nome curto (nomeCurto).
+/// sem o ponto final (fora `user_folder`, que fala de seis pastas), o nome do Finder de uma pasta direta da home
+/// ("Música"), "File Provider" para FileProvider/<uuid> sem `label` ou o caminho inteiro. Pasta sem ficha não ganha
+/// nome inventado: o dono dá um apelido se quiser (dono, 28/10).
 private nonisolated func nomeCausa(_ l: LinhaTop, fichas: MapaFichas?, home: String, apelidos: [String: String]) -> String {
     if let p = l.path, let a = apelidos[p] { return visivel(a) }
     if ["snapshots", "deleted_open", "large_xattrs", "apfs_metadata"].contains(l.term) {
@@ -123,12 +97,11 @@ private nonisolated func nomeCausa(_ l: LinhaTop, fichas: MapaFichas?, home: Str
     if let t = l.card.flatMap(tituloConselho) { return t }
     if l.card != "user_folder", let w = fichas?[l.card]?.what.texto { return w.hasSuffix(".") ? String(w.dropLast()) : w }
     guard let p = l.path else { return nomeTermo(l.term) }
-    if let n = nomesConhecidos[p] { return n() }
     // JSON sem `label` (anterior ao campo ou de outro Mac): o UUID não diz nada ao usuário.
     let fp = "~/Library/Application Support/FileProvider/"
     if p.hasPrefix(fp), !p.dropFirst(fp.count).contains("/") { return "File Provider" }
     if p.hasPrefix("~/"), !p.dropFirst(2).contains("/") { return FileManager.default.displayName(atPath: absoluto(p, home: home)) }
-    return nomeCurto(p, home: home)
+    return visivel(p)
 }
 
 /// Conselho da causa: o mesmo `card`; senão o que lista o caminho; senão o mesmo termo (fora tree
