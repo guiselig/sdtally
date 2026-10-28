@@ -18127,6 +18127,220 @@
         }
       }
     },
+    "10 % do disco" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10% of the disk"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10% من القرص"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % del disc"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % disku"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % af disken"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % der Festplatte"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10% του δίσκου"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % del disco"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % del disco"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % levystä"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % du disque"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10% מהכונן"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिस्क का 10 %"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % diska"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "a lemez 10%-a"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % dari disk"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % del disco"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクの10％"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "디스크의 10%"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % cakera"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % av disken"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10% van de schijf"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % dysku"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % do disco"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10% din disc"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % диска"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % disku"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % diska"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % av disken"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % ของดิสก์"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diskin %10'u"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % диска"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 % ổ đĩa"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "磁盘的 10 %"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "磁碟的 10%"
+          }
+        }
+      }
+    },
     "30 dias" : {
       "localizations" : {
         "ar" : {
@@ -36745,6 +36959,434 @@
         }
       }
     },
+    "Avisar com pouco espaço abaixo de" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warn about low space below"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التنبيه عند انخفاض المساحة عن"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avisa si l’espai és inferior a"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozornit při volném místě pod"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advar ved lav ledig plads under"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warnen bei weniger freiem Speicherplatz als"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προειδοποίηση για λίγο χώρο κάτω από"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avisar con poco espacio por debajo de"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avisar con poco espacio por debajo de"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varoita, kun vapaata tilaa on alle"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prévenir si l’espace libre est inférieur à"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שלח התראה כשהשטח הפנוי מתחת ל-"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इससे कम जगह बचने पर चेतावनी दें"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozori kad slobodnog prostora ima manje od"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Figyelmeztetés, ha a szabad hely kevesebb mint"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beri peringatan jika ruang kosong di bawah"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avvisa se lo spazio libero è inferiore a"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "空き容量が次を下回ったら警告"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여유 공간이 다음보다 적으면 경고"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beri amaran jika ruang bebas kurang daripada"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varsle når ledig plass er under"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waarschuwen bij minder vrije ruimte dan"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostrzegaj, gdy wolnego miejsca jest mniej niż"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avisar com pouco espaço abaixo de"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avertizează la spațiu redus sub"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предупреждать, если свободно меньше"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozorniť pri nízkom voľnom mieste pod"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opozori, ko je prostega prostora manj kot"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varna vid lite utrymme under"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เตือนเมื่อพื้นที่ว่างต่ำกว่า"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boş alan şunun altına inince uyar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Попереджати, коли вільно менше ніж"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cảnh báo khi dung lượng trống dưới"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可用空间低于以下值时提醒"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可用空間低於以下值時提醒"
+          }
+        }
+      }
+    },
+    "Avisar para reiniciar com swap acima de" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggest a restart when swap is above"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التنبيه لإعادة التشغيل عندما يتجاوز swap"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avisa de reiniciar si el swap supera"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doporučit restart, když swap přesáhne"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advar om genstart, når swap er over"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neustart empfehlen, wenn Swap über"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προειδοποίηση για επανεκκίνηση με swap πάνω από"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avisar para reiniciar con swap por encima de"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avisar para reiniciar con swap por encima de"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varoita uudelleenkäynnistyksestä, kun swap on yli"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggérer un redémarrage si le swap dépasse"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הצע הפעלה מחדש כש-swap מעל"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इससे ज़्यादा swap होने पर रीस्टार्ट सुझाएँ"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predloži ponovno pokretanje kad swap premaši"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Újraindítás javaslata, ha a swap meghaladja:"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beri peringatan untuk memulai ulang jika swap melebihi"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avvisa di riavviare se lo swap supera"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "swapが次を超えたら再起動を提案"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "swap이 다음을 넘으면 재시동 권장"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beri amaran untuk memulakan semula jika swap melebihi"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foreslå omstart når swap er over"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waarschuwen om opnieuw op te starten bij swap boven"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sugeruj ponowne uruchomienie, gdy swap przekracza"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avisar para reiniciar com swap acima de"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avertizează pentru repornire la swap peste"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предлагать перезагрузку, если swap больше"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozorniť na reštart, keď swap presiahne"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opozori na ponovni zagon, ko swap preseže"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varna för omstart vid swap över"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เตือนให้รีสตาร์ทเมื่อ swap เกิน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swap şunu aşınca yeniden başlatmayı öner"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Радити перезапуск, коли swap понад"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cảnh báo khởi động lại khi swap vượt quá"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "swap 超过以下值时提醒重新启动"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "swap 超過以下值時提醒重新啟動"
+          }
+        }
+      }
+    },
     "Backup do Time Machine sem registro novo" : {
       "localizations" : {
         "en" : {
@@ -51507,6 +52149,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cuenta del volumen de datos"
+          }
+        }
+      }
+    },
+    "Conta o espaço livre mais o que o macOS libera sozinho." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Counts free space plus what macOS frees up on its own."
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يحتسب المساحة الفارغة مع ما يحرره macOS تلقائيًا."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compta l’espai lliure més el que macOS allibera automàticament."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Počítá volné místo a to, co macOS uvolní samo."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tæller ledig plads plus det, macOS frigiver af sig selv."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zählt den freien Speicherplatz plus das, was macOS von selbst freigibt."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Υπολογίζει τον ελεύθερο χώρο μαζί με όσα ελευθερώνει το macOS από μόνο του."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuenta el espacio libre más lo que macOS libera por sí solo."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuenta el espacio libre más lo que macOS libera por sí solo."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laskee vapaan tilan sekä sen, minkä macOS vapauttaa itse."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compte l’espace libre plus ce que macOS libère automatiquement."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "סופר את השטח הפנוי בתוספת מה ש-macOS משחרר בעצמו."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खाली जगह के साथ वह जगह भी गिनी जाती है जो macOS अपने-आप खाली करता है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uključuje slobodni prostor i ono što macOS oslobodi sam."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A szabad helyet és a macOS által magától felszabadított helyet is beleszámítja."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menghitung ruang kosong ditambah yang dibebaskan macOS sendiri."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conta lo spazio libero più quello che macOS libera da solo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "空き容量に、macOSが自動で解放する分を加えて数えます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여유 공간에 macOS가 자동으로 비우는 공간을 더해 계산합니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mengira ruang bebas serta ruang yang dibebaskan macOS secara automatik."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teller ledig plass pluss det macOS frigjør selv."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telt de vrije ruimte plus wat macOS zelf vrijmaakt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liczy wolne miejsce plus to, co macOS zwalnia samodzielnie."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conta o espaço livre mais o que o macOS liberta sozinho."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Include spațiul liber plus ce eliberează macOS singur."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Учитывается свободное место и то, что macOS освобождает сам."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Počíta voľné miesto plus to, čo macOS uvoľní sám."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Šteje prosti prostor in tisto, kar macOS sprosti samodejno."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Räknar ledigt utrymme plus det macOS frigör automatiskt."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "นับพื้นที่ว่างรวมกับส่วนที่ macOS ล้างให้เอง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boş alanı ve macOS'in kendiliğinden boşalttığı alanı sayar."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Враховує вільне місце і те, що macOS звільняє сама."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tính dung lượng trống cộng với phần macOS tự giải phóng."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "计入可用空间，以及 macOS 会自动释放的空间。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "計入可用空間，以及 macOS 會自動釋出的空間。"
           }
         }
       }
@@ -102119,6 +102975,220 @@
         }
       }
     },
+    "Mostrar na barra" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show in Menu Bar"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اعرض في شريط القوائم"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra a la barra"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zobrazovat v řádku nabídek"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis i menulinjen"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In der Menüleiste anzeigen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εμφάνιση στη γραμμή μενού"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar en la barra"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar en la barra"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näytä valikkorivillä"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher dans la barre des menus"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הצג בשורת התפריטים"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मेनू बार में दिखाएँ"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prikaži u traci izbornika"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Megjelenítés a menüsorban"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tampilkan di bilah menu"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra nella barra dei menu"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メニューバーに表示"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "메뉴 막대에 표시"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paparkan dalam bar menu"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vis i menylinjen"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tonen in menubalk"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokaż na pasku menu"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar na barra"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arată în bară"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показывать в строке меню"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zobraziť v lište ponúk"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prikaži v menijski vrstici"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visa i menyraden"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แสดงในแถบเมนู"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü çubuğunda göster"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показувати в рядку меню"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hiển thị trên thanh"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "菜单栏中显示"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選單列顯示"
+          }
+        }
+      }
+    },
     "Mostrar no Finder" : {
       "localizations" : {
         "en" : {
@@ -112605,216 +113675,216 @@
         }
       }
     },
-    "Notifica quando o disco cresce 10 GB em um dia ou fica com menos de 10 % livre. Sem ela, o aviso aparece só no ícone." : {
+    "Notifica quando o disco cresce 10 GB em um dia, fica com pouco espaço livre ou o Mac usa muito disco como memória. Sem ela, o aviso aparece só no ícone." : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Notifies you when the disk grows 10 GB in a day or has less than 10 percent free. Without it, the warning appears only on the icon."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notifica quando il disco cresce di 10 GB in un giorno o scende sotto il 10 % libero. Senza, l’avviso compare solo sull’icona."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сповіщає, коли диск зростає на 10 ГБ за добу або вільно менше ніж 10 % місця. Без цього попередження з’являється лише на піктограмі."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Уведомляет, когда диск вырастает на 10 ГБ за день или свободно меньше 10 %. Без этого предупреждение видно только на значке."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notifierar när disken växer 10 GB på en dag eller har mindre än 10 % ledigt. Utan det visas varningen bara på ikonen."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Giver besked, når disken vokser 10 GB på én dag, eller når der er under 10 % ledigt. Uden den vises advarslen kun på symbolet."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Varsler når disken vokser 10 GB på én dag eller har under 10 % ledig. Uten det vises advarselen bare på symbolet."
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "磁碟一天增加 10 GB，或可用空間少於 10% 時發出通知。沒有它的話，警示只會顯示在圖像上。"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notifica quando o disco cresce 10 GB num dia ou fica com menos de 10 % livre. Sem ela, o aviso aparece só no ícone."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "磁盘一天增长 10 GB 或可用空间少于 10 % 时发送通知。关闭后，提醒只显示在图标上。"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ディスクが1日に10 GB増えたとき、または空きが10％未満になったときに通知します。オフの場合、警告はアイコンにだけ表示されます。"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Upozorní, když disk během dne naroste o 10 GB nebo má volných méně než 10 %. Bez toho se upozornění zobrazí jen na ikoně."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "하루 동안 디스크가 10GB 늘거나 여유 공간이 10퍼센트 미만이 되면 알립니다. 꺼 두면 경고가 아이콘에만 표시됩니다."
+            "value" : "Notifies you when the disk grows by 10 GB in a day, runs low on free space or the Mac uses a lot of disk as memory. Without it, the alert shows only on the icon."
           }
         },
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ينبّه عندما ينمو القرص 10 جيجابايت في يوم واحد أو يتبقى أقل من 10% فارغة. بدونه يظهر التنبيه على الأيقونة فقط."
+            "value" : "ينبّه عندما ينمو القرص 10 جيجابايت في يوم واحد، أو تقل المساحة الفارغة، أو يستخدم Mac جزءًا كبيرًا من القرص كذاكرة. بدونه يظهر التنبيه على الأيقونة فقط."
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Notifica quan el disc creix 10 GB en un dia o li queda menys del 10 % lliure. Sense això, l’avís apareix només a la icona."
+            "value" : "Notifica quan el disc creix 10 GB en un dia, li queda poc espai lliure o el Mac utilitza molt disc com a memòria. Sense això, l’avís apareix només a la icona."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozorní, když disk během dne naroste o 10 GB, zbývá málo volného místa nebo Mac používá hodně disku jako paměť. Bez toho se upozornění zobrazí jen na ikoně."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giver besked, når disken vokser 10 GB på én dag, der er lidt ledig plads, eller Mac'en bruger meget af disken som hukommelse. Uden den vises advarslen kun på symbolet."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Benachrichtigt, wenn die Festplatte an einem Tag um 10 GB wächst oder weniger als 10 % frei sind. Ohne sie erscheint die Warnung nur am Symbol."
+            "value" : "Benachrichtigt, wenn die Festplatte an einem Tag um 10 GB wächst, wenig Speicherplatz frei ist oder der Mac viel Festplatte als Arbeitsspeicher nutzt. Ohne sie erscheint die Warnung nur am Symbol."
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ειδοποιεί όταν η χρήση του δίσκου αυξάνεται κατά 10 GB σε μία ημέρα ή όταν μένει λιγότερο από 10% ελεύθερο. Χωρίς αυτήν, η προειδοποίηση εμφανίζεται μόνο στο εικονίδιο."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ilmoittaa, kun levy kasvaa 10 Gt päivässä tai vapaata on alle 10 %. Ilman sitä varoitus näkyy vain kuvakkeessa."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notifie quand le disque augmente de 10 Go en un jour ou qu’il reste moins de 10 % d’espace libre. Sans notification, l’alerte n’apparaît que sur l’icône."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "שולח התראה כשהכונן גדל ב-10 GB ביום אחד או נשאר עם פחות מ-10% פנויים. בלעדיה, ההתראה מופיעה רק בסמל."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "डिस्क एक दिन में 10 GB बढ़ने या 10 % से कम खाली बचने पर सूचित करता है। इसके बिना चेतावनी सिर्फ़ आइकॉन पर दिखती है।"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Šalje obavijest kad disk naraste 10 GB u jednom danu ili kad slobodno ostane manje od 10 %. Bez toga se upozorenje pojavljuje samo na ikoni."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Memberi notifikasi saat disk bertambah 10 GB dalam sehari atau sisa ruang kosong kurang dari 10 %. Tanpa ini, peringatan hanya muncul di ikon."
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Memberi pemberitahuan apabila cakera bertambah 10 GB dalam sehari atau tinggal kurang daripada 10 % bebas. Tanpanya, amaran hanya muncul pada ikon."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Powiadamia, gdy zajęte miejsce rośnie o 10 GB w ciągu dnia lub gdy wolne zostaje mniej niż 10 %. Bez tego ostrzeżenie pojawia się tylko na ikonie."
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notifică atunci când discul crește cu 10 GB într-o zi sau rămâne cu mai puțin de 10% liber. Fără ea, avertizarea apare doar în pictogramă."
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Upozorní, keď disk narastie o 10 GB za deň alebo mu zostane menej ako 10 % voľných. Bez toho sa upozornenie zobrazí iba na ikone."
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Obvesti, ko disk zraste za 10 GB v enem dnevu ali ima manj kot 10 % prostega. Brez tega se opozorilo prikaže samo na ikoni."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Disk bir günde 10 GB büyüdüğünde veya %10'dan az boş kaldığında bildirir. Bu olmadan uyarı yalnızca simgede görünür."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Thông báo khi ổ đĩa tăng 10 GB trong một ngày hoặc còn trống dưới 10 %. Nếu không bật, cảnh báo chỉ hiện ở biểu tượng."
+            "value" : "Ειδοποιεί όταν η χρήση του δίσκου αυξάνεται κατά 10 GB σε μία ημέρα, μένει λίγος ελεύθερος χώρος ή το Mac χρησιμοποιεί πολύ δίσκο ως μνήμη. Χωρίς αυτήν, η προειδοποίηση εμφανίζεται μόνο στο εικονίδιο."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Notifica cuando el disco crece 10 GB en un día o le queda menos del 10 % libre. Sin ella, el aviso aparece solo en el icono."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Meldt het wanneer de schijf 10 GB per dag groeit of minder dan 10% vrij heeft. Zonder dit verschijnt de waarschuwing alleen op het symbool."
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "แจ้งเตือนเมื่อดิสก์ใช้พื้นที่เพิ่มขึ้น 10 GB ในหนึ่งวัน หรือเหลือพื้นที่ว่างน้อยกว่า 10 % หากไม่เปิด การแจ้งเตือนจะปรากฏที่ไอคอนเท่านั้น"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Értesít, ha a lemez egy nap alatt 10 GB-tal nő, vagy 10 százaléknál kevesebb marad szabadon. Nélküle a figyelmeztetés csak az ikonon jelenik meg."
+            "value" : "Notifica cuando el disco crece 10 GB en un día, queda con poco espacio libre o el Mac usa mucho disco como memoria. Sin ella, el aviso aparece solo en el icono."
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Notifica cuando el disco crece 10 GB en un día o le queda menos del 10 % libre. Sin ella, el aviso aparece solo en el ícono."
+            "value" : "Notifica cuando el disco crece 10 GB en un día, queda con poco espacio libre o el Mac usa mucho disco como memoria. Sin ella, el aviso aparece solo en el ícono."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ilmoittaa, kun levy kasvaa 10 Gt päivässä, vapaata tilaa on vähän tai Mac käyttää paljon levyä muistina. Ilman sitä varoitus näkyy vain kuvakkeessa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifie quand le disque augmente de 10 Go en un jour, qu’il reste peu d’espace libre ou que le Mac utilise beaucoup de disque comme mémoire. Sans notification, l’alerte n’apparaît que sur l’icône."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שולח התראה כשהכונן גדל ב-10 GB ביום אחד, נשאר מעט שטח פנוי או ה-Mac משתמש בהרבה מהכונן כזיכרון. בלעדיה, ההתראה מופיעה רק בסמל."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिस्क एक दिन में 10 GB बढ़ने, खाली जगह कम बचने या Mac द्वारा डिस्क को ज़्यादा मेमोरी की तरह इस्तेमाल करने पर सूचित करता है। इसके बिना चेतावनी सिर्फ़ आइकॉन पर दिखती है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Šalje obavijest kad disk naraste 10 GB u jednom danu, kad ostane malo slobodnog prostora ili kad Mac koristi puno diska kao memoriju. Bez toga se upozorenje pojavljuje samo na ikoni."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Értesít, ha a lemez egy nap alatt 10 GB-tal nő, kevés szabad hely marad, vagy a Mac sok lemezt használ memóriaként. Nélküle a figyelmeztetés csak az ikonon jelenik meg."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memberi notifikasi saat disk bertambah 10 GB dalam sehari, ruang kosong tinggal sedikit, atau Mac memakai banyak disk sebagai memori. Tanpa ini, peringatan hanya muncul di ikon."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifica quando il disco cresce di 10 GB in un giorno, resta poco spazio libero o il Mac usa molto disco come memoria. Senza, l’avviso compare solo sull’icona."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ディスクが1日に10 GB増えたとき、空きが少なくなったとき、またはMacがディスクを多くメモリとして使っているときに通知します。オフの場合、警告はアイコンにだけ表示されます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "하루 동안 디스크가 10GB 늘거나, 여유 공간이 부족하거나, Mac이 디스크를 메모리로 많이 사용하면 알립니다. 꺼 두면 경고가 아이콘에만 표시됩니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memberi pemberitahuan apabila cakera bertambah 10 GB dalam sehari, ruang bebas tinggal sedikit atau Mac menggunakan banyak cakera sebagai memori. Tanpanya, amaran hanya muncul pada ikon."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varsler når disken vokser 10 GB på én dag, har lite ledig plass eller Mac-en bruker mye disk som minne. Uten det vises advarselen bare på symbolet."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meldt het wanneer de schijf 10 GB per dag groeit, er weinig vrije ruimte is of de Mac veel schijf als geheugen gebruikt. Zonder dit verschijnt de waarschuwing alleen op het symbool."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Powiadamia, gdy zajęte miejsce rośnie o 10 GB w ciągu dnia, wolnego miejsca jest mało lub Mac używa dużo dysku jako pamięci. Bez tego ostrzeżenie pojawia się tylko na ikonie."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifica quando o disco cresce 10 GB num dia, fica com pouco espaço livre ou o Mac usa muito disco como memória. Sem ela, o aviso aparece só no ícone."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifică atunci când discul crește cu 10 GB într-o zi, rămâne cu puțin spațiu liber sau Mac-ul folosește mult din disc ca memorie. Fără ea, avertizarea apare doar în pictogramă."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Уведомляет, когда диск вырастает на 10 ГБ за день, свободного места остаётся мало или Mac сильно использует диск как память. Без этого предупреждение видно только на значке."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozorní, keď disk narastie o 10 GB za deň, zostane mu málo voľného miesta alebo Mac používa veľkú časť disku ako pamäť. Bez toho sa upozornenie zobrazí iba na ikone."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obvesti, ko disk zraste za 10 GB v enem dnevu, ima malo prostega prostora ali Mac uporablja veliko diska kot pomnilnik. Brez tega se opozorilo prikaže samo na ikoni."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notifierar när disken växer 10 GB på en dag, har lite ledigt utrymme eller Mac använder mycket disk som minne. Utan det visas varningen bara på ikonen."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แจ้งเตือนเมื่อดิสก์ใช้พื้นที่เพิ่มขึ้น 10 GB ในหนึ่งวัน เหลือพื้นที่ว่างน้อย หรือ Mac ใช้ดิสก์เป็นหน่วยความจำมาก หากไม่เปิด การแจ้งเตือนจะปรากฏที่ไอคอนเท่านั้น"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disk bir günde 10 GB büyüdüğünde, boş alan azaldığında veya Mac diski çok fazla bellek olarak kullandığında bildirir. Bu olmadan uyarı yalnızca simgede görünür."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сповіщає, коли диск зростає на 10 ГБ за добу, вільного місця лишається мало або Mac сильно використовує диск як пам’ять. Без цього попередження з’являється лише на піктограмі."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thông báo khi ổ đĩa tăng 10 GB trong một ngày, còn ít dung lượng trống hoặc Mac dùng nhiều ổ đĩa làm bộ nhớ. Nếu không bật, cảnh báo chỉ hiện ở biểu tượng."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "磁盘一天增长 10 GB、可用空间不足或 Mac 大量把磁盘当作内存使用时发送通知。关闭后，提醒只显示在图标上。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "磁碟一天增加 10 GB、可用空間不足，或 Mac 大量把磁碟當作記憶體使用時發出通知。沒有它的話，警示只會顯示在圖像上。"
           }
         }
       }
@@ -120523,6 +121593,220 @@
         }
       }
     },
+    "O Mac está usando %@ do disco como memória." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Mac is using %@ of the disk as memory."
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يستخدم Mac ما مقداره %@ من القرص كذاكرة."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El Mac està utilitzant %@ del disc com a memòria."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac používá %@ disku jako paměť."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac'en bruger %@ af disken som hukommelse."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Mac nutzt %@ der Festplatte als Arbeitsspeicher."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το Mac χρησιμοποιεί %@ του δίσκου ως μνήμη."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El Mac está usando %@ del disco como memoria."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El Mac está usando %@ del disco como memoria."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac käyttää %@ levystä muistina."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le Mac utilise %@ du disque comme mémoire."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ה-Mac משתמש ב-%@ מהכונן כזיכרון."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac डिस्क का %@ मेमोरी की तरह इस्तेमाल कर रहा है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac koristi %@ diska kao memoriju."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Mac %@ lemezterületet használ memóriaként."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac memakai %@ disk sebagai memori."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il Mac sta usando %@ del disco come memoria."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macがディスクの%@をメモリとして使っています。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac이 메모리로 사용 중인 디스크: %@."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac menggunakan %@ cakera sebagai memori."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac-en bruker %@ av disken som minne."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De Mac gebruikt %@ van de schijf als geheugen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac używa %@ dysku jako pamięci."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Mac está a usar %@ do disco como memória."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac-ul folosește %@ din disc ca memorie."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac использует %@ диска как память."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac používa %@ disku ako pamäť."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac uporablja %@ diska kot pomnilnik."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac använder %@ av disken som minne."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac กำลังใช้ดิสก์ %@ เป็นหน่วยความจำ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac, diskin %@ kadarını bellek olarak kullanıyor."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac використовує %@ диска як пам’ять."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac đang dùng %@ ổ đĩa làm bộ nhớ."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac 正在把 %@ 的磁盘空间当作内存使用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac 正把 %@ 的磁碟空間當作記憶體使用。"
+          }
+        }
+      }
+    },
     "O Mac está usando o disco como memória. Fechar apps pesados ou reiniciar devolve o espaço." : {
       "localizations" : {
         "en" : {
@@ -120733,6 +122017,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "El Mac está usando el disco como memoria. Cerrar apps pesadas o reiniciar recupera el espacio."
+          }
+        }
+      }
+    },
+    "O Mac usa parte do disco como memória (swap). Reiniciar devolve esse espaço." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The Mac uses part of the disk as memory (swap). Restarting gives that space back."
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يستخدم Mac جزءًا من القرص كذاكرة (swap). إعادة التشغيل تعيد هذه المساحة."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El Mac utilitza part del disc com a memòria (swap). Reiniciar en retorna l’espai."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac používá část disku jako paměť (swap). Restartem se toto místo vrátí."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac'en bruger en del af disken som hukommelse (swap). En genstart frigiver pladsen igen."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Mac nutzt einen Teil der Festplatte als Arbeitsspeicher (Swap). Ein Neustart gibt diesen Platz wieder frei."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το Mac χρησιμοποιεί μέρος του δίσκου ως μνήμη (swap). Με επανεκκίνηση ο χώρος επιστρέφει."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El Mac usa parte del disco como memoria (swap). Reiniciar recupera ese espacio."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El Mac usa parte del disco como memoria (swap). Reiniciar recupera ese espacio."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac käyttää osaa levystä muistina (swap). Uudelleenkäynnistys vapauttaa tilan."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le Mac utilise une partie du disque comme mémoire (swap). Redémarrer libère cet espace."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ה-Mac משתמש בחלק מהכונן כזיכרון (swap). הפעלה מחדש מחזירה את השטח."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac डिस्क के एक हिस्से को मेमोरी (swap) की तरह इस्तेमाल करता है। रीस्टार्ट करने से वह जगह वापस मिल जाती है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac koristi dio diska kao memoriju (swap). Ponovnim pokretanjem taj se prostor vraća."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Mac a lemez egy részét memóriaként használja (swap). Újraindítás után ez a hely visszakerül."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac memakai sebagian disk sebagai memori (swap). Memulai ulang mengembalikan ruang itu."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il Mac usa parte del disco come memoria (swap). Riavviare restituisce lo spazio."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macはディスクの一部をメモリ（swap）として使います。再起動すると、その容量が戻ります。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac은 디스크 일부를 메모리(swap)처럼 사용합니다. 재시동하면 그 공간이 돌아옵니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac menggunakan sebahagian cakera sebagai memori (swap). Memulakan semula akan memulangkan ruang itu."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac-en bruker en del av disken som minne (swap). Omstart gir plassen tilbake."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De Mac gebruikt een deel van de schijf als geheugen (swap). Opnieuw opstarten geeft die ruimte terug."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac używa części dysku jako pamięci (swap). Ponowne uruchomienie zwraca to miejsce."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O Mac usa parte do disco como memória (swap). Reiniciar devolve esse espaço."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac-ul folosește o parte din disc ca memorie (swap). Repornirea redă acest spațiu."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac использует часть диска как память (swap). Перезагрузка возвращает это место."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac používa časť disku ako pamäť (swap). Reštart toto miesto vráti."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac uporablja del diska kot pomnilnik (swap). Ponovni zagon vrne ta prostor."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac använder en del av disken som minne (swap). Omstart ger tillbaka utrymmet."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac ใช้ดิสก์บางส่วนเป็นหน่วยความจำ (swap) การรีสตาร์ทจะคืนพื้นที่นี้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac diskin bir kısmını bellek (swap) olarak kullanıyor. Yeniden başlatmak bu alanı geri verir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac використовує частину диска як пам’ять (swap). Перезапуск повертає це місце."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac dùng một phần ổ đĩa làm bộ nhớ (swap). Khởi động lại sẽ trả lại dung lượng này."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac 把一部分磁盘当作内存使用（swap）。重新启动可收回这部分空间。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac 把部分磁碟當作記憶體使用（swap）。重新啟動即可釋出這部分空間。"
           }
         }
       }
@@ -147487,6 +148985,220 @@
         }
       }
     },
+    "Reiniciar devolve esse espaço. Salve o que estiver aberto antes." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restarting gives that space back. Save your open work first."
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إعادة التشغيل تعيد هذه المساحة. احفظ ما هو مفتوح أولًا."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar en retorna l’espai. Desa abans el que tinguis obert."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restartem se místo vrátí. Nejdřív uložte otevřenou práci."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En genstart frigiver pladsen igen. Gem det, du har åbent, først."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein Neustart gibt diesen Platz wieder frei. Offene Dokumente vorher sichern."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Με επανεκκίνηση ο χώρος επιστρέφει. Αποθηκεύστε πρώτα ό,τι έχετε ανοιχτό."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar recupera ese espacio. Guarda antes lo que tengas abierto."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar recupera ese espacio. Guarda antes lo que tengas abierto."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uudelleenkäynnistys vapauttaa tilan. Tallenna ensin avoimet työsi."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redémarrer libère cet espace. Enregistrez d’abord ce qui est ouvert."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "הפעלה מחדש מחזירה את השטח. שמור קודם את מה שפתוח."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रीस्टार्ट करने से यह जगह वापस मिल जाती है। पहले खुला हुआ काम सेव कर लें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ponovnim pokretanjem prostor se vraća. Prvo spremi sve otvoreno."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Újraindítás után a hely visszakerül. Előbb mentse a megnyitott munkát."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memulai ulang mengembalikan ruang itu. Simpan dulu yang sedang terbuka."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riavviare restituisce lo spazio. Salva prima ciò che è aperto."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再起動すると、容量が戻ります。開いている内容を先に保存してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "재시동하면 공간이 돌아옵니다. 열려 있는 항목을 먼저 저장하세요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memulakan semula akan memulangkan ruang itu. Simpan dahulu apa yang terbuka."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omstart gir plassen tilbake. Lagre det som er åpent først."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opnieuw opstarten geeft de ruimte terug. Bewaar eerst wat open staat."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ponowne uruchomienie zwraca miejsce. Najpierw zapisz otwarte dokumenty."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar devolve esse espaço. Guarde primeiro o que tiver aberto."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repornirea redă acest spațiu. Salvați mai întâi ce aveți deschis."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перезагрузка возвращает это место. Сначала сохраните открытые документы."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reštart toto miesto vráti. Najprv si uložte otvorené súbory."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ponovni zagon vrne ta prostor. Najprej shranite odprto delo."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omstart ger tillbaka utrymmet. Spara det du har öppet först."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "การรีสตาร์ทจะคืนพื้นที่นี้ โปรดบันทึกงานที่เปิดอยู่ก่อน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeniden başlatmak bu alanı geri verir. Önce açık işlerinizi kaydedin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перезапуск повертає це місце. Спершу збережіть відкриті документи."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khởi động lại sẽ trả lại dung lượng này. Hãy lưu những gì đang mở trước."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重新启动可收回这部分空间。请先保存已打开的内容。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重新啟動即可釋出這部分空間。請先儲存已開啟的內容。"
+          }
+        }
+      }
+    },
     "Reiniciar o Mac libera esse espaço." : {
       "localizations" : {
         "en" : {
@@ -149199,732 +150911,216 @@
         }
       }
     },
-    "Restam %lld %% do disco livres, contando o que o macOS libera sozinho." : {
+    "Restam %@ livres (%lld %% do disco), contando o que o macOS libera sozinho." : {
       "localizations" : {
         "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld%% of the disk is still free, counting what macOS frees up on its own."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld%% of the disk is still free, counting what macOS frees up on its own."
-                }
-              }
-            }
-          }
-        },
-        "it" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Spazio libero sul disco: %lld%%, incluso ciò che macOS libera da solo."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Spazio libero sul disco: %lld%%, incluso ciò che macOS libera da solo."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Spazio libero sul disco: %lld%%, incluso ciò che macOS libera da solo."
-                }
-              }
-            }
-          }
-        },
-        "uk" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Вільно %lld %% диска, враховуючи те, що macOS звільняє сама."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Вільно %lld %% диска, враховуючи те, що macOS звільняє сама."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Вільно %lld %% диска, враховуючи те, що macOS звільняє сама."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Вільно %lld %% диска, враховуючи те, що macOS звільняє сама."
-                }
-              }
-            }
-          }
-        },
-        "ru" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Свободно %lld %% диска, считая то, что macOS освобождает сам."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Свободно %lld %% диска, считая то, что macOS освобождает сам."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Свободно %lld %% диска, считая то, что macOS освобождает сам."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Свободно %lld %% диска, считая то, что macOS освобождает сам."
-                }
-              }
-            }
-          }
-        },
-        "sv" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld %% av disken är ledig, inklusive det som macOS frigör automatiskt."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld %% av disken är ledig, inklusive det som macOS frigör automatiskt."
-                }
-              }
-            }
-          }
-        },
-        "da" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Der er %lld %% af disken ledig, inklusive det, macOS frigiver af sig selv."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Der er %lld %% af disken ledig, inklusive det, macOS frigiver af sig selv."
-                }
-              }
-            }
-          }
-        },
-        "nb" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld %% av disken er ledig, medregnet det macOS frigjør selv."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld %% av disken er ledig, medregnet det macOS frigjør selv."
-                }
-              }
-            }
-          }
-        },
-        "zh-Hant" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "磁碟剩餘 %lld%% 可用，已計入 macOS 自動釋出的空間。"
-                }
-              }
-            }
-          }
-        },
-        "pt-PT" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Resta %lld %% do disco livre, contando o que o macOS liberta sozinho."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Restam %lld %% do disco livres, contando o que o macOS liberta sozinho."
-                }
-              }
-            }
-          }
-        },
-        "zh-Hans" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "磁盘剩余 %lld%% 可用空间（含 macOS 会自动释放的空间）。"
-                }
-              }
-            }
-          }
-        },
-        "ja" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "ディスクの空きは%lld%%です（macOSが自動で解放する分を含む）。"
-                }
-              }
-            }
-          }
-        },
-        "cs" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Zbývá %lld %% volného místa na disku včetně toho, co macOS uvolní samo."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Zbývá %lld %% volného místa na disku včetně toho, co macOS uvolní samo."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Zbývá %lld %% volného místa na disku včetně toho, co macOS uvolní samo."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Zbývá %lld %% volného místa na disku včetně toho, co macOS uvolní samo."
-                }
-              }
-            }
-          }
-        },
-        "ko" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "디스크 여유 공간이 %lld%% 남았습니다(macOS가 자동으로 비우는 공간 포함)."
-                }
-              }
-            }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ is still free (%lld%% of the disk), counting what macOS frees up on its own."
           }
         },
         "ar" : {
-          "variations" : {
-            "plural" : {
-              "zero" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "تبقّى %lld%% من القرص متاحًا، مع احتساب ما يحرره macOS تلقائيًا."
-                }
-              },
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "تبقّى %lld%% من القرص متاحًا، مع احتساب ما يحرره macOS تلقائيًا."
-                }
-              },
-              "two" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "تبقّى %lld%% من القرص متاحًا، مع احتساب ما يحرره macOS تلقائيًا."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "تبقّى %lld%% من القرص متاحًا، مع احتساب ما يحرره macOS تلقائيًا."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "تبقّى %lld%% من القرص متاحًا، مع احتساب ما يحرره macOS تلقائيًا."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "تبقّى %lld%% من القرص متاحًا، مع احتساب ما يحرره macOS تلقائيًا."
-                }
-              }
-            }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تبقّى %@ فارغًا (%lld%% من القرص)، مع احتساب ما يحرره macOS تلقائيًا."
           }
         },
         "ca" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Queda el %lld %% del disc lliure, comptant el que macOS allibera automàticament."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Queda el %lld %% del disc lliure, comptant el que macOS allibera automàticament."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Queda el %lld %% del disc lliure, comptant el que macOS allibera automàticament."
-                }
-              }
-            }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Queden %@ lliures (%lld %% del disc), comptant el que macOS allibera automàticament."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zbývá %@ volného místa (%lld %% disku) včetně toho, co macOS uvolní samo."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der er %@ ledig (%lld %% af disken), inklusive det, macOS frigiver af sig selv."
           }
         },
         "de" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Noch %lld %% der Festplatte frei, mit dem, was macOS von selbst freigibt."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Noch %lld %% der Festplatte frei, mit dem, was macOS von selbst freigibt."
-                }
-              }
-            }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch %@ frei (%lld %% der Festplatte), mit dem, was macOS von selbst freigibt."
           }
         },
         "el" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Απομένει %lld%% του δίσκου ελεύθερο, με όσα ελευθερώνει το macOS από μόνο του."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Απομένουν %lld%% του δίσκου ελεύθερα, με όσα ελευθερώνει το macOS από μόνο του."
-                }
-              }
-            }
-          }
-        },
-        "fi" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Levystä on vapaana %lld %%, mukaan lukien se, minkä macOS vapauttaa itse."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Levystä on vapaana %lld %%, mukaan lukien se, minkä macOS vapauttaa itse."
-                }
-              }
-            }
-          }
-        },
-        "fr" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Il reste %lld %% du disque libre, en comptant ce que macOS libère automatiquement."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Il reste %lld %% du disque libre, en comptant ce que macOS libère automatiquement."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Il reste %lld %% du disque libre, en comptant ce que macOS libère automatiquement."
-                }
-              }
-            }
-          }
-        },
-        "he" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "נותר %lld%% מהכונן פנוי, כולל מה ש-macOS משחרר בעצמו."
-                }
-              },
-              "two" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "נותרו %lld%% מהכונן פנויים, כולל מה ש-macOS משחרר בעצמו."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "נותרו %lld%% מהכונן פנויים, כולל מה ש-macOS משחרר בעצמו."
-                }
-              }
-            }
-          }
-        },
-        "hi" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "डिस्क की %lld %% जगह खाली बची है, macOS जो अपने-आप खाली करता है उसे मिलाकर।"
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "डिस्क की %lld %% जगह खाली बची है, macOS जो अपने-आप खाली करता है उसे मिलाकर।"
-                }
-              }
-            }
-          }
-        },
-        "hr" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Preostaje %lld %% slobodnog prostora na disku, uključujući ono što macOS oslobodi sam."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Preostaje %lld %% slobodnog prostora na disku, uključujući ono što macOS oslobodi sam."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Preostaje %lld %% slobodnog prostora na disku, uključujući ono što macOS oslobodi sam."
-                }
-              }
-            }
-          }
-        },
-        "id" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Tersisa %lld %% disk kosong, termasuk yang dibebaskan macOS sendiri."
-                }
-              }
-            }
-          }
-        },
-        "ms" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Baki %lld %% cakera kosong, termasuk yang dibebaskan macOS secara automatik."
-                }
-              }
-            }
-          }
-        },
-        "pl" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Pozostało %lld %% wolnego miejsca na dysku, wliczając to, co macOS zwalnia samodzielnie."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Pozostało %lld %% wolnego miejsca na dysku, wliczając to, co macOS zwalnia samodzielnie."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Pozostało %lld %% wolnego miejsca na dysku, wliczając to, co macOS zwalnia samodzielnie."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Pozostało %lld %% wolnego miejsca na dysku, wliczając to, co macOS zwalnia samodzielnie."
-                }
-              }
-            }
-          }
-        },
-        "ro" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Mai rămân %lld%% din disc liber, inclusiv ce eliberează macOS singur."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Mai rămân %lld%% din disc liber, inclusiv ce eliberează macOS singur."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Mai rămân %lld%% din disc liber, inclusiv ce eliberează macOS singur."
-                }
-              }
-            }
-          }
-        },
-        "sk" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Zostáva %lld %% voľného miesta na disku vrátane toho, čo macOS uvoľní sám."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Zostávajú %lld %% voľného miesta na disku vrátane toho, čo macOS uvoľní sám."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Zostáva %lld %% voľného miesta na disku vrátane toho, čo macOS uvoľní sám."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Zostáva %lld %% voľného miesta na disku vrátane toho, čo macOS uvoľní sám."
-                }
-              }
-            }
-          }
-        },
-        "sl" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Prostega je še %lld %% diska, vključno s tem, kar macOS sprosti samodejno."
-                }
-              },
-              "two" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Prostega je še %lld %% diska, vključno s tem, kar macOS sprosti samodejno."
-                }
-              },
-              "few" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Prostega je še %lld %% diska, vključno s tem, kar macOS sprosti samodejno."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Prostega je še %lld %% diska, vključno s tem, kar macOS sprosti samodejno."
-                }
-              }
-            }
-          }
-        },
-        "tr" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Diskin %%%lld kadarı boş kaldı; macOS'in kendiliğinden boşalttığı alan da dahil."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Diskin %%%lld kadarı boş kaldı; macOS'in kendiliğinden boşalttığı alan da dahil."
-                }
-              }
-            }
-          }
-        },
-        "vi" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Còn trống %lld%% dung lượng ổ đĩa, tính cả phần macOS tự giải phóng."
-                }
-              }
-            }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Απομένουν %@ ελεύθερα (%lld%% του δίσκου), με όσα ελευθερώνει το macOS από μόνο του."
           }
         },
         "es" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Queda el %lld %% del disco libre, contando lo que macOS libera por sí solo."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Queda el %lld %% del disco libre, contando lo que macOS libera por sí solo."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Queda el %lld %% del disco libre, contando lo que macOS libera por sí solo."
-                }
-              }
-            }
-          }
-        },
-        "nl" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Er is nog %lld%% van de schijf vrij, inclusief wat macOS zelf vrijmaakt."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Er is nog %lld%% van de schijf vrij, inclusief wat macOS zelf vrijmaakt."
-                }
-              }
-            }
-          }
-        },
-        "th" : {
-          "variations" : {
-            "plural" : {
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "ดิสก์เหลือพื้นที่ว่าง %lld%% รวมส่วนที่ macOS ล้างให้เอง"
-                }
-              }
-            }
-          }
-        },
-        "hu" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Még %lld%% szabad a lemezen, beleértve azt is, amit a macOS magától felszabadít."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Még %lld%% szabad a lemezen, beleértve azt is, amit a macOS magától felszabadít."
-                }
-              }
-            }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quedan %@ libres (%lld %% del disco), contando lo que macOS libera por sí solo."
           }
         },
         "es-419" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Queda el %lld %% del disco libre, contando lo que macOS libera por sí solo."
-                }
-              },
-              "many" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Queda el %lld %% del disco libre, contando lo que macOS libera por sí solo."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Queda el %lld %% del disco libre, contando lo que macOS libera por sí solo."
-                }
-              }
-            }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quedan %@ libres (%lld %% del disco), contando lo que macOS libera por sí solo."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vapaana on %@ (%lld %% levystä), mukaan lukien se, minkä macOS vapauttaa itse."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il reste %@ libres (%lld %% du disque), en comptant ce que macOS libère automatiquement."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "נותרו %@ פנויים (%lld%% מהכונן), כולל מה ש-macOS משחרר בעצמו."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ खाली बची है (डिस्क की %lld %%), macOS जो अपने-आप खाली करता है उसे मिलाकर।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slobodno je još %@ (%lld %% diska), uključujući ono što macOS oslobodi sam."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Még %@ szabad (%lld%% a lemezből), beleértve azt is, amit a macOS magától felszabadít."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tersisa %@ kosong (%lld %% disk), termasuk yang dibebaskan macOS sendiri."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liberi %@ (%lld%% del disco), incluso ciò che macOS libera da solo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "空きは%@です（ディスクの%lld%%、macOSが自動で解放する分を含む）。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "여유 공간이 %@ 남았습니다(디스크의 %lld%%, macOS가 자동으로 비우는 공간 포함)."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baki %@ kosong (%lld %% cakera), termasuk yang dibebaskan macOS secara automatik."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ er ledig (%lld %% av disken), medregnet det macOS frigjør selv."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog %@ vrij (%lld%% van de schijf), inclusief wat macOS zelf vrijmaakt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zostało %@ wolnego miejsca (%lld %% dysku), wliczając to, co macOS zwalnia samodzielnie."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restam %@ livres (%lld %% do disco), contando o que o macOS liberta sozinho."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mai rămân liberi %@ (%lld%% din disc), inclusiv ce eliberează macOS singur."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Свободно %@ (%lld %% диска), считая то, что macOS освобождает сам."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zostáva %@ voľného miesta (%lld %% disku) vrátane toho, čo macOS uvoľní sám."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prostega je še %@ (%lld %% diska), vključno s tem, kar macOS sprosti samodejno."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ är ledigt (%lld %% av disken), inklusive det som macOS frigör automatiskt."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เหลือพื้นที่ว่าง %@ (%lld%% ของดิสก์) รวมส่วนที่ macOS ล้างให้เอง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ boş kaldı (diskin %%%lld kadarı); macOS'in kendiliğinden boşalttığı alan da dahil."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вільно %@ (%lld %% диска), враховуючи те, що macOS звільняє сама."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Còn trống %@ (%lld%% ổ đĩa), tính cả phần macOS tự giải phóng."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "磁盘剩余 %@ 可用（占磁盘 %lld%%），含 macOS 会自动释放的空间。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "磁碟剩餘 %@ 可用（佔磁碟 %lld%%），已計入 macOS 自動釋出的空間。"
           }
         }
       }
@@ -172921,6 +174117,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usado"
+          }
+        }
+      }
+    },
+    "Usado de total" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Used of total"
+          }
+        },
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المستخدم من الإجمالي"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usat del total"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Využito z celku"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brugt / i alt"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belegt / Gesamt"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Χρησιμοποιημένο από το σύνολο"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usado del total"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usado del total"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytetty / yhteensä"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisé sur le total"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "בשימוש מתוך הסה״כ"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इस्तेमाल / कुल"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iskorišteno od ukupnog"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Használt / összes"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terpakai dari total"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usato su totale"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用量 / 全体"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "사용량 / 전체"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digunakan daripada jumlah"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brukt av totalt"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gebruikt van totaal"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyte z całości"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilizado do total"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilizat din total"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Использовано из всего"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Použité z celku"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uporabljeno od skupaj"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använt av totalt"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใช้แล้วจากทั้งหมด"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kullanılan / toplam"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використано з усього"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Đã dùng trên tổng"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已用 / 总量"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已用 / 總量"
           }
         }
       }
