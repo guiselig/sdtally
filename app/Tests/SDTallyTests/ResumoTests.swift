@@ -141,20 +141,6 @@ private let snapshotsDoDono = causa("term_snapshots", termo: "snapshots", 49_615
     #expect(segmentosDisco([], top: [], containers: nil).isEmpty)
 }
 
-/// "Seguro:" de B6: nível safe, alocado (não lógico), 1 GB ou mais e fora das 5 linhas.
-@Test func seguroForaDasLinhas() {
-    func safe(_ id: String, _ priv: Int64?, logico: Bool? = nil) -> Conselho {
-        Conselho(id: id, level: "safe", bytes: 7_780_000_000, privateBytes: priv, paths: [], term: nil, process: nil, command: nil,
-                 text: "texto do sdtally", card: id, bytesLogical: logico)
-    }
-    let cinco = [causa("~/.npm/_cacache", 7_780_000_000, card: "npm_cache")]
-    let a = [safe("chronod_datavault", 2_817_310_720, logico: true), safe("npm_cache", 7_780_000_000), safe("pip_cache", 500_000_000),
-             regra("logs", card: "logs"), safe("go_build_cache", 2_000_000_000)]
-    #expect(seguro(advice: a, cinco: cinco)?.id == "go_build_cache")
-    #expect(seguro(advice: a, cinco: [])?.id == "npm_cache")
-    #expect(seguro(advice: Array(a.prefix(3)), cinco: cinco) == nil)
-}
-
 @Test func conselhoDaCausa() {
     let a = [regra("time_machine_snapshots", term: "snapshots", card: "time_machine_snapshots"),
              regra("tm_backup_stuck", term: "snapshots", card: "tm_backup_stuck"),

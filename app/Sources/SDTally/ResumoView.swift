@@ -665,86 +665,20 @@ private struct MaisOcupa: View {
 
 // MARK: - B6: depois da lista
 
-/// O link para todas as pastas, "Seguro" (o primeiro passo seguro fora das 10 linhas) e "O que
-/// mudou" desde a medição anterior. As causas 6 a 10 ("Em seguida") entraram na lista. Cada linha só aparece com conteúdo; sem contagem nem soma (G9).
+/// O link para todas as pastas, só quando há mais causas que as 10 da lista. "Seguro" e "Desde a
+/// medição" saíram (dono, 28/10): o passo seguro fica em O que fazer e o que mudou, no Histórico.
 private struct DepoisDaLista: View {
     @Environment(Painel.self) private var painel
     let causas: [Causa]
 
     var body: some View {
-        let s = seguro(advice: painel.dados?.advice ?? [], cinco: Array(causas.prefix(10)))
-        Grid(alignment: .topLeading, horizontalSpacing: 12, verticalSpacing: 6) {
-            if causas.count > 10 {
-                GridRow {
-                    Color.clear.frame(width: 0, height: 0)
-                    Button("Todas as pastas (⌘4) ›") {
-                        painel.pilha = []
-                        painel.secao = .ranking
-                    }
-                    .buttonStyle(.link)
-                }
+        if causas.count > 10 {
+            Button("Todas as pastas (⌘4) ›") {
+                painel.pilha = []
+                painel.secao = .ranking
             }
-            if let s {
-                let titulo = "\(tituloConselho(s.id) ?? s.term.map(nomeTermo) ?? String(localized: "Recomendação do sdtally")) · \(gb(s.bytes)) ›"
-                GridRow {
-                    etiqueta(String(localized: "Seguro"))
-                    Button(titulo) { painel.abrir(.fazer, rolando: s.id) }
-                        .buttonStyle(.link).lineLimit(1).help(titulo)
-                }
-            }
-            if let m = mudou {
-                GridRow {
-                    etiqueta(String(localized: "Desde a medição"))
-                    Button(m.curto) { painel.secao = .historico }
-                        .buttonStyle(.link).lineLimit(1).help(m.completo)
-                }
-            }
+            .buttonStyle(.link).font(.callout)
         }
-        .font(.callout)
-    }
-
-    private func etiqueta(_ t: String) -> some View {
-        Text(t).fontWeight(.semibold).foregroundStyle(.secondary).gridColumnAlignment(.leading)
-    }
-
-    /// Um item por causa: só o nome (último componente se for caminho) e o tamanho, numa linha só;
-    /// o nome inteiro fica no .help. Sem "Ver…" (painel.ver nil), vira texto.
-    @ViewBuilder private func itens(_ cs: [Causa]) -> some View {
-        ForEach(cs) { c in
-            let texto = "\(Self.nomeCurto(c.nome)) \(gb(c.bytes))"
-            Group {
-                if let destino = painel.ver(c) {
-                    Button(texto) { destino.ir() }.buttonStyle(.link)
-                } else {
-                    Text(texto)
-                }
-            }
-            .lineLimit(1).fixedSize().help("\(c.nome) \(gb(c.bytes))")
-        }
-    }
-
-    /// "Application Support" de "~/Library/Application Support"; nome que não é caminho fica como está.
-    static func nomeCurto(_ n: String) -> String {
-        n.hasPrefix("~") || n.hasPrefix("/") ? (n as NSString).lastPathComponent : n
-    }
-
-    /// As 3 maiores mudanças entre as duas últimas medições salvas, só linhas do `top` (o termo
-    /// "Arquivos e pastas" fica no Histórico: já soma as pastas); nil se não se comparam ou nada mudou.
-    private var mudou: (curto: String, completo: String)? {
-        let ms = painel.medicoes
-        guard ms.count >= 2, let antes = ms.dropLast().last?.completo, let agora = ms.last?.completo,
-              let mud = Historico.mudancas(de: antes, para: agora)?.filter({ $0.linha != nil }), !mud.isEmpty else { return nil }
-        // Caminho curto (último componente) na linha; o inteiro no .help.
-        let itens = mud.prefix(3).map { x -> (curto: String, completo: String) in
-            let d = (x.depois ?? 0) - (x.antes ?? 0)
-            let delta = " " + (d > 0 ? "+" : "−") + gb(abs(d))
-            let nome = visivel(x.linha.map { rotulo($0, home: agora.home) } ?? nomeTermo(x.termo))
-            return (Self.nomeCurto(nome) + delta, nome + delta)
-        }
-        let dia = Armazenamento.dataCurta(antes.generatedAt)
-        let listaCurta = itens.map(\.curto).joined(separator: " · ")
-        let listaCompleta = itens.map(\.completo).joined(separator: " · ")
-        return (String(localized: "de \(dia): \(listaCurta) ›"), String(localized: "de \(dia): \(listaCompleta)"))
     }
 }
 

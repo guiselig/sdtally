@@ -1,8 +1,8 @@
 // Causas do Início (spec-inicio §3 B2, B3, B5, B6): as linhas do `top` agrupadas pela ficha, a
-// linha do Ajustes em que cada uma cai, a manchete, a barra do disco e o passo seguro. Só funções
+// linha do Ajustes em que cada uma cai, a manchete e a barra do disco. Só funções
 // puras, nonisolated e testadas (ResumoTests). API estável:
 //   Causa, causas(top:swap:fichas:home:apelidos:), conselho(de:em:), Apelidos
-//   segmentosDisco(_:top:containers:), seguro(advice:cinco:)
+//   segmentosDisco(_:top:containers:)
 //   Manchete, manchete(advice:tm:snapshots:causas:usado:), purgavelNoAjustes(tela:livre:purg:)
 import AppKit
 import SwiftUI
@@ -138,15 +138,6 @@ nonisolated func segmentosDisco(_ cs: [Causa], top: [LinhaTop], containers: [Con
         Segmento(id: "macos", nome: "macOS · diskutil", bytes: macos, cor: .gray),
         Segmento(id: "livre", nome: String(localized: "Livre · diskutil"), bytes: p.free ?? 0, cor: Color(nsColor: .quaternaryLabelColor)),
     ]
-}
-
-/// "Seguro:" de B6: o primeiro passo seguro com bytes alocados, que libera 1 GB ou mais e não é de
-/// nenhuma das 5 linhas.
-nonisolated func seguro(advice: [Conselho], cinco: [Causa]) -> Conselho? {
-    advice.first { a in
-        a.level == "safe" && a.bytesLogical != true && (a.privateBytes ?? 0) >= 1_000_000_000
-            && !cinco.contains { $0.card != nil && $0.card == a.card }
-    }
 }
 
 /// Uma frase sob o Livre. `ajustes`: o painel do Ajustes do botão (chave de `ajustesPermitidos`).
