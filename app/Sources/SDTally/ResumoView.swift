@@ -526,6 +526,7 @@ private struct MaisOcupa: View {
     let causas: [Causa]
     let fichas: MapaFichas?
     @State private var destaque: Set<String> = []
+    @State private var apelidoDe: String?
 
     var body: some View {
         let c = painel.dados
@@ -559,6 +560,7 @@ private struct MaisOcupa: View {
                 Text("Não medido").foregroundStyle(.secondary)
             }
         }
+        .editorApelido($apelidoDe)
     }
 
     /// Título, hora e modo da medição; avisos de idade (mais de 24 h) e de medição interrompida.
@@ -633,6 +635,14 @@ private struct MaisOcupa: View {
         .accessibilityElement(children: .combine)
         .accessibilityLabel([c.nome, gb(c.bytes), n?.1].compactMap { $0 }.joined(separator: ", "))
         .help(f?.what.texto ?? "")
+        // Grupo de pastas não ganha apelido: o nome é do grupo, não de uma pasta.
+        .contextMenu {
+            if let p = c.caminho, c.pastas <= 1 {
+                MenuApelido(caminho: p, editando: $apelidoDe)
+                Divider()
+                MenuArquivo(caminho: absoluto(p, home: m.home))
+            }
+        }
     }
 
     /// Medindo pela primeira vez: 10 linhas no lugar da lista.

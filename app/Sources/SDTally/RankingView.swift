@@ -27,14 +27,16 @@ private struct Ranking: View {
     let c: Completo
     @Binding var filtro: String
     @Binding var ordem: [KeyPathComparator<LinhaTop>]
+    @State private var apelidoDe: String?
 
     var body: some View {
         let maximo = c.top.map(\.bytes).max() ?? 1
         let linhas = c.top
-            .filter { filtro.isEmpty || ($0.path ?? nomeTermo($0.term)).localizedCaseInsensitiveContains(filtro) }
+            .filter { l in filtro.isEmpty || ([l.path ?? nomeTermo(l.term)] + [l.path.flatMap { painel.apelidos[$0] }].compactMap { $0 })
+                .contains { $0.localizedCaseInsensitiveContains(filtro) } }
             .sorted(using: ordem)
         Table(linhas, sortOrder: $ordem) {
-            TableColumn("Nome") { l in NomeLinha(l: l, home: c.home) }
+            TableColumn("Nome") { l in NomeLinha(l: l, home: c.home, apelido: l.path.flatMap { painel.apelidos[$0] }) }
                 .width(min: 150, ideal: 170)
             TableColumn("Ocupa", value: \.bytes) { l in
                 HStack(spacing: 8) {
@@ -55,7 +57,10 @@ private struct Ranking: View {
             .width(min: 80, ideal: 100)
         }
         .contextMenu(forSelectionType: LinhaTop.ID.self) { ids in
-            if let l = linha(ids), let p = l.path { MenuArquivo(caminho: absoluto(p, home: c.home)) }
+            if let l = linha(ids), let p = l.path {
+                if l.folded != true { MenuApelido(caminho: p, editando: $apelidoDe); Divider() }
+                MenuArquivo(caminho: absoluto(p, home: c.home))
+            }
         } primaryAction: { ids in
             if let l = linha(ids), let p = l.path, l.term == "tree", l.folded != true {
                 painel.pilha.append(absoluto(p, home: c.home))
@@ -65,6 +70,7 @@ private struct Ranking: View {
         .scrollContentBackground(.hidden)
         .safeAreaInset(edge: .top, spacing: 0) { faixas }
         .navigationTitle(Secao.ranking.titulo)
+        .editorApelido($apelidoDe)
     }
 
     /// O filtro vive no conteúdo (sem barra de ferramentas na janela).
@@ -109,10 +115,11 @@ private extension LinhaTop {
     var livre: Int64 { privateBytes ?? -1 }
 }
 
-/// Ícone do Finder + caminho com "~".
+/// Ícone do Finder + caminho com "~"; com apelido, ele em cima e o caminho embaixo, em cinza.
 private struct NomeLinha: View {
     let l: LinhaTop
     let home: String
+    let apelido: String?
 
     var body: some View {
         if let p = l.path {
@@ -121,7 +128,12 @@ private struct NomeLinha: View {
                 Image(nsImage: NSWorkspace.shared.icon(forFile: abs)).resizable().frame(width: 16, height: 16)
                 VStack(alignment: .leading, spacing: 0) {
                     // O caminho como o JSON traz ("~/Library"): a pasta inteira, sem nome solto e pai cinza.
-                    Text(rotulo(l, home: home)).lineLimit(1).truncationMode(.middle)
+                    if let apelido {
+                        Text(verbatim: visivel(apelido)).lineLimit(1).truncationMode(.tail)
+                        Text(rotulo(l, home: home)).font(.caption2).foregroundStyle(.secondary).lineLimit(1).truncationMode(.middle)
+                    } else {
+                        Text(rotulo(l, home: home)).lineLimit(1).truncationMode(.middle)
+                    }
                     if let o = l.owner {
                         Text(nomeDono(o)).font(.caption2).foregroundStyle(.secondary).lineLimit(1).truncationMode(.tail)
                             .help(fonteDono(o.source))
@@ -143,6 +155,43 @@ struct MenuArquivo: View {
             NSPasteboard.general.clearContents()
             NSPasteboard.general.setString(caminho, forType: .string)
         }
+    }
+}
+
+/// "Dar apelido…" e, com apelido, "Tirar apelido" (Apelidos). `caminho` como no JSON ("~/…"); o
+/// campo abre no editorApelido da tela, por `editando`.
+struct MenuApelido: View {
+    @Environment(Painel.self) private var painel
+    let caminho: String
+    @Binding var editando: String?
+    var body: some View {
+        Button("Dar apelido…") { editando = caminho }
+        if painel.apelidos[caminho] != nil {
+            Button("Tirar apelido") { painel.darApelido(nil, para: caminho) }
+        }
+    }
+}
+
+extension View {
+    /// Alerta com o campo do apelido da pasta em `editando` (caminho do JSON); fechar volta a nil.
+    func editorApelido(_ editando: Binding<String?>) -> some View { modifier(EditorApelido(editando: editando)) }
+}
+
+private struct EditorApelido: ViewModifier {
+    @Environment(Painel.self) private var painel
+    @Binding var editando: String?
+    @State private var texto = ""
+    func body(content: Content) -> some View {
+        content
+            .alert("Apelido da pasta", isPresented: Binding(get: { editando != nil }, set: { if !$0 { editando = nil } }),
+                   presenting: editando) { p in
+                TextField("Apelido", text: $texto)
+                Button("Salvar") { painel.darApelido(texto, para: p) }
+                Button("Cancelar", role: .cancel) {}
+            } message: { p in
+                Text(verbatim: visivel(p))
+            }
+            .onChange(of: editando) { _, p in texto = p.flatMap { painel.apelidos[$0] } ?? "" }
     }
 }
 
