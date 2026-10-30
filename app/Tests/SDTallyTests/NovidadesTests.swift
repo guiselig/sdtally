@@ -29,6 +29,7 @@ private func com11(_ v: String) -> Bool { v == "1.1" }
 @Test func novidadesListaDa11() {
     #expect(Novidades.maiorMenor("1.1.0") == "1.1")
     #expect(Novidades.itens("1.1")?.count == 3)
+    #expect(Novidades.itens("1.2")?.count == 4)
 }
 
 @Test func avisoDeRedeQuemPulouA11() {

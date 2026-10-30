@@ -22,6 +22,16 @@ nonisolated enum Novidades {
             Item(simbolo: "menubar.rectangle", titulo: String(localized: "Barra de menus com o menu do macOS"),
                  texto: String(localized: "O card da barra de menus agora é um menu nativo, com o mesmo vidro, borda e sombra dos menus do sistema.")),
         ]
+        case "1.2": [
+            Item(simbolo: "menubar.rectangle", titulo: String(localized: "Você escolhe o que a barra de menus mostra"),
+                 texto: String(localized: "Clique com o botão direito no ícone e escolha em Mostrar na barra: espaço livre, liberado automaticamente, Dados do Sistema, usado de total ou só o ícone.")),
+            Item(simbolo: "externaldrive.badge.exclamationmark", titulo: String(localized: "Aviso de pouco espaço no seu limite"),
+                 texto: String(localized: "Em Configurações › Comportamento, escolha avisar abaixo de 5, 10, 20, 50 ou 100 GB livres, ou manter os 10 % do disco.")),
+            Item(simbolo: "memorychip", titulo: String(localized: "Aviso para reiniciar quando o swap cresce"),
+                 texto: String(localized: "Quando o Mac usa muito disco como memória (acima de 20 GB, por padrão), o SDTally avisa para reiniciar, o que devolve esse espaço. O limite fica em Configurações › Comportamento e pode ser desligado.")),
+            Item(simbolo: "tag", titulo: String(localized: "Apelidos para pastas"),
+                 texto: String(localized: "As pastas aparecem com o caminho inteiro. Clique com o botão direito numa pasta para dar um apelido, mostrar no Finder ou copiar o caminho.")),
+        ]
         default: nil
         }
     }

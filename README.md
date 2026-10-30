@@ -99,8 +99,9 @@ Also in the app:
 
 - **Automatic mode** (live, no password) and **Manual** mode (the latest Full Measurement), switched in the header or with ⌘← and ⌘→. See [Automatic vs Full measurement](#automatic-vs-full-measurement).
 - **Passwordless Root**, an optional root helper approved once in Login Items, so full measurements do not ask for the administrator password every time. See [the wiki page](https://github.com/guiselig/sdtally/wiki/Passwordless-Root-helper).
-- **Menu bar icon** that can show free space, the amount freed automatically, or just the icon. The app keeps running in the background with the window closed.
-- **Notifications** when the disk grows 10 GB in a day or has less than 10 percent free (optional).
+- **Menu bar icon** that can show free space, the amount freed automatically, System Data, used of total, or just the icon. Right-click it and pick **Show in Menu Bar** to switch. The app keeps running in the background with the window closed.
+- **Alerts** when the disk grows 10 GB in a day, when free space drops below a limit you choose in Settings > Behavior (5 to 100 GB, or 10 percent of the disk), and when swap passes a limit (20 GB by default), since a restart gives that space back. Notifications for them are optional.
+- **Folder nicknames.** Folders without a recommendation card show their full path. Right-click one to give it a nickname, show it in Finder or copy its path.
 - **Export JSON** (⌥⌘E) and **Export PDF** (⌘E). The save dialog has "Replace Personal Names (Recommended for Sharing)", on by default.
 - **Open at Login**, configurable refresh intervals, and an in-app language picker.
 - **Updates.** The app checks github.com for a new version when it opens and then once a day, and shows it in Settings > Versions. Nothing is downloaded or installed until you click **Install**. Turn off **Check for updates automatically** there to stop the automatic check; the CLI and the root helper never use the network and update with the app. See [Privacy and safety guarantees](#privacy-and-safety-guarantees).

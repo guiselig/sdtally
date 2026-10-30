@@ -18132,7 +18132,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "10% of the disk"
+            "value" : "10% of the Disk"
           }
         },
         "ar" : {
@@ -29469,6 +29469,220 @@
         }
       }
     },
+    "Apelidos para pastas" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أسماء مستعارة للمجلدات"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Àlies per a carpetes"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přezdívky složek"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kaldenavne til mapper"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spitznamen für Ordner"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ψευδώνυμα για φακέλους"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folder nicknames"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apodos para carpetas"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apodos para carpetas"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lempinimet kansioille"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surnoms pour les dossiers"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "כינויים לתיקיות"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ोल्डर के उपनाम"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nadimci za mape"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Becenevek mappákhoz"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Julukan untuk folder"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soprannomi per le cartelle"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォルダのニックネーム"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "폴더 별명"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nama panggilan untuk folder"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kallenavn for mapper"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bijnamen voor mappen"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pseudonimy folderów"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alcunhas para pastas"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aliasuri pentru foldere"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Псевдонимы для папок"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prezývky pre priečinky"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzdevki za mape"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smeknamn för mappar"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ชื่อเล่นสำหรับโฟลเดอร์"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klasörler için takma adlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Псевдоніми для папок"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Biệt danh cho thư mục"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文件夹昵称"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "檔案夾暱稱"
+          }
+        }
+      }
+    },
     "Aplicativos" : {
       "localizations" : {
         "en" : {
@@ -33963,6 +34177,220 @@
         }
       }
     },
+    "As pastas aparecem com o caminho inteiro. Clique com o botão direito numa pasta para dar um apelido, mostrar no Finder ou copiar o caminho." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تظهر المجلدات الآن بمسارها الكامل. انقر بزر الماوس الأيمن على مجلد واختر إعطاء اسم مستعار أو إظهار في فايندر أو نسخ المسار."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les carpetes ara es mostren amb la ruta sencera. Fes clic amb el botó dret en una carpeta i tria Posa un àlies, Mostra al Finder o Copia el camí."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Složky se nyní zobrazují s celou cestou. Klikněte pravým tlačítkem na složku a vyberte Dát přezdívku, Zobrazit ve Finderu nebo Kopírovat cestu."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapper vises nu med hele stien. Højreklik på en mappe, og vælg Giv kaldenavn, Vis i Finder eller Kopiér sti."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordner erscheinen jetzt mit dem vollständigen Pfad. Rechtsklick auf einen Ordner, dann Spitzname vergeben, Im Finder zeigen oder Pfad kopieren wählen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Οι φάκελοι εμφανίζονται πλέον με ολόκληρη τη διαδρομή. Κάντε δεξί κλικ σε έναν φάκελο και επιλέξτε Ορισμός ψευδωνύμου, Εμφάνιση στο Finder ή Αντιγραφή διαδρομής."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folders now show their full path. Right-click a folder to give it a nickname, show it in Finder or copy its path."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las carpetas ahora se muestran con la ruta completa. Haz clic derecho en una carpeta y elige Poner apodo, Mostrar en el Finder o Copiar ruta."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las carpetas ahora se muestran con la ruta completa. Haz clic derecho en una carpeta y elige Poner apodo, Mostrar en el Finder o Copiar ruta."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kansiot näkyvät nyt koko polkuineen. Napsauta kansiota hiiren kakkospainikkeella ja valitse Anna lempinimi, Näytä Finderissa tai Kopioi polku."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les dossiers s’affichent désormais avec leur chemin complet. Faites un clic droit sur un dossier et choisissez Donner un surnom, Afficher dans le Finder ou Copier le chemin."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "התיקיות מוצגות עכשיו עם הנתיב המלא. לחץ לחיצה ימנית על תיקייה ובחר הגדר כינוי, הצג ב-Finder או העתק נתיב."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ोल्डर अब पूरे पाथ के साथ दिखते हैं। किसी फ़ोल्डर पर राइट-क्लिक करके उसे उपनाम दें, Finder में दिखाएँ या उसका पाथ कॉपी करें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mape sada prikazuju cijelu putanju. Desnom tipkom miša kliknite mapu da biste joj dodali nadimak, prikazali je u Finderu ili kopirali putanju."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A mappák mostantól a teljes útvonallal jelennek meg. Kattintson jobb gombbal egy mappára, hogy becenevet adjon neki, megjelenítse a Finderben, vagy átmásolja az útvonalát."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folder kini tampil dengan jalur lengkap. Klik kanan folder untuk memberi julukan, menampilkannya di Finder, atau menyalin jalurnya."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le cartelle ora mostrano il percorso completo. Fai clic con il tasto destro su una cartella per assegnarle un soprannome, mostrarla nel Finder o copiarne il percorso."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フォルダがフルパスで表示されるようになりました。フォルダを右クリックすると、ニックネームの設定、Finderで表示、パスのコピーができます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이제 폴더가 전체 경로로 표시됩니다. 폴더를 오른쪽 클릭하면 별명 지정, Finder에서 보기, 경로 복사를 할 수 있습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folder kini dipaparkan dengan laluan penuh. Klik kanan folder untuk memberi nama panggilan, menunjukkannya dalam Finder atau menyalin laluannya."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapper vises nå med hele banen. Høyreklikk på en mappe for å gi den et kallenavn, vise den i Finder eller kopiere banen."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mappen tonen nu het volledige pad. Klik met de rechtermuisknop op een map om er een bijnaam aan te geven, hem te tonen in Finder of het pad te kopiëren."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foldery pokazują teraz pełną ścieżkę. Kliknij folder prawym przyciskiem myszy, aby nadać mu pseudonim, pokazać go w Finderze lub skopiować ścieżkę."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "As pastas aparecem com o caminho completo. Clique com o botão direito numa pasta para dar uma alcunha, mostrar no Finder ou copiar o caminho."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Folderele apar cu calea completă. Fă clic dreapta pe un folder și alege Setează un alias, Arată în Finder sau Copiază calea."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Папки показываются с полным путём. Щёлкните папку правой кнопкой мыши и выберите «Задать псевдоним», «Показать в Finder» или «Скопировать путь»."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Priečinky sa zobrazujú s celou cestou. Kliknite na priečinok pravým tlačidlom a vyberte „Dať prezývku…“, „Zobraziť vo Finderi“ alebo „Kopírovať cestu“."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mape so prikazane s celotno potjo. Z desnim klikom na mapo izberite »Dodeli vzdevek…«, »Prikaži v Finderju« ali »Kopiraj pot«."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapparna visas med hela sökvägen. Högerklicka på en mapp för att välja Ge smeknamn, Visa i Finder eller Kopiera sökväg."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "โฟลเดอร์แสดงพร้อมเส้นทางเต็ม คลิกขวาที่โฟลเดอร์เพื่อเลือก ตั้งชื่อเล่น แสดงใน Finder หรือ คัดลอกเส้นทาง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klasörler tam yolla görünür. Bir klasöre sağ tıklayıp Takma Ad Ver, Finder'da Göster veya Yolu Kopyala seçeneklerinden birini seçin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Папки показуються з повним шляхом. Клацніть папку правою кнопкою миші та виберіть «Дати псевдонім», «Показати у Finder» або «Скопіювати шлях»."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thư mục hiển thị với đường dẫn đầy đủ. Nhấp chuột phải vào thư mục để Đặt biệt danh, Hiển thị trong Finder hoặc Sao chép đường dẫn."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文件夹显示完整路径。右键点按文件夹，可设置昵称、在访达中显示或拷贝路径。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "檔案夾會顯示完整路徑。在檔案夾上按右鍵，即可設定暱稱、在 Finder 中顯示或拷貝路徑。"
+          }
+        }
+      }
+    },
     "As pastas do sistema só abrem com a senha de administrador ou o Root sem Senha; sem elas, o que não abriu fica bloqueado pelo macOS." : {
       "localizations" : {
         "en" : {
@@ -38025,6 +38453,434 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "swap 超過以下值時提醒重新啟動"
+          }
+        }
+      }
+    },
+    "Aviso de pouco espaço no seu limite" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تنبيه انخفاض المساحة عند الحد الذي تحدده"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avís d’espai baix segons el teu límit"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozornění na málo místa podle vašeho limitu"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advarsel om lav plads ved din egen grænse"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Warnung bei wenig Speicherplatz ab eigenem Grenzwert"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προειδοποίηση για λίγο χώρο βάσει του δικού σας ορίου"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Low-space alert at your own limit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso de poco espacio según tu propio límite"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso de poco espacio según tu propio límite"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varoitus vähästä tilasta omalla rajallasi"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alerte d’espace faible selon votre propre seuil"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "התראה על שטח מועט לפי הסף שלך"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अपनी सीमा पर कम जगह की चेतावनी"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozorenje o malom prostoru na vašoj granici"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kevés helyre figyelmeztetés a saját határértéknél"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peringatan ruang menipis pada batas Anda"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avviso di poco spazio in base al tuo limite"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "任意のしきい値で空き容量を警告"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "원하는 기준으로 공간 부족 경고"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amaran ruang rendah pada had anda"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varsel om lite plass ved din egen grense"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waarschuwing voor weinig ruimte bij je eigen limiet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostrzeżenie o małej ilości miejsca przy Twoim progu"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso de pouco espaço segundo o seu limite"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alertă de spațiu redus în funcție de limita ta"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предупреждение о нехватке места по вашему порогу"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozornenie na málo miesta pri vašom limite"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opozorilo o malem prostoru pri vaši meji"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varning för lite utrymme vid din gräns"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แจ้งเตือนพื้นที่ใกล้เต็มตามขีดจำกัดของคุณ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kendi sınırınıza göre düşük alan uyarısı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Попередження про брак місця за вашим порогом"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cảnh báo sắp hết dung lượng theo ngưỡng của bạn"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按你的下限提醒空间不足"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "依你的下限提醒空間不足"
+          }
+        }
+      }
+    },
+    "Aviso para reiniciar quando o swap cresce" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تنبيه لإعادة التشغيل عندما يكبر swap"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avís de reinici quan el swap creix"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozornění na restart, když swap roste"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genstartsadvarsel, når swap vokser"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neustart-Hinweis, wenn Swap wächst"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Προειδοποίηση για επανεκκίνηση όταν αυξάνεται το swap"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restart alert when swap grows"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso de reinicio cuando crece el swap"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso de reinicio cuando crece el swap"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uudelleenkäynnistysvaroitus, kun swap kasvaa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alerte de redémarrage quand le swap augmente"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "התראת הפעלה מחדש כש-swap גדל"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "swap बढ़ने पर रीस्टार्ट की चेतावनी"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozorenje o ponovnom pokretanju kad swap raste"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Újraindítási figyelmeztetés, ha nő a swap"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peringatan mulai ulang saat swap bertambah"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avviso di riavvio quando lo swap cresce"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "swapが増えたときの再起動の提案"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "swap이 늘어나면 재시동 권장"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amaran mulakan semula apabila swap bertambah"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omstartsvarsel når swap vokser"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waarschuwing om opnieuw op te starten als swap groeit"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostrzeżenie o ponownym uruchomieniu, gdy rośnie swap"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aviso para reiniciar quando o swap aumenta"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avertizare de repornire când swap-ul crește"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Предупреждение о перезагрузке при росте swap"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upozornenie na reštart, keď swap rastie"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opozorilo za ponovni zagon, ko swap raste"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varning för omstart när swap växer"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "แจ้งเตือนให้รีสตาร์ทเมื่อ swap เพิ่มขึ้น"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swap büyüyünce yeniden başlatma uyarısı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Попередження про перезапуск, коли swap зростає"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cảnh báo khởi động lại khi swap tăng"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "swap 增长时提醒重新启动"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "swap 增長時提醒重新啟動"
           }
         }
       }
@@ -46799,6 +47655,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Escenas del benchmark, que se descargan de nuevo cuando se ejecuta: muévelas a la Papelera desde el Finder. El espacio vuelve cuando se vacía la Papelera."
+          }
+        }
+      }
+    },
+    "Clique com o botão direito no ícone e escolha em Mostrar na barra: espaço livre, liberado automaticamente, Dados do Sistema, usado de total ou só o ícone." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر بزر الماوس الأيمن على الأيقونة واختر ضمن “اعرض في شريط القوائم”: المساحة الفارغة، أو يُحرَّر تلقائيًا، أو بيانات النظام، أو المستخدم من الإجمالي، أو الأيقونة فقط."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fes clic amb el botó dret a la icona i tria a «Mostra a la barra»: espai lliure, alliberat automàticament, dades del sistema, usat del total o només la icona."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klikněte pravým tlačítkem na ikonu a vyberte v části „Zobrazovat v řádku nabídek“: volné místo, uvolněno automaticky, systémová data, využito z celku nebo jen ikonu."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Højreklik på symbolet, og vælg under Vis i menulinjen: ledig plads, frigives automatisk, systemdata, brugt / i alt eller kun symbolet."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechtsklick auf das Symbol und unter „In der Menüleiste anzeigen“ auswählen: Freier Speicherplatz, Automatisch freigegeben, Systemdaten, Belegt / Gesamt oder Nur das Symbol."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Κάντε δεξί κλικ στο εικονίδιο και επιλέξτε στην επιλογή «Εμφάνιση στη γραμμή μενού»: ελεύθερος χώρος, ελευθερώνεται αυτόματα, δεδομένα συστήματος, χρησιμοποιημένο από το σύνολο ή μόνο το εικονίδιο."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Right-click the icon and choose in Show in Menu Bar: free space, freed automatically, System Data, used of total, or icon only."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz clic derecho en el icono y elige en «Mostrar en la barra»: espacio libre, liberado automáticamente, datos del sistema, usado del total o solo el icono."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haz clic derecho en el ícono y elige en «Mostrar en la barra»: espacio libre, liberado automáticamente, datos del sistema, usado del total o solo el ícono."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napsauta kuvaketta hiiren kakkospainikkeella ja valitse kohdasta Näytä valikkorivillä: vapaa tila, vapautuu automaattisesti, järjestelmätiedot, käytetty / yhteensä tai vain kuvake."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites un clic droit sur l’icône et choisissez dans « Afficher dans la barre des menus » : espace libre, libéré automatiquement, données système, utilisé sur le total ou l’icône seule."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "לחץ לחיצה ימנית על הסמל ובחר תחת “הצג בשורת התפריטים”: שטח פנוי, משתחרר אוטומטית, נתוני המערכת, בשימוש מתוך הסה״כ או הסמל בלבד."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आइकॉन पर राइट-क्लिक करें और “मेनू बार में दिखाएँ” में चुनें: खाली जगह, अपने-आप खाली होने वाली, सिस्टम डेटा, इस्तेमाल / कुल या सिर्फ़ आइकॉन।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desnom tipkom miša kliknite ikonu i odaberite u izborniku Prikaži u traci izbornika: slobodni prostor, automatski oslobođeno, podaci sustava, iskorišteno od ukupnog ili samo ikonu."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kattintson jobb gombbal az ikonra, és a Megjelenítés a menüsorban részben válasszon: szabad hely, automatikusan felszabadítva, rendszeradatok, használt / összes vagy csak az ikon."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klik kanan ikon dan pilih di Tampilkan di bilah menu: ruang kosong, dibebaskan otomatis, Data Sistem, terpakai dari total, atau hanya ikon."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fai clic con il tasto destro sull’icona e scegli in Mostra nella barra dei menu: spazio libero, liberato automaticamente, dati sistema, usato su totale o solo l’icona."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アイコンを右クリックし、「メニューバーに表示」で次から選びます：空き容量、自動で解放、システムデータ、使用量 / 全体、アイコンのみ。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아이콘을 오른쪽 클릭하고 ‘메뉴 막대에 표시’에서 여유 공간, 자동으로 비워짐, 시스템 데이터, 사용량 / 전체, 아이콘만 중에서 선택하세요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klik kanan ikon dan pilih dalam Paparkan dalam bar menu: ruang bebas, dibebaskan secara automatik, Data Sistem, digunakan daripada jumlah atau ikon sahaja."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Høyreklikk på symbolet og velg under Vis i menylinjen: ledig plass, frigjøres automatisk, systemdata, brukt av totalt eller bare symbolet."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klik met de rechtermuisknop op het symbool en kies bij Tonen in menubalk: vrije ruimte, automatisch vrijgemaakt, systeemgegevens, gebruikt van totaal of alleen het symbool."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kliknij ikonę prawym przyciskiem myszy i wybierz w opcji „Pokaż na pasku menu”: wolne miejsce, zwalniane automatycznie, dane systemowe, użyte z całości lub tylko ikonę."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clique com o botão direito no ícone e escolha em Mostrar na barra: espaço livre, libertado automaticamente, dados do sistema, utilizado do total ou só o ícone."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fă clic dreapta pe pictogramă și alege în Arată în bară: spațiu liber, eliberat automat, date de sistem, utilizat din total sau doar pictograma."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Щёлкните значок правой кнопкой мыши и выберите в разделе «Показывать в строке меню»: свободное место, освобождается автоматически, системные данные, использовано из всего или только значок."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kliknite na ikonu pravým tlačidlom a v časti „Zobraziť v lište ponúk“ vyberte: voľné miesto, uvoľnené automaticky, systémové dáta, použité z celku alebo iba ikonu."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z desnim klikom na ikono v razdelku »Prikaži v menijski vrstici« izberite: prosti prostor, samodejno sproščeno, sistemski podatki, uporabljeno od skupaj ali samo ikono."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Högerklicka på ikonen och välj under Visa i menyraden: ledigt utrymme, frigörs automatiskt, systemdata, använt av totalt eller bara ikonen."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คลิกขวาที่ไอคอนแล้วเลือกใน แสดงในแถบเมนู: พื้นที่ว่าง, ถูกล้างอัตโนมัติ, ข้อมูลระบบ, ใช้แล้วจากทั้งหมด หรือเฉพาะไอคอน"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simgeye sağ tıklayın ve Menü çubuğunda göster bölümünden seçin: boş alan, otomatik boşaltılan, sistem verileri, kullanılan / toplam veya yalnızca simge."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Клацніть піктограму правою кнопкою миші та виберіть у розділі «Показувати в рядку меню»: вільне місце, звільняється автоматично, системні дані, використано з усього або лише піктограму."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhấp chuột phải vào biểu tượng và chọn trong Hiển thị trên thanh: dung lượng trống, tự động giải phóng, dữ liệu hệ thống, đã dùng trên tổng hoặc chỉ biểu tượng."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "右键点按图标，在“菜单栏中显示”里选择：可用空间、自动释放、系统数据、已用 / 总量或仅图标。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在圖像上按右鍵，於「選單列顯示」中選擇：可用空間、自動釋出、系統資料、已用 / 總量或僅圖像。"
           }
         }
       }
@@ -69269,6 +70339,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "請給 SDTally 完全取用磁碟權限"
+          }
+        }
+      }
+    },
+    "Em Configurações › Comportamento, escolha avisar abaixo de 5, 10, 20, 50 ou 100 GB livres, ou manter os 10 % do disco." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "في الإعدادات › السلوك، اختر التنبيه عند بقاء أقل من 5 أو 10 أو 20 أو 50 أو 100 GB فارغة، أو أبقِ 10% من القرص."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Configuració › Comportament, tria avisar quan quedin menys de 5, 10, 20, 50 o 100 GB lliures, o conserva el 10 % del disc."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V Nastavení › Chování vyberte upozornění při méně než 5, 10, 20, 50 nebo 100 GB volného místa, nebo ponechte 10 % disku."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Under Indstillinger › Adfærd kan du vælge at blive advaret ved under 5, 10, 20, 50 eller 100 GB ledig plads, eller beholde 10 % af disken."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unter Einstellungen › Verhalten lässt sich die Warnung bei weniger als 5, 10, 20, 50 oder 100 GB freiem Speicherplatz einstellen oder bei 10 % der Festplatte belassen."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Στις Ρυθμίσεις › Συμπεριφορά επιλέξτε προειδοποίηση κάτω από 5, 10, 20, 50 ή 100 GB ελεύθερου χώρου ή κρατήστε το 10% του δίσκου."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Settings › Behavior, choose to be alerted below 5, 10, 20, 50 or 100 GB free, or keep 10% of the disk."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En Ajustes › Comportamiento, elige avisar por debajo de 5, 10, 20, 50 o 100 GB libres, o mantén el 10 % del disco."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En Configuración › Comportamiento, elige avisar por debajo de 5, 10, 20, 50 o 100 GB libres, o mantén el 10 % del disco."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitse kohdassa Asetukset › Toiminta varoitus, kun vapaata tilaa on alle 5, 10, 20, 50 tai 100 GB, tai pidä 10 % levystä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dans Réglages › Comportement, choisissez d’être prévenu sous 5, 10, 20, 50 ou 100 GB libres, ou de garder les 10 % du disque."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "בהגדרות › התנהגות בחר להתריע כשנותרו פחות מ-5, 10, 20, 50 או 100 GB פנויים, או להשאיר 10% מהכונן."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सेटिंग › व्यवहार में चुनें कि 5, 10, 20, 50 या 100 GB से कम खाली जगह बचने पर चेतावनी मिले, या डिस्क का 10 % रखें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U odjeljku Postavke › Ponašanje odaberite upozorenje kad slobodnog prostora ima manje od 5, 10, 20, 50 ili 100 GB, ili zadržite 10 % diska."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Beállítások › Viselkedés részben válassza ki, hogy 5, 10, 20, 50 vagy 100 GB szabad hely alatt kapjon figyelmeztetést, vagy tartsa meg a lemez 10%-át."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di Pengaturan › Perilaku, pilih peringatan di bawah 5, 10, 20, 50, atau 100 GB kosong, atau tetap pakai 10 % dari disk."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Impostazioni › Comportamento, scegli di ricevere un avviso sotto 5, 10, 20, 50 o 100 GB liberi, oppure mantieni il 10 % del disco."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定 › 動作で、空きが5、10、20、50、100 GBを下回ったら警告するか、ディスクの10％を維持するかを選べます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정 › 동작에서 여유 공간이 5, 10, 20, 50, 100 GB 미만일 때 경고하거나 디스크의 10%를 유지하도록 선택할 수 있습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dalam Seting › Tingkah Laku, pilih untuk diberi amaran di bawah 5, 10, 20, 50 atau 100 GB ruang bebas, atau kekalkan 10 % cakera."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Under Innstillinger › Atferd velger du å bli varslet når det er under 5, 10, 20, 50 eller 100 GB ledig, eller beholde 10 % av disken."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies in Instellingen › Gedrag of je gewaarschuwd wilt worden onder 5, 10, 20, 50 of 100 GB vrij, of dat je 10% van de schijf aanhoudt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W sekcji Ustawienia › Zachowanie wybierz ostrzeżenie przy mniej niż 5, 10, 20, 50 lub 100 GB wolnego miejsca albo zachowaj 10 % dysku."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Em Definições › Comportamento, escolha avisar abaixo de 5, 10, 20, 50 ou 100 GB livres, ou manter os 10 % do disco."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "În Setări › Comportament, alege să fii avertizat sub 5, 10, 20, 50 sau 100 GB liberi, sau păstrează 10% din disc."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "В разделе «Настройки › Поведение» выберите предупреждение при свободном месте меньше 5, 10, 20, 50 или 100 GB либо оставьте 10 % диска."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V časti „Nastavenia › Správanie“ vyberte upozornenie pri menej ako 5, 10, 20, 50 alebo 100 GB voľných, alebo ponechajte 10 % disku."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V razdelku »Nastavitve › Vedenje« izberite opozorilo pod 5, 10, 20, 50 ali 100 GB prostega prostora ali pa ohranite 10 % diska."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välj under Inställningar › Beteende att varnas vid under 5, 10, 20, 50 eller 100 GB ledigt, eller behåll 10 % av disken."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใน การตั้งค่า › พฤติกรรม เลือกให้เตือนเมื่อพื้นที่ว่างต่ำกว่า 5, 10, 20, 50 หรือ 100 GB หรือคงไว้ที่ 10 % ของดิสก์"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar › Davranış bölümünde, boş alan 5, 10, 20, 50 veya 100 GB'ın altına düşünce uyarı almayı ya da diskin %10'unu korumayı seçin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У розділі «Параметри › Поведінка» виберіть попередження, коли вільно менше ніж 5, 10, 20, 50 або 100 GB, або залиште 10 % диска."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trong Cài đặt › Hành vi, chọn cảnh báo khi dưới 5, 10, 20, 50 hoặc 100 GB trống, hoặc giữ 10 % ổ đĩa."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在“设置 › 行为”中，可选择可用空间低于 5、10、20、50 或 100 GB 时提醒，或保持磁盘的 10 %。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在「設定 › 行為」中，可選擇可用空間低於 5、10、20、50 或 100 GB 時提醒，或維持磁碟的 10%。"
           }
         }
       }
@@ -147701,6 +148985,220 @@
         }
       }
     },
+    "Quando o Mac usa muito disco como memória (acima de 20 GB, por padrão), o SDTally avisa para reiniciar, o que devolve esse espaço. O limite fica em Configurações › Comportamento e pode ser desligado." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عندما يستخدم Mac قدرًا كبيرًا من القرص كذاكرة (أكثر من 20 GB افتراضيًا)، ينبّهك SDTally إلى إعادة التشغيل، وهو ما يعيد هذه المساحة. الحد موجود في الإعدادات › السلوك ويمكن إيقافه."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quan el Mac fa servir molt disc com a memòria (per sobre de 20 GB, per defecte), SDTally et suggereix reiniciar, cosa que en retorna l’espai. El límit és a Configuració › Comportament i es pot desactivar."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Když Mac používá velkou část disku jako paměť (ve výchozím nastavení nad 20 GB), SDTally doporučí restart, kterým se toto místo vrátí. Limit najdete v Nastavení › Chování a lze ho vypnout."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Når Mac'en bruger meget af disken som hukommelse (over 20 GB som standard), foreslår SDTally en genstart, som frigiver pladsen igen. Grænsen findes under Indstillinger › Adfærd og kan slås fra."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn der Mac viel Festplatte als Arbeitsspeicher nutzt (standardmäßig über 20 GB), empfiehlt SDTally einen Neustart, der diesen Platz wieder freigibt. Der Grenzwert steht unter Einstellungen › Verhalten und lässt sich ausschalten."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Όταν το Mac χρησιμοποιεί πολύ δίσκο ως μνήμη (πάνω από 20 GB, από προεπιλογή), το SDTally προτείνει επανεκκίνηση, που επιστρέφει αυτόν τον χώρο. Το όριο βρίσκεται στις Ρυθμίσεις › Συμπεριφορά και μπορεί να απενεργοποιηθεί."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When the Mac uses a lot of disk as memory (above 20 GB by default), SDTally suggests a restart, which gives that space back. The limit is in Settings › Behavior and can be turned off."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuando el Mac usa mucho disco como memoria (más de 20 GB, por defecto), SDTally sugiere reiniciar, lo que recupera ese espacio. El límite está en Ajustes › Comportamiento y se puede desactivar."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuando el Mac usa mucho disco como memoria (más de 20 GB, por defecto), SDTally sugiere reiniciar, lo que recupera ese espacio. El límite está en Configuración › Comportamiento y se puede desactivar."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kun Mac käyttää paljon levyä muistina (oletuksena yli 20 GB), SDTally ehdottaa uudelleenkäynnistystä, joka vapauttaa tilan. Raja löytyy kohdasta Asetukset › Toiminta, ja sen voi poistaa käytöstä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quand le Mac utilise beaucoup de disque comme mémoire (plus de 20 GB par défaut), SDTally suggère de redémarrer, ce qui libère cet espace. Le seuil se trouve dans Réglages › Comportement et peut être désactivé."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "כשה-Mac משתמש בהרבה מהכונן כזיכרון (מעל 20 GB כברירת מחדל), SDTally מציע להפעיל מחדש, וכך השטח חוזר. הסף נמצא בהגדרות › התנהגות וניתן לכבות אותו."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "जब Mac मेमोरी की तरह डिस्क का बहुत ज़्यादा इस्तेमाल करता है (डिफ़ॉल्ट रूप से 20 GB से ऊपर), तो SDTally रीस्टार्ट करने का सुझाव देता है, जिससे वह जगह वापस मिल जाती है। सीमा सेटिंग › व्यवहार में है और इसे बंद किया जा सकता है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kad Mac koristi puno diska kao memoriju (prema zadanim postavkama iznad 20 GB), SDTally predlaže ponovno pokretanje, čime se taj prostor vraća. Ograničenje je u odjeljku Postavke › Ponašanje i može se isključiti."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ha a Mac sok lemezterületet használ memóriaként (alapértelmezés szerint 20 GB felett), az SDTally újraindítást javasol, ami visszaadja ezt a helyet. A határérték a Beállítások › Viselkedés részben található, és kikapcsolható."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saat Mac memakai banyak disk sebagai memori (di atas 20 GB secara default), SDTally menyarankan untuk memulai ulang, yang mengembalikan ruang itu. Batasnya ada di Pengaturan › Perilaku dan bisa dimatikan."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando il Mac usa molto disco come memoria (oltre 20 GB per impostazione predefinita), SDTally suggerisce di riavviare, il che restituisce quello spazio. Il limite si trova in Impostazioni › Comportamento e può essere disattivato."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macがメモリとしてディスクを大量に使うと（デフォルトでは20 GB超）、SDTallyが再起動を提案し、その容量が戻ります。しきい値は設定 › 動作にあり、オフにもできます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac이 디스크를 메모리처럼 많이 사용하면(기본값 20 GB 초과) SDTally가 재시동을 권장하며, 재시동하면 그 공간이 돌아옵니다. 기준은 설정 › 동작에서 정하며 끌 수도 있습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apabila Mac menggunakan banyak cakera sebagai memori (melebihi 20 GB secara lalai), SDTally mencadangkan supaya dimulakan semula, yang memulangkan ruang itu. Had ini terdapat dalam Seting › Tingkah Laku dan boleh dimatikan."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Når Mac-en bruker mye av disken som minne (over 20 GB som standard), foreslår SDTally omstart, som gir plassen tilbake. Grensen finner du under Innstillinger › Atferd, og den kan slås av."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Als de Mac veel schijfruimte als geheugen gebruikt (standaard boven 20 GB), stelt SDTally voor om opnieuw op te starten, wat die ruimte teruggeeft. De limiet staat in Instellingen › Gedrag en kan worden uitgezet."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gdy Mac używa dużo dysku jako pamięci (domyślnie powyżej 20 GB), SDTally sugeruje ponowne uruchomienie, co zwraca to miejsce. Próg znajdziesz w sekcji Ustawienia › Zachowanie; można go wyłączyć."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quando o Mac usa muito disco como memória (acima de 20 GB, por predefinição), o SDTally avisa para reiniciar, o que devolve esse espaço. O limite fica em Definições › Comportamento e pode ser desativado."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Când Mac-ul folosește mult disc ca memorie (peste 20 GB, implicit), SDTally sugerează o repornire, care redă acel spațiu. Limita se află în Setări › Comportament și poate fi dezactivată."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Когда Mac использует много диска как память (по умолчанию больше 20 GB), SDTally предлагает перезагрузиться, что возвращает это место. Порог находится в разделе «Настройки › Поведение», его можно отключить."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keď Mac používa veľa disku ako pamäť (štandardne nad 20 GB), SDTally navrhne reštart, ktorý toto miesto vráti. Limit nájdete v časti „Nastavenia › Správanie“ a dá sa vypnúť."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ko Mac uporablja veliko diska kot pomnilnik (privzeto nad 20 GB), SDTally predlaga ponovni zagon, ki ta prostor vrne. Meja je v razdelku »Nastavitve › Vedenje« in jo je mogoče izklopiti."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "När Mac använder mycket disk som minne (över 20 GB som standard) föreslår SDTally en omstart, vilket ger tillbaka utrymmet. Gränsen finns under Inställningar › Beteende och kan stängas av."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เมื่อ Mac ใช้ดิสก์เป็นหน่วยความจำมาก (เกิน 20 GB ตามค่าเริ่มต้น) SDTally จะแนะนำให้รีสตาร์ท ซึ่งจะคืนพื้นที่นั้น ขีดจำกัดอยู่ใน การตั้งค่า › พฤติกรรม และปิดได้"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac diski çok fazla bellek olarak kullandığında (varsayılan olarak 20 GB üzeri), SDTally yeniden başlatmayı önerir; bu da o alanı geri verir. Sınır Ayarlar › Davranış bölümündedir ve kapatılabilir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Коли Mac використовує багато диска як пам’ять (за замовчуванням понад 20 GB), SDTally радить перезапустити, що повертає це місце. Поріг у розділі «Параметри › Поведінка», його можна вимкнути."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Khi Mac dùng nhiều ổ đĩa làm bộ nhớ (trên 20 GB theo mặc định), SDTally sẽ đề nghị khởi động lại, việc này trả lại dung lượng đó. Ngưỡng nằm trong Cài đặt › Hành vi và có thể tắt."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "当 Mac 把大量磁盘当作内存使用（默认超过 20 GB）时，SDTally 会提醒重新启动，这样可收回这部分空间。上限位于“设置 › 行为”，也可以关闭。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "當 Mac 把大量磁碟當作記憶體使用（預設超過 20 GB）時，SDTally 會提醒重新啟動，即可釋出這部分空間。上限位於「設定 › 行為」，也可以關閉。"
+          }
+        }
+      }
+    },
     "Quando: %@" : {
       "localizations" : {
         "en" : {
@@ -176266,7 +177764,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Used of total"
+            "value" : "Used of Total"
           }
         },
         "ar" : {
@@ -183319,6 +184817,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lo eliminaste, pero una app aún lo retiene; el espacio vuelve cuando se cierre."
+          }
+        }
+      }
+    },
+    "Você escolhe o que a barra de menus mostra" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تختار ما يعرضه شريط القوائم"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tria què mostra la barra de menús"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Určete, co zobrazuje řádek nabídek"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du vælger, hvad menulinjen viser"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inhalt der Menüleiste frei wählbar"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Εσείς επιλέγετε τι εμφανίζει η γραμμή μενού"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You choose what the menu bar shows"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliges qué muestra la barra de menús"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliges qué muestra la barra de menús"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valitset, mitä valikkorivi näyttää"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous choisissez ce qu’affiche la barre des menus"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "בחר מה שורת התפריטים מציגה"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आप तय करते हैं कि मेनू बार में क्या दिखे"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vi birate što traka izbornika prikazuje"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ön választja ki, mit mutat a menüsor"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anda memilih apa yang ditampilkan bilah menu"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli tu cosa mostra la barra dei menu"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メニューバーに表示する内容を選べます"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "메뉴 막대에 표시할 항목을 직접 선택합니다"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anda pilih apa yang dipaparkan bar menu"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du velger hva menylinjen viser"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jij kiest wat de menubalk toont"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ty decydujesz, co pokazuje pasek menu"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escolha o que a barra de menus mostra"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alegi ce afișează bara de meniuri"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы выбираете, что показывает строка меню"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyberte si, čo zobrazuje lišta ponúk"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Izberete, kaj prikazuje menijska vrstica"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du väljer vad menyraden visar"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "คุณเลือกได้ว่าแถบเมนูจะแสดงอะไร"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menü çubuğunun neyi göstereceğini siz seçersiniz"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ви обираєте, що показує рядок меню"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bạn chọn thanh menu hiển thị gì"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由你选择菜单栏显示什么"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "由你選擇選單列顯示什麼"
           }
         }
       }
