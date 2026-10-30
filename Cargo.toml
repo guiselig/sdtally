@@ -1,6 +1,6 @@
 [package]
 name = "sdtally"
-version = "1.1.0"
+version = "1.2.0"
 edition = "2024"
 authors = ["Guilherme Selig"]
 description = "Explica o \"Dados do Sistema\" do macOS com medição, sem estimativa (Apple Silicon, macOS 15+)"
