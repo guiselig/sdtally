@@ -92,11 +92,11 @@ private struct Ranking: View {
             campoFiltro
             if let s = c.top.first(where: { $0.term == "snapshots" }), let n = s.count, n > 0 {
                 Label("\(n) snapshots locais · \(gb(s.bytes))", systemImage: "clock.arrow.circlepath")
-                    .help("Enquanto existirem, apagar um arquivo pode liberar menos do que ele ocupa: compare Ocupa com Libera se apagar.")
+                    .dica("Enquanto existirem, apagar um arquivo pode liberar menos do que ele ocupa: compare Ocupa com Libera se apagar.")
             }
             Text(painel.manual ? String(localized: "\(c.top.count) linhas · medido às \(hora(c.generatedAt))") : String(localized: "\(c.top.count) linhas"))
                 .foregroundStyle(.secondary)
-                .help("Do volume de dados inteiro, inclusive o que o Ajustes põe em outras linhas. Duplo clique numa pasta abre o que há dentro.")
+                .dica("Do volume de dados inteiro, inclusive o que o Ajustes põe em outras linhas. Duplo clique numa pasta abre o que há dentro.")
         }
         .font(.callout)
         .frame(maxWidth: .infinity, alignment: .leading)

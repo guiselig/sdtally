@@ -102,7 +102,7 @@ struct LinhaPermissao<Botao: View>: View {
                 }
             }
             .fixedSize(horizontal: false, vertical: true)
-            .help(semEla.map { String(localized: "\(serve) Sem ela: \($0)") } ?? serve)
+            .dica(semEla.map { String(localized: "\(serve) Sem ela: \($0)") } ?? serve)
             if !explicar {
                 Spacer(minLength: 12)
                 botao.fixedSize()

@@ -84,7 +84,7 @@ struct SnapshotsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Snapshots, raio-X").font(.headline)
-                .help("O snapshot do sistema em uso é o macOS que está rodando, no volume System: entra na linha macOS do Ajustes, não em Dados do Sistema.")
+                .dica("O snapshot do sistema em uso é o macOS que está rodando, no volume System: entra na linha macOS do Ajustes, não em Dados do Sistema.")
             switch c.informational?.snapshots {
             case nil:
                 let m = c.stageErrors.first { $0.stage == "snapshots" }?.error ?? String(localized: "a etapa de snapshots não rodou")
@@ -101,7 +101,7 @@ struct SnapshotsView: View {
                     Text("Presos em dois ou mais snapshots:")
                     NumeroView(bytes: RaioX.presos(c), source: "difference", state: RaioX.presos(c) == nil ? "not_measured" : "measured")
                 }
-                .help("Só saem quando todos saírem.")
+                .dica("Só saem quando todos saírem.")
             }
             // Só o plist ilegível: sem preferências é TM nunca configurado; outro motivo cru não aparece.
             if let tm = c.informational?.timeMachine, tm.state == "not_measured", tm.reason == "plist unreadable" {
@@ -168,7 +168,7 @@ struct SnapshotsView: View {
                     if let b = x.cumulativeBytes { NumeroView(bytes: b, source: "fsctl_snapshot_private_size") } else { Text("—") }
                     Text(RaioX.situacao(x)).font(.caption).foregroundStyle(.secondary)
                         .fixedSize(horizontal: false, vertical: true)
-                        .help(RaioX.situacaoDica(x))
+                        .dica(RaioX.situacaoDica(x))
                 }
             }
         }

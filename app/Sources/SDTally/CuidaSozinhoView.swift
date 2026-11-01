@@ -85,7 +85,7 @@ struct CuidaSozinhoView: View {
             Divider()
             VStack(alignment: .leading, spacing: 12) {
                 Text("Liberado automaticamente").font(.headline)
-                    .help("Não pede nada de você. O purgeable e os snapshots não se somam: o serviço do Time Machine é a própria linha de snapshots.")
+                    .dica("Não pede nada de você. O purgeable e os snapshots não se somam: o serviço do Time Machine é a própria linha de snapshots.")
                 if let titulo { Text(gb(titulo)).font(.kpi) } else { Text(p.reason.map { String(localized: "Não medido: \($0)") } ?? String(localized: "Não medido")).foregroundStyle(.secondary) }
                 grade {
                     ForEach(Array(linhas.enumerated()), id: \.offset) { _, l in

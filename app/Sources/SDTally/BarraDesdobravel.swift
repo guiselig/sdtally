@@ -185,7 +185,7 @@ struct BarraDesdobravel: View {
                         .buttonStyle(.borderless)
                         .help("Voltar um nível (Esc ou ⌘[)")
                 }
-                Text(titulo).font(.headline).help(dica ?? "")
+                Text(titulo).font(.headline).dica(dica ?? "")
             }
             if let legenda {
                 Text(legenda).font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
@@ -362,7 +362,7 @@ private struct Colchete: View {
             .frame(height: 7)
             .accessibilityHidden(true)
             Text(rotulo).font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
-                .help("Já está dentro do usado, sem lugar fixo na barra; o colchete só mostra o tamanho.")
+                .dica("Já está dentro do usado, sem lugar fixo na barra; o colchete só mostra o tamanho.")
         }
     }
 }

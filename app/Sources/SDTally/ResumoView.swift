@@ -110,7 +110,7 @@ struct Heroi: View {
         // A fonte (statfs) fica na linha do título do cartão (Bloco); aqui, só o aviso de falha.
         if let f = painel.rapidoFalhou {
             Label("Não atualizado desde \(hora(r.generatedAt))", systemImage: "exclamationmark.triangle")
-                .font(.caption).foregroundStyle(Marca.aviso).help(f.msg)
+                .font(.caption).foregroundStyle(Marca.aviso).dica(f.msg)
         }
         HStack {
             NumeroLivre(capacidade: c)
@@ -215,7 +215,7 @@ private struct NumeroSistema: View {
                 // O mesmo símbolo da barra lateral.
                 Image(systemName: Secao.sistema.simbolo).font(.title3).accessibilityHidden(true)
                 Text("Dados do Sistema").font(.title3.weight(.semibold))
-                    .help("Não é uma pasta: é o que o Ajustes não põe em nenhuma outra linha. A Apple não mede, subtrai.")
+                    .dica("Não é uma pasta: é o que o Ajustes não põe em nenhuma outra linha. A Apple não mede, subtrai.")
             }
             estado
         }
@@ -315,7 +315,7 @@ private struct Conta: View {
                 Text(t.systemData.map(gb) ?? "—")
                     .font(.heroi).tracking(-0.5)
                     .transicaoNumero(Double(t.systemData ?? 0))
-                    .help(notaDisponivel ?? "")
+                    .dica(notaDisponivel ?? "")
             }
             ViewThatFits(in: .horizontal) {
                 HStack(alignment: .top, spacing: 8) { fichas(t) }
@@ -398,7 +398,7 @@ private func desde(_ d: Int64, em: Date?) -> some View {
     let texto = em.map { String(localized: "Desde a última leitura (\(quando($0))): \(valor)") } ?? String(localized: "Desde a última leitura: \(valor)")
     return Label(texto, systemImage: !mudou ? "equal" : d > 0 ? "arrow.up.right" : "arrow.down.right")
         .font(.caption.monospacedDigit())
-        .help("Dados do Sistema da tela do Ajustes contra a abertura anterior, guardada no Histórico")
+        .dica("Dados do Sistema da tela do Ajustes contra a abertura anterior, guardada no Histórico")
 }
 
 // MARK: - B4: linha de medição

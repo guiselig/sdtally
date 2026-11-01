@@ -59,7 +59,7 @@ struct InfoView: View {
                 comando(String(localized: "Verificar"), "\(s) --verify")
             } header: {
                 Text("Comandos")
-                    .help("Pelo MCP, seu nome de usuário e os nomes de pastas pessoais são trocados antes de sair do sdtally (`--redact off` desliga). O SDTally não manda nada sobre o seu disco pela rede, mas o cliente de IA manda. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita no app.")
+                    .dica("Pelo MCP, seu nome de usuário e os nomes de pastas pessoais são trocados antes de sair do sdtally (`--redact off` desliga). O SDTally não manda nada sobre o seu disco pela rede, mas o cliente de IA manda. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita no app.")
             }
         }
         .formStyle(.grouped)
@@ -77,7 +77,7 @@ struct InfoView: View {
         LabeledContent(nome) {
             Text(p.map { ($0 as NSString).abbreviatingWithTildeInPath } ?? ausente)
                 .lineLimit(1).truncationMode(.middle)
-                .help(p ?? "")
+                .dica(p ?? "")
         }
         .contextMenu { if let p { MenuArquivo(caminho: p) } }
     }

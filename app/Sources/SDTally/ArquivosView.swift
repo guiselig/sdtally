@@ -70,7 +70,7 @@ struct ArquivosDuplicados: View {
                 }
                 if d.state == "partial" {
                     Label("Comparação parcial: pode haver mais cópias além destas.", systemImage: "clock")
-                        .font(.callout).foregroundStyle(.secondary).help(d.reason ?? "")
+                        .font(.callout).foregroundStyle(.secondary).dica(d.reason ?? "")
                 }
             }
         }
@@ -93,7 +93,7 @@ private struct LinhaArquivo<Valor: View>: View {
                 Text(rotuloArquivo(caminho, home: home)).font(.callout.monospaced()).lineLimit(1).truncationMode(.middle)
                 if let nota { Text(nota).font(.caption).foregroundStyle(.secondary) }
             }
-            .help(abs)
+            .dica(abs)
             Spacer(minLength: 8)
             valor
             Button("Mostrar no Finder") { NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: abs)]) }

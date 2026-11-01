@@ -93,7 +93,7 @@ struct ReiniciarView: View {
             ForEach(Array(ls.enumerated()), id: \.offset) { _, l in
                 Linha(simbolo: simbolo, nome: l.nome, dica: l.detalhe) {
                     if l.traco {
-                        Text("—").help("Leituras em momentos diferentes")
+                        Text("—").dica("Leituras em momentos diferentes")
                     } else {
                         NumeroView(bytes: l.bytes, source: l.fonte, state: l.estado)
                     }

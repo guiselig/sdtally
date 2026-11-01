@@ -364,7 +364,7 @@ struct CartaoConselho: View {
                             .font(.caption.weight(.semibold)).foregroundStyle(.secondary)
                     }
                     Text(tituloConselho(c.id) ?? c.term.map(nomeTermo) ?? String(localized: "Recomendação do sdtally")).font(.headline)
-                        .help(dicaCartao)
+                        .dica(dicaCartao)
                     Label(nomeNivel(c.level), systemImage: n.simbolo)
                         .font(.caption.weight(.semibold)).foregroundStyle(n.cor)
                 }
@@ -399,7 +399,7 @@ struct CartaoConselho: View {
                             Text(d.command).font(.callout.monospaced()).textSelection(.enabled)
                             Button("Copiar comando") { copiar(d.command) }.controlSize(.small)
                         }
-                        .help("Só mostra o que o comando acima faria. Fonte: \(d.doc)")
+                        .dica("Só mostra o que o comando acima faria. Fonte: \(d.doc)")
                     }
                 }
                 // 6. Como agir (botões), antes da fonte (spec-fase6 §2.3).
@@ -504,7 +504,7 @@ struct CartaoConselho: View {
         let arquivo = FileManager.default.fileExists(atPath: abs, isDirectory: &pasta) && !pasta.boolValue
         return HStack(spacing: 8) {
             Image(systemName: arquivo ? "doc" : "folder").foregroundStyle(.secondary).accessibilityHidden(true)
-            Text(rotuloArquivo(p, home: home)).font(.callout.monospaced()).lineLimit(1).truncationMode(.middle).help(abs)
+            Text(rotuloArquivo(p, home: home)).font(.callout.monospaced()).lineLimit(1).truncationMode(.middle).dica(abs)
             Spacer(minLength: 8)
             Button("Mostrar no Finder") { NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: abs)]) }
             Button("Copiar caminho") { copiar(abs) }
@@ -572,7 +572,7 @@ private struct PorQueNaoVoltou: View {
                         }
                         Text("Fonte: \(nomeFonte(n.source))").font(.caption).foregroundStyle(.secondary)
                     }
-                    .help(n.text.texto)
+                    .dica(n.text.texto)
                 }
             }
             .padding(16)

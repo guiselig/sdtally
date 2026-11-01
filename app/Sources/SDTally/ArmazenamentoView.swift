@@ -148,7 +148,7 @@ struct Bloco<Conteudo: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .firstTextBaseline) {
-                Text(titulo).font(.headline).help(dica ?? "")
+                Text(titulo).font(.headline).dica(dica ?? "")
                 if let fonte {
                     Spacer()
                     Text(fonte).font(.caption).foregroundStyle(.tertiary)
@@ -181,7 +181,7 @@ struct Linha<Valor: View>: View {
                 if recuo { icone }
                 VStack(alignment: .leading, spacing: 2) {
                     HStack(alignment: .firstTextBaseline, spacing: 4) {
-                        Text(nome).help(dica ?? "")
+                        Text(nome).dica(dica ?? "")
                         if let info { BotaoInfo(nome: nome, texto: info) }
                     }
                     if let detalhe { Text(detalhe).font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true) }
@@ -210,6 +210,33 @@ struct BotaoInfo: View {
             .popover(isPresented: $aberto, arrowEdge: .bottom) {
                 Text(texto).font(.callout).fixedSize(horizontal: false, vertical: true).padding(14).frame(width: 320)
             }
+    }
+}
+
+extension View {
+    /// O .help do mouse e, no toque (macOS 27), o mesmo texto num balão ao tocar: toque não tem
+    /// hover, então o tooltip não aparece (TN3212). Só fora de botão: dentro, o toque é do botão.
+    func dica(_ t: LocalizedStringKey) -> some View { modifier(Dica(texto: Text(t), vazio: false)) }
+    @_disfavoredOverload func dica(_ t: String) -> some View { modifier(Dica(texto: Text(verbatim: t), vazio: t.isEmpty)) }
+}
+
+private struct Dica: ViewModifier {
+    let texto: Text
+    let vazio: Bool
+    @State private var aberto = false
+
+    func body(content: Content) -> some View {
+        if vazio {
+            content
+        } else if #available(macOS 27, *) {
+            content.help(texto)
+                .onTapGesture(inputKinds: .directTouch) { _ in aberto = true }
+                .popover(isPresented: $aberto, arrowEdge: .bottom) {
+                    texto.font(.callout).fixedSize(horizontal: false, vertical: true).padding(14).frame(width: 320)
+                }
+        } else {
+            content.help(texto)
+        }
     }
 }
 
@@ -382,7 +409,7 @@ private struct Volumes: View {
         let resto = Armazenamento.restoVM(cs, swap: swap)
         Linha(simbolo: "ellipsis.circle", nome: String(localized: "Resto do VM (kernelcore e outros)"), recuo: true) {
             if resto == nil, Armazenamento.vm(cs) != nil, swap?.total != nil {
-                Text("—").help("Leituras em momentos diferentes")
+                Text("—").dica("Leituras em momentos diferentes")
             } else {
                 NumeroView(bytes: resto, source: "difference", state: resto == nil ? "not_measured" : "measured")
             }
@@ -590,6 +617,6 @@ private struct NaoMedido: View {
     }
 
     private func item(_ titulo: String, _ motivo: String) -> some View {
-        Label(titulo, systemImage: "circle.dashed").help(motivo)
+        Label(titulo, systemImage: "circle.dashed").dica(motivo)
     }
 }

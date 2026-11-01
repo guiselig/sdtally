@@ -48,7 +48,7 @@ struct HistoricoView: View {
                         let usado = pontos.compactMap { p in p.usado.flatMap { u in data(p.t).map { (d: $0, gb: Double(u - (p.purgeable ?? 0)) / 1e9) } } }
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Dados do Sistema").font(.title3.weight(.semibold))
-                                .help("Dados do Sistema como a tela de Armazenamento do Ajustes mostra, só nas horas em que ela foi lida. Role sobre o gráfico para aproximar ou afastar.")
+                                .dica("Dados do Sistema como a tela de Armazenamento do Ajustes mostra, só nas horas em que ela foi lida. Role sobre o gráfico para aproximar ou afastar.")
                             if sistema.isEmpty {
                                 Text("Nenhuma leitura da tela do Ajustes neste período.").foregroundStyle(.secondary)
                             } else {
@@ -59,7 +59,7 @@ struct HistoricoView: View {
                         .cartao()
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Espaço usado").font(.title3.weight(.semibold))
-                                .help("Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Role sobre o gráfico para aproximar ou afastar.")
+                                .dica("Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Role sobre o gráfico para aproximar ou afastar.")
                             if usado.isEmpty {
                                 Text("Nenhum ponto neste período.").foregroundStyle(.secondary)
                             } else {
@@ -176,7 +176,7 @@ private struct PastasNoPeriodo: View {
         })
         VStack(alignment: .leading, spacing: 10) {
             Text("Pastas").font(.title3.weight(.semibold))
-                .help("Uma amostra por hora das maiores pastas do Automático, guardada por 90 dias. Uma pasta só entra na conta quando aparece em duas amostras do período.")
+                .dica("Uma amostra por hora das maiores pastas do Automático, guardada por 90 dias. Uma pasta só entra na conta quando aparece em duas amostras do período.")
             if lista.isEmpty {
                 Text("Sem duas amostras de pastas neste período.").foregroundStyle(.secondary)
             } else {
@@ -528,7 +528,7 @@ private struct ListaMedicoes: View {
                                 .background(.quaternary, in: .capsule)
                             Text(c.dataVolume.used.bytes.map(gb) ?? "—")
                             Text((u.bytes.map(gb) ?? "—") + (u.percentOfUsed.map { " · " + $0.formatted(.number.precision(.fractionLength(1)).locale(localApp)) + " %" } ?? ""))
-                                .help(nomeResto(c))
+                                .dica(nomeResto(c))
                             Text(c.tool.replacing("sdtally ", with: "")).font(.caption).foregroundStyle(.secondary)
                         }
                         .monospacedDigit()

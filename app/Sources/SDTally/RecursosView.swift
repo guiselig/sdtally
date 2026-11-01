@@ -46,7 +46,7 @@ struct RecursosView: View {
         if !r.grupos.isEmpty || r.outros != nil {
             VStack(alignment: .leading, spacing: 12) {
                 Text("Recursos baixados pelo macOS").font(.headline)
-                    .help("Gerenciados pelo macOS. Não apague dentro de AssetsV2; use o caminho indicado em cada um. Medido às \(hora(c.generatedAt)).")
+                    .dica("Gerenciados pelo macOS. Não apague dentro de AssetsV2; use o caminho indicado em cada um. Medido às \(hora(c.generatedAt)).")
                 Grid(alignment: .leading, horizontalSpacing: 12, verticalSpacing: 10) {
                     GridRow {
                         Color.clear.frame(width: 20, height: 1)
@@ -66,7 +66,7 @@ struct RecursosView: View {
         GridRow(alignment: .firstTextBaseline) {
             Image(systemName: simbolo).foregroundStyle(.secondary).frame(width: 20)
             VStack(alignment: .leading, spacing: 2) {
-                Text(nome).help(detalhe ?? "")
+                Text(nome).dica(detalhe ?? "")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             NumeroView(bytes: bytes, source: "top", state: piso ? "partial" : "measured", quando: String(localized: "às \(hora(c.generatedAt))"), compacto: true)
