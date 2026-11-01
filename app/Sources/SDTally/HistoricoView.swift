@@ -1,7 +1,7 @@
 // Histórico (spec-fase5 §4.1): período e data; no Automático, Dados do Sistema, espaço usado e pastas;
 // no Manual, "O que mudou desde a última vez" e as medições manuais.
 //   HistoricoView()      lê Painel do ambiente
-//   GraficoLinha         uma série no tempo, valor ao passar o mouse, zoom no tempo pela rolagem
+//   GraficoLinha         uma série no tempo, valor ao passar o mouse, zoom no tempo pela rolagem ou pinça
 //   zoomTempo(_:limite:fracao:delta:), eixoTempo(_:)   puras, testadas (HistoricoTests)
 import AppKit
 import Charts
@@ -272,6 +272,9 @@ struct GraficoLinha: View {
     let limite: ClosedRange<Date>
     @Binding var janela: ClosedRange<Date>?
     @State private var selecao: Date?
+    /// Área do gráfico e o trecho de quando a pinça começou: o zoom da pinça parte sempre dele.
+    @State private var areaGrafico = CGRect.zero
+    @State private var antesDaPinca: ClosedRange<Date>?
 
     var body: some View {
         let dominio = janela ?? limite
@@ -352,9 +355,20 @@ struct GraficoLinha: View {
                     .allowsHitTesting(false)
                     .frame(width: r.width, height: r.height)
                     .offset(x: r.minX, y: r.minY)
+                    .onChange(of: r, initial: true) { areaGrafico = r }
                 }
             }
         }
+        // Pinça no trackpad ou na tela touch: mesmo zoom da rolagem (span / ampliação), centrado onde começou.
+        .simultaneousGesture(MagnifyGesture()
+            .onChanged { v in
+                let base = antesDaPinca ?? dominio
+                antesDaPinca = base
+                guard areaGrafico.width > 0, v.magnification > 0 else { return }
+                janela = zoomTempo(base, limite: limite, fracao: (v.startLocation.x - areaGrafico.minX) / areaGrafico.width,
+                                   delta: log(v.magnification) / 0.02)
+            }
+            .onEnded { _ in antesDaPinca = nil })
         .environment(\.locale, localApp)
     }
 }

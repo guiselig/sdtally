@@ -33,6 +33,7 @@ final class BarraDeStatus: NSObject, NSMenuDelegate {
                                              rotulo.centerYAnchor.constraint(equalTo: b.centerYAnchor)])
                 b.target = self
                 b.action = #selector(clicou)
+                if #available(macOS 27.0, *) { b.addTarget(self, action: #selector(menuDeContexto), for: .menuActionTriggered) }
             }
             item = i
         } else if !quer, let i = item {
@@ -46,6 +47,15 @@ final class BarraDeStatus: NSObject, NSMenuDelegate {
     @objc private func clicou() {
         guard let i = item else { return }
         i.menu = menu
+        i.button?.performClick(nil)
+        i.menu = nil
+    }
+
+    /// Toque longo no ícone (tela touch): o menu do clique direito. Toque não passa pelo monitor de
+    /// eventos do MenuContexto (TN3212), que segue tratando o clique direito do mouse.
+    @objc private func menuDeContexto() {
+        guard let i = item else { return }
+        i.menu = MenuContexto.menu(barra: true)
         i.button?.performClick(nil)
         i.menu = nil
     }
