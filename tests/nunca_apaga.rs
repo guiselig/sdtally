@@ -14,7 +14,7 @@ const PROIBIDOS: [&str; 16] = [
 ];
 
 /// (arquivo, pedaço, vezes): apaga só arquivo do próprio programa, nunca dado do usuário.
-const PERMITIDOS: [(&str, &str, usize); 6] = [
+const PERMITIDOS: [(&str, &str, usize); 8] = [
     // Dir::remover: o temporário que o sdc-coleta criou ao gravar.
     ("src/sys/mod.rs", "unlink", 1),
     // Historico.podar: medições antigas do próprio SDTally (Medicoes/AAAA-MM-DD-HHMM.json comum).
@@ -29,6 +29,10 @@ const PERMITIDOS: [(&str, &str, usize); 6] = [
     // Instalacao.apagarTemporario: a pasta da instalação (o DMG e a cópia do executor) e a da
     // troca, só dentro do temporário. O app, ao desistir, e o executor, ao terminar, passam por ela.
     ("app/Sources/SDTallyInstalacao/Instalacao.swift", "removeItem", 1),
+    // Registro.gravar: o registro do próprio app passa de 1 MB e vira SDTally.1.log, que substitui
+    // o anterior (só ~/Library/Logs/SDTally).
+    ("app/Sources/SDTally/Registro.swift", "removeItem", 1),
+    ("app/Sources/SDTally/Registro.swift", ".moveItem(", 1),
 ];
 
 fn palavra(l: &str, p: &str) -> bool {
