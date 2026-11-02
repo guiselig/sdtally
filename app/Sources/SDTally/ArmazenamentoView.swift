@@ -218,6 +218,18 @@ extension View {
     /// hover, então o tooltip não aparece (TN3212). Só fora de botão: dentro, o toque é do botão.
     func dica(_ t: LocalizedStringKey) -> some View { modifier(Dica(texto: Text(t), vazio: false)) }
     @_disfavoredOverload func dica(_ t: String) -> some View { modifier(Dica(texto: Text(verbatim: t), vazio: t.isEmpty)) }
+
+    /// Toque na tela (macOS 27), com o ponto no espaço da própria view; mouse e trackpad não passam aqui.
+    @ViewBuilder func aoTocar(_ acao: @escaping (CGPoint) -> Void) -> some View {
+        if #available(macOS 27, *) { onTapGesture(inputKinds: .directTouch, perform: acao) } else { self }
+    }
+
+    /// O realce que liga a linha ao segmento da barra: ao passar o mouse e, sem hover no toque, ao
+    /// tocar (outro toque apaga).
+    func realce(_ ids: Set<String>, em destaque: Binding<Set<String>>) -> some View {
+        onHover { destaque.wrappedValue = $0 ? ids : [] }
+            .aoTocar { _ in destaque.wrappedValue = destaque.wrappedValue == ids ? [] : ids }
+    }
 }
 
 private struct Dica: ViewModifier {
@@ -228,14 +240,12 @@ private struct Dica: ViewModifier {
     func body(content: Content) -> some View {
         if vazio {
             content
-        } else if #available(macOS 27, *) {
+        } else {
             content.help(texto)
-                .onTapGesture(inputKinds: .directTouch) { _ in aberto = true }
+                .aoTocar { _ in aberto = true }
                 .popover(isPresented: $aberto, arrowEdge: .bottom) {
                     texto.font(.callout).fixedSize(horizontal: false, vertical: true).padding(14).frame(width: 320)
                 }
-        } else {
-            content.help(texto)
         }
     }
 }

@@ -210,7 +210,7 @@ struct BarraDesdobravel: View {
                     NumeroView(bytes: s.bytes, source: s.fonte, state: s.estado, quando: quando(nivel), compacto: nivel == .ajustes && s.fonte == "storage_management_log").gridColumnAlignment(.trailing)
                 }
                 .contentShape(.rect)
-                .onHover { destaque = $0 ? [s.id] : [] }
+                .realce([s.id], em: $destaque)
                 if let d = s.desdobra, abertos.contains(d), let sub = segmentos(d, rapido: painel.rapidoVivo, completo: c, tela: painel.telaBoa?.tela) {
                     ForEach(sub.partes) { f in
                         GridRow(alignment: .firstTextBaseline) {

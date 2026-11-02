@@ -1,7 +1,7 @@
 // Histórico (spec-fase5 §4.1): período e data; no Automático, Dados do Sistema, espaço usado e pastas;
 // no Manual, "O que mudou desde a última vez" e as medições manuais.
 //   HistoricoView()      lê Painel do ambiente
-//   GraficoLinha         uma série no tempo, valor ao passar o mouse, zoom no tempo pela rolagem ou pinça
+//   GraficoLinha         uma série no tempo, valor ao passar o mouse ou tocar, zoom no tempo pela rolagem ou pinça
 //   zoomTempo(_:limite:fracao:delta:), eixoTempo(_:)   puras, testadas (HistoricoTests)
 import AppKit
 import Charts
@@ -48,7 +48,7 @@ struct HistoricoView: View {
                         let usado = pontos.compactMap { p in p.usado.flatMap { u in data(p.t).map { (d: $0, gb: Double(u - (p.purgeable ?? 0)) / 1e9) } } }
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Dados do Sistema").font(.title3.weight(.semibold))
-                                .dica("Dados do Sistema como a tela de Armazenamento do Ajustes mostra, só nas horas em que ela foi lida. Role sobre o gráfico para aproximar ou afastar.")
+                                .dica("Dados do Sistema como a tela de Armazenamento do Ajustes mostra, só nas horas em que ela foi lida. Role ou faça o movimento de pinça sobre o gráfico para aproximar ou afastar.")
                             if sistema.isEmpty {
                                 Text("Nenhuma leitura da tela do Ajustes neste período.").foregroundStyle(.secondary)
                             } else {
@@ -59,7 +59,7 @@ struct HistoricoView: View {
                         .cartao()
                         VStack(alignment: .leading, spacing: 10) {
                             Text("Espaço usado").font(.title3.weight(.semibold))
-                                .dica("Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Role sobre o gráfico para aproximar ou afastar.")
+                                .dica("Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Role ou faça o movimento de pinça sobre o gráfico para aproximar ou afastar.")
                             if usado.isEmpty {
                                 Text("Nenhum ponto neste período.").foregroundStyle(.secondary)
                             } else {
@@ -258,7 +258,7 @@ func variacoesPastas(_ amostras: [PontoPastas]) -> [VariacaoPasta] {
 // MARK: - Gráfico
 
 /// Uma série no tempo: linha (com área embaixo, se `area`; com pontos, se `pontos`), eixo Y do
-/// trecho visível, o valor da hora mais perto ao passar o mouse e zoom no tempo pela rolagem sobre a
+/// trecho visível, o valor da hora mais perto ao passar o mouse (ou ao tocar) e zoom no tempo pela rolagem sobre a
 /// área do gráfico. `janela` é dividida entre os gráficos da tela: o zoom vale para todos.
 struct GraficoLinha: View {
     let itens: [(d: Date, gb: Double)]
@@ -345,6 +345,12 @@ struct GraficoLinha: View {
         // Com zoom, as marcas fora do trecho não passam da área do gráfico.
         .chartPlotStyle { $0.clipped() }
         .chartXSelection(value: $selecao)
+        // No toque não há hover: o toque escolhe a hora. O eixo X é linear no tempo, de `dominio`.
+        .aoTocar { p in
+            guard areaGrafico.width > 0 else { return }
+            let f = min(1, max(0, (p.x - areaGrafico.minX) / areaGrafico.width))
+            selecao = dominio.lowerBound.addingTimeInterval(f * dominio.upperBound.timeIntervalSince(dominio.lowerBound))
+        }
         .chartOverlay { proxy in
             GeometryReader { g in
                 if let f = proxy.plotFrame {

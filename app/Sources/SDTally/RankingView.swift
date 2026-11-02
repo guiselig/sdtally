@@ -1,5 +1,5 @@
-// Pastas maiores: o ranking inteiro da medição do alternador (automática ou completa). Duplo clique numa pasta abre
-// o detalhe dela (`sdtally <caminho> --json`, sem senha), e assim por diante.
+// Pastas maiores: o ranking inteiro da medição do alternador (automática ou completa). Duplo clique numa pasta (ou
+// "Ver o que tem dentro" no menu, que o toque longo abre) abre o detalhe dela (`sdtally <caminho> --json`, sem senha), e assim por diante.
 import AppKit
 import SwiftUI
 
@@ -58,13 +58,12 @@ private struct Ranking: View {
         }
         .contextMenu(forSelectionType: LinhaTop.ID.self) { ids in
             if let l = linha(ids), let p = l.path {
+                if let d = dentro(l) { Button("Ver o que tem dentro") { painel.pilha.append(d) }; Divider() }
                 if l.folded != true { MenuApelido(caminho: p, editando: $apelidoDe); Divider() }
                 MenuArquivo(caminho: absoluto(p, home: c.home))
             }
         } primaryAction: { ids in
-            if let l = linha(ids), let p = l.path, l.term == "tree", l.folded != true {
-                painel.pilha.append(absoluto(p, home: c.home))
-            }
+            if let d = linha(ids).flatMap(dentro) { painel.pilha.append(d) }
         }
         // Sem o fundo próprio da tabela (mais escuro): a cor da janela, igual ao cabeçalho.
         .scrollContentBackground(.hidden)
@@ -108,6 +107,12 @@ private struct Ranking: View {
         guard let id = ids.first else { return nil }
         return c.top.first { $0.id == id }
     }
+
+    /// A pasta que abre no duplo clique ou em "Ver o que tem dentro": só árvore não dobrada.
+    private func dentro(_ l: LinhaTop) -> String? {
+        guard l.term == "tree", l.folded != true, let p = l.path else { return nil }
+        return absoluto(p, home: c.home)
+    }
 }
 
 private extension LinhaTop {
@@ -150,10 +155,13 @@ private struct NomeLinha: View {
 struct MenuArquivo: View {
     let caminho: String
     var body: some View {
-        Button("Mostrar no Finder") { NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: caminho)]) }
-        Button("Copiar caminho") {
-            NSPasteboard.general.clearContents()
-            NSPasteboard.general.setString(caminho, forType: .string)
+        // O caminho inteiro no cabeçalho: no toque não há tooltip, e o nome na tabela vem cortado.
+        Section((caminho as NSString).abbreviatingWithTildeInPath) {
+            Button("Mostrar no Finder") { NSWorkspace.shared.activateFileViewerSelecting([URL(fileURLWithPath: caminho)]) }
+            Button("Copiar caminho") {
+                NSPasteboard.general.clearContents()
+                NSPasteboard.general.setString(caminho, forType: .string)
+            }
         }
     }
 }
@@ -268,7 +276,10 @@ struct RamoView: View {
                 .width(min: 80, ideal: 100)
         }
         .contextMenu(forSelectionType: Ramo.Filho.ID.self) { ids in
-            if let f = filho(ids, r) { MenuArquivo(caminho: f.path) }
+            if let f = filho(ids, r) {
+                if !f.looseFiles, !f.protected { Button("Ver o que tem dentro") { painel.pilha.append(f.path) }; Divider() }
+                MenuArquivo(caminho: f.path)
+            }
         } primaryAction: { ids in
             if let f = filho(ids, r), !f.looseFiles, !f.protected { painel.pilha.append(f.path) }
         }

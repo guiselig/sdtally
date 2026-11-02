@@ -60499,216 +60499,216 @@
         }
       }
     },
-    "Dados do Sistema como a tela de Armazenamento do Ajustes mostra, só nas horas em que ela foi lida. Role sobre o gráfico para aproximar ou afastar." : {
+    "Dados do Sistema como a tela de Armazenamento do Ajustes mostra, só nas horas em que ela foi lida. Role ou faça o movimento de pinça sobre o gráfico para aproximar ou afastar." : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "بيانات النظام كما تعرضها شاشة التخزين في الإعدادات، فقط في الأوقات التي قُرئت فيها. مرّر فوق الرسم البياني للتكبير أو التصغير."
+            "value" : "بيانات النظام كما تعرضها شاشة التخزين في الإعدادات، فقط في الأوقات التي قُرئت فيها. مرّر أو قم بالمقاربة/المباعدة بإصبعين فوق الرسم البياني للتكبير أو التصغير."
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dades del sistema tal com les mostra la pantalla d’Emmagatzematge de Configuració, només a les hores en què es va llegir. Desplaça’t sobre el gràfic per apropar o allunyar."
+            "value" : "Dades del sistema tal com les mostra la pantalla d’Emmagatzematge de Configuració, només a les hores en què es va llegir. Desplaça’t o ajunta dos dits sobre el gràfic per apropar o allunyar."
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Systémová data, jak je ukazuje obrazovka Úložiště v Nastavení, jen v hodinách, kdy byla přečtena. Posouváním nad grafem přibližujete nebo oddalujete."
+            "value" : "Systémová data, jak je ukazuje obrazovka Úložiště v Nastavení, jen v hodinách, kdy byla přečtena. Posouváním nebo sevřením či rozevřením dvou prstů nad grafem přibližujete nebo oddalujete."
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Systemdata, som skærmen Lagring i Indstillinger viser dem, kun de timer, hvor den blev aflæst. Rul over grafen for at zoome ind eller ud."
+            "value" : "Systemdata, som skærmen Lagring i Indstillinger viser dem, kun de timer, hvor den blev aflæst. Rul eller knib med to fingre over grafen for at zoome ind eller ud."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Systemdaten, wie sie der Bildschirm „Speicher“ in den Einstellungen zeigt, nur zu den Stunden, in denen er abgelesen wurde. Über dem Diagramm scrollen, um zu vergrößern oder zu verkleinern."
+            "value" : "Systemdaten, wie sie der Bildschirm „Speicher“ in den Einstellungen zeigt, nur zu den Stunden, in denen er abgelesen wurde. Über dem Diagramm scrollen oder mit zwei Fingern zusammen- bzw. auseinanderziehen, um zu vergrößern oder zu verkleinern."
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Τα Δεδομένα συστήματος όπως τα δείχνει η οθόνη Αποθήκευσης στις Ρυθμίσεις, μόνο τις ώρες που διαβάστηκε. Κάντε κύλιση πάνω στο γράφημα για μεγέθυνση ή σμίκρυνση."
+            "value" : "Τα Δεδομένα συστήματος όπως τα δείχνει η οθόνη Αποθήκευσης στις Ρυθμίσεις, μόνο τις ώρες που διαβάστηκε. Κάντε κύλιση ή σύγκλιση με δύο δάχτυλα πάνω στο γράφημα για μεγέθυνση ή σμίκρυνση."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "System Data as the Storage screen in Settings shows it, only at the hours it was read. Scroll over the chart to zoom in or out."
+            "value" : "System Data as the Storage screen in Settings shows it, only at the hours it was read. Scroll or pinch over the chart to zoom in or out."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Datos del sistema tal como los muestra la pantalla de Almacenamiento de Ajustes, solo en las horas en que se leyó. Desplázate sobre el gráfico para acercar o alejar."
+            "value" : "Datos del sistema tal como los muestra la pantalla de Almacenamiento de Ajustes, solo en las horas en que se leyó. Desplázate, o separa o junta dos dedos, sobre el gráfico para acercar o alejar."
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Datos del sistema tal como los muestra la pantalla de Almacenamiento de Ajustes, solo en las horas en que se leyó. Desplázate sobre el gráfico para acercar o alejar."
+            "value" : "Datos del sistema tal como los muestra la pantalla de Almacenamiento de Ajustes, solo en las horas en que se leyó. Desplázate, o separa o junta 2 dedos, sobre el gráfico para acercar o alejar."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Järjestelmätiedot niin kuin Asetusten Tallennustila-näyttö ne näyttää, vain niinä tunteina, joina se luettiin. Vieritä kaavion päällä lähentääksesi tai loitontaaksesi."
+            "value" : "Järjestelmätiedot niin kuin Asetusten Tallennustila-näyttö ne näyttää, vain niinä tunteina, joina se luettiin. Vieritä tai nipistä kahdella sormella kaavion päällä lähentääksesi tai loitontaaksesi."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Données système telles que l’écran Stockage des Réglages les affiche, seulement aux heures où il a été lu. Faites défiler sur le graphique pour zoomer ou dézoomer."
+            "value" : "Données système telles que l’écran Stockage des Réglages les affiche, seulement aux heures où il a été lu. Faites défiler ou pincez avec 2 doigts sur le graphique pour zoomer ou dézoomer."
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "נתוני מערכת כפי שמסך האחסון בהגדרות מציג אותם, רק בשעות שבהן הוא נקרא. גללו מעל התרשים כדי להתקרב או להתרחק."
+            "value" : "נתוני מערכת כפי שמסך האחסון בהגדרות מציג אותם, רק בשעות שבהן הוא נקרא. גללו או בצעו צביטה בשתי אצבעות מעל התרשים כדי להתקרב או להתרחק."
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "सिस्टम डेटा, जैसा सेटिंग्स की स्टोरेज स्क्रीन दिखाती है, केवल उन घंटों में जब उसे पढ़ा गया। ज़ूम इन या आउट करने के लिए चार्ट पर स्क्रॉल करें।"
+            "value" : "सिस्टम डेटा, जैसा सेटिंग्स की स्टोरेज स्क्रीन दिखाती है, केवल उन घंटों में जब उसे पढ़ा गया। ज़ूम इन या आउट करने के लिए चार्ट पर स्क्रॉल करें या दो उँगलियों से पिंच करें।"
           }
         },
         "hr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Podaci sustava kako ih prikazuje zaslon Pohrana u Postavkama, samo u satima kad je očitan. Pomičite nad grafom za približavanje ili udaljavanje."
+            "value" : "Podaci sustava kako ih prikazuje zaslon Pohrana u Postavkama, samo u satima kad je očitan. Pomičite nad grafom ili štipajte s dva prsta za približavanje ili udaljavanje."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A Rendszeradatok úgy, ahogy a Beállítások Tárhely képernyője mutatja, csak azokban az órákban, amikor leolvastuk. Görgessen a grafikon fölött a nagyításhoz vagy kicsinyítéshez."
+            "value" : "A Rendszeradatok úgy, ahogy a Beállítások Tárhely képernyője mutatja, csak azokban az órákban, amikor leolvastuk. Görgessen a grafikon fölött, vagy csípjen két ujjal a nagyításhoz vagy kicsinyítéshez."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Data Sistem seperti yang ditampilkan layar Penyimpanan di Pengaturan, hanya pada jam saat layar itu dibaca. Gulir di atas grafik untuk memperbesar atau memperkecil."
+            "value" : "Data Sistem seperti yang ditampilkan layar Penyimpanan di Pengaturan, hanya pada jam saat layar itu dibaca. Gulir atau jepit dengan dua jari di atas grafik untuk memperbesar atau memperkecil."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dati di sistema come li mostra la schermata Spazio di Impostazioni, solo nelle ore in cui è stata letta. Scorri sul grafico per ingrandire o ridurre."
+            "value" : "Dati di sistema come li mostra la schermata Spazio di Impostazioni, solo nelle ore in cui è stata letta. Scorri oppure apri o chiudi con due dita sul grafico per ingrandire o ridurre."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "設定のストレージ画面が示すシステムデータで、読み取った時刻だけを示します。グラフの上でスクロールすると拡大・縮小します。"
+            "value" : "設定のストレージ画面が示すシステムデータで、読み取った時刻だけを示します。グラフの上でスクロールするか2本指でピンチすると拡大・縮小します。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "설정의 저장 공간 화면이 보여 주는 시스템 데이터로, 화면을 읽은 시간에만 표시됩니다. 그래프 위에서 스크롤하면 확대하거나 축소합니다."
+            "value" : "설정의 저장 공간 화면이 보여 주는 시스템 데이터로, 화면을 읽은 시간에만 표시됩니다. 그래프 위에서 스크롤하거나 두 손가락으로 펼치거나 오므리면 확대하거나 축소합니다."
           }
         },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Data Sistem seperti yang ditunjukkan skrin Storan dalam Seting, hanya pada jam skrin itu dibaca. Tatal di atas carta untuk zum masuk atau keluar."
+            "value" : "Data Sistem seperti yang ditunjukkan skrin Storan dalam Seting, hanya pada jam skrin itu dibaca. Tatal atau cubit dengan dua jari di atas carta untuk zum masuk atau keluar."
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Systemdata slik Lagring-skjermen i Innstillinger viser dem, bare de timene den ble avlest. Rull over grafen for å zoome inn eller ut."
+            "value" : "Systemdata slik Lagring-skjermen i Innstillinger viser dem, bare de timene den ble avlest. Rull eller klyp med to fingre over grafen for å zoome inn eller ut."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Systeemdata zoals het scherm Opslag in Instellingen ze toont, alleen op de uren waarop het werd gemeten. Scrol boven de grafiek om in of uit te zoomen."
+            "value" : "Systeemdata zoals het scherm Opslag in Instellingen ze toont, alleen op de uren waarop het werd gemeten. Scrol of knijp met twee vingers boven de grafiek om in of uit te zoomen."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dane systemowe tak, jak pokazuje je ekran Pamięć w Ustawieniach, tylko w godzinach, w których został odczytany. Przewijaj nad wykresem, aby przybliżyć lub oddalić."
+            "value" : "Dane systemowe tak, jak pokazuje je ekran Pamięć w Ustawieniach, tylko w godzinach, w których został odczytany. Przewijaj nad wykresem lub zsuwaj i rozsuwaj dwa palce, aby przybliżyć lub oddalić."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dados do sistema tal como o ecrã de Armazenamento das Definições os mostra, só nas horas em que foi lido. Desloque sobre o gráfico para aproximar ou afastar."
+            "value" : "Dados do sistema tal como o ecrã de Armazenamento das Definições os mostra, só nas horas em que foi lido. Desloque, ou separe ou junte dois dedos, sobre o gráfico para aproximar ou afastar."
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Datele de sistem așa cum le arată ecranul Spațiu de stocare din Configurări, doar la orele la care a fost citit. Derulează peste grafic pentru a mări sau micșora."
+            "value" : "Datele de sistem așa cum le arată ecranul Spațiu de stocare din Configurări, doar la orele la care a fost citit. Derulează sau ciupește cu două degete peste grafic pentru a mări sau micșora."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Системные данные так, как их показывает экран «Хранилище» в Настройках, только в часы, когда он считывался. Прокрутите над графиком, чтобы приблизить или отдалить."
+            "value" : "Системные данные так, как их показывает экран «Хранилище» в Настройках, только в часы, когда он считывался. Прокрутите или сведите два пальца над графиком, чтобы приблизить или отдалить."
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Systémové dáta, ako ich ukazuje obrazovka Úložisko v Nastaveniach, len v hodinách, keď bola prečítaná. Posúvaním nad grafom približujete alebo odďaľujete."
+            "value" : "Systémové dáta, ako ich ukazuje obrazovka Úložisko v Nastaveniach, len v hodinách, keď bola prečítaná. Posúvaním alebo zovretím dvoma prstami k sebe nad grafom približujete alebo odďaľujete."
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sistemski podatki, kot jih prikazuje zaslon Shramba v Nastavitvah, samo ob urah, ko je bil odčitan. Pomikajte nad grafom za povečavo ali pomanjšavo."
+            "value" : "Sistemski podatki, kot jih prikazuje zaslon Shramba v Nastavitvah, samo ob urah, ko je bil odčitan. Pomikajte ali povlecite skupaj z dvema prstoma nad grafom za povečavo ali pomanjšavo."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Systemdata som skärmen Lagring i Inställningar visar dem, bara de timmar då den lästes av. Rulla över diagrammet för att zooma in eller ut."
+            "value" : "Systemdata som skärmen Lagring i Inställningar visar dem, bara de timmar då den lästes av. Rulla eller nyp med två fingrar över diagrammet för att zooma in eller ut."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ข้อมูลระบบตามที่หน้าจอพื้นที่จัดเก็บในการตั้งค่าแสดง เฉพาะชั่วโมงที่อ่านหน้าจอนั้น เลื่อนบนกราฟเพื่อซูมเข้าหรือออก"
+            "value" : "ข้อมูลระบบตามที่หน้าจอพื้นที่จัดเก็บในการตั้งค่าแสดง เฉพาะชั่วโมงที่อ่านหน้าจอนั้น เลื่อนหรือจีบนิ้วด้วยสองนิ้วบนกราฟเพื่อซูมเข้าหรือออก"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ayarlar’daki Depolama ekranının gösterdiği Sistem Verileri, yalnızca ekranın okunduğu saatlerde. Yakınlaştırmak veya uzaklaştırmak için grafiğin üzerinde kaydırın."
+            "value" : "Ayarlar’daki Depolama ekranının gösterdiği Sistem Verileri, yalnızca ekranın okunduğu saatlerde. Yakınlaştırmak veya uzaklaştırmak için grafiğin üzerinde kaydırın ya da iki parmağınızı kıstırın."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Системні дані так, як їх показує екран «Сховище» в Параметрах, лише в години, коли його зчитували. Прокручуйте над графіком, щоб наблизити або віддалити."
+            "value" : "Системні дані так, як їх показує екран «Сховище» в Параметрах, лише в години, коли його зчитували. Прокручуйте або зводьте два пальці над графіком, щоб наблизити або віддалити."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dữ liệu hệ thống như màn hình Dung lượng trong Cài đặt hiển thị, chỉ vào những giờ màn hình đó được đọc. Cuộn trên biểu đồ để phóng to hoặc thu nhỏ."
+            "value" : "Dữ liệu hệ thống như màn hình Dung lượng trong Cài đặt hiển thị, chỉ vào những giờ màn hình đó được đọc. Cuộn hoặc mở/chụm bằng hai ngón tay trên biểu đồ để phóng to hoặc thu nhỏ."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“设置”中“储存空间”屏幕显示的系统数据，只在读取该屏幕的时刻。在图表上滚动可放大或缩小。"
+            "value" : "“设置”中“储存空间”屏幕显示的系统数据，只在读取该屏幕的时刻。在图表上滚动或双指捏合可放大或缩小。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "「設定」中「儲存空間」畫面顯示的系統資料，只在讀取該畫面的時間點。在圖表上捲動可放大或縮小。"
+            "value" : "「設定」中「儲存空間」畫面顯示的系統資料，只在讀取該畫面的時間點。在圖表上捲動，或用兩指分開或靠攏，可放大或縮小。"
           }
         }
       }
@@ -178401,216 +178401,216 @@
         }
       }
     },
-    "Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Role sobre o gráfico para aproximar ou afastar." : {
+    "Usado no disco menos o que o macOS libera sozinho, uma vez por hora (diskutil e CacheDelete). Role ou faça o movimento de pinça sobre o gráfico para aproximar ou afastar." : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "المستخدم من القرص مطروحًا منه ما يحرره macOS تلقائيًا، مرة كل ساعة (diskutil وCacheDelete). مرّر فوق الرسم البياني للتكبير أو التصغير."
+            "value" : "المستخدم من القرص مطروحًا منه ما يحرره macOS تلقائيًا، مرة كل ساعة (diskutil وCacheDelete). مرّر أو قم بالمقاربة/المباعدة بإصبعين فوق الرسم البياني للتكبير أو التصغير."
           }
         },
         "ca" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usat al disc menys el que el macOS allibera sol, un cop per hora (diskutil i CacheDelete). Desplaça’t sobre el gràfic per apropar o allunyar."
+            "value" : "Usat al disc menys el que el macOS allibera sol, un cop per hora (diskutil i CacheDelete). Desplaça’t o ajunta dos dits sobre el gràfic per apropar o allunyar."
           }
         },
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Využité místo na disku bez toho, co macOS uvolní sám, jednou za hodinu (diskutil a CacheDelete). Posouváním nad grafem přibližujete nebo oddalujete."
+            "value" : "Využité místo na disku bez toho, co macOS uvolní sám, jednou za hodinu (diskutil a CacheDelete). Posouváním nebo sevřením či rozevřením dvou prstů nad grafem přibližujete nebo oddalujete."
           }
         },
         "da" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Brugt på disken minus det, macOS selv frigør, én gang i timen (diskutil og CacheDelete). Rul over grafen for at zoome ind eller ud."
+            "value" : "Brugt på disken minus det, macOS selv frigør, én gang i timen (diskutil og CacheDelete). Rul eller knib med to fingre over grafen for at zoome ind eller ud."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Belegt auf der Festplatte abzüglich dessen, was macOS von selbst freigibt, einmal pro Stunde (diskutil und CacheDelete). Über dem Diagramm scrollen, um zu vergrößern oder zu verkleinern."
+            "value" : "Belegt auf der Festplatte abzüglich dessen, was macOS von selbst freigibt, einmal pro Stunde (diskutil und CacheDelete). Über dem Diagramm scrollen oder mit zwei Fingern zusammen- bzw. auseinanderziehen, um zu vergrößern oder zu verkleinern."
           }
         },
         "el" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Χρησιμοποιημένος χώρος στον δίσκο μείον όσα ελευθερώνει μόνο του το macOS, μία φορά την ώρα (diskutil και CacheDelete). Κάντε κύλιση πάνω στο γράφημα για μεγέθυνση ή σμίκρυνση."
+            "value" : "Χρησιμοποιημένος χώρος στον δίσκο μείον όσα ελευθερώνει μόνο του το macOS, μία φορά την ώρα (diskutil και CacheDelete). Κάντε κύλιση ή σύγκλιση με δύο δάχτυλα πάνω στο γράφημα για μεγέθυνση ή σμίκρυνση."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Disk space used minus what macOS frees on its own, once an hour (diskutil and CacheDelete). Scroll over the chart to zoom in or out."
+            "value" : "Disk space used minus what macOS frees on its own, once an hour (diskutil and CacheDelete). Scroll or pinch over the chart to zoom in or out."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usado en el disco menos lo que macOS libera solo, una vez por hora (diskutil y CacheDelete). Desplázate sobre el gráfico para acercar o alejar."
+            "value" : "Usado en el disco menos lo que macOS libera solo, una vez por hora (diskutil y CacheDelete). Desplázate, o separa o junta dos dedos, sobre el gráfico para acercar o alejar."
           }
         },
         "es-419" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usado en el disco menos lo que macOS libera solo, una vez por hora (diskutil y CacheDelete). Desplázate sobre el gráfico para acercar o alejar."
+            "value" : "Usado en el disco menos lo que macOS libera solo, una vez por hora (diskutil y CacheDelete). Desplázate, o separa o junta 2 dedos, sobre el gráfico para acercar o alejar."
           }
         },
         "fi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Levyllä käytetty tila miinus se, minkä macOS vapauttaa itse, kerran tunnissa (diskutil ja CacheDelete). Vieritä kaavion päällä lähentääksesi tai loitontaaksesi."
+            "value" : "Levyllä käytetty tila miinus se, minkä macOS vapauttaa itse, kerran tunnissa (diskutil ja CacheDelete). Vieritä tai nipistä kahdella sormella kaavion päällä lähentääksesi tai loitontaaksesi."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Utilisé sur le disque moins ce que macOS libère seul, une fois par heure (diskutil et CacheDelete). Faites défiler sur le graphique pour zoomer ou dézoomer."
+            "value" : "Utilisé sur le disque moins ce que macOS libère seul, une fois par heure (diskutil et CacheDelete). Faites défiler ou pincez avec 2 doigts sur le graphique pour zoomer ou dézoomer."
           }
         },
         "he" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "השטח בשימוש בדיסק פחות מה ש‑macOS משחרר לבד, פעם בשעה (diskutil ו‑CacheDelete). גללו מעל התרשים כדי להתקרב או להתרחק."
+            "value" : "השטח בשימוש בדיסק פחות מה ש‑macOS משחרר לבד, פעם בשעה (diskutil ו‑CacheDelete). גללו או בצעו צביטה בשתי אצבעות מעל התרשים כדי להתקרב או להתרחק."
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "डिस्क पर उपयोग किया गया स्थान, macOS के अपने-आप खाली किए गए हिस्से को घटाकर, हर घंटे एक बार (diskutil और CacheDelete)। ज़ूम इन या आउट करने के लिए चार्ट पर स्क्रॉल करें।"
+            "value" : "डिस्क पर उपयोग किया गया स्थान, macOS के अपने-आप खाली किए गए हिस्से को घटाकर, हर घंटे एक बार (diskutil और CacheDelete)। ज़ूम इन या आउट करने के लिए चार्ट पर स्क्रॉल करें या दो उँगलियों से पिंच करें।"
           }
         },
         "hr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zauzeto na disku umanjeno za ono što macOS sam oslobodi, jednom na sat (diskutil i CacheDelete). Pomičite nad grafom za približavanje ili udaljavanje."
+            "value" : "Zauzeto na disku umanjeno za ono što macOS sam oslobodi, jednom na sat (diskutil i CacheDelete). Pomičite nad grafom ili štipajte s dva prsta za približavanje ili udaljavanje."
           }
         },
         "hu" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A lemezen foglalt hely, levonva, amit a macOS magától felszabadít, óránként egyszer (diskutil és CacheDelete). Görgessen a grafikon fölött a nagyításhoz vagy kicsinyítéshez."
+            "value" : "A lemezen foglalt hely, levonva, amit a macOS magától felszabadít, óránként egyszer (diskutil és CacheDelete). Görgessen a grafikon fölött, vagy csípjen két ujjal a nagyításhoz vagy kicsinyítéshez."
           }
         },
         "id" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ruang disk terpakai dikurangi yang dibebaskan macOS sendiri, sekali per jam (diskutil dan CacheDelete). Gulir di atas grafik untuk memperbesar atau memperkecil."
+            "value" : "Ruang disk terpakai dikurangi yang dibebaskan macOS sendiri, sekali per jam (diskutil dan CacheDelete). Gulir atau jepit dengan dua jari di atas grafik untuk memperbesar atau memperkecil."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spazio usato sul disco meno ciò che macOS libera da solo, una volta all’ora (diskutil e CacheDelete). Scorri sul grafico per ingrandire o ridurre."
+            "value" : "Spazio usato sul disco meno ciò che macOS libera da solo, una volta all’ora (diskutil e CacheDelete). Scorri oppure apri o chiudi con due dita sul grafico per ingrandire o ridurre."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ディスクの使用量からmacOSが自動で解放する分を引いた値で、1時間に1回記録します（diskutilとCacheDelete）。グラフの上でスクロールすると拡大・縮小します。"
+            "value" : "ディスクの使用量からmacOSが自動で解放する分を引いた値で、1時間に1回記録します（diskutilとCacheDelete）。グラフの上でスクロールするか2本指でピンチすると拡大・縮小します。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "디스크 사용 공간에서 macOS가 스스로 비우는 양을 뺀 값으로, 한 시간에 한 번 기록합니다(diskutil과 CacheDelete). 그래프 위에서 스크롤하면 확대하거나 축소합니다."
+            "value" : "디스크 사용 공간에서 macOS가 스스로 비우는 양을 뺀 값으로, 한 시간에 한 번 기록합니다(diskutil과 CacheDelete). 그래프 위에서 스크롤하거나 두 손가락으로 펼치거나 오므리면 확대하거나 축소합니다."
           }
         },
         "ms" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ruang cakera digunakan tolak apa yang dibebaskan macOS sendiri, sekali sejam (diskutil dan CacheDelete). Tatal di atas carta untuk zum masuk atau keluar."
+            "value" : "Ruang cakera digunakan tolak apa yang dibebaskan macOS sendiri, sekali sejam (diskutil dan CacheDelete). Tatal atau cubit dengan dua jari di atas carta untuk zum masuk atau keluar."
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Brukt på disken minus det macOS frigjør selv, én gang i timen (diskutil og CacheDelete). Rull over grafen for å zoome inn eller ut."
+            "value" : "Brukt på disken minus det macOS frigjør selv, én gang i timen (diskutil og CacheDelete). Rull eller klyp med to fingre over grafen for å zoome inn eller ut."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gebruikt op de schijf min wat macOS zelf vrijmaakt, eens per uur (diskutil en CacheDelete). Scrol boven de grafiek om in of uit te zoomen."
+            "value" : "Gebruikt op de schijf min wat macOS zelf vrijmaakt, eens per uur (diskutil en CacheDelete). Scrol of knijp met twee vingers boven de grafiek om in of uit te zoomen."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zajęte miejsce na dysku minus to, co macOS zwalnia sam, raz na godzinę (diskutil i CacheDelete). Przewijaj nad wykresem, aby przybliżyć lub oddalić."
+            "value" : "Zajęte miejsce na dysku minus to, co macOS zwalnia sam, raz na godzinę (diskutil i CacheDelete). Przewijaj nad wykresem lub zsuwaj i rozsuwaj dwa palce, aby przybliżyć lub oddalić."
           }
         },
         "pt-PT" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espaço usado no disco menos o que o macOS liberta sozinho, uma vez por hora (diskutil e CacheDelete). Desloque sobre o gráfico para aproximar ou afastar."
+            "value" : "Espaço usado no disco menos o que o macOS liberta sozinho, uma vez por hora (diskutil e CacheDelete). Desloque, ou separe ou junte dois dedos, sobre o gráfico para aproximar ou afastar."
           }
         },
         "ro" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spațiul folosit pe disc minus ce eliberează macOS singur, o dată pe oră (diskutil și CacheDelete). Derulează peste grafic pentru a mări sau micșora."
+            "value" : "Spațiul folosit pe disc minus ce eliberează macOS singur, o dată pe oră (diskutil și CacheDelete). Derulează sau ciupește cu două degete peste grafic pentru a mări sau micșora."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Занятое на диске место за вычетом того, что macOS освобождает сама, раз в час (diskutil и CacheDelete). Прокрутите над графиком, чтобы приблизить или отдалить."
+            "value" : "Занятое на диске место за вычетом того, что macOS освобождает сама, раз в час (diskutil и CacheDelete). Прокрутите или сведите два пальца над графиком, чтобы приблизить или отдалить."
           }
         },
         "sk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Využité miesto na disku bez toho, čo macOS uvoľní sám, raz za hodinu (diskutil a CacheDelete). Posúvaním nad grafom približujete alebo odďaľujete."
+            "value" : "Využité miesto na disku bez toho, čo macOS uvoľní sám, raz za hodinu (diskutil a CacheDelete). Posúvaním alebo zovretím dvoma prstami k sebe nad grafom približujete alebo odďaľujete."
           }
         },
         "sl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Porabljen prostor na disku brez tistega, kar macOS sprosti sam, enkrat na uro (diskutil in CacheDelete). Pomikajte nad grafom za povečavo ali pomanjšavo."
+            "value" : "Porabljen prostor na disku brez tistega, kar macOS sprosti sam, enkrat na uro (diskutil in CacheDelete). Pomikajte ali povlecite skupaj z dvema prstoma nad grafom za povečavo ali pomanjšavo."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Använt på disken minus det macOS frigör själv, en gång i timmen (diskutil och CacheDelete). Rulla över diagrammet för att zooma in eller ut."
+            "value" : "Använt på disken minus det macOS frigör själv, en gång i timmen (diskutil och CacheDelete). Rulla eller nyp med två fingrar över diagrammet för att zooma in eller ut."
           }
         },
         "th" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "พื้นที่ดิสก์ที่ใช้ลบส่วนที่ macOS ปล่อยเองได้ ชั่วโมงละครั้ง (diskutil และ CacheDelete) เลื่อนบนกราฟเพื่อซูมเข้าหรือออก"
+            "value" : "พื้นที่ดิสก์ที่ใช้ลบส่วนที่ macOS ปล่อยเองได้ ชั่วโมงละครั้ง (diskutil และ CacheDelete) เลื่อนหรือจีบนิ้วด้วยสองนิ้วบนกราฟเพื่อซูมเข้าหรือออก"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Diskte kullanılan alandan macOS’in kendiliğinden boşalttığı kısım çıkarılmış hâli, saatte bir (diskutil ve CacheDelete). Yakınlaştırmak veya uzaklaştırmak için grafiğin üzerinde kaydırın."
+            "value" : "Diskte kullanılan alandan macOS’in kendiliğinden boşalttığı kısım çıkarılmış hâli, saatte bir (diskutil ve CacheDelete). Yakınlaştırmak veya uzaklaştırmak için grafiğin üzerinde kaydırın ya da iki parmağınızı kıstırın."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Зайняте на диску місце без того, що macOS звільняє сама, раз на годину (diskutil і CacheDelete). Прокручуйте над графіком, щоб наблизити або віддалити."
+            "value" : "Зайняте на диску місце без того, що macOS звільняє сама, раз на годину (diskutil і CacheDelete). Прокручуйте або зводьте два пальці над графіком, щоб наблизити або віддалити."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dung lượng đĩa đã dùng trừ phần macOS tự giải phóng, mỗi giờ một lần (diskutil và CacheDelete). Cuộn trên biểu đồ để phóng to hoặc thu nhỏ."
+            "value" : "Dung lượng đĩa đã dùng trừ phần macOS tự giải phóng, mỗi giờ một lần (diskutil và CacheDelete). Cuộn hoặc mở/chụm bằng hai ngón tay trên biểu đồ để phóng to hoặc thu nhỏ."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "磁盘已用空间减去 macOS 自行释放的部分，每小时记录一次（diskutil 和 CacheDelete）。在图表上滚动可放大或缩小。"
+            "value" : "磁盘已用空间减去 macOS 自行释放的部分，每小时记录一次（diskutil 和 CacheDelete）。在图表上滚动或双指捏合可放大或缩小。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "磁碟已用空間減去 macOS 自行釋放的部分，每小時記錄一次（diskutil 和 CacheDelete）。在圖表上捲動可放大或縮小。"
+            "value" : "磁碟已用空間減去 macOS 自行釋放的部分，每小時記錄一次（diskutil 和 CacheDelete）。在圖表上捲動，或用兩指分開或靠攏，可放大或縮小。"
           }
         }
       }

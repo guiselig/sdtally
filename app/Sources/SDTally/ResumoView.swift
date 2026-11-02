@@ -349,10 +349,12 @@ private struct Conta: View {
     }
 
     private func fichaOutras(_ t: Tela) -> some View {
-        Button { categorias.toggle() } label: {
-            ficha(t.categoriesTotal, String(localized: "outras linhas ›"), String(localized: "log do serviço"), ids: Set((t.categories ?? []).map(\.id)))
+        let ids = Set((t.categories ?? []).map(\.id))
+        return Button { categorias.toggle() } label: {
+            corpoFicha(t.categoriesTotal, String(localized: "outras linhas ›"), String(localized: "log do serviço"))
         }
         .buttonStyle(.plain)
+        .onHover { destaque = $0 ? ids : [] }
         .help("Ver as linhas uma a uma, para conferir com a tela")
         .popover(isPresented: $categorias, arrowEdge: .bottom) {
             Grid(alignment: .leading, horizontalSpacing: 16, verticalSpacing: 6) {
@@ -373,6 +375,11 @@ private struct Conta: View {
     }
 
     private func ficha(_ b: Int64?, _ nome: String, _ fonte: String, ids: Set<String>, forte: Bool = false) -> some View {
+        corpoFicha(b, nome, fonte, forte: forte).realce(ids, em: $destaque)
+    }
+
+    /// Sem o realce, para ir dentro de um botão: lá o toque é do botão.
+    private func corpoFicha(_ b: Int64?, _ nome: String, _ fonte: String, forte: Bool = false) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(b.map(gb) ?? "—")
                 .font(.body.monospacedDigit().weight(forte ? .semibold : .regular))
@@ -383,7 +390,6 @@ private struct Conta: View {
         .padding(8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.quaternary.opacity(forte ? 0.8 : 0.4), in: .rect(cornerRadius: 8))
-        .onHover { dentro in destaque = dentro ? ids : [] }
     }
 
     private func sinal(_ s: String) -> some View {
@@ -595,7 +601,7 @@ private struct MaisOcupa: View {
                     RoundedRectangle(cornerRadius: 2).fill(s.cor).frame(width: 10, height: 10)
                     Text(nome)
                 }
-                .onHover { destaque = $0 ? [s.id] : [] }
+                .realce([s.id], em: $destaque)
             }
         }
         .font(.caption).foregroundStyle(.secondary)
