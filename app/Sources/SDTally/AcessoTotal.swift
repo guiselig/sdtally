@@ -30,6 +30,7 @@ nonisolated func temAcessoTotal() -> Bool {
     }
 
     private func reabrir() {
+        Registro.anotar("app", "Full Disk Access was turned off: reopening")
         let c = NSWorkspace.OpenConfiguration()
         c.createsNewApplicationInstance = true
         NSWorkspace.shared.openApplication(at: Bundle.main.bundleURL, configuration: c) { _, _ in

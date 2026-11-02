@@ -259,7 +259,15 @@ nonisolated enum Executor {
                     grupo.wait()
                     estado.withLock { $0.pid = 0 }
                     let codigo = p.terminationStatus
-                    log.info("\(modo, privacy: .public) saiu com \(codigo) em \(ContinuousClock.now - inicio, privacy: .public)")
+                    let tempo = ContinuousClock.now - inicio
+                    log.info("\(modo, privacy: .public) saiu com \(codigo) em \(tempo, privacy: .public)")
+                    // O rápido roda toda hora: só falha e o que demorou entram no registro.
+                    if codigo != 0 && codigo != 130 {
+                        let e = String(decoding: errDados.withLock { $0 }.prefix(800), as: UTF8.self)
+                        Registro.anotar("sdtally", "\(modo) exited with \(codigo) after \(String(format: "%.1f s", Double(tempo.components.seconds) + Double(tempo.components.attoseconds) / 1e18)): \(e.trimmingCharacters(in: .whitespacesAndNewlines))")
+                    } else if tempo > .seconds(10) {
+                        Registro.anotar("sdtally", "\(modo) exited with \(codigo) after \(String(format: "%.1f s", Double(tempo.components.seconds) + Double(tempo.components.attoseconds) / 1e18))")
+                    }
                     if codigo == 0 || codigo == 130 {
                         cont.resume(returning: dados)
                     } else {

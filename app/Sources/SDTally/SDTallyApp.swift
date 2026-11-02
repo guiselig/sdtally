@@ -159,6 +159,7 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         if aoLogin { Self.ajustarDock(janela: false) }
     }
     func applicationDidFinishLaunching(_ notification: Notification) {
+        Registro.aoAbrir(versao: Dev.ativo ? "dev" : Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "?")
         if Dev.ativo {
             NSApp.setActivationPolicy(.regular)
             NSApp.activate()
@@ -202,6 +203,7 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         guard case .medindo(_, true, _) = Painel.unico.medicao else { return .terminateNow }
         let e = NSAppleEventManager.shared().currentAppleEvent
         if e?.attributeDescriptor(forKeyword: kAEQuitReason) != nil || e?.paramDescriptor(forKeyword: kAEQuitReason) != nil {
+            Registro.anotar("app", "quit by logout, restart or shut down during a full measurement")
             return .terminateNow
         }
         NSApp.activate()
@@ -215,11 +217,20 @@ final class Delegado: NSObject, NSApplicationDelegate, UNUserNotificationCenterD
         return a.runModal() == .alertFirstButtonReturn ? .terminateCancel : .terminateNow
     }
     func applicationWillTerminate(_ notification: Notification) {
+        Registro.anotar("app", "quitting")
+        // Saída travada (02/11: 47 s parado depois de pedir para sair, até o Forçar Encerrar, sem
+        // relatório do macOS): 10 s depois, encerra e deixa a linha no registro.
+        DispatchQueue.global().asyncAfter(deadline: .now() + 10) {
+            Registro.anotar("app", "quit did not finish in 10 s: exiting now")
+            Registro.esvaziar()
+            _exit(0)
+        }
         Painel.unico.cancelarMedicao()
         Painel.unico.fecharAjustes()
         Painel.unico.pararEscuta()
         // Depois do clique em Instalar: abre o executor, que espera o app sair e troca o bundle.
         Atualizacoes.unica.aoFechar()
+        Registro.aoFechar()
     }
     /// Com o ícone na barra, a janela não abre sozinha (.suppressed), para o início de sessão
     /// mostrar só o ícone. Aberto à mão (Finder, Dock, Spotlight), a janela abre.

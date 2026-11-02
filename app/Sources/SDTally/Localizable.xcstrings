@@ -34819,220 +34819,6 @@
         }
       }
     },
-    "Ativar" : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تفعيل"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activa"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zapnout"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktivér"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktivieren"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ενεργοποίηση"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Turn On"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activar"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activar"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ota käyttöön"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activer"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הפעל"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "चालू करें"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Uključi"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bekapcsolás"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktifkan"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Attiva"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "オンにする"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "켜기"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktifkan"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Slå på"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activeer"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Włącz"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ativar"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activează"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Включить"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktivovať"
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vklopi"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktivera"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "เปิดใช้งาน"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Etkinleştir"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Увімкнути"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bật"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "启用"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "啟用"
-          }
-        }
-      }
-    },
     "Ativar com root" : {
       "localizations" : {
         "en" : {
@@ -76335,6 +76121,220 @@
         }
       }
     },
+    "Fica só neste Mac. O SDTally anota quando abre e fecha, as medições completas, as atualizações e os erros, em inglês e com a sua pasta pessoal escrita como ~. Se algo der errado, anexe numa issue." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يبقى على هذا الـ Mac فقط. يسجّل SDTally وقت فتحه وإغلاقه، والقياسات الكاملة، والتحديثات، والأخطاء، بالإنجليزية ومع كتابة مجلدك الشخصي على شكل ~. إذا حدث خطأ ما، أرفقه في issue."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Es queda només en aquest Mac. SDTally anota quan s’obre i es tanca, els mesuraments complets, les actualitzacions i els errors, en anglès i amb la teva carpeta personal escrita com a ~. Si alguna cosa va malament, adjunta’l en una issue."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zůstává jen v tomto Macu. SDTally zapisuje, kdy se otevře a zavře, úplná měření, aktualizace a chyby, a to anglicky a s vaší osobní složkou zapsanou jako ~. Pokud se něco pokazí, připojte ho k issue."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bliver kun på denne Mac. SDTally noterer, når den åbner og lukker, de fulde målinger, opdateringerne og fejlene, på engelsk og med din hjemmemappe skrevet som ~. Hvis noget går galt, så vedhæft den i en issue."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bleibt nur auf diesem Mac. SDTally hält fest, wann es geöffnet und beendet wird, die vollständigen Messungen, die Updates und die Fehler, auf Englisch und mit deinem Benutzerordner als ~ geschrieben. Wenn etwas schiefgeht, hänge es an ein Issue an."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Παραμένει μόνο σε αυτό το Mac. Το SDTally καταγράφει πότε ανοίγει και κλείνει, τις πλήρεις μετρήσεις, τις ενημερώσεις και τα σφάλματα, στα αγγλικά και με τον προσωπικό σας φάκελο γραμμένο ως ~. Αν κάτι πάει στραβά, επισυνάψτε το σε ένα issue."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stays on this Mac. SDTally logs when it opens and quits, full measurements, updates and errors, in English and with your home folder written as ~. If something goes wrong, attach it to an issue."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se queda solo en este Mac. SDTally anota cuándo se abre y se cierra, las mediciones completas, las actualizaciones y los errores, en inglés y con tu carpeta personal escrita como ~. Si algo sale mal, adjúntalo a un issue."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se queda solo en este Mac. SDTally anota cuándo se abre y se cierra, las mediciones completas, las actualizaciones y los errores, en inglés y con tu carpeta personal escrita como ~. Si algo sale mal, adjúntalo a un issue."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pysyy vain tällä Macilla. SDTally kirjaa, milloin se avataan ja suljetaan, täydet mittaukset, päivitykset ja virheet, englanniksi ja kotikansiosi kirjoitettuna muodossa ~. Jos jokin menee pieleen, liitä loki issueen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reste uniquement sur ce Mac. SDTally note quand il s’ouvre et se ferme, les mesures complètes, les mises à jour et les erreurs, en anglais et avec votre dossier personnel écrit « ~ ». En cas de problème, joignez-le à une issue."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "נשאר רק ב-Mac הזה. SDTally רושם מתי הוא נפתח ונסגר, את המדידות המלאות, את העדכונים ואת השגיאות, באנגלית ועם תיקיית הבית שלך כתובה כ-~. אם משהו משתבש, צרף אותו ל-issue."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यह सिर्फ़ इसी Mac पर रहता है। SDTally दर्ज करता है कि वह कब खुलता और बंद होता है, पूरी माप, अपडेट और त्रुटियाँ, अंग्रेज़ी में और आपके होम फ़ोल्डर को ~ लिखकर। अगर कुछ गड़बड़ हो, तो इसे किसी issue में संलग्न करें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostaje samo na ovom Macu. SDTally bilježi kada se otvori i zatvori, potpuna mjerenja, ažuriranja i pogreške, na engleskom i s vašom osobnom mapom zapisanom kao ~. Ako nešto pođe po zlu, priložite ga uz issue."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Csak ezen a Macen marad. Az SDTally rögzíti, mikor nyílik meg és záródik be, a teljes méréseket, a frissítéseket és a hibákat, angolul, a saját mappa ~ jelöléssel írva. Ha valami nem működik, csatolható egy issue-hoz."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hanya tersimpan di Mac ini. SDTally mencatat kapan dibuka dan ditutup, pengukuran lengkap, pembaruan, dan error, dalam bahasa Inggris dan dengan folder pribadi Anda ditulis sebagai ~. Jika terjadi masalah, lampirkan ke issue."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resta solo su questo Mac. SDTally annota quando si apre e si chiude, le misurazioni complete, gli aggiornamenti e gli errori, in inglese e con la tua cartella personale scritta come ~. Se qualcosa va storto, allegalo a una issue."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このMacにのみ保存されます。SDTallyは、起動と終了の時刻、完全測定、アップデート、エラーを英語で記録し、ホームフォルダは「~」と表記されます。問題が起きた場合は、issueに添付してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "이 Mac에만 저장됩니다. SDTally는 열고 닫은 시점, 전체 측정, 업데이트, 오류를 영어로 기록하며 개인 폴더는 ~로 표시됩니다. 문제가 생기면 issue에 첨부하세요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kekal pada Mac ini sahaja. SDTally mencatat bila ia dibuka dan ditutup, pengukuran penuh, kemas kini dan ralat, dalam bahasa Inggeris dan dengan folder peribadi anda ditulis sebagai ~. Jika berlaku masalah, lampirkan pada issue."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blir bare på denne Macen. SDTally noterer når den åpnes og lukkes, de fulle målingene, oppdateringene og feilene, på engelsk og med hjemmemappen din skrevet som ~. Hvis noe går galt, legg den ved i en issue."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blijft alleen op deze Mac. SDTally legt vast wanneer het opent en sluit, de volledige metingen, de updates en de fouten, in het Engels en met je thuismap geschreven als ~. Als er iets misgaat, voeg het toe aan een issue."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zostaje tylko na tym Macu. SDTally zapisuje, kiedy się otwiera i zamyka, pełne pomiary, aktualizacje i błędy, po angielsku i z Twoim folderem domowym zapisanym jako ~. Jeśli coś pójdzie nie tak, dołącz go do issue."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fica só neste Mac. O SDTally regista quando abre e fecha, as medições completas, as atualizações e os erros, em inglês e com a sua pasta pessoal escrita como ~. Se algo correr mal, anexe-o a uma issue."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rămâne doar pe acest Mac. SDTally notează când se deschide și se închide, măsurările complete, actualizările și erorile, în engleză și cu dosarul tău personal scris ~. Dacă ceva nu merge, atașează-l la un issue."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хранится только на этом Mac. SDTally записывает, когда открывается и закрывается, полные измерения, обновления и ошибки, на английском и с вашей домашней папкой, записанной как ~. Если что-то пойдёт не так, приложите его к issue."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zostáva iba v tomto Macu. SDTally zapisuje, kedy sa otvorí a zatvorí, úplné merania, aktualizácie a chyby, po anglicky a s vaším osobným priečinkom zapísaným ako ~. Ak sa niečo pokazí, pripojte ho k issue."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostane samo v tem Macu. SDTally beleži, kdaj se odpre in zapre, popolne meritve, posodobitve in napake, v angleščini in z vašo osebno mapo, zapisano kot ~. Če gre kaj narobe, ga priložite k issue."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stannar bara på den här Macen. SDTally antecknar när den öppnas och stängs, de fullständiga mätningarna, uppdateringarna och felen, på engelska och med din hemmapp skriven som ~. Om något går fel, bifoga den i en issue."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "อยู่บน Mac เครื่องนี้เท่านั้น SDTally จะจดเวลาที่เปิดและปิด การวัดแบบเต็ม การอัปเดต และข้อผิดพลาด เป็นภาษาอังกฤษ และเขียนโฟลเดอร์ส่วนตัวของคุณเป็น ~ หากมีบางอย่างผิดพลาด ให้แนบไปกับ issue"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yalnızca bu Mac’te kalır. SDTally açılıp kapandığı zamanları, tam ölçümleri, güncellemeleri ve hataları İngilizce olarak ve kişisel klasörünüz ~ olarak yazılarak kaydeder. Bir şeyler ters giderse bir issue’ya ekleyin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберігається лише на цьому Mac. SDTally записує, коли відкривається й закривається, повні вимірювання, оновлення та помилки, англійською і з вашою домашньою папкою, записаною як ~. Якщо щось піде не так, додайте його до issue."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chỉ lưu trên máy Mac này. SDTally ghi lại lúc mở và đóng, các phép đo đầy đủ, các bản cập nhật và lỗi, bằng tiếng Anh và với thư mục cá nhân của bạn được viết là ~. Nếu có sự cố, hãy đính kèm vào một issue."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仅保留在这台 Mac 上。SDTally 会用英文记录打开和关闭的时间、完整测量、更新和错误，并将你的个人文件夹写成 ~。如果出了问题，请将其附到 issue 中。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "僅保留在這台 Mac 上。SDTally 會以英文記錄開啟和關閉的時間、完整測量、更新和錯誤，並將你的個人檔案夾寫成 ~。如果出了問題，請將其附加到 issue 中。"
+          }
+        }
+      }
+    },
     "Ficam dentro de Dados do Sistema e o macOS gerencia o tamanho. Não apague a pasta." : {
       "localizations" : {
         "en" : {
@@ -110247,6 +110247,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nada superó 1 GB."
+          }
+        }
+      }
+    },
+    "Nada registrado ainda." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا شيء مسجَّل بعد."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encara no hi ha res registrat."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatím nic nezaznamenáno."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intet logget endnu."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch nichts protokolliert."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Δεν έχει καταγραφεί τίποτα ακόμα."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nothing logged yet."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no se ha registrado nada."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no se ha registrado nada."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ei vielä kirjattua."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rien d’enregistré pour l’instant."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "עדיין לא נרשם דבר."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अभी तक कुछ दर्ज नहीं हुआ।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Još ništa nije zabilježeno."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Még nincs semmi naplózva."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum ada yang dicatat."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ancora nulla di registrato."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "まだ何も記録されていません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "아직 기록된 내용이 없습니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belum ada yang direkodkan."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingenting er logget ennå."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog niets vastgelegd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nic jeszcze nie zapisano."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ainda nada registado."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nimic înregistrat încă."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пока ничего не записано."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatiaľ nič nezaznamenané."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Še ni ničesar zabeleženega."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inget loggat ännu."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ยังไม่มีอะไรถูกบันทึก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Henüz bir şey kaydedilmedi."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поки що нічого не записано."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chưa ghi gì cả."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚无记录。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "尚無記錄。"
           }
         }
       }
@@ -151981,6 +152195,220 @@
         }
       }
     },
+    "Registro" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "السجل"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registre"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Záznam"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Protokoll"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Αρχείο καταγραφής"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registro"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registro"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loki"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Journal"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "יומן"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लॉग"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisnik"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napló"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registro"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログ"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "로그"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logg"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logboek"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dziennik"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registo"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jurnal"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Журнал"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Záznam"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dnevnik"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logg"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "บันทึก"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günlük"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Журнал"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nhật ký"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "日志"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "記錄"
+          }
+        }
+      }
+    },
     "Reiniciar devolve esse espaço. Salve o que estiver aberto antes." : {
       "localizations" : {
         "en" : {
@@ -170581,220 +171009,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Son datos reales; libera espacio desde la app del proveedor."
-          }
-        }
-      }
-    },
-    "Série" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Series"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serie"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Серія"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Серия"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serie"
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serie"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serie"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "數列"
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Série"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "系列"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "系列"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Řada"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "계열"
-          }
-        },
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "السلسلة"
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sèrie"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serie"
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Σειρά"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sarja"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Série"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "סדרה"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "सीरीज़"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serija"
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Seri"
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Siri"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Seria"
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serie"
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Séria"
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serija"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Seri"
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chuỗi dữ liệu"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serie"
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reeks"
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ชุดข้อมูล"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Adatsor"
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serie"
           }
         }
       }

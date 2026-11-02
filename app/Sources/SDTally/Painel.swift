@@ -620,6 +620,7 @@ final class Painel {
                 if autoGeracao == g { pararAutoAtual = { c.invalidate() } } else { c.invalidate() }
             } catch {
                 Executor.log.error("automático com root falhou, segue sem root: \(error.localizedDescription, privacy: .public)")
+                Registro.anotar("helper", "automatic mode as root failed, using it without root: \(error.localizedDescription)")
                 if autoGeracao == g { abrirAutoLocal(linha: linha, saiu: saiu) }
             }
             helperPendente = false
@@ -637,6 +638,7 @@ final class Painel {
 
     private func autoSaiu(_ g: Int) {
         guard g == autoGeracao, let a = pararAutoAtual else { return }  // velho, ou fechado pelo app
+        Registro.anotar("auto", "automatic mode stopped on its own: restarting in 60 s")
         pararAutoAtual = nil
         // Conexão interrompida segue aberta até alguém invalidar.
         a()
@@ -775,6 +777,7 @@ final class Painel {
         let peloHelper = admin && helperAtivo && !semHelper
         let modo: ModoMedicao = peloHelper ? .helper : admin ? .senha : .semRoot
         medicao = .medindo(desde: .now, admin: admin, cancelavel: !admin || peloHelper)
+        Registro.anotar("measure", "full measurement started (\(modo))")
         tarefaMedicao = Task {
             do {
                 let dados = peloHelper
@@ -792,12 +795,16 @@ final class Painel {
                 modoCompleto = modo
                 ramos = [:]
                 guardar(dados, c, modo)
+                Registro.anotar("measure", "full measurement finished")
             } catch ErroSdtally.senhaCancelada {
+                Registro.anotar("measure", "password prompt cancelled")
                 medicao = .senhaCancelada
                 if voltarAoAuto { manual = false }
             } catch {
                 // Parar antes de o processo subir: CancellationError aqui, "medição parada" do helper.
-                medicao = Task.isCancelled || error is CancellationError ? .parada : .falhou(error.localizedDescription)
+                let parou = Task.isCancelled || error is CancellationError
+                Registro.anotar("measure", parou ? "full measurement stopped" : "full measurement failed: \(error.localizedDescription)")
+                medicao = parou ? .parada : .falhou(error.localizedDescription)
             }
             voltarAoAuto = false
             // Fora desta tarefa: depois do Parar ela está cancelada e o rápido nem subiria.

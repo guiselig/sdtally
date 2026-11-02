@@ -47,6 +47,7 @@ enum Lingua {
     static var podeReabrir: Bool { Bundle.main.bundleURL.pathExtension == "app" }
 
     static func reabrir() {
+        Registro.anotar("app", "language changed: reopening")
         let p = Process()
         p.executableURL = URL(fileURLWithPath: "/bin/sh")
         p.arguments = ["-c", "while kill -0 \(ProcessInfo.processInfo.processIdentifier) 2>/dev/null; do sleep 0.2; done; /usr/bin/open \"$0\"",

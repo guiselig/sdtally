@@ -130,6 +130,7 @@ import ServiceManagement
         estado = .instalando
         guard Instalacao.lancarSolto(e.executor, e.pedido.argumentos) else {
             Self.log.error("executor não abriu")
+            Registro.anotar("update", "the installer did not start")
             Instalacao.desanexar(e.pedido.montagem)
             Instalacao.apagarTemporario(e.pasta)
             UserDefaults.standard.set(Resultado(versao: e.versao, erro: .executor).dicionario, forKey: Resultado.chave)
@@ -160,10 +161,12 @@ import ServiceManagement
                 guard codigo == 200 else { throw Falha.http(codigo) }
                 let l = try Lancamento.ler(dados)
                 lancamento = Versao.maisNova(l.versao, que: Self.versaoInstalada) ? l : nil
+                if lancamento != nil { Registro.anotar("update", "version \(l.versao) is available") }
                 estado = .parado
             } catch {
                 guard !Task.isCancelled else { return }
                 Self.log.error("procurar: \(String(describing: error), privacy: .public)")
+                Registro.anotar("update", "check failed: \(String(describing: error))")
                 // Sozinho, a falha (sem internet, por exemplo) não aparece: tenta de novo na próxima hora.
                 estado = manual ? .erro(String(localized: "Não deu para procurar atualizações: \(Self.detalhe(error))")) : .parado
             }
@@ -188,10 +191,12 @@ import ServiceManagement
             } catch {
                 guard !Task.isCancelled else { return }
                 Self.log.error("instalar: \(String(describing: error), privacy: .public)")
+                Registro.anotar("update", "download failed: \(String(describing: error))")
                 estado = .erro(Self.motivo(error))
                 return
             }
             estado = .instalando
+            Registro.anotar("update", "installing \(l.versao): quitting so the installer can replace the app")
             // O caminho de sempre: medindo, pergunta "Continuar medindo" / "Fechar mesmo assim".
             // Fechando, o terminate não volta (aoFechar abre o executor). Voltou: continuou medindo.
             NSApp.terminate(nil)
@@ -295,8 +300,9 @@ import ServiceManagement
         let d = UserDefaults.standard
         guard let r = Resultado(d.dictionary(forKey: Resultado.chave)) else { return }
         d.removeObject(forKey: Resultado.chave)
-        guard let e = r.erro else { return }
+        guard let e = r.erro else { return Registro.anotar("update", "installed \(r.versao)") }
         Self.log.error("executor: \(e.rawValue, privacy: .public)")
+        Registro.anotar("update", "installing \(r.versao) failed: \(e.rawValue)")
         estado = .erro(e == .aberto
             ? String(localized: "O SDTally não fechou a tempo. A versão instalada continua como estava.")
             : String(localized: "Não deu para instalar a versão nova. A versão instalada continua como estava."))
