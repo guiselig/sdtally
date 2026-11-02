@@ -36,7 +36,7 @@ Ordenado pelo caso real acima:
 |---|---|---|
 | `Mobile Documents` | 53 GB | Dados reais de iCloud Drive. **Não é lixo** |
 | `Application Support` | 40 GB | Estado de apps. Misto: dado real + lixo |
-| `Caches` | 32 GB | Descartável, com ressalvas (ver runbook de sync) |
+| `Caches` | 32 GB | Descartável, com ressalvas (não com sync do iCloud ativo; ver o catálogo) |
 | `Group Containers` | 8,3 GB | Dados de apps sandboxed. Misto |
 | `Containers` | 5,4 GB | Dados de apps sandboxed. Misto |
 | `Preferences` | 4,6 GB | Deveria ser KB. GBs aqui indicam app abusando |

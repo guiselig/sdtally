@@ -406,7 +406,7 @@ listas: a lista é ignorada.
 
 **`top[].settings_line`** e **`top[].settings_line_grade`** (também do `anexar`, em toda linha de
 `top`; `--last` sai sem eles): a linha do Ajustes > Armazenamento em que a linha cai, pelas regras
-da Frente P (`src/linhas.rs`, spec-inicio §9.1). Vale a primeira regra que casa; o `path` casa por
+de `src/linhas.rs`. Vale a primeira regra que casa; o `path` casa por
 componente inteiro, e a linha `folded` pelo `path` do pai. Com nomes reais, a travessia dá balde
 próprio às bibliotecas de mídia (`~/Music/<a>/<b>`, `~/Movies/<a>/<b>`, `~/Pictures/*.photoslibrary`):
 Música, TV e Fotos pelo balde da biblioteca (B), o resto da biblioteca em Dados do Sistema (Documentos
@@ -430,8 +430,7 @@ B: xattr observado no macOS 26 e 27, sem documentação da Apple. Valores fechad
 mexe no campo. Outras linhas: sem a chave.
 
 **`top[].owner`** (opcional, do `anexar`, só no completo e só com `home` na raiz): o app dono da
-linha, `{"bundle_id": "<id>", "name": "<nome do app>" | null, "source": "<fonte>"}` (`src/owners.rs`,
-Frente C). Só sai quando há fonte no disco; sem fonte a chave não existe (nunca `null`, nunca
+linha, `{"bundle_id": "<id>", "name": "<nome do app>" | null, "source": "<fonte>"}` (`src/owners.rs`). Só sai quando há fonte no disco; sem fonte a chave não existe (nunca `null`, nunca
 "desconhecido"). Linha `folded` e linha sem `path` nunca têm dono. `bundle_id` só tem `A-Z a-z 0-9 . - _`
 (até 200); id fora disso não vira dono. `name` é o nome do arquivo `.app` sem a extensão (o do
 Finder) e fica `null` quando o container diz o id, mas nenhum app instalado tem esse id (app removido
@@ -609,7 +608,7 @@ sdtally mede (`src/sources/categorias/`).
 | Campo | Tipo | Descrição |
 |---|---|---|
 | `state` | texto | `measured` (todas as 15 medidas) ou `partial` |
-| `categories[]` | [objeto] | uma por categoria, na ordem da Frente P: `id`, `bytes` (`null` se não medida), `state`/`reason` (como `Medida`), `grade` (`A` regra lida na Apple, `B` hipótese ou aproximação), `source`, `note`, e, com o log do painel do Ajustes na última hora, `screen_bytes`, `error_bytes` (nosso − tela) e `error_percent` |
+| `categories[]` | [objeto] | uma por categoria, na ordem do Ajustes: `id`, `bytes` (`null` se não medida), `state`/`reason` (como `Medida`), `grade` (`A` regra lida na Apple, `B` hipótese ou aproximação), `source`, `note`, e, com o log do painel do Ajustes na última hora, `screen_bytes`, `error_bytes` (nosso − tela) e `error_percent` |
 | `total` | objeto | `bytes` (Σ das reproduzidas), `screen_bytes` (Σ do log), `error_bytes`, `error_percent`, `tolerance_percent` (1,0), `within_tolerance` (`null` sem log), `not_reproduced` (categorias sem número) e `not_reproduced_screen_bytes` (quanto a tela tem nelas) |
 | `unplaced` | objeto | `bytes` das linhas que as regras não colocaram em categoria nenhuma e `reasons` (`app_containers`, `desktop_documents`, `unexpected_path`) |
 | `inputs` | objeto | o que se leu para decidir: `apps_listed`, `desktop_in_icloud`, `documents_in_icloud`, `other_accounts`, `mail_purgeable_read`, `tree_rows` (`unfolded_buckets` ou `top_rows`) e `clone_copies_bytes_added` |
@@ -624,7 +623,7 @@ dono, abrindo Ajustes > Armazenamento e rodando de novo.
 
 ### Erro medido (Mac M4, macOS 27, sem root, com Acesso Total ao Disco; 18/10/2026)
 
-Oráculo: `frenteq`, o spike que chama as funções da Apple (StorageManagement, CacheDelete,
+Oráculo: um programa de teste que chama as funções da Apple (StorageManagement, CacheDelete,
 PhotoLibraryServicesCore e o `Library.musicdb`), rodado no mesmo minuto. Não havia log do painel.
 O teste `mac27_bate_com_o_oraculo_a_um_por_cento` (`tests/categorias.rs`, fixture
 `tests/fixtures/completo-mac27.json`, escrubada) repete a conta e exige Σ dentro de ±1 %, cada
@@ -685,7 +684,7 @@ Medida (`bytes`, `source: apfs_user_client`) mais:
 | `block_size` | bytes por bloco (seletor 6 do `AppleAPFSUserClient`); `null` se não mediu |
 
 `bytes` = (omap + fsroot + extentref) × `block_size`, pelos seletores de leitura 6, 7 e 0x1e do
-`AppleAPFSUserClient` (IOKit; Frente G). Sem root, sem escrita. Identidade provada numa imagem APFS sem
+`AppleAPFSUserClient` (IOKit). Sem root, sem escrita. Identidade provada numa imagem APFS sem
 snapshots (`fs_used = nós × 4096 + 8192 + blocos de dados`); no Data só as árvores vivas estão
 cobertas: as árvores de cada snapshot e as auxiliares (snap_meta, fext) não entram, então é um piso
 do metadado. É o termo `apfs_metadata` de `data_volume.terms` (a travessia só soma arquivos, então

@@ -114,7 +114,7 @@ jobs:
             sdtally.json
           if-no-files-found: warn
 
-  # spec-fase5 §1.10: só leem. Rede só nas atualizações do app (github.com); a CLI e o helper root nunca. Reprova o job se aparecer.
+  # Checagens que só leem o código. Rede só nas atualizações do app (github.com); a CLI e o helper root nunca. Reprova o job se aparecer.
   grep:
     runs-on: ubuntu-latest
     steps:
@@ -129,7 +129,7 @@ jobs:
           grep -rnE 'URLSession|NWConnection|NWListener|socket\(' app/Sources | grep -v '^app/Sources/SDTally/Atualizacao/' && falhou=1
           grep -rnE 'TcpStream|UdpSocket' src && falhou=1
           exit $falhou
-      # spec-fase6 §7 G9: carta anti-scareware (palavras proibidas, badge, vermelho, Toggle).
+      # G9: carta anti-scareware (palavras proibidas, badge, vermelho, Toggle).
       - name: G9
         run: sh scripts/g9.sh
 
@@ -185,120 +185,4 @@ jobs:
         with:
           name: app-${{ matrix.os }}
           path: "*.png"
-          if-no-files-found: warn
-
-  # Fontes que só foram vistas no 27 (research/mapa-de-fontes.md §7.1), na VM do CI: símbolos
-  # privados, linhas de log do painel, categorias contra o log, macOS contra a tela e dir-stats
-  # contra a travessia. Nada aqui reprova o job: o resultado vai no resumo e nos artefatos.
-  # Pesquisa (research/mapa-de-fontes.md §7), ~40 min por macOS: só a pedido
-  # (gh workflow run ci.yml --ref main).
-  fontes:
-    if: github.event_name == 'workflow_dispatch'
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [macos-15, macos-26, xcode-27]
-    runs-on: ${{ matrix.os }}
-    timeout-minutes: 75
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-        with:
-          persist-credentials: false
-
-      - name: Toolchain stable
-        run: |
-          rustup toolchain install stable --profile minimal
-          rustup default stable
-
-      # Antes de abrir o painel, para a pasta do repositório (Documentos) não mudar durante a medição.
-      - name: Build (sdtally e frenteq)
-        run: |
-          cargo build --release
-          cargo build --release --manifest-path research/experimentos/frenteQ/Cargo.toml
-          swiftc -O -o cap research/experimentos/ci/capacidade.swift
-
-      - name: Símbolos privados
-        continue-on-error: true
-        run: research/experimentos/frenteQ/target/release/frenteq simbolos | tee simbolos.json
-
-      # Espera o número de blocos STMVolumeCategory parar de crescer por 60 s (o valor muda
-      # enquanto o painel carrega; vale o último bloco).
-      - name: Abrir Ajustes > Armazenamento e esperar o cálculo
-        continue-on-error: true
-        timeout-minutes: 20
-        run: |
-          open "x-apple.systempreferences:com.apple.settings.Storage"
-          ant=-1; parado=0
-          for i in $(seq 1 60); do
-            sleep 15
-            ./cap >> capacidade.txt || true
-            n=$(/usr/bin/log show --last 30m --style compact --predicate 'subsystem == "com.apple.storage" AND eventMessage CONTAINS "STMVolumeCategory"' | grep -c STMVolumeCategory || true)
-            echo "$((i * 15)) s: $n blocos"
-            if [ "$n" -gt 0 ] && [ "$n" -eq "$ant" ]; then parado=$((parado + 1)); else parado=0; fi
-            [ "$parado" -ge 4 ] && break
-            ant=$n
-          done
-          ./cap >> capacidade.txt || true
-          screencapture -x tela.png || echo "screencapture falhou"
-          swift research/experimentos/ci/rolar.swift || echo "rolagem falhou"
-          sleep 3
-          screencapture -x tela2.png || echo "screencapture 2 falhou"
-          ./cap >> capacidade.txt || true
-          /usr/bin/log show --last 40m --info --debug --style ndjson --predicate 'subsystem == "com.apple.storage" OR subsystem == "com.apple.settings.Storage"' > painel.ndjson
-          wc -l painel.ndjson
-
-      # Sem sudo: as categorias são do usuário que abriu o painel.
-      - name: Categorias (frenteq)
-        continue-on-error: true
-        timeout-minutes: 30
-        env:
-          FRENTEQ_POR_ITEM: "1"
-        run: research/experimentos/frenteQ/target/release/frenteq > categorias.json
-
-      # Developer: o que há em /Library/Developer/CoreSimulator (montagens contam?) e o que a
-      # extensão da Apple registrou ("path is unreadable" etc.).
-      - name: Developer (diagnóstico)
-        continue-on-error: true
-        timeout-minutes: 10
-        run: |
-          {
-            echo "## mount"; mount | grep -i -E "simulator|cryptex" || true
-            echo "## ls"; ls -la /Library/Developer/CoreSimulator /Library/Developer/CoreSimulator/Volumes || true
-            echo "## du -x (sem cruzar volume), KiB"; sudo du -sxk /Library/Developer/CoreSimulator/* 2>&1 || true
-            echo "## du (cruzando), KiB"; sudo du -sk /Library/Developer/CoreSimulator/* 2>&1 || true
-            echo "## FileProvider (iCloud)"; ls -la "$HOME/Library/Application Support/FileProvider" || true
-            echo "## caminhos no binário da extensão"
-            strings -a /System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/DeveloperStorageExtension.appex/Contents/MacOS/DeveloperStorageExtension | grep -E "^/|Library/Developer|Simulator" | sort -u
-            echo "## log da extensão (sem cache_delete)"
-            /usr/bin/log show --last 45m --info --debug --style compact --predicate 'process == "DeveloperStorageExtension" AND NOT category == "client"' | grep -v -E "CACHE_DELETE|^ |^}" | tail -150
-          } > developer.txt 2>&1
-
-      - name: sdtally com sudo
-        continue-on-error: true
-        timeout-minutes: 20
-        run: sudo ./target/release/sdtally --json > sdtally.json
-
-      - name: dir-stats contra a travessia (sudo)
-        continue-on-error: true
-        timeout-minutes: 20
-        run: sudo python3 research/experimentos/ci/dirstats_cmp.py ./target/release/sdtally > dirstats.md
-
-      - name: Resumo
-        if: always()
-        run: python3 research/experimentos/ci/fontes_cmp.py | tee -a "$GITHUB_STEP_SUMMARY"
-
-      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
-        if: always()
-        with:
-          name: fontes-${{ matrix.os }}
-          path: |
-            simbolos.json
-            painel.ndjson
-            tela.png
-            tela2.png
-            capacidade.txt
-            categorias.json
-            sdtally.json
-            dirstats.md
-            developer.txt
           if-no-files-found: warn

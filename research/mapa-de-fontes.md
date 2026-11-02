@@ -1,5 +1,7 @@
 # Mapa de fontes: de onde a Apple tira cada número (01/10/2026)
 
+> Os arquivos citados aqui (síntese, frentes, `research/experimentos/`, `frenteq`, PLANO) saíram do repositório em 2026-11-02; estão no histórico do git antes desse commit.
+
 Para o app, o valor do dia não importa: ele muda a cada minuto e o app vai ler de novo. O que
 precisa estar certo é **a fonte**: a mesma API, log ou regra que a Apple usa, se isso foi
 conferido, em qual macOS, com qual privilégio e quanto custa ler de novo.

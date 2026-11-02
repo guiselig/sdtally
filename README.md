@@ -433,17 +433,17 @@ Details: [Building from source](https://github.com/guiselig/sdtally/wiki/Buildin
 | `app/Sources/SDTallyXPC/` | The app–helper XPC contract and signing requirement |
 | `app/Tests/` | App tests and synthetic fixtures |
 | `app/montar.sh` | Builds and signs `SDTally.app` |
-| `scripts/` | `g9.sh` (anti-scareware check), `publicar.sh` (release), `audit.sh` (read-only shell audit), `medir-recursos.sh` (resource measurement) |
-| `docs/` | Storage model, measurement pitfalls, platform restrictions, target catalog, JSON schema, specs (Portuguese) |
-| `research/` | Research notes and experiments behind each decision (Portuguese) |
-| `runbooks/` | Manual procedures: full audit, duplicates, iCloud sync check, VS Code storage bloat (Portuguese) |
+| `scripts/` | `g9.sh` with `g9-proibidas.txt` and `g9-excecoes.txt` (anti-scareware check), `publicar.sh` (release), `termos-macos.py` (looks up how macOS translates UI terms, for translators) |
+| `scripts/dmg/` | DMG background and window layout used by `publicar.sh` |
+| `docs/` | Storage model, measurement pitfalls, platform restrictions, target catalog, JSON schema (Portuguese) |
+| `research/mapa-de-fontes.md` | Where Apple takes each number from; the app shows it as a source (Portuguese) |
 
 Comments and identifiers in the code are in Portuguese.
 
 ## Documentation
 
 - Wiki: [Home](https://github.com/guiselig/sdtally/wiki) · [Installation](https://github.com/guiselig/sdtally/wiki/Installation) · [CLI reference](https://github.com/guiselig/sdtally/wiki/CLI-reference) · [JSON output](https://github.com/guiselig/sdtally/wiki/JSON-output) · [Understanding System Data](https://github.com/guiselig/sdtally/wiki/Understanding-System-Data) · [FAQ](https://github.com/guiselig/sdtally/wiki/FAQ)
-- In the repository (Portuguese): [storage model](docs/01-modelo-de-armazenamento.md), [measurement pitfalls](docs/02-armadilhas-de-medicao.md), [platform restrictions](docs/03-restricoes-de-plataforma.md), [target catalog](docs/04-catalogo-de-alvos.md), [JSON schema](docs/json-schema.md), [research synthesis](research/2026-09-27-sintese.md).
+- In the repository (Portuguese): [storage model](docs/01-modelo-de-armazenamento.md), [measurement pitfalls](docs/02-armadilhas-de-medicao.md), [platform restrictions](docs/03-restricoes-de-plataforma.md), [target catalog](docs/04-catalogo-de-alvos.md), [JSON schema](docs/json-schema.md), [source map](research/mapa-de-fontes.md).
 
 ## Contributing, security, license
 

@@ -48,11 +48,11 @@ Regra: para caches de IDE, oferecer só versões **antigas** (`RustRover2025.1` 
 
 | Caminho | Verificar antes |
 |---|---|
-| `~/Library/Caches/CloudKit/**` | Sync ativo. Ver [runbook](../runbooks/verificar-sync-icloud.md). **Se ativo: não oferecer** |
+| `~/Library/Caches/CloudKit/**` | Sync ativo (o `brctl status` ou o `fileproviderctl` mostram se há fila). **Se ativo: não oferecer** |
 | `~/Library/Application Support/Claude/vm_bundles` | App fechado. VM em uso corrompe |
 | `~/Library/Containers/<app>/Data/Library/Caches` | App fechado |
 | Snapshots do Time Machine | Só via `tmutil deletelocalsnapshots` |
-| `~/Library/Application Support/Code/User/workspaceStorage/*` | Ver [runbook](../runbooks/vscode-jdtls-bloat.md). Pode conter arquivos do usuário |
+| `~/Library/Application Support/Code/User/workspaceStorage/*` | Pode conter arquivos do usuário (ver abaixo) |
 
 O caso do `workspaceStorage` é o mais traiçoeiro: parece cache, e às vezes contém cópias
 de arquivos reais que o usuário não sabe que existem.
@@ -88,7 +88,7 @@ Casos que exigem julgamento humano. O app reporta e explica; o usuário decide.
 | Pasta `bin/` ou `build/` com mídia dentro | Ferramenta de build copiando o que não devia |
 | `workspaceStorage` de um workspace >> soma dos outros | Extensão vazando |
 
-Ver [runbook de duplicatas](../runbooks/achar-duplicatas.md).
+O `sdtally` lista cópias idênticas na medição completa (`duplicates`, em [json-schema.md](json-schema.md)).
 
 ---
 

@@ -476,7 +476,7 @@
       "refs": [
         {
           "kind": "internal",
-          "ref": "docs/spec-fase6.md §6.2"
+          "ref": "docs/json-schema.md Fase 6: regras e detectores"
         }
       ],
       "self_cleans": "when",
@@ -519,7 +519,7 @@
       "refs": [
         {
           "kind": "internal",
-          "ref": "docs/spec-fase6.md §6.2"
+          "ref": "docs/json-schema.md Fase 6: regras e detectores"
         }
       ],
       "self_cleans": "unknown",
@@ -589,7 +589,7 @@
       "refs": [
         {
           "kind": "internal",
-          "ref": "docs/spec-fase6.md §6.2"
+          "ref": "docs/json-schema.md Fase 6: regras e detectores"
         }
       ],
       "self_cleans": "unknown",
@@ -624,7 +624,7 @@
       "refs": [
         {
           "kind": "internal",
-          "ref": "docs/spec-fase6.md §6.2"
+          "ref": "docs/json-schema.md Fase 6: regras e detectores"
         }
       ],
       "self_cleans": "unknown",
@@ -815,7 +815,7 @@
       "refs": [
         {
           "kind": "internal",
-          "ref": "docs/spec-fase6.md §6.2"
+          "ref": "docs/json-schema.md Fase 6: regras e detectores"
         }
       ],
       "self_cleans": "no",
@@ -1101,7 +1101,7 @@
       "refs": [
         {
           "kind": "internal",
-          "ref": "docs/spec-fase6.md §4.2"
+          "ref": "docs/json-schema.md Fase 6: regras e detectores"
         },
         {
           "kind": "measured",
@@ -1180,7 +1180,7 @@
       "refs": [
         {
           "kind": "internal",
-          "ref": "docs/spec-fase6.md §6.2"
+          "ref": "docs/json-schema.md Fase 6: regras e detectores"
         }
       ],
       "self_cleans": "unknown",
@@ -1484,7 +1484,7 @@
         },
         {
           "kind": "internal",
-          "ref": "docs/spec-fase6.md §4.4"
+          "ref": "docs/01-modelo-de-armazenamento.md Time Machine: snapshots locais"
         }
       ],
       "self_cleans": "unknown",
@@ -1519,7 +1519,7 @@
       "refs": [
         {
           "kind": "internal",
-          "ref": "docs/spec-fase5.md §6"
+          "ref": "docs/03-restricoes-de-plataforma.md Recomendar o Lixo"
         }
       ],
       "self_cleans": "when",

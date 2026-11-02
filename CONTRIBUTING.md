@@ -85,6 +85,7 @@ Fixtures in `tests/fixtures/` and `app/Tests/SDTallyTests/Fixtures/` are synthet
 
 - Match the surrounding code. The codebase is compact: short functions, comments that explain why, not what.
 - Code comments and identifiers are in Portuguese. Keep the language of the file you are editing.
+- Comments that cite `spec-fase5`, `spec-fase6`, `spec-inicio`, `PLANO` or `research/` refer to design notes removed on 2026-11-02. They are in the git history before that commit.
 - Rust: `cargo clippy -D warnings` must pass. The binaries use `#![deny(unsafe_code)]`; unsafe FFI lives in `src/sys/`.
 - Swift: Swift 6 strict concurrency, SwiftUI, system colors only (see G9).
 - Keep changes small and focused. No drive-by refactors.

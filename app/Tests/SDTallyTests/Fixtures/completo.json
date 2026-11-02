@@ -846,7 +846,7 @@
       "refs": [
         {
           "kind": "internal",
-          "ref": "docs/spec-fase5.md §6"
+          "ref": "docs/json-schema.md `swap`"
         }
       ],
       "self_cleans": "when",
@@ -1030,7 +1030,7 @@
       "refs": [
         {
           "kind": "internal",
-          "ref": "docs/spec-fase5.md §6"
+          "ref": "docs/03-restricoes-de-plataforma.md Recomendar o Lixo"
         }
       ],
       "self_cleans": "when",

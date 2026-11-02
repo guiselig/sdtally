@@ -2,8 +2,7 @@
 version: 2
 updates:
   - package-ecosystem: cargo
-    # frenteQ é compilado pelo job `fontes` do CI.
-    directories: ["/", "/research/experimentos/frenteQ"]
+    directory: /
     schedule:
       interval: weekly
   - package-ecosystem: github-actions

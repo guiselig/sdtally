@@ -95,14 +95,14 @@ const VOLTA: Txt = t("Nada que não volte: o macOS recria ou baixa de novo quand
 const MEDICAO: Txt = t("Nada se perde; a medição fica mais completa.", "Nothing is lost; the measurement gets more complete.");
 const BAIXA: Txt = t("Tempo e banda para baixar de novo.", "Time and bandwidth to download it again.");
 const GERENCIADO: Txt = t("Gerenciado pelo macOS.", "Managed by macOS.");
-const F5: &[Ref] = &[Ref::Interno("docs/spec-fase5.md §6")];
+const LIXO: &[Ref] = &[Ref::Interno("docs/03-restricoes-de-plataforma.md Recomendar o Lixo")];
 const SEGURO: &[Ref] = &[Ref::Interno("docs/04-catalogo-de-alvos.md Seguro")];
 const CUSTO: &[Ref] = &[Ref::Interno("docs/04-catalogo-de-alvos.md Custo")];
 const CONDICIONAL: &[Ref] = &[Ref::Interno("docs/04-catalogo-de-alvos.md Condicional")];
 const PROIBIDO: &[Ref] = &[Ref::Interno("docs/04-catalogo-de-alvos.md Proibido")];
 const MAPA1: &[Ref] = &[Ref::Medido("research/mapa-de-fontes.md §1")];
 const MAPA3: &[Ref] = &[Ref::Medido("research/mapa-de-fontes.md §3")];
-const F6: &[Ref] = &[Ref::Interno("docs/spec-fase6.md §6.2")];
+const FASE6: &[Ref] = &[Ref::Interno("docs/json-schema.md Fase 6: regras e detectores")];
 const AO_REINICIAR: Txt = t("O trabalho aberto que não foi salvo.", "Open work that was not saved.");
 
 /// Base das fichas do que o macOS gerencia; cada ficha troca o que for dela.
@@ -195,7 +195,7 @@ pub const CATALOGO: &[Ficha] = &[
         perde: t("Nada; ao reiniciar, o trabalho aberto que não foi salvo.", "Nothing; on restart, open work that was not saved."),
         passo: t("O Mac está usando o disco como memória. Fechar apps pesados ou reiniciar devolve o espaço.", "The Mac is using the disk as memory; quitting heavy apps or restarting gives it back."),
         agir: &[Acao::Reiniciar],
-        fonte: &[Ref::Interno("docs/spec-fase5.md §6")],
+        fonte: &[Ref::Interno("docs/json-schema.md `swap`")],
         ..B
     },
     Ficha {
@@ -215,7 +215,7 @@ pub const CATALOGO: &[Ficha] = &[
         perde: AO_REINICIAR,
         passo: t("Reiniciar devolve o swap (sai da linha macOS do Ajustes) e os arquivos apagados que apps ainda seguram (sai de Dados do Sistema). Salve o trabalho aberto antes. O swap volta com o uso.", "Restarting gives back swap (it leaves the macOS line in Settings) and deleted files apps still hold (it leaves System Data). Save open work first. Swap comes back with use."),
         agir: &[Acao::Reiniciar],
-        fonte: &[Ref::Interno("docs/spec-fase6.md §4.2"), Ref::Medido("research/mapa-de-fontes.md §3")],
+        fonte: &[Ref::Interno("docs/json-schema.md Fase 6: regras e detectores"), Ref::Medido("research/mapa-de-fontes.md §3")],
         ..B
     },
     Ficha {
@@ -238,7 +238,7 @@ pub const CATALOGO: &[Ficha] = &[
         perde: t("Nada: é só conferir o destino do backup.", "Nothing: it is only a matter of checking the backup destination."),
         passo: t("O Time Machine tentou de novo várias vezes desde o último backup registrado, sem registrar outro, e o snapshot de base segue no disco. Veja o destino em Ajustes > Time Machine.", "Time Machine has tried again several times since the last recorded backup without recording another, and the base snapshot stays on disk. See the destination in System Settings > Time Machine."),
         agir: &[Acao::Ajustes(Painel::TimeMachine), Acao::Comando("tmutil listlocalsnapshots /")],
-        fonte: &[Ref::Medido("research/mapa-de-fontes.md §3"), Ref::Interno("docs/spec-fase6.md §4.4")],
+        fonte: &[Ref::Medido("research/mapa-de-fontes.md §3"), Ref::Interno("docs/01-modelo-de-armazenamento.md Time Machine: snapshots locais")],
         ..B
     },
     Ficha {
@@ -265,7 +265,7 @@ pub const CATALOGO: &[Ficha] = &[
         perde: t("Os arquivos do Lixo, de vez.", "The files in the Trash, for good."),
         passo: t("Esvazie o Lixo no Finder. O espaço volta quando o Lixo é esvaziado.", "Empty the Trash."),
         agir: &[Acao::Finder],
-        fonte: F5,
+        fonte: LIXO,
         ..B
     },
     Ficha {
@@ -486,7 +486,7 @@ pub const CATALOGO: &[Ficha] = &[
         nivel: "cost",
         perde: t("As vozes removidas, até baixarem de novo.", "The removed voices, until they download again."),
         passo: t("Vozes do sistema. Remova vozes em Ajustes > Acessibilidade > Conteúdo Falado; não apague dentro de AssetsV2.", "System voices. Remove voices in System Settings > Accessibility > Spoken Content; do not delete inside AssetsV2."),
-        fonte: F6,
+        fonte: FASE6,
         ..B
     },
     Ficha {
@@ -498,7 +498,7 @@ pub const CATALOGO: &[Ficha] = &[
         perde: BAIXA,
         passo: t("Documentação e ferramentas Metal do Xcode. Veja em Xcode > Settings > Components; não apague dentro de AssetsV2.", "Xcode documentation and Metal tools. See Xcode > Settings > Components; do not delete inside AssetsV2."),
         agir: &[Acao::AppDono],
-        fonte: F6,
+        fonte: FASE6,
         ..B
     },
     Ficha {
@@ -510,7 +510,7 @@ pub const CATALOGO: &[Ficha] = &[
         perde: BAIXA,
         passo: t("Runtimes de simulador baixados pelo macOS. Veja com xcrun simctl runtime list; remova em Xcode > Settings > Components.", "Simulator runtimes downloaded by macOS. See them with xcrun simctl runtime list; remove them in Xcode > Settings > Components."),
         agir: &[Acao::Comando("xcrun simctl runtime list"), Acao::AppDono],
-        fonte: F6,
+        fonte: FASE6,
         ..B
     },
     Ficha {
@@ -520,7 +520,7 @@ pub const CATALOGO: &[Ficha] = &[
         sozinho: Sozinho::Quando(t("depois de instalar a atualização", "after the update is installed")),
         perde: t("O download da atualização, que baixa de novo.", "The update download, which downloads again."),
         passo: t("Atualização do macOS baixada. Instale ou aguarde em Ajustes > Geral > Atualização de Software; o macOS a remove depois de instalar.", "A macOS update was downloaded. Install it or wait in System Settings > General > Software Update; macOS removes it after installing."),
-        fonte: F6,
+        fonte: FASE6,
         ..B
     },
     Ficha {
@@ -532,7 +532,7 @@ pub const CATALOGO: &[Ficha] = &[
         perde: t("A busca do Spotlight até o índice ser refeito.", "Spotlight search until the index is rebuilt."),
         passo: t("O índice do Spotlight está grande. Não apague à mão; veja em Ajustes > Spotlight.", "The Spotlight index is large. Do not delete it by hand; see System Settings > Spotlight."),
         agir: &[Acao::Ajustes(Painel::Spotlight)],
-        fonte: F6,
+        fonte: FASE6,
         ..B
     },
     Ficha {
@@ -545,7 +545,7 @@ pub const CATALOGO: &[Ficha] = &[
         perde: t("O que estiver gravado ali; confira antes.", "Whatever is written there; check first."),
         passo: t("Há dados gravados no próprio volume Data, numa pasta comum dentro de /Volumes, onde deveria haver só pontos de montagem. Não é o disco nem o compartilhamento: abra no Finder e confira o que é.", "There is data written to the Data volume itself, in a regular folder inside /Volumes, where there should only be mount points. It is not the disk or the share: open it in Finder and check what it is."),
         agir: &[Acao::Finder],
-        fonte: F6,
+        fonte: FASE6,
         ..B
     },
     // ---- sem regra: só dão `card` a linhas e seções (§5.1) ----
