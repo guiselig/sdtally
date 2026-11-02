@@ -107,7 +107,7 @@ Also in the app:
 - **Updates.** The app checks github.com for a new version when it opens and then once a day, and shows it in Settings > Versions. Nothing is downloaded or installed until you click **Install**. Turn off **Check for updates automatically** there to stop the automatic check; the CLI and the root helper never use the network and update with the app. See [Privacy and safety guarantees](#privacy-and-safety-guarantees).
 - **See New Versions** in Settings opens the GitHub Releases page in your browser.
 - **Info** shows the paths of the app, the embedded `sdtally`, the helper and the data folder, plus ready-to-copy commands for AI agents.
-- **Log** in Info: when the app opened and quit, full measurements, updates and errors, in `~/Library/Logs/SDTally/SDTally.log`. It stays on your Mac, uses `~` for your home folder and is written in English, so you can attach it to an issue.
+- **Log**: Settings > Advanced > **Open Log** opens it. It records when the app opened and quit, full measurements, updates and errors, in `~/Library/Logs/SDTally/SDTally.log`. It stays on your Mac, uses `~` for your home folder and is written in English, so you can attach it to an issue.
 
 ### CLI
 

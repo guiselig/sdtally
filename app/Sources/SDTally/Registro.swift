@@ -1,5 +1,5 @@
-// Registro do app (dono, 02/11): o que o app fez de importante, num arquivo que a pessoa vê em
-// Informações e pode anexar a uma issue. Só local, nunca sai do Mac. Em inglês, como as issues;
+// Registro do app (dono, 02/11): o que o app fez de importante, num arquivo que a pessoa abre em
+// Configurações › Avançado e pode anexar a uma issue. Só local, nunca sai do Mac. Em inglês, como as issues;
 // a pasta pessoal vira "~". Também vai ao log do sistema em .notice, que o macOS guarda (.info não).
 import Foundation
 import os
@@ -27,13 +27,6 @@ nonisolated enum Registro {
     static func esvaziar() { fila.sync {} }
 
     static func semCasa(_ s: String) -> String { s.replacingOccurrences(of: casa, with: "~") }
-
-    /// As últimas `max` linhas (o arquivo atual; o .1 só pelo Finder).
-    static func ultimas(_ max: Int = 300) -> String {
-        guard let d = try? Data(contentsOf: arquivo) else { return "" }
-        return String(decoding: d, as: UTF8.self).split(separator: "\n", omittingEmptySubsequences: false)
-            .suffix(max + 1).joined(separator: "\n").trimmingCharacters(in: .newlines)
-    }
 
     /// Na abertura: anota a sessão anterior que não fechou (travou, forçada a sair, Mac desligou) e esta.
     static func aoAbrir(versao: String, d: UserDefaults = .standard) {

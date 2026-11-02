@@ -61,6 +61,7 @@ struct PermissoesView: View {
             }
             Section("Avançado") {
                 PickerAutoRoot()
+                LinhaRegistro()
             }
             Section("Versões") {
                 LinhaAtualizador()
@@ -403,4 +404,17 @@ private struct PickerAutoRoot: View {
 
     Recomendações: use só no seu Mac, com uma conta só sua. Na bateria, prefira o Automático sem root. Para conferir de vez em quando, a Medição completa basta. Dá para voltar a qualquer hora em Configurações > Avançado.
     """)
+}
+
+/// O registro do app (Registro): um botão que abre o arquivo no app padrão de .log (o Console).
+struct LinhaRegistro: View {
+    var body: some View {
+        LabeledContent("Registro") {
+            Button("Abrir registro") {
+                let a = Registro.arquivo
+                NSWorkspace.shared.open(FileManager.default.fileExists(atPath: a.path) ? a : Registro.pasta)
+            }
+        }
+        .dica("Fica só neste Mac. O SDTally anota quando abre e fecha, as medições completas, as atualizações e os erros, em inglês e com a sua pasta pessoal escrita como ~. Se algo der errado, anexe numa issue.")
+    }
 }

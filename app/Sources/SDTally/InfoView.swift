@@ -7,7 +7,6 @@ import SDTallyXPC
 import SwiftUI
 
 struct InfoView: View {
-    @State private var registro = ""
 
     var body: some View {
         let info = Bundle.main.infoDictionary ?? [:]
@@ -51,27 +50,6 @@ struct InfoView: View {
                 LabeledContent("Processador", value: Self.sysctl("machdep.cpu.brand_string"))
                 LabeledContent("Modelo", value: Self.sysctl("hw.model"))
             }
-            Section {
-                ScrollView {
-                    Text(registro.isEmpty ? String(localized: "Nada registrado ainda.") : registro)
-                        .font(.system(.caption, design: .monospaced)).textSelection(.enabled)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
-                .frame(height: 160)
-                .defaultScrollAnchor(.bottom)
-                HStack {
-                    Button("Mostrar no Finder") {
-                        let a = Registro.arquivo
-                        NSWorkspace.shared.activateFileViewerSelecting([FileManager.default.fileExists(atPath: a.path) ? a : Registro.pasta])
-                    }
-                    Spacer()
-                    BotaoCopiar(texto: registro)
-                }
-            } header: {
-                Text("Registro")
-                    .dica("Fica só neste Mac. O SDTally anota quando abre e fecha, as medições completas, as atualizações e os erros, em inglês e com a sua pasta pessoal escrita como ~. Se algo der errado, anexe numa issue.")
-            }
-            .task { registro = Registro.ultimas() }
             Section {
                 let s = "\"\(bin ?? "sdtally")\""
                 comando(String(localized: "Leitura rápida"), "\(s) --quick --json --redact names")
