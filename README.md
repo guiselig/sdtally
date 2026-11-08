@@ -6,6 +6,9 @@ Explains what makes up **System Data** in macOS Storage settings by measuring it
 [![License: GPL-3.0-or-later](https://img.shields.io/badge/license-GPL--3.0--or--later-blue.svg)](LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/guiselig/sdtally?include_prereleases&sort=semver)](https://github.com/guiselig/sdtally/releases)
 [![Platform: macOS 15+ on Apple Silicon](https://img.shields.io/badge/platform-macOS%2015%2B%20%7C%20Apple%20Silicon-lightgrey.svg)](#requirements)
+[![Sponsor](https://img.shields.io/github/sponsors/guiselig?label=sponsor&logo=githubsponsors)](https://github.com/sponsors/guiselig)
+
+Sponsorships go first to the Apple Developer Program (US$ 99 a year), so SDTally can be signed and notarized: no more "Open Anyway" on first launch, and a path to Homebrew.
 
 SDTally has two parts that share one measuring engine:
 
