@@ -6,7 +6,7 @@
 //                           Foto.renderizar; vazios: V1, V5 e V12 da medição carregada; selo: popovers
 //                           do selo; armazenamentointeiro, fazerinteiro, historicointeiro e permissoesinteira: a tela sem cortar; infointeira: Informações sem cortar, até "Comandos"; sistemainteiro: Dados do
 //                           Sistema sem cortar)
-//   SDTALLY_PAGINA=<n>      página das boas-vindas (0 a 3) com SDTALLY_SECAO=boasvindas
+//   SDTALLY_PAGINA=<n>      página das boas-vindas (0 a 4) com SDTALLY_SECAO=boasvindas
 //   SDTALLY_ANCORA=<id>     abre o Disco rolado até a seção com esse .id (livres, cuida, recursos, volumes,
 //                           recuperacao, informativo, naomedido) ou Dados do Sistema (snapshots, reiniciar, partes)
 //   SDTALLY_BARRA=<nível>   ajustes, macos, volumeData ou termo:<key>: nível inicial da barra que
