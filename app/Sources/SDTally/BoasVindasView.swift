@@ -1,5 +1,5 @@
-// Boas-vindas (spec-fase5 §2.3; 19/10): folha de 4 páginas, Boas-vindas, O que faz, Como faz e
-// Permissões. Pede só o que o dono clicar. Dono: A4.
+// Boas-vindas (spec-fase5 §2.3; 19/10): folha de 5 páginas, Boas-vindas, O que faz, Como faz,
+// Pergunte à sua IA (o MCP, que só aparecia em Informações; dono, 08/11) e Permissões. Pede só o que o dono clicar. Dono: A4.
 // API estável:
 //   BoasVindasView(pagina:)  lê Painel do ambiente; "Começar" grava @AppStorage("viuBoasVindas")
 // A JanelaView apresenta a folha por painel.mostrarBoasVindas.
@@ -11,7 +11,7 @@ struct BoasVindasView: View {
     @AppStorage("viuBoasVindas") private var viu = false
     @State var pagina = 0
 
-    private static let titulos = [String(localized: "Bem-vindo ao SDTally"), String(localized: "O que ele faz"), String(localized: "Como ele faz"), String(localized: "Permissões")]
+    private static let titulos = [String(localized: "Bem-vindo ao SDTally"), String(localized: "O que ele faz"), String(localized: "Como ele faz"), String(localized: "Pergunte à sua IA"), String(localized: "Permissões")]
 
     private static let faz: [Item] = [
         Item("square.stack.3d.up.fill", String(localized: "Explica Dados do Sistema"), String(localized: "Divide o número do Ajustes em partes com nome.")),
@@ -42,9 +42,9 @@ struct BoasVindasView: View {
             Spacer(minLength: 0)
             rodape
         }
-        // Altura mínima, não fixa: em tailandês a página 3 passa de 640 e cortava o rodapé.
+        // Altura mínima, não fixa: em tailandês Permissões passa de 640 e cortava o rodapé.
         .frame(width: 560)
-        .frame(minHeight: pagina == 3 ? 640 : 460)
+        .frame(minHeight: pagina == Self.titulos.count - 1 ? 640 : 460)
         .fixedSize(horizontal: false, vertical: true)
         .animation(.smooth(duration: 0.25), value: pagina)
     }
@@ -69,6 +69,27 @@ struct BoasVindasView: View {
             .multilineTextAlignment(.center).frame(maxWidth: .infinity)
         case 1: lista(Self.faz)
         case 2: lista(Self.como)
+        case 3:
+            VStack(alignment: .leading, spacing: 16) {
+                Text("Conecte o SDTally ao seu assistente de IA pelo MCP e pergunte, por exemplo: “Por que Dados do Sistema está tão grande?”")
+                    .font(.title3)
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("No Claude Code, cole este comando no Terminal. Em outro cliente de IA, use o mesmo caminho com `--mcp`.")
+                        .foregroundStyle(.secondary)
+                    HStack {
+                        Text(verbatim: InfoView.comandoMCP).font(.system(.callout, design: .monospaced)).textSelection(.enabled)
+                            .lineLimit(1).truncationMode(.middle).help(InfoView.comandoMCP)
+                        Spacer(minLength: 8)
+                        BotaoCopiar(texto: InfoView.comandoMCP)
+                    }
+                    .padding(10)
+                    .background(.quaternary.opacity(0.5), in: .rect(cornerRadius: 8))
+                }
+                // O mesmo aviso da dica de Comandos em Informações, aqui à vista.
+                Text("Pelo MCP, seu nome de usuário e os nomes de pastas pessoais são trocados antes de sair do sdtally (`--redact off` desliga). O SDTally não manda nada sobre o seu disco pela rede, mas o cliente de IA manda. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita no app.")
+                    .font(.callout).foregroundStyle(.secondary)
+            }
+            .fixedSize(horizontal: false, vertical: true)
         default:
             VStack(alignment: .leading, spacing: 12) {
                 LinhaAcessoTotal(explicar: true)

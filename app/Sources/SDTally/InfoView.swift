@@ -54,7 +54,7 @@ struct InfoView: View {
                 let s = "\"\(bin ?? "sdtally")\""
                 comando(String(localized: "Leitura rápida"), "\(s) --quick --json --redact names")
                 comando(String(localized: "Última medição"), "\(s) --last --json --redact names")
-                comando("MCP", "claude mcp add sdtally -- \(s) --mcp")
+                comando("MCP", Self.comandoMCP)
                 comando(String(localized: "Catálogo fontes"), "\(s) --catalog --json")
                 comando(String(localized: "Verificar"), "\(s) --verify")
             } header: {
@@ -97,6 +97,9 @@ struct InfoView: View {
         }
     }
 
+    /// Também na folha de boas-vindas. O sdtally de Contents/Helpers (Executor.binario).
+    static var comandoMCP: String { "claude mcp add sdtally -- \"\(Executor.binario ?? "sdtally")\" --mcp" }
+
     private static func sysctl(_ nome: String) -> String {
         var n = 0
         guard sysctlbyname(nome, nil, &n, nil, 0) == 0, n > 0 else { return "—" }
@@ -108,7 +111,7 @@ struct InfoView: View {
 
 /// "Copiar" que vira "Copiado", em vermelho, por 1,5 s depois do clique. Os dois rótulos ocupam
 /// o mesmo lugar: o botão não muda de largura.
-private struct BotaoCopiar: View {
+struct BotaoCopiar: View {
     let texto: String
     @State private var copiado = false
 

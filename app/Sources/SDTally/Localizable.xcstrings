@@ -51939,6 +51939,220 @@
         }
       }
     },
+    "Conecte o SDTally ao seu assistente de IA pelo MCP e pergunte, por exemplo: “Por que Dados do Sistema está tão grande?”" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اربط SDTally بمساعد الذكاء الاصطناعي لديك عبر MCP واسأل، مثلًا: «لماذا بيانات النظام كبيرة جدًا؟»"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connecta l’SDTally al teu assistent d’IA mitjançant MCP i pregunta, per exemple: «Per què Dades del sistema ocupa tant?»"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Připojte SDTally ke svému asistentovi AI přes MCP a zeptejte se například: „Proč jsou Systémová data tak velká?“"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forbind SDTally til din AI-assistent via MCP, og spørg for eksempel: »Hvorfor er Systemdata så store?«"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verbinde SDTally über MCP mit deinem KI-Assistenten und frag zum Beispiel: „Warum sind die Systemdaten so groß?“"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Συνδέστε το SDTally με τον βοηθό τεχνητής νοημοσύνης σας μέσω MCP και ρωτήστε, για παράδειγμα: «Γιατί τα Δεδομένα συστήματος είναι τόσο μεγάλα;»"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connect SDTally to your AI assistant through MCP and ask, for example: “Why is System Data so large?”"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conecta SDTally a tu asistente de IA por MCP y pregunta, por ejemplo: «¿Por qué Datos del sistema ocupa tanto?»"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conecta SDTally a tu asistente de IA por MCP y pregunta, por ejemplo: “¿Por qué Datos del sistema ocupa tanto espacio?”"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yhdistä SDTally tekoälyavustajaasi MCP:n kautta ja kysy esimerkiksi: ”Miksi Järjestelmätiedot vievät niin paljon tilaa?”"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connectez SDTally à votre assistant IA via MCP et demandez, par exemple : « Pourquoi Données système est-il si volumineux ? »"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "חבר את SDTally לעוזר ה-AI שלך דרך MCP ושאל, למשל: “למה נתוני המערכת כל כך גדולים?”"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MCP के ज़रिए SDTally को अपने AI असिस्टेंट से जोड़ें और पूछें, जैसे: “सिस्टम डेटा इतना बड़ा क्यों है?”"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Povežite SDTally sa svojim AI asistentom preko MCP-a i pitajte, na primjer: „Zašto su Podaci sustava toliko veliki?“"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Csatlakoztassa az SDTally-t MI-asszisztenséhez az MCP-n keresztül, és kérdezzen, például: „Miért ekkora a Rendszeradatok?”"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hubungkan SDTally ke asisten AI Anda lewat MCP dan tanyakan, misalnya: “Mengapa Data Sistem begitu besar?”"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collega SDTally al tuo assistente IA tramite MCP e chiedi, per esempio: “Perché la voce Dati sistema è così grande?”"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MCP経由でSDTallyをAIアシスタントに接続して、たとえば「システムデータがこんなに大きいのはなぜ？」と質問できます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MCP로 SDTally를 AI 어시스턴트에 연결하고 예를 들어 이렇게 물어보세요: “시스템 데이터가 왜 이렇게 큰가요?”"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sambungkan SDTally kepada pembantu AI anda melalui MCP dan tanya, contohnya: “Mengapa Data Sistem begitu besar?”"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koble SDTally til AI-assistenten din via MCP og spør for eksempel: «Hvorfor tar Systemdata så mye plass?»"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koppel SDTally via MCP aan je AI-assistent en vraag bijvoorbeeld: “Waarom zijn Systeemgegevens zo groot?”"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Połącz SDTally ze swoim asystentem AI przez MCP i zapytaj na przykład: „Dlaczego Dane systemowe są tak duże?”"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ligue o SDTally ao seu assistente de IA através do MCP e pergunte, por exemplo: “Porque é que os Dados do sistema estão tão grandes?”"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conectează SDTally la asistentul tău AI prin MCP și întreabă, de exemplu: „De ce este atât de mare categoria Date de sistem?”"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подключите SDTally к своему ассистенту ИИ через MCP и спросите, например: «Почему Системные данные такие большие?»"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pripojte SDTally k svojmu AI asistentovi cez MCP a opýtajte sa napríklad: „Prečo sú Systémové dáta také veľké?“"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally povežite s svojim pomočnikom z umetno inteligenco prek MCP in vprašajte, na primer: „Zakaj so Sistemski podatki tako veliki?“"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koppla SDTally till din AI-assistent via MCP och fråga till exempel: ”Varför är Systemdata så stort?”"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เชื่อมต่อ SDTally กับผู้ช่วย AI ของคุณผ่าน MCP แล้วถาม เช่น “ทำไมข้อมูลระบบถึงใหญ่มาก”"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally’yi MCP üzerinden yapay zeka asistanınıza bağlayın ve örneğin şunu sorun: “Sistem Verileri neden bu kadar büyük?”"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підключіть SDTally до свого асистента ШІ через MCP і запитайте, наприклад: «Чому Системні дані такі великі?»"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kết nối SDTally với trợ lý AI của bạn qua MCP và hỏi, ví dụ: “Tại sao Dữ liệu hệ thống lại lớn như vậy?”"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过 MCP 将 SDTally 连接到你的 AI 助手，然后提问，例如：“为什么系统数据这么大？”"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "透過 MCP 將 SDTally 連接到你的 AI 助理，然後提問，例如：「為什麼系統資料這麼大？」"
+          }
+        }
+      }
+    },
     "Conferido ao byte pelo projeto contra a Apple (macOS %@)." : {
       "localizations" : {
         "en" : {
@@ -116243,6 +116457,220 @@
         }
       }
     },
+    "No Claude Code, cole este comando no Terminal. Em outro cliente de IA, use o mesmo caminho com `--mcp`." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "في Claude Code، الصق هذا الأمر في الوحدة الطرفية. في عميل ذكاء اصطناعي آخر، استخدم المسار نفسه مع `--mcp`."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Claude Code, enganxa aquesta ordre al Terminal. En un altre client d’IA, fes servir la mateixa ruta amb `--mcp`."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V Claude Code vložte tento příkaz do aplikace Terminál. V jiném klientu AI použijte stejnou cestu s `--mcp`."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I Claude Code skal du indsætte denne kommando i Terminal. I en anden AI-klient skal du bruge den samme sti med `--mcp`."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge in Claude Code diesen Befehl im Terminal ein. Verwende in einem anderen KI-Client denselben Pfad mit `--mcp`."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Στο Claude Code, επικολλήστε αυτή την εντολή στο Τερματικό. Σε άλλο πρόγραμμα-πελάτη τεχνητής νοημοσύνης, χρησιμοποιήστε την ίδια διαδρομή με `--mcp`."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Claude Code, paste this command into Terminal. In another AI client, use the same path with `--mcp`."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En Claude Code, pega este comando en Terminal. En otro cliente de IA, usa la misma ruta con `--mcp`."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En Claude Code, pega este comando en Terminal. En otro cliente de IA, usa la misma ruta con `--mcp`."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liitä Claude Codessa tämä komento Terminaaliin. Muussa tekoälyasiakasohjelmassa käytä samaa polkua ja `--mcp`-valitsinta."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dans Claude Code, collez cette commande dans Terminal. Dans un autre client IA, utilisez le même chemin avec `--mcp`."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ב-Claude Code, הדבק את הפקודה הזו במסוף. בלקוח AI אחר, השתמש באותו נתיב עם `--mcp`."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claude Code में यह कमांड टर्मिनल में पेस्ट करें। किसी दूसरे AI क्लाइंट में `--mcp` के साथ यही पाथ इस्तेमाल करें।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U Claude Codeu zalijepite ovu naredbu u Terminal. U drugom AI klijentu koristite istu putanju s `--mcp`."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A Claude Code-ban illessze be ezt a parancsot a Terminálba. Más MI-kliensben ugyanezt az elérési utat használja a `--mcp` kapcsolóval."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Di Claude Code, tempel perintah ini ke Terminal. Di klien AI lain, gunakan jalur yang sama dengan `--mcp`."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In Claude Code, incolla questo comando in Terminal. In un altro client IA, usa lo stesso percorso con `--mcp`."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claude Codeでは、このコマンドをターミナルに貼り付けてください。ほかのAIクライアントでは、同じパスに `--mcp` を付けて使います。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claude Code에서는 이 명령을 터미널에 붙여넣으세요. 다른 AI 클라이언트에서는 같은 경로에 `--mcp`를 붙여 사용하세요."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dalam Claude Code, tampal arahan ini ke dalam Terminal. Dalam klien AI lain, gunakan laluan yang sama dengan `--mcp`."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I Claude Code limer du denne kommandoen inn i Terminal. I en annen AI-klient bruker du samme sti med `--mcp`."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plak in Claude Code dit commando in Terminal. Gebruik in een andere AI-client hetzelfde pad met `--mcp`."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W Claude Code wklej to polecenie do aplikacji Terminal. W innym kliencie AI użyj tej samej ścieżki z `--mcp`."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Claude Code, cole este comando no Terminal. Noutro cliente de IA, use o mesmo caminho com `--mcp`."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "În Claude Code, lipește această comandă în Terminal. Într-un alt client AI, folosește aceeași cale cu `--mcp`."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "В Claude Code вставьте эту команду в Терминал. В другом клиенте ИИ используйте тот же путь с `--mcp`."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V Claude Code vložte tento príkaz do Terminálu. V inom AI klientovi použite rovnakú cestu s `--mcp`."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V Claude Code prilepite ta ukaz v Terminal. V drugem odjemalcu umetne inteligence uporabite isto pot z `--mcp`."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I Claude Code klistrar du in kommandot i Terminal. I en annan AI-klient använder du samma sökväg med `--mcp`."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ใน Claude Code ให้วางคำสั่งนี้ในเทอร์มินัล ส่วนไคลเอนต์ AI อื่นให้ใช้เส้นทางเดียวกันพร้อม `--mcp`"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Claude Code’da bu komutu Terminal’e yapıştırın. Başka bir yapay zeka istemcisinde aynı yolu `--mcp` ile kullanın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У Claude Code вставте цю команду в Термінал. В іншому клієнті ШІ використайте той самий шлях з `--mcp`."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trong Claude Code, hãy dán lệnh này vào Terminal. Với ứng dụng khách AI khác, dùng cùng đường dẫn với `--mcp`."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Claude Code 中，将此命令粘贴到终端。在其他 AI 客户端中，使用相同的路径并加上 `--mcp`。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 Claude Code 中，將此指令貼到終端機。在其他 AI 用戶端中，請使用相同的路徑並加上 `--mcp`。"
+          }
+        }
+      }
+    },
     "No disco" : {
       "localizations" : {
         "en" : {
@@ -145129,6 +145557,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recorre el disco cuando lo pides, con o sin contraseña."
+          }
+        }
+      }
+    },
+    "Pergunte à sua IA" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اسأل الذكاء الاصطناعي"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pregunta a la teva IA"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeptejte se AI"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spørg din AI"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frag deine KI"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ρωτήστε την τεχνητή νοημοσύνη"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ask your AI"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pregunta a tu IA"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pregunta a tu IA"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kysy tekoälyltäsi"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demandez à votre IA"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "שאל את ה-AI שלך"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अपने AI से पूछें"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pitajte svoj AI"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kérdezze az MI-t"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanya AI Anda"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiedi alla tua IA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AIに聞く"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AI에게 물어보기"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanya AI anda"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spør AI-en din"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vraag het je AI"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapytaj swoje AI"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pergunte à sua IA"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Întreabă AI-ul tău"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спросите у своего ИИ"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opýtajte sa svojej AI"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vprašajte svojo umetno inteligenco"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fråga din AI"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ถาม AI ของคุณ"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yapay zekanıza sorun"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запитайте у свого ШІ"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hỏi AI của bạn"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "询问你的 AI"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "詢問你的 AI"
           }
         }
       }
