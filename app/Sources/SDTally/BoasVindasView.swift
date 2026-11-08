@@ -70,12 +70,11 @@ struct BoasVindasView: View {
         case 1: lista(Self.faz)
         case 2: lista(Self.como)
         case 3:
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 20) {
                 Text("Conecte o SDTally ao seu assistente de IA pelo MCP e pergunte, por exemplo: “Por que Dados do Sistema está tão grande?”")
                     .font(.title3)
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("No Claude Code, cole este comando no Terminal. Em outro cliente de IA, use o mesmo caminho com `--mcp`.")
-                        .foregroundStyle(.secondary)
+                let agentes = Agente.todos.filter(\.instalado)
+                if agentes.isEmpty {
                     HStack {
                         Text(verbatim: InfoView.comandoMCP).font(.system(.callout, design: .monospaced)).textSelection(.enabled)
                             .lineLimit(1).truncationMode(.middle).help(InfoView.comandoMCP)
@@ -84,9 +83,15 @@ struct BoasVindasView: View {
                     }
                     .padding(10)
                     .background(.quaternary.opacity(0.5), in: .rect(cornerRadius: 8))
+                } else {
+                    HStack(spacing: 10) {
+                        ForEach(agentes, id: \.nome) { a in
+                            Button("Abrir no \(a.nome)", systemImage: "arrow.up.forward.app") { a.abrir() }
+                                .controlSize(.large)
+                        }
+                    }
                 }
-                // O mesmo aviso da dica de Comandos em Informações, aqui à vista.
-                Text("Pelo MCP, seu nome de usuário e os nomes de pastas pessoais são trocados antes de sair do sdtally (`--redact off` desliga). O SDTally não manda nada sobre o seu disco pela rede, mas o cliente de IA manda. A IA nunca mede como administrador nem executa os passos de O que fazer; lê a última medição completa feita no app.")
+                Text("O SDTally não manda nada sobre o seu disco pela rede, mas o cliente de IA manda.")
                     .font(.callout).foregroundStyle(.secondary)
             }
             .fixedSize(horizontal: false, vertical: true)
@@ -144,6 +149,29 @@ struct BoasVindasView: View {
             .accessibilityElement().accessibilityLabel("Página \(pagina + 1) de \(Self.titulos.count)")
         }
         .padding(20)
+    }
+
+    /// Abre o agente com o pedido de instalar o MCP já escrito; nada é enviado sem a pessoa apertar
+    /// Enter (claude-cli:// e codex:// só preenchem). Só aparece se o macOS tem quem abra o link.
+    private struct Agente {
+        let nome, esquema, comando: String
+        static var todos: [Agente] {
+            guard let b = Executor.binario else { return [] }
+            return [
+                Agente(nome: "Claude Code", esquema: "claude-cli://open", comando: InfoView.comandoMCP),
+                Agente(nome: "Codex", esquema: "codex://new", comando: "codex mcp add sdtally -- \"\(b)\" --mcp"),
+            ]
+        }
+        var instalado: Bool { NSWorkspace.shared.urlForApplication(toOpen: URL(string: esquema)!) != nil }
+        func abrir() {
+            // O pedido vai para a IA, que entende inglês em qualquer língua da interface.
+            let pedido = "Add the SDTally MCP server by running this command:\n\(comando)\nThen tell me to start a new session so its tools load."
+            var c = URLComponents(string: esquema)!
+            c.queryItems = [URLQueryItem(name: esquema.hasPrefix("codex") ? "prompt" : "q", value: pedido)]
+            // O URLComponents deixa "+" e "&" sem codificar na query.
+            c.percentEncodedQuery = c.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+            if let u = c.url { NSWorkspace.shared.open(u) }
+        }
     }
 
     private struct Item {

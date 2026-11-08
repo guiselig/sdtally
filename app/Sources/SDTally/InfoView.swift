@@ -97,8 +97,9 @@ struct InfoView: View {
         }
     }
 
-    /// Também na folha de boas-vindas. O sdtally de Contents/Helpers (Executor.binario).
-    static var comandoMCP: String { "claude mcp add sdtally -- \"\(Executor.binario ?? "sdtally")\" --mcp" }
+    /// Também na folha de boas-vindas. O sdtally de Contents/Helpers (Executor.binario); `-s user`
+    /// vale em qualquer pasta, não só na de onde o comando rodou.
+    static var comandoMCP: String { "claude mcp add -s user sdtally -- \"\(Executor.binario ?? "sdtally")\" --mcp" }
 
     private static func sysctl(_ nome: String) -> String {
         var n = 0

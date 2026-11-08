@@ -24547,6 +24547,220 @@
         }
       }
     },
+    "Abrir no %@" : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فتح في %@"
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obre a %@"
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevřít v aplikaci %@"
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åbn i %@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In %@ öffnen"
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Άνοιγμα στο %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open in %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir en %@"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir en %@"
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avaa sovelluksessa %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir dans %@"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "פתח ב-%@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ में खोलें"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otvori u aplikaciji %@"
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Megnyitás itt: %@"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buka di %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri in %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@で開く"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@에서 열기"
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buka dalam %@"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Åpne i %@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open in %@"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwórz w %@"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir no %@"
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deschide în %@"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открыть в %@"
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otvoriť v aplikácii %@"
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odpri v aplikaciji %@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Öppna i %@"
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "เปิดใน %@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ ile Aç"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відкрити в %@"
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mở trong %@"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 %@ 中打开"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在 %@ 中開啟"
+          }
+        }
+      }
+    },
     "Abrir o Ajustes escondido, com o app aberto" : {
       "localizations" : {
         "en" : {
@@ -116457,220 +116671,6 @@
         }
       }
     },
-    "No Claude Code, cole este comando no Terminal. Em outro cliente de IA, use o mesmo caminho com `--mcp`." : {
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "في Claude Code، الصق هذا الأمر في الوحدة الطرفية. في عميل ذكاء اصطناعي آخر، استخدم المسار نفسه مع `--mcp`."
-          }
-        },
-        "ca" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A Claude Code, enganxa aquesta ordre al Terminal. En un altre client d’IA, fes servir la mateixa ruta amb `--mcp`."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "V Claude Code vložte tento příkaz do aplikace Terminál. V jiném klientu AI použijte stejnou cestu s `--mcp`."
-          }
-        },
-        "da" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "I Claude Code skal du indsætte denne kommando i Terminal. I en anden AI-klient skal du bruge den samme sti med `--mcp`."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Füge in Claude Code diesen Befehl im Terminal ein. Verwende in einem anderen KI-Client denselben Pfad mit `--mcp`."
-          }
-        },
-        "el" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Στο Claude Code, επικολλήστε αυτή την εντολή στο Τερματικό. Σε άλλο πρόγραμμα-πελάτη τεχνητής νοημοσύνης, χρησιμοποιήστε την ίδια διαδρομή με `--mcp`."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In Claude Code, paste this command into Terminal. In another AI client, use the same path with `--mcp`."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "En Claude Code, pega este comando en Terminal. En otro cliente de IA, usa la misma ruta con `--mcp`."
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "En Claude Code, pega este comando en Terminal. En otro cliente de IA, usa la misma ruta con `--mcp`."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liitä Claude Codessa tämä komento Terminaaliin. Muussa tekoälyasiakasohjelmassa käytä samaa polkua ja `--mcp`-valitsinta."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dans Claude Code, collez cette commande dans Terminal. Dans un autre client IA, utilisez le même chemin avec `--mcp`."
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ב-Claude Code, הדבק את הפקודה הזו במסוף. בלקוח AI אחר, השתמש באותו נתיב עם `--mcp`."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Claude Code में यह कमांड टर्मिनल में पेस्ट करें। किसी दूसरे AI क्लाइंट में `--mcp` के साथ यही पाथ इस्तेमाल करें।"
-          }
-        },
-        "hr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "U Claude Codeu zalijepite ovu naredbu u Terminal. U drugom AI klijentu koristite istu putanju s `--mcp`."
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A Claude Code-ban illessze be ezt a parancsot a Terminálba. Más MI-kliensben ugyanezt az elérési utat használja a `--mcp` kapcsolóval."
-          }
-        },
-        "id" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Di Claude Code, tempel perintah ini ke Terminal. Di klien AI lain, gunakan jalur yang sama dengan `--mcp`."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In Claude Code, incolla questo comando in Terminal. In un altro client IA, usa lo stesso percorso con `--mcp`."
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Claude Codeでは、このコマンドをターミナルに貼り付けてください。ほかのAIクライアントでは、同じパスに `--mcp` を付けて使います。"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Claude Code에서는 이 명령을 터미널에 붙여넣으세요. 다른 AI 클라이언트에서는 같은 경로에 `--mcp`를 붙여 사용하세요."
-          }
-        },
-        "ms" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dalam Claude Code, tampal arahan ini ke dalam Terminal. Dalam klien AI lain, gunakan laluan yang sama dengan `--mcp`."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "I Claude Code limer du denne kommandoen inn i Terminal. I en annen AI-klient bruker du samme sti med `--mcp`."
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plak in Claude Code dit commando in Terminal. Gebruik in een andere AI-client hetzelfde pad met `--mcp`."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "W Claude Code wklej to polecenie do aplikacji Terminal. W innym kliencie AI użyj tej samej ścieżki z `--mcp`."
-          }
-        },
-        "pt-PT" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No Claude Code, cole este comando no Terminal. Noutro cliente de IA, use o mesmo caminho com `--mcp`."
-          }
-        },
-        "ro" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "În Claude Code, lipește această comandă în Terminal. Într-un alt client AI, folosește aceeași cale cu `--mcp`."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "В Claude Code вставьте эту команду в Терминал. В другом клиенте ИИ используйте тот же путь с `--mcp`."
-          }
-        },
-        "sk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "V Claude Code vložte tento príkaz do Terminálu. V inom AI klientovi použite rovnakú cestu s `--mcp`."
-          }
-        },
-        "sl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "V Claude Code prilepite ta ukaz v Terminal. V drugem odjemalcu umetne inteligence uporabite isto pot z `--mcp`."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "I Claude Code klistrar du in kommandot i Terminal. I en annan AI-klient använder du samma sökväg med `--mcp`."
-          }
-        },
-        "th" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ใน Claude Code ให้วางคำสั่งนี้ในเทอร์มินัล ส่วนไคลเอนต์ AI อื่นให้ใช้เส้นทางเดียวกันพร้อม `--mcp`"
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Claude Code’da bu komutu Terminal’e yapıştırın. Başka bir yapay zeka istemcisinde aynı yolu `--mcp` ile kullanın."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "У Claude Code вставте цю команду в Термінал. В іншому клієнті ШІ використайте той самий шлях з `--mcp`."
-          }
-        },
-        "vi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trong Claude Code, hãy dán lệnh này vào Terminal. Với ứng dụng khách AI khác, dùng cùng đường dẫn với `--mcp`."
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在 Claude Code 中，将此命令粘贴到终端。在其他 AI 客户端中，使用相同的路径并加上 `--mcp`。"
-          }
-        },
-        "zh-Hant" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "在 Claude Code 中，將此指令貼到終端機。在其他 AI 用戶端中，請使用相同的路徑並加上 `--mcp`。"
-          }
-        }
-      }
-    },
     "No disco" : {
       "localizations" : {
         "en" : {
@@ -126297,6 +126297,220 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SDTally 未能及時結束。已安裝的版本保持不變。"
+          }
+        }
+      }
+    },
+    "O SDTally não manda nada sobre o seu disco pela rede, mas o cliente de IA manda." : {
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يرسل SDTally شيئًا عن قرصك عبر الشبكة، لكن عميل الذكاء الاصطناعي يفعل."
+          }
+        },
+        "ca" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’SDTally no envia res sobre el teu disc per la xarxa, però el client d’IA sí."
+          }
+        },
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally nic o vašem disku neposílá po síti, ale klient AI ano."
+          }
+        },
+        "da" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally sender intet om din disk over netværket, men AI-klienten gør."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally sendet keine Daten über deine Festplatte ins Netzwerk, der KI-Client aber schon."
+          }
+        },
+        "el" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Το SDTally δεν στέλνει τίποτα για τον δίσκο σας στο δίκτυο, αλλά το πρόγραμμα-πελάτης τεχνητής νοημοσύνης στέλνει."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally doesn't send anything about your disk over the network, but the AI client does."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally no envía nada sobre tu disco por la red, pero el cliente de IA sí."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally no envía nada sobre tu disco por la red, pero el cliente de IA sí."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ei lähetä mitään levystäsi verkon yli, mutta tekoälyasiakasohjelma lähettää."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally n’envoie rien sur votre disque par le réseau, mais le client IA, lui, en envoie."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally לא שולח דבר על הדיסק שלך ברשת, אבל לקוח ה-AI שולח."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally आपकी डिस्क के बारे में नेटवर्क पर कुछ नहीं भेजता, पर AI क्लाइंट भेजता है।"
+          }
+        },
+        "hr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ne šalje ništa o vašem disku mrežom, ali AI klijent šalje."
+          }
+        },
+        "hu" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Az SDTally nem küld semmit a lemezéről a hálózaton, de az MI-kliens igen."
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally tidak mengirim apa pun tentang disk Anda lewat jaringan, tetapi klien AI mengirim."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally non invia in rete nulla sul tuo disco, ma il client IA sì."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTallyはディスクに関する情報をネットワークで送信しませんが、AIクライアントは送信します。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally는 디스크에 관한 정보를 네트워크로 보내지 않지만, AI 클라이언트는 보냅니다."
+          }
+        },
+        "ms" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally tidak menghantar apa-apa tentang cakera anda melalui rangkaian, tetapi klien AI menghantarnya."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally sender ingenting om disken din over nettverket, men AI-klienten gjør det."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally stuurt niets over je schijf via het netwerk, maar de AI-client wel."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally nie wysyła przez sieć niczego o Twoim dysku, ale klient AI tak."
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O SDTally não envia nada sobre o seu disco pela rede, mas o cliente de IA envia."
+          }
+        },
+        "ro" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally nu trimite nimic despre discul tău prin rețea, dar clientul AI trimite."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ничего не отправляет о вашем диске по сети, но клиент ИИ отправляет."
+          }
+        },
+        "sk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally neposiela nič o vašom disku cez sieť, ale AI klient áno."
+          }
+        },
+        "sl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ničesar o vašem disku ne pošlje po omrežju, odjemalec umetne inteligence pa pošlje."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally skickar inget om din disk över nätverket, men AI-klienten gör det."
+          }
+        },
+        "th" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally ไม่ส่งข้อมูลเกี่ยวกับดิสก์ของคุณผ่านเครือข่าย แต่ไคลเอนต์ AI ส่ง"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally diskiniz hakkında ağa hiçbir şey göndermez, ama yapay zeka istemcisi gönderir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally нічого про ваш диск не надсилає мережею, а клієнт ШІ надсилає."
+          }
+        },
+        "vi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally không gửi gì về ổ đĩa của bạn qua mạng, nhưng ứng dụng khách AI thì có."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 不会通过网络发送任何与你的磁盘有关的内容，但 AI 客户端会。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SDTally 不會透過網路傳送任何與你的磁碟有關的內容，但 AI 用戶端會。"
           }
         }
       }
